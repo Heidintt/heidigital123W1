@@ -12,6 +12,9 @@ import Services from "./pages/Services";
 import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Sitemap from "./pages/Sitemap";
 
 // Service pages
 import SocialMedia from "./pages/services/SocialMedia";
@@ -24,6 +27,7 @@ import AIMarketing from "./pages/services/AIMarketing";
 // Solution pages
 import FreeResources from "./pages/solutions/FreeResources";
 import AITools from "./pages/solutions/AITools";
+import ContentGenerator from "./pages/solutions/ai-tools/ContentGenerator";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +57,12 @@ const App = () => (
           {/* Solution Pages */}
           <Route path="/solutions/free-resources" element={<FreeResources />} />
           <Route path="/solutions/ai-tools" element={<AITools />} />
+          <Route path="/solutions/ai-tools/content-generator" element={<ContentGenerator />} />
+          
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
