@@ -11,7 +11,8 @@ import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
-  Settings, Brain, FileText, Download, Lightbulb
+  Settings, Brain, FileText, Download, Lightbulb,
+  Mail, Phone
 } from "lucide-react";
 
 const Index = () => {
