@@ -29,6 +29,17 @@ import FreeResources from "./pages/solutions/FreeResources";
 import AITools from "./pages/solutions/AITools";
 import ContentGenerator from "./pages/solutions/ai-tools/ContentGenerator";
 
+// Free Resources pages
+import SEOGuide from "./pages/solutions/free-resources/SEOGuide";
+import SocialToolkit from "./pages/solutions/free-resources/SocialToolkit";
+import AIPlaybook from "./pages/solutions/free-resources/AIPlaybook";
+import ContentTemplates from "./pages/solutions/free-resources/ContentTemplates";
+import ROICalculator from "./pages/solutions/free-resources/ROICalculator";
+import EmailGuide from "./pages/solutions/free-resources/EmailGuide";
+import LocalSEOChecklist from "./pages/solutions/free-resources/LocalSEOChecklist";
+import ContentCalendar from "./pages/solutions/free-resources/ContentCalendar";
+import CROGuide from "./pages/solutions/free-resources/CROGuide";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -58,6 +69,17 @@ const App = () => (
           <Route path="/solutions/free-resources" element={<FreeResources />} />
           <Route path="/solutions/ai-tools" element={<AITools />} />
           <Route path="/solutions/ai-tools/content-generator" element={<ContentGenerator />} />
+          
+          {/* Free Resources Pages */}
+          <Route path="/solutions/free-resources/seo-guide" element={<SEOGuide />} />
+          <Route path="/solutions/free-resources/social-toolkit" element={<SocialToolkit />} />
+          <Route path="/solutions/free-resources/ai-playbook" element={<AIPlaybook />} />
+          <Route path="/solutions/free-resources/content-templates" element={<ContentTemplates />} />
+          <Route path="/solutions/free-resources/roi-calculator" element={<ROICalculator />} />
+          <Route path="/solutions/free-resources/email-guide" element={<EmailGuide />} />
+          <Route path="/solutions/free-resources/local-seo-checklist" element={<LocalSEOChecklist />} />
+          <Route path="/solutions/free-resources/content-calendar" element={<ContentCalendar />} />
+          <Route path="/solutions/free-resources/cro-guide" element={<CROGuide />} />
           
           {/* Legal Pages */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
