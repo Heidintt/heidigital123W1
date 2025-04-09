@@ -67,6 +67,9 @@ const Navbar = () => {
                 <DropdownMenuItem>
                   <Link to="/services/digital-ads" className="w-full">Digital Ads</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/services/ai-marketing" className="w-full">AI Marketing</Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -96,8 +99,8 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-heisocial-blue hover:bg-heisocial-blue/90">
-              Contact Us
+            <Button asChild className="bg-heisocial-blue hover:bg-heisocial-blue/90">
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -159,6 +162,13 @@ const Navbar = () => {
                   >
                     Digital Ads
                   </Link>
+                  <Link
+                    to="/services/ai-marketing"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    AI Marketing
+                  </Link>
                 </div>
               </div>
               <div className="py-2">
@@ -202,10 +212,11 @@ const Navbar = () => {
                 About Us
               </Link>
               <Button 
+                asChild
                 className="bg-heisocial-blue hover:bg-heisocial-blue/90 w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Contact Us
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>

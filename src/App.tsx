@@ -13,6 +13,18 @@ import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+// Service pages
+import SocialMedia from "./pages/services/SocialMedia";
+import ContentCreation from "./pages/services/ContentCreation";
+import SEO from "./pages/services/SEO";
+import Branding from "./pages/services/Branding";
+import DigitalAds from "./pages/services/DigitalAds";
+import AIMarketing from "./pages/services/AIMarketing";
+
+// Solution pages
+import FreeResources from "./pages/solutions/FreeResources";
+import AITools from "./pages/solutions/AITools";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -29,6 +41,19 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Service Pages */}
+          <Route path="/services/social-media" element={<SocialMedia />} />
+          <Route path="/services/content-creation" element={<ContentCreation />} />
+          <Route path="/services/seo" element={<SEO />} />
+          <Route path="/services/branding" element={<Branding />} />
+          <Route path="/services/digital-ads" element={<DigitalAds />} />
+          <Route path="/services/ai-marketing" element={<AIMarketing />} />
+          
+          {/* Solution Pages */}
+          <Route path="/solutions/free-resources" element={<FreeResources />} />
+          <Route path="/solutions/ai-tools" element={<AITools />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
