@@ -1,0 +1,218 @@
+
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold text-heisocial-blue">Heisocial</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+              Home
+            </Link>
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heisocial-blue transition-colors">
+                Services <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link to="/services/social-media" className="w-full">Social Media Strategy</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/services/content-creation" className="w-full">Content Creation</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/services/seo" className="w-full">SEO</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/services/branding" className="w-full">Branding</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/services/digital-ads" className="w-full">Digital Ads</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heisocial-blue transition-colors">
+                Solutions <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link to="/solutions/free-resources" className="w-full">Free Resources</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/solutions/ai-tools" className="w-full">AI Tools</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <Link to="/portfolio" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+              Portfolio
+            </Link>
+            <Link to="/blog" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+              Blog
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+              About Us
+            </Link>
+          </div>
+
+          <div className="hidden md:block">
+            <Button className="bg-heisocial-blue hover:bg-heisocial-blue/90">
+              Contact Us
+            </Button>
+          </div>
+
+          {/* Mobile Navigation Toggle */}
+          <button
+            className="md:hidden text-gray-700"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {isOpen && (
+          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
+            <div className="flex flex-col space-y-4 px-4">
+              <Link
+                to="/"
+                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <div className="py-2">
+                <div className="font-medium mb-2">Services</div>
+                <div className="ml-4 space-y-2">
+                  <Link
+                    to="/services/social-media"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Social Media Strategy
+                  </Link>
+                  <Link
+                    to="/services/content-creation"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Content Creation
+                  </Link>
+                  <Link
+                    to="/services/seo"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    SEO
+                  </Link>
+                  <Link
+                    to="/services/branding"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Branding
+                  </Link>
+                  <Link
+                    to="/services/digital-ads"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Digital Ads
+                  </Link>
+                </div>
+              </div>
+              <div className="py-2">
+                <div className="font-medium mb-2">Solutions</div>
+                <div className="ml-4 space-y-2">
+                  <Link
+                    to="/solutions/free-resources"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Free Resources
+                  </Link>
+                  <Link
+                    to="/solutions/ai-tools"
+                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    AI Tools
+                  </Link>
+                </div>
+              </div>
+              <Link
+                to="/portfolio"
+                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Portfolio
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/about"
+                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                About Us
+              </Link>
+              <Button 
+                className="bg-heisocial-blue hover:bg-heisocial-blue/90 w-full"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
