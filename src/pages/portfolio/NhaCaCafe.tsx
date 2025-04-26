@@ -11,45 +11,61 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Cat, Users, Calendar, TrendingUp, Target, Briefcase, Users2 } from "lucide-react";
+import { 
+  Cat, 
+  Users, 
+  Calendar, 
+  TrendingUp, 
+  Target, 
+  Briefcase, 
+  Users2,
+  DollarSign,
+  Star,
+  FacebookIcon,
+  Instagram,
+  CircleDollarSign,
+  Award,
+  ChartBar,
+  Percent
+} from "lucide-react";
 
 const NhaCaCafe = () => {
   const objectives = [
     {
       icon: <Users className="w-6 h-6 text-heisocial-blue" />,
       title: "Brand Awareness",
-      description: "20,000+ social media followers by Q4 2025",
+      description: "20,000+ social media followers by Q4 2025, gain feature coverage in 3+ local media outlets",
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-heisocial-purple" />,
       title: "Foot Traffic",
-      description: "Increase daily customers from 100 to 130",
+      description: "Increase daily customers from 100 to 130 through enhanced promotions and experiences",
     },
     {
-      icon: <Calendar className="w-6 h-6 text-heisocial-blue" />,
-      title: "Workshops",
-      description: "12 creative workshops per year with 80%+ attendance",
+      icon: <CircleDollarSign className="w-6 h-6 text-heisocial-blue" />,
+      title: "Revenue Growth",
+      description: "Boost monthly sales through workshops, seasonal menus, and loyalty programs",
     },
     {
-      icon: <Cat className="w-6 h-6 text-heisocial-purple" />,
-      title: "Community",
-      description: "5+ partnerships with local organizations",
+      icon: <Users2 className="w-6 h-6 text-heisocial-purple" />,
+      title: "Community Engagement",
+      description: "12 creative workshops per year with 80%+ attendance, 5+ local partnerships",
     },
   ];
 
   const workshops = [
-    { month: "January", theme: "Festive Creativity", description: "Cat-themed Tet greeting cards" },
-    { month: "February", theme: "Valentine's Love", description: "Feline-themed cards and gifts" },
-    { month: "March", theme: "Art & Design", description: "DIY home décor techniques" },
-    { month: "April", theme: "Spring Inspirations", description: "Seasonal handmade décor crafting" },
+    { month: "January", theme: "Festive Creativity", description: "Cat-themed Tet greeting cards and lucky money envelopes" },
+    { month: "February", theme: "Valentine's Love", description: "Design heartfelt cards with a feline twist" },
+    { month: "March", theme: "Art & Design", description: "DIY home décor techniques with founder" },
+    { month: "April", theme: "Spring Inspirations", description: "Craft handmade décor with spring colors" },
     { month: "May", theme: "Cat Care Basics", description: "Pet care tips with local vet" },
-    { month: "June", theme: "Summer Refresh", description: "Innovative beverage creation" },
-    { month: "July", theme: "Back-to-School", description: "Creative stationery customization" },
-    { month: "August", theme: "DIY Home Décor", description: "Interior decoration workshop" },
-    { month: "September", theme: "Autumn & Cat", description: "Photography session with café cats" },
-    { month: "October", theme: "Halloween", description: "Spooky accessories and décor" },
+    { month: "June", theme: "Summer Refresh", description: "Create innovative, refreshing beverages" },
+    { month: "July", theme: "Back-to-School", description: "Customize creative school supplies" },
+    { month: "August", theme: "DIY Home Décor", description: "Hands-on interior decoration workshop" },
+    { month: "September", theme: "Autumn & Cat Moments", description: "Photography session with café cats" },
+    { month: "October", theme: "Halloween Creativity", description: "Craft Halloween accessories and décor" },
     { month: "November", theme: "Art & Relaxation", description: "Painting and journaling session" },
-    { month: "December", theme: "Christmas & New Year", description: "Festive ornaments creation" },
+    { month: "December", theme: "Christmas & New Year", description: "Create festive cat-themed ornaments" },
   ];
 
   const targetAudience = [
@@ -61,7 +77,7 @@ const NhaCaCafe = () => {
     {
       icon: <Briefcase className="w-6 h-6 text-heisocial-purple" />,
       title: "Young Professionals (25-35 years)",
-      description: "Looking for creative, relaxing spaces",
+      description: "Looking for creative, relaxing spaces to socialize",
     },
     {
       icon: <Cat className="w-6 h-6 text-heisocial-blue" />,
@@ -72,6 +88,60 @@ const NhaCaCafe = () => {
       icon: <Target className="w-6 h-6 text-heisocial-purple" />,
       title: "Families & Tourists",
       description: "Attracted by kid-friendly events and local culture",
+    },
+  ];
+
+  const contentPillars = [
+    {
+      icon: <Cat className="w-6 h-6" />,
+      title: "#MeowOfTheDay",
+      description: "Daily posts showcasing café cats' antics",
+    },
+    {
+      icon: <Calendar className="w-6 h-6" />,
+      title: "#WorkshopWednesday",
+      description: "Weekly workshop highlights and teasers",
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "#NhaCaStories",
+      description: "Customer testimonials and behind-the-scenes content",
+    },
+  ];
+
+  const socialPlatforms = [
+    {
+      icon: <Instagram className="w-6 h-6" />,
+      platform: "Instagram & TikTok",
+      description: "Short, engaging videos of café decor and cats",
+    },
+    {
+      icon: <FacebookIcon className="w-6 h-6" />,
+      platform: "Facebook & Zalo",
+      description: "Event announcements and targeted local ads",
+    },
+  ];
+
+  const metrics = [
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Social Growth",
+      description: "300-500 new followers monthly",
+    },
+    {
+      icon: <ChartBar className="w-6 h-6" />,
+      title: "Workshop Success",
+      description: "60%+ attendance rate, 4/5+ ratings",
+    },
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: "Sales Growth",
+      description: "Increase through combos and loyalty",
+    },
+    {
+      icon: <Percent className="w-6 h-6" />,
+      title: "Engagement",
+      description: "5%+ engagement rate target",
     },
   ];
 
@@ -110,44 +180,102 @@ const NhaCaCafe = () => {
         </div>
 
         {/* Objectives Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {objectives.map((objective, index) => (
-            <div key={index} className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="mb-4">{objective.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{objective.title}</h3>
-              <p className="text-gray-600">{objective.description}</p>
-            </div>
-          ))}
+        <div className="mb-16">
+          <SectionHeading
+            title="Key Objectives"
+            subtitle="Our Goals for 2025"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {objectives.map((objective, index) => (
+              <div key={index} className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">{objective.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{objective.title}</h3>
+                <p className="text-gray-600">{objective.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Target Audience */}
-        <SectionHeading
-          title="Target Audience"
-          subtitle="Understanding Our Core Demographics"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {targetAudience.map((audience, index) => (
-            <div key={index} className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="mb-4">{audience.icon}</div>
-              <h3 className="text-lg font-semibold mb-2">{audience.title}</h3>
-              <p className="text-gray-600">{audience.description}</p>
-            </div>
-          ))}
+        <div className="mb-16">
+          <SectionHeading
+            title="Target Audience"
+            subtitle="Understanding Our Core Demographics"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {targetAudience.map((audience, index) => (
+              <div key={index} className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4">{audience.icon}</div>
+                <h3 className="text-lg font-semibold mb-2">{audience.title}</h3>
+                <p className="text-gray-600">{audience.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Workshop Calendar */}
-        <SectionHeading
-          title="Workshop Calendar"
-          subtitle="Monthly Creative Sessions Throughout 2025"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {workshops.map((workshop, index) => (
-            <div key={index} className="p-6 bg-white rounded-lg shadow-md border border-gray-100">
-              <div className="text-heisocial-blue font-semibold mb-2">{workshop.month}</div>
-              <h3 className="text-lg font-semibold mb-2">{workshop.theme}</h3>
-              <p className="text-gray-600">{workshop.description}</p>
+        <div className="mb-16">
+          <SectionHeading
+            title="Workshop Calendar 2025"
+            subtitle="Monthly Creative Sessions"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workshops.map((workshop, index) => (
+              <div key={index} className="p-6 bg-white rounded-lg shadow-md border border-gray-100">
+                <div className="text-heisocial-blue font-semibold mb-2">{workshop.month}</div>
+                <h3 className="text-lg font-semibold mb-2">{workshop.theme}</h3>
+                <p className="text-gray-600">{workshop.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 p-6 bg-gray-50 rounded-lg">
+            <h3 className="text-xl font-semibold mb-4">Workshop Pricing & Promotions</h3>
+            <ul className="space-y-2 text-gray-600">
+              <li>• Standard Fee: 80,000–100,000 VND per ticket</li>
+              <li>• Student Discount: 20% off with valid student ID</li>
+              <li>• Combo Offer: "Workshop + Coffee" package for 150,000 VND</li>
+              <li>• Pre-Event: Social media countdowns and university partnerships</li>
+              <li>• Post-Event: UGC sharing and 10% next session discount</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Social Media Strategy */}
+        <div className="mb-16">
+          <SectionHeading
+            title="Social Media Strategy"
+            subtitle="Building Our Online Presence"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Content Pillars</h3>
+              <div className="space-y-4">
+                {contentPillars.map((pillar, index) => (
+                  <div key={index} className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                    <div className="mr-4">{pillar.icon}</div>
+                    <div>
+                      <h4 className="font-semibold">{pillar.title}</h4>
+                      <p className="text-gray-600">{pillar.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Platform Focus</h3>
+              <div className="space-y-4">
+                {socialPlatforms.map((platform, index) => (
+                  <div key={index} className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+                    <div className="mr-4">{platform.icon}</div>
+                    <div>
+                      <h4 className="font-semibold">{platform.platform}</h4>
+                      <p className="text-gray-600">{platform.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Budget Overview */}
@@ -168,30 +296,83 @@ const NhaCaCafe = () => {
               <TableRow>
                 <TableCell className="font-medium">Workshop Materials</TableCell>
                 <TableCell>30,000,000</TableCell>
-                <TableCell>Materials for 12 workshops</TableCell>
+                <TableCell>Materials for 12 workshops (2.5M each)</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Social Media Advertising</TableCell>
                 <TableCell>30,000,000</TableCell>
-                <TableCell>Ads on Facebook, Instagram, and TikTok</TableCell>
+                <TableCell>Facebook, Instagram, and TikTok ads</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Seasonal Décor & Setup</TableCell>
                 <TableCell>20,000,000</TableCell>
-                <TableCell>Monthly décor changes and workshop setup</TableCell>
+                <TableCell>Monthly décor, workshop setup</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Partnerships & Promotions</TableCell>
                 <TableCell>10,000,000</TableCell>
-                <TableCell>Vouchers and promotional materials</TableCell>
+                <TableCell>Local partnerships, promotional materials</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Influencer & PR</TableCell>
+                <TableCell>10,000,000</TableCell>
+                <TableCell>Micro-influencer collaborations</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Loyalty Program</TableCell>
                 <TableCell>5,000,000</TableCell>
-                <TableCell>Printing materials and rewards</TableCell>
+                <TableCell>Materials and rewards</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell className="font-medium">Contingency</TableCell>
+                <TableCell>5,000,000</TableCell>
+                <TableCell>Miscellaneous expenses</TableCell>
               </TableRow>
             </TableBody>
           </Table>
+        </div>
+
+        {/* KPIs & Metrics */}
+        <div className="mb-16">
+          <SectionHeading
+            title="Evaluation & KPIs"
+            subtitle="Measuring Our Success"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            {metrics.map((metric, index) => (
+              <div key={index} className="p-6 bg-white rounded-lg shadow-md">
+                <div className="mb-4">{metric.icon}</div>
+                <h3 className="text-lg font-semibold mb-2">{metric.title}</h3>
+                <p className="text-gray-600">{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Risk Management */}
+        <div className="mb-16">
+          <SectionHeading
+            title="Risk Management"
+            subtitle="Proactive Measures for Success"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-3">Low Workshop Turnout</h3>
+              <p className="text-gray-600">Implement last-minute promotions via Zalo and social media ads</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-3">Negative Online Feedback</h3>
+              <p className="text-gray-600">Dedicated team member to address reviews within 24 hours</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-3">Budget Overruns</h3>
+              <p className="text-gray-600">Continuous monitoring and adjustment of non-essential activities</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-3">Seasonal Lulls</h3>
+              <p className="text-gray-600">Introduce "flash sales" or "happy hour" promotions during slower periods</p>
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}
