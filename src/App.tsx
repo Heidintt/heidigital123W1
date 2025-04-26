@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,21 +14,15 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Sitemap from "./pages/Sitemap";
-
-// Service pages
 import SocialMedia from "./pages/services/SocialMedia";
 import ContentCreation from "./pages/services/ContentCreation";
 import SEO from "./pages/services/SEO";
 import Branding from "./pages/services/Branding";
 import DigitalAds from "./pages/services/DigitalAds";
 import AIMarketing from "./pages/services/AIMarketing";
-
-// Solution pages
 import FreeResources from "./pages/solutions/FreeResources";
 import AITools from "./pages/solutions/AITools";
 import ContentGenerator from "./pages/solutions/ai-tools/ContentGenerator";
-
-// Free Resources pages
 import SEOGuide from "./pages/solutions/free-resources/SEOGuide";
 import SocialToolkit from "./pages/solutions/free-resources/SocialToolkit";
 import AIPlaybook from "./pages/solutions/free-resources/AIPlaybook";
@@ -39,6 +32,7 @@ import EmailGuide from "./pages/solutions/free-resources/EmailGuide";
 import LocalSEOChecklist from "./pages/solutions/free-resources/LocalSEOChecklist";
 import ContentCalendar from "./pages/solutions/free-resources/ContentCalendar";
 import CROGuide from "./pages/solutions/free-resources/CROGuide";
+import NhaCaCafe from "./pages/portfolio/NhaCaCafe";
 
 const queryClient = new QueryClient();
 
@@ -52,12 +46,12 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/nha-ca-cafe" element={<NhaCaCafe />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/contact" element={<Contact />} />
           
-          {/* Service Pages */}
           <Route path="/services/social-media" element={<SocialMedia />} />
           <Route path="/services/content-creation" element={<ContentCreation />} />
           <Route path="/services/seo" element={<SEO />} />
@@ -65,12 +59,10 @@ const App = () => (
           <Route path="/services/digital-ads" element={<DigitalAds />} />
           <Route path="/services/ai-marketing" element={<AIMarketing />} />
           
-          {/* Solution Pages */}
           <Route path="/solutions/free-resources" element={<FreeResources />} />
           <Route path="/solutions/ai-tools" element={<AITools />} />
           <Route path="/solutions/ai-tools/content-generator" element={<ContentGenerator />} />
           
-          {/* Free Resources Pages */}
           <Route path="/solutions/free-resources/seo-guide" element={<SEOGuide />} />
           <Route path="/solutions/free-resources/social-toolkit" element={<SocialToolkit />} />
           <Route path="/solutions/free-resources/ai-playbook" element={<AIPlaybook />} />
@@ -81,12 +73,10 @@ const App = () => (
           <Route path="/solutions/free-resources/content-calendar" element={<ContentCalendar />} />
           <Route path="/solutions/free-resources/cro-guide" element={<CROGuide />} />
           
-          {/* Legal Pages */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/sitemap" element={<Sitemap />} />
           
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

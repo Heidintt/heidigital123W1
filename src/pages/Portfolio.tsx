@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,8 +7,15 @@ import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 
 const Portfolio = () => {
-  // In a real app, this data would come from an API or database
   const portfolioItems = [
+    {
+      id: "nha-ca-cafe",
+      title: "Nhà Cá Cafe Marketing Plan",
+      description: "Comprehensive marketing strategy for a cat-themed café in Thai Nguyen, targeting 30% growth in daily customers through creative workshops and community engagement.",
+      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Marketing Strategy", "Brand Development"],
+      link: "/portfolio/nha-ca-cafe"
+    },
     {
       id: "1",
       title: "Global Tech Rebrand",
@@ -86,7 +92,6 @@ const Portfolio = () => {
             centered
           />
 
-          {/* Category Filters */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {categories.map((category, index) => (
               <Button
@@ -99,7 +104,6 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Portfolio Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioItems.map((item) => (
               <PortfolioCard
@@ -115,7 +119,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Results Statistics */}
       <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue to-heisocial-purple text-white">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -148,7 +151,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Featured Case Study */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
