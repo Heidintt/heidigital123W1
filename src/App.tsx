@@ -33,6 +33,7 @@ import LocalSEOChecklist from "./pages/solutions/free-resources/LocalSEOChecklis
 import ContentCalendar from "./pages/solutions/free-resources/ContentCalendar";
 import CROGuide from "./pages/solutions/free-resources/CROGuide";
 import NhaCaCafe from "./pages/portfolio/NhaCaCafe";
+import KotoClub from "./pages/portfolio/KotoClub";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/nha-ca-cafe" element={<NhaCaCafe />} />
+          <Route path="/portfolio/koto-club" element={<KotoClub />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />
