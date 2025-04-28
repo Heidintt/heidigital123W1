@@ -9,6 +9,14 @@ import CallToAction from "@/components/CallToAction";
 const Portfolio = () => {
   const portfolioItems = [
     {
+      id: "nha-ca-cafe",
+      title: "Nhà Cá Cafe Marketing Strategy",
+      description: "Comprehensive marketing plan for a unique cat-themed café in Thai Nguyen, combining coffee culture with creative workshops and feline charm.",
+      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Marketing Strategy", "Social Media", "Brand Development"],
+      link: "/portfolio/nha-ca-cafe"
+    },
+    {
       id: "koto-club",
       title: "Koto Club Da Nang Marketing Plan",
       description: "Strategic marketing plan for an upscale nightclub in Da Nang, targeting 25-40 year old professionals and tourists through curated experiences and premium positioning.",
