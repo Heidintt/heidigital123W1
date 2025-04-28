@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -6,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Calendar, Instagram, Facebook, TrendingUp, Users, CircleDollarSign, Star } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import SocialMediaPost from "@/components/SocialMediaPost";
 
 const KotoClub = () => {
   const marketingTactics = [
@@ -58,6 +58,52 @@ const KotoClub = () => {
     { objective: "Traffic", kpi: "75% occupancy on weekends" },
     { objective: "VIP Sales", kpi: "25% VIP table bookings rate" },
     { objective: "Loyalty", kpi: "400 loyal customers signed up" }
+  ];
+
+  const socialMediaPosts = [
+    {
+      month: "January",
+      title: "New Year, New Legends",
+      caption: "2025, we're not just celebrating the New Year — we're creating new legends. 🍸\n\nJoin us for a night where neon dreams light up Da Nang's skyline. Exclusive cocktails, live DJs, and unforgettable memories await.\n\nStep into the future at Koto Club.",
+      visualConcept: "Background: Neon skyline Đà Nẵng + Club vibe. Model: Cầm ly cocktail ánh neon xanh tím.",
+      specials: [
+        "Dress Code: Futuristic Neon",
+        "Complimentary Welcome Shot for Early Birds"
+      ],
+      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
+    },
+    {
+      month: "March",
+      title: "Spring Awakening - Rebirth in Lights",
+      caption: "Spring isn't just a season. It's a state of mind. 🌸✨\n\nThis March, awaken your senses under the pulse of neon lights.\n\nLimited edition 'Spring Bloom' cocktails and live sets from Da Nang's top DJs.\n\nKoto Club — where your new story begins.",
+      visualConcept: "Background: Neon flowers or light petals falling. Model: Cười rạng rỡ giữa khung neon lấp lánh.",
+      specials: ["Special: Free Signature Cocktail for first 30 guests"],
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22"
+    },
+    {
+      month: "July",
+      title: "Summer High - Neon Beach Party",
+      caption: "When the sun goes down, the real summer begins. 🔥🏖️\n\nThis July, Koto turns into a Neon Beach Paradise — tropical beats, icy cocktails, and glowing vibes.\n\nDance barefoot. Shine without limits.",
+      visualConcept: "Background: Neon palm trees, biển đêm lung linh. Model: Cầm ván lướt neon, đeo kính phản quang.",
+      specials: ["Dress Code: Beach Glam with Neon Accessories"],
+      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21"
+    },
+    {
+      month: "August",
+      title: "Hot Nights, Cool Lights",
+      caption: "Turn up the heat, cool down with neon. 🔥🌌\n\nAugust at Koto Club is pure fire — electrifying music, bold flavors, and nights you'll never forget.\n\nVIP Bottle Service Specials available all month.",
+      visualConcept: "Background: Neon lửa và băng (fire & ice theme). Model: Cheers ly cocktail khói mát lạnh dưới ánh đèn.",
+      specials: ["Special: VIP table discount for pre-bookings"],
+      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b"
+    },
+    {
+      month: "December",
+      title: "Neon Wonderland Christmas",
+      caption: "Santa got a neon upgrade 🎅🏼✨\n\nCelebrate Christmas with a twist — sparkling cocktails, dazzling lights, and the coolest party in Da Nang.\n\nCome dressed in white or silver — let's glow together!",
+      visualConcept: "Background: Cây thông Noel neon, người mặc đồ trắng/silver.",
+      specials: ["Special: Free Neon Christmas Shot for everyone dressed in theme!"],
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05"
+    }
   ];
 
   return (
@@ -232,6 +278,27 @@ const KotoClub = () => {
               </Table>
             </CardContent>
           </Card>
+        </section>
+
+        {/* Social Media Campaign Preview */}
+        <section>
+          <SectionHeading 
+            title="Social Media Campaign Preview" 
+            subtitle="2025 Content Calendar Highlights" 
+          />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {socialMediaPosts.map((post, index) => (
+              <SocialMediaPost
+                key={index}
+                month={post.month}
+                title={post.title}
+                caption={post.caption}
+                visualConcept={post.visualConcept}
+                specials={post.specials}
+                image={post.image}
+              />
+            ))}
+          </div>
         </section>
 
         {/* Final Positioning */}
