@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,6 +35,7 @@ import ContentCalendar from "./pages/solutions/free-resources/ContentCalendar";
 import CROGuide from "./pages/solutions/free-resources/CROGuide";
 import NhaCaCafe from "./pages/portfolio/NhaCaCafe";
 import KotoClub from "./pages/portfolio/KotoClub";
+import LuaHongBuffet from "./pages/portfolio/LuaHongBuffet";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +51,7 @@ const App = () => (
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/nha-ca-cafe" element={<NhaCaCafe />} />
           <Route path="/portfolio/koto-club" element={<KotoClub />} />
+          <Route path="/portfolio/lua-hong-buffet" element={<LuaHongBuffet />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />

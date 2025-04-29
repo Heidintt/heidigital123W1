@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,6 +9,14 @@ import CallToAction from "@/components/CallToAction";
 
 const Portfolio = () => {
   const portfolioItems = [
+    {
+      id: "lua-hong-buffet",
+      title: "Lửa Hồng Buffet Marketing Strategy",
+      description: "Vibrant marketing plan for a hot pot buffet in Ho Chi Minh City targeting youth with interactive content and engaging events.",
+      image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Marketing Strategy", "Event Marketing", "Content Strategy"],
+      link: "/portfolio/lua-hong-buffet"
+    },
     {
       id: "nha-ca-cafe",
       title: "Nhà Cá Cafe Marketing Strategy",
