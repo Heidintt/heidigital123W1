@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -117,7 +116,7 @@ const LuaHongBuffet = () => {
             <div className="relative">
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1583953596966-0a13398ffcf4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                   alt="Hot Pot Buffet Experience" 
                   className="w-full h-auto"
                 />
