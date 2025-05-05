@@ -252,11 +252,7 @@ const IChooseTheSun = () => {
                     </div>
                     <div className="flex justify-between">
                       <div>Billboard advertising</div>
-                      <div className="font-medium">$5,000 (10%)</div>
-                    </div>
-                    <div className="flex justify-between">
-                      <div>Internal design & contingency</div>
-                      <div className="font-medium">$5,000 (10%)</div>
+                      <div className="font-medium">$10,000 (20%)</div>
                     </div>
                   </div>
                 </div>
