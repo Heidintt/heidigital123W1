@@ -76,7 +76,7 @@ const IChooseTheSun = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Budget</div>
-                  <div className="text-gray-600">~1.2 billion VND</div>
+                  <div className="text-gray-600">~$50,000 USD</div>
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Primary Hashtag</div>
@@ -236,27 +236,27 @@ const IChooseTheSun = () => {
                   </div>
                 </div>
                 <div className="bg-gray-50 p-6">
-                  <h4 className="font-semibold mb-3">Budget Allocation (1.2 billion VND)</h4>
+                  <h4 className="font-semibold mb-3">Budget Allocation ($50,000 USD)</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <div>Influencer engagement</div>
-                      <div className="font-medium">480M VND (40%)</div>
+                      <div className="font-medium">$20,000 (40%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Paid ad boosting</div>
-                      <div className="font-medium">360M VND (30%)</div>
+                      <div className="font-medium">$15,000 (30%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Livestream production</div>
-                      <div className="font-medium">120M VND (10%)</div>
+                      <div className="font-medium">$5,000 (10%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Billboard advertising</div>
-                      <div className="font-medium">120M VND (10%)</div>
+                      <div className="font-medium">$5,000 (10%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Internal design & contingency</div>
-                      <div className="font-medium">120M VND (10%)</div>
+                      <div className="font-medium">$5,000 (10%)</div>
                     </div>
                   </div>
                 </div>
