@@ -32,7 +32,7 @@ const IChooseTheSun = () => {
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span><strong>Client:</strong> Sun Life Vietnam with brand ambassador H'Hen Niê (Miss Universe Vietnam 2017)</span>
+                    <span><strong>Company:</strong> Sun Life Vietnam with brand ambassador H'Hen Niê (Miss Universe Vietnam 2017)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
@@ -59,7 +59,7 @@ const IChooseTheSun = () => {
               <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Campaign Details</h3>
               <div className="space-y-4">
                 <div>
-                  <div className="font-semibold text-gray-900">Client</div>
+                  <div className="font-semibold text-gray-900">Company</div>
                   <div className="text-gray-600">Sun Life Vietnam</div>
                 </div>
                 <div>
@@ -76,7 +76,7 @@ const IChooseTheSun = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Budget</div>
-                  <div className="text-gray-600">~$50,000 USD</div>
+                  <div className="text-gray-600">~$55,000 USD</div>
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Primary Hashtag</div>
@@ -236,23 +236,27 @@ const IChooseTheSun = () => {
                   </div>
                 </div>
                 <div className="bg-gray-50 p-6">
-                  <h4 className="font-semibold mb-3">Budget Allocation ($50,000 USD)</h4>
+                  <h4 className="font-semibold mb-3">Budget Allocation ($55,000 USD)</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <div>Influencer engagement</div>
-                      <div className="font-medium">$20,000 (40%)</div>
+                      <div className="font-medium">$20,000 (36%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Paid ad boosting</div>
-                      <div className="font-medium">$15,000 (30%)</div>
+                      <div className="font-medium">$15,000 (27%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Livestream production</div>
-                      <div className="font-medium">$5,000 (10%)</div>
+                      <div className="font-medium">$5,000 (9%)</div>
                     </div>
                     <div className="flex justify-between">
                       <div>Billboard advertising</div>
-                      <div className="font-medium">$10,000 (20%)</div>
+                      <div className="font-medium">$10,000 (18%)</div>
+                    </div>
+                    <div className="flex justify-between">
+                      <div>Internal design, performance reporting, and contingency buffer</div>
+                      <div className="font-medium">$5,000 (10%)</div>
                     </div>
                   </div>
                 </div>
@@ -733,3 +737,4 @@ const IChooseTheSun = () => {
 };
 
 export default IChooseTheSun;
+
