@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
@@ -8,7 +8,17 @@ import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 
 const Portfolio = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  
   const portfolioItems = [
+    {
+      id: "i-choose-the-sun",
+      title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
+      description: "A viral influencer-led social media campaign promoting positivity during COVID-19 pandemic, generating 75.6M views and 8,000+ user videos.",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Social Media", "Influencer Marketing", "Campaign Strategy"],
+      link: "/portfolio/i-choose-the-sun"
+    },
     {
       id: "lua-hong-buffet",
       title: "Lửa Hồng Buffet Marketing Strategy",
@@ -85,13 +95,19 @@ const Portfolio = () => {
 
   const categories = [
     "All",
+    "Social Media",
+    "Marketing Strategy",
     "Branding",
     "SEO",
     "Content Marketing",
-    "Social Media",
     "Digital Ads",
+    "Influencer Marketing",
     "AI Solutions",
   ];
+
+  const filteredItems = activeCategory === "All" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.categories.includes(activeCategory));
 
   return (
     <Layout>
@@ -113,8 +129,9 @@ const Portfolio = () => {
             {categories.map((category, index) => (
               <Button
                 key={index}
-                variant={index === 0 ? "default" : "outline"}
-                className={index === 0 ? "bg-heisocial-blue" : ""}
+                variant={category === activeCategory ? "default" : "outline"}
+                className={category === activeCategory ? "bg-heisocial-blue" : ""}
+                onClick={() => setActiveCategory(category)}
               >
                 {category}
               </Button>
@@ -122,7 +139,7 @@ const Portfolio = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((item) => (
+            {filteredItems.map((item) => (
               <PortfolioCard
                 key={item.id}
                 title={item.title}

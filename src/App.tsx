@@ -36,6 +36,7 @@ import CROGuide from "./pages/solutions/free-resources/CROGuide";
 import NhaCaCafe from "./pages/portfolio/NhaCaCafe";
 import KotoClub from "./pages/portfolio/KotoClub";
 import LuaHongBuffet from "./pages/portfolio/LuaHongBuffet";
+import IChooseTheSun from "./pages/portfolio/IChooseTheSun";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/portfolio/nha-ca-cafe" element={<NhaCaCafe />} />
           <Route path="/portfolio/koto-club" element={<KotoClub />} />
           <Route path="/portfolio/lua-hong-buffet" element={<LuaHongBuffet />} />
+          <Route path="/portfolio/i-choose-the-sun" element={<IChooseTheSun />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />
