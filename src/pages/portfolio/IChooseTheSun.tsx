@@ -306,7 +306,7 @@ const IChooseTheSun = () => {
                 <div className="text-gray-700 font-medium">New Social Media Followers</div>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-yellow-500 text-4xl md:text-5xl font-bold mb-3">74.6M</div>
+                <div className="text-yellow-500 text-4xl md:text-5xl font-bold mb-3">75.6M</div>
                 <div className="text-gray-700 font-medium">Total Impressions</div>
               </div>
             </div>
@@ -317,7 +317,7 @@ const IChooseTheSun = () => {
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Success metrics: 79 videos uploaded, resulting in 74.6M impressions across platforms</span>
+                    <span>Success metrics: 79 videos uploaded, resulting in 75.6M impressions across platforms</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
@@ -594,53 +594,6 @@ const IChooseTheSun = () => {
         </div>
       </section>
 
-      {/* Conclusion & Action Items */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                <span className="gradient-text">Conclusion</span>
-              </h2>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="text-gray-600 mb-4">
-                  The campaign was a massive success that exceeded our expectations. It not only helps Sun Life Vietnam grow and become more well-known, but it also provides clients with a wealth of important information on health, financial, and family protection.
-                </p>
-                <p className="text-gray-600 mb-4">
-                  The COVID-19 pandemic is a challenge, but it also provides us with the ability to review our experiences. This campaign brings a lot of helpful information for the community and helps clients gain financial confidence and brighter life.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                <span className="gradient-text">Action Items</span>
-              </h2>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Create more similar campaigns in the future to provide clients with more relevant information</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Develop Sun Life Vietnam's channels as a reliable source of essential information by bringing trendy content, art, and cultural images</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Use brand promotions to market more of our featured products</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Continue to put the client first to make content more relevant to consumers</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Recommendations */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
@@ -833,6 +786,53 @@ const IChooseTheSun = () => {
                     </tr>
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Conclusion & Action Items */}
+      <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">
+                <span className="gradient-text">Conclusion</span>
+              </h2>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <p className="text-gray-600 mb-4">
+                  The campaign was a massive success that exceeded our expectations. It not only helps Sun Life Vietnam grow and become more well-known, but it also provides clients with a wealth of important information on health, financial, and family protection.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  The COVID-19 pandemic is a challenge, but it also provides us with the ability to review our experiences. This campaign brings a lot of helpful information for the community and helps clients gain financial confidence and brighter life.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold mb-6">
+                <span className="gradient-text">Action Items</span>
+              </h2>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Create more similar campaigns in the future to provide clients with more relevant information</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Develop Sun Life Vietnam's channels as a reliable source of essential information by bringing trendy content, art, and cultural images</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Use brand promotions to market more of our featured products</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Continue to put the client first to make content more relevant to consumers</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
