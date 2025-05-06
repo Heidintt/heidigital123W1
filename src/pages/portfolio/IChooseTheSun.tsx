@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Check, Award, Target, BarChart, Calendar } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 
 const IChooseTheSun = () => {
   return (
@@ -18,7 +18,7 @@ const IChooseTheSun = () => {
         backgroundImage="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
       />
 
-      {/* Overview Section */}
+      {/* Introduction Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -26,33 +26,37 @@ const IChooseTheSun = () => {
               <div className="mb-8">
                 <Badge className="mb-3 bg-heisocial-lightpurple text-heisocial-purple">Case Study</Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  <span className="gradient-text">Campaign Overview</span>
+                  <span className="gradient-text">🌞 Stepping Into the Spotlight: My Role in "I Choose The Sun"</span>
                 </h2>
+                
+                <div className="bg-gray-50 p-5 rounded-lg mb-6">
+                  <p className="text-gray-700">
+                    Sun Life is a subsidiary of Sun Life Financial – a global financial services company headquartered in Canada, with over 150 years of legacy. In Vietnam, Sun Life launched in 2013, positioning itself as a trusted provider of life insurance and financial solutions that empower clients to achieve lifetime financial security and live healthier lives.
+                  </p>
+                </div>
                 
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span><strong>Company:</strong> Sun Life Vietnam with brand ambassador H'Hen Niê (Miss Universe Vietnam 2017)</span>
+                    <span><strong>Company Focus:</strong> Well-being, client-centric innovation, and digital engagement</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span><strong>Campaign:</strong> "Staying Positive During the COVID-19 Pandemic" (#SongTichCuc)</span>
+                    <span><strong>Vision:</strong> Creating a brighter future by helping Vietnamese people live life to the fullest, both financially and emotionally</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span><strong>Results:</strong> 75.6M views and 8,000+ user-created videos across TikTok and Facebook</span>
+                    <span><strong>My Role:</strong> Digital Marketing Specialist working directly on the campaign</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span><strong>Purpose:</strong> Promote optimism, well-being and resilience through digital engagement targeting Gen Z and Millennials</span>
+                    <span><strong>Campaign Launch:</strong> Collaboration with brand ambassador H'Hen Niê (Miss Universe Vietnam 2017 and Top 5 Miss Universe 2018)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span><strong>My Responsibilities:</strong> Content planning, social media integration (TikTok, Facebook), SEO, ad performance tracking, and cross-team collaboration</span>
                   </li>
                 </ul>
-
-                <div className="mt-6 bg-gray-50 p-5 rounded-lg">
-                  <p className="text-gray-700">
-                    The COVID-19 pandemic has had a significant impact on people's health and spirits. At Sun Life Vietnam, our purpose is clear: to help our clients achieve lifetime financial security and live healthier lives. This campaign provided clients with practical information to help them stay positive during the pandemic.
-                  </p>
-                </div>
               </div>
             </div>
             
@@ -77,7 +81,7 @@ const IChooseTheSun = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Budget</div>
-                  <div className="text-gray-600">~$55,000 USD</div>
+                  <div className="text-gray-600">~1.2 billion VND (~$55,000 USD)</div>
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">Primary Hashtag</div>
@@ -93,138 +97,167 @@ const IChooseTheSun = () => {
       <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
         <div className="container mx-auto">
           <SectionHeading
-            title="Campaign Strategy"
-            subtitle="Staying Positive During the COVID-19 Pandemic"
+            title="📣 Sparking Positivity: What Happened in the Campaign"
+            subtitle="The 'I Choose The Sun' campaign during COVID-19 pandemic"
             centered
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-heisocial-blue">Strategy Elements</h3>
-              <ul className="space-y-4 text-gray-600">
-                <li className="flex items-start">
-                  <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Create videos on health, finance, and optimism throughout the pandemic with brand ambassador H'Hen Niê</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Organize contests on social media platforms to motivate people to exercise and stay positive</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Post optimistic videos about the new normal life</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Leverage H'Hen Niê's influence (1.5M TikTok and 2M Facebook followers)</span>
-                </li>
-              </ul>
-
-              <div className="mt-8">
-                <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Initial KPI Targets</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-heisocial-purple mr-3" />
-                    <span>25 posts across platforms</span>
+              <h3 className="text-2xl font-bold mb-4 text-heisocial-blue">Campaign Purpose & Target Audience</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h4 className="font-bold mb-2">Purpose:</h4>
+                <p className="text-gray-600 mb-4">Promote a lifestyle of optimism, well-being, and resilience through digital engagement and brand ambassadorship.</p>
+                
+                <h4 className="font-bold mb-2">Target Audience:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span><strong>Demographic:</strong> Primarily Gen Z and Millennials (ages 16–35), digitally active and socially engaged</span>
                   </li>
-                  <li className="flex items-center">
-                    <Check className="h-5 w-5 text-heisocial-purple mr-3" />
-                    <span>20,000,000 impressions</span>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span><strong>Geographic:</strong> Urban areas across Vietnam, especially Ho Chi Minh City, Hanoi, and Da Nang</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span><strong>Psychographic:</strong> Individuals valuing wellness, personal growth, and inspiration from public figures</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span><strong>Behavioral:</strong> Frequent users of TikTok and Facebook, active in hashtag challenges and influencer engagement</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h4 className="font-bold mb-2">Strategy Elements:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Leverage the influence of H'Hen Niê to build emotional connection and visibility</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Launch the #SongTichCuc hashtag challenge to encourage mass participation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Integrate short-form video, livestreams, and inspirational messaging to foster community</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <span>Create videos on health, finance, and being optimistic throughout the pandemic</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             <div>
+              <div className="bg-white rounded-lg shadow-md mb-6">
+                <div className="bg-heisocial-purple text-white p-6">
+                  <h3 className="text-xl font-bold mb-2">Initial KPI Targets</h3>
+                </div>
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center">
+                    <Check className="h-5 w-5 text-heisocial-purple mr-3" />
+                    <span>50 million video views (TikTok + Facebook)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="h-5 w-5 text-heisocial-purple mr-3" />
+                    <span>3,000 new TikTok followers</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="h-5 w-5 text-heisocial-purple mr-3" />
+                    <span>1,000+ UGC entries</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Check className="h-5 w-5 text-heisocial-purple mr-3" />
+                    <span>10k+ engagements per flagship post</span>
+                  </div>
+                </div>
+              </div>
+              
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="bg-heisocial-purple text-white p-6">
-                  <h3 className="text-xl font-bold mb-2">Budget Allocation ($55,000 USD)</h3>
+                  <h3 className="text-xl font-bold mb-2">Budget (1.2 billion VND / ~$55,000 USD)</h3>
                 </div>
                 <div className="p-6 space-y-3">
                   <div className="flex justify-between">
-                    <div>Influencer engagement</div>
-                    <div className="font-medium">$20,000 (36%)</div>
+                    <div>Influencer collaboration</div>
+                    <div className="font-medium">480M VND (40%)</div>
                   </div>
                   <div className="flex justify-between">
-                    <div>Paid ad boosting</div>
-                    <div className="font-medium">$15,000 (27%)</div>
+                    <div>Paid ads (Facebook, TikTok)</div>
+                    <div className="font-medium">360M VND (30%)</div>
                   </div>
                   <div className="flex justify-between">
                     <div>Livestream production</div>
-                    <div className="font-medium">$5,000 (9%)</div>
+                    <div className="font-medium">120M VND (10%)</div>
                   </div>
                   <div className="flex justify-between">
-                    <div>Billboard advertising</div>
-                    <div className="font-medium">$10,000 (18%)</div>
+                    <div>Billboard promotion</div>
+                    <div className="font-medium">120M VND (10%)</div>
                   </div>
                   <div className="flex justify-between">
-                    <div>Internal design, performance reporting, and contingency buffer</div>
-                    <div className="font-medium">$5,000 (10%)</div>
+                    <div>Internal/reporting/contingency</div>
+                    <div className="font-medium">120M VND (10%)</div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+              <div className="mt-6">
                 <img 
                   src="/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png" 
                   alt="TikTok campaign metrics" 
-                  className="w-full rounded mb-4"
+                  className="w-full rounded-lg shadow-md mb-2"
                 />
-                <p className="text-gray-600 text-sm italic">The #songtichcuc hashtag generated 75.6M views</p>
+                <p className="text-gray-600 text-sm text-center">The #songtichcuc hashtag generated 75.6M views</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Media Presence */}
+      {/* Campaign Analysis Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Sun Life Vietnam Social Media Presence"
-            subtitle="Multi-platform engagement strategy"
+            title="🔍 Behind the Scenes: What Worked, What Didn't"
+            subtitle="Analysis of campaign performance and challenges"
             centered
           />
           
-          <div className="mt-8 bg-gray-50 p-6 rounded-lg shadow-sm mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-yellow-500 mb-2">5</div>
-                <p className="text-gray-600">Social media platforms including Facebook, Instagram, Zalo, YouTube and TikTok</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-yellow-500 mb-2">600k+</div>
-                <p className="text-gray-600">Social media followers engaging with Sun Life content</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-yellow-500 mb-2">3M+</div>
-                <p className="text-gray-600">Interactions on social media platforms in 2021</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Facebook Performance</h3>
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border">
-                  <thead className="bg-gray-100">
-                    <tr>
-                      <th className="py-2 px-4 border">Posts</th>
-                      <th className="py-2 px-4 border">Net Followers Gain</th>
-                      <th className="py-2 px-4 border">Total Likes</th>
-                      <th className="py-2 px-4 border">Video Views</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="py-2 px-4 border text-center">40</td>
-                      <td className="py-2 px-4 border text-center">177,518</td>
-                      <td className="py-2 px-4 border text-center">302,000</td>
-                      <td className="py-2 px-4 border text-center">20,000,000</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Opportunities & Successes</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <ul className="space-y-4 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <div>
+                      <strong>Cross-Platform UGC Reach:</strong> While TikTok was the main channel, repurposing top-performing content for Facebook expanded reach
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <div>
+                      <strong>Hashtag & Influencer Leverage:</strong> H'Hen Niê's promotional efforts on her social platforms (with 1.5M TikTok and 2M Facebook followers) drove immense traffic
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <div>
+                      <strong>Livestream Engagement:</strong> Collaborative livestreams with H'Hen Niê focused on wellness and positivity drew large real-time audiences
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-yellow-500 mt-1">•</span>
+                    <div>
+                      <strong>Youth-Focused Brand Positioning:</strong> The campaign aligned Sun Life with wellness values popular among younger demographics
+                    </div>
+                  </li>
+                </ul>
               </div>
               
               <div className="mt-6">
@@ -238,200 +271,121 @@ const IChooseTheSun = () => {
             </div>
             
             <div>
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">TikTok Performance</h3>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full bg-white border">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="py-2 px-4 border">Posts</th>
-                        <th className="py-2 px-4 border">Net Followers Gain</th>
-                        <th className="py-2 px-4 border">Total Likes</th>
-                        <th className="py-2 px-4 border">Video Views</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="py-2 px-4 border text-center">17</td>
-                        <td className="py-2 px-4 border text-center">4,834</td>
-                        <td className="py-2 px-4 border text-center">63,000</td>
-                        <td className="py-2 px-4 border text-center">3,545,000</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Instagram Performance</h3>
-                <div className="overflow-x-auto">
-                  <table className="min-w-full bg-white border">
-                    <thead className="bg-gray-100">
-                      <tr>
-                        <th className="py-2 px-4 border">Posts</th>
-                        <th className="py-2 px-4 border">Net Followers Gain</th>
-                        <th className="py-2 px-4 border">Total Likes</th>
-                        <th className="py-2 px-4 border">Bio Link Clicks</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="py-2 px-4 border text-center">22</td>
-                        <td className="py-2 px-4 border text-center">495</td>
-                        <td className="py-2 px-4 border text-center">903</td>
-                        <td className="py-2 px-4 border text-center">4,500</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Campaign Results */}
-      <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Campaign Results"
-            subtitle="Exceeding expectations across metrics"
-            centered
-          />
-          
-          <div className="mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-yellow-500 text-4xl md:text-5xl font-bold mb-3">183K</div>
-                <div className="text-gray-700 font-medium">New Social Media Followers</div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-yellow-500 text-4xl md:text-5xl font-bold mb-3">75.6M</div>
-                <div className="text-gray-700 font-medium">Total Impressions</div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Challenges & Learning Opportunities</h3>
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Campaign Results</h3>
-                <ul className="space-y-3 text-gray-600">
+                <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Success metrics: 79 videos uploaded, resulting in 75.6M impressions across platforms</span>
+                    <div>
+                      <strong>Low Conversion Rate:</strong> Despite 75M+ views, TikTok follower growth was only ~4,834, revealing weak CTA pathways and poor lead generation
+                    </div>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Facebook: 40 posts, 58M impressions, 177.5K new followers</span>
+                    <div>
+                      <strong>Post-Campaign Drop-Off:</strong> Engagement dropped after the campaign due to lack of a nurturing or retargeting strategy
+                    </div>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>TikTok: 17 posts, 3.5M impressions, 4.8K new followers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Instagram: 22 posts, 13M impressions, 495 new followers</span>
+                    <div>
+                      <strong>Underused Owned Media:</strong> The brand's website lacked updated campaign assets and SEO-focused content
+                    </div>
                   </li>
                 </ul>
               </div>
               
-              <div>
-                <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-                  <h3 className="text-xl font-bold mb-4 text-heisocial-blue">#SongTichCuc Campaign Impact</h3>
-                  <div className="flex flex-col md:flex-row items-center text-center">
-                    <div className="md:w-1/2 mb-6 md:mb-0">
-                      <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-yellow-100 text-yellow-500 mb-4">
-                        <div className="text-4xl font-bold">8K+</div>
-                      </div>
-                      <p className="text-gray-700">User-generated videos</p>
-                    </div>
-                    <div className="md:w-1/2">
-                      <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-yellow-100 text-yellow-500 mb-4">
-                        <div className="text-4xl font-bold">75.6M</div>
-                      </div>
-                      <p className="text-gray-700">Video views</p>
-                    </div>
+              <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+                <h4 className="text-xl font-bold mb-3 text-heisocial-blue">Campaign Results</h4>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center">
+                    <div className="text-yellow-500 text-4xl font-bold mb-2">75.6M</div>
+                    <p className="text-gray-600">Total views across platforms</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-yellow-500 text-4xl font-bold mb-2">8,000+</div>
+                    <p className="text-gray-600">User-created videos</p>
                   </div>
                 </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <img 
-                    src="/lovable-uploads/64a3f787-87c4-4873-8e73-be1bffa80a3b.png" 
-                    alt="Social media campaign metrics" 
-                    className="w-full rounded-lg mb-4" 
-                  />
-                  <p className="text-gray-600 text-sm text-center">TikTok and Facebook metrics from the campaign</p>
-                </div>
+              </div>
+              
+              <div className="mt-6">
+                <img 
+                  src="/lovable-uploads/bc91eb16-44eb-43e6-bfae-634598663727.png" 
+                  alt="Campaign visual metrics" 
+                  className="w-full rounded-lg shadow-md"
+                />
+                <p className="text-gray-600 text-sm text-center">Cross-platform performance metrics</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Target Audience & Content Strategy */}
-      <section className="py-16 px-4">
+      {/* Personal Learning Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
         <div className="container mx-auto">
           <SectionHeading
-            title="Content Strategy and Target Audience"
-            subtitle="Reaching Generation Z with engaging content"
+            title="💡 Lessons from the Frontline: What I Learned"
+            subtitle="Personal development and professional insights"
             centered
           />
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Video Content Pillars</h3>
-              <p className="mb-4 text-gray-600">Activating the Sun Life purpose to help clients achieve lifetime financial security and live healthier lives by:</p>
+              <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Key Skills Developed</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Promoting a healthy lifestyle with top tips such as yoga and how to exercise at home</span>
+                  <span>Cross-departmental collaboration for campaign execution</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Raising financial literacy with informative content on investment and savings</span>
+                  <span>Content planning with real-time performance analytics in mind</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Creating videos on health, finance, and being optimistic throughout the pandemic with brand ambassador H'Hen Nie</span>
+                  <span>Platform analytics interpretation, especially TikTok Ads Manager</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Organizing contests on social media platforms to motivate people to exercise and stay positive</span>
+                  <span>Brand alignment across multiple social platforms</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Clear communication under time pressure</span>
                 </li>
               </ul>
               
-              <img 
-                src="/lovable-uploads/776be8eb-1741-43f7-996d-853bb0ad2471.png" 
-                alt="Content Strategy" 
-                className="w-full rounded-lg shadow-sm mt-6" 
-              />
+              <div className="mt-6 bg-yellow-50 p-4 rounded-lg">
+                <p className="text-gray-700">
+                  <strong>Literature Connection:</strong> This reflection aligns with Kolb's Experiential Learning Cycle (1984), which highlights learning through doing and reflection as key to skill development.
+                </p>
+              </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Target Audience: Generation Z</h3>
-              
-              <div className="mb-8 bg-blue-50 p-6 rounded-lg text-center">
-                <div className="text-yellow-500 text-5xl font-bold mb-4">60%</div>
-                <p className="text-gray-700">of TikTok users are Generation Z'ers, according to Forbes</p>
-              </div>
-              
-              <p className="mb-4 text-gray-600">Sun Life Vietnam aims to broaden their reach and capture a new generation with engaging video content.</p>
-              
+              <h3 className="text-xl font-bold mb-4 text-heisocial-blue">🔁 Growing Beyond Comfort: How I Evolved</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Generation Z – characterized as those born between 1995 and 2010</span>
+                  <span>Took on challenging tasks: briefing creatives, coordinating influencer assets, and interpreting evolving analytics data</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Just as millennials fueled the rise of Facebook and Instagram, Generation Z is fueling the rise of TikTok</span>
+                  <span>Developed solutions for overlapping feedback by creating standardized briefing templates</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Digital natives with early technology access and preference for rich video formats</span>
+                  <span>Improved performance report summaries for clearer stakeholder communication</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>High levels of social and cultural awareness with propensity to be expressive</span>
+                  <span>Grew from hesitant collaboration to confidently leading creative rollout</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Learned to view pressure points as growth catalysts rather than setbacks</span>
                 </li>
               </ul>
             </div>
@@ -440,7 +394,7 @@ const IChooseTheSun = () => {
       </section>
 
       {/* Brand Ambassador Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
+      <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
             title="Leveraging Brand Ambassador: H'Hen Niê"
@@ -477,7 +431,7 @@ const IChooseTheSun = () => {
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-2xl font-bold mb-6 text-heisocial-blue">Ambassador Impact</h3>
                 <p className="text-gray-600 mb-6">
-                  H'Hen Niê - Miss Universe Vietnam 2018, Top 5 at Miss Universe globally
+                  H'Hen Niê - Miss Universe Vietnam 2017, Top 5 at Miss Universe 2018
                 </p>
                 <ul className="space-y-4 text-gray-600">
                   <li className="flex items-start">
@@ -499,107 +453,12 @@ const IChooseTheSun = () => {
         </div>
       </section>
 
-      {/* Standout Results */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Standout Results"
-            subtitle="Beyond metrics and numbers"
-            centered
-          />
-          
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold mb-4 text-heisocial-blue">Trust Building Impact</h3>
-                
-                <p className="text-gray-600 mb-4">
-                  This campaign not only promoted brand awareness and engagement on Sun Life Vietnam's channels but also helped to build customers trust:
-                </p>
-                
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Customers actively contact the Sun Life Vietnam fan page and visit the website to leave information and call for advice</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Users have left positive feedback and shared postings</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Users have a better understanding of our mission: to help our clients achieve lifetime financial security and live healthier lives</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                <img 
-                  src="/lovable-uploads/bc91eb16-44eb-43e6-bfae-634598663727.png" 
-                  alt="Campaign visual metrics" 
-                  className="w-full rounded-lg mb-4"
-                />
-                <p className="text-gray-600 text-sm text-center">Campaign performance metrics across platforms</p>
-              </div>
-            </div>
-            
-            <div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-2xl font-bold mb-4 text-heisocial-blue">Learning from Other Brands</h3>
-                <p className="text-gray-600 mb-4">Sun Life Vietnam studied successful TikTok strategies from global brands:</p>
-                
-                <ul className="space-y-4 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <div>
-                      <strong>Washington Post:</strong> Comedic behind-the-scenes videos and skits that make journalists relatable to Gen Z
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <div>
-                      <strong>NBA:</strong> Motivational content and lighter side of the organization with players dancing
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <div>
-                      <strong>BMW:</strong> Hashtag campaigns encouraging users to create content showing their best dance moves
-                    </div>
-                  </li>
-                </ul>
-                
-                <img 
-                  src="/lovable-uploads/80bc8d79-1215-4949-b652-f1e56d9536f5.png" 
-                  alt="Social media engagement metrics" 
-                  className="w-full rounded-lg mt-6"
-                />
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md mt-6">
-                <h3 className="text-xl font-bold mb-3 text-heisocial-blue">TikTok Strategy Success</h3>
-                <div className="flex flex-row items-center gap-8 justify-center">
-                  <div className="text-center">
-                    <div className="text-yellow-500 text-4xl font-bold mb-2">60</div>
-                    <p className="text-gray-600 text-sm">videos published on TikTok</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-yellow-500 text-4xl font-bold mb-2">865K</div>
-                    <p className="text-gray-600 text-sm">views to 100% of length</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Recommendations */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
         <div className="container mx-auto">
           <SectionHeading
-            title="Strategic Recommendations"
-            subtitle="Building on campaign success"
+            title="🚀 If I Were to Shine Again: Recommendations for Future Campaigns"
+            subtitle="Strategic improvements for future initiatives"
             centered
           />
           
@@ -612,15 +471,15 @@ const IChooseTheSun = () => {
               <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Develop a weekly series of short videos (≤60 seconds), themed around positivity, mental health, and financial wellbeing.</span>
+                  <span>Weekly short videos (≤60 seconds) on positivity, mental health, and finance</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Hosted by H'Hen Niê or guest speakers such as doctors, coaches, or lifestyle influencers.</span>
+                  <span>Hosted by H'Hen or trusted experts; ends with a strong CTA</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Each episode ends with a CTA like "Take your financial wellness quiz" or "Book a free Sun Life consultation."</span>
+                  <span>Drives engagement while encouraging action</span>
                 </li>
               </ul>
               <div className="bg-yellow-50 p-4 rounded-lg">
@@ -639,11 +498,15 @@ const IChooseTheSun = () => {
               <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Launch an interactive platform where users build their own positivity journey—from physical wellness to financial goals.</span>
+                  <span>Interactive platform where users set and track wellness goals</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Users can create an account, set goals, track progress, and receive motivational content or rewards (e-vouchers, shout-outs from H'Hen).</span>
+                  <span>Incentivized with e-vouchers and shout-outs from influencers</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Encourages long-term engagement and lead capture</span>
                 </li>
               </ul>
               <div className="bg-yellow-50 p-4 rounded-lg">
@@ -657,16 +520,20 @@ const IChooseTheSun = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-4 flex items-center">
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-heisocial-blue text-white text-sm mr-3">C</span>
-                Use TikTok Hashtag Lab for Data-Driven Trend Timing
+                Use TikTok Hashtag Lab for Smarter Timing
               </h3>
               <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Leverage TikTok's Hashtag Lab to identify ideal windows for launching phase 2 of #SongTichCuc.</span>
+                  <span>Align second campaign wave with trending topics (e.g., exam season, wellness resets)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Tie campaign messaging to seasonal or trending themes (e.g., back-to-school stress, digital detox, workplace burnout).</span>
+                  <span>Leverage TikTok's Hashtag Lab to identify ideal windows for launching phase 2</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Ensures the message stays socially relevant</span>
                 </li>
               </ul>
               <div className="bg-yellow-50 p-4 rounded-lg">
@@ -680,16 +547,20 @@ const IChooseTheSun = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-4 flex items-center">
                 <span className="flex items-center justify-center w-8 h-8 rounded-full bg-heisocial-blue text-white text-sm mr-3">D</span>
-                Activate the "Shine Together Challenge" (Group UGC Contest)
+                Activate "Shine Together Challenge" (Team UGC Contest)
               </h3>
               <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Organize a team-based challenge encouraging groups of 2–4 people to submit videos spreading positivity.</span>
+                  <span>Groups create uplifting content; top entries co-host livestreams with H'Hen</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Winning teams are invited to co-host a livestream with H'Hen and receive branded gifts or mentoring sessions.</span>
+                  <span>Organize a team-based challenge for groups of 2–4 people to submit videos spreading positivity</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Builds community and multiplies reach</span>
                 </li>
               </ul>
               <div className="bg-yellow-50 p-4 rounded-lg">
@@ -704,10 +575,10 @@ const IChooseTheSun = () => {
       </section>
 
       {/* Implementation Blueprint */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Implementation Blueprint"
+            title="🛠 Making It Happen: Implementation Blueprint"
             subtitle="Phased approach to continued success"
             centered
           />
@@ -731,15 +602,15 @@ const IChooseTheSun = () => {
                         <ul className="space-y-2 text-gray-600">
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Launch the first episodes of "1 Minute to Shine" across TikTok, Instagram Reels, and Facebook.</span>
+                            <span>Launch "1 Minute to Shine"</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Announce the upcoming "Shine Together Challenge" with a teaser led by H'Hen Niê.</span>
+                            <span>Announce "Shine Together Challenge"</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Publish the beta version of the "Wellness Map" microsite to invite early adopters.</span>
+                            <span>Beta test "Wellness Map"</span>
                           </li>
                         </ul>
                       </td>
@@ -751,15 +622,15 @@ const IChooseTheSun = () => {
                         <ul className="space-y-2 text-gray-600">
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Release a key episode focused on financial wellbeing, including strong CTAs tied to Sun Life services.</span>
+                            <span>Release financial wellness episode with CTA</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Open entries for the "Shine Together Challenge" and activate community voting mechanisms.</span>
+                            <span>Open group challenge entries</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Integrate user activity from the microsite into Sun Life's CRM system for lead tracking.</span>
+                            <span>Sync microsite with CRM for lead tracking</span>
                           </li>
                         </ul>
                       </td>
@@ -771,15 +642,15 @@ const IChooseTheSun = () => {
                         <ul className="space-y-2 text-gray-600">
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Host a livestream event—"Shine Celebration"—featuring H'Hen and top challenge participants.</span>
+                            <span>Host livestream "Shine Celebration" with top creators</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Analyze campaign data via TikTok Hashtag Lab to plan a trend-aligned wave 2.</span>
+                            <span>Analyze results using TikTok Hashtag Lab</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Upgrade the "Wellness Map" into a permanent feature for future brand engagement initiatives.</span>
+                            <span>Turn microsite into permanent wellness hub</span>
                           </li>
                         </ul>
                       </td>
@@ -792,47 +663,36 @@ const IChooseTheSun = () => {
         </div>
       </section>
 
-      {/* Conclusion & Action Items */}
+      {/* Final Thoughts */}
       <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                <span className="gradient-text">Conclusion</span>
-              </h2>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="text-gray-600 mb-4">
-                  The campaign was a massive success that exceeded our expectations. It not only helps Sun Life Vietnam grow and become more well-known, but it also provides clients with a wealth of important information on health, financial, and family protection.
-                </p>
-                <p className="text-gray-600 mb-4">
-                  The COVID-19 pandemic is a challenge, but it also provides us with the ability to review our experiences. This campaign brings a lot of helpful information for the community and helps clients gain financial confidence and brighter life.
-                </p>
-              </div>
+          <SectionHeading
+            title="🧠 Final Thoughts: Meaning, Impact & Career Vision"
+            subtitle="Reflections on the campaign journey"
+            centered
+          />
+          
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Professional Growth</h3>
+              <p className="text-gray-600 mb-4">
+                Reflecting on this experience, I see the value of aligning social storytelling with measurable business goals. The campaign not only improved my skills—it clarified my career path.
+              </p>
+              <p className="text-gray-600">
+                I've seen firsthand how brand purpose, community values, and creative content can come together to elevate both audience impact and marketing performance. The interactions, livestreams, and reactions from users showed me the power of using marketing as a tool for emotional uplift and social impact.
+              </p>
             </div>
-
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                <span className="gradient-text">Action Items</span>
-              </h2>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Create more similar campaigns in the future to provide clients with more relevant information</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Develop Sun Life Vietnam's channels as a reliable source of essential information by bringing trendy content, art, and cultural images</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Use brand promotions to market more of our featured products</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2 text-yellow-500 mt-1">•</span>
-                    <span>Continue to put the client first to make content more relevant to consumers</span>
-                  </li>
-                </ul>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Career Vision</h3>
+              <p className="text-gray-600 mb-4">
+                This experience helped me define my future: I want to build campaigns that balance creativity with strategy, empathy with ROI. And it all started with choosing the sun.
+              </p>
+              <div className="mt-6 bg-yellow-50 p-5 rounded-lg">
+                <div className="text-center text-2xl font-bold text-yellow-500 mb-2">75.6 Million Views</div>
+                <p className="text-center text-gray-700">
+                  A testament to the power of positive messaging during challenging times
+                </p>
               </div>
             </div>
           </div>
@@ -843,8 +703,8 @@ const IChooseTheSun = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto text-center">
           <Link to="/portfolio">
-            <Button className="bg-heisocial-purple hover:bg-heisocial-purple/90">
-              Back to Portfolio
+            <Button className="bg-heisocial-purple hover:bg-heisocial-purple/90 flex items-center">
+              <ExternalLink className="mr-2 h-4 w-4" /> Back to Portfolio
             </Button>
           </Link>
         </div>
