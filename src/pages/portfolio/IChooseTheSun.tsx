@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -558,59 +557,104 @@ const IChooseTheSun = () => {
             centered
           />
           
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-heisocial-blue text-white mb-4">
-                <Award className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Maximize Influencer Collaboration</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-heisocial-blue text-white text-sm mr-3">A</span>
+                Launch a Micro-Series: "1 Minute to Shine"
+              </h3>
+              <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Re-engage H'Hen Niê with structured amplification</span>
+                  <span>Develop a weekly series of short videos (≤60 seconds), themed around positivity, mental health, and financial wellbeing.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Create UGC gallery on official website</span>
+                  <span>Hosted by H'Hen Niê or guest speakers such as doctors, coaches, or lifestyle influencers.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Each episode ends with a CTA like "Take your financial wellness quiz" or "Book a free Sun Life consultation."</span>
                 </li>
               </ul>
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <p className="flex items-start">
+                  <span className="text-yellow-500 mr-2">💡</span>
+                  <span className="text-gray-700"><strong>Why it works:</strong> Capitalizes on the popularity of edutainment formats, shifting users from inspiration to measurable action.</span>
+                </p>
+              </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-heisocial-purple text-white mb-4">
-                <Target className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Build Conversion Infrastructure</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-heisocial-blue text-white text-sm mr-3">B</span>
+                Create a Personalized "Wellness Map" Microsite
+              </h3>
+              <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Dedicated landing page with lead forms</span>
+                  <span>Launch an interactive platform where users build their own positivity journey—from physical wellness to financial goals.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Link hashtags to clear CTAs</span>
+                  <span>Users can create an account, set goals, track progress, and receive motivational content or rewards (e-vouchers, shout-outs from H'Hen).</span>
                 </li>
               </ul>
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <p className="flex items-start">
+                  <span className="text-yellow-500 mr-2">💡</span>
+                  <span className="text-gray-700"><strong>Why it works:</strong> Extends user engagement post-campaign and captures warm leads for Sun Life's funnel.</span>
+                </p>
+              </div>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-heisocial-blue text-white mb-4">
-                <BarChart className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Cross-Channel Strategy</h3>
-              <ul className="space-y-2 text-gray-600">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-heisocial-blue text-white text-sm mr-3">C</span>
+                Use TikTok Hashtag Lab for Data-Driven Trend Timing
+              </h3>
+              <ul className="space-y-3 text-gray-600 mb-6">
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Integrate Facebook, Instagram, TikTok, and website</span>
+                  <span>Leverage TikTok's Hashtag Lab to identify ideal windows for launching phase 2 of #SongTichCuc.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-yellow-500 mt-1">•</span>
-                  <span>Repurpose content across platforms</span>
+                  <span>Tie campaign messaging to seasonal or trending themes (e.g., back-to-school stress, digital detox, workplace burnout).</span>
                 </li>
               </ul>
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <p className="flex items-start">
+                  <span className="text-yellow-500 mr-2">💡</span>
+                  <span className="text-gray-700"><strong>Why it works:</strong> Turns a one-off viral spike into a recurring brand movement anchored in social relevance.</span>
+                </p>
+              </div>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-3">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-heisocial-blue text-white text-sm mr-3">D</span>
+                Activate the "Shine Together Challenge" (Group UGC Contest)
+              </h3>
+              <ul className="space-y-3 text-gray-600 mb-6">
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Organize a team-based challenge encouraging groups of 2–4 people to submit videos spreading positivity.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-yellow-500 mt-1">•</span>
+                  <span>Winning teams are invited to co-host a livestream with H'Hen and receive branded gifts or mentoring sessions.</span>
+                </li>
+              </ul>
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <p className="flex items-start">
+                  <span className="text-yellow-500 mr-2">💡</span>
+                  <span className="text-gray-700"><strong>Why it works:</strong> Builds a sense of belonging, increases content quality, and amplifies reach through peer networks.</span>
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md col-span-1 md:col-span-2">
               <h3 className="text-xl font-bold mb-4">Implementation Blueprint</h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full bg-white">
@@ -619,32 +663,67 @@ const IChooseTheSun = () => {
                       <th className="py-3 px-4 text-left">Phase</th>
                       <th className="py-3 px-4 text-left">Timeline</th>
                       <th className="py-3 px-4 text-left">Actions</th>
-                      <th className="py-3 px-4 text-left">Priority</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr>
-                      <td className="py-3 px-4">Phase 1</td>
-                      <td className="py-3 px-4">Weeks 1-2</td>
-                      <td className="py-3 px-4">Share UGC, TikTok retargeting, influencer briefs</td>
-                      <td className="py-3 px-4">
-                        <Badge className="bg-red-100 text-red-800">High</Badge>
+                      <td className="py-4 px-4 font-medium">Phase 1</td>
+                      <td className="py-4 px-4">Weeks 1-2<br/><span className="text-sm text-gray-500">Activation Kick-Off</span></td>
+                      <td className="py-4 px-4">
+                        <ul className="space-y-2 text-gray-600">
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Launch the first episodes of "1 Minute to Shine" across TikTok, Instagram Reels, and Facebook.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Announce the upcoming "Shine Together Challenge" with a teaser led by H'Hen Niê.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Publish the beta version of the "Wellness Map" microsite to invite early adopters.</span>
+                          </li>
+                        </ul>
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4">Phase 2</td>
-                      <td className="py-3 px-4">Weeks 3-4</td>
-                      <td className="py-3 px-4">Landing page, ambassador blog, email series</td>
-                      <td className="py-3 px-4">
-                        <Badge className="bg-yellow-100 text-yellow-800">Medium</Badge>
+                      <td className="py-4 px-4 font-medium">Phase 2</td>
+                      <td className="py-4 px-4">Weeks 3-4<br/><span className="text-sm text-gray-500">Peak Engagement</span></td>
+                      <td className="py-4 px-4">
+                        <ul className="space-y-2 text-gray-600">
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Release a key episode focused on financial wellbeing, including strong CTAs tied to Sun Life services.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Open entries for the "Shine Together Challenge" and activate community voting mechanisms.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Integrate user activity from the microsite into Sun Life's CRM system for lead tracking.</span>
+                          </li>
+                        </ul>
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4">Phase 3</td>
-                      <td className="py-3 px-4">Month 2-3</td>
-                      <td className="py-3 px-4">Positivity video content and livestream</td>
-                      <td className="py-3 px-4">
-                        <Badge className="bg-yellow-100 text-yellow-800">Medium</Badge>
+                      <td className="py-4 px-4 font-medium">Phase 3</td>
+                      <td className="py-4 px-4">Month 2-3<br/><span className="text-sm text-gray-500">Community Retention & Growth</span></td>
+                      <td className="py-4 px-4">
+                        <ul className="space-y-2 text-gray-600">
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Host a livestream event—"Shine Celebration"—featuring H'Hen and top challenge participants.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Analyze campaign data via TikTok Hashtag Lab to plan a trend-aligned wave 2.</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Upgrade the "Wellness Map" into a permanent feature for future brand engagement initiatives.</span>
+                          </li>
+                        </ul>
                       </td>
                     </tr>
                   </tbody>
@@ -737,4 +816,3 @@ const IChooseTheSun = () => {
 };
 
 export default IChooseTheSun;
-
