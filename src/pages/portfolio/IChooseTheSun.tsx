@@ -166,11 +166,11 @@ const IChooseTheSun = () => {
 
               <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
                 <img 
-                  src="/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png" 
-                  alt="Facebook engagement metrics" 
+                  src="/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png" 
+                  alt="TikTok campaign metrics" 
                   className="w-full rounded mb-4"
                 />
-                <p className="text-gray-600 text-sm italic">Users actively engaged with Sun Life Vietnam's content and left positive comments</p>
+                <p className="text-gray-600 text-sm italic">The #songtichcuc hashtag generated 75.6M views</p>
               </div>
             </div>
           </div>
@@ -229,11 +229,11 @@ const IChooseTheSun = () => {
               
               <div className="mt-6">
                 <img 
-                  src="/lovable-uploads/c6af334c-a6a1-49b8-86fc-472db8ef4f91.png"
-                  alt="Top performing Facebook post" 
+                  src="/lovable-uploads/c3380f42-094f-4304-8f5c-b202d3a65577.png" 
+                  alt="Campaign metrics summary" 
                   className="w-full rounded-lg shadow-md"
                 />
-                <p className="mt-2 text-gray-600 text-sm text-center">Top performing Facebook post: 133K likes, 1.7K comments, 9.4K shares</p>
+                <p className="mt-2 text-gray-600 text-sm text-center">Campaign performance metrics on Facebook</p>
               </div>
             </div>
             
@@ -313,12 +313,6 @@ const IChooseTheSun = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <img 
-                  src="/lovable-uploads/c3380f42-094f-4304-8f5c-b202d3a65577.png" 
-                  alt="Campaign results summary"
-                  className="w-full rounded-lg mb-6"
-                />
-                
                 <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Campaign Results</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start">
@@ -361,11 +355,11 @@ const IChooseTheSun = () => {
                 
                 <div className="bg-white p-6 rounded-lg shadow-md">
                   <img 
-                    src="/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png" 
-                    alt="I Choose The Sun campaign metrics" 
+                    src="/lovable-uploads/64a3f787-87c4-4873-8e73-be1bffa80a3b.png" 
+                    alt="Social media campaign metrics" 
                     className="w-full rounded-lg mb-4" 
                   />
-                  <p className="text-gray-600 text-sm text-center">The #songtichcuc hashtag generated 75.6M views</p>
+                  <p className="text-gray-600 text-sm text-center">TikTok and Facebook metrics from the campaign</p>
                 </div>
               </div>
             </div>
@@ -541,11 +535,11 @@ const IChooseTheSun = () => {
               
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
                 <img 
-                  src="/lovable-uploads/9df3a685-49ae-4417-a6ac-c13af5ea1bdc.png" 
-                  alt="User comments and engagement" 
+                  src="/lovable-uploads/bc91eb16-44eb-43e6-bfae-634598663727.png" 
+                  alt="Campaign visual metrics" 
                   className="w-full rounded-lg mb-4"
                 />
-                <p className="text-gray-600 text-sm text-center">Customer engagement and positive feedback on social media</p>
+                <p className="text-gray-600 text-sm text-center">Campaign performance metrics across platforms</p>
               </div>
             </div>
             
@@ -576,8 +570,8 @@ const IChooseTheSun = () => {
                 </ul>
                 
                 <img 
-                  src="/lovable-uploads/0ceeed21-c181-4c79-8c5e-5c5eb26e8c23.png" 
-                  alt="Best practices from other brands" 
+                  src="/lovable-uploads/80bc8d79-1215-4949-b652-f1e56d9536f5.png" 
+                  alt="Social media engagement metrics" 
                   className="w-full rounded-lg mt-6"
                 />
               </div>
