@@ -2,7 +2,6 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +13,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  CarouselDots
 } from "@/components/ui/carousel";
 
 const IChooseTheSun = () => {
@@ -124,6 +124,10 @@ const IChooseTheSun = () => {
                               <span className="mr-2 text-yellow-500 mt-1">•</span>
                               <span><strong>Psychographic:</strong> Individuals valuing wellness and personal growth</span>
                             </li>
+                            <li className="flex items-start">
+                              <span className="mr-2 text-yellow-500 mt-1">•</span>
+                              <span><strong>Behavioral:</strong> Frequent users of TikTok and Facebook</span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -143,6 +147,10 @@ const IChooseTheSun = () => {
                             <div className="flex items-center">
                               <Check className="h-5 w-5 text-heisocial-purple mr-3" />
                               <span>1,000+ UGC entries</span>
+                            </div>
+                            <div className="flex items-center">
+                              <Check className="h-5 w-5 text-heisocial-purple mr-3" />
+                              <span>10k+ engagements per flagship post</span>
                             </div>
                           </div>
                         </div>
@@ -217,10 +225,6 @@ const IChooseTheSun = () => {
                             <li className="flex items-start">
                               <span className="mr-2 text-yellow-500 mt-1">•</span>
                               <span>Create inspirational messaging to foster community</span>
-                            </li>
-                            <li className="flex items-start">
-                              <span className="mr-2 text-yellow-500 mt-1">•</span>
-                              <span>Focus on wellness and health during the pandemic</span>
                             </li>
                           </ul>
                         </div>
@@ -347,7 +351,7 @@ const IChooseTheSun = () => {
                             <li className="flex items-start">
                               <span className="mr-2 text-yellow-500 mt-1">•</span>
                               <div>
-                                <strong>Low Conversion Rate:</strong> Despite 75M+ views, TikTok follower growth was only ~4,834
+                                <strong>Low Conversion Rate:</strong> Despite 75M+ views, TikTok follower growth was only ~4,834, revealing weak CTA pathways
                               </div>
                             </li>
                             <li className="flex items-start">
@@ -359,7 +363,7 @@ const IChooseTheSun = () => {
                             <li className="flex items-start">
                               <span className="mr-2 text-yellow-500 mt-1">•</span>
                               <div>
-                                <strong>Underused Owned Media:</strong> The brand's website lacked campaign assets
+                                <strong>Underused Owned Media:</strong> The brand's website lacked campaign assets and SEO-focused content
                               </div>
                             </li>
                           </ul>
@@ -402,7 +406,7 @@ const IChooseTheSun = () => {
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Content planning with real-time performance analytics in mind</span>
+                            <span>Content planning with real-time performance analytics</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
@@ -419,30 +423,33 @@ const IChooseTheSun = () => {
                         </ul>
                         
                         <div className="mt-6 bg-yellow-50 p-4 rounded-lg">
-                          <p className="text-gray-700">
-                            <strong>Literature Connection:</strong> This reflection aligns with Kolb's Experiential Learning Cycle (1984), which highlights learning through doing and reflection as key to skill development.
+                          <p className="text-gray-700 italic">
+                            "This reflection aligns with Kolb's Experiential Learning Cycle (1984), which highlights learning through doing and reflection as key to skill development."
                           </p>
                         </div>
                       </div>
                       
                       <div className="bg-gray-50 p-6 rounded-lg">
                         <h3 className="text-xl font-bold mb-4 text-heisocial-blue">🔁 Growing Beyond Comfort: How I Evolved</h3>
+                        <p className="text-gray-600 mb-4">
+                          This project pushed me outside my comfort zone with challenging tasks under tight timelines:
+                        </p>
                         <ul className="space-y-3 text-gray-600">
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Took on challenging tasks: briefing creatives, coordinating influencer assets, and interpreting analytics data</span>
+                            <span>Developed <strong>cross-department communication under pressure</strong> through interdepartmental syncs</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Developed solutions for overlapping feedback by creating standardized briefing templates</span>
+                            <span>Strengthened ability to <strong>translate abstract ideas into concrete actions</strong> when briefing teams</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2 text-yellow-500 mt-1">•</span>
+                            <span>Created briefing templates to manage overlapping feedback</span>
                           </li>
                           <li className="flex items-start">
                             <span className="mr-2 text-yellow-500 mt-1">•</span>
                             <span>Improved performance report summaries for clearer stakeholder communication</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="mr-2 text-yellow-500 mt-1">•</span>
-                            <span>Grew from hesitant collaboration to confidently leading creative rollout</span>
                           </li>
                         </ul>
 
@@ -575,6 +582,12 @@ const IChooseTheSun = () => {
                           </p>
                         </div>
                       </div>
+                    </div>
+
+                    <div className="mt-4 p-4 bg-yellow-50 rounded-lg">
+                      <p className="text-gray-700 italic">
+                        "Each of these recommendations takes into account the interests of key stakeholders, including influencers (brand alignment, exposure), users (recognition, engagement), and Sun Life teams (lead tracking, retention)."
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -711,11 +724,13 @@ const IChooseTheSun = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            
+
             <div className="flex justify-center mt-8 gap-4">
               <CarouselPrevious className="relative inset-0 translate-y-0" />
               <CarouselNext className="relative inset-0 translate-y-0" />
             </div>
+            
+            <CarouselDots className="mt-4" />
           </Carousel>
         </div>
       </section>
