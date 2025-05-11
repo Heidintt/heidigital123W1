@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -50,7 +49,7 @@ const MicrolinoCampaign = () => {
 
                 {/* Slide 2: Campaign Rationale */}
                 <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10 flex flex-col justify-between">
+                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
                     <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Campaign Rationale</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                       <div className="text-center">
@@ -258,42 +257,85 @@ const MicrolinoCampaign = () => {
                   </div>
                 </CarouselItem>
 
-                {/* Slide 7: Target Audience Segmentation */}
+                {/* Slide 7: Tiny EV Hunt Overview */}
                 <CarouselItem>
                   <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Target Audience Segmentation</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                          <h4 className="font-bold mb-1">Geographic</h4>
-                          <p className="text-gray-700">CBDs & inner suburbs of Sydney/Melbourne—high density, limited parking</p>
+                    <h3 className="text-3xl font-bold text-heisocial-blue mb-8">Tiny EV Hunt Overview</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[380px]">
+                      <div className="flex flex-col justify-center space-y-8">
+                        <div className="flex items-start">
+                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span className="text-2xl">📱</span>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-xl mb-2">AR geocaching experience</h4>
+                            <p className="text-gray-600">Users hunt for virtual Microlinos placed throughout city centers</p>
+                          </div>
                         </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold mb-1">Demographic</h4>
-                          <p className="text-gray-700">Professionals aged 25–35; annual income AUD 60–90K; singles/couples</p>
+                        
+                        <div className="flex items-start">
+                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span className="text-2xl">📍</span>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-xl mb-2">50 curated hotspots</h4>
+                            <p className="text-gray-600">Strategic locations highlighting city parking challenges</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-start">
+                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span className="text-2xl">🔍</span>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-xl mb-2">Daily Instagram Story clues</h4>
+                            <p className="text-gray-600">Social engagement driving participation and virality</p>
+                          </div>
                         </div>
                       </div>
-                      <div>
-                        <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                          <h4 className="font-bold mb-1">Psychographic</h4>
-                          <p className="text-gray-700">Eco-aware, design-savvy, early tech adopters, value experience over status</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold mb-1">Behavioral</h4>
-                          <p className="text-gray-700">Frequent short-distance trips (&lt;35 km/day), heavy mobile/social media use, price sensitive</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Persona visualization */}
-                    <div className="mt-6 flex items-center justify-center">
-                      <div className="flex items-center bg-heisocial-lightpurple p-4 rounded-lg max-w-md">
-                        <div className="h-16 w-16 bg-heisocial-purple rounded-full flex items-center justify-center mr-4">
-                          <span className="text-white text-2xl">👨‍💼</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold">Urban Professional</h4>
-                          <p className="text-sm">30 years old, earns AUD 75K, commutes 20km daily, environmentally conscious, tech-savvy</p>
+                      
+                      <div className="flex items-center justify-center">
+                        <div className="relative">
+                          {/* Phone mockup */}
+                          <div className="w-[280px] h-[550px] bg-black rounded-[36px] p-3 shadow-xl">
+                            {/* Phone screen */}
+                            <div className="w-full h-full bg-gray-100 rounded-[28px] overflow-hidden relative">
+                              {/* AR screen content */}
+                              <img 
+                                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                                alt="City street" 
+                                className="w-full h-full object-cover"
+                              />
+                              {/* AR Microlino overlay */}
+                              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3">
+                                <div className="relative">
+                                  <svg width="100" height="60" viewBox="0 0 100 60" className="filter drop-shadow-lg">
+                                    <rect x="10" y="15" width="80" height="40" rx="10" fill="#3B82F6" />
+                                    <rect x="20" y="5" width="60" height="30" rx="8" fill="#60A5FA" />
+                                    <circle cx="30" cy="45" r="8" fill="#1E3A8A" />
+                                    <circle cx="70" cy="45" r="8" fill="#1E3A8A" />
+                                  </svg>
+                                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                    <span className="text-white font-bold text-xs">MICROLINO</span>
+                                  </div>
+                                </div>
+                              </div>
+                              {/* AR UI elements */}
+                              <div className="absolute bottom-6 left-0 right-0 flex justify-center">
+                                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800">
+                                  Found 1 of 50 Microlinos!
+                                </div>
+                              </div>
+                              <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full">
+                                <div className="h-8 w-8 flex items-center justify-center">
+                                  <span className="text-lg">🔍</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="absolute -right-2 -bottom-2 bg-heisocial-purple/10 p-3 rounded-lg">
+                            <p className="text-xs text-heisocial-purple font-medium">Instagram AR Filter</p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -307,7 +349,7 @@ const MicrolinoCampaign = () => {
                     
                     <div className="relative">
                       <img 
-                        src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                        src="https://images.unsplash.com/photo-1517649763947-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
                         alt="Urban backdrop with Microlino" 
                         className="w-full h-[300px] object-cover rounded-lg opacity-30"
                       />
