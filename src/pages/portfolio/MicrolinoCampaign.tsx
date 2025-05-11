@@ -621,7 +621,7 @@ const MicrolinoCampaign = () => {
                             <td className="py-2 px-4 border-b">Digital Video Ads</td>
                             <td className="py-2 px-4 border-b">15″ Instagram Reels, TikTok, YouTube Shorts</td>
                             <td className="py-2 px-4 border-b">5–8 pm Tues–Sun (4 wk)</td>
-                            <td className="py-2 px-4 border-b">1.5M impressions; CTR > 1.2%</td>
+                            <td className="py-2 px-4 border-b">1.5M impressions; CTR {`>`} 1.2%</td>
                           </tr>
                           <tr className="bg-gray-50">
                             <td className="py-2 px-4 border-b">OOH Advertising</td>
@@ -791,7 +791,7 @@ const MicrolinoCampaign = () => {
                         </div>
                         <div className="bg-heisocial-blue/10 p-3 rounded-lg">
                           <p className="font-semibold mb-1">Engagement:</p>
-                          <p className="text-sm">CTR > 1.2%; 2,000 OOH QR scans; 1,000+ AR Hunt entries</p>
+                          <p className="text-sm">CTR {`>`} 1.2%; 2,000 OOH QR scans; 1,000+ AR Hunt entries</p>
                         </div>
                         <div className="bg-heisocial-blue/10 p-3 rounded-lg">
                           <p className="font-semibold mb-1">Conversion:</p>
