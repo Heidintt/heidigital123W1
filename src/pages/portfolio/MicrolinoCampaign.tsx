@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -555,4 +556,65 @@ const MicrolinoCampaign = () => {
                         <p className="text-xs">Paid, Earned, Shared, Owned</p>
                       </div>
                       <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
-                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mx-auto mb-3
+                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mx-auto mb-3">
+                          <span className="text-white text-lg">📊</span>
+                        </div>
+                        <h4 className="font-semibold mb-1">Budget Allocation</h4>
+                        <p className="text-xs">Digital focus, OOH support</p>
+                      </div>
+                      <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
+                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mx-auto mb-3">
+                          <span className="text-white text-lg">📱</span>
+                        </div>
+                        <h4 className="font-semibold mb-1">Tactics</h4>
+                        <p className="text-xs">Video, social, AR activation</p>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-8">
+                      <h4 className="font-bold mb-4">Media Mix Visualization</h4>
+                      <div className="bg-white rounded-lg shadow p-4 h-[220px] relative">
+                        <img 
+                          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                          alt="Media mix visualization" 
+                          className="w-full h-[220px] object-cover rounded-lg opacity-20"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="grid grid-cols-2 gap-4 p-4">
+                            <div className="bg-blue-500/80 text-white p-3 rounded-lg text-center">
+                              <div className="font-bold text-lg mb-1">40%</div>
+                              <div className="text-sm">Social Media</div>
+                            </div>
+                            <div className="bg-purple-500/80 text-white p-3 rounded-lg text-center">
+                              <div className="font-bold text-lg mb-1">30%</div>
+                              <div className="text-sm">Search & Display</div>
+                            </div>
+                            <div className="bg-green-500/80 text-white p-3 rounded-lg text-center">
+                              <div className="font-bold text-lg mb-1">20%</div>
+                              <div className="text-sm">OOH & Transit</div>
+                            </div>
+                            <div className="bg-orange-500/80 text-white p-3 rounded-lg text-center">
+                              <div className="font-bold text-lg mb-1">10%</div>
+                              <div className="text-sm">Experiential</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <div className="flex justify-center mt-8">
+                <CarouselPrevious className="mr-2" />
+                <CarouselDots className="mx-4" />
+                <CarouselNext className="ml-2" />
+              </div>
+            </Carousel>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default MicrolinoCampaign;
