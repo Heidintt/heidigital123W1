@@ -260,12 +260,12 @@ const MicrolinoCampaign = () => {
                 {/* Slide 7: Tiny EV Hunt Overview */}
                 <CarouselItem>
                   <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-8">Tiny EV Hunt Overview</h3>
+                    <h3 className="text-3xl font-bold text-blue-600 mb-8">Tiny EV Hunt Overview</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[380px]">
                       <div className="flex flex-col justify-center space-y-8">
                         <div className="flex items-start">
-                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <span className="text-2xl">📱</span>
+                          <div className="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span className="text-3xl">📱</span>
                           </div>
                           <div>
                             <h4 className="font-semibold text-xl mb-2">AR geocaching experience</h4>
@@ -274,8 +274,8 @@ const MicrolinoCampaign = () => {
                         </div>
                         
                         <div className="flex items-start">
-                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <span className="text-2xl">📍</span>
+                          <div className="h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span className="text-3xl">📍</span>
                           </div>
                           <div>
                             <h4 className="font-semibold text-xl mb-2">50 curated hotspots</h4>
@@ -284,8 +284,8 @@ const MicrolinoCampaign = () => {
                         </div>
                         
                         <div className="flex items-start">
-                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <span className="text-2xl">🔍</span>
+                          <div className="h-16 w-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span className="text-3xl">🔍</span>
                           </div>
                           <div>
                             <h4 className="font-semibold text-xl mb-2">Daily Instagram Story clues</h4>
@@ -302,39 +302,22 @@ const MicrolinoCampaign = () => {
                             <div className="w-full h-full bg-gray-100 rounded-[28px] overflow-hidden relative">
                               {/* AR screen content */}
                               <img 
-                                src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                                alt="City street" 
+                                src="public/lovable-uploads/ca187ee0-4c02-419d-9075-fd4eb38aab32.png" 
+                                alt="AR Microlino overlay on cyclists" 
                                 className="w-full h-full object-cover"
                               />
-                              {/* AR Microlino overlay */}
-                              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3">
-                                <div className="relative">
-                                  <svg width="100" height="60" viewBox="0 0 100 60" className="filter drop-shadow-lg">
-                                    <rect x="10" y="15" width="80" height="40" rx="10" fill="#3B82F6" />
-                                    <rect x="20" y="5" width="60" height="30" rx="8" fill="#60A5FA" />
-                                    <circle cx="30" cy="45" r="8" fill="#1E3A8A" />
-                                    <circle cx="70" cy="45" r="8" fill="#1E3A8A" />
-                                  </svg>
-                                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                                    <span className="text-white font-bold text-xs">MICROLINO</span>
-                                  </div>
-                                </div>
-                              </div>
                               {/* AR UI elements */}
-                              <div className="absolute bottom-6 left-0 right-0 flex justify-center">
-                                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800">
-                                  Found 1 of 50 Microlinos!
-                                </div>
-                              </div>
                               <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full">
                                 <div className="h-8 w-8 flex items-center justify-center">
                                   <span className="text-lg">🔍</span>
                                 </div>
                               </div>
+                              <div className="absolute bottom-6 left-0 right-0 flex justify-center">
+                                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800">
+                                  Found 1 of 50 Microlinos!
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                          <div className="absolute -right-2 -bottom-2 bg-heisocial-purple/10 p-3 rounded-lg">
-                            <p className="text-xs text-heisocial-purple font-medium">Instagram AR Filter</p>
                           </div>
                         </div>
                       </div>
@@ -572,364 +555,4 @@ const MicrolinoCampaign = () => {
                         <p className="text-xs">Paid, Earned, Shared, Owned</p>
                       </div>
                       <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
-                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mx-auto mb-3">
-                          <span className="text-white text-lg">🕒</span>
-                        </div>
-                        <h4 className="font-semibold mb-1">Schedule</h4>
-                        <p className="text-xs">Timing, bursts</p>
-                      </div>
-                      <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
-                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mx-auto mb-3">
-                          <span className="text-white text-lg">🧩</span>
-                        </div>
-                        <h4 className="font-semibold mb-1">Rationale</h4>
-                        <p className="text-xs">Strategic integration</p>
-                      </div>
-                    </div>
-
-                    <div className="mt-6">
-                      <img 
-                        src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                        alt="Media mix visualization" 
-                        className="w-full h-[220px] object-cover rounded-lg"
-                      />
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Slide 15: Media Requirements & Audience Habits */}
-                <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Media Requirements & Audience Habits</h3>
-                    
-                    <div className="mb-8">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold mb-2">Reach</h4>
-                          <p>75% of target in CBDs (Moriarty et al., 2014)</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <h4 className="font-bold mb-2">Frequency</h4>
-                          <p>3× exposures minimum to ensure recall</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-xl font-semibold mb-4">Habits:</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
-                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <span className="text-heisocial-blue text-lg">📱</span>
-                          </div>
-                          <p className="text-sm">Evening mobile video consumption peaks (5–8 pm)</p>
-                        </div>
-                        <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
-                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <span className="text-heisocial-blue text-lg">🚶</span>
-                          </div>
-                          <p className="text-sm">Daily foot traffic at transit hubs</p>
-                        </div>
-                        <div className="bg-heisocial-blue/10 p-4 rounded-lg text-center">
-                          <div className="h-12 w-12 bg-heisocial-blue/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <span className="text-heisocial-blue text-lg">📸</span>
-                          </div>
-                          <p className="text-sm">Familiarity with AR filters on Instagram</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Slide 16: Media Mix (Paid & Owned) */}
-                <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Media Mix (Paid & Owned)</h3>
-                    
-                    <div className="overflow-x-auto">
-                      <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-                        <thead>
-                          <tr className="bg-gray-100">
-                            <th className="py-3 px-4 text-left border-b">Channel</th>
-                            <th className="py-3 px-4 text-left border-b">Format</th>
-                            <th className="py-3 px-4 text-left border-b">Timing</th>
-                            <th className="py-3 px-4 text-left border-b">KPI</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td className="py-2 px-4 border-b font-medium">Digital Video Ads</td>
-                            <td className="py-2 px-4 border-b">15″ Instagram Reels, TikTok, YouTube Shorts</td>
-                            <td className="py-2 px-4 border-b">5–8 pm Tues–Sun (4 wk)</td>
-                            <td className="py-2 px-4 border-b">1.5M impressions; CTR {">="} 1.2%</td>
-                          </tr>
-                          <tr className="bg-gray-50">
-                            <td className="py-2 px-4 border-b font-medium">OOH Advertising</td>
-                            <td className="py-2 px-4 border-b">Transit shelters & bike-share hubs</td>
-                            <td className="py-2 px-4 border-b">24/7, 4 wk</td>
-                            <td className="py-2 px-4 border-b">500K weekly impressions</td>
-                          </tr>
-                          <tr>
-                            <td className="py-2 px-4 border-b font-medium">Website & Social</td>
-                            <td className="py-2 px-4 border-b">Cost-savings calculator, blog posts, booking portal</td>
-                            <td className="py-2 px-4 border-b">Continuous</td>
-                            <td className="py-2 px-4 border-b">1,000 test-drive leads</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div className="mt-6 flex justify-center">
-                      <div className="flex space-x-6">
-                        <div className="text-center">
-                          <div className="h-16 w-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <span className="text-2xl">💰</span>
-                          </div>
-                          <p className="text-sm font-medium">Paid Media</p>
-                        </div>
-                        <div className="text-center">
-                          <div className="h-16 w-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <span className="text-2xl">🌐</span>
-                          </div>
-                          <p className="text-sm font-medium">Owned Media</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Slide 17: Media Mix (Earned & Shared) */}
-                <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Media Mix (Earned & Shared)</h3>
-                    
-                    <div className="overflow-x-auto mb-6">
-                      <table className="min-w-full bg-white border border-gray-200 rounded-lg">
-                        <thead>
-                          <tr className="bg-gray-100">
-                            <th className="py-3 px-4 text-left border-b">Channel</th>
-                            <th className="py-3 px-4 text-left border-b">Format</th>
-                            <th className="py-3 px-4 text-left border-b">Timing</th>
-                            <th className="py-3 px-4 text-left border-b">KPI</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td className="py-2 px-4 border-b font-medium">Micro-Influencer Vlogs</td>
-                            <td className="py-2 px-4 border-b">1-min authentic test-drive reviews</td>
-                            <td className="py-2 px-4 border-b">Weeks 1–4</td>
-                            <td className="py-2 px-4 border-b">5 influencers → 250K views</td>
-                          </tr>
-                          <tr className="bg-gray-50">
-                            <td className="py-2 px-4 border-b font-medium">Tiny EV Hunt (AR)</td>
-                            <td className="py-2 px-4 border-b">Instagram geocaching lens</td>
-                            <td className="py-2 px-4 border-b">Daily (7 days)</td>
-                            <td className="py-2 px-4 border-b">1,000+ participants; 200+ UGC posts</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="bg-gray-50 p-4 rounded-lg flex items-center">
-                        <div className="mr-4">
-                          <div className="h-16 w-16 bg-gray-100 rounded-full flex items-center justify-center">
-                            <span className="text-2xl">📱</span>
-                          </div>
-                        </div>
-                        <div>
-                          <h4 className="font-medium mb-1">AR Instagram Lens</h4>
-                          <p className="text-sm text-gray-600">Virtual Microlino hunt through city streets</p>
-                        </div>
-                      </div>
-
-                      <div className="bg-gray-50 p-4 rounded-lg flex items-center">
-                        <div className="flex flex-wrap -mx-1">
-                          <div className="p-1">
-                            <div className="h-10 w-10 bg-heisocial-blue/20 rounded-full flex items-center justify-center">
-                              <span className="text-sm">👤</span>
-                            </div>
-                          </div>
-                          <div className="p-1">
-                            <div className="h-10 w-10 bg-heisocial-purple/20 rounded-full flex items-center justify-center">
-                              <span className="text-sm">👤</span>
-                            </div>
-                          </div>
-                          <div className="p-1">
-                            <div className="h-10 w-10 bg-green-100 rounded-full flex items-center justify-center">
-                              <span className="text-sm">👤</span>
-                            </div>
-                          </div>
-                          <div className="p-1">
-                            <div className="h-10 w-10 bg-amber-100 rounded-full flex items-center justify-center">
-                              <span className="text-sm">👤</span>
-                            </div>
-                          </div>
-                          <div className="p-1">
-                            <div className="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                              <span className="text-sm">👤</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="ml-2">
-                          <h4 className="font-medium mb-1">Micro-Influencers</h4>
-                          <p className="text-sm text-gray-600">5 city-based content creators</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Slide 18: Media Rationale */}
-                <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Media Rationale</h3>
-                    
-                    <div className="grid grid-cols-1 gap-6">
-                      <div className="bg-gray-50 p-5 rounded-lg">
-                        <h4 className="font-bold mb-2">PESO Integration</h4>
-                        <p>Synchronizes paid, earned, shared, owned media for maximum impact (Breakenridge, 2012)</p>
-                      </div>
-                      
-                      <div className="bg-white border border-gray-200 rounded-lg">
-                        <div className="p-4 border-b border-gray-200">
-                          <h4 className="font-bold">Channel Alignment</h4>
-                          <p className="text-sm text-gray-600">Each media fulfills specific Hierarchy stage</p>
-                        </div>
-                        <div className="p-4">
-                          <div className="space-y-3">
-                            <div className="flex items-center">
-                              <div className="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                <span className="font-medium text-blue-800">P</span>
-                              </div>
-                              <p><span className="font-medium">Paid</span> → Awareness/Knowledge</p>
-                            </div>
-                            <div className="flex items-center">
-                              <div className="h-8 w-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                                <span className="font-medium text-green-800">E</span>
-                              </div>
-                              <p><span className="font-medium">Earned</span> → Liking/Preference</p>
-                            </div>
-                            <div className="flex items-center">
-                              <div className="h-8 w-8 bg-amber-100 rounded-full flex items-center justify-center mr-3">
-                                <span className="font-medium text-amber-800">S</span>
-                              </div>
-                              <p><span className="font-medium">Shared</span> → Conviction/Desire</p>
-                            </div>
-                            <div className="flex items-center">
-                              <div className="h-8 w-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                                <span className="font-medium text-purple-800">O</span>
-                              </div>
-                              <p><span className="font-medium">Owned</span> → Action/Retention</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="bg-heisocial-lightpurple p-4 rounded-lg">
-                        <h4 className="font-bold mb-2">Frequency Support</h4>
-                        <p>Multi-channel exposures reinforce message without fatigue</p>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Slide 19: Campaign Evaluation */}
-                <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-6">Campaign Evaluation</h3>
-                    
-                    <div className="mb-6">
-                      <h4 className="text-xl font-semibold mb-3">A/B Testing:</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p>Humor-focused vs Benefit-focused video variants (Weeks 1–2)</p>
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 gap-4 mb-6">
-                      <h4 className="text-xl font-semibold mb-2">KPIs:</h4>
-                      
-                      <div className="bg-heisocial-blue/10 p-3 rounded-lg">
-                        <p className="font-semibold mb-1">Awareness:</p>
-                        <p className="text-sm">+60% aided recall (pre/post surveys)</p>
-                      </div>
-                      
-                      <div className="bg-heisocial-blue/10 p-3 rounded-lg">
-                        <p className="font-semibold mb-1">Engagement:</p>
-                        <p className="text-sm">CTR {">="} 1.2%; 2,000 OOH QR scans; 1,000+ AR Hunt entries</p>
-                      </div>
-                      
-                      <div className="bg-heisocial-blue/10 p-3 rounded-lg">
-                        <p className="font-semibold mb-1">Conversion:</p>
-                        <p className="text-sm">500 test-drive bookings; 200 pre-orders</p>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-xl font-semibold mb-3">Optimization:</h4>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p>Weekly performance dashboards; agile budget reallocations (Rigby, Sutherland, & Noble, 2018)</p>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-
-                {/* Slide 20: Conclusion & Theoretical Tie-In */}
-                <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-heisocial-blue mb-8">Conclusion & Theoretical Tie-In</h3>
-                    
-                    <div className="space-y-6">
-                      <div className="bg-gray-50 p-5 rounded-lg flex items-center">
-                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white text-lg">1</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold mb-1">Hierarchy of Effects</h4>
-                          <p>Structured message journey</p>
-                        </div>
-                      </div>
-                      
-                      <div className="bg-gray-50 p-5 rounded-lg flex items-center">
-                        <div className="h-12 w-12 bg-heisocial-purple rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white text-lg">2</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold mb-1">Tri-Component Model</h4>
-                          <p>Cognitive, Affective, Behavioral alignment</p>
-                        </div>
-                      </div>
-                      
-                      <div className="bg-gray-50 p-5 rounded-lg flex items-center">
-                        <div className="h-12 w-12 bg-green-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                          <span className="text-white text-lg">3</span>
-                        </div>
-                        <div>
-                          <h4 className="font-bold mb-1">"Big Fun, Tiny Footprint"</h4>
-                          <p>Enduring brand equity (Keller, 1993)</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-8 text-center">
-                      <p className="text-xl font-bold text-heisocial-blue">
-                        Microlino: The go-to urban micro-EV, combining affordability, sustainability, and joy.
-                      </p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <div className="flex items-center justify-center gap-2 mt-6">
-                <CarouselPrevious />
-                <CarouselDots />
-                <CarouselNext />
-              </div>
-            </Carousel>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-};
-
-export default MicrolinoCampaign;
+                        <div className="h-12 w-12 bg-heisocial-blue rounded-full flex items-center justify-center mx-auto mb-3
