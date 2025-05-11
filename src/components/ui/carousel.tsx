@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -267,19 +268,22 @@ const CarouselDots = React.forwardRef<
   return (
     <div 
       ref={ref} 
-      className={cn("flex justify-center gap-2 mt-4", className)}
+      className={cn("flex justify-center gap-1 my-2", className)}
       {...props}
     >
       {Array.from({ length: slideCount }).map((_, index) => (
         <Button 
           key={index}
-          variant="outline"
+          variant="ghost"
           size="icon"
           className={cn(
-            "h-2 w-2 rounded-full p-0",
-            currentIndex === index ? "bg-primary" : "bg-muted"
+            "h-3 w-3 rounded-full p-0 transition-all",
+            currentIndex === index ? 
+              "bg-primary scale-125" : 
+              "bg-muted hover:bg-primary/50 hover:scale-110"
           )}
           onClick={() => api?.scrollTo(index)}
+          title={`Go to slide ${index + 1}`}
         >
           <span className="sr-only">{`Go to slide ${index + 1}`}</span>
         </Button>

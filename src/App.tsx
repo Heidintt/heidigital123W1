@@ -37,6 +37,7 @@ import NhaCaCafe from "./pages/portfolio/NhaCaCafe";
 import KotoClub from "./pages/portfolio/KotoClub";
 import LuaHongBuffet from "./pages/portfolio/LuaHongBuffet";
 import IChooseTheSun from "./pages/portfolio/IChooseTheSun";
+import MicrolinoCampaign from "./pages/portfolio/MicrolinoCampaign";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
           <Route path="/portfolio/koto-club" element={<KotoClub />} />
           <Route path="/portfolio/lua-hong-buffet" element={<LuaHongBuffet />} />
           <Route path="/portfolio/i-choose-the-sun" element={<IChooseTheSun />} />
+          <Route path="/portfolio/microlino-campaign" element={<MicrolinoCampaign />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />

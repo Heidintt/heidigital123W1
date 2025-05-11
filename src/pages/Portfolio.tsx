@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -11,6 +10,14 @@ const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   
   const portfolioItems = [
+    {
+      id: "microlino-campaign",
+      title: "Microlino 2026 Launch Campaign",
+      description: "Integrated Marketing Communications Campaign for Microlino's 2026 Australian Launch, focusing on urban mobility solutions.",
+      image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications"],
+      link: "/portfolio/microlino-campaign"
+    },
     {
       id: "i-choose-the-sun",
       title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
@@ -47,7 +54,7 @@ const Portfolio = () => {
       id: "1",
       title: "Global Tech Rebrand",
       description: "Complete brand overhaul for a multinational tech company, resulting in 45% increase in brand recognition.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1487058032275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Branding", "Digital Strategy"],
       link: "/portfolio/global-tech-rebrand"
     },
