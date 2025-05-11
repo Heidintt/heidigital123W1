@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -258,64 +257,94 @@ const MicrolinoCampaign = () => {
                   </div>
                 </CarouselItem>
 
-                {/* Slide 7: Tiny EV Hunt Overview */}
+                {/* Slide 7: Tiny EV Hunt Overview - REDESIGNED */}
                 <CarouselItem>
-                  <div className="bg-white h-[500px] rounded-lg shadow-lg p-10">
-                    <h3 className="text-3xl font-bold text-blue-600 mb-8">Tiny EV Hunt Overview</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[380px]">
-                      <div className="flex flex-col justify-center space-y-8">
-                        <div className="flex items-start">
-                          <div className="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <span className="text-3xl">📱</span>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-xl mb-2">AR geocaching experience</h4>
-                            <p className="text-gray-600">Users hunt for virtual Microlinos placed throughout city centers</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start">
-                          <div className="h-16 w-16 bg-red-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <span className="text-3xl">📍</span>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-xl mb-2">50 curated hotspots</h4>
-                            <p className="text-gray-600">Strategic locations highlighting city parking challenges</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start">
-                          <div className="h-16 w-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <span className="text-3xl">🔍</span>
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-xl mb-2">Daily Instagram Story clues</h4>
-                            <p className="text-gray-600">Social engagement driving participation and virality</p>
-                          </div>
-                        </div>
+                  <div className="bg-gradient-to-br from-heisocial-blue/10 to-heisocial-purple/10 h-[500px] rounded-lg shadow-lg overflow-hidden">
+                    <div className="flex flex-col h-full">
+                      {/* Header section */}
+                      <div className="bg-heisocial-blue px-10 py-6 text-white">
+                        <h3 className="text-3xl font-bold mb-2">Tiny EV Hunt Experience</h3>
+                        <p className="text-white/80">Interactive AR Campaign to Drive Engagement</p>
                       </div>
                       
-                      <div className="flex items-center justify-center">
-                        <div className="relative">
-                          {/* Phone mockup */}
-                          <div className="w-[280px] h-[550px] bg-black rounded-[36px] p-3 shadow-xl">
-                            {/* Phone screen */}
-                            <div className="w-full h-full bg-gray-100 rounded-[28px] overflow-hidden relative">
-                              {/* AR screen content */}
-                              <img 
-                                src="public/lovable-uploads/ca187ee0-4c02-419d-9075-fd4eb38aab32.png" 
-                                alt="AR Microlino overlay on cyclists" 
-                                className="w-full h-full object-cover"
-                              />
-                              {/* AR UI elements */}
-                              <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full">
-                                <div className="h-8 w-8 flex items-center justify-center">
-                                  <span className="text-lg">🔍</span>
+                      {/* Content section */}
+                      <div className="flex flex-col md:flex-row h-full p-6">
+                        {/* Left side: Phone mockup */}
+                        <div className="md:w-1/2 flex items-center justify-center p-4">
+                          <div className="relative transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                            {/* Phone frame */}
+                            <div className="w-[240px] h-[480px] bg-black rounded-[36px] p-3 shadow-2xl relative z-10">
+                              {/* Phone screen */}
+                              <div className="w-full h-full bg-gray-100 rounded-[28px] overflow-hidden relative">
+                                {/* AR screen content */}
+                                <img 
+                                  src="public/lovable-uploads/ca187ee0-4c02-419d-9075-fd4eb38aab32.png" 
+                                  alt="AR Microlino overlay on street" 
+                                  className="w-full h-full object-cover"
+                                />
+                                
+                                {/* UI elements */}
+                                <div className="absolute top-0 left-0 w-full p-3">
+                                  <div className="flex justify-between items-center">
+                                    <div className="bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">
+                                      Tiny EV Hunt
+                                    </div>
+                                    <div className="bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs">
+                                      12/50 found
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                {/* Bottom UI */}
+                                <div className="absolute bottom-6 left-0 right-0 flex justify-center">
+                                  <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                                    <span className="text-sm font-medium text-heisocial-blue">Microlino found! +50 pts</span>
+                                  </div>
                                 </div>
                               </div>
-                              <div className="absolute bottom-6 left-0 right-0 flex justify-center">
-                                <div className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-800">
-                                  Found 1 of 50 Microlinos!
+                            </div>
+                            
+                            {/* Decorative elements */}
+                            <div className="absolute -bottom-4 -right-4 w-[220px] h-[220px] bg-heisocial-blue/20 rounded-full -z-10"></div>
+                            <div className="absolute -top-4 -left-4 w-[100px] h-[100px] bg-heisocial-purple/30 rounded-full -z-10"></div>
+                          </div>
+                        </div>
+                        
+                        {/* Right side: Features */}
+                        <div className="md:w-1/2 flex flex-col justify-center p-4">
+                          <div className="space-y-8">
+                            <div className="bg-white/80 backdrop-blur-sm p-5 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105">
+                              <div className="flex items-center">
+                                <div className="bg-heisocial-blue h-14 w-14 rounded-full flex items-center justify-center text-white text-2xl shadow-inner mr-4">
+                                  🗺️
+                                </div>
+                                <div>
+                                  <h4 className="font-bold text-xl text-heisocial-blue">AR Geocaching Adventure</h4>
+                                  <p className="text-gray-700">Find virtual Microlinos hidden throughout urban centers</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div className="bg-white/80 backdrop-blur-sm p-5 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105">
+                              <div className="flex items-center">
+                                <div className="bg-heisocial-purple h-14 w-14 rounded-full flex items-center justify-center text-white text-2xl shadow-inner mr-4">
+                                  📍
+                                </div>
+                                <div>
+                                  <h4 className="font-bold text-xl text-heisocial-purple">50 Strategic Locations</h4>
+                                  <p className="text-gray-700">Highlighting urban parking challenges solved by Microlino</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div className="bg-white/80 backdrop-blur-sm p-5 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105">
+                              <div className="flex items-center">
+                                <div className="bg-green-500 h-14 w-14 rounded-full flex items-center justify-center text-white text-2xl shadow-inner mr-4">
+                                  📱
+                                </div>
+                                <div>
+                                  <h4 className="font-bold text-xl text-green-600">Daily Social Media Clues</h4>
+                                  <p className="text-gray-700">Instagram Stories drive participation and viral sharing</p>
                                 </div>
                               </div>
                             </div>
