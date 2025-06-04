@@ -27,7 +27,7 @@ const Index = () => {
           ctaLink="/contact"
           secondaryCtaText="Explore Our Services"
           secondaryCtaLink="/services"
-          backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          backgroundImage="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         />
       </section>
 
@@ -116,15 +116,15 @@ const Index = () => {
             </article>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Team working together on digital marketing strategies"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Creative team brainstorming with colorful sticky notes and modern workspace"
                 className="rounded-lg shadow-xl"
                 loading="lazy"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Digital marketing dashboard showing analytics and metrics"
+                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Modern mobile phone displaying colorful marketing analytics dashboard"
                   className="rounded"
                   loading="lazy"
                 />
@@ -192,21 +192,21 @@ const Index = () => {
             <PortfolioCard
               title="Melbourne Tech Startup Rebrand"
               description="Complete brand overhaul for a Melbourne tech startup, resulting in 60% increase in local brand recognition and market penetration."
-              image="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              image="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               categories={["Branding", "Digital Strategy"]}
               link="/portfolio/global-tech-rebrand"
             />
             <PortfolioCard
               title="Australian E-commerce SEO Success"
               description="Comprehensive SEO strategy that increased organic traffic by 85% in just 4 months for an Australian e-commerce platform."
-              image="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               categories={["SEO", "Content Marketing"]}
               link="/portfolio/ecommerce-seo"
             />
             <PortfolioCard
               title="Sydney Lifestyle Brand Growth"
               description="Strategic social media campaign that tripled engagement and grew the follower base by 200% for a Sydney-based lifestyle brand."
-              image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              image="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               categories={["Social Media", "Content Creation"]}
               link="/portfolio/social-media-growth"
             />
@@ -326,7 +326,7 @@ const Index = () => {
               id="1"
               title="How AI is Revolutionising Content Marketing in Australia 2024"
               excerpt="Explore the transformative impact of artificial intelligence on content creation, distribution, and optimisation strategies for Australian businesses."
-              coverImage="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              coverImage="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               date="Mar 15, 2024"
               author="David Mitchell"
               category="AI Marketing"
@@ -336,7 +336,7 @@ const Index = () => {
               id="2"
               title="Local SEO Strategies That Drove Results for Australian Businesses"
               excerpt="An in-depth analysis of the most effective local SEO tactics that delivered measurable improvements in organic traffic and conversions for Australian companies."
-              coverImage="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              coverImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               date="Feb 28, 2024"
               author="Sophia Wang"
               category="SEO"
@@ -346,7 +346,7 @@ const Index = () => {
               id="3"
               title="Building a Cohesive Brand Across Australian Digital Channels"
               excerpt="Learn how to maintain consistent brand messaging and visual identity across multiple digital platforms to strengthen brand recognition in the Australian market."
-              coverImage="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              coverImage="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               date="Jan 20, 2024"
               author="James Wilson"
               category="Branding"
