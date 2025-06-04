@@ -19,18 +19,20 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <Hero
-        title="Elevate Your Digital Presence with AI-Powered Marketing"
-        subtitle="Innovative digital marketing strategies and AI solutions designed to help your business grow and adapt in the digital age."
-        ctaText="Get Started"
-        ctaLink="/contact"
-        secondaryCtaText="Explore Our Services"
-        secondaryCtaLink="/services"
-        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-      />
+      <section aria-label="Hero banner">
+        <Hero
+          title="Elevate Your Digital Presence with AI-Powered Marketing"
+          subtitle="Innovative digital marketing strategies and AI solutions designed to help your business grow and adapt in the digital age."
+          ctaText="Get Started"
+          ctaLink="/contact"
+          secondaryCtaText="Explore Our Services"
+          secondaryCtaLink="/services"
+          backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        />
+      </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50" aria-label="Our marketing services">
         <div className="container mx-auto">
           <SectionHeading
             title="Our Services"
@@ -38,7 +40,7 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             <ServiceCard
               title="Social Media Strategy"
               description="Build a strong social media presence with data-driven strategies and engaging content that resonates with your audience."
@@ -80,10 +82,10 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" aria-label="About Heisocial">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <article>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Transforming Businesses with <span className="gradient-text">Data-Driven Marketing</span>
               </h2>
@@ -93,7 +95,7 @@ const Index = () => {
               <p className="text-gray-600 mb-6">
                 We believe in transparent communication, data-driven decisions, and continuous innovation. Our approach is collaborative, working closely with you to understand your business goals and develop strategies that align with your vision.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-8">
+              <div className="grid grid-cols-2 gap-4 mt-8" role="list" aria-label="Company statistics">
                 <div className="bg-heisocial-lightpurple p-4 rounded-lg">
                   <h3 className="text-2xl font-bold text-heisocial-purple mb-2">250+</h3>
                   <p className="text-gray-700">Clients Worldwide</p>
@@ -111,18 +113,20 @@ const Index = () => {
                   <p className="text-gray-700">Client Satisfaction</p>
                 </div>
               </div>
-            </div>
+            </article>
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Team working together"
+                alt="Team working together on digital marketing strategies"
                 className="rounded-lg shadow-xl"
+                loading="lazy"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Digital marketing dashboard"
+                  alt="Digital marketing dashboard showing analytics and metrics"
                   className="rounded"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -131,7 +135,7 @@ const Index = () => {
       </section>
 
       {/* AI Solutions Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10">
+      <section className="py-20 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10" aria-label="AI-powered marketing solutions">
         <div className="container mx-auto">
           <SectionHeading
             title="AI-Powered Solutions"
@@ -139,43 +143,44 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Brain className="h-12 w-12 text-heisocial-purple mb-4" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+            <article className="bg-white p-6 rounded-lg shadow-md card-hover">
+              <Brain className="h-12 w-12 text-heisocial-purple mb-4" aria-hidden="true" />
               <h3 className="text-xl font-bold mb-2">AI Content Generation</h3>
               <p className="text-gray-600">
                 Create high-quality, SEO-optimized content at scale using advanced AI technology that adapts to your brand voice.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Lightbulb className="h-12 w-12 text-heisocial-purple mb-4" />
+            </article>
+            <article className="bg-white p-6 rounded-lg shadow-md card-hover">
+              <Lightbulb className="h-12 w-12 text-heisocial-purple mb-4" aria-hidden="true" />
               <h3 className="text-xl font-bold mb-2">Predictive Analytics</h3>
               <p className="text-gray-600">
                 Anticipate market trends and customer behavior with AI-powered predictive analytics to stay ahead of the competition.
               </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Settings className="h-12 w-12 text-heisocial-purple mb-4" />
+            </article>
+            <article className="bg-white p-6 rounded-lg shadow-md card-hover">
+              <Settings className="h-12 w-12 text-heisocial-purple mb-4" aria-hidden="true" />
               <h3 className="text-xl font-bold mb-2">Automation Tools</h3>
               <p className="text-gray-600">
                 Streamline your marketing workflows with intelligent automation that saves time and increases efficiency.
               </p>
-            </div>
+            </article>
           </div>
 
           <div className="text-center mt-12">
             <a
               href="/solutions/ai-tools"
               className="inline-flex items-center text-heisocial-blue hover:text-heisocial-purple transition-colors"
+              aria-label="Explore all AI marketing tools"
             >
-              Explore all our AI tools <span className="ml-2">→</span>
+              Explore all our AI tools <span className="ml-2" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* Portfolio Preview Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" aria-label="Our portfolio showcase">
         <div className="container mx-auto">
           <SectionHeading
             title="Our Portfolio"
@@ -183,7 +188,7 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             <PortfolioCard
               title="Global Tech Rebrand"
               description="Complete brand overhaul for a multinational tech company, resulting in 45% increase in brand recognition."
@@ -211,15 +216,16 @@ const Index = () => {
             <a
               href="/portfolio"
               className="inline-flex items-center text-heisocial-blue hover:text-heisocial-purple transition-colors"
+              aria-label="View all case studies and portfolio projects"
             >
-              View all case studies <span className="ml-2">→</span>
+              View all case studies <span className="ml-2" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50" aria-label="Client testimonials">
         <div className="container mx-auto">
           <SectionHeading
             title="Client Testimonials"
@@ -227,7 +233,7 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             <TestimonialCard
               quote="Heisocial transformed our digital marketing strategy. Their AI-driven approach helped us connect with our audience on a deeper level and significantly improved our conversion rates."
               author="Sarah Johnson"
@@ -251,7 +257,7 @@ const Index = () => {
       </section>
 
       {/* Resources Preview Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" aria-label="Free marketing resources">
         <div className="container mx-auto">
           <SectionHeading
             title="Free Resources & Insights"
@@ -259,9 +265,9 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <FileText className="h-12 w-12 text-heisocial-blue mb-4" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+            <article className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
+              <FileText className="h-12 w-12 text-heisocial-blue mb-4" aria-hidden="true" />
               <h3 className="text-xl font-bold mb-2">Ultimate SEO Guide 2023</h3>
               <p className="text-gray-600 mb-4">
                 Comprehensive guide to boosting your website rankings and driving organic traffic in today's competitive digital landscape.
@@ -269,12 +275,13 @@ const Index = () => {
               <a
                 href="/solutions/free-resources"
                 className="text-heisocial-blue hover:text-heisocial-purple transition-colors inline-flex items-center"
+                aria-label="Download Ultimate SEO Guide 2023"
               >
-                Download Guide <Download className="ml-2 h-4 w-4" />
+                Download Guide <Download className="ml-2 h-4 w-4" aria-hidden="true" />
               </a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <FileText className="h-12 w-12 text-heisocial-blue mb-4" />
+            </article>
+            <article className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
+              <FileText className="h-12 w-12 text-heisocial-blue mb-4" aria-hidden="true" />
               <h3 className="text-xl font-bold mb-2">Social Media Toolkit</h3>
               <p className="text-gray-600 mb-4">
                 Complete toolkit with templates, content calendars, and strategy frameworks to elevate your social media presence.
@@ -282,12 +289,13 @@ const Index = () => {
               <a
                 href="/solutions/free-resources"
                 className="text-heisocial-blue hover:text-heisocial-purple transition-colors inline-flex items-center"
+                aria-label="Download Social Media Toolkit"
               >
-                Download Toolkit <Download className="ml-2 h-4 w-4" />
+                Download Toolkit <Download className="ml-2 h-4 w-4" aria-hidden="true" />
               </a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <FileText className="h-12 w-12 text-heisocial-blue mb-4" />
+            </article>
+            <article className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
+              <FileText className="h-12 w-12 text-heisocial-blue mb-4" aria-hidden="true" />
               <h3 className="text-xl font-bold mb-2">AI Marketing Playbook</h3>
               <p className="text-gray-600 mb-4">
                 Learn how to implement AI into your marketing strategy with practical examples and actionable insights.
@@ -295,16 +303,17 @@ const Index = () => {
               <a
                 href="/solutions/free-resources"
                 className="text-heisocial-blue hover:text-heisocial-purple transition-colors inline-flex items-center"
+                aria-label="Download AI Marketing Playbook"
               >
-                Download Playbook <Download className="ml-2 h-4 w-4" />
+                Download Playbook <Download className="ml-2 h-4 w-4" aria-hidden="true" />
               </a>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       {/* Blog Preview Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50" aria-label="Latest marketing insights and blog posts">
         <div className="container mx-auto">
           <SectionHeading
             title="Latest Insights"
@@ -312,7 +321,7 @@ const Index = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             <BlogCard
               id="1"
               title="How AI is Revolutionizing Content Marketing in 2023"
@@ -349,8 +358,9 @@ const Index = () => {
             <a
               href="/blog"
               className="inline-flex items-center text-heisocial-blue hover:text-heisocial-purple transition-colors"
+              aria-label="Read more marketing articles and insights"
             >
-              Read more articles <span className="ml-2">→</span>
+              Read more articles <span className="ml-2" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -368,37 +378,41 @@ const Index = () => {
       />
 
       {/* Contact Form Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4" aria-label="Contact form and information">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <article>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Let's Start a <span className="gradient-text">Conversation</span>
               </h2>
               <p className="text-gray-600 mb-8">
                 Have a question or ready to get started? Fill out the form and our team will get back to you within 24 hours.
               </p>
-              <div className="space-y-6">
-                <div className="flex items-start">
+              <div className="space-y-6" role="list" aria-label="Contact information">
+                <div className="flex items-start" role="listitem">
                   <div className="bg-heisocial-lightpurple p-3 rounded-full mr-4">
-                    <Mail className="h-5 w-5 text-heisocial-purple" />
+                    <Mail className="h-5 w-5 text-heisocial-purple" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-medium">Email Us</h3>
-                    <p className="text-gray-600">info@heisocial.com</p>
+                    <a href="mailto:info@heisocial.com" className="text-gray-600 hover:text-heisocial-blue">
+                      info@heisocial.com
+                    </a>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div className="flex items-start" role="listitem">
                   <div className="bg-heisocial-lightpurple p-3 rounded-full mr-4">
-                    <Phone className="h-5 w-5 text-heisocial-purple" />
+                    <Phone className="h-5 w-5 text-heisocial-purple" aria-hidden="true" />
                   </div>
                   <div>
                     <h3 className="font-medium">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <a href="tel:+15551234567" className="text-gray-600 hover:text-heisocial-blue">
+                      +1 (555) 123-4567
+                    </a>
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <ContactForm />
             </div>
