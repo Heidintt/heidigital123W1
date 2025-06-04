@@ -33,7 +33,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -73,50 +73,129 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-display font-bold tracking-tight;
+    line-height: 1.2;
   }
 
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #EC4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
 
   h3 {
-    @apply text-xl md:text-2xl lg:text-3xl;
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-heisocial-blue hover:bg-heisocial-blue/90 text-white px-6 py-3 rounded-md transition-all;
+    @apply bg-gradient-to-r from-heisocial-blue to-heisocial-purple hover:from-heisocial-purple hover:to-heisocial-blue text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant hover:shadow-glow font-medium;
   }
 
   .btn-secondary {
-    @apply bg-heisocial-purple hover:bg-heisocial-purple/90 text-white px-6 py-3 rounded-md transition-all;
+    @apply bg-gradient-to-r from-heisocial-purple to-heisocial-pink hover:from-heisocial-pink hover:to-heisocial-purple text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant hover:shadow-glow-purple font-medium;
   }
 
   .btn-outline {
-    @apply border border-heisocial-blue text-heisocial-blue hover:bg-heisocial-blue/10 px-6 py-3 rounded-md transition-all;
+    @apply border-2 border-heisocial-blue text-heisocial-blue hover:bg-heisocial-blue hover:text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm font-medium;
+  }
+
+  .btn-glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant font-medium;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-500 hover:shadow-elegant hover:-translate-y-2 hover:scale-105 backdrop-blur-sm;
+  }
+
+  .card-modern {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-3xl shadow-soft hover:shadow-elegant transition-all duration-300;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-heisocial-blue to-heisocial-purple bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-heisocial-blue via-heisocial-purple to-heisocial-pink bg-clip-text text-transparent;
+  }
+
+  .gradient-aurora {
+    @apply bg-aurora bg-clip-text text-transparent;
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-32;
   }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .floating-card {
+    @apply card-modern p-8 animate-float;
+  }
+
+  .shimmer-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer-effect::before {
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer;
+    content: '';
+  }
+
+  .modern-input {
+    @apply bg-white/80 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-heisocial-blue/50 focus:border-transparent transition-all duration-300;
+  }
+
+  .icon-bounce {
+    @apply transition-transform duration-300 hover:scale-110 hover:rotate-12;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(79, 70, 229, 0.3);
+  color: #1E1B4B;
+}
+
+/* Smooth animations for route changes */
+.page-transition {
+  animation: fade-in 0.3s ease-out;
 }
