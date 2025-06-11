@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -19,7 +20,7 @@ const Index = () => {
       {/* Hero Section */}
       <section aria-label="Hero banner">
         <div className="relative">
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <div className="absolute inset-0 bg-black/60 z-10"></div>
           <Hero
             title="Elevate Your Digital Presence with AI-Powered Marketing"
             subtitle="Innovative digital marketing strategies and AI solutions designed to help Australian businesses grow and adapt in the digital age."
@@ -27,7 +28,7 @@ const Index = () => {
             ctaLink="/contact"
             secondaryCtaText="Explore Our Services"
             secondaryCtaLink="/services"
-            backgroundImage="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
           />
         </div>
       </section>
