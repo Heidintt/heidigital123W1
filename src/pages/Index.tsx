@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -6,7 +5,6 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import BlogCard from "@/components/BlogCard";
 import PortfolioCard from "@/components/PortfolioCard";
-import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
 import { 
@@ -20,15 +18,18 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section aria-label="Hero banner">
-        <Hero
-          title="Elevate Your Digital Presence with AI-Powered Marketing"
-          subtitle="Innovative digital marketing strategies and AI solutions designed to help Australian businesses grow and adapt in the digital age."
-          ctaText="Get Started"
-          ctaLink="/contact"
-          secondaryCtaText="Explore Our Services"
-          secondaryCtaLink="/services"
-          backgroundImage="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-        />
+        <div className="relative">
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
+          <Hero
+            title="Elevate Your Digital Presence with AI-Powered Marketing"
+            subtitle="Innovative digital marketing strategies and AI solutions designed to help Australian businesses grow and adapt in the digital age."
+            ctaText="Get Started"
+            ctaLink="/contact"
+            secondaryCtaText="Explore Our Services"
+            secondaryCtaLink="/services"
+            backgroundImage="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          />
+        </div>
       </section>
 
       {/* Services Section */}
@@ -95,24 +96,9 @@ const Index = () => {
               <p className="text-gray-600 mb-6">
                 We believe in transparent communication, data-driven decisions, and continuous innovation. Our approach is collaborative, working closely with you to understand your business goals and develop strategies that align with your vision and the Australian market.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-8" role="list" aria-label="Company statistics">
-                <div className="bg-heisocial-lightpurple p-4 rounded-lg">
-                  <h3 className="text-2xl font-bold text-heisocial-purple mb-2">150+</h3>
-                  <p className="text-gray-700">Australian Clients</p>
-                </div>
-                <div className="bg-heisocial-lightpurple p-4 rounded-lg">
-                  <h3 className="text-2xl font-bold text-heisocial-purple mb-2">300+</h3>
-                  <p className="text-gray-700">Projects Completed</p>
-                </div>
-                <div className="bg-heisocial-lightpurple p-4 rounded-lg">
-                  <h3 className="text-2xl font-bold text-heisocial-purple mb-2">8+</h3>
-                  <p className="text-gray-700">Years in Australia</p>
-                </div>
-                <div className="bg-heisocial-lightpurple p-4 rounded-lg">
-                  <h3 className="text-2xl font-bold text-heisocial-purple mb-2">98%</h3>
-                  <p className="text-gray-700">Client Satisfaction</p>
-                </div>
-              </div>
+              <p className="text-gray-600">
+                As a fresh and innovative startup, we bring modern perspectives and cutting-edge techniques to help your business thrive in today's competitive digital environment.
+              </p>
             </article>
             <div className="relative">
               <img
@@ -224,40 +210,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-gray-50" aria-label="Client testimonials">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Client Testimonials"
-            subtitle="Hear what our Australian clients have to say about working with us"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            <TestimonialCard
-              quote="Heisocial Australia transformed our digital marketing strategy. Their AI-driven approach helped us connect with the Australian market on a deeper level and significantly improved our conversion rates."
-              author="Sarah Thompson"
-              company="Melbourne Tech Solutions"
-              rating={5}
-            />
-            <TestimonialCard
-              quote="The team at Heisocial understands the Australian business landscape and consistently delivers results that exceed our expectations. Their approach to local SEO has dramatically improved our online visibility."
-              author="Michael O'Brien"
-              company="Sydney Retail Group"
-              rating={5}
-            />
-            <TestimonialCard
-              quote="Working with Heisocial Australia has been a game-changer for our Brisbane-based brand. Their strategic insights and creative approach to content marketing has helped us stand out in the competitive Australian market."
-              author="Emma Wilson"
-              company="Queensland Lifestyle Co."
-              rating={4}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Resources Preview Section */}
-      <section className="py-20 px-4" aria-label="Free marketing resources">
+      <section className="py-20 px-4 bg-gray-50" aria-label="Free marketing resources">
         <div className="container mx-auto">
           <SectionHeading
             title="Free Resources & Insights"
@@ -313,7 +267,7 @@ const Index = () => {
       </section>
 
       {/* Blog Preview Section */}
-      <section className="py-20 px-4 bg-gray-50" aria-label="Latest marketing insights and blog posts">
+      <section className="py-20 px-4" aria-label="Latest marketing insights and blog posts">
         <div className="container mx-auto">
           <SectionHeading
             title="Latest Insights"
