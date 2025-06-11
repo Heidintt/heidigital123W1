@@ -35,24 +35,24 @@ const Hero: React.FC<HeroProps> = ({
           : undefined
       }
     >
-      {/* Overlay for dark background images */}
+      {/* Enhanced overlay for better text visibility */}
       {backgroundImage && (
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
       )}
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-shadow-lg">
             {title}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in text-shadow-md" style={{ animationDelay: "0.2s" }}>
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
             {ctaText && (
               <Button
                 asChild
-                className="bg-heisocial-blue hover:bg-heisocial-blue/90 text-white py-6 px-8 rounded-md"
+                className="bg-heisocial-blue hover:bg-heisocial-blue/90 text-white py-6 px-8 rounded-md shadow-lg"
               >
                 <a href={ctaLink || "#"}>
                   {ctaText} <ArrowRight className="ml-2 h-5 w-5" />
@@ -63,7 +63,7 @@ const Hero: React.FC<HeroProps> = ({
               <Button
                 asChild
                 variant="outline"
-                className="border-2 border-heisocial-blue bg-transparent text-heisocial-blue hover:bg-heisocial-blue/10 py-6 px-8 rounded-md"
+                className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 py-6 px-8 rounded-md shadow-lg"
               >
                 <a href={secondaryCtaLink || "#"}>{secondaryCtaText}</a>
               </Button>

@@ -96,6 +96,14 @@ export default {
 				'elegant': '0 4px 25px rgba(0, 0, 0, 0.1)',
 				'card': '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)'
 			},
+			textShadow: {
+				'sm': '0 1px 2px rgba(0, 0, 0, 0.1)',
+				'DEFAULT': '0 2px 4px rgba(0, 0, 0, 0.1)',
+				'md': '0 4px 8px rgba(0, 0, 0, 0.3)',
+				'lg': '0 8px 16px rgba(0, 0, 0, 0.5)',
+				'xl': '0 16px 32px rgba(0, 0, 0, 0.7)',
+				'none': 'none'
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
@@ -158,5 +166,30 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addUtilities }: { addUtilities: any }) {
+			const newUtilities = {
+				'.text-shadow-sm': {
+					textShadow: '0 1px 2px rgba(0, 0, 0, 0.1)',
+				},
+				'.text-shadow': {
+					textShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+				},
+				'.text-shadow-md': {
+					textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+				},
+				'.text-shadow-lg': {
+					textShadow: '0 8px 16px rgba(0, 0, 0, 0.5)',
+				},
+				'.text-shadow-xl': {
+					textShadow: '0 16px 32px rgba(0, 0, 0, 0.7)',
+				},
+				'.text-shadow-none': {
+					textShadow: 'none',
+				},
+			}
+			addUtilities(newUtilities)
+		}
+	],
 } satisfies Config;
