@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({
     <div
       className={`relative px-4 py-32 md:py-48 flex items-center ${
         backgroundImage
-          ? "bg-cover bg-center text-white"
+          ? "bg-cover bg-center"
           : "bg-gradient-to-r from-heisocial-lightpurple to-heisocial-lightgray"
       }`}
       style={
@@ -42,10 +42,10 @@ const Hero: React.FC<HeroProps> = ({
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-white text-shadow-xl">
             {title}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in text-shadow-md" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in text-white text-shadow-lg" style={{ animationDelay: "0.2s" }}>
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
