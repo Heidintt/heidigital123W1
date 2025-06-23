@@ -1,16 +1,20 @@
 
 import React from "react";
 import Layout from "@/components/Layout";
-import Hero from "@/components/Hero";
 
 const MicrolinoStrategy = () => {
   return (
     <Layout>
-      <Hero
-        title="Microlino 2026 Australian Launch Campaign"
-        subtitle="Strategic Marketing Communications Campaign - 'Half the Space, Twice the Life'"
-        backgroundImage="/lovable-uploads/4122d0a9-afef-4722-8fc3-da6801946f64.png"
-      />
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            Microlino 2026 Australian Launch Campaign
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto">
+            Strategic Marketing Communications Campaign - &apos;Half the Space, Twice the Life&apos;
+          </p>
+        </div>
+      </section>
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
