@@ -11,9 +11,17 @@ const Portfolio = () => {
   
   const portfolioItems = [
     {
+      id: "microlino-strategy",
+      title: "Microlino 2026 Australian Launch Campaign",
+      description: "Comprehensive strategic marketing communications campaign for Microlino's Australian market entry, featuring the 'Half the Space, Twice the Life' concept and integrated multi-channel approach.",
+      image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications", "EV Marketing"],
+      link: "/portfolio/microlino-strategy"
+    },
+    {
       id: "microlino-campaign",
-      title: "Microlino 2026 Launch Campaign",
-      description: "Integrated Marketing Communications Campaign for Microlino's 2026 Australian Launch, focusing on urban mobility solutions.",
+      title: "Microlino 2026 Launch Campaign - Implementation",
+      description: "Detailed implementation guide for Microlino's 2026 Australian Launch, focusing on urban mobility solutions and innovative marketing activations.",
       image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications"],
       link: "/portfolio/microlino-campaign"
@@ -104,12 +112,14 @@ const Portfolio = () => {
     "All",
     "Social Media",
     "Marketing Strategy",
+    "Campaign Strategy",
     "Branding",
     "SEO",
     "Content Marketing",
     "Digital Ads",
     "Influencer Marketing",
     "AI Solutions",
+    "EV Marketing",
   ];
 
   const filteredItems = activeCategory === "All" 
