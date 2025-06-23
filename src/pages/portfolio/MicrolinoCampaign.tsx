@@ -13,51 +13,6 @@ const MicrolinoCampaign = () => {
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          {/* Campaign Rationale & Objectives */}
-          <div className="mb-16">
-            <div className="bg-white rounded-lg shadow-lg p-10">
-              <h3 className="text-3xl font-bold text-heisocial-blue mb-8 text-center">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
-                  Campaign Rationale & Objectives
-                </span>
-              </h3>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Rationale */}
-                <div className="bg-slate-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-pink-500">Rationale</h4>
-                  <p className="text-gray-700 mb-4">Australia's EV adoption is hindered by three main factors:</p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• High upfront cost</li>
-                    <li>• Range anxiety in urban environments</li>
-                    <li>• Scarcity of city parking (CPRC, 2023)</li>
-                  </ul>
-                </div>
-
-                {/* Microlino's Response */}
-                <div className="bg-slate-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-blue-500">Microlino's Response</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Price &lt; AUD 40,000 (Ricker, 2024)</li>
-                    <li>• 230 km city range (Microlino, n.d.)</li>
-                    <li>• Fits in half a parking spot; standard outlet charging (Microlino, n.d.)</li>
-                  </ul>
-                </div>
-
-                {/* Objectives - #TwiceTheLife */}
-                <div className="bg-slate-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-purple-500">Objectives - #TwiceTheLife</h4>
-                  <p className="text-gray-700 mb-3">Hierarchy of Effects:</p>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• <span className="font-medium">Awareness:</span> 60% aided recall (25-35 y.o. urban professionals)</li>
-                    <li>• <span className="font-medium">Engagement:</span> 5000 test-drive bookings</li>
-                    <li>• <span className="font-medium">Conversion:</span> 2000 pre-orders</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Frameworks & Strategic Foundations */}
           <div className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-10">
