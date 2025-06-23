@@ -2,7 +2,9 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import SectionHeading from "@/components/SectionHeading";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 const MicrolinoCampaign = () => {
   return (
@@ -13,208 +15,281 @@ const MicrolinoCampaign = () => {
         backgroundImage="/lovable-uploads/4122d0a9-afef-4722-8fc3-da6801946f64.png"
       />
 
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          {/* Campaign Overview */}
-          <div className="mb-16">
-            <SectionHeading
-              title="Campaign Overview"
-              subtitle="A comprehensive integrated marketing communications strategy for Microlino's Australian market entry"
-              centered
-            />
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                <div className="text-4xl mb-4">🎯</div>
-                <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Objective</h3>
-                <p className="text-gray-600">Build brand awareness and drive pre-orders for the 2026 Australian launch</p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                <div className="text-4xl mb-4">👥</div>
-                <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Target Audience</h3>
-                <p className="text-gray-600">Urban professionals aged 25-45 in Sydney, Melbourne, and Brisbane</p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-xl font-bold mb-4 text-heisocial-blue">Key Message</h3>
-                <p className="text-gray-600">"Half the Space, Twice the Life" - #TwiceTheLife</p>
-              </div>
-            </div>
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
+        {/* Campaign Overview */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Campaign Overview</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Strategic launch campaign targeting urban professionals with innovative micro-EV solution
+            </p>
           </div>
 
-          {/* Campaign Strategy */}
-          <div className="mb-16">
-            <SectionHeading
-              title="Strategic Approach"
-              subtitle="Multi-channel integrated marketing campaign"
-              centered
-            />
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-heisocial-blue">Campaign Rationale</h3>
-                <div className="bg-slate-50 p-6 rounded-lg">
-                  <h4 className="font-bold mb-3">Market Challenges</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• High EV upfront costs</li>
-                    <li>• Range anxiety in urban environments</li>
-                    <li>• Scarcity of city parking</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-slate-50 p-6 rounded-lg">
-                  <h4 className="font-bold mb-3">Microlino's Solution</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Price under AUD 40,000</li>
-                    <li>• 230 km city range</li>
-                    <li>• Fits in half a parking spot</li>
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-heisocial-blue">Campaign Objectives</h3>
-                <div className="bg-gradient-to-br from-heisocial-blue to-heisocial-purple text-white p-6 rounded-lg">
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold">Awareness</h4>
-                      <p className="text-sm opacity-90">60% aided recall among target audience</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-2xl text-blue-600">60%</CardTitle>
+                <p className="text-gray-600">Aided Recall Target</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">Among 25-35 year old urban professionals</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-2xl text-green-600">5,000</CardTitle>
+                <p className="text-gray-600">Test Drive Bookings</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">Engagement conversion target</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-2xl text-purple-600">2,000</CardTitle>
+                <p className="text-gray-600">Pre-Orders</p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500">Ultimate conversion goal</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Big Idea */}
+        <section className="mb-16">
+          <Card className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+            <CardContent className="p-12 text-center">
+              <h2 className="text-5xl font-bold mb-6">Half the Space, Twice the Life</h2>
+              <p className="text-xl mb-6">The Big Idea</p>
+              <Badge variant="secondary" className="text-lg px-6 py-2">
+                #TwiceTheLife
+              </Badge>
+              <p className="mt-6 text-lg opacity-90">
+                A pocket-EV that shrinks the car so drivers gain time, space and unmistakable eco-style
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Target Audience */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Target Audience</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <span className="mr-2">📍</span> Geographic
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Sydney, Brisbane & Melbourne CBDs</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <span className="mr-2">👤</span> Demographic
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>25-45 years old<br />Income: AUD 75-90k</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <span className="mr-2">🧠</span> Psychographic
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Eco-conscious, tech-savvy, design-driven</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <span className="mr-2">🚗</span> Behavioral
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>Short-distance drivers, mobile-first, social sharers</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Key Strategies */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">Key Campaign Strategies</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <Card className="bg-blue-50">
+              <CardHeader>
+                <CardTitle className="text-xl text-blue-700">Tiny EV Hunt Activation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Instagram AR filter hunt in 50 key urban spots</li>
+                  <li>• Daily clues via IG Stories</li>
+                  <li>• Virtual Microlino model discovery</li>
+                  <li>• Top 1000: VIP Test Drive + 10% discount</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-green-50">
+              <CardHeader>
+                <CardTitle className="text-xl text-green-700">Road Banner Bonus</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• "Half the Space, Twice the Life" rear-window banners</li>
+                  <li>• 6-month display commitment</li>
+                  <li>• Extra 5% off for new buyers (stackable)</li>
+                  <li>• QR code linking to booking page</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Media Mix */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">6-Week Media Flight</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Social Media (Paid)</CardTitle>
+                <Badge variant="outline">35% Budget</Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600">Instagram & TikTok Reels, YouTube Shorts</p>
+                <p className="text-sm font-medium mt-2">Target: 12M views, CTR ≥ 1.4%</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">OOH Transit</CardTitle>
+                <Badge variant="outline">20% Budget</Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600">Transit shelter advertising</p>
+                <p className="text-sm font-medium mt-2">Target: 6M impressions</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Influencer Content</CardTitle>
+                <Badge variant="outline">8% Budget</Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600">Micro-influencer vlogs</p>
+                <p className="text-sm font-medium mt-2">Target: 2.5M views, 1% swipe-up</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">AR Experience</CardTitle>
+                <Badge variant="outline">12% Budget</Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600">Tiny EV Hunt development & prizes</p>
+                <p className="text-sm font-medium mt-2">Target: 3,500 active hunters</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Banner Program</CardTitle>
+                <Badge variant="outline">5% Budget</Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600">Mobile billboard initiative</p>
+                <p className="text-sm font-medium mt-2">Target: 1,000 sign-ups</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Owned Media</CardTitle>
+                <Badge variant="outline">10% Budget</Badge>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-600">Website & CRM retargeting</p>
+                <p className="text-sm font-medium mt-2">Always-on conversion focus</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Campaign Timeline */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12">6-Week Campaign Timeline</h2>
+          <div className="space-y-6">
+            {[
+              { week: 1, title: "Hero Launch", description: "Paid Reels & Shorts + OOH domination; landing page live", color: "bg-blue-500" },
+              { week: 2, title: "AR Hunt Kick-off", description: "IG Stories clues; paid reach reminder", color: "bg-green-500" },
+              { week: 3, title: "Influence & Banner Push", description: "5 lifestyle creators drop vlogs; announce Banner Bonus", color: "bg-purple-500" },
+              { week: 4, title: "UGC Spotlight", description: "Reshare best Hunt videos & banner pics; 'Hall of Fame' carousel", color: "bg-orange-500" },
+              { week: 5, title: "Booking Surge", description: "Retarget site visitors with dynamic ads; email countdown", color: "bg-yellow-500" },
+              { week: 6, title: "Pre-Order Finale", description: "Live Q&A Reel with product lead; final 48-hour flash ad", color: "bg-red-500" }
+            ].map((item) => (
+              <Card key={item.week} className="overflow-hidden">
+                <div className="flex">
+                  <div className={`${item.color} w-2 flex-shrink-0`}></div>
+                  <CardContent className="flex-1 p-6">
+                    <div className="flex items-center mb-2">
+                      <Badge variant="secondary" className="mr-3">Week {item.week}</Badge>
+                      <h3 className="text-lg font-semibold">{item.title}</h3>
                     </div>
-                    <div>
-                      <h4 className="font-bold">Engagement</h4>
-                      <p className="text-sm opacity-90">5,000 test-drive bookings</p>
-                    </div>
-                    <div>
-                      <h4 className="font-bold">Conversion</h4>
-                      <p className="text-sm opacity-90">2,000 pre-orders</p>
-                    </div>
-                  </div>
+                    <p className="text-gray-600">{item.description}</p>
+                  </CardContent>
                 </div>
-              </div>
-            </div>
+              </Card>
+            ))}
           </div>
+        </section>
 
-          {/* Media Strategy */}
-          <div className="mb-16">
-            <SectionHeading
-              title="Integrated Media Plan"
-              subtitle="6-week multi-channel campaign"
-              centered
-            />
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-              <div className="bg-white border-l-4 border-blue-500 p-6 rounded-lg shadow">
-                <h4 className="font-bold text-blue-600 mb-2">Digital Advertising</h4>
-                <p className="text-sm text-gray-600 mb-3">Instagram & TikTok Reels, YouTube Shorts</p>
-                <div className="text-xs text-gray-500">35% budget allocation</div>
-              </div>
-              
-              <div className="bg-white border-l-4 border-green-500 p-6 rounded-lg shadow">
-                <h4 className="font-bold text-green-600 mb-2">Out-of-Home</h4>
-                <p className="text-sm text-gray-600 mb-3">Transit shelters in CBD areas</p>
-                <div className="text-xs text-gray-500">20% budget allocation</div>
-              </div>
-              
-              <div className="bg-white border-l-4 border-purple-500 p-6 rounded-lg shadow">
-                <h4 className="font-bold text-purple-600 mb-2">Influencer Marketing</h4>
-                <p className="text-sm text-gray-600 mb-3">Micro-influencer vlogs</p>
-                <div className="text-xs text-gray-500">8% budget allocation</div>
-              </div>
-              
-              <div className="bg-white border-l-4 border-orange-500 p-6 rounded-lg shadow">
-                <h4 className="font-bold text-orange-600 mb-2">AR Experience</h4>
-                <p className="text-sm text-gray-600 mb-3">Tiny EV Hunt activation</p>
-                <div className="text-xs text-gray-500">12% budget allocation</div>
-              </div>
-              
-              <div className="bg-white border-l-4 border-red-500 p-6 rounded-lg shadow">
-                <h4 className="font-bold text-red-600 mb-2">Banner Program</h4>
-                <p className="text-sm text-gray-600 mb-3">Customer advocacy initiative</p>
-                <div className="text-xs text-gray-500">5% budget allocation</div>
-              </div>
-              
-              <div className="bg-white border-l-4 border-indigo-500 p-6 rounded-lg shadow">
-                <h4 className="font-bold text-indigo-600 mb-2">Owned Media</h4>
-                <p className="text-sm text-gray-600 mb-3">Website & CRM campaigns</p>
-                <div className="text-xs text-gray-500">10% budget allocation</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Activations */}
-          <div className="mb-16">
-            <SectionHeading
-              title="Key Campaign Activations"
-              subtitle="Innovative engagement strategies"
-              centered
-            />
-            
-            <div className="space-y-8 mt-12">
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4">🔍 Tiny EV Hunt</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-bold mb-3">Mechanics</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Instagram AR filter hunt in 50 urban locations</li>
-                      <li>• Daily clues via Instagram Stories</li>
-                      <li>• Virtual Microlino model discovery</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-3">Rewards</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Top 1000: VIP test drive + 10% discount</li>
-                      <li>• Top 4000: 5% discount + swag pack</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white border border-gray-200 p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4 text-heisocial-blue">🎯 Road Banner Bonus</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-bold mb-3">For New Buyers</h4>
-                    <p className="text-gray-600">Display banner for 6 months → extra 5% discount (stackable)</p>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-3">For Prospects</h4>
-                    <p className="text-gray-600">Display banner on current car → 3% future voucher</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Expected Results */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-r from-heisocial-blue to-heisocial-purple text-white p-12 rounded-lg text-center">
+        {/* Success Metrics */}
+        <section>
+          <Card className="bg-gray-900 text-white">
+            <CardContent className="p-12 text-center">
               <h2 className="text-3xl font-bold mb-8">Expected Campaign Results</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                  <div className="text-4xl font-bold mb-2">60%</div>
-                  <div className="text-sm opacity-90">Aided Brand Recall</div>
+                  <div className="text-4xl font-bold text-blue-400 mb-2">60%</div>
+                  <p className="text-gray-300">Aided Recall Achievement</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">5K</div>
-                  <div className="text-sm opacity-90">Test Drive Bookings</div>
+                  <div className="text-4xl font-bold text-green-400 mb-2">1.2%+</div>
+                  <p className="text-gray-300">Social Media CTR</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">2K</div>
-                  <div className="text-sm opacity-90">Pre-orders</div>
+                  <div className="text-4xl font-bold text-purple-400 mb-2">3,500</div>
+                  <p className="text-gray-300">AR Hunt Participants</p>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold mb-2">3.5K</div>
-                  <div className="text-sm opacity-90">AR Hunt Participants</div>
+                  <div className="text-4xl font-bold text-pink-400 mb-2">2,000</div>
+                  <p className="text-gray-300">Pre-orders Secured</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              <Separator className="my-8 bg-gray-700" />
+              <p className="text-lg text-gray-300">
+                This campaign fuses robust theory with playful creativity to move urban professionals 
+                seamlessly from awareness to purchase, empowering them to <span className="font-bold text-white">"Half the Space, Twice the Life."</span>
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+      </div>
     </Layout>
   );
 };
