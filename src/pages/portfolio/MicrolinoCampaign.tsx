@@ -10,30 +10,11 @@ const MicrolinoCampaign = () => {
       <Hero
         title="Microlino 2026 Australian Launch Campaign"
         subtitle="Integrated Marketing Communications Campaign by Heisocial Communications"
-        backgroundImage="/lovable-uploads/895ec4fd-4907-4454-822d-b5a1f565408c.png"
+        backgroundImage="/lovable-uploads/4122d0a9-afef-4722-8fc3-da6801946f64.png"
       />
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          {/* Title Slide */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-lg overflow-hidden relative p-10 min-h-[400px] flex flex-col justify-center">
-              <img 
-                src="/lovable-uploads/895ec4fd-4907-4454-822d-b5a1f565408c.png" 
-                alt="Microlino 2026 Australian Launch" 
-                className="absolute inset-0 w-full h-full object-cover opacity-80"
-              />
-              <div className="relative z-10 text-white">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
-                  Microlino 2026 Australian Launch Campaign
-                </h2>
-                <div className="text-xl md:text-2xl mb-4">Campaign: Microlino 2026 Australian Launch</div>
-                <div className="text-xl md:text-2xl mb-4">Agency: Heisocial Communications</div>
-                <div className="text-lg md:text-xl">Presenter: Thi Thu Huong Nguyen</div>
-              </div>
-            </div>
-          </div>
-
           {/* Campaign Rationale & Objectives */}
           <div className="mb-16">
             <div className="bg-white rounded-lg shadow-lg p-10">
@@ -179,63 +160,6 @@ const MicrolinoCampaign = () => {
                     src="/lovable-uploads/a15882dc-97d3-47bb-b7cd-d3c2fac149c7.png" 
                     alt="Target audience visualization" 
                     className="w-full h-auto rounded-lg opacity-80"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* User Persona */}
-          <div className="mb-16">
-            <div className="bg-white rounded-lg shadow-lg p-10">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
-                  User Persona
-                </span>
-              </h3>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="bg-slate-700 text-white p-6 rounded-lg">
-                    <h4 className="text-2xl font-bold mb-4">Alex Tran</h4>
-                    <div className="space-y-2">
-                      <p><span className="font-medium">Age:</span> 29</p>
-                      <p><span className="font-medium">Occupation:</span> UX Designer at a fintech startup</p>
-                      <p><span className="font-medium">Income:</span> AUD 82,000/year</p>
-                      <p><span className="font-medium">Location:</span> Inner-city Melbourne</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-slate-600 text-white p-6 rounded-lg">
-                    <h5 className="font-bold mb-3">Goals</h5>
-                    <ul className="space-y-1 text-sm">
-                      <li>• Reduce carbon footprint</li>
-                      <li>• Stand out with a unique car</li>
-                      <li>• Avoid parking stress</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-slate-500 text-white p-6 rounded-lg">
-                    <h5 className="font-bold mb-3">Pain Points</h5>
-                    <ul className="space-y-1 text-sm">
-                      <li>• High EV prices</li>
-                      <li>• Lack of charging options</li>
-                      <li>• City parking frustration</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-slate-400 text-white p-6 rounded-lg">
-                    <h5 className="font-bold mb-3">Digital Presence</h5>
-                    <p className="text-sm mb-2">Preferred Platforms: Instagram, YouTube, TikTok</p>
-                    <p className="text-sm italic">"I want an eco-friendly, stylish car that fits my city lifestyle without costing a fortune—or a parking battle."</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-center">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                    alt="Alex Tran - User Persona" 
-                    className="w-full max-w-md h-auto rounded-lg shadow-lg"
                   />
                 </div>
               </div>
