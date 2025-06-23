@@ -28,7 +28,7 @@ const MicrolinoStrategy = () => {
                 {/* Rationale */}
                 <div className="bg-slate-700 p-6 rounded-lg">
                   <h4 className="text-xl font-bold mb-4 text-pink-300">Rationale</h4>
-                  <p className="text-gray-300 mb-4">Australia's EV adoption is hindered by three main factors:</p>
+                  <p className="text-gray-300 mb-4">Australia&apos;s EV adoption is hindered by three main factors:</p>
                   <ul className="space-y-2 text-gray-300">
                     <li>• High upfront cost</li>
                     <li>• Range anxiety in urban environments</li>
@@ -38,9 +38,9 @@ const MicrolinoStrategy = () => {
 
                 {/* Microlino's Response */}
                 <div className="bg-slate-600 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-blue-300">Microlino's Response</h4>
+                  <h4 className="text-xl font-bold mb-4 text-blue-300">Microlino&apos;s Response</h4>
                   <ul className="space-y-2 text-gray-300">
-                    <li>• Price < AUD 40,000 (Ricker, 2024)</li>
+                    <li>• Price &lt; AUD 40,000 (Ricker, 2024)</li>
                     <li>• 230 km city range (Microlino, n.d.)</li>
                     <li>• Fits in half a parking spot; standard outlet charging (Microlino, n.d.)</li>
                   </ul>
@@ -107,7 +107,7 @@ const MicrolinoStrategy = () => {
                   
                   <div className="bg-slate-600 p-6 rounded-lg">
                     <h4 className="text-lg font-bold mb-3 text-green-300">Brand Equity Building (Keller, 1993)</h4>
-                    <p className="text-sm text-gray-300">Reinforce "Half the Space, Twice the Life" consistently across all touch-points</p>
+                    <p className="text-sm text-gray-300">Reinforce &quot;Half the Space, Twice the Life&quot; consistently across all touch-points</p>
                     <p className="text-sm text-gray-300 mt-2">Build associations of affordability, sustainability, and joyful urban driving</p>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ const MicrolinoStrategy = () => {
                     <div>
                       <h6 className="font-bold text-purple-300">Digital Presence</h6>
                       <p className="text-sm text-gray-300">Preferred Platforms: Instagram, YouTube, TikTok</p>
-                      <p className="text-sm text-gray-300 italic">"I want an eco-friendly, stylish car that fits my city lifestyle without costing a fortune—or a parking battle."</p>
+                      <p className="text-sm text-gray-300 italic">&quot;I want an eco-friendly, stylish car that fits my city lifestyle without costing a fortune—or a parking battle.&quot;</p>
                     </div>
                   </div>
                 </div>
@@ -208,7 +208,7 @@ const MicrolinoStrategy = () => {
                 <div className="bg-slate-700 p-8 rounded-lg text-center">
                   <div className="text-4xl mb-4">💡</div>
                   <h4 className="text-xl font-bold mb-4 text-yellow-300">Concept</h4>
-                  <p className="text-lg font-semibold">"Half the Space, Twice the Life"</p>
+                  <p className="text-lg font-semibold">&quot;Half the Space, Twice the Life&quot;</p>
                 </div>
                 
                 <div className="bg-slate-600 p-8 rounded-lg text-center">
@@ -329,7 +329,7 @@ const MicrolinoStrategy = () => {
                 
                 <div className="bg-slate-500 p-6 rounded-lg">
                   <h4 className="text-xl font-bold mb-4 text-green-300">Social Proof</h4>
-                  <p>Friends admire the vehicle's compact beauty</p>
+                  <p>Friends admire the vehicle&apos;s compact beauty</p>
                 </div>
               </div>
               
@@ -340,7 +340,7 @@ const MicrolinoStrategy = () => {
               
               <div className="text-center">
                 <div className="bg-gradient-to-r from-purple-500 to-pink-500 inline-block px-6 py-3 rounded-lg">
-                  <p className="font-bold">Overlay: "Half the Space, Twice the Life - Book a Test Drive at microlino.com.au" CTA + Hashtag: #TwiceTheLife</p>
+                  <p className="font-bold">Overlay: &quot;Half the Space, Twice the Life - Book a Test Drive at microlino.com.au&quot; CTA + Hashtag: #TwiceTheLife</p>
                 </div>
               </div>
             </div>
@@ -431,7 +431,7 @@ const MicrolinoStrategy = () => {
               <div className="mt-8 text-center">
                 <div className="bg-slate-600 p-6 rounded-lg inline-block">
                   <p className="text-lg font-bold text-yellow-300">Campaign Tagline:</p>
-                  <p className="text-2xl font-bold text-white">"Microlino: Leading the charge"</p>
+                  <p className="text-2xl font-bold text-white">&quot;Microlino: Leading the charge&quot;</p>
                   <p className="text-sm text-gray-300 mt-2">Drive the future, today.</p>
                 </div>
               </div>
