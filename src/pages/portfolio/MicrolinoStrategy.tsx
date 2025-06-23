@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 
@@ -438,6 +437,382 @@ const MicrolinoStrategy = () => {
                   <p className="text-2xl font-bold text-white">&quot;Microlino: Leading the charge&quot;</p>
                   <p className="text-sm text-gray-300 mt-2">Drive the future, today.</p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Creative Strategy Rationale */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  Creative Strategy Rationale
+                </span>
+              </h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left Column */}
+                <div className="space-y-6">
+                  <div className="bg-slate-700 p-6 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                        <span className="text-2xl">🎬</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-blue-300">Storytelling triggers affective response</h4>
+                    </div>
+                    <p className="text-gray-300">Emotional connection through narrative structure</p>
+                  </div>
+                  
+                  <div className="bg-slate-600 p-6 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                        <span className="text-2xl">🎯</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-purple-300">Experiential AR = emotional memory + earned media</h4>
+                    </div>
+                    <p className="text-gray-300">Creating lasting impressions through interactive experiences</p>
+                  </div>
+                </div>
+                
+                {/* Right Column */}
+                <div className="space-y-6">
+                  <div className="bg-slate-600 p-6 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                        <span className="text-2xl">⚓</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-green-300">Rational anchors reduce decision hesitation</h4>
+                    </div>
+                    <p className="text-gray-300">Providing logical justification for emotional decisions</p>
+                  </div>
+                  
+                  <div className="bg-slate-500 p-6 rounded-lg">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
+                        <span className="text-2xl">🎨</span>
+                      </div>
+                      <h4 className="text-xl font-bold text-orange-300">Creative mapped to Hierarchy of Effects and Tri-Component Model</h4>
+                    </div>
+                    <p className="text-gray-300">Strategic alignment with established marketing frameworks</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Integrated Media Plan - 6-Week Flight */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  Integrated Media Plan – 6-Week Flight
+                </span>
+              </h3>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-600">
+                      <th className="py-3 px-4 text-pink-300">Channel</th>
+                      <th className="py-3 px-4 text-blue-300">PESO Role</th>
+                      <th className="py-3 px-4 text-green-300">Hierarchy Stage</th>
+                      <th className="py-3 px-4 text-yellow-300">KPI Target</th>
+                      <th className="py-3 px-4 text-purple-300">Budget Share</th>
+                      <th className="py-3 px-4 text-orange-300">Timing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700">
+                      <td className="py-3 px-4">Instagram & TikTok Reels (Paid)</td>
+                      <td className="py-3 px-4">Paid</td>
+                      <td className="py-3 px-4">Awareness → Engagement</td>
+                      <td className="py-3 px-4">12M views, CTR ≥ 1.4%</td>
+                      <td className="py-3 px-4">35%</td>
+                      <td className="py-3 px-4">Daily 5-8 pm, Weeks 1-6</td>
+                    </tr>
+                    <tr className="border-b border-slate-700">
+                      <td className="py-3 px-4">YouTube Shorts (Paid)</td>
+                      <td className="py-3 px-4">Paid</td>
+                      <td className="py-3 px-4">Awareness</td>
+                      <td className="py-3 px-4">3M views</td>
+                      <td className="py-3 px-4">10%</td>
+                      <td className="py-3 px-4">Weeks 1-3 burst</td>
+                    </tr>
+                    <tr className="border-b border-slate-700">
+                      <td className="py-3 px-4">OOH Transit Shelters</td>
+                      <td className="py-3 px-4">Paid</td>
+                      <td className="py-3 px-4">Awareness → Knowledge</td>
+                      <td className="py-3 px-4">6M impressions</td>
+                      <td className="py-3 px-4">20%</td>
+                      <td className="py-3 px-4">4-week flight, 24/7</td>
+                    </tr>
+                    <tr className="border-b border-slate-700">
+                      <td className="py-3 px-4">Micro-Influencer Vlogs</td>
+                      <td className="py-3 px-4">Earned</td>
+                      <td className="py-3 px-4">Preference</td>
+                      <td className="py-3 px-4">2.5M views, 1% swipe-up</td>
+                      <td className="py-3 px-4">8% (product contra)</td>
+                      <td className="py-3 px-4">Drops Wk 3 & 4</td>
+                    </tr>
+                    <tr className="border-b border-slate-700">
+                      <td className="py-3 px-4">Tiny EV Hunt (AR)</td>
+                      <td className="py-3 px-4">Shared</td>
+                      <td className="py-3 px-4">Engagement → Conviction</td>
+                      <td className="py-3 px-4">3500 active hunters, 3000 UGC posts</td>
+                      <td className="py-3 px-4">12% (dev + prizes)</td>
+                      <td className="py-3 px-4">Weeks 2-4</td>
+                    </tr>
+                    <tr className="border-b border-slate-700">
+                      <td className="py-3 px-4">Banner Bonus Programme</td>
+                      <td className="py-3 px-4">Shared/Owned</td>
+                      <td className="py-3 px-4">Conviction → Purchase</td>
+                      <td className="py-3 px-4">1000 banner sign-ups</td>
+                      <td className="py-3 px-4">5%</td>
+                      <td className="py-3 px-4">Launch Wk 3; active 6 mo</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4">Microlino.com.au & CRM</td>
+                      <td className="py-3 px-4">Owned</td>
+                      <td className="py-3 px-4">Purchase</td>
+                      <td className="py-3 px-4">5000 test-drives, 2000 pre-orders</td>
+                      <td className="py-3 px-4">10%</td>
+                      <td className="py-3 px-4">Always-on, retarget Wk 5-6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          {/* 6-Week Content & Flight Calendar */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  6-Week Content & Flight Calendar
+                </span>
+              </h3>
+              
+              <div className="space-y-8">
+                {/* Week 1 */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-blue-300 mb-2">Week 1 – Hero Launch</h4>
+                    <p className="text-gray-300">Paid Reels & Shorts + OOH domination; landing page live.</p>
+                  </div>
+                </div>
+
+                {/* Week 2 */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🔗</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-purple-300 mb-2">Week 2 – AR Hunt Kick-off</h4>
+                    <p className="text-gray-300">IG Stories clues; paid reach reminder.</p>
+                  </div>
+                </div>
+
+                {/* Week 3 */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">✖️</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-green-300 mb-2">Week 3 – Influence & Banner Push</h4>
+                    <p className="text-gray-300">5 lifestyle creators drop vlogs; announce Banner Bonus across channels.</p>
+                  </div>
+                </div>
+
+                {/* Week 4 */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">📸</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-yellow-300 mb-2">Week 4 – UGC Spotlight</h4>
+                    <p className="text-gray-300">Reshare best Hunt videos & banner pics; &apos;Hall of Fame&apos; carousel; earned PR pitch.</p>
+                  </div>
+                </div>
+
+                {/* Week 5 */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">📅</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-red-300 mb-2">Week 5 – Booking Surge</h4>
+                    <p className="text-gray-300">Retarget site visitors with dynamic ads; email countdown &apos;Last chance for 5% off&apos;.</p>
+                  </div>
+                </div>
+
+                {/* Week 6 */}
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🛒</span>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-indigo-300 mb-2">Week 6 – Pre-Order Finale</h4>
+                    <p className="text-gray-300">Live Q&A Reel with product lead; final 48-hour flash ad; influencers post follow-up stories.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tiny EV Hunt Activation */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  Tiny EV Hunt Activation
+                </span>
+              </h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Mechanics */}
+                <div className="bg-slate-700 p-6 rounded-lg">
+                  <h4 className="text-2xl font-bold mb-6 text-pink-300">Mechanics</h4>
+                  <ul className="space-y-3 text-gray-300">
+                    <li>• Instagram AR filter hunt in 50 key urban spots</li>
+                    <li>• Daily clues via IG Stories</li>
+                    <li>• Players scan and find virtual Microlino models</li>
+                  </ul>
+                </div>
+                
+                {/* Rewards */}
+                <div className="bg-slate-600 p-6 rounded-lg">
+                  <h4 className="text-2xl font-bold mb-6 text-blue-300">Rewards</h4>
+                  <ul className="space-y-3 text-gray-300">
+                    <li>• <span className="font-medium">Top 1000:</span> VIP Test Drive + 10% pre-order discount + Swag Pack</li>
+                    <li>• <span className="font-medium">Top 4000:</span> 5% discount + Swag Pack (stackable with Banner Bonus) and Test Drive</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Road Banner Bonus */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  Road Banner Bonus
+                </span>
+              </h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                {/* New Microlino buyers */}
+                <div className="bg-slate-700 p-6 rounded-lg">
+                  <h4 className="text-xl font-bold mb-4 text-pink-300">New Microlino buyers</h4>
+                  <p className="text-gray-300 mb-4">Who display a &quot;Half the Space, Twice the Life&quot; rear-window banner for <span className="font-bold">6 months</span> receive an <span className="font-bold text-green-300">extra 5% off</span>—<span className="font-style-italic">stackable with any Hunt reward earned.</span></p>
+                </div>
+
+                {/* Prospective buyers */}
+                <div className="bg-slate-600 p-6 rounded-lg">
+                  <h4 className="text-xl font-bold mb-4 text-blue-300">Prospective buyers</h4>
+                  <p className="text-gray-300">Who place the same banner on their current car for <span className="font-bold">6 months</span> earn a <span className="font-bold text-green-300">3% voucher</span> toward a future Microlino—also stackable.</p>
+                </div>
+
+                {/* Mobile Billboard */}
+                <div className="bg-slate-500 p-6 rounded-lg">
+                  <h4 className="text-xl font-bold mb-4 text-purple-300">Mobile Billboard</h4>
+                  <p className="text-gray-300">Each banner carries a QR code linking to the booking page, turning every participant into a mobile billboard.</p>
+                </div>
+              </div>
+              
+              <div className="bg-slate-600 p-6 rounded-lg mb-6">
+                <h4 className="text-xl font-bold mb-4 text-yellow-300">Objectives Supported:</h4>
+                <p className="text-gray-300">Awareness, Engagement, Conversion, Encourages UGC and emotional bonding</p>
+              </div>
+              
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/1cbe524d-f771-4ed1-a266-0fd8ed35c5f9.png" 
+                  alt="Road Banner Bonus Visual" 
+                  className="w-full max-w-md h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Campaign Evaluation & Conclusion */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  Campaign Evaluation & Conclusion
+                </span>
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-8">
+                <div className="bg-slate-700 p-8 rounded-lg">
+                  <div className="text-6xl font-bold text-blue-400 mb-4">60%</div>
+                  <h4 className="text-xl font-bold mb-2 text-blue-300">Aided Recall</h4>
+                  <p className="text-gray-300 text-sm">Awareness KPI target</p>
+                </div>
+                
+                <div className="bg-slate-600 p-8 rounded-lg">
+                  <div className="text-6xl font-bold text-green-400 mb-4">1.2%</div>
+                  <h4 className="text-xl font-bold mb-2 text-green-300">CTR</h4>
+                  <p className="text-gray-300 text-sm">Engagement minimum target</p>
+                </div>
+                
+                <div className="bg-slate-500 p-8 rounded-lg">
+                  <div className="text-6xl font-bold text-purple-400 mb-4">3500</div>
+                  <h4 className="text-xl font-bold mb-2 text-purple-300">AR Users</h4>
+                  <p className="text-gray-300 text-sm">Engagement activity target</p>
+                </div>
+                
+                <div className="bg-slate-400 p-8 rounded-lg">
+                  <div className="text-6xl font-bold text-yellow-400 mb-4">2000</div>
+                  <h4 className="text-xl font-bold mb-2 text-yellow-300">Pre-orders</h4>
+                  <p className="text-gray-300 text-sm">Conversion ultimate goal</p>
+                </div>
+              </div>
+              
+              <div className="bg-slate-600 p-6 rounded-lg mb-6">
+                <h4 className="text-xl font-bold mb-4 text-yellow-300">Weekly Optimisation:</h4>
+                <p className="text-gray-300">Dashboard-driven media allocation (Rigby et al., 2018)</p>
+              </div>
+              
+              <div className="bg-slate-700 p-6 rounded-lg">
+                <h4 className="text-xl font-bold mb-4 text-green-300">Conclusion:</h4>
+                <p className="text-gray-300 mb-4">This campaign fuses robust theory with playful creativity to move urban professionals seamlessly from awareness to purchase. Microlino empowers them to <span className="font-bold text-white">&quot;Half the Space, Twice the Life.&quot;</span> Thank you.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* References */}
+          <div className="mb-16">
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
+              <h3 className="text-3xl font-bold text-center mb-8">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-purple-300">
+                  References
+                </span>
+              </h3>
+              
+              <div className="space-y-4 text-gray-300">
+                <p>Ajzen, I., & Fishbein, M. (1980). <em>Understanding attitudes and predicting social behavior.</em> Prentice-Hall.</p>
+                
+                <p>Keller, K. L. (1993). Conceptualizing, measuring, and managing customer-based brand equity. <em>Journal of Marketing</em>, 57(1), 1-22. https://doi.org/10.1177/002224299305700101</p>
+                
+                <p>Lavidge, R. J., & Steiner, G. A. (1961). A model for predictive measurements of advertising effectiveness. <em>Journal of Marketing</em>, 25(6), 59-62. https://doi.org/10.2307/1248516</p>
+                
+                <p>Mintel. (2023). <em>Australian urban consumer trends report 2023.</em> Mintel Group Ltd.</p>
+                
+                <p>NALSPA. (2022). <em>Australian electric-vehicle consumer insights survey.</em> National Automotive Leasing & Salary Packaging Association.</p>
+                
+                <p>Rigby, D. K., Sutherland, J., & Noble, A. (2018). Agile at scale. <em>Harvard Business Review</em>, 96(3), 88-96.</p>
+                
+                <p>Vakratsas, D., & Ambler, T. (1999). How advertising works: What do we really know? <em>Journal of Marketing</em>, 63(1), 26-43. https://doi.org/10.1177/002224299906300103</p>
+                
+                <p>Ricker, T. (2024, March 14). Microlino electric bubble car review: urban delight. <em>The Verge</em>. https://www.theverge.com/24093189/microlino-review-microcar-specs-price</p>
+                
+                <p>Microlino. (n.d.). <em>Discover the microlino.</em> https://microlino-car.com/en-us/microlino</p>
               </div>
             </div>
           </div>
