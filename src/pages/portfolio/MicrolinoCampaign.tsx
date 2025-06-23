@@ -59,7 +59,7 @@ const MicrolinoCampaign = () => {
                 <div className="bg-slate-50 p-6 rounded-lg">
                   <h4 className="text-xl font-bold mb-4 text-blue-500">Microlino's Response</h4>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Price < AUD 40,000 (Ricker, 2024)</li>
+                    <li>• Price &lt; AUD 40,000 (Ricker, 2024)</li>
                     <li>• 230 km city range (Microlino, n.d.)</li>
                     <li>• Fits in half a parking spot; standard outlet charging (Microlino, n.d.)</li>
                   </ul>
