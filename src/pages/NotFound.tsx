@@ -19,21 +19,21 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <div className="min-h-[70vh] flex items-center justify-center">
+      <div className="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="text-center max-w-lg px-4">
-          <div className="text-8xl font-bold text-heisocial-blue mb-6">404</div>
+          <div className="text-6xl font-bold text-heidigital-blue mb-5">404</div>
           <SectionHeading
             title="Page Not Found"
             subtitle={`Sorry, we couldn't find the page you're looking for: ${location.pathname}`}
             centered
           />
-          <p className="mt-6 mb-8 text-gray-600">
+          <p className="mt-5 mb-6 text-gray-600 text-base">
             The page you are looking for might have been removed, had its name changed,
             or is temporarily unavailable.
           </p>
-          <Button asChild className="bg-heisocial-blue hover:bg-heisocial-blue/90">
+          <Button asChild className="bg-heidigital-blue hover:bg-heidigital-blue/90">
             <Link to="/" className="flex items-center gap-2">
-              <Home size={18} /> Return to Home
+              <Home size={16} /> Return to Home
             </Link>
           </Button>
         </div>
