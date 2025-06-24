@@ -147,7 +147,7 @@ const FMCGDAOStrategy = () => {
             <h3 className="text-2xl font-bold mb-6 text-center">Research Question</h3>
             <div className="bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10 rounded-lg p-6 text-center">
               <p className="text-lg font-medium text-gray-800">
-                "How will the adoption of Web3-based community-owned DAO models change brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035?"
+                How will the adoption of Web3-based community-owned DAO models change brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035?
               </p>
             </div>
           </div>
@@ -447,7 +447,7 @@ const FMCGDAOStrategy = () => {
               <Users className="w-8 h-8 text-purple-500 mb-4" />
               <h3 className="font-bold text-lg mb-3">Governance Participation</h3>
               <p className="text-gray-600 mb-4">
-                Many DAOs experience low voting participation (often <1%) with small groups controlling majority voting power.
+                Many DAOs experience low voting participation (often less than 1%) with small groups controlling majority voting power.
               </p>
               <div className="text-sm text-gray-500">
                 <strong>Impact:</strong> Risk of oligarchic governance structures undermining democratic principles
