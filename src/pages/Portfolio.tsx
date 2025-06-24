@@ -11,6 +11,14 @@ const Portfolio = () => {
   
   const portfolioItems = [
     {
+      id: "fmcg-dao-strategy",
+      title: "Web3 DAO Models in FMCG Marketing Strategy",
+      description: "Academic research exploring how Web3-based community-owned DAO models can transform brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035.",
+      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Marketing Strategy", "Academic Research", "Web3 & Blockchain", "Consumer Engagement"],
+      link: "/portfolio/fmcg-dao-strategy"
+    },
+    {
       id: "microlino-strategy",
       title: "Microlino 2026 Australian Launch Campaign",
       description: "Comprehensive strategic marketing communications campaign for Microlino's Australian market entry, featuring the 'Half the Space, Twice the Life' concept and integrated multi-channel approach.",
@@ -120,6 +128,9 @@ const Portfolio = () => {
     "Influencer Marketing",
     "AI Solutions",
     "EV Marketing",
+    "Academic Research",
+    "Web3 & Blockchain",
+    "Consumer Engagement",
   ];
 
   const filteredItems = activeCategory === "All" 

@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -39,6 +38,7 @@ import LuaHongBuffet from "./pages/portfolio/LuaHongBuffet";
 import IChooseTheSun from "./pages/portfolio/IChooseTheSun";
 import MicrolinoCampaign from "./pages/portfolio/MicrolinoCampaign";
 import MicrolinoStrategy from "./pages/portfolio/MicrolinoStrategy";
+import FMCGDAOStrategy from "./pages/portfolio/FMCGDAOStrategy";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +58,7 @@ const App = () => (
           <Route path="/portfolio/i-choose-the-sun" element={<IChooseTheSun />} />
           <Route path="/portfolio/microlino-campaign" element={<MicrolinoCampaign />} />
           <Route path="/portfolio/microlino-strategy" element={<MicrolinoStrategy />} />
+          <Route path="/portfolio/fmcg-dao-strategy" element={<FMCGDAOStrategy />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/solutions" element={<Solutions />} />
