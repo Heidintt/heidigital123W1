@@ -47,31 +47,9 @@ const Navbar = () => {
               Home
             </Link>
             
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heidigital-blue transition-colors">
-                Services <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link to="/services/social-media" className="w-full">Social Media Strategy</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/services/content-creation" className="w-full">Content Creation</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/services/seo" className="w-full">SEO</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/services/branding" className="w-full">Branding</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/services/digital-ads" className="w-full">Digital Ads</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/services/ai-marketing" className="w-full">AI Marketing</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link to="/services" className="text-gray-700 hover:text-heidigital-blue transition-colors">
+              Services
+            </Link>
 
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heidigital-blue transition-colors">
@@ -124,53 +102,13 @@ const Navbar = () => {
               >
                 Home
               </Link>
-              <div className="py-2">
-                <div className="font-medium mb-2">Services</div>
-                <div className="ml-4 space-y-2">
-                  <Link
-                    to="/services/social-media"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Social Media Strategy
-                  </Link>
-                  <Link
-                    to="/services/content-creation"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Content Creation
-                  </Link>
-                  <Link
-                    to="/services/seo"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    SEO
-                  </Link>
-                  <Link
-                    to="/services/branding"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Branding
-                  </Link>
-                  <Link
-                    to="/services/digital-ads"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Digital Ads
-                  </Link>
-                  <Link
-                    to="/services/ai-marketing"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    AI Marketing
-                  </Link>
-                </div>
-              </div>
+              <Link
+                to="/services"
+                className="text-gray-700 hover:text-heidigital-blue py-2 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Services
+              </Link>
               <div className="py-2">
                 <div className="font-medium mb-2">Solutions</div>
                 <div className="ml-4 space-y-2">

@@ -1,9 +1,7 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
@@ -11,6 +9,7 @@ import {
   Image, Film, Lightbulb, Settings, Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -180,151 +179,78 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="What Our Clients Say"
-            subtitle="Success stories from businesses we've helped transform"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <TestimonialCard
-              quote="Heidigital transformed our social media strategy, increasing our engagement by 200% in just three months. Their data-driven approach has been a game-changer."
-              author="James Wilson"
-              company="TechStart Inc."
-              rating={5}
-            />
-            <TestimonialCard
-              quote="The SEO optimization services helped us achieve a 78% increase in organic traffic and significantly improved our conversion rates. Highly recommend!"
-              author="Linda Chen"
-              company="Global Retail Solutions"
-              rating={5}
-            />
-            <TestimonialCard
-              quote="Working with Heidigital on our AI marketing initiatives has given us a competitive edge. Their innovative approach has revolutionized how we connect with customers."
-              author="Robert Taylor"
-              company="Innovate Financial"
-              rating={5}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
+      {/* Flexible Pricing */}
       <section className="py-12 px-4 bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading
             title="Flexible Pricing"
-            subtitle="Tailored solutions to fit your business needs and budget"
+            subtitle="Competitive and adaptable pricing tailored to your project needs"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 flex flex-col">
-              <div className="mb-4">
-                <h3 className="text-xl font-bold mb-2">Starter</h3>
-                <p className="text-gray-600 text-sm">Perfect for small businesses getting started</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 text-center">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900">Custom Project Pricing</h3>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  We believe every business is unique, and so are their digital marketing needs. That's why we offer flexible, competitive pricing that adapts to your project scope, timeline, and specific requirements.
+                </p>
               </div>
-              <div className="mb-4">
-                <span className="text-3xl font-bold">$999</span>
-                <span className="text-gray-600">/month</span>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-3 text-blue-900">Project-Based Pricing</h4>
+                  <p className="text-blue-700 text-sm">
+                    Pricing adjusted based on project complexity, scope, and deliverables. Perfect for businesses with specific goals and timelines.
+                  </p>
+                </div>
+                
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-3 text-purple-900">Timeline Flexibility</h4>
+                  <p className="text-purple-700 text-sm">
+                    Whether you need quick turnaround or extended project timelines, we adjust our pricing to match your schedule and budget requirements.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-2 mb-6 flex-grow text-sm">
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Social media management (2 platforms)</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Basic SEO optimization</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Monthly content creation (4 pieces)</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Bi-weekly performance reports</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                Get Started
-              </Button>
-            </div>
-            <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow flex flex-col transform scale-105">
-              <div className="absolute top-0 right-0 bg-white text-blue-600 px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold text-xs">
-                Most Popular
+
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg mb-6">
+                <h4 className="text-lg font-semibold mb-3 text-gray-900">What Makes Our Pricing Competitive</h4>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                    <span>No hidden fees or surprise charges</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                    <span>Transparent pricing breakdown</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                    <span>Flexible payment options</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                    <span>Value-driven service packages</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                    <span>Scalable solutions for growth</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 flex-shrink-0" />
+                    <span>Performance-based pricing options</span>
+                  </li>
+                </ul>
               </div>
-              <div className="mb-4">
-                <h3 className="text-xl font-bold mb-2">Professional</h3>
-                <p className="text-white/90 text-sm">Comprehensive solution for growing businesses</p>
+
+              <div className="text-center">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3" asChild>
+                  <Link to="/contact">Get Your Custom Quote</Link>
+                </Button>
+                <p className="text-sm text-gray-500 mt-3">
+                  Free consultation to discuss your project and provide a detailed pricing proposal
+                </p>
               </div>
-              <div className="mb-4">
-                <span className="text-3xl font-bold">$2,499</span>
-                <span className="text-white/90">/month</span>
-              </div>
-              <ul className="space-y-2 mb-6 flex-grow text-sm">
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
-                  <span>Social media management (4 platforms)</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
-                  <span>Advanced SEO optimization</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
-                  <span>Weekly content creation (8 pieces)</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
-                  <span>PPC campaign management</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
-                  <span>AI marketing solutions</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-white text-blue-600 hover:bg-white/90">
-                Get Started
-              </Button>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 flex flex-col">
-              <div className="mb-4">
-                <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                <p className="text-gray-600 text-sm">Custom solutions for large organizations</p>
-              </div>
-              <div className="mb-4">
-                <span className="text-3xl font-bold">Custom</span>
-                <span className="text-gray-600"> pricing</span>
-              </div>
-              <ul className="space-y-2 mb-6 flex-grow text-sm">
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Comprehensive digital strategy</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Full-service social media management</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Enterprise SEO & content strategy</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Advanced AI marketing implementation</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
-                  <span>Dedicated account manager</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                Contact Sales
-              </Button>
             </div>
           </div>
         </div>
