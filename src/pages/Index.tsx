@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -27,11 +26,11 @@ const Index = () => {
         ctaLink="/contact"
         secondaryCtaText="Explore Solutions"
         secondaryCtaLink="/solutions"
-        backgroundImage="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       {/* Features Highlight Section */}
-      <section className="py-12 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="py-8 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center group">
@@ -68,7 +67,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-4 bg-white" aria-label="Our digital marketing services">
+      <section className="py-12 px-4 bg-white" aria-label="Our digital marketing services">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-6 text-sm">
@@ -170,7 +169,7 @@ const Index = () => {
       </section>
 
       {/* About Section with Image */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50/30" aria-label="About Heidigital Australia">
+      <section className="py-12 px-4 bg-gradient-to-br from-gray-50 to-blue-50/30" aria-label="About Heidigital Australia">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -228,7 +227,7 @@ const Index = () => {
       </section>
 
       {/* Technology Solutions Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" aria-label="Technology-powered marketing solutions">
+      <section className="py-12 px-4 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" aria-label="Technology-powered marketing solutions">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 px-4 py-2 rounded-full font-medium mb-4 border border-white/20 text-sm">
@@ -290,7 +289,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Preview Section */}
-      <section className="py-16 px-4 bg-gray-50" aria-label="Our portfolio showcase">
+      <section className="py-12 px-4 bg-gray-50" aria-label="Our portfolio showcase">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
@@ -356,7 +355,7 @@ const Index = () => {
       />
 
       {/* Contact Section - Removed phone number */}
-      <section className="py-16 px-4 bg-white" aria-label="Contact form and information">
+      <section className="py-12 px-4 bg-white" aria-label="Contact form and information">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
