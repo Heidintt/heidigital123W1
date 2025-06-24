@@ -3,12 +3,12 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
-  Brain, CheckCircle2, ArrowRight
+  Brain, CheckCircle2, ArrowRight, Target, Zap, 
+  Image, Film, Lightbulb, Settings, Globe
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -17,136 +17,121 @@ const Services = () => {
     <Layout>
       <Hero
         title="Our Services"
-        subtitle="Comprehensive digital marketing solutions tailored to your business needs"
+        subtitle="Comprehensive digital marketing solutions tailored for Australian businesses"
         backgroundImage="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       {/* Services Overview */}
-      <section className="py-16 px-4">
+      <section className="py-12 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="What We Offer"
-            subtitle="Innovative marketing solutions to help your business grow"
+            title="Digital Marketing Excellence"
+            subtitle="Comprehensive solutions to accelerate your business growth"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ServiceCard
-              title="Social Media Strategy"
-              description="Build a strong social media presence with data-driven strategies and engaging content that resonates with your audience."
-              icon={<Megaphone className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/social-media"
-            />
-            <ServiceCard
-              title="Content Creation"
-              description="Captivate your audience with high-quality, engaging content that tells your brand story and drives conversions."
-              icon={<PenSquare className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/content-creation"
-            />
-            <ServiceCard
-              title="SEO Optimization"
-              description="Improve your visibility in search engines with our comprehensive SEO services designed to drive organic traffic."
-              icon={<Search className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/seo"
-            />
-            <ServiceCard
-              title="Branding & Identity"
-              description="Establish a strong, recognizable brand identity that communicates your values and resonates with your target audience."
-              icon={<Users className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/branding"
-            />
-            <ServiceCard
-              title="Digital Advertising"
-              description="Maximize your ROI with targeted digital advertising campaigns across multiple platforms to reach your ideal customers."
-              icon={<BarChart3 className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/digital-ads"
-            />
-            <ServiceCard
-              title="AI Marketing Solutions"
-              description="Leverage the power of artificial intelligence to personalize your marketing efforts and gain valuable customer insights."
-              icon={<Brain className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/ai-marketing"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Service */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="gradient-text">AI-Powered Marketing</span>: The Future is Here
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Harness the power of artificial intelligence to revolutionize your marketing strategy. Our AI-driven approaches help you understand your customers better, create personalized experiences, and make data-backed decisions.
-              </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">AI Content Generation</h3>
-                    <p className="text-gray-600">
-                      Create high-quality content at scale while maintaining your brand voice.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">Predictive Analytics</h3>
-                    <p className="text-gray-600">
-                      Anticipate market trends and customer behavior with advanced AI models.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">Smart Automation</h3>
-                    <p className="text-gray-600">
-                      Streamline your marketing processes with intelligent automation tools.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">Personalization at Scale</h3>
-                    <p className="text-gray-600">
-                      Deliver tailored experiences to each customer without sacrificing efficiency.
-                    </p>
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Social Media Strategy */}
+            <div className="group bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Megaphone className="h-6 w-6 text-white" />
               </div>
-              <Button asChild className="bg-heisocial-blue hover:bg-heisocial-blue/90">
-                <a href="/services/ai-marketing" className="flex items-center">
-                  Learn More <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Social Media Mastery</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Strategic social media campaigns that build authentic connections and drive measurable engagement across all platforms.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />Content Strategy & Creation</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />Community Management</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />Performance Analytics</li>
+              </ul>
             </div>
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="AI Marketing Visualization"
-                className="rounded-lg shadow-xl"
-              />
+
+            {/* Content Creation */}
+            <div className="group bg-gradient-to-br from-white to-purple-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-purple-200">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <PenSquare className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Content Excellence</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Compelling, data-driven content that resonates with Australian audiences and converts visitors into loyal customers.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-purple-600 mr-2" />Blog & Article Writing</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-purple-600 mr-2" />Visual Content Design</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-purple-600 mr-2" />Video Production</li>
+              </ul>
+            </div>
+
+            {/* SEO Optimization */}
+            <div className="group bg-gradient-to-br from-white to-green-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-green-200">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Search className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">SEO Domination</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Advanced SEO strategies that put your business at the top of Australian search results and drive organic growth.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />Technical SEO Audits</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />Keyword Strategy</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-green-600 mr-2" />Link Building</li>
+              </ul>
+            </div>
+
+            {/* Branding */}
+            <div className="group bg-gradient-to-br from-white to-pink-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-pink-200">
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Users className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Brand Evolution</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Strategic brand development that positions your business as a leader in the Australian market.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-pink-600 mr-2" />Brand Strategy & Identity</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-pink-600 mr-2" />Visual Design & Guidelines</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-pink-600 mr-2" />Brand Experience Design</li>
+              </ul>
+            </div>
+
+            {/* Digital Advertising */}
+            <div className="group bg-gradient-to-br from-white to-cyan-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-cyan-200">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <BarChart3 className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Precision Advertising</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Data-driven advertising campaigns that maximize ROI and reach your ideal Australian customers.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-cyan-600 mr-2" />PPC & Google Ads</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-cyan-600 mr-2" />Social Media Advertising</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-cyan-600 mr-2" />Remarketing Campaigns</li>
+              </ul>
+            </div>
+
+            {/* AI Marketing */}
+            <div className="group bg-gradient-to-br from-white to-orange-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-orange-200">
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">AI Innovation</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                Cutting-edge AI solutions that automate, optimize, and revolutionize your marketing approach.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-orange-600 mr-2" />AI Content Generation</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-orange-600 mr-2" />Predictive Analytics</li>
+                <li className="flex items-center"><CheckCircle2 className="h-4 w-4 text-orange-600 mr-2" />Automated Optimization</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* Service Process */}
-      <section className="py-16 px-4">
+      <section className="py-12 px-4 bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading
             title="Our Process"
@@ -154,41 +139,41 @@ const Services = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="relative bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <div className="absolute -top-5 -left-5 bg-heisocial-blue text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="absolute -top-4 -left-4 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold">
                 1
               </div>
-              <h3 className="text-xl font-bold mb-4 mt-4">Discovery</h3>
-              <p className="text-gray-600">
-                We begin by understanding your business, goals, target audience, and current marketing efforts to establish a baseline.
+              <h3 className="text-lg font-bold mb-3 mt-2">Discovery</h3>
+              <p className="text-gray-600 text-sm">
+                Understanding your business, goals, and challenges to establish a baseline for success.
               </p>
             </div>
-            <div className="relative bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <div className="absolute -top-5 -left-5 bg-heisocial-blue text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
+            <div className="relative bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="absolute -top-4 -left-4 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold">
                 2
               </div>
-              <h3 className="text-xl font-bold mb-4 mt-4">Strategy</h3>
-              <p className="text-gray-600">
-                Based on our findings, we develop a tailored strategy that aligns with your business objectives and addresses your challenges.
+              <h3 className="text-lg font-bold mb-3 mt-2">Strategy</h3>
+              <p className="text-gray-600 text-sm">
+                Developing a tailored strategy that aligns with your objectives and market opportunities.
               </p>
             </div>
-            <div className="relative bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <div className="absolute -top-5 -left-5 bg-heisocial-blue text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
+            <div className="relative bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="absolute -top-4 -left-4 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold">
                 3
               </div>
-              <h3 className="text-xl font-bold mb-4 mt-4">Implementation</h3>
-              <p className="text-gray-600">
-                We execute the strategy with precision, leveraging our expertise and advanced tools to deliver effective marketing solutions.
+              <h3 className="text-lg font-bold mb-3 mt-2">Implementation</h3>
+              <p className="text-gray-600 text-sm">
+                Executing the strategy with precision using advanced tools and proven methodologies.
               </p>
             </div>
-            <div className="relative bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <div className="absolute -top-5 -left-5 bg-heisocial-blue text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
+            <div className="relative bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+              <div className="absolute -top-4 -left-4 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold">
                 4
               </div>
-              <h3 className="text-xl font-bold mb-4 mt-4">Optimization</h3>
-              <p className="text-gray-600">
-                We continuously monitor, analyze, and refine our approach based on performance data to maximize results and ROI.
+              <h3 className="text-lg font-bold mb-3 mt-2">Optimization</h3>
+              <p className="text-gray-600 text-sm">
+                Continuously monitoring and refining our approach based on performance data.
               </p>
             </div>
           </div>
@@ -196,29 +181,29 @@ const Services = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-12 px-4">
         <div className="container mx-auto">
           <SectionHeading
             title="What Our Clients Say"
-            subtitle="Success stories from businesses we've helped"
+            subtitle="Success stories from businesses we've helped transform"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <TestimonialCard
-              quote="Heisocial transformed our social media strategy, increasing our engagement by 200% in just three months. Their data-driven approach and creative content have been game-changers for our brand."
+              quote="Heidigital transformed our social media strategy, increasing our engagement by 200% in just three months. Their data-driven approach has been a game-changer."
               author="James Wilson"
               company="TechStart Inc."
               rating={5}
             />
             <TestimonialCard
-              quote="The SEO optimization services provided by Heisocial helped us achieve a 78% increase in organic traffic and significantly improved our conversion rates. Highly recommend their expertise!"
+              quote="The SEO optimization services helped us achieve a 78% increase in organic traffic and significantly improved our conversion rates. Highly recommend!"
               author="Linda Chen"
               company="Global Retail Solutions"
               rating={5}
             />
             <TestimonialCard
-              quote="Working with Heisocial on our AI marketing initiatives has given us a competitive edge. Their innovative approach and strategic insights have revolutionized how we connect with our customers."
+              quote="Working with Heidigital on our AI marketing initiatives has given us a competitive edge. Their innovative approach has revolutionized how we connect with customers."
               author="Robert Taylor"
               company="Innovate Financial"
               rating={5}
@@ -228,7 +213,7 @@ const Services = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-16 px-4">
+      <section className="py-12 px-4 bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading
             title="Flexible Pricing"
@@ -236,116 +221,108 @@ const Services = () => {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200 card-hover flex flex-col">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2">Starter</h3>
-                <p className="text-gray-600">Perfect for small businesses getting started with digital marketing</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 flex flex-col">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold mb-2">Starter</h3>
+                <p className="text-gray-600 text-sm">Perfect for small businesses getting started</p>
               </div>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$999</span>
+              <div className="mb-4">
+                <span className="text-3xl font-bold">$999</span>
                 <span className="text-gray-600">/month</span>
               </div>
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-2 mb-6 flex-grow text-sm">
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Social media management (2 platforms)</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Basic SEO optimization</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Monthly content creation (4 pieces)</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Bi-weekly performance reports</span>
                 </li>
               </ul>
-              <Button className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
                 Get Started
               </Button>
             </div>
-            <div className="bg-gradient-to-r from-heisocial-purple to-heisocial-blue text-white p-8 rounded-lg shadow-md relative card-hover flex flex-col transform scale-105">
-              <div className="absolute top-0 right-0 bg-white text-heisocial-blue px-4 py-1 rounded-bl-lg rounded-tr-lg font-bold">
+            <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-6 rounded-lg shadow-md relative hover:shadow-lg transition-shadow flex flex-col transform scale-105">
+              <div className="absolute top-0 right-0 bg-white text-blue-600 px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold text-xs">
                 Most Popular
               </div>
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2">Professional</h3>
-                <p className="text-white/90">Comprehensive solution for growing businesses</p>
+              <div className="mb-4">
+                <h3 className="text-xl font-bold mb-2">Professional</h3>
+                <p className="text-white/90 text-sm">Comprehensive solution for growing businesses</p>
               </div>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$2,499</span>
+              <div className="mb-4">
+                <span className="text-3xl font-bold">$2,499</span>
                 <span className="text-white/90">/month</span>
               </div>
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-2 mb-6 flex-grow text-sm">
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-white mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
                   <span>Social media management (4 platforms)</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-white mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
                   <span>Advanced SEO optimization</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-white mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
                   <span>Weekly content creation (8 pieces)</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-white mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
                   <span>PPC campaign management</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-white mr-2" />
-                  <span>Basic AI marketing solutions</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-white mr-2" />
-                  <span>Weekly performance reports</span>
+                  <CheckCircle2 className="h-4 w-4 text-white mr-2" />
+                  <span>AI marketing solutions</span>
                 </li>
               </ul>
-              <Button className="w-full bg-white text-heisocial-blue hover:bg-white/90">
+              <Button className="w-full bg-white text-blue-600 hover:bg-white/90">
                 Get Started
               </Button>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200 card-hover flex flex-col">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-                <p className="text-gray-600">Custom solutions for large organizations with complex needs</p>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 flex flex-col">
+              <div className="mb-4">
+                <h3 className="text-xl font-bold mb-2">Enterprise</h3>
+                <p className="text-gray-600 text-sm">Custom solutions for large organizations</p>
               </div>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">Custom</span>
+              <div className="mb-4">
+                <span className="text-3xl font-bold">Custom</span>
                 <span className="text-gray-600"> pricing</span>
               </div>
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-2 mb-6 flex-grow text-sm">
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Comprehensive digital strategy</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Full-service social media management</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Enterprise SEO & content strategy</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Advanced AI marketing implementation</span>
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
+                  <CheckCircle2 className="h-4 w-4 text-blue-600 mr-2" />
                   <span>Dedicated account manager</span>
                 </li>
-                <li className="flex items-center">
-                  <CheckCircle2 className="h-5 w-5 text-heisocial-blue mr-2" />
-                  <span>Custom reporting dashboard</span>
-                </li>
               </ul>
-              <Button className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
                 Contact Sales
               </Button>
             </div>
@@ -355,12 +332,12 @@ const Services = () => {
 
       <CallToAction
         title="Ready to Elevate Your Digital Marketing?"
-        description="Contact us today to discuss how our services can help your business grow and thrive in the digital landscape."
+        description="Contact us today to discuss how our comprehensive services can help your business grow and thrive in the digital landscape."
         primaryButtonText="Get Started"
         primaryButtonLink="/contact"
         secondaryButtonText="Learn More"
         secondaryButtonLink="/about"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
     </Layout>
   );
