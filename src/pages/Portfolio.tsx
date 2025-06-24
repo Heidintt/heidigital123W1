@@ -65,55 +65,7 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Marketing Strategy", "Nightlife", "Brand Development"],
       link: "/portfolio/koto-club"
-    },
-    {
-      id: "1",
-      title: "Global Tech Rebrand",
-      description: "Complete brand overhaul for a multinational tech company, resulting in 45% increase in brand recognition.",
-      image: "https://images.unsplash.com/photo-1487058032275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Branding", "Digital Strategy"],
-      link: "/portfolio/global-tech-rebrand"
-    },
-    {
-      id: "2",
-      title: "E-commerce SEO Campaign",
-      description: "Comprehensive SEO strategy that increased organic traffic by 78% in just 6 months for an e-commerce platform.",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["SEO", "Content Marketing"],
-      link: "/portfolio/ecommerce-seo"
-    },
-    {
-      id: "3",
-      title: "Social Media Growth",
-      description: "Strategic social media campaign that doubled engagement and grew the follower base by 150% for a lifestyle brand.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Social Media", "Content Creation"],
-      link: "/portfolio/social-media-growth"
-    },
-    {
-      id: "4",
-      title: "B2B Lead Generation",
-      description: "Integrated digital marketing approach that increased qualified leads by 60% and reduced cost per acquisition by 35%.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Lead Generation", "Digital Ads"],
-      link: "/portfolio/b2b-lead-generation"
-    },
-    {
-      id: "5",
-      title: "AI-Powered Customer Service",
-      description: "Implementation of AI chatbots that increased customer satisfaction by 40% while reducing support costs by 30%.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["AI Solutions", "Customer Experience"],
-      link: "/portfolio/ai-customer-service"
-    },
-    {
-      id: "6",
-      title: "Mobile App Launch Strategy",
-      description: "Marketing campaign that secured 50,000+ downloads in the first month with an exceptional 4.8-star rating.",
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["App Marketing", "Digital Strategy"],
-      link: "/portfolio/mobile-app-launch"
-    },
+    }
   ];
 
   const categories = [
@@ -121,16 +73,17 @@ const Portfolio = () => {
     "Social Media",
     "Marketing Strategy",
     "Campaign Strategy",
-    "Branding",
-    "SEO",
-    "Content Marketing",
-    "Digital Ads",
+    "Brand Development",
+    "Digital Marketing",
     "Influencer Marketing",
-    "AI Solutions",
+    "Event Marketing",
+    "Content Strategy",
     "EV Marketing",
     "Academic Research",
     "Web3 & Blockchain",
     "Consumer Engagement",
+    "Integrated Communications",
+    "Nightlife"
   ];
 
   const filteredItems = activeCategory === "All" 
@@ -142,7 +95,7 @@ const Portfolio = () => {
       <Hero
         title="Our Portfolio"
         subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <section className="py-16 px-4">
