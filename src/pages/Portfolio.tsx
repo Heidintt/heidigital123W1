@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -92,11 +93,27 @@ const Portfolio = () => {
 
   return (
     <Layout>
-      <Hero
-        title="Our Portfolio"
-        subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-        backgroundImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-      />
+      <div className="relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)` }}
+        />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+        <div className="relative z-10 px-4 py-32 md:py-48 flex items-center">
+          <div className="container mx-auto">
+            <div className="max-w-3xl">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-white">
+                  Our Portfolio
+                </h1>
+                <p className="text-xl md:text-2xl mb-0 opacity-90 animate-fade-in text-white" style={{ animationDelay: "0.2s" }}>
+                  Explore our success stories and see how we've helped businesses achieve remarkable growth
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section className="py-16 px-4">
         <div className="container mx-auto">
@@ -130,90 +147,6 @@ const Portfolio = () => {
                 link={item.link}
               />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 bg-gradient-to-r from-heisocial-blue to-heisocial-purple text-white">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our Results Speak for Themselves
-            </h2>
-            <p className="text-white/90 max-w-2xl mx-auto">
-              We've helped businesses of all sizes achieve measurable growth through our strategic marketing solutions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold mb-2">250+</div>
-              <div className="text-white/80">Happy Clients</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold mb-2">500+</div>
-              <div className="text-white/80">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold mb-2">350%</div>
-              <div className="text-white/80">Average ROI</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold mb-2">15+</div>
-              <div className="text-white/80">Industry Awards</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="gradient-text">Featured Case Study:</span> Global Retail Transformation
-              </h2>
-              <p className="text-gray-600 mb-6">
-                A leading retail brand was struggling with declining in-store sales and an outdated online presence. They needed a comprehensive digital transformation to meet the expectations of modern consumers.
-              </p>
-              <div className="space-y-6 mb-8">
-                <div>
-                  <h3 className="font-bold mb-2">The Challenge</h3>
-                  <p className="text-gray-600">
-                    Unify the online and offline shopping experience while increasing e-commerce sales and driving foot traffic to physical locations.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold mb-2">Our Approach</h3>
-                  <p className="text-gray-600">
-                    We implemented a holistic omnichannel strategy, leveraging AI for personalized recommendations, revamping their mobile app, and creating location-based marketing campaigns.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-bold mb-2">The Results</h3>
-                  <ul className="list-disc list-inside text-gray-600">
-                    <li>82% increase in online conversions</li>
-                    <li>35% improvement in customer retention</li>
-                    <li>27% growth in in-store sales from digital touchpoints</li>
-                    <li>3x ROI on marketing spend</li>
-                  </ul>
-                </div>
-              </div>
-              <Button className="bg-heisocial-blue hover:bg-heisocial-blue/90">
-                View Full Case Study
-              </Button>
-            </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Global Retail Transformation Case Study"
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs">
-                <div className="text-xl font-bold text-heisocial-blue mb-1">82%</div>
-                <div className="text-sm text-gray-600">Increase in online conversions</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
