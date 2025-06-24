@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -115,10 +115,6 @@ const Footer = () => {
                 <span className="text-gray-300">
                   123 Marketing Street, Digital City, Australia
                 </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="mr-2 text-heidigital-blue" size={18} />
-                <span className="text-gray-300">+61 3 9000 0000</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 text-heidigital-blue" size={18} />

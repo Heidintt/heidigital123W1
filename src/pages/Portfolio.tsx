@@ -93,30 +93,13 @@ const Portfolio = () => {
 
   return (
     <Layout>
-      <div className="relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
-        <div className="absolute inset-0 backdrop-blur-[1px]" />
-        <div className="relative z-10 px-4 py-32 md:py-48 flex items-center">
-          <div className="container mx-auto">
-            <div className="max-w-3xl">
-              <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in text-white">
-                  Our Portfolio
-                </h1>
-                <p className="text-xl md:text-2xl mb-0 opacity-90 animate-fade-in text-white" style={{ animationDelay: "0.2s" }}>
-                  Explore our success stories and see how we've helped businesses achieve remarkable growth
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Hero
+        title="Our Portfolio"
+        subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
+        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      />
 
-      <section className="py-16 px-4">
+      <section className="py-12 px-4">
         <div className="container mx-auto">
           <SectionHeading
             title="Case Studies"
@@ -124,7 +107,7 @@ const Portfolio = () => {
             centered
           />
 
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             {categories.map((category, index) => (
               <Button
                 key={index}
@@ -137,7 +120,7 @@ const Portfolio = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
               <PortfolioCard
                 key={item.id}

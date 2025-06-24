@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
-import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
+import { MapPin, Mail, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -35,15 +35,6 @@ const Contact = () => {
                     <p className="text-gray-600 text-sm">
                       123 Marketing Street, Digital City, 10010
                     </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="bg-heidigital-lightpurple p-3 rounded-full mr-4">
-                    <Phone className="h-4 w-4 text-heidigital-purple" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium mb-1 text-base">Phone Number</h3>
-                    <p className="text-gray-600 text-sm">+1 (555) 123-4567</p>
                   </div>
                 </div>
                 <div className="flex items-start">

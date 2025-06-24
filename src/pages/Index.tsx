@@ -12,92 +12,54 @@ import { Link } from "react-router-dom";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
   Settings, Brain, FileText, Download, Lightbulb,
-  Mail, Phone, ArrowRight, Zap, Shield, Target,
+  Mail, ArrowRight, Zap, Shield, Target,
   Globe, TrendingUp, Award, Rocket, Star, CheckCircle
 } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section - Enhanced with glassmorphism and functional buttons */}
-      <section aria-label="Hero banner" className="relative min-h-screen flex items-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: `url(https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
-        <div className="absolute inset-0 backdrop-blur-[0.5px]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="bg-white/10 backdrop-blur-2xl rounded-2xl p-10 md:p-14 border border-white/20 shadow-2xl">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30 mb-8">
-                <Zap className="w-5 h-5 text-blue-300" />
-                <span className="text-white/90 font-medium text-lg">Next-Generation Digital Solutions</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white leading-[0.9] tracking-tight">
-                Transform Your
-                <span className="block bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent mt-3">
-                  Digital Future
-                </span>
-              </h1>
-              
-              <p className="text-lg md:text-2xl text-white/85 mb-10 leading-relaxed max-w-4xl mx-auto font-light">
-                Cutting-edge digital marketing strategies designed to accelerate 
-                Australian businesses into tomorrow's competitive landscape.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link
-                  to="/contact"
-                  className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/25 flex items-center justify-center gap-3 min-w-[220px]"
-                >
-                  Start Your Journey
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/solutions"
-                  className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/30 px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 min-w-[220px]"
-                >
-                  Explore Solutions
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Banner Background */}
+      <Hero
+        title="Transform Your Digital Future"
+        subtitle="Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape."
+        ctaText="Start Your Journey"
+        ctaLink="/contact"
+        secondaryCtaText="Explore Solutions"
+        secondaryCtaLink="/solutions"
+        backgroundImage="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      />
 
       {/* Features Highlight Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="py-12 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                <Rocket className="h-10 w-10 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Rocket className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Launch Fast</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Launch Fast</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Get your digital presence up and running quickly with our streamlined processes
               </p>
             </div>
             
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                <Star className="h-10 w-10 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <Star className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Premium Quality</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Premium Quality</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Every project receives our full attention to detail and commitment to excellence
               </p>
             </div>
             
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                <CheckCircle className="h-10 w-10 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <CheckCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Proven Results</h3>
-              <p className="text-gray-600 text-base leading-relaxed">
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Proven Results</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
                 Data-driven strategies that deliver measurable outcomes for your business
               </p>
             </div>
@@ -105,137 +67,136 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section - Enhanced typography and spacing */}
-      <section className="py-20 px-6 bg-white" aria-label="Our digital marketing services">
+      {/* Services Section */}
+      <section className="py-16 px-4 bg-white" aria-label="Our digital marketing services">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-6 py-3 rounded-full font-medium mb-8 text-lg">
-              <Settings className="w-5 h-5" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-6 text-sm">
+              <Settings className="w-4 h-4" />
               Our Expertise
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 leading-[0.9] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 leading-tight tracking-tight">
               Next-Generation
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-3">
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
                 Digital Solutions
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive marketing solutions engineered for Australian businesses 
               ready to dominate the digital landscape
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            {/* Service Cards - Enhanced spacing and typography */}
-            <div className="group bg-gradient-to-br from-white to-blue-50/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-3">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Megaphone className="h-10 w-10 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+            <div className="group bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Megaphone className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 leading-tight">Social Media Mastery</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 leading-tight">Social Media Mastery</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                 Strategic social media campaigns that build authentic connections and drive measurable engagement across all platforms.
               </p>
-              <Link to="/services/social-media" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group-hover:gap-3 gap-2 transition-all text-base">
-                Learn More <ArrowRight className="w-5 h-5" />
+              <Link to="/services/social-media" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group-hover:gap-3 gap-2 transition-all text-sm">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="group bg-gradient-to-br from-white to-purple-50/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-3">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <PenSquare className="h-10 w-10 text-white" />
+            <div className="group bg-gradient-to-br from-white to-purple-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <PenSquare className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 leading-tight">Content Excellence</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 leading-tight">Content Excellence</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                 Compelling, data-driven content that resonates with Australian audiences and converts visitors into loyal customers.
               </p>
-              <Link to="/services/content-creation" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold group-hover:gap-3 gap-2 transition-all text-base">
-                Learn More <ArrowRight className="w-5 h-5" />
+              <Link to="/services/content-creation" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold group-hover:gap-3 gap-2 transition-all text-sm">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="group bg-gradient-to-br from-white to-green-50/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-3">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Search className="h-10 w-10 text-white" />
+            <div className="group bg-gradient-to-br from-white to-green-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Search className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 leading-tight">SEO Domination</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 leading-tight">SEO Domination</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                 Advanced SEO strategies that put your business at the top of Australian search results and drive organic growth.
               </p>
-              <Link to="/services/seo" className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold group-hover:gap-3 gap-2 transition-all text-base">
-                Learn More <ArrowRight className="w-5 h-5" />
+              <Link to="/services/seo" className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold group-hover:gap-3 gap-2 transition-all text-sm">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="group bg-gradient-to-br from-white to-pink-50/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-pink-200 transform hover:-translate-y-3">
-              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Users className="h-10 w-10 text-white" />
+            <div className="group bg-gradient-to-br from-white to-pink-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-pink-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 leading-tight">Brand Evolution</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 leading-tight">Brand Evolution</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                 Strategic brand development that positions your business as a leader in the Australian market.
               </p>
-              <Link to="/services/branding" className="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold group-hover:gap-3 gap-2 transition-all text-base">
-                Learn More <ArrowRight className="w-5 h-5" />
+              <Link to="/services/branding" className="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold group-hover:gap-3 gap-2 transition-all text-sm">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="group bg-gradient-to-br from-white to-cyan-50/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-cyan-200 transform hover:-translate-y-3">
-              <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <BarChart3 className="h-10 w-10 text-white" />
+            <div className="group bg-gradient-to-br from-white to-cyan-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-cyan-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <BarChart3 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 leading-tight">Precision Advertising</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 leading-tight">Precision Advertising</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                 Data-driven advertising campaigns that maximize ROI and reach your ideal Australian customers.
               </p>
-              <Link to="/services/digital-ads" className="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-semibold group-hover:gap-3 gap-2 transition-all text-base">
-                Learn More <ArrowRight className="w-5 h-5" />
+              <Link to="/services/digital-ads" className="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-semibold group-hover:gap-3 gap-2 transition-all text-sm">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="group bg-gradient-to-br from-white to-orange-50/50 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-200 transform hover:-translate-y-3">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Brain className="h-10 w-10 text-white" />
+            <div className="group bg-gradient-to-br from-white to-orange-50/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-orange-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Brain className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 leading-tight">AI Innovation</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 text-gray-900 leading-tight">AI Innovation</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed text-sm">
                 Cutting-edge AI solutions that automate, optimize, and revolutionize your marketing approach.
               </p>
-              <Link to="/services/ai-marketing" className="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold group-hover:gap-3 gap-2 transition-all text-base">
-                Learn More <ArrowRight className="w-5 h-5" />
+              <Link to="/services/ai-marketing" className="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold group-hover:gap-3 gap-2 transition-all text-sm">
+                Learn More <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section - Enhanced typography */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50/30" aria-label="About Heidigital Australia">
+      {/* About Section with Image */}
+      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50/30" aria-label="About Heidigital Australia">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="absolute -inset-6 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-xl"></div>
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                 alt="Modern digital workspace with advanced analytics"
-                className="rounded-2xl shadow-2xl relative z-10"
+                className="rounded-xl shadow-xl relative z-10"
                 loading="lazy"
               />
             </div>
             
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-6 py-3 rounded-full font-medium mb-6 text-lg">
-                <Award className="w-5 h-5" />
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
+                <Award className="w-4 h-4" />
                 Innovation Leaders
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold leading-[0.9] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
                 Pioneering the Future of 
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-3">
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
                   Digital Marketing
                 </span>
               </h2>
               
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-base text-gray-600 leading-relaxed">
                 <p>
                   At Heidigital Australia, we merge cutting-edge technology with proven marketing methodologies to deliver unprecedented results for forward-thinking businesses.
                 </p>
@@ -247,18 +208,18 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="flex flex-wrap gap-6 mt-8">
-                <div className="flex items-center gap-3 bg-blue-50 text-blue-700 px-6 py-3 rounded-full">
-                  <Shield className="w-5 h-5" />
-                  <span className="font-medium text-base">Fresh Perspective</span>
+              <div className="flex flex-wrap gap-4 mt-6">
+                <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
+                  <Shield className="w-4 h-4" />
+                  <span className="font-medium text-sm">Fresh Perspective</span>
                 </div>
-                <div className="flex items-center gap-3 bg-purple-50 text-purple-700 px-6 py-3 rounded-full">
-                  <Target className="w-5 h-5" />
-                  <span className="font-medium text-base">Focused Approach</span>
+                <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full">
+                  <Target className="w-4 h-4" />
+                  <span className="font-medium text-sm">Focused Approach</span>
                 </div>
-                <div className="flex items-center gap-3 bg-green-50 text-green-700 px-6 py-3 rounded-full">
-                  <TrendingUp className="w-5 h-5" />
-                  <span className="font-medium text-base">Growth Mindset</span>
+                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full">
+                  <TrendingUp className="w-4 h-4" />
+                  <span className="font-medium text-sm">Growth Mindset</span>
                 </div>
               </div>
             </div>
@@ -266,88 +227,88 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Technology Solutions Section - Updated messaging */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" aria-label="Technology-powered marketing solutions">
+      {/* Technology Solutions Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" aria-label="Technology-powered marketing solutions">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 px-6 py-3 rounded-full font-medium mb-6 border border-white/20 text-lg">
-              <Brain className="w-5 h-5" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 px-4 py-2 rounded-full font-medium mb-4 border border-white/20 text-sm">
+              <Brain className="w-4 h-4" />
               Technology-Powered Solutions
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-[0.9] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">
               Advanced Technology
-              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mt-3">
+              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mt-2">
                 Meets Marketing Excellence
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-white/70 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
               Harness the power of cutting-edge technology and data analytics to revolutionize your marketing strategy
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Brain className="h-10 w-10 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Brain className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 leading-tight">Intelligent Content Systems</h3>
-              <p className="text-white/70 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 leading-tight">Intelligent Content Systems</h3>
+              <p className="text-white/70 leading-relaxed text-sm">
                 Advanced algorithms create high-converting, SEO-optimized content that adapts to your brand voice and audience preferences in real-time.
               </p>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Lightbulb className="h-10 w-10 text-white" />
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Lightbulb className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 leading-tight">Predictive Market Analytics</h3>
-              <p className="text-white/70 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 leading-tight">Predictive Market Analytics</h3>
+              <p className="text-white/70 leading-relaxed text-sm">
                 Machine learning models predict market trends, consumer behavior, and campaign performance to keep you ahead of the competition.
               </p>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Settings className="h-10 w-10 text-white" />
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                <Settings className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-6 leading-tight">Automated Optimization</h3>
-              <p className="text-white/70 leading-relaxed text-base">
+              <h3 className="text-lg md:text-xl font-bold mb-4 leading-tight">Automated Optimization</h3>
+              <p className="text-white/70 leading-relaxed text-sm">
                 Self-learning systems continuously optimize campaigns, budgets, and targeting to maximize ROI while minimizing manual intervention.
               </p>
             </div>
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link
               to="/solutions/ai-tools"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
-              Explore Technology Tools <ArrowRight className="w-6 h-6" />
+              Explore Technology Tools <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Preview Section - Enhanced typography */}
-      <section className="py-20 px-6 bg-gray-50" aria-label="Our portfolio showcase">
+      {/* Portfolio Preview Section */}
+      <section className="py-16 px-4 bg-gray-50" aria-label="Our portfolio showcase">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-6 py-3 rounded-full font-medium mb-6 text-lg">
-              <Globe className="w-5 h-5" />
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
+              <Globe className="w-4 h-4" />
               Success Stories
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 leading-[0.9] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 leading-tight tracking-tight">
               Proven Results for
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-3">
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
                 Forward-Thinking Brands
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover how we've transformed businesses across industries with innovative digital strategies
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
             <PortfolioCard
               title="FMCG DAO Marketing Revolution"
               description="Pioneering research into Web3-based community governance models that transformed brand loyalty and consumer engagement by 350%."
@@ -371,19 +332,19 @@ const Index = () => {
             />
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-12">
             <Link
               to="/portfolio"
-              className="inline-flex items-center gap-3 text-blue-600 hover:text-blue-700 font-semibold text-lg group"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-base group"
             >
               View All Case Studies 
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      {/* Call to Action Section - Fixed button visibility */}
       <CallToAction
         title="Ready to Transform Your Digital Presence?"
         description="Join forward-thinking Australian businesses that are revolutionizing their marketing with our cutting-edge solutions. Let's build your digital future together."
@@ -394,55 +355,43 @@ const Index = () => {
         backgroundClass="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
       />
 
-      {/* Contact Section - Enhanced typography */}
-      <section className="py-20 px-6 bg-white" aria-label="Contact form and information">
+      {/* Contact Section - Removed phone number */}
+      <section className="py-16 px-4 bg-white" aria-label="Contact form and information">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-6 py-3 rounded-full font-medium mb-6 text-lg">
-                <Mail className="w-5 h-5" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
+                <Mail className="w-4 h-4" />
                 Get in Touch
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold leading-[0.9] tracking-tight">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
                 Let's Start Your
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-3">
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
                   Digital Journey
                 </span>
               </h2>
               
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Ready to revolutionize your marketing? Our experts are standing by to craft your personalized digital transformation strategy.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-center gap-6 p-6 bg-gray-50 rounded-xl">
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Mail className="h-8 w-8 text-blue-600" />
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 text-lg mb-1">Email Us</h3>
-                    <a href="mailto:info@heidigital.com.au" className="text-blue-600 hover:text-blue-700 text-base">
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Email Us</h3>
+                    <a href="mailto:info@heidigital.com.au" className="text-blue-600 hover:text-blue-700 text-sm">
                       info@heidigital.com.au
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-6 p-6 bg-gray-50 rounded-xl">
-                  <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Phone className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-lg mb-1">Call Us</h3>
-                    <a href="tel:+61390000000" className="text-purple-600 hover:text-purple-700 text-base">
-                      +61 3 9000 0000
                     </a>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-gray-50 to-blue-50/50 p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="bg-gradient-to-br from-gray-50 to-blue-50/50 p-6 rounded-xl shadow-md border border-gray-100">
               <ContactForm />
             </div>
           </div>
