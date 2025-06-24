@@ -38,17 +38,17 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold text-heisocial-blue">Heisocial</span>
+            <span className="text-2xl font-bold text-heidigital-blue">Heidigital</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+            <Link to="/" className="text-gray-700 hover:text-heidigital-blue transition-colors">
               Home
             </Link>
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heisocial-blue transition-colors">
+              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heidigital-blue transition-colors">
                 Services <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -74,7 +74,7 @@ const Navbar = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heisocial-blue transition-colors">
+              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heidigital-blue transition-colors">
                 Solutions <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -87,19 +87,19 @@ const Navbar = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Link to="/portfolio" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+            <Link to="/portfolio" className="text-gray-700 hover:text-heidigital-blue transition-colors">
               Portfolio
             </Link>
-            <Link to="/blog" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+            <Link to="/blog" className="text-gray-700 hover:text-heidigital-blue transition-colors">
               Blog
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-heisocial-blue transition-colors">
+            <Link to="/about" className="text-gray-700 hover:text-heidigital-blue transition-colors">
               About Us
             </Link>
           </div>
 
           <div className="hidden md:block">
-            <Button asChild className="bg-heisocial-blue hover:bg-heisocial-blue/90">
+            <Button asChild className="bg-heidigital-blue hover:bg-heidigital-blue/90">
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
@@ -119,7 +119,7 @@ const Navbar = () => {
             <div className="flex flex-col space-y-4 px-4">
               <Link
                 to="/"
-                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                className="text-gray-700 hover:text-heidigital-blue py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Home
@@ -129,42 +129,42 @@ const Navbar = () => {
                 <div className="ml-4 space-y-2">
                   <Link
                     to="/services/social-media"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     Social Media Strategy
                   </Link>
                   <Link
                     to="/services/content-creation"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     Content Creation
                   </Link>
                   <Link
                     to="/services/seo"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     SEO
                   </Link>
                   <Link
                     to="/services/branding"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     Branding
                   </Link>
                   <Link
                     to="/services/digital-ads"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     Digital Ads
                   </Link>
                   <Link
                     to="/services/ai-marketing"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     AI Marketing
@@ -176,14 +176,14 @@ const Navbar = () => {
                 <div className="ml-4 space-y-2">
                   <Link
                     to="/solutions/free-resources"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     Free Resources
                   </Link>
                   <Link
                     to="/solutions/ai-tools"
-                    className="block text-gray-600 hover:text-heisocial-blue py-1"
+                    className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
                     AI Tools
@@ -192,28 +192,28 @@ const Navbar = () => {
               </div>
               <Link
                 to="/portfolio"
-                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                className="text-gray-700 hover:text-heidigital-blue py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Portfolio
               </Link>
               <Link
                 to="/blog"
-                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                className="text-gray-700 hover:text-heidigital-blue py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Blog
               </Link>
               <Link
                 to="/about"
-                className="text-gray-700 hover:text-heisocial-blue py-2 transition-colors"
+                className="text-gray-700 hover:text-heidigital-blue py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
               </Link>
               <Button 
                 asChild
-                className="bg-heisocial-blue hover:bg-heisocial-blue/90 w-full"
+                className="bg-heidigital-blue hover:bg-heidigital-blue/90 w-full"
                 onClick={() => setIsOpen(false)}
               >
                 <Link to="/contact">Contact Us</Link>
