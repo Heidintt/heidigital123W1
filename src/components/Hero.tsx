@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({
       className={`relative px-4 py-32 md:py-48 flex items-center ${
         backgroundImage
           ? "bg-cover bg-center"
-          : "bg-gradient-to-r from-heisocial-lightpurple to-heisocial-lightgray"
+          : "bg-gradient-to-r from-heidigital-lightpurple to-heidigital-lightgray"
       }`}
       style={
         backgroundImage
@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({
             {ctaText && (
               <Button
                 asChild
-                className="bg-heisocial-blue hover:bg-heisocial-blue/90 text-white py-6 px-8 rounded-md shadow-lg"
+                className="bg-heidigital-blue hover:bg-heidigital-blue/90 text-white py-6 px-8 rounded-md shadow-lg"
               >
                 <a href={ctaLink || "#"}>
                   {ctaText} <ArrowRight className="ml-2 h-5 w-5" />

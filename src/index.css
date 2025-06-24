@@ -109,15 +109,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-heisocial-blue to-heisocial-purple hover:from-heisocial-purple hover:to-heisocial-blue text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant hover:shadow-glow font-medium;
+    @apply bg-gradient-to-r from-heidigital-blue to-heidigital-purple hover:from-heidigital-purple hover:to-heidigital-blue text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant hover:shadow-glow font-medium;
   }
 
   .btn-secondary {
-    @apply bg-gradient-to-r from-heisocial-purple to-heisocial-pink hover:from-heisocial-pink hover:to-heisocial-purple text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant hover:shadow-glow-purple font-medium;
+    @apply bg-gradient-to-r from-heidigital-purple to-heidigital-pink hover:from-heidigital-pink hover:to-heidigital-purple text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-elegant hover:shadow-glow-purple font-medium;
   }
 
   .btn-outline {
-    @apply border-2 border-heisocial-blue text-heisocial-blue hover:bg-heisocial-blue hover:text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm font-medium;
+    @apply border-2 border-heidigital-blue text-heidigital-blue hover:bg-heidigital-blue hover:text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 backdrop-blur-sm font-medium;
   }
 
   .btn-glass {
@@ -133,7 +133,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-heisocial-blue via-heisocial-purple to-heisocial-pink bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-heidigital-blue via-heidigital-purple to-heidigital-pink bg-clip-text text-transparent;
   }
 
   .gradient-aurora {
@@ -162,7 +162,7 @@
   }
 
   .modern-input {
-    @apply bg-white/80 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-heisocial-blue/50 focus:border-transparent transition-all duration-300;
+    @apply bg-white/80 backdrop-blur-md border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-heidigital-blue/50 focus:border-transparent transition-all duration-300;
   }
 
   .icon-bounce {

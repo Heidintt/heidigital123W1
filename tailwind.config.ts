@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				heisocial: {
+				heidigital: {
 					blue: '#4F46E5',
 					purple: '#7C3AED',
 					lightpurple: '#F3F4F6',

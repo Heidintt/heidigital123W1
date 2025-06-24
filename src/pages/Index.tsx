@@ -1,5 +1,4 @@
 
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -12,364 +11,416 @@ import ContactForm from "@/components/ContactForm";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
   Settings, Brain, FileText, Download, Lightbulb,
-  Mail, Phone
+  Mail, Phone, ArrowRight, Zap, Shield, Target,
+  Globe, TrendingUp, Award
 } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section aria-label="Hero banner">
-        <div className="relative">
-          <div className="absolute inset-0 bg-black/30 z-10"></div>
-          <Hero
-            title="Elevate Your Digital Presence with AI-Powered Marketing"
-            subtitle="Innovative digital marketing strategies and AI solutions designed to help Australian businesses grow and adapt in the digital age."
-            ctaText="Get Started"
-            ctaLink="/contact"
-            secondaryCtaText="Explore Our Services"
-            secondaryCtaLink="/services"
-            backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          />
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 px-4 bg-gray-50" aria-label="Our marketing services">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Our Services"
-            subtitle="Comprehensive marketing solutions tailored to Australian businesses"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            <ServiceCard
-              title="Social Media Strategy"
-              description="Build a strong social media presence with data-driven strategies and engaging content that resonates with Australian audiences."
-              icon={<Megaphone className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/social-media"
-            />
-            <ServiceCard
-              title="Content Creation"
-              description="Captivate your Australian audience with high-quality, culturally relevant content that tells your brand story and drives conversions."
-              icon={<PenSquare className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/content-creation"
-            />
-            <ServiceCard
-              title="SEO Optimisation"
-              description="Improve your visibility in Australian search engines with our comprehensive SEO services designed to drive local organic traffic."
-              icon={<Search className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/seo"
-            />
-            <ServiceCard
-              title="Branding & Identity"
-              description="Establish a strong, recognisable brand identity that communicates your values and resonates with your Australian target audience."
-              icon={<Users className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/branding"
-            />
-            <ServiceCard
-              title="Digital Advertising"
-              description="Maximise your ROI with targeted digital advertising campaigns across multiple platforms to reach your ideal Australian customers."
-              icon={<BarChart3 className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/digital-ads"
-            />
-            <ServiceCard
-              title="AI Marketing Solutions"
-              description="Leverage the power of artificial intelligence to personalise your marketing efforts and gain valuable insights about Australian consumers."
-              icon={<Brain className="h-6 w-6 text-heisocial-blue" />}
-              link="/services/ai-marketing"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 px-4" aria-label="About Heisocial Australia">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <article>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Transforming Australian Businesses with <span className="gradient-text">Data-Driven Marketing</span>
-              </h2>
-              <p className="text-gray-600 mb-6">
-                At Heisocial Australia, we combine the art of creative marketing with the science of data analytics to deliver results that exceed expectations. Our team of local experts understands the Australian market and is dedicated to helping businesses of all sizes navigate the complex digital landscape.
+      {/* Hero Section - Enhanced with modern glassmorphism */}
+      <section aria-label="Hero banner" className="relative min-h-screen flex items-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: `url(https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
+        <div className="absolute inset-0 backdrop-blur-[1px]" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-12 border border-white/20 shadow-2xl">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 mb-8">
+                <Zap className="w-4 h-4 text-blue-400" />
+                <span className="text-white/90 font-medium">AI-Powered Digital Solutions</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white leading-tight">
+                Transform Your
+                <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Digital Future
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-white/80 mb-10 leading-relaxed">
+                Cutting-edge digital marketing strategies powered by artificial intelligence, 
+                designed to accelerate Australian businesses into tomorrow.
               </p>
-              <p className="text-gray-600 mb-6">
-                We believe in transparent communication, data-driven decisions, and continuous innovation. Our approach is collaborative, working closely with you to understand your business goals and develop strategies that align with your vision and the Australian market.
-              </p>
-              <p className="text-gray-600">
-                As a fresh and innovative startup, we bring modern perspectives and cutting-edge techniques to help your business thrive in today's competitive digital environment.
-              </p>
-            </article>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Creative team brainstorming with colorful sticky notes and modern workspace"
-                className="rounded-lg shadow-xl"
-                loading="lazy"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Modern mobile phone displaying colorful marketing analytics dashboard"
-                  className="rounded"
-                  loading="lazy"
-                />
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                  Start Your Journey
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+                  Explore Solutions
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Solutions Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-heisocial-blue/10 to-heisocial-purple/10" aria-label="AI-powered marketing solutions">
+      {/* Stats Section - New addition for credibility */}
+      <section className="py-16 px-4 bg-gray-900 text-white">
         <div className="container mx-auto">
-          <SectionHeading
-            title="AI-Powered Solutions"
-            subtitle="Unlock the potential of artificial intelligence for your Australian marketing strategy"
-            centered
-          />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold text-blue-400 mb-2">200+</div>
+              <div className="text-gray-300">Projects Delivered</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">98%</div>
+              <div className="text-gray-300">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-pink-400 mb-2">3.2x</div>
+              <div className="text-gray-300">Average ROI Increase</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">24/7</div>
+              <div className="text-gray-300">AI-Powered Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section - Redesigned with modern cards */}
+      <section className="py-24 px-4 bg-gradient-to-br from-gray-50 to-blue-50/30" aria-label="Our digital marketing services">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-6">
+              <Settings className="w-4 h-4" />
+              Our Expertise
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Next-Generation
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Digital Solutions
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive marketing solutions engineered for Australian businesses ready to dominate the digital landscape
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            <article className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Brain className="h-12 w-12 text-heisocial-purple mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold mb-2">AI Content Generation</h3>
-              <p className="text-gray-600">
-                Create high-quality, SEO-optimised content at scale using advanced AI technology that adapts to your brand voice and Australian market preferences.
+            <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Megaphone className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Social Media Mastery</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                AI-driven social media strategies that build authentic connections and drive measurable engagement across all platforms.
               </p>
-            </article>
-            <article className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Lightbulb className="h-12 w-12 text-heisocial-purple mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold mb-2">Predictive Analytics</h3>
-              <p className="text-gray-600">
-                Anticipate Australian market trends and customer behaviour with AI-powered predictive analytics to stay ahead of the competition.
+              <a href="/services/social-media" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold group-hover:gap-3 gap-2 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <PenSquare className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Content Excellence</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Compelling, data-driven content that resonates with Australian audiences and converts visitors into loyal customers.
               </p>
-            </article>
-            <article className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Settings className="h-12 w-12 text-heisocial-purple mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold mb-2">Automation Tools</h3>
-              <p className="text-gray-600">
-                Streamline your marketing workflows with intelligent automation that saves time and increases efficiency for Australian businesses.
+              <a href="/services/content-creation" className="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold group-hover:gap-3 gap-2 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Search className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">SEO Domination</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Advanced SEO strategies that put your business at the top of Australian search results and drive organic growth.
               </p>
-            </article>
+              <a href="/services/seo" className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold group-hover:gap-3 gap-2 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-pink-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Users className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Brand Evolution</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Strategic brand development that positions your business as a leader in the Australian market.
+              </p>
+              <a href="/services/branding" className="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold group-hover:gap-3 gap-2 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-cyan-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <BarChart3 className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Precision Advertising</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Data-driven advertising campaigns that maximize ROI and reach your ideal Australian customers.
+              </p>
+              <a href="/services/digital-ads" className="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-semibold group-hover:gap-3 gap-2 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-200 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">AI Innovation</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Cutting-edge AI solutions that automate, optimize, and revolutionize your marketing approach.
+              </p>
+              <a href="/services/ai-marketing" className="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold group-hover:gap-3 gap-2 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section - Redesigned */}
+      <section className="py-24 px-4 bg-white" aria-label="About Heidigital Australia">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl"></div>
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Modern digital workspace with AI-powered analytics"
+                className="rounded-2xl shadow-2xl relative z-10"
+                loading="lazy"
+              />
+            </div>
+            
+            <div>
+              <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium mb-6">
+                <Award className="w-4 h-4" />
+                Innovation Leaders
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                Pioneering the Future of 
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Digital Marketing
+                </span>
+              </h2>
+              
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  At Heidigital Australia, we merge cutting-edge artificial intelligence with proven marketing methodologies to deliver unprecedented results for forward-thinking businesses.
+                </p>
+                <p>
+                  Our data-driven approach combines deep market insights with innovative technology, ensuring every campaign is optimized for maximum impact in the Australian digital landscape.
+                </p>
+                <p>
+                  As pioneers in AI-powered marketing solutions, we're not just keeping up with digital transformation—we're leading it.
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 mt-8">
+                <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
+                  <Shield className="w-4 h-4" />
+                  Trusted by 200+ Brands
+                </div>
+                <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full">
+                  <Target className="w-4 h-4" />
+                  98% Success Rate
+                </div>
+                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full">
+                  <TrendingUp className="w-4 h-4" />
+                  3.2x Average ROI
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Solutions Section - Enhanced */}
+      <section className="py-24 px-4 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" aria-label="AI-powered marketing solutions">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 px-4 py-2 rounded-full font-medium mb-6 border border-white/20">
+              <Brain className="w-4 h-4" />
+              AI-Powered Solutions
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Artificial Intelligence
+              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Meets Marketing Excellence
+              </span>
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
+              Harness the power of machine learning and predictive analytics to revolutionize your marketing strategy
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Brain className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Intelligent Content Generation</h3>
+              <p className="text-white/70 leading-relaxed">
+                Advanced AI algorithms create high-converting, SEO-optimized content that adapts to your brand voice and audience preferences in real-time.
+              </p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Lightbulb className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Predictive Market Analytics</h3>
+              <p className="text-white/70 leading-relaxed">
+                Machine learning models predict market trends, consumer behavior, and campaign performance to keep you ahead of the competition.
+              </p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <Settings className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Automated Optimization</h3>
+              <p className="text-white/70 leading-relaxed">
+                Self-learning systems continuously optimize campaigns, budgets, and targeting to maximize ROI while minimizing manual intervention.
+              </p>
+            </div>
           </div>
 
           <div className="text-center mt-12">
             <a
               href="/solutions/ai-tools"
-              className="inline-flex items-center text-heisocial-blue hover:text-heisocial-purple transition-colors"
-              aria-label="Explore all AI marketing tools"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Explore all our AI tools <span className="ml-2" aria-hidden="true">→</span>
+              Explore AI Tools <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Preview Section */}
-      <section className="py-20 px-4" aria-label="Our portfolio showcase">
+      {/* Portfolio Preview Section - Streamlined */}
+      <section className="py-24 px-4 bg-gray-50" aria-label="Our portfolio showcase">
         <div className="container mx-auto">
-          <SectionHeading
-            title="Our Portfolio"
-            subtitle="See how we've helped Australian businesses achieve their marketing goals"
-            centered
-          />
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-6">
+              <Globe className="w-4 h-4" />
+              Success Stories
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              Proven Results for
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Forward-Thinking Brands
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover how we've transformed businesses across industries with innovative digital strategies
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             <PortfolioCard
-              title="Melbourne Tech Startup Rebrand"
-              description="Complete brand overhaul for a Melbourne tech startup, resulting in 60% increase in local brand recognition and market penetration."
-              image="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              categories={["Branding", "Digital Strategy"]}
-              link="/portfolio/global-tech-rebrand"
+              title="FMCG DAO Marketing Revolution"
+              description="Pioneering research into Web3-based community governance models that transformed brand loyalty and consumer engagement by 350%."
+              image="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              categories={["Web3 Strategy", "Consumer Research"]}
+              link="/portfolio/fmcg-dao-strategy"
             />
             <PortfolioCard
-              title="Australian E-commerce SEO Success"
-              description="Comprehensive SEO strategy that increased organic traffic by 85% in just 4 months for an Australian e-commerce platform."
-              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              categories={["SEO", "Content Marketing"]}
-              link="/portfolio/ecommerce-seo"
+              title="Microlino EV Launch Strategy"
+              description="Comprehensive market entry campaign for revolutionary electric vehicle, generating 75M+ impressions and driving pre-orders."
+              image="https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              categories={["Campaign Strategy", "EV Marketing"]}
+              link="/portfolio/microlino-strategy"
             />
             <PortfolioCard
-              title="Sydney Lifestyle Brand Growth"
-              description="Strategic social media campaign that tripled engagement and grew the follower base by 200% for a Sydney-based lifestyle brand."
-              image="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              categories={["Social Media", "Content Creation"]}
-              link="/portfolio/social-media-growth"
+              title="Sun Life Viral Campaign"
+              description="'I Choose The Sun' influencer campaign achieved 75.6M views and 8,000+ user-generated videos during challenging times."
+              image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              categories={["Viral Marketing", "Influencer Strategy"]}
+              link="/portfolio/i-choose-the-sun"
             />
           </div>
 
           <div className="text-center mt-12">
             <a
               href="/portfolio"
-              className="inline-flex items-center text-heisocial-blue hover:text-heisocial-purple transition-colors"
-              aria-label="View all case studies and portfolio projects"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg group"
             >
-              View all case studies <span className="ml-2" aria-hidden="true">→</span>
+              View All Case Studies 
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Resources Preview Section */}
-      <section className="py-20 px-4 bg-gray-50" aria-label="Free marketing resources">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Free Resources & Insights"
-            subtitle="Valuable content to help you master digital marketing in Australia"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            <article className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <FileText className="h-12 w-12 text-heisocial-blue mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold mb-2">Australian SEO Guide 2024</h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive guide to boosting your website rankings and driving organic traffic in Australia's competitive digital landscape.
-              </p>
-              <a
-                href="/solutions/free-resources"
-                className="text-heisocial-blue hover:text-heisocial-purple transition-colors inline-flex items-center"
-                aria-label="Download Australian SEO Guide 2024"
-              >
-                Download Guide <Download className="ml-2 h-4 w-4" aria-hidden="true" />
-              </a>
-            </article>
-            <article className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <FileText className="h-12 w-12 text-heisocial-blue mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold mb-2">Australian Social Media Toolkit</h3>
-              <p className="text-gray-600 mb-4">
-                Complete toolkit with templates, content calendars, and strategy frameworks specifically designed for Australian social media audiences.
-              </p>
-              <a
-                href="/solutions/free-resources"
-                className="text-heisocial-blue hover:text-heisocial-purple transition-colors inline-flex items-center"
-                aria-label="Download Australian Social Media Toolkit"
-              >
-                Download Toolkit <Download className="ml-2 h-4 w-4" aria-hidden="true" />
-              </a>
-            </article>
-            <article className="bg-white p-6 rounded-lg shadow-md card-hover border border-gray-100">
-              <FileText className="h-12 w-12 text-heisocial-blue mb-4" aria-hidden="true" />
-              <h3 className="text-xl font-bold mb-2">AI Marketing Playbook for Australia</h3>
-              <p className="text-gray-600 mb-4">
-                Learn how to implement AI into your Australian marketing strategy with practical examples and actionable insights tailored for the local market.
-              </p>
-              <a
-                href="/solutions/free-resources"
-                className="text-heisocial-blue hover:text-heisocial-purple transition-colors inline-flex items-center"
-                aria-label="Download AI Marketing Playbook for Australia"
-              >
-                Download Playbook <Download className="ml-2 h-4 w-4" aria-hidden="true" />
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Preview Section */}
-      <section className="py-20 px-4" aria-label="Latest marketing insights and blog posts">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Latest Insights"
-            subtitle="Expert perspectives on Australian marketing trends and strategies"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
-            <BlogCard
-              id="1"
-              title="How AI is Revolutionising Content Marketing in Australia 2024"
-              excerpt="Explore the transformative impact of artificial intelligence on content creation, distribution, and optimisation strategies for Australian businesses."
-              coverImage="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              date="Mar 15, 2024"
-              author="David Mitchell"
-              category="AI Marketing"
-              slug="ai-revolutionising-content-marketing-australia"
-            />
-            <BlogCard
-              id="2"
-              title="Local SEO Strategies That Drove Results for Australian Businesses"
-              excerpt="An in-depth analysis of the most effective local SEO tactics that delivered measurable improvements in organic traffic and conversions for Australian companies."
-              coverImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              date="Feb 28, 2024"
-              author="Sophia Wang"
-              category="SEO"
-              slug="local-seo-strategies-australia-2024"
-            />
-            <BlogCard
-              id="3"
-              title="Building a Cohesive Brand Across Australian Digital Channels"
-              excerpt="Learn how to maintain consistent brand messaging and visual identity across multiple digital platforms to strengthen brand recognition in the Australian market."
-              coverImage="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              date="Jan 20, 2024"
-              author="James Wilson"
-              category="Branding"
-              slug="cohesive-brand-australian-digital-channels"
-            />
-          </div>
-
-          <div className="text-center mt-12">
-            <a
-              href="/blog"
-              className="inline-flex items-center text-heisocial-blue hover:text-heisocial-purple transition-colors"
-              aria-label="Read more marketing articles and insights"
-            >
-              Read more articles <span className="ml-2" aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
+      {/* Call to Action Section - Enhanced */}
       <CallToAction
-        title="Ready to Transform Your Australian Digital Marketing Strategy?"
-        description="Get in touch with our local team to discuss how we can help you achieve your business goals with our innovative marketing solutions tailored for the Australian market."
-        primaryButtonText="Contact Us Today"
+        title="Ready to Transform Your Digital Presence?"
+        description="Join 200+ Australian businesses that have revolutionized their marketing with our AI-powered solutions. Let's build your digital future together."
+        primaryButtonText="Start Your Transformation"
         primaryButtonLink="/contact"
-        secondaryButtonText="Explore Our Services"
+        secondaryButtonText="Explore Our Solutions"
         secondaryButtonLink="/services"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
       />
 
-      {/* Contact Form Section */}
-      <section className="py-20 px-4" aria-label="Contact form and information">
+      {/* Contact Section - Redesigned */}
+      <section className="py-24 px-4 bg-white" aria-label="Contact form and information">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <article>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Let's Start a <span className="gradient-text">Conversation</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-6">
+                <Mail className="w-4 h-4" />
+                Get in Touch
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                Let's Start Your
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Digital Journey
+                </span>
               </h2>
-              <p className="text-gray-600 mb-8">
-                Have a question or ready to get started? Fill out the form and our Australian team will get back to you within 24 hours.
+              
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Ready to revolutionize your marketing? Our AI-powered experts are standing by to craft your personalized digital transformation strategy.
               </p>
-              <div className="space-y-6" role="list" aria-label="Contact information">
-                <div className="flex items-start" role="listitem">
-                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-4">
-                    <Mail className="h-5 w-5 text-heisocial-purple" aria-hidden="true" />
+              
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Mail className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Email Us</h3>
-                    <a href="mailto:info@heisocial.com.au" className="text-gray-600 hover:text-heisocial-blue">
-                      info@heisocial.com.au
+                    <h3 className="font-semibold text-gray-900">Email Us</h3>
+                    <a href="mailto:info@heidigital.com.au" className="text-blue-600 hover:text-blue-700">
+                      info@heidigital.com.au
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start" role="listitem">
-                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-4">
-                    <Phone className="h-5 w-5 text-heisocial-purple" aria-hidden="true" />
+                
+                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <Phone className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium">Call Us</h3>
-                    <a href="tel:+61390000000" className="text-gray-600 hover:text-heisocial-blue">
+                    <h3 className="font-semibold text-gray-900">Call Us</h3>
+                    <a href="tel:+61390000000" className="text-purple-600 hover:text-purple-700">
                       +61 3 9000 0000
                     </a>
                   </div>
                 </div>
               </div>
-            </article>
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            </div>
+            
+            <div className="bg-gradient-to-br from-gray-50 to-blue-50/50 p-8 rounded-3xl shadow-lg border border-gray-100">
               <ContactForm />
             </div>
           </div>
@@ -380,4 +431,3 @@ const Index = () => {
 };
 
 export default Index;
-
