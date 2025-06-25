@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -43,6 +42,29 @@ const AITools = () => {
               <CardFooter>
                 <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
                   <Link to="/solutions/ai-tools/content-generator">Try Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-heisocial-blue">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Globe className="h-12 w-12 text-heisocial-blue" />
+                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">NEW</span>
+                </div>
+                <CardTitle>Multilingual SEO Content Generator</CardTitle>
+                <CardDescription>
+                  Create SEO-optimized content in 6 languages with cultural awareness
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Generate content in English, French, Chinese, Japanese, Korean, and Vietnamese with proper SEO optimization for each market.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+                  <Link to="/solutions/ai-tools/multilingual-content-generator">Try Now</Link>
                 </Button>
               </CardFooter>
             </Card>

@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,7 @@ import Sitemap from "./pages/Sitemap";
 import FreeResources from "./pages/solutions/FreeResources";
 import AITools from "./pages/solutions/AITools";
 import ContentGenerator from "./pages/solutions/ai-tools/ContentGenerator";
+import MultilingualContentGenerator from "./pages/solutions/ai-tools/MultilingualContentGenerator";
 import SEOGuide from "./pages/solutions/free-resources/SEOGuide";
 import SocialToolkit from "./pages/solutions/free-resources/SocialToolkit";
 import AIPlaybook from "./pages/solutions/free-resources/AIPlaybook";
@@ -62,6 +62,7 @@ const App = () => (
           <Route path="/solutions/free-resources" element={<FreeResources />} />
           <Route path="/solutions/ai-tools" element={<AITools />} />
           <Route path="/solutions/ai-tools/content-generator" element={<ContentGenerator />} />
+          <Route path="/solutions/ai-tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
           
           <Route path="/solutions/free-resources/seo-guide" element={<SEOGuide />} />
           <Route path="/solutions/free-resources/social-toolkit" element={<SocialToolkit />} />
