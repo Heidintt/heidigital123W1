@@ -246,24 +246,27 @@ const MultilingualContentGenerator = () => {
                   </Select>
                 </div>
 
-                <Button 
-                  onClick={handleGenerate}
-                  disabled={isGenerating}
-                  className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90"
-                  size="lg"
-                >
-                  {isGenerating ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Generating Content...
-                    </>
-                  ) : (
-                    <>
-                      <Brain className="mr-2 h-5 w-5" />
-                      Generate Content
-                    </>
-                  )}
-                </Button>
+                {/* GENERATE BUTTON - Make sure it's visible and functional */}
+                <div className="pt-4">
+                  <Button 
+                    onClick={handleGenerate}
+                    disabled={isGenerating}
+                    className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90 text-white"
+                    size="lg"
+                  >
+                    {isGenerating ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Generating Content...
+                      </>
+                    ) : (
+                      <>
+                        <Brain className="mr-2 h-5 w-5" />
+                        Generate Content
+                      </>
+                    )}
+                  </Button>
+                </div>
               </div>
             </div>
 
