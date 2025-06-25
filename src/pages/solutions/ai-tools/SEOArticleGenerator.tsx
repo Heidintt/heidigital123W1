@@ -1,16 +1,14 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Loader2, FileText, CheckCircle, Target, Search, Edit } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ArticleGeneratorForm from "@/components/seo-article/ArticleGeneratorForm";
+import ArticleFeatures from "@/components/seo-article/ArticleFeatures";
+import GeneratedArticleDisplay from "@/components/seo-article/GeneratedArticleDisplay";
+import FeaturesSection from "@/components/seo-article/FeaturesSection";
+import BenefitsSection from "@/components/seo-article/BenefitsSection";
 
 const SEOArticleGenerator = () => {
   const [primaryKeyword, setPrimaryKeyword] = useState("");
@@ -148,36 +146,7 @@ External Link Suggestions:
         backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      {/* Features Section */}
-      <section className="py-12 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Professional SEO Content Creation"
-            subtitle="Generate complete, publication-ready articles with professional English writing"
-            centered
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <Target className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2">Ready to Publish</h3>
-              <p className="text-gray-600">Complete articles with no markdown formatting, ready to copy and use</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <FileText className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2">Professional Writing</h3>
-              <p className="text-gray-600">High-quality English content, 800-1500 words, detailed and engaging</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <CheckCircle className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2">SEO Optimized</h3>
-              <p className="text-gray-600">Complete with meta titles, descriptions, and keyword optimization</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FeaturesSection />
 
       {/* Article Generator Form */}
       <section className="py-16 px-4 bg-white">
@@ -190,214 +159,31 @@ External Link Suggestions:
 
           <div className="max-w-4xl mx-auto mt-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Input Form */}
-              <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Article Information</h3>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Primary Keyword *
-                  </label>
-                  <Input
-                    placeholder="e.g., content marketing strategy"
-                    value={primaryKeyword}
-                    onChange={(e) => setPrimaryKeyword(e.target.value)}
-                  />
-                </div>
+              <ArticleGeneratorForm
+                primaryKeyword={primaryKeyword}
+                setPrimaryKeyword={setPrimaryKeyword}
+                secondaryKeywords={secondaryKeywords}
+                setSecondaryKeywords={setSecondaryKeywords}
+                targetAudience={targetAudience}
+                setTargetAudience={setTargetAudience}
+                articleTopic={articleTopic}
+                setArticleTopic={setArticleTopic}
+                isGenerating={isGenerating}
+                onGenerate={handleGenerate}
+              />
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Secondary Keywords
-                  </label>
-                  <Input
-                    placeholder="e.g., digital marketing, SEO optimization, brand awareness"
-                    value={secondaryKeywords}
-                    onChange={(e) => setSecondaryKeywords(e.target.value)}
-                  />
-                  <p className="text-xs text-gray-500 mt-1">Separate with commas</p>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Article Topic *
-                  </label>
-                  <Input
-                    placeholder="e.g., The Ultimate Guide to Content Marketing Strategy in 2024"
-                    value={articleTopic}
-                    onChange={(e) => setArticleTopic(e.target.value)}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Target Audience
-                  </label>
-                  <Input
-                    placeholder="e.g., marketing professionals, small business owners, entrepreneurs"
-                    value={targetAudience}
-                    onChange={(e) => setTargetAudience(e.target.value)}
-                  />
-                </div>
-
-                <div className="pt-4">
-                  <Button 
-                    onClick={handleGenerate}
-                    disabled={isGenerating}
-                    className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90 text-white"
-                    size="lg"
-                  >
-                    {isGenerating ? (
-                      <>
-                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Generating Article...
-                      </>
-                    ) : (
-                      <>
-                        <Edit className="mr-2 h-5 w-5" />
-                        Generate SEO Article
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </div>
-
-              {/* Article Features */}
-              <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Article Features</h3>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">800-1500 words professional content</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">No markdown formatting - ready to use</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Meta title & description included</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">SEO-optimized URL slug</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Image alt text suggestions</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Internal & external link ideas</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Professional English writing</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Comprehensive topic coverage</span>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">💡 Professional Tips:</h4>
-                  <ul className="text-sm text-blue-700 space-y-1">
-                    <li>• Articles are generated in conversational, professional tone</li>
-                    <li>• Content includes industry insights and best practices</li>
-                    <li>• Each article covers the topic comprehensively</li>
-                    <li>• Ready to copy-paste into your CMS or website</li>
-                  </ul>
-                </div>
-              </div>
+              <ArticleFeatures />
             </div>
 
-            {/* Generated Article Display */}
-            {generatedArticle && (
-              <div className="mt-8 bg-white p-6 rounded-lg border shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold">Generated SEO Article</h3>
-                  <Badge variant="outline" className="bg-green-50 text-green-700">
-                    Ready to Publish
-                  </Badge>
-                </div>
-                <div className="bg-gray-50 p-6 rounded border max-h-96 overflow-y-auto">
-                  <div className="whitespace-pre-wrap text-sm leading-relaxed">{generatedArticle}</div>
-                </div>
-                <div className="mt-4 flex justify-end gap-2">
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      navigator.clipboard.writeText(generatedArticle);
-                      toast({
-                        title: "Copied!",
-                        description: "Article has been copied to clipboard"
-                      });
-                    }}
-                  >
-                    Copy Article
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    onClick={() => setGeneratedArticle("")}
-                  >
-                    Clear
-                  </Button>
-                </div>
-              </div>
-            )}
+            <GeneratedArticleDisplay
+              generatedArticle={generatedArticle}
+              onClear={() => setGeneratedArticle("")}
+            />
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Why Choose This Tool?"
-            subtitle="Generate professional SEO articles that are ready to publish immediately"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Search className="h-10 w-10 text-blue-500 mx-auto mb-2" />
-                <CardTitle className="text-lg">Publication Ready</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  No formatting needed - copy and paste directly into your website or blog
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <FileText className="h-10 w-10 text-green-500 mx-auto mb-2" />
-                <CardTitle className="text-lg">Professional Quality</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  High-quality English writing with comprehensive coverage and insights
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Target className="h-10 w-10 text-purple-500 mx-auto mb-2" />
-                <CardTitle className="text-lg">Complete SEO Package</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">
-                  Includes all metadata, suggestions, and optimization elements you need
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection />
 
       <CallToAction
         title="Ready to Create Professional SEO Content?"
