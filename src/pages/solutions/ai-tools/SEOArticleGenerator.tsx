@@ -24,8 +24,8 @@ const SEOArticleGenerator = () => {
   const handleGenerate = () => {
     if (!primaryKeyword || !articleTopic) {
       toast({
-        title: "Thiếu thông tin",
-        description: "Vui lòng điền từ khóa chính và chủ đề bài viết",
+        title: "Missing Information",
+        description: "Please fill in the primary keyword and article topic",
         variant: "destructive"
       });
       return;
@@ -35,102 +35,116 @@ const SEOArticleGenerator = () => {
     
     // Simulate article generation
     setTimeout(() => {
-      const article = `# ${articleTopic}
-
-## Meta Title:
-${primaryKeyword} - Complete Guide for ${targetAudience || "Users"} in 2025
-
-## Meta Description:
-Discover everything about ${primaryKeyword}. Learn ${secondaryKeywords ? `${secondaryKeywords.split(',')[0]}, ` : ""}tips, strategies, and best practices in this comprehensive guide.
-
-## H1: ${articleTopic}
-
-### Giới thiệu
-Bạn đang tìm hiểu về ${primaryKeyword}? Bạn không đơn độc. Trong thế giới số hóa ngày nay, ${primaryKeyword} đã trở thành một yếu tố quan trọng không thể bỏ qua. Bài viết này sẽ cung cấp cho bạn kiến thức toàn diện về ${primaryKeyword}, từ cơ bản đến nâng cao.
-
-## H2: ${primaryKeyword} là gì?
-
-${primaryKeyword} là một khái niệm quan trọng trong lĩnh vực marketing số. Nó giúp ${targetAudience || "người dùng"} có thể đạt được mục tiêu kinh doanh hiệu quả hơn.
-
-### Định nghĩa cơ bản:
-- ${primaryKeyword} bao gồm nhiều yếu tố khác nhau
-- Mục tiêu chính là tối ưu hóa hiệu suất
-- Phù hợp với ${targetAudience || "mọi đối tượng"}
-
-## H2: Tại sao ${primaryKeyword} quan trọng?
-
-Theo nghiên cứu gần đây, ${primaryKeyword} có thể:
-- Tăng hiệu quả công việc lên đến 300%
-- Giảm thời gian thực hiện các tác vụ
-- Cải thiện chất lượng kết quả đầu ra
-
-## H2: Cách sử dụng ${primaryKeyword} hiệu quả
-
-### Bước 1: Chuẩn bị
-Trước khi bắt đầu với ${primaryKeyword}, bạn cần:
-- Xác định mục tiêu rõ ràng
-- Chuẩn bị các công cụ cần thiết
-- Hiểu rõ target audience
-
-### Bước 2: Thực hiện
-${secondaryKeywords ? `Kết hợp ${primaryKeyword} với ${secondaryKeywords.split(',')[0]} để đạt hiệu quả tối ưu.` : "Áp dụng các chiến lược phù hợp với mục tiêu của bạn."}
-
-### Bước 3: Đánh giá và tối ưu
-- Theo dõi kết quả thường xuyên
-- Điều chỉnh chiến lược khi cần thiết
-- Học hỏi từ các thành công và thất bại
-
-## H2: Các lỗi thường gặp khi sử dụng ${primaryKeyword}
-
-### Lỗi 1: Không có chiến lược rõ ràng
-Nhiều người bắt đầu với ${primaryKeyword} mà không có kế hoạch cụ thể.
-
-### Lỗi 2: Bỏ qua việc đo lường
-Không theo dõi KPI và metrics quan trọng.
-
-### Lỗi 3: Thiếu kiên nhẫn
-${primaryKeyword} cần thời gian để mang lại kết quả.
-
-## H2: Câu hỏi thường gặp về ${primaryKeyword}
-
-### Q: ${primaryKeyword} có phù hợp với doanh nghiệp nhỏ?
-A: Hoàn toàn có thể. ${primaryKeyword} có thể điều chỉnh theo quy mô và ngân sách của mọi doanh nghiệp.
-
-### Q: Tôi cần bao lâu để thấy kết quả từ ${primaryKeyword}?
-A: Thông thường, bạn có thể thấy kết quả đầu tiên sau 2-3 tháng thực hiện nghiêm túc.
-
-### Q: Chi phí cho ${primaryKeyword} là bao nhiều?
-A: Chi phí phụ thuộc vào nhiều yếu tố như quy mô, mục tiêu và phương pháp thực hiện.
-
-## H2: Kết luận
-
-${primaryKeyword} là một công cụ mạnh mẽ có thể giúp ${targetAudience || "bạn"} đạt được mục tiêu kinh doanh. Bằng cách áp dụng đúng chiến lược và kiên trì thực hiện, bạn sẽ thấy được những kết quả tích cực.
-
-**Hành động tiếp theo:** Hãy bắt đầu thực hiện ${primaryKeyword} ngay hôm nay với những kiến thức đã học được từ bài viết này.
-
----
-
-**Từ khóa được sử dụng:**
-- Từ khóa chính: ${primaryKeyword}
-${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
-
-**Số từ ước tính:** ~1,200 từ
-**Readability:** Phù hợp cho người đọc từ cấp độ trung bình trở lên`;
-
+      const article = generateSEOArticle(primaryKeyword, secondaryKeywords, targetAudience, articleTopic);
       setGeneratedArticle(article);
       setIsGenerating(false);
       toast({
-        title: "Tạo bài viết thành công!",
-        description: "Bài viết SEO đã được tạo theo template chuẩn",
+        title: "Article Generated Successfully!",
+        description: "Your SEO-optimized article is ready to use",
       });
     }, 3000);
+  };
+
+  const generateSEOArticle = (primary: string, secondary: string, audience: string, topic: string) => {
+    const secondaryArray = secondary.split(',').map(k => k.trim()).filter(k => k);
+    const audienceText = audience || "users";
+    
+    return `${topic}
+
+In today's rapidly evolving digital landscape, understanding ${primary} has become more crucial than ever before. Whether you're a business owner, marketing professional, or simply someone looking to enhance your digital presence, mastering ${primary} can significantly impact your success. This comprehensive guide will walk you through everything you need to know about ${primary}, from fundamental concepts to advanced strategies that can transform your approach.
+
+The importance of ${primary} cannot be overstated in our current market environment. Recent studies indicate that businesses and individuals who effectively utilize ${primary} see up to 40% better results compared to those who don't. For ${audienceText}, this represents not just an opportunity but a necessity to stay competitive and relevant in their respective fields.
+
+What exactly is ${primary}? At its core, ${primary} represents a fundamental shift in how we approach digital solutions and strategies. It encompasses various methodologies, tools, and techniques that work together to create measurable results. Understanding ${primary} requires looking beyond surface-level implementations and diving deep into the underlying principles that make it effective.
+
+The concept of ${primary} has evolved significantly over the past few years. Initially, it was considered a niche approach used only by tech-savvy professionals. However, as digital transformation accelerated across industries, ${primary} became mainstream, with businesses of all sizes recognizing its potential for driving growth and efficiency.
+
+${secondaryArray.length > 0 ? `When discussing ${primary}, it's essential to understand related concepts such as ${secondaryArray[0]}${secondaryArray.length > 1 ? `, ${secondaryArray[1]}` : ''}${secondaryArray.length > 2 ? `, and ${secondaryArray[2]}` : ''}. These complementary elements work synergistically with ${primary} to create comprehensive solutions that address multiple aspects of digital challenges.` : ''}
+
+The benefits of implementing ${primary} are numerous and far-reaching. First and foremost, it provides enhanced efficiency in operations. Organizations that properly implement ${primary} typically see a reduction in time-to-market for their products and services. This efficiency gain translates directly into cost savings and improved resource allocation.
+
+Additionally, ${primary} offers improved scalability options. As businesses grow and evolve, their systems and processes need to adapt accordingly. ${primary} provides the flexibility and adaptability required to handle increased demands without compromising quality or performance. This scalability factor is particularly important for ${audienceText} who are planning for long-term growth.
+
+Another significant advantage is the enhanced user experience that ${primary} can provide. In an era where customer expectations are higher than ever, delivering exceptional user experiences is paramount. ${primary} enables organizations to create more intuitive, responsive, and personalized interactions with their audience.
+
+When it comes to implementing ${primary}, there are several key strategies that have proven most effective. The first step involves conducting a thorough analysis of current systems and processes. This assessment helps identify areas where ${primary} can have the most significant impact and ensures that implementation efforts are focused on high-value opportunities.
+
+Planning and preparation are crucial elements of successful ${primary} implementation. This involves setting clear objectives, establishing measurable goals, and creating a roadmap that outlines the steps needed to achieve desired outcomes. Without proper planning, even the most well-intentioned ${primary} initiatives can fail to deliver expected results.
+
+The implementation phase requires careful attention to detail and systematic execution. Best practices suggest starting with pilot projects or smaller-scale implementations before rolling out ${primary} across entire organizations. This approach allows for learning, adjustment, and refinement before committing to larger investments.
+
+${secondaryArray.length > 0 ? `Integration with existing systems is another critical consideration. ${primary} rarely operates in isolation and must work seamlessly with other tools and platforms. This is where understanding ${secondaryArray[0]} and related technologies becomes valuable, as they often serve as complementary components in comprehensive ${primary} solutions.` : ''}
+
+Measuring success is an integral part of any ${primary} strategy. Key performance indicators should be established early in the process to track progress and ensure that implementations are delivering expected results. Common metrics include efficiency improvements, cost reductions, user satisfaction scores, and return on investment calculations.
+
+One of the most common mistakes organizations make when working with ${primary} is underestimating the importance of training and education. Even the most sophisticated ${primary} solutions require knowledgeable users who understand how to leverage their capabilities effectively. Investing in proper training ensures that ${audienceText} can maximize the value they derive from ${primary} implementations.
+
+Another frequent pitfall is attempting to implement too much too quickly. While enthusiasm for ${primary} is understandable, rushing implementation without adequate preparation often leads to suboptimal results. A phased approach that allows for learning and adjustment typically yields better long-term outcomes.
+
+The future of ${primary} looks incredibly promising, with emerging technologies and methodologies continuing to expand its capabilities. Artificial intelligence and machine learning are increasingly being integrated with ${primary} solutions, creating new possibilities for automation and optimization.
+
+For ${audienceText} looking to stay ahead of the curve, understanding these emerging trends is essential. The organizations that begin preparing for next-generation ${primary} capabilities today will be best positioned to capitalize on future opportunities.
+
+${secondaryArray.length > 1 ? `The relationship between ${primary} and ${secondaryArray[1]} is becoming increasingly important as well. This convergence is creating new opportunities for innovation and efficiency that weren't possible with either approach alone.` : ''}
+
+Cost considerations are always important when evaluating ${primary} solutions. While initial investments may seem substantial, the long-term benefits typically far outweigh the costs. Organizations should focus on total cost of ownership rather than just upfront expenses when making ${primary} investment decisions.
+
+Return on investment for ${primary} implementations can be measured in various ways, including direct cost savings, revenue increases, and productivity improvements. Many organizations see positive returns within six to twelve months of implementation, with benefits continuing to compound over time.
+
+Budget planning for ${primary} should account for both direct and indirect costs. Direct costs include software licenses, hardware requirements, and implementation services. Indirect costs encompass training, change management, and potential productivity impacts during transition periods.
+
+Looking ahead, several trends are shaping the future of ${primary}. Increased automation is making ${primary} solutions more accessible to smaller organizations and individual users. Cloud-based delivery models are reducing barriers to entry and enabling more flexible deployment options.
+
+The integration of advanced analytics and reporting capabilities is providing deeper insights into ${primary} performance and effectiveness. These enhanced monitoring and measurement tools are helping organizations optimize their ${primary} strategies and achieve better results.
+
+Security and compliance considerations are becoming increasingly important as ${primary} adoption grows. Organizations must ensure that their ${primary} implementations meet relevant regulatory requirements and maintain appropriate security standards.
+
+For ${audienceText} who are just beginning their ${primary} journey, starting with clearly defined objectives and realistic expectations is crucial. Success with ${primary} typically requires patience, persistence, and a willingness to learn and adapt along the way.
+
+Choosing the right partners and vendors can significantly impact ${primary} success. Organizations should carefully evaluate potential providers based on their experience, expertise, and track record with similar implementations.
+
+In conclusion, ${primary} represents a powerful opportunity for ${audienceText} to enhance their capabilities and achieve better results. While implementation requires careful planning and execution, the potential benefits make it a worthwhile investment for most organizations. By understanding the fundamental principles, avoiding common pitfalls, and staying informed about emerging trends, you can position yourself for success with ${primary}.
+
+The key to maximizing ${primary} value lies in taking a strategic, well-planned approach that aligns with your specific goals and requirements. Whether you're just starting your ${primary} journey or looking to optimize existing implementations, the insights and strategies outlined in this guide provide a solid foundation for success.
+
+Remember that ${primary} is not a one-time implementation but an ongoing journey of improvement and optimization. Stay committed to continuous learning and adaptation, and you'll be well-positioned to realize the full potential of ${primary} in your specific context.
+
+---
+
+SEO METADATA:
+
+Meta Title: ${topic} - Complete Guide for ${audienceText} in 2024
+Meta Description: Discover everything about ${primary}. Learn ${secondaryArray.length > 0 ? `${secondaryArray[0]}, ` : ''}strategies, best practices, and implementation tips in this comprehensive guide for ${audienceText}.
+URL Slug: ${primary.toLowerCase().replace(/\s+/g, '-')}-guide-2024
+Focus Keyword: ${primary}
+${secondaryArray.length > 0 ? `Secondary Keywords: ${secondary}` : ''}
+Word Count: ~1,200 words
+Reading Level: Professional/Intermediate
+Content Type: How-to Guide/Educational Article
+Target Audience: ${audienceText}
+
+Image Suggestions:
+- Hero image: Professional illustration of ${primary} concept
+- Alt text: "${primary} implementation strategy diagram for ${audienceText}"
+- Infographic: Benefits and statistics related to ${primary}
+- Alt text: "Key benefits and ROI statistics for ${primary} implementation"
+
+Internal Link Opportunities:
+- Link to related service pages
+- Link to case studies or success stories
+- Link to additional resources or tools
+
+External Link Suggestions:
+- Industry reports and statistics
+- Authoritative sources and research studies
+- Professional organizations and standards bodies`;
   };
 
   return (
     <Layout>
       <Hero
-        title="SEO Article Generator"
-        subtitle="Tạo bài viết SEO chuẩn Google với template chuyên nghiệp. Tối ưu từ khóa, cấu trúc H1-H6, và độ dài nội dung."
+        title="Professional SEO Article Generator"
+        subtitle="Generate complete, ready-to-publish SEO articles in English. Professional writing, 800-1500 words, with metadata included."
         backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
@@ -138,28 +152,28 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
       <section className="py-12 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto">
           <SectionHeading
-            title="Viết bài SEO chuẩn Google"
-            subtitle="Template chuyên nghiệp giúp bài viết của bạn lên top tìm kiếm"
+            title="Professional SEO Content Creation"
+            subtitle="Generate complete, publication-ready articles with professional English writing"
             centered
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <Target className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2">Tối ưu từ khóa</h3>
-              <p className="text-gray-600">Phân bố từ khóa chính, phụ và LSI keyword tự nhiên trong bài</p>
+              <h3 className="font-bold text-lg mb-2">Ready to Publish</h3>
+              <p className="text-gray-600">Complete articles with no markdown formatting, ready to copy and use</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <FileText className="h-12 w-12 text-green-600 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2">Cấu trúc chuẩn</h3>
-              <p className="text-gray-600">H1, H2, H3 theo thứ tự logic, meta title/description tối ưu</p>
+              <h3 className="font-bold text-lg mb-2">Professional Writing</h3>
+              <p className="text-gray-600">High-quality English content, 800-1500 words, detailed and engaging</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <CheckCircle className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-              <h3 className="font-bold text-lg mb-2">Độ dài chuẩn</h3>
-              <p className="text-gray-600">1200-2000 từ, phù hợp với yêu cầu SEO của Google</p>
+              <h3 className="font-bold text-lg mb-2">SEO Optimized</h3>
+              <p className="text-gray-600">Complete with meta titles, descriptions, and keyword optimization</p>
             </div>
           </div>
         </div>
@@ -169,8 +183,8 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
           <SectionHeading
-            title="Tạo bài viết SEO"
-            subtitle="Điền thông tin dưới đây để tạo bài viết SEO chuẩn template"
+            title="Generate Professional SEO Article"
+            subtitle="Fill in the information below to create a complete, ready-to-publish article"
             centered
           />
 
@@ -178,14 +192,14 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Input Form */}
               <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Thông tin bài viết</h3>
+                <h3 className="text-xl font-bold mb-4">Article Information</h3>
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Từ khóa chính (Primary Keyword) *
+                    Primary Keyword *
                   </label>
                   <Input
-                    placeholder="VD: content creator tool"
+                    placeholder="e.g., content marketing strategy"
                     value={primaryKeyword}
                     onChange={(e) => setPrimaryKeyword(e.target.value)}
                   />
@@ -193,22 +207,22 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Từ khóa phụ (Secondary Keywords)
+                    Secondary Keywords
                   </label>
                   <Input
-                    placeholder="VD: AI content writer, blog generator, SEO tool"
+                    placeholder="e.g., digital marketing, SEO optimization, brand awareness"
                     value={secondaryKeywords}
                     onChange={(e) => setSecondaryKeywords(e.target.value)}
                   />
-                  <p className="text-xs text-gray-500 mt-1">Cách nhau bằng dấu phẩy</p>
+                  <p className="text-xs text-gray-500 mt-1">Separate with commas</p>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Chủ đề bài viết *
+                    Article Topic *
                   </label>
                   <Input
-                    placeholder="VD: Top 5 Content Creator Tools for SEO in 2025"
+                    placeholder="e.g., The Ultimate Guide to Content Marketing Strategy in 2024"
                     value={articleTopic}
                     onChange={(e) => setArticleTopic(e.target.value)}
                   />
@@ -216,10 +230,10 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Đối tượng mục tiêu
+                    Target Audience
                   </label>
                   <Input
-                    placeholder="VD: marketers, content creators, small business owners"
+                    placeholder="e.g., marketing professionals, small business owners, entrepreneurs"
                     value={targetAudience}
                     onChange={(e) => setTargetAudience(e.target.value)}
                   />
@@ -235,64 +249,64 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
                     {isGenerating ? (
                       <>
                         <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                        Đang tạo bài viết...
+                        Generating Article...
                       </>
                     ) : (
                       <>
                         <Edit className="mr-2 h-5 w-5" />
-                        Tạo bài viết SEO
+                        Generate SEO Article
                       </>
                     )}
                   </Button>
                 </div>
               </div>
 
-              {/* SEO Checklist */}
+              {/* Article Features */}
               <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">SEO Checklist</h3>
+                <h3 className="text-xl font-bold mb-4">Article Features</h3>
                 
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Meta Title (60 ký tự)</span>
+                    <span className="text-sm">800-1500 words professional content</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Meta Description (155 ký tự)</span>
+                    <span className="text-sm">No markdown formatting - ready to use</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Cấu trúc H1, H2, H3</span>
+                    <span className="text-sm">Meta title & description included</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Từ khóa trong URL</span>
+                    <span className="text-sm">SEO-optimized URL slug</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Độ dài 1200+ từ</span>
+                    <span className="text-sm">Image alt text suggestions</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Internal & External Links</span>
+                    <span className="text-sm">Internal & external link ideas</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">FAQ Section</span>
+                    <span className="text-sm">Professional English writing</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span className="text-sm">Call-to-Action</span>
+                    <span className="text-sm">Comprehensive topic coverage</span>
                   </div>
                 </div>
 
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">💡 Tips SEO:</h4>
+                  <h4 className="font-semibold text-blue-800 mb-2">💡 Professional Tips:</h4>
                   <ul className="text-sm text-blue-700 space-y-1">
-                    <li>• Đặt từ khóa chính gần đầu title</li>
-                    <li>• Sử dụng số liệu và năm hiện tại</li>
-                    <li>• Viết đoạn văn ngắn, dễ đọc</li>
-                    <li>• Thêm hình ảnh có ALT text</li>
+                    <li>• Articles are generated in conversational, professional tone</li>
+                    <li>• Content includes industry insights and best practices</li>
+                    <li>• Each article covers the topic comprehensively</li>
+                    <li>• Ready to copy-paste into your CMS or website</li>
                   </ul>
                 </div>
               </div>
@@ -302,13 +316,13 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
             {generatedArticle && (
               <div className="mt-8 bg-white p-6 rounded-lg border shadow-sm">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold">Bài viết SEO đã tạo</h3>
+                  <h3 className="text-lg font-semibold">Generated SEO Article</h3>
                   <Badge variant="outline" className="bg-green-50 text-green-700">
-                    Sẵn sàng đăng
+                    Ready to Publish
                   </Badge>
                 </div>
-                <div className="bg-gray-50 p-4 rounded border max-h-96 overflow-y-auto">
-                  <pre className="whitespace-pre-wrap font-mono text-sm">{generatedArticle}</pre>
+                <div className="bg-gray-50 p-6 rounded border max-h-96 overflow-y-auto">
+                  <div className="whitespace-pre-wrap text-sm leading-relaxed">{generatedArticle}</div>
                 </div>
                 <div className="mt-4 flex justify-end gap-2">
                   <Button
@@ -316,18 +330,18 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
                     onClick={() => {
                       navigator.clipboard.writeText(generatedArticle);
                       toast({
-                        title: "Đã copy!",
-                        description: "Bài viết đã được copy vào clipboard"
+                        title: "Copied!",
+                        description: "Article has been copied to clipboard"
                       });
                     }}
                   >
-                    Copy bài viết
+                    Copy Article
                   </Button>
                   <Button 
                     variant="outline"
                     onClick={() => setGeneratedArticle("")}
                   >
-                    Xóa
+                    Clear
                   </Button>
                 </div>
               </div>
@@ -340,8 +354,8 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading
-            title="Tại sao chọn tool này?"
-            subtitle="Tạo bài viết SEO chuyên nghiệp trong vài phút"
+            title="Why Choose This Tool?"
+            subtitle="Generate professional SEO articles that are ready to publish immediately"
             centered
           />
 
@@ -349,11 +363,11 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Search className="h-10 w-10 text-blue-500 mx-auto mb-2" />
-                <CardTitle className="text-lg">Template chuẩn SEO</CardTitle>
+                <CardTitle className="text-lg">Publication Ready</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Dựa trên template SEO chuyên nghiệp, đảm bảo bài viết tối ưu cho Google
+                  No formatting needed - copy and paste directly into your website or blog
                 </p>
               </CardContent>
             </Card>
@@ -361,11 +375,11 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <FileText className="h-10 w-10 text-green-500 mx-auto mb-2" />
-                <CardTitle className="text-lg">Tiết kiệm thời gian</CardTitle>
+                <CardTitle className="text-lg">Professional Quality</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Tạo bài viết 1200+ từ chỉ trong vài phút thay vì vài giờ viết thủ công
+                  High-quality English writing with comprehensive coverage and insights
                 </p>
               </CardContent>
             </Card>
@@ -373,11 +387,11 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Target className="h-10 w-10 text-purple-500 mx-auto mb-2" />
-                <CardTitle className="text-lg">Chuẩn Google</CardTitle>
+                <CardTitle className="text-lg">Complete SEO Package</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 text-sm">
-                  Tuân theo các nguyên tắc SEO mới nhất, tăng cơ hội lên top tìm kiếm
+                  Includes all metadata, suggestions, and optimization elements you need
                 </p>
               </CardContent>
             </Card>
@@ -386,11 +400,11 @@ ${secondaryKeywords ? `- Từ khóa phụ: ${secondaryKeywords}` : ""}
       </section>
 
       <CallToAction
-        title="Sẵn sàng tạo bài viết SEO chuyên nghiệp?"
-        description="Bắt đầu tạo những bài viết SEO chuẩn Google ngay hôm nay với template chuyên nghiệp của chúng tôi"
-        primaryButtonText="Bắt đầu ngay"
+        title="Ready to Create Professional SEO Content?"
+        description="Generate high-quality, ready-to-publish SEO articles that engage readers and rank well on Google"
+        primaryButtonText="Start Creating"
         primaryButtonLink="#"
-        secondaryButtonText="Xem thêm AI Tools"
+        secondaryButtonText="View More AI Tools"
         secondaryButtonLink="/solutions/ai-tools"
         backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
       />
