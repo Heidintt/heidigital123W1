@@ -6,7 +6,7 @@ import CallToAction from "@/components/CallToAction";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Bot, Edit, BarChart3, Users, Globe, Search } from "lucide-react";
+import { Bot, Edit, BarChart3, Users, Globe, Search, FileText } from "lucide-react";
 
 const AITools = () => {
   return (
@@ -49,8 +49,31 @@ const AITools = () => {
             <Card className="hover:shadow-lg transition-shadow border-2 border-heisocial-blue">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
-                  <Globe className="h-12 w-12 text-heisocial-blue" />
+                  <FileText className="h-12 w-12 text-heisocial-blue" />
                   <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">NEW</span>
+                </div>
+                <CardTitle>SEO Article Generator</CardTitle>
+                <CardDescription>
+                  Tạo bài viết SEO chuẩn Google với template chuyên nghiệp
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Viết bài SEO 1200+ từ với cấu trúc H1-H6, meta tags, và từ khóa tối ưu. Template dựa trên best practices SEO mới nhất.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+                  <Link to="/solutions/ai-tools/seo-article-generator">Try Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Globe className="h-12 w-12 text-heisocial-blue" />
+                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">BETA</span>
                 </div>
                 <CardTitle>Multilingual SEO Content Generator</CardTitle>
                 <CardDescription>

@@ -1,22 +1,21 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Blog from "./pages/Blog";
-import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Solutions from "./pages/Solutions";
+import Portfolio from "./pages/Portfolio";
+import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import Sitemap from "./pages/Sitemap";
+import Solutions from "./pages/Solutions";
 import FreeResources from "./pages/solutions/FreeResources";
 import AITools from "./pages/solutions/AITools";
 import ContentGenerator from "./pages/solutions/ai-tools/ContentGenerator";
+import SEOArticleGenerator from "./pages/solutions/ai-tools/SEOArticleGenerator";
 import MultilingualContentGenerator from "./pages/solutions/ai-tools/MultilingualContentGenerator";
 import SEOGuide from "./pages/solutions/free-resources/SEOGuide";
 import SocialToolkit from "./pages/solutions/free-resources/SocialToolkit";
@@ -37,52 +36,55 @@ import FMCGDAOStrategy from "./pages/portfolio/FMCGDAOStrategy";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/nha-ca-cafe" element={<NhaCaCafe />} />
-          <Route path="/portfolio/koto-club" element={<KotoClub />} />
-          <Route path="/portfolio/lua-hong-buffet" element={<LuaHongBuffet />} />
-          <Route path="/portfolio/i-choose-the-sun" element={<IChooseTheSun />} />
-          <Route path="/portfolio/microlino-campaign" element={<MicrolinoCampaign />} />
-          <Route path="/portfolio/microlino-strategy" element={<MicrolinoStrategy />} />
-          <Route path="/portfolio/fmcg-dao-strategy" element={<FMCGDAOStrategy />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/contact" element={<Contact />} />
-          
-          <Route path="/solutions/free-resources" element={<FreeResources />} />
-          <Route path="/solutions/ai-tools" element={<AITools />} />
-          <Route path="/solutions/ai-tools/content-generator" element={<ContentGenerator />} />
-          <Route path="/solutions/ai-tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
-          
-          <Route path="/solutions/free-resources/seo-guide" element={<SEOGuide />} />
-          <Route path="/solutions/free-resources/social-toolkit" element={<SocialToolkit />} />
-          <Route path="/solutions/free-resources/ai-playbook" element={<AIPlaybook />} />
-          <Route path="/solutions/free-resources/content-templates" element={<ContentTemplates />} />
-          <Route path="/solutions/free-resources/roi-calculator" element={<ROICalculator />} />
-          <Route path="/solutions/free-resources/email-guide" element={<EmailGuide />} />
-          <Route path="/solutions/free-resources/local-seo-checklist" element={<LocalSEOChecklist />} />
-          <Route path="/solutions/free-resources/content-calendar" element={<ContentCalendar />} />
-          <Route path="/solutions/free-resources/cro-guide" element={<CROGuide />} />
-          
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/sitemap" element={<Sitemap />} />
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/nha-ca-cafe" element={<NhaCaCafe />} />
+            <Route path="/portfolio/koto-club" element={<KotoClub />} />
+            <Route path="/portfolio/lua-hong-buffet" element={<LuaHongBuffet />} />
+            <Route path="/portfolio/i-choose-the-sun" element={<IChooseTheSun />} />
+            <Route path="/portfolio/microlino-campaign" element={<MicrolinoCampaign />} />
+            <Route path="/portfolio/microlino-strategy" element={<MicrolinoStrategy />} />
+            <Route path="/portfolio/fmcg-dao-strategy" element={<FMCGDAOStrategy />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/free-resources" element={<FreeResources />} />
+            <Route path="/solutions/ai-tools" element={<AITools />} />
+            <Route path="/solutions/ai-tools/content-generator" element={<ContentGenerator />} />
+            <Route path="/solutions/ai-tools/seo-article-generator" element={<SEOArticleGenerator />} />
+            <Route path="/solutions/ai-tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
+            
+            <Route path="/solutions/free-resources/seo-guide" element={<SEOGuide />} />
+            <Route path="/solutions/free-resources/social-toolkit" element={<SocialToolkit />} />
+            <Route path="/solutions/free-resources/ai-playbook" element={<AIPlaybook />} />
+            <Route path="/solutions/free-resources/content-templates" element={<ContentTemplates />} />
+            <Route path="/solutions/free-resources/roi-calculator" element={<ROICalculator />} />
+            <Route path="/solutions/free-resources/email-guide" element={<EmailGuide />} />
+            <Route path="/solutions/free-resources/local-seo-checklist" element={<LocalSEOChecklist />} />
+            <Route path="/solutions/free-resources/content-calendar" element={<ContentCalendar />} />
+            <Route path="/solutions/free-resources/cro-guide" element={<CROGuide />} />
+            
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
 
 export default App;
