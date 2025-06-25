@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -33,6 +34,9 @@ import IChooseTheSun from "./pages/portfolio/IChooseTheSun";
 import MicrolinoCampaign from "./pages/portfolio/MicrolinoCampaign";
 import MicrolinoStrategy from "./pages/portfolio/MicrolinoStrategy";
 import FMCGDAOStrategy from "./pages/portfolio/FMCGDAOStrategy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import Sitemap from "./pages/Sitemap";
 
 const queryClient = new QueryClient();
 
