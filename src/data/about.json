@@ -1,0 +1,9 @@
+{
+  "title": "About Us",
+  "content": "We are a creative marketing team focused on storytelling and human connection. Our mission is to deliver effective and beautiful campaigns.",
+  "team": [
+    {"name": "Heidi", "role": "Founder & Creative Director"},
+    {"name": "Alex", "role": "Marketing Specialist"}
+  ],
+  "image": "/uploads/about-team.jpg"
+}
