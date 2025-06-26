@@ -1,0 +1,6 @@
+{
+  "phone": "+61 1234 5678",
+  "email": "contact@yourdomain.com",
+  "address": "123 Creative St, Melbourne, Australia",
+  "map_embed": "<iframe src='https://maps.google.com/...'></iframe>"
+}
