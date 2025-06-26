@@ -1,0 +1,15 @@
+{
+  "hero_title": "We build lovable brands",
+  "hero_subtitle": "Creative + Strategy + Tech",
+  "hero_image": "/uploads/home-hero.jpg",
+  "cta_text": "Explore our work",
+  "services": [
+    {"title": "Brand Strategy", "description": "Helping brands tell their story."},
+    {"title": "Digital Marketing", "description": "Reach your audience online."},
+    {"title": "Creative Design", "description": "Visual identity and assets."}
+  ],
+  "testimonials": [
+    {"name": "John Doe", "quote": "Amazing creative team!"},
+    {"name": "Jane Smith", "quote": "Helped our brand grow fast."}
+  ]
+}
