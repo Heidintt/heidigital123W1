@@ -7,10 +7,7 @@ const SitemapXML = () => {
     document.title = 'sitemap.xml';
     
     const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Homepage -->
   <url>
@@ -121,6 +118,7 @@ const SitemapXML = () => {
     <priority>0.7</priority>
   </url>
   
+  <!-- AI Tools -->
   <url>
     <loc>https://heidigital.info/solutions/ai-tools/content-generator</loc>
     <lastmod>2025-06-27</lastmod>
