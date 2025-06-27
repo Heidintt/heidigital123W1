@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -10,6 +9,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
@@ -60,6 +60,7 @@ function App() {
             <Route path="/portfolio/microlino-strategy" element={<MicrolinoStrategy />} />
             <Route path="/portfolio/fmcg-dao-strategy" element={<FMCGDAOStrategy />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
             
             <Route path="/solutions" element={<Solutions />} />
