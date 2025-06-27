@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://heisocial.com.au/sitemap.xml
+Sitemap: https://heidigital.info/sitemap.xml
 
 # Specific bot configurations
 User-agent: Googlebot

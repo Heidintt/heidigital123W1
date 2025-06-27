@@ -10,7 +10,7 @@ const Sitemap = () => {
   return (
     <Layout>
       <Hero
-        title="XML Sitemap - Heisocial Australia"
+        title="XML Sitemap - Heidi Digital"
         subtitle="Complete website structure and navigation for search engines and users"
         backgroundImage="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
@@ -19,7 +19,7 @@ const Sitemap = () => {
         <div className="container mx-auto max-w-4xl">
           <SectionHeading
             title="Website Sitemap"
-            subtitle="Complete directory of all pages on Heisocial Australia website"
+            subtitle="Complete directory of all pages on Heidi Digital website"
             centered
           />
 
@@ -282,9 +282,9 @@ const Sitemap = () => {
               <div>
                 <h4 className="font-medium text-gray-800 mb-2">Sitemap URLs:</h4>
                 <ul className="space-y-1">
-                  <li>• XML Sitemap: <code className="bg-white px-2 py-1 rounded text-xs">/sitemap.xml</code></li>
-                  <li>• HTML Sitemap: <code className="bg-white px-2 py-1 rounded text-xs">/sitemap</code></li>
-                  <li>• Robots.txt: <code className="bg-white px-2 py-1 rounded text-xs">/robots.txt</code></li>
+                  <li>• XML Sitemap: <code className="bg-white px-2 py-1 rounded text-xs">https://heidigital.info/sitemap.xml</code></li>
+                  <li>• HTML Sitemap: <code className="bg-white px-2 py-1 rounded text-xs">https://heidigital.info/sitemap</code></li>
+                  <li>• Robots.txt: <code className="bg-white px-2 py-1 rounded text-xs">https://heidigital.info/robots.txt</code></li>
                 </ul>
               </div>
               <div>

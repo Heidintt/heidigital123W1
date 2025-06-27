@@ -7,7 +7,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://heisocial.com.au/</loc>
+    <loc>https://heidigital.info/</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -15,42 +15,42 @@
   
   <!-- Main Pages -->
   <url>
-    <loc>https://heisocial.com.au/about</loc>
+    <loc>https://heidigital.info/about</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/services</loc>
+    <loc>https://heidigital.info/services</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions</loc>
+    <loc>https://heidigital.info/solutions</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio</loc>
+    <loc>https://heidigital.info/portfolio</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/blog</loc>
+    <loc>https://heidigital.info/blog</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/contact</loc>
+    <loc>https://heidigital.info/contact</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -58,42 +58,42 @@
   
   <!-- Service Pages -->
   <url>
-    <loc>https://heisocial.com.au/services/social-media</loc>
+    <loc>https://heidigital.info/services/social-media</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/services/content-creation</loc>
+    <loc>https://heidigital.info/services/content-creation</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/services/seo</loc>
+    <loc>https://heidigital.info/services/seo</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/services/branding</loc>
+    <loc>https://heidigital.info/services/branding</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/services/digital-ads</loc>
+    <loc>https://heidigital.info/services/digital-ads</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/services/ai-marketing</loc>
+    <loc>https://heidigital.info/services/ai-marketing</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -101,35 +101,35 @@
   
   <!-- Solution Pages -->
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources</loc>
+    <loc>https://heidigital.info/solutions/free-resources</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/ai-tools</loc>
+    <loc>https://heidigital.info/solutions/ai-tools</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/ai-tools/content-generator</loc>
+    <loc>https://heidigital.info/solutions/ai-tools/content-generator</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/ai-tools/seo-article-generator</loc>
+    <loc>https://heidigital.info/solutions/ai-tools/seo-article-generator</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/ai-tools/multilingual-content-generator</loc>
+    <loc>https://heidigital.info/solutions/ai-tools/multilingual-content-generator</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -137,63 +137,63 @@
   
   <!-- Free Resources -->
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/seo-guide</loc>
+    <loc>https://heidigital.info/solutions/free-resources/seo-guide</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/content-templates</loc>
+    <loc>https://heidigital.info/solutions/free-resources/content-templates</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/social-toolkit</loc>
+    <loc>https://heidigital.info/solutions/free-resources/social-toolkit</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/email-guide</loc>
+    <loc>https://heidigital.info/solutions/free-resources/email-guide</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/roi-calculator</loc>
+    <loc>https://heidigital.info/solutions/free-resources/roi-calculator</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/content-calendar</loc>
+    <loc>https://heidigital.info/solutions/free-resources/content-calendar</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/local-seo-checklist</loc>
+    <loc>https://heidigital.info/solutions/free-resources/local-seo-checklist</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/ai-playbook</loc>
+    <loc>https://heidigital.info/solutions/free-resources/ai-playbook</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/solutions/free-resources/cro-guide</loc>
+    <loc>https://heidigital.info/solutions/free-resources/cro-guide</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -201,49 +201,49 @@
   
   <!-- Portfolio Pages -->
   <url>
-    <loc>https://heisocial.com.au/portfolio/fmcg-dao-strategy</loc>
+    <loc>https://heidigital.info/portfolio/fmcg-dao-strategy</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio/microlino-strategy</loc>
+    <loc>https://heidigital.info/portfolio/microlino-strategy</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio/i-choose-the-sun</loc>
+    <loc>https://heidigital.info/portfolio/i-choose-the-sun</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio/microlino-campaign</loc>
+    <loc>https://heidigital.info/portfolio/microlino-campaign</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio/nha-ca-cafe</loc>
+    <loc>https://heidigital.info/portfolio/nha-ca-cafe</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio/koto-club</loc>
+    <loc>https://heidigital.info/portfolio/koto-club</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/portfolio/lua-hong-buffet</loc>
+    <loc>https://heidigital.info/portfolio/lua-hong-buffet</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -251,21 +251,21 @@
   
   <!-- Legal Pages -->
   <url>
-    <loc>https://heisocial.com.au/privacy-policy</loc>
+    <loc>https://heidigital.info/privacy-policy</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/terms-of-service</loc>
+    <loc>https://heidigital.info/terms-of-service</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
-    <loc>https://heisocial.com.au/sitemap</loc>
+    <loc>https://heidigital.info/sitemap</loc>
     <lastmod>2025-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
