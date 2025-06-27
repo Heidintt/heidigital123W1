@@ -1,0 +1,8 @@
+    {
+      "name": "Heidigital",
+      "short_name": "Heidigital",
+      "start_url": "/",
+      "display": "standalone",
+      "background_color": "#ffffff",
+      "description": "Heidigital web app"
+    }
