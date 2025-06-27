@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 
 const SitemapXML = () => {
   useEffect(() => {
-    // Set correct content type for XML
-    document.contentType = 'application/xml';
+    // The content type will be handled by the server/routing configuration
+    // We cannot modify document.contentType as it's read-only
   }, []);
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
