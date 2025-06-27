@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
-import { CheckCircle2, Lightbulb, Eye, Target, Handshake, Brain, Rocket, TrendingUp } from "lucide-react";
+import { CheckCircle2, Lightbulb, Eye, Target, Handshake, Brain, Rocket, TrendingUp, Zap, Shield, Award } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -48,91 +48,127 @@ const About = () => {
     },
   ];
 
+  const achievements = [
+    {
+      number: "100+",
+      label: "AI-Powered Campaigns",
+      icon: Zap,
+    },
+    {
+      number: "95%",
+      label: "Client Satisfaction",
+      icon: Award,
+    },
+    {
+      number: "300%",
+      label: "Average ROI Increase",
+      icon: TrendingUp,
+    },
+    {
+      number: "24/7",
+      label: "AI Monitoring",
+      icon: Shield,
+    },
+  ];
+
   return (
     <Layout>
       <Hero
         title="About Heidigital"
         subtitle="Pioneering the future of AI-powered marketing for Australian businesses"
-        backgroundImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      {/* Founder Introduction */}
-      <section className="py-20 px-4">
+      {/* Company Introduction */}
+      <section className="py-20 px-4 bg-gradient-to-br from-white via-gray-50 to-white">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <img
-                src="/lovable-uploads/ca187ee0-4c02-419d-9075-fd4eb38aab32.png"
-                alt="Heidi Nguyen - Founder of Heidigital"
-                className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
-              />
-              <div className="absolute -bottom-8 -right-8 bg-gradient-to-r from-heisocial-blue to-heisocial-purple text-white p-6 rounded-xl shadow-lg">
-                <div className="text-3xl font-bold">AI Expert</div>
-                <div className="text-sm opacity-90">Marketing Strategist</div>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-12">
+              <div className="inline-block p-4 bg-gradient-to-r from-heidigital-blue to-heidigital-purple rounded-2xl mb-6">
+                <Brain className="h-12 w-12 text-white" />
               </div>
-            </div>
-            <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Meet <span className="gradient-text">Heidi Nguyen</span>
+                Welcome to <span className="gradient-text">Heidigital</span>
               </h2>
-              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Founder & Creative Director of Heidigital
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                We're a cutting-edge AI marketing agency that transforms how businesses connect with their customers. 
+                Through intelligent automation, data-driven strategies, and innovative digital solutions, we help 
+                companies achieve unprecedented growth in the digital landscape.
               </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                I'm an AI marketing strategist with over 10 years of experience helping businesses scale through innovative digital solutions. My passion lies in democratizing access to cutting-edge marketing technology, ensuring every business can leverage the same AI-powered tools that drive success for Fortune 500 companies.
-              </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                At Heidigital, I believe that technology should serve people, not the other way around. Every strategy I design is human-centered, with clear KPIs and measurable outcomes that deliver real value to your business.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://linkedin.com/in/heidintt"
-                  className="bg-heisocial-blue text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Connect on LinkedIn
-                </a>
-                <a
-                  href="mailto:heidi@heidigital.com.au"
-                  className="border-2 border-heisocial-blue text-heisocial-blue px-6 py-3 rounded-lg hover:bg-heisocial-blue hover:text-white transition-all duration-300"
-                >
-                  Get in Touch
-                </a>
-              </div>
+            </div>
+            
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+              {achievements.map((achievement, index) => (
+                <div key={index} className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-heidigital-blue to-heidigital-purple rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <achievement.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-heidigital-blue mb-2">{achievement.number}</div>
+                  <div className="text-gray-600 text-sm">{achievement.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-r from-heisocial-blue to-heisocial-purple rounded-xl flex items-center justify-center mb-6">
-                <Target className="h-8 w-8 text-white" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="AI Marketing Dashboard"
+                className="rounded-2xl shadow-2xl"
+              />
+              <div className="absolute -top-8 -left-8 bg-gradient-to-r from-heidigital-blue to-heidigital-purple text-white p-6 rounded-2xl shadow-lg">
+                <div className="text-3xl font-bold">AI</div>
+                <div className="text-sm opacity-90">Powered</div>
               </div>
-              <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                To transform how businesses connect with their customers through intelligent, data-driven marketing strategies that deliver real results. We democratize access to cutting-edge AI marketing technology for businesses of all sizes.
-              </p>
+              <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                <div className="text-3xl font-bold text-heidigital-purple">24/7</div>
+                <div className="text-gray-600 text-sm">Optimization</div>
+              </div>
             </div>
-            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-r from-heisocial-purple to-heisocial-blue rounded-xl flex items-center justify-center mb-6">
-                <Rocket className="h-8 w-8 text-white" />
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                Our <span className="gradient-text">Purpose</span>
+              </h2>
+              <div className="space-y-8">
+                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-heidigital-blue rounded-xl flex items-center justify-center mr-4">
+                      <Target className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Mission</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    To democratize access to cutting-edge AI marketing technology, enabling businesses of all sizes 
+                    to compete effectively in the digital marketplace through intelligent, data-driven strategies.
+                  </p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-heidigital-purple rounded-xl flex items-center justify-center mr-4">
+                      <Rocket className="h-6 w-6 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold">Vision</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed">
+                    To be Australia's leading AI-powered marketing agency, pioneering innovative solutions that 
+                    help businesses thrive through the perfect blend of artificial intelligence and creative strategy.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                To be Australia's leading AI-powered marketing agency, pioneering innovative solutions that help businesses thrive in the digital age through the perfect blend of artificial intelligence and human creativity.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Expertise Areas */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-heidigital-lightpurple to-white">
         <div className="container mx-auto">
           <SectionHeading
             title="Areas of Expertise"
@@ -142,12 +178,15 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {expertise.map((area, index) => (
-              <div key={index} className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-heisocial-blue to-heisocial-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div key={index} className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-heidigital-blue to-heidigital-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <area.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{area.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{area.description}</p>
+                <div className="mt-6 w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-heidigital-blue to-heidigital-purple rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -155,7 +194,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 px-4 bg-gradient-to-br from-heisocial-lightpurple to-white">
+      <section className="py-20 px-4">
         <div className="container mx-auto">
           <SectionHeading
             title="Core Values"
@@ -165,8 +204,8 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center group hover:shadow-2xl transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-r from-heisocial-blue to-heisocial-purple rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-gradient-to-r from-heidigital-blue to-heidigital-purple rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                   <value.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">{value.title}</h3>
@@ -178,7 +217,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Heidigital */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -186,50 +225,55 @@ const About = () => {
                 Why Choose <span className="gradient-text">Heidigital</span>
               </h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                We're not just another marketing agency. Our unique approach combines creative expertise with data-driven strategies and cutting-edge AI technology to deliver exceptional results.
+                We're not just another marketing agency. Our unique approach combines creative expertise with 
+                data-driven strategies and cutting-edge AI technology to deliver exceptional results.
               </p>
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
-                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
+                <div className="flex items-start group">
+                  <div className="bg-heidigital-lightpurple p-3 rounded-full mr-6 mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">AI-First Methodology</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      We integrate artificial intelligence into every aspect of our marketing strategies, ensuring data-driven decisions and optimized performance.
+                      We integrate artificial intelligence into every aspect of our marketing strategies, ensuring 
+                      data-driven decisions and optimized performance across all channels.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
-                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
+                <div className="flex items-start group">
+                  <div className="bg-heidigital-lightpurple p-3 rounded-full mr-6 mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Human-Centered Design</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Technology serves people, not the other way around. Every solution is designed with your customers' needs and experiences at the forefront.
+                      Technology serves people, not the other way around. Every solution is designed with your 
+                      customers' needs and experiences at the forefront.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
-                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
+                <div className="flex items-start group">
+                  <div className="bg-heidigital-lightpurple p-3 rounded-full mr-6 mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Measurable Results</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Every campaign is designed with clear KPIs and measurable outcomes to ensure tangible ROI for your business investment.
+                      Every campaign is designed with clear KPIs and measurable outcomes to ensure tangible ROI 
+                      for your business investment.
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
-                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
+                <div className="flex items-start group">
+                  <div className="bg-heidigital-lightpurple p-3 rounded-full mr-6 mt-1 group-hover:scale-110 transition-transform duration-300">
+                    <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold mb-2">Continuous Innovation</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      We stay ahead of the curve with the latest marketing technologies and emerging trends to keep your business competitive.
+                      We stay ahead of the curve with the latest marketing technologies and emerging trends to 
+                      keep your business competitive.
                     </p>
                   </div>
                 </div>
@@ -241,10 +285,7 @@ const About = () => {
                 alt="Digital marketing dashboard"
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -top-8 -left-8 bg-white p-6 rounded-xl shadow-lg">
-                <div className="text-4xl font-bold text-heisocial-blue">AI</div>
-                <div className="text-gray-600">Powered</div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-heidigital-blue/20 to-heidigital-purple/20 rounded-2xl"></div>
             </div>
           </div>
         </div>
@@ -257,7 +298,7 @@ const About = () => {
         primaryButtonLink="/contact"
         secondaryButtonText="Explore Our Services"
         secondaryButtonLink="/services"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
       />
     </Layout>
   );

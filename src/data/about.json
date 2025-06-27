@@ -2,22 +2,9 @@
 {
   "title": "About Heidigital",
   "subtitle": "Pioneering the future of AI-powered marketing in Australia",
-  "content": "# Our Story\n\nHeidigital was founded with a simple vision: to democratize access to cutting-edge marketing technology. We believe that every business, regardless of size, should have access to the same AI-powered marketing tools that drive success for Fortune 500 companies.\n\n## Our Mission\n\nWe're on a mission to transform how businesses connect with their customers through intelligent, data-driven marketing strategies that deliver real results.\n\n## What Sets Us Apart\n\n- **AI-First Methodology**: We integrate artificial intelligence into every aspect of our marketing strategies\n- **Human-Centered Design**: Technology serves people, not the other way around\n- **Measurable Results**: Every campaign is designed with clear KPIs and measurable outcomes\n- **Continuous Innovation**: We stay ahead of the curve with the latest marketing technologies",
+  "content": "# Our Company\n\nHeidigital is a cutting-edge AI marketing agency that transforms how businesses connect with their customers. Through intelligent automation, data-driven strategies, and innovative digital solutions, we help companies achieve unprecedented growth in the digital landscape.\n\n## Our Mission\n\nTo democratize access to cutting-edge AI marketing technology, enabling businesses of all sizes to compete effectively in the digital marketplace through intelligent, data-driven strategies.\n\n## What Sets Us Apart\n\n- **AI-First Methodology**: We integrate artificial intelligence into every aspect of our marketing strategies\n- **Human-Centered Design**: Technology serves people, not the other way around\n- **Measurable Results**: Every campaign is designed with clear KPIs and measurable outcomes\n- **Continuous Innovation**: We stay ahead of the curve with the latest marketing technologies",
   "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
-  "team_image": "/lovable-uploads/c70b8597-1e6d-45af-90eb-9f855efb46fa.png",
-  "team": [
-    {
-      "name": "Heidi Nguyen",
-      "role": "Founder & Creative Director",
-      "bio": "AI marketing strategist with 10+ years experience helping businesses scale through innovative digital solutions",
-      "image": "/lovable-uploads/ca187ee0-4c02-419d-9075-fd4eb38aab32.png",
-      "social_links": {
-        "linkedin": "https://linkedin.com/in/heidintt",
-        "twitter": "https://twitter.com/heidintt",
-        "email": "heidi@heidigital.com.au"
-      }
-    }
-  ],
+  "company_image": "/lovable-uploads/c70b8597-1e6d-45af-90eb-9f855efb46fa.png",
   "values": [
     {
       "title": "Innovation",
@@ -38,6 +25,28 @@
       "title": "Partnership",
       "description": "We work as an extension of your team, committed to your long-term success",
       "icon": "Handshake"
+    }
+  ],
+  "achievements": [
+    {
+      "number": "100+",
+      "label": "AI-Powered Campaigns",
+      "icon": "Zap"
+    },
+    {
+      "number": "95%",
+      "label": "Client Satisfaction",
+      "icon": "Award"
+    },
+    {
+      "number": "300%",
+      "label": "Average ROI Increase",
+      "icon": "TrendingUp"
+    },
+    {
+      "number": "24/7",
+      "label": "AI Monitoring",
+      "icon": "Shield"
     }
   ]
 }
