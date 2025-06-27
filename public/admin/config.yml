@@ -1,7 +1,5 @@
 backend:
-  name: git-gateway
-  branch: main
-  auth_provider: 'auth0'
+  name: test-repo
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
