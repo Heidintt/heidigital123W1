@@ -3,11 +3,15 @@ import { useEffect } from 'react';
 
 const SitemapXML = () => {
   useEffect(() => {
-    // The content type will be handled by the server/routing configuration
-    // We cannot modify document.contentType as it's read-only
+    // Set the content type header for XML
+    const response = new Response();
+    if (response.headers) {
+      response.headers.set('Content-Type', 'application/xml');
+    }
   }, []);
 
-  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+  // Return the raw XML string directly without React rendering
+  const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -312,13 +316,8 @@ const SitemapXML = () => {
   </url>
 </urlset>`;
 
-  // Return raw XML content
-  return (
-    <div
-      dangerouslySetInnerHTML={{ __html: sitemapContent }}
-      style={{ fontFamily: 'monospace', whiteSpace: 'pre' }}
-    />
-  );
+  // Use dangerouslySetInnerHTML to render raw XML
+  return <div dangerouslySetInnerHTML={{ __html: xmlContent }} />;
 };
 
 export default SitemapXML;
