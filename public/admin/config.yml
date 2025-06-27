@@ -2,7 +2,6 @@ backend:
   name: github
   repo: Heidintt/heisocial-ai-pulse
   branch: main
-  base_url: heisocial-ai-pulse.vercel.app
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -78,54 +77,3 @@ collections:
     folder: "src/data/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "services"
-    label: "Services"
-    files:
-      - file: "src/data/services.json"
-        label: "Services Page"
-        name: "services"
-        fields:
-          - label: "Services List"
-            name: "services"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "Image", name: "image", widget: "image"}
-
-  - name: "solutions"
-    label: "Solutions"
-    files:
-      - file: "src/data/solutions/free-resources.json"
-        label: "Free Resources"
-        name: "free-resources"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - label: "Resources"
-            name: "resources"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Link", name: "link", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-
-      - file: "src/data/solutions/ai-tool.json"
-        label: "AI Tool"
-        name: "ai-tool"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
-          - label: "Tools"
-            name: "tools"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Link", name: "link", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
