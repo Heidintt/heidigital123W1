@@ -3,40 +3,10 @@ import { useEffect } from 'react';
 
 const SitemapXML = () => {
   useEffect(() => {
-    // Set content type cho XML
-    const meta = document.querySelector('meta[http-equiv="Content-Type"]');
-    if (meta) {
-      meta.setAttribute('content', 'application/xml; charset=utf-8');
-    } else {
-      const newMeta = document.createElement('meta');
-      newMeta.setAttribute('http-equiv', 'Content-Type');
-      newMeta.setAttribute('content', 'application/xml; charset=utf-8');
-      document.head.appendChild(newMeta);
-    }
-
-    const style = document.createElement('style');
-    style.textContent = `
-      body { 
-        font-family: monospace; 
-        white-space: pre; 
-        margin: 0; 
-        padding: 20px;
-        background: white;
-        font-size: 12px;
-      }
-    `;
-    document.head.appendChild(style);
+    // Set document title
+    document.title = 'sitemap.xml';
     
-    return () => {
-      const metaToRemove = document.querySelector('meta[http-equiv="Content-Type"]');
-      if (metaToRemove) {
-        document.head.removeChild(metaToRemove);
-      }
-      document.head.removeChild(style);
-    };
-  }, []);
-
-  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+    const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -310,11 +280,13 @@ const SitemapXML = () => {
   
 </urlset>`;
 
-  return (
-    <pre style={{ margin: 0, fontFamily: 'monospace', fontSize: '12px' }}>
-      {sitemapContent}
-    </pre>
-  );
+    // Thay thế toàn bộ document với XML content
+    document.open();
+    document.write(sitemapContent);
+    document.close();
+  }, []);
+
+  return null;
 };
 
 export default SitemapXML;

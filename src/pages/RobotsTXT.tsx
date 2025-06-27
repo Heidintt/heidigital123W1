@@ -3,25 +3,11 @@ import { useEffect } from 'react';
 
 const RobotsTXT = () => {
   useEffect(() => {
-    // Set content type và trả về plain text
-    const style = document.createElement('style');
-    style.textContent = `
-      body { 
-        font-family: monospace; 
-        white-space: pre; 
-        margin: 0; 
-        padding: 20px;
-        background: white;
-      }
-    `;
-    document.head.appendChild(style);
+    // Set document title và meta
+    document.title = 'robots.txt';
     
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
-
-  const robotsContent = `User-agent: *
+    // Tạo response với content type text/plain
+    const robotsContent = `User-agent: *
 Allow: /
 
 # Sitemap
@@ -58,11 +44,20 @@ Allow: /sitemap
 Allow: /privacy-policy
 Allow: /terms-of-service`;
 
-  return (
-    <pre style={{ margin: 0, fontFamily: 'monospace' }}>
-      {robotsContent}
-    </pre>
-  );
+    // Tạo một response mới
+    const response = new Response(robotsContent, {
+      headers: {
+        'Content-Type': 'text/plain',
+      },
+    });
+
+    // Thay thế toàn bộ document
+    document.open();
+    document.write(robotsContent);
+    document.close();
+  }, []);
+
+  return null;
 };
 
 export default RobotsTXT;

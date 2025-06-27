@@ -3,7 +3,8 @@ import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
-import StaticFileHandler from "@/components/StaticFileHandler";
+import RobotsTXT from "@/pages/RobotsTXT";
+import SitemapXML from "@/pages/SitemapXML";
 import { MainRoutes } from "./MainRoutes";
 import { ServiceRoutes } from "./ServiceRoutes";
 import { SolutionRoutes } from "./SolutionRoutes";
@@ -15,9 +16,9 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<Index />} />
         
-        {/* Handle static files */}
-        <Route path="/robots.txt" element={<StaticFileHandler />} />
-        <Route path="/sitemap.xml" element={<StaticFileHandler />} />
+        {/* Static files with exact paths */}
+        <Route path="/robots.txt" element={<RobotsTXT />} />
+        <Route path="/sitemap.xml" element={<SitemapXML />} />
         
         {/* Service routes */}
         <Route path="/services/*" element={<ServiceRoutes />} />
