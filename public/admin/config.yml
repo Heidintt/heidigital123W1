@@ -150,7 +150,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Category", name: "category", widget: "select", options: ["Branding", "Digital Marketing", "Web Design", "Social Media", "Campaign", "Strategy"]}
+      - {label: "Category", name: "category", widget: "select", options: ["Branding", "Digital Marketing", "Web Design", "Social Media", "Campaign Strategy", "Academic Research", "Campaign", "Strategy"]}
       - {label: "Client", name: "client", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image"}
