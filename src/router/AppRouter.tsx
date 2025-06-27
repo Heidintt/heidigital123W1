@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import RobotsTXT from "@/pages/RobotsTXT";
-import SitemapXML from "@/pages/SitemapXML";
 import { MainRoutes } from "./MainRoutes";
 import { ServiceRoutes } from "./ServiceRoutes";
 import { SolutionRoutes } from "./SolutionRoutes";
@@ -18,7 +17,7 @@ const AppRouter = () => {
         
         {/* Static files with exact paths */}
         <Route path="/robots.txt" element={<RobotsTXT />} />
-        <Route path="/sitemap.xml" element={<SitemapXML />} />
+        {/* Remove sitemap.xml route - it will be served as static file */}
         
         {/* Service routes */}
         <Route path="/services/*" element={<ServiceRoutes />} />
