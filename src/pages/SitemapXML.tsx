@@ -118,7 +118,7 @@ const SitemapXML = () => {
     <priority>0.7</priority>
   </url>
   
-  <!-- AI Tools -->
+  <!-- AI Tools Sub-pages -->
   <url>
     <loc>https://heidigital.info/solutions/ai-tools/content-generator</loc>
     <lastmod>2025-06-27</lastmod>
@@ -140,7 +140,7 @@ const SitemapXML = () => {
     <priority>0.6</priority>
   </url>
   
-  <!-- Free Resources -->
+  <!-- Free Resources Sub-pages -->
   <url>
     <loc>https://heidigital.info/solutions/free-resources/seo-guide</loc>
     <lastmod>2025-06-27</lastmod>
@@ -254,7 +254,7 @@ const SitemapXML = () => {
     <priority>0.6</priority>
   </url>
   
-  <!-- Legal Pages -->
+  <!-- Legal and Utility Pages -->
   <url>
     <loc>https://heidigital.info/privacy-policy</loc>
     <lastmod>2025-06-27</lastmod>
@@ -278,7 +278,7 @@ const SitemapXML = () => {
   
 </urlset>`;
 
-    // Thay thế toàn bộ document với XML content
+    // Replace the entire document with XML content
     document.open();
     document.write(sitemapContent);
     document.close();
