@@ -1,8 +1,8 @@
 
 {
-  "title": "About Heidi Digital",
+  "title": "About Heidigital",
   "subtitle": "Pioneering the future of AI-powered marketing in Australia",
-  "content": "# Our Story\n\nHeidi Digital was founded with a simple vision: to democratize access to cutting-edge marketing technology. We believe that every business, regardless of size, should have access to the same AI-powered marketing tools that drive success for Fortune 500 companies.\n\n## Our Mission\n\nWe're on a mission to transform how businesses connect with their customers through intelligent, data-driven marketing strategies that deliver real results.\n\n## What Sets Us Apart\n\n- **AI-First Methodology**: We integrate artificial intelligence into every aspect of our marketing strategies\n- **Human-Centered Design**: Technology serves people, not the other way around\n- **Measurable Results**: Every campaign is designed with clear KPIs and measurable outcomes\n- **Continuous Innovation**: We stay ahead of the curve with the latest marketing technologies",
+  "content": "# Our Story\n\nHeidigital was founded with a simple vision: to democratize access to cutting-edge marketing technology. We believe that every business, regardless of size, should have access to the same AI-powered marketing tools that drive success for Fortune 500 companies.\n\n## Our Mission\n\nWe're on a mission to transform how businesses connect with their customers through intelligent, data-driven marketing strategies that deliver real results.\n\n## What Sets Us Apart\n\n- **AI-First Methodology**: We integrate artificial intelligence into every aspect of our marketing strategies\n- **Human-Centered Design**: Technology serves people, not the other way around\n- **Measurable Results**: Every campaign is designed with clear KPIs and measurable outcomes\n- **Continuous Innovation**: We stay ahead of the curve with the latest marketing technologies",
   "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
   "team_image": "/lovable-uploads/c70b8597-1e6d-45af-90eb-9f855efb46fa.png",
   "team": [
@@ -15,16 +15,6 @@
         "linkedin": "https://linkedin.com/in/heidintt",
         "twitter": "https://twitter.com/heidintt",
         "email": "heidi@heidigital.com.au"
-      }
-    },
-    {
-      "name": "Alex Thompson",
-      "role": "Marketing Technology Specialist",
-      "bio": "Technical expert specializing in AI automation and marketing technology integration",
-      "image": "/lovable-uploads/9eb28ab7-346b-41af-afe9-ecbea02aca51.png",
-      "social_links": {
-        "linkedin": "https://linkedin.com/in/alexthompson",
-        "email": "alex@heidigital.com.au"
       }
     }
   ],

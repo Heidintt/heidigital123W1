@@ -3,290 +3,257 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import TeamMemberCard from "@/components/TeamMemberCard";
 import CallToAction from "@/components/CallToAction";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Lightbulb, Eye, Target, Handshake, Brain, Rocket, TrendingUp } from "lucide-react";
 
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Alex Thompson",
-      role: "Founder & CEO",
-      bio: "With over 15 years of experience in digital marketing, Alex founded Heisocial to help businesses leverage emerging technologies for growth.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "alex@heisocial.com",
-      },
-    },
-    {
-      name: "Sophia Wang",
-      role: "Chief Marketing Officer",
-      bio: "Sophia brings 10+ years of marketing expertise from global brands. She leads our strategic initiatives with data-driven approaches.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "sophia@heisocial.com",
-      },
-    },
-    {
-      name: "David Mitchell",
-      role: "Head of AI Solutions",
-      bio: "With a background in computer science and marketing, David specializes in leveraging AI to solve complex marketing challenges.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "david@heisocial.com",
-      },
-    },
-    {
-      name: "Emma Rodriguez",
-      role: "Creative Director",
-      bio: "Emma's award-winning design background drives our visual storytelling, ensuring brands communicate effectively across all channels.",
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "emma@heisocial.com",
-      },
-    },
-    {
-      name: "Michael Chen",
-      role: "SEO & Analytics Lead",
-      bio: "Michael combines technical SEO expertise with analytics to deliver measurable improvements in search visibility and traffic.",
-      image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "michael@heisocial.com",
-      },
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Content Strategy Manager",
-      bio: "Sarah's journalistic background and marketing expertise help clients develop content that engages audiences and drives conversions.",
-      image: "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "sarah@heisocial.com",
-      },
-    },
-  ];
-
   const values = [
     {
       title: "Innovation",
-      description: "We embrace emerging technologies and approaches to keep our clients ahead of the curve.",
+      description: "Embracing cutting-edge AI technologies to keep your business ahead of the curve.",
+      icon: Lightbulb,
     },
     {
-      title: "Integrity",
-      description: "We believe in transparent communication and delivering on our promises with honesty and accountability.",
+      title: "Transparency",
+      description: "Clear communication and honest reporting in everything we do.",
+      icon: Eye,
     },
     {
-      title: "Data-Driven",
-      description: "Our strategies are built on a foundation of comprehensive data analysis and measurable results.",
+      title: "Results",
+      description: "Measuring success by the tangible results we deliver for your business.",
+      icon: Target,
     },
     {
-      title: "Collaboration",
-      description: "We work closely with our clients, considering them partners in achieving shared goals.",
+      title: "Partnership",
+      description: "Working as an extension of your team, committed to your long-term success.",
+      icon: Handshake,
+    },
+  ];
+
+  const expertise = [
+    {
+      title: "AI Marketing Strategy",
+      description: "Leveraging artificial intelligence to create data-driven marketing campaigns that deliver exceptional ROI.",
+      icon: Brain,
     },
     {
-      title: "Excellence",
-      description: "We are committed to delivering exceptional quality in every aspect of our work.",
+      title: "Digital Innovation",
+      description: "Implementing cutting-edge digital solutions that transform how businesses connect with their customers.",
+      icon: Rocket,
     },
     {
-      title: "Adaptability",
-      description: "We continuously evolve our approaches to navigate the changing digital landscape.",
+      title: "Growth Optimization",
+      description: "Using advanced analytics and AI tools to identify and capitalize on growth opportunities.",
+      icon: TrendingUp,
     },
   ];
 
   return (
     <Layout>
       <Hero
-        title="About Heisocial"
-        subtitle="Meet the team behind innovative digital marketing strategies and AI solutions"
+        title="About Heidigital"
+        subtitle="Pioneering the future of AI-powered marketing for Australian businesses"
         backgroundImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      {/* Our Story Section */}
-      <section className="py-16 px-4">
+      {/* Founder Introduction */}
+      <section className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="gradient-text">Our Story</span>
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Founded in 2010, Heisocial began with a simple mission: to help businesses navigate the rapidly evolving digital landscape with innovative, results-driven marketing strategies.
-              </p>
-              <p className="text-gray-600 mb-6">
-                What started as a small team of passionate marketers has grown into a full-service digital marketing agency with expertise spanning social media, content creation, SEO, branding, and advanced AI solutions.
-              </p>
-              <p className="text-gray-600">
-                Throughout our journey, we've remained committed to our core values of innovation, integrity, and client success. We've helped hundreds of businesses, from startups to global enterprises, achieve remarkable growth by leveraging the power of strategic digital marketing.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Team working together"
-                className="rounded-lg shadow-xl"
+                src="/lovable-uploads/ca187ee0-4c02-419d-9075-fd4eb38aab32.png"
+                alt="Heidi Nguyen - Founder of Heidigital"
+                className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-4xl font-bold text-heisocial-blue">12+</div>
-                <div className="text-gray-600">Years of Excellence</div>
+              <div className="absolute -bottom-8 -right-8 bg-gradient-to-r from-heisocial-blue to-heisocial-purple text-white p-6 rounded-xl shadow-lg">
+                <div className="text-3xl font-bold">AI Expert</div>
+                <div className="text-sm opacity-90">Marketing Strategist</div>
+              </div>
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Meet <span className="gradient-text">Heidi Nguyen</span>
+              </h2>
+              <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                Founder & Creative Director of Heidigital
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                I'm an AI marketing strategist with over 10 years of experience helping businesses scale through innovative digital solutions. My passion lies in democratizing access to cutting-edge marketing technology, ensuring every business can leverage the same AI-powered tools that drive success for Fortune 500 companies.
+              </p>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                At Heidigital, I believe that technology should serve people, not the other way around. Every strategy I design is human-centered, with clear KPIs and measurable outcomes that deliver real value to your business.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://linkedin.com/in/heidintt"
+                  className="bg-heisocial-blue text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 flex items-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Connect on LinkedIn
+                </a>
+                <a
+                  href="mailto:heidi@heidigital.com.au"
+                  className="border-2 border-heisocial-blue text-heisocial-blue px-6 py-3 rounded-lg hover:bg-heisocial-blue hover:text-white transition-all duration-300"
+                >
+                  Get in Touch
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Mission & Vision */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Mission & Vision */}
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-gray-600">
-                To empower businesses with innovative digital marketing strategies and AI-driven solutions that drive measurable growth and competitive advantage in an ever-evolving digital landscape.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-r from-heisocial-blue to-heisocial-purple rounded-xl flex items-center justify-center mb-6">
+                <Target className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                To transform how businesses connect with their customers through intelligent, data-driven marketing strategies that deliver real results. We democratize access to cutting-edge AI marketing technology for businesses of all sizes.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-gray-600">
-                To be the global leader in digital marketing innovation, setting new standards for how businesses connect with their audiences through the perfect blend of creativity, strategy, and technology.
+            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
+              <div className="w-16 h-16 bg-gradient-to-r from-heisocial-purple to-heisocial-blue rounded-xl flex items-center justify-center mb-6">
+                <Rocket className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                To be Australia's leading AI-powered marketing agency, pioneering innovative solutions that help businesses thrive in the digital age through the perfect blend of artificial intelligence and human creativity.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="py-16 px-4">
+      {/* Expertise Areas */}
+      <section className="py-20 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Our Core Values"
+            title="Areas of Expertise"
+            subtitle="Specialized knowledge that drives exceptional results"
+            centered
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {expertise.map((area, index) => (
+              <div key={index} className="group relative bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-heisocial-blue to-heisocial-purple rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <area.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{area.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{area.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-20 px-4 bg-gradient-to-br from-heisocial-lightpurple to-white">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Core Values"
             subtitle="Principles that guide everything we do"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md border border-gray-100 card-hover">
-                <div className="flex items-start mb-4">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4">
-                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
-                  </div>
-                  <h3 className="text-xl font-bold">{value.title}</h3>
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center group hover:shadow-2xl transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-heisocial-blue to-heisocial-purple rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <value.icon className="h-8 w-8 text-white" />
                 </div>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-bold mb-4">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Why Choose Heidigital */}
+      <section className="py-20 px-4">
         <div className="container mx-auto">
-          <SectionHeading
-            title="Meet Our Team"
-            subtitle="Dedicated experts behind our successful strategies"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <TeamMemberCard
-                key={index}
-                name={member.name}
-                role={member.role}
-                bio={member.bio}
-                image={member.image}
-                socialLinks={member.socialLinks}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Why Choose <span className="gradient-text">Heisocial</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                Why Choose <span className="gradient-text">Heidigital</span>
               </h2>
-              <p className="text-gray-600 mb-8">
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
                 We're not just another marketing agency. Our unique approach combines creative expertise with data-driven strategies and cutting-edge AI technology to deliver exceptional results.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
+                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Industry Expertise</h3>
-                    <p className="text-gray-600">
-                      Our team brings specialized knowledge across various industries, ensuring strategies that work for your specific market.
+                    <h3 className="text-xl font-bold mb-2">AI-First Methodology</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      We integrate artificial intelligence into every aspect of our marketing strategies, ensuring data-driven decisions and optimized performance.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
+                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Innovative AI Solutions</h3>
-                    <p className="text-gray-600">
-                      We leverage cutting-edge AI technologies to provide insights, automate processes, and create personalized experiences.
+                    <h3 className="text-xl font-bold mb-2">Human-Centered Design</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Technology serves people, not the other way around. Every solution is designed with your customers' needs and experiences at the forefront.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
+                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Results-Driven Approach</h3>
-                    <p className="text-gray-600">
-                      Our strategies are designed with clear KPIs and measurable outcomes to ensure tangible ROI for your business.
+                    <h3 className="text-xl font-bold mb-2">Measurable Results</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      Every campaign is designed with clear KPIs and measurable outcomes to ensure tangible ROI for your business investment.
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-heisocial-lightpurple p-3 rounded-full mr-6 mt-1">
+                    <CheckCircle2 className="h-6 w-6 text-heisocial-purple" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Transparent Communication</h3>
-                    <p className="text-gray-600">
-                      We maintain open and honest communication throughout our partnership, ensuring you're always informed and involved.
+                    <h3 className="text-xl font-bold mb-2">Continuous Innovation</h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      We stay ahead of the curve with the latest marketing technologies and emerging trends to keep your business competitive.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div>
+            <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                 alt="Digital marketing dashboard"
-                className="rounded-lg shadow-xl"
+                className="rounded-2xl shadow-2xl"
               />
+              <div className="absolute -top-8 -left-8 bg-white p-6 rounded-xl shadow-lg">
+                <div className="text-4xl font-bold text-heisocial-blue">AI</div>
+                <div className="text-gray-600">Powered</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <CallToAction
-        title="Ready to Work with Us?"
-        description="Let's discuss how our expertise can help your business achieve its marketing goals."
-        primaryButtonText="Contact Us"
+        title="Ready to Transform Your Marketing?"
+        description="Let's discuss how AI-powered marketing strategies can help your business achieve exceptional growth and competitive advantage."
+        primaryButtonText="Start Your Journey"
         primaryButtonLink="/contact"
         secondaryButtonText="Explore Our Services"
         secondaryButtonLink="/services"
