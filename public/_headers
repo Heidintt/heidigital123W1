@@ -1,0 +1,6 @@
+/sitemap.xml
+  Content-Type: application/xml
+  Cache-Control: max-age=0
+
+/robots.txt
+  Content-Type: text/plain
