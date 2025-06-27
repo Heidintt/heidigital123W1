@@ -1,15 +1,83 @@
+
 {
-  "hero_title": "We build lovable brands",
-  "hero_subtitle": "Creative + Strategy + Tech",
-  "hero_image": "/uploads/home-hero.jpg",
-  "cta_text": "Explore our work",
+  "hero_title": "AI-Powered Marketing Solutions That Drive Results",
+  "hero_subtitle": "Transform your business with cutting-edge AI marketing strategies, creative content, and data-driven solutions from Heidi Digital",
+  "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
+  "cta_text": "Get Started Today",
+  "cta_link": "/contact",
   "services": [
-    {"title": "Brand Strategy", "description": "Helping brands tell their story."},
-    {"title": "Digital Marketing", "description": "Reach your audience online."},
-    {"title": "Creative Design", "description": "Visual identity and assets."}
+    {
+      "title": "AI Marketing Strategy",
+      "description": "Leverage artificial intelligence to create personalized marketing campaigns that convert",
+      "icon": "Brain",
+      "link": "/services/ai-marketing"
+    },
+    {
+      "title": "Content Creation", 
+      "description": "AI-powered content that engages your audience and drives meaningful connections",
+      "icon": "PenTool",
+      "link": "/services/content-creation"
+    },
+    {
+      "title": "SEO Optimization",
+      "description": "Boost your search rankings with AI-driven SEO strategies and content optimization",
+      "icon": "Search",
+      "link": "/services/seo"
+    },
+    {
+      "title": "Social Media Management",
+      "description": "Build your brand presence across all social platforms with smart automation",
+      "icon": "Share2",
+      "link": "/services/social-media"
+    }
   ],
   "testimonials": [
-    {"name": "John Doe", "quote": "Amazing creative team!"},
-    {"name": "Jane Smith", "quote": "Helped our brand grow fast."}
-  ]
+    {
+      "name": "Sarah Johnson",
+      "quote": "Heidi Digital transformed our marketing strategy completely. Our ROI increased by 300% in just 6 months!",
+      "company": "TechStart Australia",
+      "rating": 5,
+      "image": "/lovable-uploads/c3380f42-094f-4304-8f5c-b202d3a65577.png"
+    },
+    {
+      "name": "Michael Chen",
+      "quote": "The AI-powered content creation tools have saved us countless hours while improving our engagement rates.",
+      "company": "Digital Ventures",
+      "rating": 5,
+      "image": "/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png"
+    },
+    {
+      "name": "Emma Wilson", 
+      "quote": "Professional, innovative, and results-driven. Heidi Digital is the future of marketing.",
+      "company": "Wilson & Associates",
+      "rating": 5,
+      "image": "/lovable-uploads/9eb28ab7-346b-41af-afe9-ecbea02aca51.png"
+    }
+  ],
+  "why_choose_us": {
+    "title": "Why Choose Heidi Digital?",
+    "subtitle": "We combine human creativity with AI precision to deliver marketing solutions that actually work",
+    "features": [
+      {
+        "title": "AI-First Approach",
+        "description": "We use cutting-edge AI technology to optimize every aspect of your marketing strategy",
+        "icon": "Cpu"
+      },
+      {
+        "title": "Proven Results",
+        "description": "Our data-driven approach has helped hundreds of businesses achieve measurable growth",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Expert Team",
+        "description": "Our team combines marketing expertise with technical innovation for maximum impact",
+        "icon": "Users"
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Get round-the-clock support from our dedicated team of marketing professionals",
+        "icon": "Headphones"
+      }
+    ]
+  }
 }

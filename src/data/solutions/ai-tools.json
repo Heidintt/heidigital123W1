@@ -1,26 +1,48 @@
 
 {
+  "title": "AI Marketing Tools",
+  "subtitle": "Powerful AI-driven tools to supercharge your marketing efforts",
+  "hero_image": "/lovable-uploads/4122d0a9-afef-4722-8fc3-da6801946f64.png",
   "tools": [
     {
       "name": "AI Content Generator",
-      "description": "Generate high-quality marketing content using advanced AI",
+      "description": "Generate high-quality marketing content using advanced AI technology",
       "icon": "PenTool",
       "link": "/solutions/ai-tools/content-generator",
-      "category": "Content Creation"
+      "category": "Content Creation",
+      "featured": true
     },
     {
       "name": "SEO Article Generator",
-      "description": "Create SEO-optimized articles that rank on Google",
+      "description": "Create SEO-optimized articles that rank high on Google search results",
       "icon": "Search",
       "link": "/solutions/ai-tools/seo-article-generator", 
-      "category": "SEO"
+      "category": "SEO",
+      "featured": true
     },
     {
       "name": "Multilingual Content Generator",
-      "description": "Generate content in multiple languages for global reach",
+      "description": "Generate content in multiple languages for global market reach",
       "icon": "Globe",
       "link": "/solutions/ai-tools/multilingual-content-generator",
-      "category": "Content Creation"
+      "category": "Content Creation",
+      "featured": false
+    },
+    {
+      "name": "Social Media Scheduler",
+      "description": "AI-powered social media scheduling and optimization tool",
+      "icon": "Calendar",
+      "link": "/solutions/ai-tools/social-scheduler",
+      "category": "Social Media",
+      "featured": false
+    },
+    {
+      "name": "Email Campaign Generator",
+      "description": "Create personalized email campaigns that convert",
+      "icon": "Mail",
+      "link": "/solutions/ai-tools/email-generator",
+      "category": "Email Marketing",
+      "featured": false
     }
   ]
 }

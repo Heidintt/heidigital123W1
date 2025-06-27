@@ -1,6 +1,22 @@
+
 {
+  "title": "Get In Touch",
+  "subtitle": "Ready to transform your marketing with AI? Let's start the conversation.",
   "phone": "+61 1234 5678",
-  "email": "contact@yourdomain.com",
-  "address": "123 Creative St, Melbourne, Australia",
-  "map_embed": "<iframe src='https://maps.google.com/...'></iframe>"
+  "email": "info@heidigital.com.au",
+  "address": "Level 5, 123 Collins Street\nMelbourne, VIC 3000\nAustralia",
+  "business_hours": "Monday - Friday: 9:00 AM - 6:00 PM AEST\nWeekends: By appointment",
+  "map_embed": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093706!2d144.9537353!3d-37.8162792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sau!4v1635832844735!5m2!1sen!2sau' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy'></iframe>",
+  "locations": [
+    {
+      "city": "Melbourne",
+      "address": "Level 5, 123 Collins Street, Melbourne, VIC 3000",
+      "phone": "+61 3 9123 4567"
+    },
+    {
+      "city": "Sydney",
+      "address": "Suite 10, 456 George Street, Sydney, NSW 2000",
+      "phone": "+61 2 8123 4567"
+    }
+  ]
 }

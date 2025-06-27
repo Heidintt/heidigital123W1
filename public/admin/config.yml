@@ -36,41 +36,88 @@ collections:
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
           - {label: "Hero Image", name: "hero_image", widget: "image"}
           - {label: "CTA Text", name: "cta_text", widget: "string"}
+          - {label: "CTA Link", name: "cta_link", widget: "string"}
           - label: "Services"
             name: "services"
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
+              - {label: "Icon", name: "icon", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Rating", name: "rating", widget: "number", min: 1, max: 5, default: 5}
+              - {label: "Image", name: "image", widget: "image", required: false}
+          - label: "Why Choose Us"
+            name: "why_choose_us"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Icon", name: "icon", widget: "string"}
 
       - file: "src/data/about.json"
         label: "About Page"
         name: "about"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
           - {label: "Content", name: "content", widget: "markdown"}
-          - {label: "Team Image", name: "image", widget: "image"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "Team Image", name: "team_image", widget: "image"}
           - label: "Team Members"
             name: "team"
             widget: "list"
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Role", name: "role", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - label: "Social Links"
+                name: "social_links"
+                widget: "object"
+                fields:
+                  - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+                  - {label: "Twitter", name: "twitter", widget: "string", required: false}
+                  - {label: "Email", name: "email", widget: "string", required: false}
+          - label: "Company Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Icon", name: "icon", widget: "string"}
 
       - file: "src/data/contact.json"
         label: "Contact Info"
         name: "contact"
         fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
           - {label: "Phone", name: "phone", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
           - {label: "Address", name: "address", widget: "text"}
+          - {label: "Business Hours", name: "business_hours", widget: "text"}
           - {label: "Map Embed Code", name: "map_embed", widget: "text", required: false}
+          - label: "Office Locations"
+            name: "locations"
+            widget: "list"
+            fields:
+              - {label: "City", name: "city", widget: "string"}
+              - {label: "Address", name: "address", widget: "text"}
+              - {label: "Phone", name: "phone", widget: "string"}
 
   - name: "services_data"
     label: "Services"
@@ -79,6 +126,9 @@ collections:
         label: "Services Page"
         name: "services"
         fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
           - label: "Services List"
             name: "services"
             widget: "list"
@@ -86,8 +136,10 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "text"}
               - {label: "Image", name: "image", widget: "image"}
+              - {label: "Icon", name: "icon", widget: "string"}
               - {label: "Features", name: "features", widget: "list", allow_add: true}
               - {label: "Price", name: "price", widget: "string", required: false}
+              - {label: "Link", name: "link", widget: "string"}
 
   - name: "portfolio_data"
     label: "Portfolio"
@@ -98,16 +150,23 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Category", name: "category", widget: "select", options: ["Branding", "Digital Marketing", "Web Design", "Social Media", "Campaign"]}
+      - {label: "Category", name: "category", widget: "select", options: ["Branding", "Digital Marketing", "Web Design", "Social Media", "Campaign", "Strategy"]}
       - {label: "Client", name: "client", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
       - {label: "Featured Image", name: "featured_image", widget: "image"}
+      - {label: "Thumbnail", name: "thumbnail", widget: "image"}
       - label: "Gallery"
         name: "gallery"
         widget: "list"
         field: {label: "Image", name: "image", widget: "image"}
       - {label: "Content", name: "body", widget: "markdown"}
       - {label: "Results", name: "results", widget: "text", required: false}
+      - {label: "Link", name: "link", widget: "string"}
+      - label: "Technologies Used"
+        name: "technologies"
+        widget: "list"
+        allow_add: true
+        required: false
 
   - name: "solutions_data"
     label: "Solutions"
@@ -116,6 +175,9 @@ collections:
         label: "AI Tools"
         name: "ai_tools"
         fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
           - label: "AI Tools"
             name: "tools"
             widget: "list"
@@ -125,11 +187,15 @@ collections:
               - {label: "Icon", name: "icon", widget: "string"}
               - {label: "Link", name: "link", widget: "string"}
               - {label: "Category", name: "category", widget: "string"}
+              - {label: "Featured", name: "featured", widget: "boolean", default: false}
 
       - file: "src/data/solutions/free-resources.json"
         label: "Free Resources"
         name: "free_resources"
         fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "text"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
           - label: "Resources"
             name: "resources"
             widget: "list"
@@ -140,6 +206,8 @@ collections:
               - {label: "Category", name: "category", widget: "string"}
               - {label: "Image", name: "image", widget: "image"}
               - {label: "Download Link", name: "download_link", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Featured", name: "featured", widget: "boolean", default: false}
 
   - name: "settings"
     label: "Site Settings"
@@ -152,6 +220,12 @@ collections:
           - {label: "Site Description", name: "site_description", widget: "text"}
           - {label: "Logo", name: "logo", widget: "image"}
           - {label: "Favicon", name: "favicon", widget: "image"}
+          - label: "Navigation"
+            name: "navigation"
+            widget: "object"
+            fields:
+              - {label: "Primary Color", name: "primary_color", widget: "string"}
+              - {label: "Secondary Color", name: "secondary_color", widget: "string"}
           - label: "Social Media"
             name: "social_media"
             widget: "object"
@@ -160,6 +234,7 @@ collections:
               - {label: "Twitter", name: "twitter", widget: "string", required: false}
               - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
               - {label: "Instagram", name: "instagram", widget: "string", required: false}
+              - {label: "YouTube", name: "youtube", widget: "string", required: false}
           - label: "SEO"
             name: "seo"
             widget: "object"
@@ -167,3 +242,30 @@ collections:
               - {label: "Meta Title", name: "meta_title", widget: "string"}
               - {label: "Meta Description", name: "meta_description", widget: "text"}
               - {label: "Keywords", name: "keywords", widget: "string"}
+              - {label: "Google Analytics ID", name: "google_analytics", widget: "string", required: false}
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
+              - {label: "Address", name: "address", widget: "text"}
+
+  - name: "legal_pages"
+    label: "Legal Pages"
+    files:
+      - file: "src/data/privacy-policy.json"
+        label: "Privacy Policy"
+        name: "privacy_policy"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Last Updated", name: "last_updated", widget: "datetime"}
+          - {label: "Content", name: "content", widget: "markdown"}
+
+      - file: "src/data/terms-of-service.json"
+        label: "Terms of Service"
+        name: "terms_of_service"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Last Updated", name: "last_updated", widget: "datetime"}
+          - {label: "Content", name: "content", widget: "markdown"}

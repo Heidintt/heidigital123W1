@@ -1,14 +1,92 @@
+
 {
+  "title": "Our Services",
+  "subtitle": "Comprehensive AI-powered marketing solutions tailored to your business needs",
+  "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
   "services": [
     {
-      "title": "Dịch vụ A",
-      "description": "Mô tả dịch vụ A",
-      "image": "/uploads/service-a.jpg"
+      "title": "AI Marketing Strategy",
+      "description": "Leverage artificial intelligence to create data-driven marketing strategies that deliver measurable results",
+      "image": "/lovable-uploads/4712d239-b2f3-444d-92fa-6b80b6eb52a0.png",
+      "icon": "Brain",
+      "features": [
+        "AI-powered market analysis",
+        "Predictive customer behavior modeling",
+        "Automated campaign optimization",
+        "Real-time performance monitoring"
+      ],
+      "price": "From $2,500/month",
+      "link": "/services/ai-marketing"
     },
     {
-      "title": "Dịch vụ B",
-      "description": "Mô tả dịch vụ B",
-      "image": "/uploads/service-b.jpg"
+      "title": "Content Creation & SEO",
+      "description": "AI-generated content that ranks high on search engines and engages your target audience",
+      "image": "/lovable-uploads/16860d8e-50cd-470b-a2f5-cf778cef6db0.png",
+      "icon": "PenTool",
+      "features": [
+        "SEO-optimized blog articles",
+        "Social media content",
+        "Email marketing campaigns",
+        "Website copy and landing pages"
+      ],
+      "price": "From $1,200/month",
+      "link": "/services/content-creation"
+    },
+    {
+      "title": "Social Media Management",
+      "description": "Comprehensive social media strategy and management powered by AI insights",
+      "image": "/lovable-uploads/895ec4fd-4907-4454-822d-b5a1f565408c.png",
+      "icon": "Share2",
+      "features": [
+        "Content planning and scheduling",
+        "Community management",
+        "Influencer partnerships",
+        "Social media advertising"
+      ],
+      "price": "From $800/month",
+      "link": "/services/social-media"
+    },
+    {
+      "title": "Branding & Design",
+      "description": "Create compelling brand identities that resonate with your target audience",
+      "image": "/lovable-uploads/c6af334c-a6a1-49b8-86fc-472db8ef4f91.png",
+      "icon": "Palette",
+      "features": [
+        "Logo and brand identity design",
+        "Brand guidelines development",
+        "Marketing materials design",
+        "Website design and development"
+      ],
+      "price": "From $3,000 project",
+      "link": "/services/branding"
+    },
+    {
+      "title": "Digital Advertising",
+      "description": "Maximize your ROI with AI-optimized advertising campaigns across all platforms",
+      "image": "/lovable-uploads/64a3f787-87c4-4873-8e73-be1bffa80a3b.png",
+      "icon": "Target",
+      "features": [
+        "Google Ads management",
+        "Facebook & Instagram advertising",
+        "LinkedIn advertising",
+        "Retargeting campaigns"
+      ],
+      "price": "20% of ad spend",
+      "link": "/services/digital-ads"
+    },
+    {
+      "title": "SEO Optimization",
+      "description": "Boost your search engine rankings with our comprehensive SEO strategies",
+      "image": "/lovable-uploads/80bc8d79-1215-4949-b652-f1e56d9536f5.png",
+      "icon": "Search",
+      "features": [
+        "Technical SEO audits",
+        "Keyword research and optimization",
+        "Link building strategies",
+        "Local SEO optimization"
+      ],
+      "price": "From $1,500/month",
+      "link": "/services/seo"
     }
   ]
 }

@@ -1,11 +1,98 @@
+
 {
-  "title": "Free Resources",
-  "description": "Các tài nguyên miễn phí về AI.",
+  "title": "Free Marketing Resources",
+  "subtitle": "Download our comprehensive guides, templates, and tools to boost your marketing efforts",
+  "hero_image": "/lovable-uploads/776be8eb-1741-43f7-996d-853bb0ad2471.png",
   "resources": [
     {
-      "name": "Resource 1",
-      "link": "https://example.com",
-      "description": "Tài nguyên số 1"
+      "title": "Complete SEO Guide 2024",
+      "description": "Master search engine optimization with our comprehensive guide covering all aspects of modern SEO",
+      "type": "Guide",
+      "category": "SEO",
+      "image": "/lovable-uploads/9df3a685-49ae-4417-a6ac-c13af5ea1bdc.png",
+      "download_link": "/downloads/seo-guide-2024.pdf",
+      "link": "/solutions/free-resources/seo-guide",
+      "featured": true
+    },
+    {
+      "title": "Social Media Toolkit",
+      "description": "Everything you need to create engaging social media content and grow your following",
+      "type": "Toolkit",
+      "category": "Social Media",
+      "image": "/lovable-uploads/bc91eb16-44eb-43e6-bfae-634598663727.png",
+      "download_link": "/downloads/social-media-toolkit.zip",
+      "link": "/solutions/free-resources/social-toolkit",
+      "featured": true
+    },
+    {
+      "title": "AI Marketing Playbook",
+      "description": "Learn how to implement AI in your marketing strategy with this step-by-step playbook",
+      "type": "Guide",
+      "category": "AI Marketing",
+      "image": "/lovable-uploads/e5594224-b518-49cf-af3a-0edcc57e788d.png",
+      "download_link": "/downloads/ai-marketing-playbook.pdf",
+      "link": "/solutions/free-resources/ai-playbook",
+      "featured": true
+    },
+    {
+      "title": "Content Marketing Templates",
+      "description": "Ready-to-use templates for blog posts, social media, and email campaigns",
+      "type": "Template",
+      "category": "Content Marketing",
+      "image": "/lovable-uploads/a15882dc-97d3-47bb-b7cd-d3c2fac149c7.png",
+      "download_link": "/downloads/content-templates.zip",
+      "link": "/solutions/free-resources/content-templates",
+      "featured": false
+    },
+    {
+      "title": "Marketing ROI Calculator",
+      "description": "Calculate and track your marketing return on investment with this interactive tool",
+      "type": "Calculator",
+      "category": "Analytics",
+      "image": "/lovable-uploads/1cbe524d-f771-4ed1-a266-0fd8ed35c5f9.png",
+      "download_link": "/tools/roi-calculator",
+      "link": "/solutions/free-resources/roi-calculator",
+      "featured": false
+    },
+    {
+      "title": "Email Marketing Guide",
+      "description": "Comprehensive guide to creating email campaigns that convert subscribers into customers",
+      "type": "Guide",
+      "category": "Email Marketing",
+      "image": "/lovable-uploads/3d47b2ad-06d3-4331-bf76-5c2b56c7e26e.png",
+      "download_link": "/downloads/email-marketing-guide.pdf",
+      "link": "/solutions/free-resources/email-guide",
+      "featured": false
+    },
+    {
+      "title": "Local SEO Checklist",
+      "description": "Step-by-step checklist to optimize your local search presence",
+      "type": "Checklist",
+      "category": "SEO",
+      "image": "/lovable-uploads/627626eb-2ca0-44f6-b25a-1da8b56dfc56.png",
+      "download_link": "/downloads/local-seo-checklist.pdf",
+      "link": "/solutions/free-resources/local-seo-checklist",
+      "featured": false
+    },
+    {
+      "title": "Content Calendar Template",
+      "description": "Plan and organize your content strategy with this comprehensive calendar template",
+      "type": "Template",
+      "category": "Content Marketing",
+      "image": "/lovable-uploads/fc531de3-248c-4a05-8107-58c3840e9aa7.png",
+      "download_link": "/downloads/content-calendar.xlsx",
+      "link": "/solutions/free-resources/content-calendar",
+      "featured": false
+    },
+    {
+      "title": "Conversion Rate Optimization Guide",
+      "description": "Learn how to optimize your website and landing pages for maximum conversions",
+      "type": "Guide",
+      "category": "CRO",
+      "image": "/lovable-uploads/0ceeed21-c181-4c79-8c5e-5c5eb26e8c23.png",
+      "download_link": "/downloads/cro-guide.pdf",
+      "link": "/solutions/free-resources/cro-guide",
+      "featured": false
     }
   ]
 }
