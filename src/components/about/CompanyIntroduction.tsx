@@ -37,14 +37,14 @@ const CompanyIntroduction = () => {
                 We are a professional marketing agency focused on transforming ideas into reality through creative and effective marketing strategies. 
                 With a combination of modern technology and deep market understanding, we help businesses achieve sustainable growth goals.
               </p>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {services.map((service, index) => (
                   <div key={index} className="text-center group">
                     <div className="w-16 h-16 bg-gradient-to-r from-heidigital-blue to-heidigital-purple rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="font-bold text-gray-800 mb-2">{service.title}</h3>
-                    <p className="text-sm text-gray-600">{service.description}</p>
+                    <h3 className="font-bold text-gray-800 mb-3 text-lg leading-tight">{service.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
                   </div>
                 ))}
               </div>
