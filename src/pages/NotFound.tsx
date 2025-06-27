@@ -21,7 +21,7 @@ const NotFound = () => {
     <Layout>
       <div className="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="text-center max-w-lg px-4">
-          <div className="text-6xl font-bold text-heidigital-blue mb-5">404</div>
+          <div className="text-6xl font-bold text-heisocial-blue mb-5">404</div>
           <SectionHeading
             title="Page Not Found"
             subtitle={`Sorry, we couldn't find the page you're looking for: ${location.pathname}`}
@@ -31,7 +31,7 @@ const NotFound = () => {
             The page you are looking for might have been removed, had its name changed,
             or is temporarily unavailable.
           </p>
-          <Button asChild className="bg-heidigital-blue hover:bg-heidigital-blue/90">
+          <Button asChild className="bg-heisocial-blue hover:bg-heisocial-blue/90">
             <Link to="/" className="flex items-center gap-2">
               <Home size={16} /> Return to Home
             </Link>

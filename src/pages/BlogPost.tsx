@@ -25,7 +25,15 @@ const BlogPost = () => {
   }
 
   if (error) {
-    return <NotFound />;
+    return (
+      <Layout>
+        <div className="min-h-[60vh] flex items-center justify-center">
+          <div className="text-center">
+            <p className="text-red-500">Error loading article: {error}</p>
+          </div>
+        </div>
+      </Layout>
+    );
   }
 
   const post = posts.find(p => p.slug === slug);
@@ -33,6 +41,41 @@ const BlogPost = () => {
   if (!post) {
     return <NotFound />;
   }
+
+  // Simple markdown-like content processing
+  const processContent = (content: string) => {
+    return content
+      .split('\n')
+      .map((line, index) => {
+        // Handle headers
+        if (line.startsWith('# ')) {
+          return <h1 key={index} className="text-3xl font-bold mt-8 mb-4">{line.slice(2)}</h1>;
+        }
+        if (line.startsWith('## ')) {
+          return <h2 key={index} className="text-2xl font-bold mt-6 mb-3">{line.slice(3)}</h2>;
+        }
+        if (line.startsWith('### ')) {
+          return <h3 key={index} className="text-xl font-bold mt-4 mb-2">{line.slice(4)}</h3>;
+        }
+        
+        // Handle bold text
+        const boldText = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        
+        // Handle empty lines
+        if (line.trim() === '') {
+          return <br key={index} />;
+        }
+        
+        // Regular paragraphs
+        return (
+          <p 
+            key={index} 
+            className="mb-4 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: boldText }}
+          />
+        );
+      });
+  };
 
   return (
     <Layout>
@@ -93,8 +136,8 @@ const BlogPost = () => {
 
           {/* Article content */}
           <div className="prose prose-lg max-w-none">
-            <div className="whitespace-pre-wrap leading-relaxed">
-              {post.content}
+            <div className="text-gray-700 leading-relaxed">
+              {processContent(post.content)}
             </div>
           </div>
 
