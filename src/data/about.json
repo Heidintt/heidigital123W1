@@ -1,52 +1,47 @@
 
 {
   "title": "About Heidigital",
-  "subtitle": "Pioneering the future of AI-powered marketing in Australia",
-  "content": "# Our Company\n\nHeidigital is a cutting-edge AI marketing agency that transforms how businesses connect with their customers. Through intelligent automation, data-driven strategies, and innovative digital solutions, we help companies achieve unprecedented growth in the digital landscape.\n\n## Our Mission\n\nTo democratize access to cutting-edge AI marketing technology, enabling businesses of all sizes to compete effectively in the digital marketplace through intelligent, data-driven strategies.\n\n## What Sets Us Apart\n\n- **AI-First Methodology**: We integrate artificial intelligence into every aspect of our marketing strategies\n- **Human-Centered Design**: Technology serves people, not the other way around\n- **Measurable Results**: Every campaign is designed with clear KPIs and measurable outcomes\n- **Continuous Innovation**: We stay ahead of the curve with the latest marketing technologies",
+  "subtitle": "Đối tác tin cậy trong hành trình phát triển thương hiệu số",
+  "content": "# Về Heidigital\n\nHeidigital là một agency marketing chuyên nghiệp, tập trung vào việc biến ý tưởng thành hiện thực thông qua các chiến lược marketing sáng tạo và hiệu quả. Với sự kết hợp giữa công nghệ hiện đại và hiểu biết sâu sắc về thị trường, chúng tôi giúp doanh nghiệp đạt được mục tiêu tăng trưởng bền vững.\n\n## Sứ mệnh\n\nGiúp các doanh nghiệp Việt Nam tiếp cận và ứng dụng thành công các giải pháp marketing hiện đại, tạo ra giá trị bền vững và tăng trưởng mạnh mẽ trong thời đại số.\n\n## Điểm khác biệt\n\n- **Phương pháp toàn diện**: Tích hợp công nghệ hiện đại vào mọi khía cạnh của chiến lược marketing\n- **Thiết kế lấy con người làm trung tâm**: Công nghệ phục vụ con người, không phải ngược lại\n- **Kết quả có thể đo lường**: Mọi chiến dịch đều có KPI rõ ràng và kết quả đo được\n- **Đổi mới liên tục**: Luôn cập nhật công nghệ marketing mới nhất",
   "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
   "company_image": "/lovable-uploads/c70b8597-1e6d-45af-90eb-9f855efb46fa.png",
   "values": [
     {
       "title": "Innovation",
-      "description": "We continuously explore new technologies and methodologies to stay ahead of the curve",
+      "description": "Luôn tìm kiếm và ứng dụng những công nghệ mới nhất để mang lại hiệu quả tối ưu",
       "icon": "Lightbulb"
     },
     {
       "title": "Transparency",
-      "description": "Clear communication and honest reporting in everything we do",
+      "description": "Minh bạch trong mọi báo cáo và giao tiếp với khách hàng",
       "icon": "Eye"
     },
     {
       "title": "Results",
-      "description": "We measure success by the tangible results we deliver for our clients",
+      "description": "Tập trung vào kết quả thực tế và có thể đo lường được",
       "icon": "Target"
     },
     {
       "title": "Partnership",
-      "description": "We work as an extension of your team, committed to your long-term success",
+      "description": "Làm việc như một đối tác lâu dài, cam kết thành công của bạn",
       "icon": "Handshake"
     }
   ],
-  "achievements": [
+  "services": [
     {
-      "number": "100+",
-      "label": "AI-Powered Campaigns",
-      "icon": "Zap"
+      "title": "Brand Development",
+      "description": "Xây dựng thương hiệu mạnh mẽ từ ý tưởng đến triển khai thực tế",
+      "icon": "Users"
     },
     {
-      "number": "95%",
-      "label": "Client Satisfaction",
-      "icon": "Award"
+      "title": "Digital Presence",
+      "description": "Tạo dựng sự hiện diện số mạnh mẽ trên tất cả các nền tảng",
+      "icon": "Globe"
     },
     {
-      "number": "300%",
-      "label": "Average ROI Increase",
-      "icon": "TrendingUp"
-    },
-    {
-      "number": "24/7",
-      "label": "AI Monitoring",
-      "icon": "Shield"
+      "title": "Data Analytics",
+      "description": "Phân tích dữ liệu để đưa ra quyết định marketing thông minh",
+      "icon": "BarChart"
     }
   ]
 }
