@@ -1,6 +1,7 @@
 
 backend:
-  name: git-gateway
+  name: github
+  repo: Heidintt/heisocial-ai-pulse
   branch: main
 
 media_folder: "public/uploads"
