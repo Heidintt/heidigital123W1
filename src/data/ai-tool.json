@@ -1,0 +1,11 @@
+{
+  "title": "AI Tool",
+  "description": "Các công cụ AI nổi bật.",
+  "tools": [
+    {
+      "name": "Tool 1",
+      "link": "https://tool.com",
+      "description": "Công cụ AI số 1"
+    }
+  ]
+}
