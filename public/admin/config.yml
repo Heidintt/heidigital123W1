@@ -26,7 +26,7 @@ collections:
       - {label: "SEO Description", name: "seo_description", widget: "text", required: false}
 
   - name: "pages"
-    label: "Pages"
+    label: "Main Pages"
     files:
       - file: "src/data/homepage.json"
         label: "Homepage"
@@ -36,13 +36,32 @@ collections:
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
           - {label: "Hero Image", name: "hero_image", widget: "image"}
           - {label: "CTA Text", name: "cta_text", widget: "string"}
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Quote", name: "quote", widget: "text"}
 
       - file: "src/data/about.json"
         label: "About Page"
         name: "about"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Content", name: "content", widget: "text"}
+          - {label: "Content", name: "content", widget: "markdown"}
+          - {label: "Team Image", name: "image", widget: "image"}
+          - label: "Team Members"
+            name: "team"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
 
       - file: "src/data/contact.json"
         label: "Contact Info"
@@ -51,3 +70,100 @@ collections:
           - {label: "Phone", name: "phone", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
           - {label: "Address", name: "address", widget: "text"}
+          - {label: "Map Embed Code", name: "map_embed", widget: "text", required: false}
+
+  - name: "services_data"
+    label: "Services"
+    files:
+      - file: "src/data/services.json"
+        label: "Services Page"
+        name: "services"
+        fields:
+          - label: "Services List"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Features", name: "features", widget: "list", allow_add: true}
+              - {label: "Price", name: "price", widget: "string", required: false}
+
+  - name: "portfolio_data"
+    label: "Portfolio"
+    folder: "src/data/portfolio"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Category", name: "category", widget: "select", options: ["Branding", "Digital Marketing", "Web Design", "Social Media", "Campaign"]}
+      - {label: "Client", name: "client", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Featured Image", name: "featured_image", widget: "image"}
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        field: {label: "Image", name: "image", widget: "image"}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Results", name: "results", widget: "text", required: false}
+
+  - name: "solutions_data"
+    label: "Solutions"
+    files:
+      - file: "src/data/solutions/ai-tools.json"
+        label: "AI Tools"
+        name: "ai_tools"
+        fields:
+          - label: "AI Tools"
+            name: "tools"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Icon", name: "icon", widget: "string"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+
+      - file: "src/data/solutions/free-resources.json"
+        label: "Free Resources"
+        name: "free_resources"
+        fields:
+          - label: "Resources"
+            name: "resources"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Type", name: "type", widget: "select", options: ["Guide", "Template", "Checklist", "Calculator", "Toolkit"]}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Download Link", name: "download_link", widget: "string"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "src/data/site-settings.json"
+        label: "General Settings"
+        name: "site_settings"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string"}
+          - {label: "Site Description", name: "site_description", widget: "text"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Favicon", name: "favicon", widget: "image"}
+          - label: "Social Media"
+            name: "social_media"
+            widget: "object"
+            fields:
+              - {label: "Facebook", name: "facebook", widget: "string", required: false}
+              - {label: "Twitter", name: "twitter", widget: "string", required: false}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Instagram", name: "instagram", widget: "string", required: false}
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Meta Title", name: "meta_title", widget: "string"}
+              - {label: "Meta Description", name: "meta_description", widget: "text"}
+              - {label: "Keywords", name: "keywords", widget: "string"}

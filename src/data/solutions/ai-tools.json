@@ -1,0 +1,26 @@
+
+{
+  "tools": [
+    {
+      "name": "AI Content Generator",
+      "description": "Generate high-quality marketing content using advanced AI",
+      "icon": "PenTool",
+      "link": "/solutions/ai-tools/content-generator",
+      "category": "Content Creation"
+    },
+    {
+      "name": "SEO Article Generator",
+      "description": "Create SEO-optimized articles that rank on Google",
+      "icon": "Search",
+      "link": "/solutions/ai-tools/seo-article-generator", 
+      "category": "SEO"
+    },
+    {
+      "name": "Multilingual Content Generator",
+      "description": "Generate content in multiple languages for global reach",
+      "icon": "Globe",
+      "link": "/solutions/ai-tools/multilingual-content-generator",
+      "category": "Content Creation"
+    }
+  ]
+}

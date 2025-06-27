@@ -1,0 +1,18 @@
+
+{
+  "site_title": "Heidi Digital - AI-Powered Marketing Solutions",
+  "site_description": "Transform your marketing with AI-powered strategies and creative solutions from Heidi Digital",
+  "logo": "/uploads/logo.png",
+  "favicon": "/favicon.ico",
+  "social_media": {
+    "facebook": "https://facebook.com/heidigital",
+    "twitter": "https://twitter.com/heidigital", 
+    "linkedin": "https://linkedin.com/company/heidigital",
+    "instagram": "https://instagram.com/heidigital"
+  },
+  "seo": {
+    "meta_title": "Heidi Digital - AI Marketing Agency Australia",
+    "meta_description": "Leading AI marketing agency in Australia. We help businesses grow with cutting-edge AI marketing strategies, content creation, and digital solutions.",
+    "keywords": "AI marketing, digital marketing Australia, content marketing, SEO, social media marketing"
+  }
+}
