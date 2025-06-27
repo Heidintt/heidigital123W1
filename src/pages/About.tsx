@@ -4,28 +4,28 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
-import { CheckCircle2, Lightbulb, Eye, Target, Handshake, Brain, Rocket, TrendingUp, Zap, Shield, Award, Users, Globe, BarChart } from "lucide-react";
+import { CheckCircle2, Lightbulb, Eye, Target, Handshake, Brain, Rocket, TrendingUp, Users, Globe, BarChart } from "lucide-react";
 
 const About = () => {
   const values = [
     {
       title: "Innovation",
-      description: "Luôn tìm kiếm và ứng dụng những công nghệ mới nhất để mang lại hiệu quả tối ưu.",
+      description: "Always seeking and applying the latest technologies to deliver optimal effectiveness.",
       icon: Lightbulb,
     },
     {
       title: "Transparency",
-      description: "Minh bạch trong mọi báo cáo và giao tiếp với khách hàng.",
+      description: "Transparent in all reports and communication with clients.",
       icon: Eye,
     },
     {
       title: "Results",
-      description: "Tập trung vào kết quả thực tế và có thể đo lường được.",
+      description: "Focus on practical and measurable results.",
       icon: Target,
     },
     {
       title: "Partnership",
-      description: "Làm việc như một đối tác lâu dài, cam kết thành công của bạn.",
+      description: "Working as a long-term partner, committed to your success.",
       icon: Handshake,
     },
   ];
@@ -33,17 +33,17 @@ const About = () => {
   const expertise = [
     {
       title: "Digital Marketing Strategy",
-      description: "Xây dựng chiến lược marketing toàn diện kết hợp công nghệ hiện đại và hiểu biết sâu về thị trường.",
+      description: "Building comprehensive marketing strategies that combine modern technology with deep market insights.",
       icon: Brain,
     },
     {
       title: "Creative Solutions",
-      description: "Tạo ra những giải pháp sáng tạo độc đáo giúp thương hiệu của bạn nổi bật trong thị trường cạnh tranh.",
+      description: "Creating unique creative solutions that help your brand stand out in the competitive market.",
       icon: Rocket,
     },
     {
       title: "Performance Optimization",
-      description: "Tối ưu hóa hiệu suất và ROI thông qua phân tích dữ liệu và điều chỉnh chiến lược liên tục.",
+      description: "Optimizing performance and ROI through data analysis and continuous strategy adjustment.",
       icon: TrendingUp,
     },
   ];
@@ -51,17 +51,17 @@ const About = () => {
   const services = [
     {
       title: "Brand Development",
-      description: "Xây dựng thương hiệu mạnh mẽ từ ý tưởng đến triển khai thực tế.",
+      description: "Building strong brands from concept to practical implementation.",
       icon: Users,
     },
     {
       title: "Digital Presence",
-      description: "Tạo dựng sự hiện diện số mạnh mẽ trên tất cả các nền tảng.",
+      description: "Creating powerful digital presence across all platforms.",
       icon: Globe,
     },
     {
       title: "Data Analytics",
-      description: "Phân tích dữ liệu để đưa ra quyết định marketing thông minh.",
+      description: "Analyzing data to make smart marketing decisions.",
       icon: BarChart,
     },
   ];
@@ -70,7 +70,7 @@ const About = () => {
     <Layout>
       <Hero
         title="About Heidigital"
-        subtitle="Đối tác tin cậy trong hành trình phát triển thương hiệu số của bạn"
+        subtitle="Your trusted partner in digital brand development journey"
         backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
@@ -84,11 +84,11 @@ const About = () => {
                   <Brain className="h-12 w-12 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  Chào mừng đến với <span className="gradient-text">Heidigital</span>
+                  Welcome to <span className="gradient-text">Heidigital</span>
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  Chúng tôi là một agency marketing chuyên nghiệp, tập trung vào việc biến ý tưởng thành hiện thực thông qua các chiến lược marketing sáng tạo và hiệu quả. 
-                  Với sự kết hợp giữa công nghệ hiện đại và hiểu biết sâu sắc về thị trường, chúng tôi giúp doanh nghiệp đạt được mục tiêu tăng trưởng bền vững.
+                  We are a professional marketing agency focused on transforming ideas into reality through creative and effective marketing strategies. 
+                  With a combination of modern technology and deep market understanding, we help businesses achieve sustainable growth goals.
                 </p>
                 <div className="grid grid-cols-3 gap-6">
                   {services.map((service, index) => (
@@ -127,7 +127,7 @@ const About = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-16">
-              Sứ mệnh & <span className="gradient-text">Tầm nhìn</span>
+              Mission & <span className="gradient-text">Vision</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300">
@@ -136,10 +136,10 @@ const About = () => {
                     <Target className="h-8 w-8 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Sứ mệnh</h3>
+                <h3 className="text-2xl font-bold mb-4">Mission</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Giúp các doanh nghiệp Việt Nam tiếp cận và ứng dụng thành công các giải pháp marketing hiện đại, 
-                  tạo ra giá trị bền vững và tăng trưởng mạnh mẽ trong thời đại số.
+                  To help businesses access and successfully apply modern marketing solutions, 
+                  creating sustainable value and strong growth in the digital age.
                 </p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 group hover:shadow-2xl transition-all duration-300">
@@ -148,10 +148,10 @@ const About = () => {
                     <Rocket className="h-8 w-8 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Tầm nhìn</h3>
+                <h3 className="text-2xl font-bold mb-4">Vision</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Trở thành đối tác marketing đáng tin cậy hàng đầu, tiên phong trong việc ứng dụng công nghệ 
-                  để tạo ra những chiến dịch marketing sáng tạo và hiệu quả.
+                  To become a leading trusted marketing partner, pioneering the application of technology 
+                  to create innovative and effective marketing campaigns.
                 </p>
               </div>
             </div>
@@ -163,8 +163,8 @@ const About = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Lĩnh vực chuyên môn"
-            subtitle="Kiến thức chuyên sâu mang lại kết quả vượt trội"
+            title="Areas of Expertise"
+            subtitle="Deep knowledge delivering superior results"
             centered
           />
 
@@ -189,8 +189,8 @@ const About = () => {
       <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto">
           <SectionHeading
-            title="Giá trị cốt lõi"
-            subtitle="Những nguyên tắc định hướng mọi hoạt động của chúng tôi"
+            title="Core Values"
+            subtitle="The principles that guide all our activities"
             centered
           />
 
@@ -214,11 +214,11 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                Tại sao chọn <span className="gradient-text">Heidigital</span>
+                Why Choose <span className="gradient-text">Heidigital</span>
               </h2>
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-                Chúng tôi không chỉ là một agency marketing thông thường. Phương pháp tiếp cận độc đáo của chúng tôi 
-                kết hợp chuyên môn sáng tạo với chiến lược dựa trên dữ liệu và công nghệ tiên tiến.
+                We're not just another marketing agency. Our unique approach 
+                combines creative expertise with data-driven strategy and cutting-edge technology.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start group">
@@ -226,10 +226,10 @@ const About = () => {
                     <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Phương pháp toàn diện</h3>
+                    <h3 className="text-xl font-bold mb-2">Comprehensive Approach</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Tích hợp công nghệ hiện đại vào mọi khía cạnh của chiến lược marketing, đảm bảo 
-                      quyết định dựa trên dữ liệu và hiệu suất tối ưu trên tất cả các kênh.
+                      Integrating modern technology into every aspect of marketing strategy, ensuring 
+                      data-driven decisions and optimal performance across all channels.
                     </p>
                   </div>
                 </div>
@@ -238,10 +238,10 @@ const About = () => {
                     <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Thiết kế lấy con người làm trung tâm</h3>
+                    <h3 className="text-xl font-bold mb-2">Human-Centered Design</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Công nghệ phục vụ con người, không phải ngược lại. Mọi giải pháp đều được thiết kế 
-                      với nhu cầu và trải nghiệm của khách hàng làm trọng tâm.
+                      Technology serves people, not the other way around. Every solution is designed 
+                      with customer needs and experience at the center.
                     </p>
                   </div>
                 </div>
@@ -250,10 +250,10 @@ const About = () => {
                     <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Kết quả có thể đo lường</h3>
+                    <h3 className="text-xl font-bold mb-2">Measurable Results</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Mọi chiến dịch đều được thiết kế với KPI rõ ràng và kết quả có thể đo lường 
-                      để đảm bảo ROI hữu hình cho khoản đầu tư của doanh nghiệp.
+                      Every campaign is designed with clear KPIs and measurable outcomes 
+                      to ensure tangible ROI for your business investment.
                     </p>
                   </div>
                 </div>
@@ -262,10 +262,10 @@ const About = () => {
                     <CheckCircle2 className="h-6 w-6 text-heidigital-purple" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2">Đổi mới liên tục</h3>
+                    <h3 className="text-xl font-bold mb-2">Continuous Innovation</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Luôn cập nhật với các công nghệ marketing mới nhất và xu hướng mới nổi 
-                      để giữ cho doanh nghiệp của bạn có lợi thế cạnh tranh.
+                      Always staying updated with the latest marketing technologies and emerging trends 
+                      to keep your business ahead of the competition.
                     </p>
                   </div>
                 </div>
@@ -284,11 +284,11 @@ const About = () => {
       </section>
 
       <CallToAction
-        title="Sẵn sàng chuyển đổi marketing của bạn?"
-        description="Hãy thảo luận về cách các chiến lược marketing hiện đại có thể giúp doanh nghiệp của bạn đạt được tăng trưởng vượt trội và lợi thế cạnh tranh."
-        primaryButtonText="Bắt đầu hành trình"
+        title="Ready to Transform Your Marketing?"
+        description="Let's discuss how modern marketing strategies can help your business achieve exceptional growth and competitive advantage."
+        primaryButtonText="Start Your Journey"
         primaryButtonLink="/contact"
-        secondaryButtonText="Khám phá dịch vụ"
+        secondaryButtonText="Explore Services"
         secondaryButtonLink="/services"
         backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
       />
