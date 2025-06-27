@@ -10,13 +10,14 @@
   [headers.values]
     Content-Type = "text/plain"
 
+# Ensure sitemap.xml is served as static file
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
   status = 200
-  force = false
+  force = true
   
-# Fallback for SPA
+# Fallback for SPA - but exclude static files
 [[redirects]]
   from = "/*"
   to = "/index.html"
