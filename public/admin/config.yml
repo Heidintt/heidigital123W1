@@ -3,76 +3,12 @@ backend:
   name: github
   repo: Heidintt/heisocial-ai-pulse
   branch: main
+  site_domain: heisocial-ai-pulse.vercel.app
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "homepage"
-    label: "Homepage"
-    files:
-      - file: "src/data/homepage.json"
-        label: "Homepage Content"
-        name: "homepage"
-        fields:
-          - {label: "Hero Title", name: "hero_title", widget: "string"}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
-          - {label: "CTA Text", name: "cta_text", widget: "string"}
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            fields:
-              - {label: "Service Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-          - label: "Testimonials"
-            name: "testimonials"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Quote", name: "quote", widget: "text"}
-
-  - name: "about"
-    label: "About Page"
-    files:
-      - file: "src/data/about.json"
-        label: "About Content"
-        name: "about"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Content", name: "content", widget: "text"}
-          - label: "Team Members"
-            name: "team"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Role", name: "role", widget: "string"}
-          - {label: "Image", name: "image", widget: "image"}
-
-  - name: "contact"
-    label: "Contact Page"
-    files:
-      - file: "src/data/contact.json"
-        label: "Contact Info"
-        name: "contact"
-        fields:
-          - {label: "Phone", name: "phone", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
-          - {label: "Address", name: "address", widget: "text"}
-          - {label: "Map Embed HTML", name: "map_embed", widget: "text"}
-
-  - name: "portfolio"
-    label: "Portfolio Projects"
-    folder: "src/data/portfolio"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Project Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Link", name: "link", widget: "string"}
-      - {label: "Content", name: "body", widget: "markdown"}
-
   - name: "blog"
     label: "Blog Posts"
     folder: "src/data/blog"
@@ -89,3 +25,30 @@ collections:
       - {label: "Content", name: "body", widget: "markdown"}
       - {label: "SEO Title", name: "seo_title", widget: "string", required: false}
       - {label: "SEO Description", name: "seo_description", widget: "text", required: false}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/data/homepage.json"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - {label: "Hero Title", name: "hero_title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
+          - {label: "Hero Image", name: "hero_image", widget: "image"}
+          - {label: "CTA Text", name: "cta_text", widget: "string"}
+
+      - file: "src/data/about.json"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "content", widget: "text"}
+
+      - file: "src/data/contact.json"
+        label: "Contact Info"
+        name: "contact"
+        fields:
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address", name: "address", widget: "text"}
