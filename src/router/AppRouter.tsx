@@ -18,9 +18,6 @@ const AppRouter = () => {
         <Route path="/sitemap.xml" element={<SitemapXML />} />
         <Route path="/robots.txt" element={<RobotsTXT />} />
         
-        {/* Main page routes */}
-        <Route path="/*" element={<MainRoutes />} />
-        
         {/* Service routes */}
         <Route path="/services/*" element={<ServiceRoutes />} />
         
@@ -29,6 +26,9 @@ const AppRouter = () => {
         
         {/* Portfolio routes */}
         <Route path="/portfolio/*" element={<PortfolioRoutes />} />
+        
+        {/* Main page routes - must come after specific routes */}
+        <Route path="/*" element={<MainRoutes />} />
         
         <Route path="*" element={<NotFound />} />
       </Routes>
