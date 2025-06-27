@@ -1,5 +1,8 @@
 backend:
-  name: test-repo
+  name: github
+  repo: Heidintt/heisocial-ai-pulse
+  branch: main
+  base_url: heisocial-ai-pulse.vercel.app
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
