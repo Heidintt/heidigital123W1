@@ -1,0 +1,11 @@
+{
+  "title": "Free Resources",
+  "description": "Các tài nguyên miễn phí về AI.",
+  "resources": [
+    {
+      "name": "Resource 1",
+      "link": "https://example.com",
+      "description": "Tài nguyên số 1"
+    }
+  ]
+}
