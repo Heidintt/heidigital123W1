@@ -3,8 +3,37 @@ import { useEffect } from 'react';
 
 const SitemapXML = () => {
   useEffect(() => {
-    // Set content type for XML
-    document.querySelector('meta[name="content-type"]')?.setAttribute('content', 'text/xml');
+    // Set content type cho XML
+    const meta = document.querySelector('meta[http-equiv="Content-Type"]');
+    if (meta) {
+      meta.setAttribute('content', 'application/xml; charset=utf-8');
+    } else {
+      const newMeta = document.createElement('meta');
+      newMeta.setAttribute('http-equiv', 'Content-Type');
+      newMeta.setAttribute('content', 'application/xml; charset=utf-8');
+      document.head.appendChild(newMeta);
+    }
+
+    const style = document.createElement('style');
+    style.textContent = `
+      body { 
+        font-family: monospace; 
+        white-space: pre; 
+        margin: 0; 
+        padding: 20px;
+        background: white;
+        font-size: 12px;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      const metaToRemove = document.querySelector('meta[http-equiv="Content-Type"]');
+      if (metaToRemove) {
+        document.head.removeChild(metaToRemove);
+      }
+      document.head.removeChild(style);
+    };
   }, []);
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
@@ -281,12 +310,10 @@ const SitemapXML = () => {
   
 </urlset>`;
 
-  // Render XML content
   return (
-    <div 
-      dangerouslySetInnerHTML={{ __html: sitemapContent }}
-      style={{ fontFamily: 'monospace', whiteSpace: 'pre' }}
-    />
+    <pre style={{ margin: 0, fontFamily: 'monospace', fontSize: '12px' }}>
+      {sitemapContent}
+    </pre>
   );
 };
 

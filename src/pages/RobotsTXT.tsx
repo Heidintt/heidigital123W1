@@ -3,8 +3,22 @@ import { useEffect } from 'react';
 
 const RobotsTXT = () => {
   useEffect(() => {
-    // Set content type for text
-    document.querySelector('meta[name="content-type"]')?.setAttribute('content', 'text/plain');
+    // Set content type và trả về plain text
+    const style = document.createElement('style');
+    style.textContent = `
+      body { 
+        font-family: monospace; 
+        white-space: pre; 
+        margin: 0; 
+        padding: 20px;
+        background: white;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
 
   const robotsContent = `User-agent: *
@@ -44,12 +58,10 @@ Allow: /sitemap
 Allow: /privacy-policy
 Allow: /terms-of-service`;
 
-  // Render text content
   return (
-    <div 
-      dangerouslySetInnerHTML={{ __html: robotsContent }}
-      style={{ fontFamily: 'monospace', whiteSpace: 'pre' }}
-    />
+    <pre style={{ margin: 0, fontFamily: 'monospace' }}>
+      {robotsContent}
+    </pre>
   );
 };
 
