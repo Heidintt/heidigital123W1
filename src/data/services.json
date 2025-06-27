@@ -1,0 +1,14 @@
+{
+  "services": [
+    {
+      "title": "Dịch vụ A",
+      "description": "Mô tả dịch vụ A",
+      "image": "/uploads/service-a.jpg"
+    },
+    {
+      "title": "Dịch vụ B",
+      "description": "Mô tả dịch vụ B",
+      "image": "/uploads/service-b.jpg"
+    }
+  ]
+}
