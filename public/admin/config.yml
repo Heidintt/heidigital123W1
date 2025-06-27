@@ -1,9 +1,7 @@
 
 backend:
-  name: github
-  repo: Heidintt/heisocial-ai-pulse
+  name: git-gateway
   branch: main
-  site_domain: heisocial-ai-pulse.vercel.app
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
