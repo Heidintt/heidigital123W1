@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -6,8 +7,10 @@ import PortfolioCard from "@/components/PortfolioCard";
 import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 
+console.log("Portfolio.tsx file is loading");
+
 const Portfolio = () => {
-  console.log("Portfolio component is rendering");
+  console.log("Portfolio component is starting to render");
   
   const [activeCategory, setActiveCategory] = useState("All");
   
@@ -95,6 +98,7 @@ const Portfolio = () => {
   console.log("Portfolio items:", portfolioItems.length);
   console.log("Filtered items:", filteredItems.length);
   console.log("Active category:", activeCategory);
+  console.log("About to render Portfolio JSX");
 
   return (
     <div style={{minHeight: '100vh', backgroundColor: '#f8f9fa'}}>
@@ -159,5 +163,7 @@ const Portfolio = () => {
     </div>
   );
 };
+
+console.log("Portfolio component defined, about to export");
 
 export default Portfolio;
