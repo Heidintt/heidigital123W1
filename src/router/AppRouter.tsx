@@ -5,7 +5,6 @@ import Index from "@/pages/Index";
 import NotFound from "@/pages/NotFound";
 import RobotsTXT from "@/pages/RobotsTXT";
 import { MainRoutes } from "./MainRoutes";
-import { ServiceRoutes } from "./ServiceRoutes";
 import { SolutionRoutes } from "./SolutionRoutes";
 import { PortfolioRoutes } from "./PortfolioRoutes";
 
@@ -18,9 +17,6 @@ const AppRouter = () => {
         {/* Static files with exact paths */}
         <Route path="/robots.txt" element={<RobotsTXT />} />
         {/* Remove sitemap.xml route - it will be served as static file */}
-        
-        {/* Service routes */}
-        <Route path="/services/*" element={<ServiceRoutes />} />
         
         {/* Solution routes */}
         <Route path="/solutions/*" element={<SolutionRoutes />} />
