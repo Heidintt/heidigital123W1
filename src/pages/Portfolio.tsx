@@ -100,7 +100,7 @@ const Portfolio = () => {
       />
 
       <section className="py-12 px-4">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-7xl">
           <SectionHeading
             title="Case Studies"
             subtitle="Browse our work by category"
@@ -112,8 +112,9 @@ const Portfolio = () => {
               <Button
                 key={index}
                 variant={category === activeCategory ? "default" : "outline"}
-                className={category === activeCategory ? "bg-heidigital-blue" : ""}
+                className={`${category === activeCategory ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50"} transition-colors`}
                 onClick={() => setActiveCategory(category)}
+                size="sm"
               >
                 {category}
               </Button>
@@ -132,6 +133,12 @@ const Portfolio = () => {
               />
             ))}
           </div>
+
+          {filteredItems.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">No portfolio items found for this category.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -140,7 +147,7 @@ const Portfolio = () => {
         description="Let's discuss how our digital marketing expertise can help your business grow and thrive in today's competitive landscape."
         primaryButtonText="Get Started"
         primaryButtonLink="/contact"
-        backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
     </Layout>
   );
