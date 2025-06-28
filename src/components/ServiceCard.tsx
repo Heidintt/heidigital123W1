@@ -2,18 +2,16 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, LucideIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   icon: LucideIcon;
-  link: string;
   features?: string[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon, link, features }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon, features }) => {
   return (
     <Card className="card-hover">
       <CardHeader>
@@ -36,10 +34,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Ico
         )}
       </CardContent>
       <CardFooter>
-        <Button asChild variant="ghost" className="p-0 hover:bg-transparent text-blue-600 hover:text-purple-600">
-          <Link to={link} className="flex items-center">
-            Learn more <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+        <Button variant="ghost" className="p-0 hover:bg-transparent text-blue-600 hover:text-purple-600">
+          Tìm hiểu thêm
         </Button>
       </CardFooter>
     </Card>

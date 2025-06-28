@@ -12,60 +12,54 @@ const Services = () => {
     {
       icon: Users,
       title: "Social Media Marketing",
-      description: "Build and engage your community across all major social platforms with strategic content and targeted campaigns.",
-      features: ["Content Strategy", "Community Management", "Paid Social Campaigns", "Analytics & Reporting"],
-      link: "/services/social-media"
+      description: "Xây dựng và phát triển cộng đồng trên các nền tảng mạng xã hội với chiến lược nội dung và chiến dịch mục tiêu.",
+      features: ["Chiến lược nội dung", "Quản lý cộng đồng", "Chiến dịch quảng cáo", "Phân tích & Báo cáo"]
     },
     {
       icon: Zap,
       title: "Content Creation",
-      description: "Create compelling content that tells your brand story and drives engagement across all marketing channels.",
-      features: ["Blog Writing", "Video Production", "Graphic Design", "Content Strategy"],
-      link: "/services/content-creation"
+      description: "Tạo nội dung hấp dẫn kể câu chuyện thương hiệu của bạn và thúc đẩy sự tương tác trên tất cả các kênh marketing.",
+      features: ["Viết Blog", "Sản xuất Video", "Thiết kế đồ họa", "Chiến lược nội dung"]
     },
     {
       icon: BarChart3,
       title: "SEO Optimization",
-      description: "Improve your search engine rankings and drive organic traffic with our comprehensive SEO strategies.",
-      features: ["Technical SEO", "Content Optimization", "Link Building", "Local SEO"],
-      link: "/services/seo"
+      description: "Cải thiện thứ hạng tìm kiếm và tăng lưu lượng truy cập tự nhiên với các chiến lược SEO toàn diện.",
+      features: ["SEO kỹ thuật", "Tối ưu nội dung", "Xây dựng liên kết", "SEO địa phương"]
     },
     {
       icon: Palette,
       title: "Brand Development",
-      description: "Create a strong, memorable brand identity that resonates with your target audience and stands out from competitors.",
-      features: ["Brand Strategy", "Logo Design", "Brand Guidelines", "Brand Positioning"],
-      link: "/services/branding"
+      description: "Tạo bản sắc thương hiệu mạnh mẽ, đáng nhớ, phù hợp với đối tượng mục tiêu và nổi bật so với đối thủ.",
+      features: ["Chiến lược thương hiệu", "Thiết kế Logo", "Hướng dẫn thương hiệu", "Định vị thương hiệu"]
     },
     {
       icon: Target,
       title: "Digital Advertising",
-      description: "Maximize your ROI with targeted digital advertising campaigns across Google, Facebook, and other platforms.",
-      features: ["PPC Campaigns", "Social Media Ads", "Display Advertising", "Retargeting"],
-      link: "/services/digital-ads"
+      description: "Tối đa hóa ROI với các chiến dịch quảng cáo kỹ thuật số mục tiêu trên Google, Facebook và các nền tảng khác.",
+      features: ["Chiến dịch PPC", "Quảng cáo mạng xã hội", "Quảng cáo hiển thị", "Remarketing"]
     },
     {
       icon: Bot,
       title: "AI Marketing Solutions",
-      description: "Leverage artificial intelligence to automate and optimize your marketing efforts for better results.",
-      features: ["Marketing Automation", "AI Analytics", "Chatbot Development", "Predictive Marketing"],
-      link: "/services/ai-marketing"
+      description: "Tận dụng trí tuệ nhân tạo để tự động hóa và tối ưu hóa các nỗ lực marketing để có kết quả tốt hơn.",
+      features: ["Tự động hóa Marketing", "Phân tích AI", "Phát triển Chatbot", "Marketing dự đoán"]
     }
   ];
 
   return (
     <Layout>
       <Hero
-        title="Our Services"
-        subtitle="Comprehensive digital marketing solutions to grow your business"
+        title="Dịch Vụ Của Chúng Tôi"
+        subtitle="Giải pháp marketing số toàn diện để phát triển doanh nghiệp của bạn"
         backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="What We Offer"
-            subtitle="End-to-end digital marketing services tailored to your business needs"
+            title="Những Gì Chúng Tôi Cung Cấp"
+            subtitle="Dịch vụ marketing số từ đầu đến cuối được thiết kế riêng cho nhu cầu doanh nghiệp của bạn"
             centered
           />
 
@@ -77,7 +71,6 @@ const Services = () => {
                 title={service.title}
                 description={service.description}
                 features={service.features}
-                link={service.link}
               />
             ))}
           </div>
@@ -85,11 +78,11 @@ const Services = () => {
       </section>
 
       <CallToAction
-        title="Ready to Transform Your Marketing?"
-        description="Let's discuss how our comprehensive digital marketing services can help your business achieve remarkable growth and success in today's competitive landscape."
-        primaryButtonText="Get Started Today"
+        title="Sẵn Sàng Thay Đổi Marketing Của Bạn?"
+        description="Hãy thảo luận về cách các dịch vụ marketing số toàn diện của chúng tôi có thể giúp doanh nghiệp của bạn đạt được sự tăng trưởng và thành công đáng kể trong bối cảnh cạnh tranh ngày nay."
+        primaryButtonText="Bắt Đầu Ngay Hôm Nay"
         primaryButtonLink="/contact"
-        secondaryButtonText="View Our Work"
+        secondaryButtonText="Xem Công Việc Của Chúng Tôi"
         secondaryButtonLink="/portfolio"
         backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
