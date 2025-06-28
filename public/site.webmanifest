@@ -1,8 +1,17 @@
+
+{
+  "name": "Heidigital",
+  "short_name": "Heidigital",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "description": "Heidigital web app",
+  "icons": [
     {
-      "name": "Heidigital",
-      "short_name": "Heidigital",
-      "start_url": "/",
-      "display": "standalone",
-      "background_color": "#ffffff",
-      "description": "Heidigital web app"
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
     }
+  ]
+}
