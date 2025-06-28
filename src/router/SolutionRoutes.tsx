@@ -1,147 +1,41 @@
 
-import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import LoadingSpinner from "@/components/LoadingSpinner";
-
-// Lazy load solution pages
-const FreeResources = lazy(() => import("@/pages/solutions/FreeResources"));
-const AITools = lazy(() => import("@/pages/solutions/AITools"));
-
-// AI Tools
-const ContentGenerator = lazy(() => import("@/pages/solutions/ai-tools/ContentGenerator"));
-const SEOArticleGenerator = lazy(() => import("@/pages/solutions/ai-tools/SEOArticleGenerator"));
-const MultilingualContentGenerator = lazy(() => import("@/pages/solutions/ai-tools/MultilingualContentGenerator"));
-
-// Free Resources
-const SEOGuide = lazy(() => import("@/pages/solutions/free-resources/SEOGuide"));
-const ContentTemplates = lazy(() => import("@/pages/solutions/free-resources/ContentTemplates"));
-const SocialToolkit = lazy(() => import("@/pages/solutions/free-resources/SocialToolkit"));
-const EmailGuide = lazy(() => import("@/pages/solutions/free-resources/EmailGuide"));
-const ROICalculator = lazy(() => import("@/pages/solutions/free-resources/ROICalculator"));
-const ContentCalendar = lazy(() => import("@/pages/solutions/free-resources/ContentCalendar"));
-const LocalSEOChecklist = lazy(() => import("@/pages/solutions/free-resources/LocalSEOChecklist"));
-const AIPlaybook = lazy(() => import("@/pages/solutions/free-resources/AIPlaybook"));
-const CROGuide = lazy(() => import("@/pages/solutions/free-resources/CROGuide"));
+import FreeResources from "@/pages/solutions/FreeResources";
+import AITools from "@/pages/solutions/AITools";
+import ContentGenerator from "@/pages/solutions/ai-tools/ContentGenerator";
+import SEOArticleGenerator from "@/pages/solutions/ai-tools/SEOArticleGenerator";
+import MultilingualContentGenerator from "@/pages/solutions/ai-tools/MultilingualContentGenerator";
+import SEOGuide from "@/pages/solutions/free-resources/SEOGuide";
+import ContentTemplates from "@/pages/solutions/free-resources/ContentTemplates";
+import SocialToolkit from "@/pages/solutions/free-resources/SocialToolkit";
+import EmailGuide from "@/pages/solutions/free-resources/EmailGuide";
+import ROICalculator from "@/pages/solutions/free-resources/ROICalculator";
+import ContentCalendar from "@/pages/solutions/free-resources/ContentCalendar";
+import LocalSEOChecklist from "@/pages/solutions/free-resources/LocalSEOChecklist";
+import AIPlaybook from "@/pages/solutions/free-resources/AIPlaybook";
+import CROGuide from "@/pages/solutions/free-resources/CROGuide";
 
 export const SolutionRoutes = () => {
   return (
     <Routes>
-      <Route
-        path="free-resources"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <FreeResources />
-          </Suspense>
-        }
-      />
-      <Route
-        path="ai-tools"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <AITools />
-          </Suspense>
-        }
-      />
+      <Route path="free-resources" element={<FreeResources />} />
+      <Route path="ai-tools" element={<AITools />} />
       
       {/* AI Tools sub-routes */}
-      <Route
-        path="ai-tools/content-generator"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <ContentGenerator />
-          </Suspense>
-        }
-      />
-      <Route
-        path="ai-tools/seo-article-generator"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <SEOArticleGenerator />
-          </Suspense>
-        }
-      />
-      <Route
-        path="ai-tools/multilingual-content-generator"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <MultilingualContentGenerator />
-          </Suspense>
-        }
-      />
+      <Route path="ai-tools/content-generator" element={<ContentGenerator />} />
+      <Route path="ai-tools/seo-article-generator" element={<SEOArticleGenerator />} />
+      <Route path="ai-tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
       
       {/* Free Resources sub-routes */}
-      <Route
-        path="free-resources/seo-guide"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <SEOGuide />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/content-templates"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <ContentTemplates />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/social-toolkit"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <SocialToolkit />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/email-guide"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <EmailGuide />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/roi-calculator"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <ROICalculator />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/content-calendar"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <ContentCalendar />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/local-seo-checklist"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <LocalSEOChecklist />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/ai-playbook"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <AIPlaybook />
-          </Suspense>
-        }
-      />
-      <Route
-        path="free-resources/cro-guide"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <CROGuide />
-          </Suspense>
-        }
-      />
+      <Route path="free-resources/seo-guide" element={<SEOGuide />} />
+      <Route path="free-resources/content-templates" element={<ContentTemplates />} />
+      <Route path="free-resources/social-toolkit" element={<SocialToolkit />} />
+      <Route path="free-resources/email-guide" element={<EmailGuide />} />
+      <Route path="free-resources/roi-calculator" element={<ROICalculator />} />
+      <Route path="free-resources/content-calendar" element={<ContentCalendar />} />
+      <Route path="free-resources/local-seo-checklist" element={<LocalSEOChecklist />} />
+      <Route path="free-resources/ai-playbook" element={<AIPlaybook />} />
+      <Route path="free-resources/cro-guide" element={<CROGuide />} />
     </Routes>
   );
 };
