@@ -26,15 +26,15 @@ const DigitalAds = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 mb-6">
-                At Heisocial, we believe that effective digital advertising requires a perfect blend of targeting, creativity, and optimization. Our approach focuses on creating campaigns that reach your ideal customers at the right time with the right message.
+                At Heidigital, we believe that effective digital advertising requires a perfect blend of targeting, creativity, and optimization. Our approach focuses on creating campaigns that reach your ideal customers at the right time with the right message.
               </p>
               <p className="text-gray-600 mb-6">
                 We leverage advanced targeting capabilities, compelling creative assets, and continuous optimization to maximize your ROI and achieve your business objectives.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Strategic Planning</h3>
@@ -44,8 +44,8 @@ const DigitalAds = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Precision Targeting</h3>
@@ -55,8 +55,8 @@ const DigitalAds = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Creative Excellence</h3>
@@ -66,8 +66,8 @@ const DigitalAds = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Continuous Optimization</h3>
@@ -98,43 +98,43 @@ const DigitalAds = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Target className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Target className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">PPC Advertising</h3>
               <p className="text-gray-600">
                 Strategic pay-per-click campaigns on Google, Bing, and other search engines to drive targeted traffic.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Users className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Users className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Social Media Advertising</h3>
               <p className="text-gray-600">
                 Targeted advertising campaigns on Facebook, Instagram, LinkedIn, Twitter, and other social platforms.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Target className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Target className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Display Advertising</h3>
               <p className="text-gray-600">
                 Visually engaging display ads across the Google Display Network and other premium websites.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Zap className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Zap className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Remarketing Campaigns</h3>
               <p className="text-gray-600">
                 Strategic remarketing campaigns to re-engage visitors and drive conversions.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <DollarSign className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <DollarSign className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Shopping Ads</h3>
               <p className="text-gray-600">
                 Product-focused shopping ads to showcase your products and drive sales.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <BarChart3 className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <BarChart3 className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Performance Reporting</h3>
               <p className="text-gray-600">
                 Comprehensive reporting and insights to track performance and optimize your campaigns.
@@ -151,7 +151,7 @@ const DigitalAds = () => {
         primaryButtonLink="/contact"
         secondaryButtonText="View Portfolio"
         secondaryButtonLink="/portfolio"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
     </Layout>
   );

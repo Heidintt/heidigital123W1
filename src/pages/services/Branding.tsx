@@ -26,15 +26,15 @@ const Branding = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 mb-6">
-                Your brand is more than just a logo or a color palette—it's the essence of who you are and what you stand for. At Heisocial, we help you develop a strong, authentic brand identity that resonates with your target audience and sets you apart from the competition.
+                Your brand is more than just a logo or a color palette—it's the essence of who you are and what you stand for. At Heidigital, we help you develop a strong, authentic brand identity that resonates with your target audience and sets you apart from the competition.
               </p>
               <p className="text-gray-600 mb-6">
                 Our branding specialists combine strategic thinking with creative design to create compelling brand experiences that build recognition, trust, and loyalty.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Strategy-First Approach</h3>
@@ -44,8 +44,8 @@ const Branding = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Authentic Storytelling</h3>
@@ -55,8 +55,8 @@ const Branding = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Visual Excellence</h3>
@@ -66,8 +66,8 @@ const Branding = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Consistent Application</h3>
@@ -98,43 +98,43 @@ const Branding = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Lightbulb className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Lightbulb className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Brand Strategy</h3>
               <p className="text-gray-600">
                 Develop a clear brand strategy that defines your positioning, values, and unique selling proposition.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <PaintBucket className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <PaintBucket className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Visual Identity</h3>
               <p className="text-gray-600">
                 Create a distinctive visual identity including logo design, color palette, typography, and imagery.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <MessageSquare className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <MessageSquare className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Brand Voice & Messaging</h3>
               <p className="text-gray-600">
                 Develop a consistent brand voice and key messaging that communicates your value proposition.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Palette className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Palette className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Brand Guidelines</h3>
               <p className="text-gray-600">
                 Create comprehensive brand guidelines to ensure consistent application across all touchpoints.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Users className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Users className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Brand Experience</h3>
               <p className="text-gray-600">
                 Design cohesive brand experiences across digital and physical touchpoints to build brand loyalty.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <PaintBucket className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <PaintBucket className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Rebranding</h3>
               <p className="text-gray-600">
                 Refresh or completely overhaul your existing brand to better align with your business goals.
@@ -151,7 +151,7 @@ const Branding = () => {
         primaryButtonLink="/contact"
         secondaryButtonText="View Portfolio"
         secondaryButtonLink="/portfolio"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
     </Layout>
   );

@@ -26,15 +26,15 @@ const AIMarketing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 mb-6">
-                Artificial Intelligence is revolutionizing the marketing landscape, enabling businesses to gain deeper insights, automate processes, and deliver personalized experiences at scale. At Heisocial, we help you harness the power of AI to transform your marketing strategy.
+                Artificial Intelligence is revolutionizing the marketing landscape, enabling businesses to gain deeper insights, automate processes, and deliver personalized experiences at scale. At Heidigital, we help you harness the power of AI to transform your marketing strategy.
               </p>
               <p className="text-gray-600 mb-6">
                 Our AI marketing solutions combine cutting-edge technology with strategic expertise to help you make data-backed decisions, optimize campaigns, and stay ahead of the competition.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Data-Driven Decisions</h3>
@@ -44,8 +44,8 @@ const AIMarketing = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Personalization at Scale</h3>
@@ -55,8 +55,8 @@ const AIMarketing = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Automation & Efficiency</h3>
@@ -66,8 +66,8 @@ const AIMarketing = () => {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-bold mb-1">Predictive Analytics</h3>
@@ -98,43 +98,43 @@ const AIMarketing = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Brain className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Brain className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">AI Content Generation</h3>
               <p className="text-gray-600">
                 Create high-quality, SEO-optimized content at scale using advanced AI technology that adapts to your brand voice.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Users className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Users className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Audience Segmentation</h3>
               <p className="text-gray-600">
                 Leverage AI to analyze customer data and create highly targeted audience segments for more effective marketing.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Zap className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Zap className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Automated Campaigns</h3>
               <p className="text-gray-600">
                 Implement AI-driven automation to streamline campaign management and optimize performance in real-time.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <BarChart3 className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <BarChart3 className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Predictive Analytics</h3>
               <p className="text-gray-600">
                 Use AI to predict market trends, customer behavior, and campaign performance to make proactive decisions.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Settings className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Settings className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Conversion Optimization</h3>
               <p className="text-gray-600">
                 Implement AI-powered tools to analyze user behavior and optimize conversion paths on your website.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Brain className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Brain className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">AI Strategy Consulting</h3>
               <p className="text-gray-600">
                 Strategic guidance on integrating AI into your marketing strategy to achieve your business goals.
@@ -151,7 +151,7 @@ const AIMarketing = () => {
         primaryButtonLink="/contact"
         secondaryButtonText="View Portfolio"
         secondaryButtonLink="/portfolio"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
     </Layout>
   );

@@ -1,6 +1,7 @@
 
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 // Lazy load service pages
 const SocialMedia = lazy(() => import("@/pages/services/SocialMedia"));
@@ -10,15 +11,13 @@ const Branding = lazy(() => import("@/pages/services/Branding"));
 const DigitalAds = lazy(() => import("@/pages/services/DigitalAds"));
 const AIMarketing = lazy(() => import("@/pages/services/AIMarketing"));
 
-const LoadingFallback = () => <div>Loading...</div>;
-
 export const ServiceRoutes = () => {
   return (
     <Routes>
       <Route
         path="social-media"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <SocialMedia />
           </Suspense>
         }
@@ -26,7 +25,7 @@ export const ServiceRoutes = () => {
       <Route
         path="content-creation"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <ContentCreation />
           </Suspense>
         }
@@ -34,7 +33,7 @@ export const ServiceRoutes = () => {
       <Route
         path="seo"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <SEO />
           </Suspense>
         }
@@ -42,7 +41,7 @@ export const ServiceRoutes = () => {
       <Route
         path="branding"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Branding />
           </Suspense>
         }
@@ -50,7 +49,7 @@ export const ServiceRoutes = () => {
       <Route
         path="digital-ads"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <DigitalAds />
           </Suspense>
         }
@@ -58,7 +57,7 @@ export const ServiceRoutes = () => {
       <Route
         path="ai-marketing"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <AIMarketing />
           </Suspense>
         }
