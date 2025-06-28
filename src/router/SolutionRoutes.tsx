@@ -1,6 +1,7 @@
 
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 // Lazy load solution pages
 const FreeResources = lazy(() => import("@/pages/solutions/FreeResources"));
@@ -22,15 +23,13 @@ const LocalSEOChecklist = lazy(() => import("@/pages/solutions/free-resources/Lo
 const AIPlaybook = lazy(() => import("@/pages/solutions/free-resources/AIPlaybook"));
 const CROGuide = lazy(() => import("@/pages/solutions/free-resources/CROGuide"));
 
-const LoadingFallback = () => <div>Loading...</div>;
-
 export const SolutionRoutes = () => {
   return (
     <Routes>
       <Route
         path="free-resources"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <FreeResources />
           </Suspense>
         }
@@ -38,7 +37,7 @@ export const SolutionRoutes = () => {
       <Route
         path="ai-tools"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <AITools />
           </Suspense>
         }
@@ -48,7 +47,7 @@ export const SolutionRoutes = () => {
       <Route
         path="ai-tools/content-generator"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <ContentGenerator />
           </Suspense>
         }
@@ -56,7 +55,7 @@ export const SolutionRoutes = () => {
       <Route
         path="ai-tools/seo-article-generator"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <SEOArticleGenerator />
           </Suspense>
         }
@@ -64,7 +63,7 @@ export const SolutionRoutes = () => {
       <Route
         path="ai-tools/multilingual-content-generator"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <MultilingualContentGenerator />
           </Suspense>
         }
@@ -74,7 +73,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/seo-guide"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <SEOGuide />
           </Suspense>
         }
@@ -82,7 +81,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/content-templates"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <ContentTemplates />
           </Suspense>
         }
@@ -90,7 +89,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/social-toolkit"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <SocialToolkit />
           </Suspense>
         }
@@ -98,7 +97,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/email-guide"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <EmailGuide />
           </Suspense>
         }
@@ -106,7 +105,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/roi-calculator"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <ROICalculator />
           </Suspense>
         }
@@ -114,7 +113,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/content-calendar"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <ContentCalendar />
           </Suspense>
         }
@@ -122,7 +121,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/local-seo-checklist"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <LocalSEOChecklist />
           </Suspense>
         }
@@ -130,7 +129,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/ai-playbook"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <AIPlaybook />
           </Suspense>
         }
@@ -138,7 +137,7 @@ export const SolutionRoutes = () => {
       <Route
         path="free-resources/cro-guide"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <CROGuide />
           </Suspense>
         }

@@ -1,6 +1,7 @@
 
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 // Lazy load portfolio pages
 const FMCGDAOStrategy = lazy(() => import("@/pages/portfolio/FMCGDAOStrategy"));
@@ -11,15 +12,13 @@ const NhaCaCafe = lazy(() => import("@/pages/portfolio/NhaCaCafe"));
 const KotoClub = lazy(() => import("@/pages/portfolio/KotoClub"));
 const LuaHongBuffet = lazy(() => import("@/pages/portfolio/LuaHongBuffet"));
 
-const LoadingFallback = () => <div>Loading...</div>;
-
 export const PortfolioRoutes = () => {
   return (
     <Routes>
       <Route
         path="fmcg-dao-strategy"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <FMCGDAOStrategy />
           </Suspense>
         }
@@ -27,7 +26,7 @@ export const PortfolioRoutes = () => {
       <Route
         path="microlino-strategy"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <MicrolinoStrategy />
           </Suspense>
         }
@@ -35,7 +34,7 @@ export const PortfolioRoutes = () => {
       <Route
         path="i-choose-the-sun"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <IChooseTheSun />
           </Suspense>
         }
@@ -43,7 +42,7 @@ export const PortfolioRoutes = () => {
       <Route
         path="microlino-campaign"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <MicrolinoCampaign />
           </Suspense>
         }
@@ -51,7 +50,7 @@ export const PortfolioRoutes = () => {
       <Route
         path="nha-ca-cafe"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <NhaCaCafe />
           </Suspense>
         }
@@ -59,7 +58,7 @@ export const PortfolioRoutes = () => {
       <Route
         path="koto-club"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <KotoClub />
           </Suspense>
         }
@@ -67,7 +66,7 @@ export const PortfolioRoutes = () => {
       <Route
         path="lua-hong-buffet"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <LuaHongBuffet />
           </Suspense>
         }
