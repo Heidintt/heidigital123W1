@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 
 const Portfolio = () => {
+  console.log("Portfolio component is rendering");
+  
   const [activeCategory, setActiveCategory] = useState("All");
   
   const portfolioItems = [
@@ -91,65 +92,71 @@ const Portfolio = () => {
     ? portfolioItems 
     : portfolioItems.filter(item => item.categories.includes(activeCategory));
 
+  console.log("Portfolio items:", portfolioItems.length);
+  console.log("Filtered items:", filteredItems.length);
+  console.log("Active category:", activeCategory);
+
   return (
-    <Layout>
-      <Hero
-        title="Our Portfolio"
-        subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-      />
+    <div style={{minHeight: '100vh', backgroundColor: '#f8f9fa'}}>
+      <Layout>
+        <Hero
+          title="Our Portfolio"
+          subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
+          backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        />
 
-      <section className="py-12 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <SectionHeading
-            title="Case Studies"
-            subtitle="Browse our work by category"
-            centered
-          />
+        <section className="py-12 px-4" style={{backgroundColor: '#ffffff'}}>
+          <div className="container mx-auto max-w-7xl">
+            <SectionHeading
+              title="Case Studies"
+              subtitle="Browse our work by category"
+              centered
+            />
 
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {categories.map((category, index) => (
-              <Button
-                key={index}
-                variant={category === activeCategory ? "default" : "outline"}
-                className={`${category === activeCategory ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50"} transition-colors`}
-                onClick={() => setActiveCategory(category)}
-                size="sm"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredItems.map((item) => (
-              <PortfolioCard
-                key={item.id}
-                title={item.title}
-                description={item.description}
-                image={item.image}
-                categories={item.categories}
-                link={item.link}
-              />
-            ))}
-          </div>
-
-          {filteredItems.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">No portfolio items found for this category.</p>
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {categories.map((category, index) => (
+                <Button
+                  key={index}
+                  variant={category === activeCategory ? "default" : "outline"}
+                  className={`${category === activeCategory ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50"} transition-colors`}
+                  onClick={() => setActiveCategory(category)}
+                  size="sm"
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
-          )}
-        </div>
-      </section>
 
-      <CallToAction
-        title="Ready to Achieve Similar Results?"
-        description="Let's discuss how our digital marketing expertise can help your business grow and thrive in today's competitive landscape."
-        primaryButtonText="Get Started"
-        primaryButtonLink="/contact"
-        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
-      />
-    </Layout>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredItems.map((item) => (
+                <PortfolioCard
+                  key={item.id}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  categories={item.categories}
+                  link={item.link}
+                />
+              ))}
+            </div>
+
+            {filteredItems.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">No portfolio items found for this category.</p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        <CallToAction
+          title="Ready to Achieve Similar Results?"
+          description="Let's discuss how our digital marketing expertise can help your business grow and thrive in today's competitive landscape."
+          primaryButtonText="Get Started"
+          primaryButtonLink="/contact"
+          backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
+        />
+      </Layout>
+    </div>
   );
 };
 
