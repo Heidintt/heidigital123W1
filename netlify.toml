@@ -1,7 +1,11 @@
-
 # Build settings
 [build]
   publish = "dist"
+
+# Local dev server settings (for Visual Editor/Stackbit)
+[dev]
+  command = "vite"
+  targetPort = 5173
 
 # Headers for static files
 [[headers]]
