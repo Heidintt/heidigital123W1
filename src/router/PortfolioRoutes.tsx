@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import FMCGDAOStrategy from "@/pages/portfolio/FMCGDAOStrategy";
 import MicrolinoStrategy from "@/pages/portfolio/MicrolinoStrategy";
 import IChooseTheSun from "@/pages/portfolio/IChooseTheSun";
-import MicrolinoCampaign from "@/pages/portfolio/MicrolinoCampaign";
 import NhaCaCafe from "@/pages/portfolio/NhaCaCafe";
 import KotoClub from "@/pages/portfolio/KotoClub";
 import LuaHongBuffet from "@/pages/portfolio/LuaHongBuffet";
@@ -14,7 +13,6 @@ export const PortfolioRoutes = () => {
       <Route path="fmcg-dao-strategy" element={<FMCGDAOStrategy />} />
       <Route path="microlino-strategy" element={<MicrolinoStrategy />} />
       <Route path="i-choose-the-sun" element={<IChooseTheSun />} />
-      <Route path="microlino-campaign" element={<MicrolinoCampaign />} />
       <Route path="nha-ca-cafe" element={<NhaCaCafe />} />
       <Route path="koto-club" element={<KotoClub />} />
       <Route path="lua-hong-buffet" element={<LuaHongBuffet />} />

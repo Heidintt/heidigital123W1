@@ -24,11 +24,13 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
   return (
     <Card className="overflow-hidden card-hover">
       <div className="h-56 overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-        />
+        <Link to={link}>
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 cursor-pointer"
+          />
+        </Link>
       </div>
       <CardHeader>
         <div className="space-x-2 mb-2">
@@ -46,7 +48,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
         <CardDescription>{description}</CardDescription>
       </CardContent>
       <CardFooter>
-        <Button asChild className="bg-heisocial-purple hover:bg-heisocial-purple/90">
+        <Button asChild className="bg-heisocial-purple hover:bg-heisocial-purple/90 text-white">
           <Link to={link} className="flex items-center">
             View Case Study <ExternalLink className="ml-2 h-4 w-4" />
           </Link>

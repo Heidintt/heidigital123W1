@@ -32,14 +32,6 @@ const Portfolio = () => {
       link: "/portfolio/microlino-strategy"
     },
     {
-      id: "microlino-campaign",
-      title: "Microlino 2026 Launch Campaign - Implementation",
-      description: "Detailed implementation guide for Microlino's 2026 Australian Launch, focusing on urban mobility solutions and innovative marketing activations.",
-      image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications"],
-      link: "/portfolio/microlino-campaign"
-    },
-    {
       id: "i-choose-the-sun",
       title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
       description: "A viral influencer-led social media campaign promoting positivity during COVID-19 pandemic, generating 75.6M views and 8,000+ user videos.",
@@ -122,7 +114,7 @@ const Portfolio = () => {
                 <Button
                   key={index}
                   variant={category === activeCategory ? "default" : "outline"}
-                  className={`${category === activeCategory ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50"} transition-colors`}
+                  className={`${category === activeCategory ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900"} transition-colors`}
                   onClick={() => setActiveCategory(category)}
                   size="sm"
                 >
