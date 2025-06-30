@@ -5,7 +5,7 @@
 # Local dev server settings for Vite (port 5173)
 [dev]
   command = "vite"
-  targetPort = 5173
+  targetPort = 8080
 
 # Headers for static files
 [[headers]]
