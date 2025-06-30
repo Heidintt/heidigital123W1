@@ -38,7 +38,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
             </Link>
           </Button>
           {secondaryButtonText && secondaryButtonLink && (
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-heidigital-blue">
+            <Button asChild variant="outline" size="lg" className="border-white text-heidigital-blue bg-white hover:bg-white/90 hover:text-heidigital-blue">
               <Link to={secondaryButtonLink}>
                 {secondaryButtonText}
               </Link>
