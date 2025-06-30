@@ -50,3 +50,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Plugin Visual Editor
+[[plugins]]
+  package = "@netlify/plugin-visual-editor"
