@@ -1,18 +1,19 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { EventEmitter } from "events";
 
-// Tăng số lượng EventEmitter listeners để tránh warning
-EventEmitter.defaultMaxListeners = 50;
+// Tăng số lượng EventEmitter listeners để tránh warning và crash
+EventEmitter.defaultMaxListeners = 100;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "localhost", // Đổi "::" thành "localhost" để tránh lỗi mạng trên một số máy
-    port: 8080,        // Đảm bảo port là 8080 (khớp netlify.toml)
-    strictPort: true,  // Nếu port 8080 bị chiếm sẽ báo lỗi ngay, không tự động đổi port
+    host: "localhost",
+    port: 8080,
+    strictPort: true,
     watch: {
       // Loại trừ node_modules và .git khỏi watcher để tiết kiệm RAM
       ignored: ["**/node_modules/**", "**/.git/**"],
@@ -33,5 +34,19 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
+    // Tăng memory limit cho build
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@radix-ui/react-tabs', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
+        },
+      },
+    },
+  },
+  // Tối ưu cho Netlify Visual Editor
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
   },
 }));
