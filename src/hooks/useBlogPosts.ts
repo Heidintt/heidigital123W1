@@ -37,11 +37,15 @@ export const useBlogPosts = () => {
             seo_description: "Elevate your marketing in 2025 with 10 free AI tools for content creation, visual design, SEO, and automation. Perfect for small businesses, startups, and solo marketers looking to save time and boost results.",
             content: `In 2025, AI is no longer a futuristic dream—it's a game-changer for marketers of all sizes. Whether you're a small business owner, a freelancer, or a startup founder, you can harness AI's power without spending a penny. These 10 free AI tools will help you craft compelling content, design professional visuals, optimize for search engines, and streamline your workflow. Packed with practical tips and real-world examples, this guide will show you how to make the most of each tool to supercharge your marketing efforts. Let's dive in!
 
+![AI Marketing Tools Overview](https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
 ## Create Captivating Content
 
 Great content connects with your audience, and these AI tools make it faster and easier to produce high-quality material that resonates.
 
 ### 1. ChatGPT (Free Plan)
+
+![ChatGPT Interface](https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)
 
 ChatGPT, developed by OpenAI, is like having a creative assistant who never sleeps. It generates blog outlines, social media captions, email drafts, and even video scripts based on your prompts. Its ability to understand context makes it incredibly versatile for brainstorming and drafting.
 
@@ -79,6 +83,8 @@ Google Gemini leverages real-time search data to provide insights into trending 
 
 ## Design Professional Visuals
 
+![Design Tools](https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
 Eye-catching visuals are essential for standing out online. These tools use AI to simplify design and video editing, even for beginners.
 
 ### 4. Canva (Free Plan)
@@ -106,6 +112,8 @@ CapCut streamlines video editing with AI-driven features like auto-captions and 
 **Limitation:** Premium effects and features require a paid upgrade.
 
 ## Optimize for Search & Track Success
+
+![SEO Analytics](https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
 Getting found online and understanding your audience are critical. These AI-enhanced tools make SEO and analytics accessible.
 
@@ -146,6 +154,8 @@ Google Analytics 4 uses AI to predict user behavior, such as purchase likelihood
 **Limitation:** Requires setup and basic analytics knowledge.
 
 ## Automate & Organize Your Workflow
+
+![Workflow Automation](https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
 Save time on repetitive tasks with these AI tools that keep your marketing organized and efficient.
 
@@ -189,6 +199,8 @@ Chatbot.com uses natural language processing to create AI chatbots that handle c
 | Chatbot.com | Customer support automation | Limited interactions |
 
 ## Bonus: Launch a Website with AI
+
+![Website Building](https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
 **Wix AI (Free Plan)** takes the hassle out of website building by generating a custom design, content, and images based on your business type. A freelancer launched a portfolio site in a single day, impressing clients with its polish. Some advanced features require a paid plan.
 
