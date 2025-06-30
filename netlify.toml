@@ -2,7 +2,7 @@
 [build]
   publish = "dist"
 
-# Local dev server settings for Vite (port 5880)
+# Local dev server settings for Vite (port 8080)
 [dev]
   command = "vite"
   targetPort = 8080
