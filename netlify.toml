@@ -2,7 +2,7 @@
 [build]
   publish = "dist"
 
-# Local dev server settings (for Visual Editor/Stackbit)
+# Local dev server settings for Vite (port 5173)
 [dev]
   command = "vite"
   targetPort = 5173
