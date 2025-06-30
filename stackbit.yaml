@@ -1,8 +1,7 @@
 stackbitVersion: ~0.5.0
 
 contentSources:
-  files:
-    type: filesystem
+  - type: filesystem
     rootDir: "src/data"
 
 pagesDir: "src/pages"
