@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -92,6 +93,29 @@ const AITools = () => {
               </CardFooter>
             </Card>
 
+            <Card className="hover:shadow-lg transition-shadow border-2 border-green-500">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Search className="h-12 w-12 text-heisocial-blue" />
+                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">NEW</span>
+                </div>
+                <CardTitle>SEO Assistant</CardTitle>
+                <CardDescription>
+                  AI-powered SEO analysis and optimization recommendations
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Analyze your website's SEO performance and get actionable recommendations to improve your search engine rankings.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+                  <Link to="/solutions/ai-tools/seo-assistant">Try Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Bot className="h-12 w-12 text-heisocial-blue mb-4" />
@@ -163,26 +187,6 @@ const AITools = () => {
               <CardContent>
                 <p className="text-gray-600">
                   Optimize your social media strategy with AI recommendations, automated posting, and performance tracking.
-                </p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
-                  <Link to="/contact">Coming Soon</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Search className="h-12 w-12 text-heisocial-blue mb-4" />
-                <CardTitle>SEO Assistant</CardTitle>
-                <CardDescription>
-                  AI-powered SEO recommendations and optimization
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Improve your search engine rankings with AI-generated SEO recommendations and content optimization.
                 </p>
               </CardContent>
               <CardFooter>

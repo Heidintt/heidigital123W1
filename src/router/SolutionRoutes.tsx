@@ -5,6 +5,7 @@ import AITools from "@/pages/solutions/AITools";
 import ContentGenerator from "@/pages/solutions/ai-tools/ContentGenerator";
 import SEOArticleGenerator from "@/pages/solutions/ai-tools/SEOArticleGenerator";
 import MultilingualContentGenerator from "@/pages/solutions/ai-tools/MultilingualContentGenerator";
+import SEOAssistant from "@/pages/solutions/ai-tools/SEOAssistant";
 import SEOGuide from "@/pages/solutions/free-resources/SEOGuide";
 import ContentTemplates from "@/pages/solutions/free-resources/ContentTemplates";
 import SocialToolkit from "@/pages/solutions/free-resources/SocialToolkit";
@@ -25,6 +26,7 @@ export const SolutionRoutes = () => {
       <Route path="ai-tools/content-generator" element={<ContentGenerator />} />
       <Route path="ai-tools/seo-article-generator" element={<SEOArticleGenerator />} />
       <Route path="ai-tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
+      <Route path="ai-tools/seo-assistant" element={<SEOAssistant />} />
       
       {/* Free Resources sub-routes */}
       <Route path="free-resources/seo-guide" element={<SEOGuide />} />
