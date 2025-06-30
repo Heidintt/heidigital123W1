@@ -32,13 +32,13 @@ const CallToAction: React.FC<CallToActionProps> = ({
           {description}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-white text-heisocial-blue hover:bg-gray-100">
+          <Button asChild size="lg" className="bg-white text-heidigital-blue hover:bg-gray-100 hover:text-heidigital-blue">
             <Link to={primaryButtonLink}>
               {primaryButtonText}
             </Link>
           </Button>
           {secondaryButtonText && secondaryButtonLink && (
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-heisocial-blue">
+            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-heidigital-blue">
               <Link to={secondaryButtonLink}>
                 {secondaryButtonText}
               </Link>
