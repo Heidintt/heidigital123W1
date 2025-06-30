@@ -44,7 +44,7 @@ const BlogPost = () => {
     return <NotFound />;
   }
 
-  // Enhanced content processing with modern visual components
+  // Simplified content processing with unified styling
   const processContent = (content: string) => {
     const lines = content.split('\n');
     const elements: React.ReactNode[] = [];
@@ -68,31 +68,29 @@ const BlogPost = () => {
 
         if (tableData.length > 0) {
           elements.push(
-            <Card key={currentIndex} className="my-12 overflow-hidden shadow-2xl border-0 bg-gradient-to-br from-blue-50 to-purple-50">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
-                <h3 className="text-2xl font-bold text-white text-center">Quick Tool Snapshot</h3>
-              </div>
-              <CardContent className="p-0">
+            <div key={currentIndex} className="my-16">
+              <h3 className="text-3xl font-bold text-center mb-8 gradient-text">Quick Tool Snapshot</h3>
+              <div className="overflow-hidden rounded-2xl shadow-2xl border-0">
                 <Table>
-                  <TableHeader className="bg-gradient-to-r from-blue-500 to-purple-500">
+                  <TableHeader className="bg-gradient-to-r from-blue-600 to-purple-600">
                     <TableRow>
-                      <TableHead className="text-white font-bold text-lg">Tool</TableHead>
-                      <TableHead className="text-white font-bold text-lg">Best For</TableHead>
-                      <TableHead className="text-white font-bold text-lg">Catch</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-6">Tool</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-6">Best For</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-6">Catch</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {tableData.map((row, idx) => (
-                      <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50 hover:bg-gray-100"}>
-                        <TableCell className="font-bold text-blue-600 text-lg">{row[0]}</TableCell>
-                        <TableCell className="text-gray-700 text-base">{row[1]}</TableCell>
-                        <TableCell className="text-gray-600 text-base">{row[2]}</TableCell>
+                      <TableRow key={idx} className={idx % 2 === 0 ? "bg-white hover:bg-blue-50" : "bg-blue-50/50 hover:bg-blue-100"}>
+                        <TableCell className="font-bold text-blue-600 text-lg py-6">{row[0]}</TableCell>
+                        <TableCell className="text-gray-700 text-base py-6">{row[1]}</TableCell>
+                        <TableCell className="text-gray-600 text-base py-6">{row[2]}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
                 </Table>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           );
         }
         
@@ -103,8 +101,8 @@ const BlogPost = () => {
       // Handle main headers with beautiful styling
       if (line.startsWith('# ')) {
         elements.push(
-          <div key={currentIndex} className="text-center my-16">
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-4 leading-tight">
+          <div key={currentIndex} className="text-center my-20">
+            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 leading-tight">
               {line.slice(2)}
             </h1>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -113,102 +111,101 @@ const BlogPost = () => {
       } else if (line.startsWith('## ')) {
         const title = line.slice(3);
         elements.push(
-          <Card key={currentIndex} className="my-12 bg-gradient-to-r from-blue-600 to-purple-600 border-0 overflow-hidden">
-            <CardContent className="p-8 text-center">
-              <h2 className="text-4xl font-bold text-white mb-2">{title}</h2>
-              <div className="w-24 h-1 bg-white/50 mx-auto rounded-full"></div>
-            </CardContent>
-          </Card>
+          <div key={currentIndex} className="my-16">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">{title}</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            </div>
+          </div>
         );
       } else if (line.startsWith('### ')) {
         const title = line.slice(4);
         const isNumbered = /^\d+\./.test(title);
         
         elements.push(
-          <Card key={currentIndex} className="my-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500 bg-white">
-            <CardContent className="p-6">
-              <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
-                {isNumbered && (
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
-                    {title.match(/^\d+/)?.[0]}
-                  </span>
-                )}
-                <span className={isNumbered ? "gradient-text" : "text-blue-600"}>
-                  {isNumbered ? title.replace(/^\d+\.\s*/, '') : title}
+          <div key={currentIndex} className="my-12">
+            <div className="flex items-center gap-4 mb-6">
+              {isNumbered && (
+                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                  {title.match(/^\d+/)?.[0]}
                 </span>
+              )}
+              <h3 className="text-3xl font-bold gradient-text">
+                {isNumbered ? title.replace(/^\d+\.\s*/, '') : title}
               </h3>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         );
       } else if (line.trim() === '') {
         elements.push(<div key={currentIndex} className="h-6" />);
       } else if (line.startsWith('![')) {
-        // Handle images with modern card styling
+        // Handle images with modern styling
         const altMatch = line.match(/!\[(.*?)\]/);
         const urlMatch = line.match(/\((.*?)\)/);
         
         if (altMatch && urlMatch) {
           elements.push(
-            <Card key={currentIndex} className="my-10 overflow-hidden shadow-2xl border-0">
-              <div className="relative group">
+            <div key={currentIndex} className="my-12">
+              <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src={urlMatch[1]}
                   alt={altMatch[1]}
-                  className="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {altMatch[1] && (
-                <CardContent className="p-4 bg-gray-50">
-                  <p className="text-center text-gray-600 italic">{altMatch[1]}</p>
-                </CardContent>
+                <p className="text-center text-gray-600 italic mt-4 text-lg">{altMatch[1]}</p>
               )}
-            </Card>
+            </div>
           );
         }
       } else {
-        // Handle regular paragraphs with enhanced styling
-        const boldText = line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-blue-600 font-semibold">$1</strong>');
+        // Handle regular paragraphs with clean styling (no ** processing)
+        const cleanText = line.replace(/\*\*(.*?)\*\*/g, '$1');
         
         // Special styling for key phrases
         if (line.includes('Get Started:') || line.includes('Why It Shines:') || line.includes('Pro Tip:') || line.includes('Limitation:')) {
-          const [label, ...content] = line.split(':');
+          const [label, ...content] = cleanText.split(':');
           const contentText = content.join(':').trim();
           
-          let bgColor = 'bg-blue-50 border-blue-200';
-          let iconColor = 'text-blue-600';
+          let borderColor = 'border-l-blue-500';
+          let bgColor = 'bg-blue-50/50';
+          let textColor = 'text-blue-700';
           
           if (label.includes('Why It Shines')) {
-            bgColor = 'bg-green-50 border-green-200';
-            iconColor = 'text-green-600';
+            borderColor = 'border-l-green-500';
+            bgColor = 'bg-green-50/50';
+            textColor = 'text-green-700';
           } else if (label.includes('Pro Tip')) {
-            bgColor = 'bg-yellow-50 border-yellow-200';
-            iconColor = 'text-yellow-600';
+            borderColor = 'border-l-yellow-500';
+            bgColor = 'bg-yellow-50/50';
+            textColor = 'text-yellow-700';
           } else if (label.includes('Limitation')) {
-            bgColor = 'bg-red-50 border-red-200';
-            iconColor = 'text-red-600';
+            borderColor = 'border-l-red-500';
+            bgColor = 'bg-red-50/50';
+            textColor = 'text-red-700';
           }
           
           elements.push(
-            <Card key={currentIndex} className={`my-6 ${bgColor} border-l-4 shadow-md hover:shadow-lg transition-shadow duration-300`}>
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3">
-                  <div className={`w-2 h-2 rounded-full ${iconColor.replace('text-', 'bg-')} mt-2 flex-shrink-0`}></div>
-                  <div>
-                    <span className={`font-bold ${iconColor} text-lg`}>{label}:</span>
-                    <span className="text-gray-700 ml-2 text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: boldText.replace(label + ':', '') }} />
-                  </div>
+            <div key={currentIndex} className={`my-6 ${bgColor} ${borderColor} border-l-4 rounded-r-lg p-6`}>
+              <div className="flex items-start gap-3">
+                <div className={`w-2 h-2 rounded-full ${borderColor.replace('border-l-', 'bg-')} mt-2 flex-shrink-0`}></div>
+                <div>
+                  <span className={`font-bold ${textColor} text-lg`}>{label}:</span>
+                  <span className="text-gray-700 ml-2 text-lg leading-relaxed">{contentText}</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           );
         } else if (line.trim()) {
           elements.push(
             <p 
               key={currentIndex} 
               className="mb-6 leading-relaxed text-gray-700 text-lg"
-              dangerouslySetInnerHTML={{ __html: boldText }}
-            />
+            >
+              {cleanText}
+            </p>
           );
         }
       }
@@ -248,51 +245,45 @@ const BlogPost = () => {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500 mb-12">
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-4 flex items-center gap-3">
-                  <User size={18} className="text-blue-600" />
-                  <span className="font-medium">By {post.author}</span>
-                </CardContent>
-              </Card>
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-4 flex items-center gap-3">
-                  <Calendar size={18} className="text-blue-600" />
-                  <span className="font-medium">{new Date(post.date).toLocaleDateString()}</span>
-                </CardContent>
-              </Card>
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 flex items-center gap-3">
+                <User size={18} className="text-blue-600" />
+                <span className="font-medium">By {post.author}</span>
+              </div>
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 flex items-center gap-3">
+                <Calendar size={18} className="text-blue-600" />
+                <span className="font-medium">{new Date(post.date).toLocaleDateString()}</span>
+              </div>
               {post.tags && post.tags.length > 0 && (
-                <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardContent className="p-4 flex items-center gap-3">
-                    <Tag size={18} className="text-blue-600" />
-                    <span className="font-medium">{post.tags.slice(0, 3).join(", ")}</span>
-                  </CardContent>
-                </Card>
+                <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 flex items-center gap-3">
+                  <Tag size={18} className="text-blue-600" />
+                  <span className="font-medium">{post.tags.slice(0, 3).join(", ")}</span>
+                </div>
               )}
             </div>
 
             {/* Featured image */}
             {post.featured_image && (
-              <Card className="mb-16 overflow-hidden shadow-2xl border-0">
+              <div className="mb-16 overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src={post.featured_image}
                   alt={post.title}
                   className="w-full h-64 md:h-96 object-cover"
                 />
-              </Card>
+              </div>
             )}
           </header>
 
           {/* Article content */}
           <div className="prose prose-lg max-w-none">
-            <Card className="bg-white/90 backdrop-blur-sm shadow-2xl border-0 overflow-hidden">
-              <CardContent className="p-8 md:p-12">
+            <div className="bg-white/90 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden">
+              <div className="p-8 md:p-12">
                 {processContent(post.content)}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
 
           {/* Call to action */}
-          <Card className="mt-16 overflow-hidden border-0 shadow-2xl">
+          <div className="mt-16 overflow-hidden rounded-2xl shadow-2xl">
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-12 text-center">
               <h3 className="text-3xl font-bold mb-4 text-white">Need Help With Your Marketing?</h3>
               <p className="text-white/90 mb-8 text-lg max-w-2xl mx-auto">
@@ -302,7 +293,7 @@ const BlogPost = () => {
                 <Link to="/contact">Contact Us Today</Link>
               </Button>
             </div>
-          </Card>
+          </div>
         </div>
       </article>
     </Layout>
