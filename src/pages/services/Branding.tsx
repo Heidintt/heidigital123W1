@@ -4,75 +4,75 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
-import { CheckCircle2, Users, PaintBucket, Palette, MessageSquare, Lightbulb } from "lucide-react";
+import { CheckCircle2, Palette, Eye, MessageSquare, Target, Users, Lightbulb } from "lucide-react";
 
 const Branding = () => {
   return (
     <Layout>
       <Hero
-        title="Branding & Identity Services"
-        subtitle="Establish a strong, recognizable brand identity that resonates with your target audience"
-        backgroundImage="https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        title="Brand Development Services"
+        subtitle="Create a powerful brand identity that resonates with your audience and stands out in the marketplace"
+        backgroundImage="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Our Branding Philosophy"
-            subtitle="Creating authentic brand experiences that connect and convert"
+            title="Building Brands That Matter"
+            subtitle="Strategic brand development that creates lasting connections"
             centered
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 mb-6">
-                Your brand is more than just a logo or a color palette—it's the essence of who you are and what you stand for. At Heisocial, we help you develop a strong, authentic brand identity that resonates with your target audience and sets you apart from the competition.
+                Your brand is more than just a logo or color scheme – it's the emotional connection between your business and your customers. At Heidigital, we create comprehensive brand strategies that capture your essence and communicate your value proposition effectively.
               </p>
               <p className="text-gray-600 mb-6">
-                Our branding specialists combine strategic thinking with creative design to create compelling brand experiences that build recognition, trust, and loyalty.
+                Our branding process combines strategic thinking with creative execution to develop brands that not only look great but also perform exceptionally in the marketplace.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Strategy-First Approach</h3>
+                    <h3 className="font-bold mb-1">Strategic Foundation</h3>
                     <p className="text-gray-600">
-                      Developing brands that align with your business goals and resonate with your audience
+                      Deep brand strategy that defines your positioning, personality, and purpose
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Authentic Storytelling</h3>
+                    <h3 className="font-bold mb-1">Visual Identity</h3>
                     <p className="text-gray-600">
-                      Crafting brand narratives that communicate your values and connect emotionally
+                      Compelling visual elements that bring your brand to life across all touchpoints
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Visual Excellence</h3>
+                    <h3 className="font-bold mb-1">Brand Guidelines</h3>
                     <p className="text-gray-600">
-                      Creating distinctive visual identities that stand out in crowded markets
+                      Comprehensive guidelines ensuring consistent brand application
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="bg-heisocial-lightpurple p-2 rounded-full mr-4 mt-1">
-                    <CheckCircle2 className="h-5 w-5 text-heisocial-purple" />
+                  <div className="bg-blue-50 p-2 rounded-full mr-4 mt-1">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Consistent Application</h3>
+                    <h3 className="font-bold mb-1">Implementation Support</h3>
                     <p className="text-gray-600">
-                      Ensuring your brand is consistently applied across all touchpoints
+                      Ongoing support to ensure your brand is consistently applied across all channels
                     </p>
                   </div>
                 </div>
@@ -80,8 +80,8 @@ const Branding = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1545239351-cefa43af60f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Brand Identity"
+                src="https://images.unsplash.com/photo-1558655146-364adaf25c46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Brand Development"
                 className="rounded-lg shadow-xl"
               />
             </div>
@@ -93,51 +93,51 @@ const Branding = () => {
         <div className="container mx-auto">
           <SectionHeading
             title="Our Branding Services"
-            subtitle="Comprehensive solutions to establish and strengthen your brand identity"
+            subtitle="Comprehensive brand development solutions"
             centered
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Lightbulb className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Lightbulb className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Brand Strategy</h3>
               <p className="text-gray-600">
-                Develop a clear brand strategy that defines your positioning, values, and unique selling proposition.
+                Comprehensive brand positioning, personality development, and strategic planning for market success.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <PaintBucket className="h-12 w-12 text-heisocial-blue mb-4" />
-              <h3 className="text-xl font-bold mb-2">Visual Identity</h3>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Palette className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Logo & Identity Design</h3>
               <p className="text-gray-600">
-                Create a distinctive visual identity including logo design, color palette, typography, and imagery.
+                Distinctive logo design and visual identity systems that capture your brand essence.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <MessageSquare className="h-12 w-12 text-heisocial-blue mb-4" />
-              <h3 className="text-xl font-bold mb-2">Brand Voice & Messaging</h3>
-              <p className="text-gray-600">
-                Develop a consistent brand voice and key messaging that communicates your value proposition.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Palette className="h-12 w-12 text-heisocial-blue mb-4" />
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Eye className="h-12 w-12 text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Brand Guidelines</h3>
               <p className="text-gray-600">
-                Create comprehensive brand guidelines to ensure consistent application across all touchpoints.
+                Detailed brand standards and guidelines to ensure consistent application across all touchpoints.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <Users className="h-12 w-12 text-heisocial-blue mb-4" />
-              <h3 className="text-xl font-bold mb-2">Brand Experience</h3>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <MessageSquare className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Brand Voice & Messaging</h3>
               <p className="text-gray-600">
-                Design cohesive brand experiences across digital and physical touchpoints to build brand loyalty.
+                Development of distinctive brand voice, tone, and key messaging that resonates with your audience.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md card-hover">
-              <PaintBucket className="h-12 w-12 text-heisocial-blue mb-4" />
-              <h3 className="text-xl font-bold mb-2">Rebranding</h3>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Users className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Brand Experience Design</h3>
               <p className="text-gray-600">
-                Refresh or completely overhaul your existing brand to better align with your business goals.
+                Creating cohesive brand experiences across all customer touchpoints and interactions.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Target className="h-12 w-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Brand Positioning</h3>
+              <p className="text-gray-600">
+                Strategic positioning that differentiates your brand and creates competitive advantage.
               </p>
             </div>
           </div>
@@ -146,12 +146,12 @@ const Branding = () => {
 
       <CallToAction
         title="Ready to Build a Powerful Brand?"
-        description="Contact us today to discuss how our branding services can help you establish a strong brand identity and achieve your business goals."
+        description="Contact us today to discuss how our brand development services can help you create a memorable and impactful brand identity."
         primaryButtonText="Get Started"
         primaryButtonLink="/contact"
         secondaryButtonText="View Portfolio"
         secondaryButtonLink="/portfolio"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
     </Layout>
   );

@@ -1,12 +1,12 @@
 
 import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 // Lazy load main pages
 const About = lazy(() => import("@/pages/About"));
 const Services = lazy(() => import("@/pages/Services"));
 const Solutions = lazy(() => import("@/pages/Solutions"));
-const Portfolio = lazy(() => import("@/pages/Portfolio"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -14,15 +14,13 @@ const Sitemap = lazy(() => import("@/pages/Sitemap"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 
-const LoadingFallback = () => <div>Loading...</div>;
-
 export const MainRoutes = () => {
   return (
     <Routes>
       <Route
         path="about"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <About />
           </Suspense>
         }
@@ -30,7 +28,7 @@ export const MainRoutes = () => {
       <Route
         path="services"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Services />
           </Suspense>
         }
@@ -38,23 +36,15 @@ export const MainRoutes = () => {
       <Route
         path="solutions"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Solutions />
-          </Suspense>
-        }
-      />
-      <Route
-        path="portfolio"
-        element={
-          <Suspense fallback={<LoadingFallback />}>
-            <Portfolio />
           </Suspense>
         }
       />
       <Route
         path="blog"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Blog />
           </Suspense>
         }
@@ -62,7 +52,7 @@ export const MainRoutes = () => {
       <Route
         path="blog/:slug"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <BlogPost />
           </Suspense>
         }
@@ -70,7 +60,7 @@ export const MainRoutes = () => {
       <Route
         path="contact"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Contact />
           </Suspense>
         }
@@ -78,7 +68,7 @@ export const MainRoutes = () => {
       <Route
         path="sitemap"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Sitemap />
           </Suspense>
         }
@@ -86,7 +76,7 @@ export const MainRoutes = () => {
       <Route
         path="privacy-policy"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <PrivacyPolicy />
           </Suspense>
         }
@@ -94,7 +84,7 @@ export const MainRoutes = () => {
       <Route
         path="terms-of-service"
         element={
-          <Suspense fallback={<LoadingFallback />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <TermsOfService />
           </Suspense>
         }
