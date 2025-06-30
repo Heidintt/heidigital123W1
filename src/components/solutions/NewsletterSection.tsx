@@ -21,7 +21,7 @@ const NewsletterSection = () => {
               placeholder="Your email address"
               className="px-4 py-3 rounded-md flex-grow text-gray-900"
             />
-            <Button className="bg-white text-heisocial-blue hover:bg-white/90 whitespace-nowrap">
+            <Button className="bg-white text-heisocial-blue hover:bg-white/90 hover:text-heisocial-blue whitespace-nowrap">
               Subscribe Now
             </Button>
           </div>
