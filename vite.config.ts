@@ -10,8 +10,9 @@ EventEmitter.defaultMaxListeners = 50;
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
-    port: 8080,
+    host: "localhost", // Đổi "::" thành "localhost" để tránh lỗi mạng trên một số máy
+    port: 8080,        // Đảm bảo port là 8080 (khớp netlify.toml)
+    strictPort: true,  // Nếu port 8080 bị chiếm sẽ báo lỗi ngay, không tự động đổi port
     watch: {
       // Loại trừ node_modules và .git khỏi watcher để tiết kiệm RAM
       ignored: ["**/node_modules/**", "**/.git/**"],
