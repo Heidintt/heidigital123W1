@@ -9,13 +9,12 @@
   targetPort = 8080
   port = 8888
 
-# Headers for static files - sitemap.xml phải có Content-Type chính xác
+# Headers for static files
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml; charset=UTF-8"
     Cache-Control = "public, max-age=3600"
-    X-Robots-Tag = "noindex"
 
 [[headers]]
   for = "/robots.txt"
@@ -29,7 +28,13 @@
     Content-Type = "application/manifest+json; charset=UTF-8"
     Cache-Control = "public, max-age=86400"
 
-# Static file redirects với priority cao nhất - quan trọng để tránh conflict
+# Allow search engines to index all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+
+# Static file redirects với priority cao nhất
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
