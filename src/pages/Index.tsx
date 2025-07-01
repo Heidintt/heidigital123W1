@@ -56,8 +56,8 @@ const Index = () => {
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {servicesData.map((service) => (
-              <ServiceCard key={service.id} {...service} />
+            {servicesData.services.map((service) => (
+              <ServiceCard key={service.title} title={service.title} description={service.description} icon={service.icon} />
             ))}
           </div>
         </div>
@@ -75,18 +75,21 @@ const Index = () => {
               title="FMCG DAO Strategy"
               description="Revolutionizing FMCG brand engagement through DAO-driven marketing strategies."
               image="https://images.unsplash.com/photo-1519389950473-47a04ca0ecd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+              categories={["Strategy", "Web3"]}
               link="/portfolio/fmcg-dao-strategy"
             />
             <PortfolioCard
               title="Microlino EV Campaign"
               description="Driving awareness and pre-orders for the Microlino electric vehicle."
               image="https://images.unsplash.com/photo-1617584184774-0119c3392e19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+              categories={["Campaign", "Digital Marketing"]}
               link="/portfolio/microlino-strategy"
             />
             <PortfolioCard
               title="I Choose The Sun"
               description="Creating a viral campaign for Sun Life, promoting financial security."
               image="https://images.unsplash.com/photo-1598515220910-044ca3489489?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+              categories={["Social Media", "Viral Campaign"]}
               link="/portfolio/i-choose-the-sun"
             />
           </div>
@@ -102,7 +105,14 @@ const Index = () => {
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {homepageData.testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.name} {...testimonial} />
+              <TestimonialCard 
+                key={testimonial.name} 
+                quote={testimonial.quote}
+                author={testimonial.name}
+                company={testimonial.company}
+                rating={testimonial.rating}
+                image={testimonial.image}
+              />
             ))}
           </div>
         </div>
