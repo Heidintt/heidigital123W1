@@ -6,6 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
+import { getIconByName } from "@/utils/iconMapping";
 import servicesData from "@/data/services.json";
 
 const Services = () => {
@@ -41,7 +42,7 @@ const Services = () => {
                 key={index}
                 title={service.title}
                 description={service.description}
-                icon={service.icon}
+                icon={getIconByName(service.icon)}
                 features={service.features}
                 price={service.price}
               />
