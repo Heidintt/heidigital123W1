@@ -8,6 +8,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
+  robots?: string;
 }
 
 export const useSEO = ({
@@ -16,7 +17,8 @@ export const useSEO = ({
   keywords = "digital marketing, AI marketing, SEO, social media marketing, content creation, branding, digital advertising, marketing agency",
   image = "https://heidigital.info/og-image.jpg",
   url = "https://heidigital.info/",
-  type = "website"
+  type = "website",
+  robots = "index, follow"
 }: SEOProps = {}) => {
   
   useEffect(() => {
@@ -45,6 +47,7 @@ export const useSEO = ({
     // Update basic meta tags
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
+    updateMetaTag('robots', robots);
     
     // Update Open Graph tags
     updateMetaTag('og:title', title, true);
@@ -54,6 +57,7 @@ export const useSEO = ({
     updateMetaTag('og:type', type, true);
     
     // Update Twitter tags
+    updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', image);
@@ -68,5 +72,34 @@ export const useSEO = ({
       canonicalLink.href = url;
       document.head.appendChild(canonicalLink);
     }
-  }, [title, description, keywords, image, url, type]);
+
+    // Add structured data for better indexing
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": type === "article" ? "Article" : "WebSite",
+      "name": title,
+      "description": description,
+      "url": url,
+      "image": image,
+      ...(type === "website" && {
+        "publisher": {
+          "@type": "Organization",
+          "name": "Heidi Digital",
+          "url": "https://heidigital.info"
+        }
+      })
+    };
+
+    // Add or update structured data script
+    let structuredDataScript = document.querySelector('#structured-data') as HTMLScriptElement;
+    if (structuredDataScript) {
+      structuredDataScript.innerHTML = JSON.stringify(structuredData);
+    } else {
+      structuredDataScript = document.createElement('script');
+      structuredDataScript.id = 'structured-data';
+      structuredDataScript.type = 'application/ld+json';
+      structuredDataScript.innerHTML = JSON.stringify(structuredData);
+      document.head.appendChild(structuredDataScript);
+    }
+  }, [title, description, keywords, image, url, type, robots]);
 };

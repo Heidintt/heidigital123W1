@@ -1,161 +1,90 @@
-
-import React, { useState } from "react";
+import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import PortfolioCard from "@/components/PortfolioCard";
-import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
-
-console.log("Portfolio.tsx file is loading");
+import { useSEO } from "@/hooks/useSEO";
 
 const Portfolio = () => {
-  console.log("Portfolio component is starting to render");
-  
-  const [activeCategory, setActiveCategory] = useState("All");
-  
-  const portfolioItems = [
-    {
-      id: "fmcg-dao-strategy",
-      title: "Web3 DAO Models in FMCG Marketing Strategy",
-      description: "Academic research exploring how Web3-based community-owned DAO models can transform brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Marketing Strategy", "Academic Research", "Web3 & Blockchain", "Consumer Engagement"],
-      link: "/portfolio/fmcg-dao-strategy"
-    },
-    {
-      id: "microlino-strategy",
-      title: "Microlino 2026 Australian Launch Campaign",
-      description: "Comprehensive strategic marketing communications campaign for Microlino's Australian market entry, featuring the 'Half the Space, Twice the Life' concept and integrated multi-channel approach.",
-      image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications", "EV Marketing"],
-      link: "/portfolio/microlino-strategy"
-    },
-    {
-      id: "i-choose-the-sun",
-      title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
-      description: "A viral influencer-led social media campaign promoting positivity during COVID-19 pandemic, generating 75.6M views and 8,000+ user videos.",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Social Media", "Influencer Marketing", "Campaign Strategy"],
-      link: "/portfolio/i-choose-the-sun"
-    },
-    {
-      id: "lua-hong-buffet",
-      title: "Lửa Hồng Buffet Marketing Strategy",
-      description: "Vibrant marketing plan for a hot pot buffet in Ho Chi Minh City targeting youth with interactive content and engaging events.",
-      image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Marketing Strategy", "Event Marketing", "Content Strategy"],
-      link: "/portfolio/lua-hong-buffet"
-    },
-    {
-      id: "nha-ca-cafe",
-      title: "Nhà Cá Cafe Marketing Strategy",
-      description: "Comprehensive marketing plan for a unique cat-themed café in Thai Nguyen, combining coffee culture with creative workshops and feline charm.",
-      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Marketing Strategy", "Social Media", "Brand Development"],
-      link: "/portfolio/nha-ca-cafe"
-    },
-    {
-      id: "koto-club",
-      title: "Koto Club Da Nang Marketing Plan",
-      description: "Strategic marketing plan for an upscale nightclub in Da Nang, targeting 25-40 year old professionals and tourists through curated experiences and premium positioning.",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Marketing Strategy", "Nightlife", "Brand Development"],
-      link: "/portfolio/koto-club"
-    }
-  ];
-
-  const categories = [
-    "All",
-    "Social Media",
-    "Marketing Strategy",
-    "Campaign Strategy",
-    "Brand Development",
-    "Digital Marketing",
-    "Influencer Marketing",
-    "Event Marketing",
-    "Content Strategy",
-    "EV Marketing",
-    "Academic Research",
-    "Web3 & Blockchain",
-    "Consumer Engagement",
-    "Integrated Communications",
-    "Nightlife"
-  ];
-
-  const filteredItems = activeCategory === "All" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.categories.includes(activeCategory));
-
-  console.log("Portfolio items:", portfolioItems.length);
-  console.log("Filtered items:", filteredItems.length);
-  console.log("Active category:", activeCategory);
-  console.log("About to render Portfolio JSX");
+  // Set SEO for portfolio page with explicit indexing
+  useSEO({
+    title: "Portfolio & Case Studies | Heidi Digital Marketing Success Stories",
+    description: "Explore our successful digital marketing campaigns and case studies. See how we've helped businesses grow through strategic marketing solutions.",
+    keywords: "marketing portfolio, case studies, digital marketing success stories, marketing campaigns, client results, brand development projects",
+    url: "https://heidigital.info/portfolio",
+    type: "website",
+    robots: "index, follow, max-image-preview:large"
+  });
 
   return (
-    <div style={{minHeight: '100vh', backgroundColor: '#f8f9fa'}}>
-      <Layout>
-        <Hero
-          title="Our Portfolio"
-          subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-          backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-        />
+    <Layout>
+      <Hero
+        title="Our Work"
+        subtitle="Explore our successful digital marketing campaigns and case studies"
+        backgroundImage="https://images.unsplash.com/photo-1550831103-58527b59499c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      />
 
-        <section className="py-12 px-4" style={{backgroundColor: '#ffffff'}}>
-          <div className="container mx-auto max-w-7xl">
-            <SectionHeading
-              title="Case Studies"
-              subtitle="Browse our work by category"
-              centered
+      <section className="py-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <SectionHeading
+            title="Featured Projects"
+            subtitle="Explore our successful digital marketing campaigns and case studies"
+            centered
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <PortfolioCard
+              title="FMCG DAO Strategy"
+              description="Revolutionizing FMCG brand engagement through DAO-driven marketing strategies."
+              imageUrl="https://images.unsplash.com/photo-1519389950473-47a04ca0ecd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/fmcg-dao-strategy"
             />
-
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {categories.map((category, index) => (
-                <Button
-                  key={index}
-                  variant={category === activeCategory ? "default" : "outline"}
-                  className={`${category === activeCategory ? "bg-blue-600 hover:bg-blue-700 text-white" : "border-gray-300 text-gray-700 hover:bg-gray-50 hover:text-gray-900"} transition-colors`}
-                  onClick={() => setActiveCategory(category)}
-                  size="sm"
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredItems.map((item) => (
-                <PortfolioCard
-                  key={item.id}
-                  title={item.title}
-                  description={item.description}
-                  image={item.image}
-                  categories={item.categories}
-                  link={item.link}
-                />
-              ))}
-            </div>
-
-            {filteredItems.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No portfolio items found for this category.</p>
-              </div>
-            )}
+            <PortfolioCard
+              title="Microlino EV Campaign"
+              description="Driving awareness and pre-orders for the Microlino electric vehicle with innovative digital campaigns."
+              imageUrl="https://images.unsplash.com/photo-1617584184774-0119c3392e19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEVWfGVufDB8fDB8fHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/microlino-strategy"
+            />
+            <PortfolioCard
+              title="I Choose The Sun"
+              description="Creating a viral campaign for Sun Life, promoting financial security and bright futures."
+              imageUrl="https://images.unsplash.com/photo-1598515220910-044ca3489489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3VubGlnaHR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/i-choose-the-sun"
+            />
+            <PortfolioCard
+              title="Nha Ca Cafe"
+              description="Enhancing brand presence and customer engagement for Nha Ca Cafe through targeted social media strategies."
+              imageUrl="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FmZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/nha-ca-cafe"
+            />
+            <PortfolioCard
+              title="Koto Club"
+              description="Building a vibrant online community and driving membership growth for Koto Club."
+              imageUrl="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNsdWJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/koto-club"
+            />
+            <PortfolioCard
+              title="Lua Hong Buffet"
+              description="Increasing foot traffic and online orders for Lua Hong Buffet through strategic digital advertising."
+              imageUrl="https://images.unsplash.com/photo-1606761940880-eb5915309394?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVmZmV0fGVufDB8fDB8fHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/lua-hong-buffet"
+            />
           </div>
-        </section>
+        </div>
+      </section>
 
-        <CallToAction
-          title="Ready to Achieve Similar Results?"
-          description="Let's discuss how our digital marketing expertise can help your business grow and thrive in today's competitive landscape."
-          primaryButtonText="Get Started"
-          primaryButtonLink="/contact"
-          backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
-        />
-      </Layout>
-    </div>
+      <CallToAction
+        title="Ready to Elevate Your Brand?"
+        description="Explore our portfolio and discover how we can help your business achieve its marketing goals."
+        primaryButtonText="Get Started"
+        primaryButtonLink="/contact"
+        secondaryButtonText="Explore Services"
+        secondaryButtonLink="/services"
+        backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
+      />
+    </Layout>
   );
 };
-
-console.log("Portfolio component defined, about to export");
 
 export default Portfolio;

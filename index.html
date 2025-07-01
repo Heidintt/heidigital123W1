@@ -1,229 +1,48 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Heidi Digital - AI-Powered Marketing Solutions | Digital Marketing Agency</title>
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     
-    <!-- Theme and App Meta Tags -->
-    <meta name="theme-color" content="#6366f1" />
-    <meta name="msapplication-TileColor" content="#6366f1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="format-detection" content="telephone=no" />
+    <!-- Basic SEO Meta Tags - Will be overridden by React -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
     
-    <!-- Preconnect for Performance -->
+    <!-- Preconnect to improve performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
     
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Structured Data - Organization -->
+    <!-- Default title - Will be overridden by React -->
+    <title>Heidi Digital - AI-Powered Marketing Solutions</title>
+    
+    <!-- Structured Data for Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Heidi Digital",
-      "alternateName": ["Heidi Digital Marketing", "Heidi Digital Agency"],
       "url": "https://heidigital.info",
-      "logo": "https://heidigital.info/logo.png",
-      "description": "Heidi Digital provides professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform businesses.",
-      "foundingDate": "2020",
-      "slogan": "Transform Your Digital Future",
-      "knowsAbout": [
-        "Digital Marketing",
-        "AI Marketing",
-        "SEO",
-        "Social Media Marketing",
-        "Content Creation",
-        "Brand Development",
-        "Digital Advertising",
-        "Marketing Automation"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "info@heidigital.info",
-          "availableLanguage": ["English"]
-        },
-        {
-          "@type": "ContactPoint",
-          "contactType": "Sales",
-          "email": "sales@heidigital.info"
-        }
-      ],
+      "logo": "https://heidigital.info/og-image.jpg",
+      "description": "Professional AI-powered marketing solutions and digital marketing services",
       "sameAs": [
-        "https://facebook.com/heidigital",
-        "https://instagram.com/heidigital",
-        "https://linkedin.com/company/heidigital",
+        "https://www.facebook.com/heidigital",
+        "https://www.linkedin.com/company/heidigital",
         "https://twitter.com/heidigital"
       ],
-      "serviceType": "Digital Marketing Agency",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Digital Marketing Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Digital Marketing",
-              "description": "Comprehensive digital marketing strategies and campaigns",
-              "serviceType": "Digital Marketing"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Marketing Solutions",
-              "description": "AI-powered marketing tools and automation",
-              "serviceType": "AI Marketing"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO",
-              "description": "Search engine optimization to improve online visibility",
-              "serviceType": "SEO"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Social Media Marketing",
-              "description": "Strategic social media management and advertising",
-              "serviceType": "Social Media Marketing"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Content Creation",
-              "description": "High-quality content creation for all marketing channels",
-              "serviceType": "Content Marketing"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Brand Development",
-              "description": "Strategic brand building and identity development",
-              "serviceType": "Branding"
-            }
-          }
-        ]
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-XXX-XXX-XXXX",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Vietnamese"]
       }
-    }
-    </script>
-
-    <!-- Website Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Heidi Digital",
-      "url": "https://heidigital.info",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://heidigital.info/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-    <!-- Professional Service Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Heidi Digital",
-      "image": "https://heidigital.info/logo.png",
-      "email": "info@heidigital.info",
-      "url": "https://heidigital.info",
-      "priceRange": "$$"
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://heidigital.info/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://heidigital.info/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Solutions",
-          "item": "https://heidigital.info/solutions"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Portfolio",
-          "item": "https://heidigital.info/portfolio"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "About",
-          "item": "https://heidigital.info/about"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Contact",
-          "item": "https://heidigital.info/contact"
-        }
-      ]
     }
     </script>
   </head>
-
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Google Analytics (replace with your actual GA4 tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
   </body>
 </html>
