@@ -7,7 +7,7 @@ interface BlogPostContentProps {
 }
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
-  // Simplified content processing with unified styling
+  // Simplified content processing with unified styling and reduced spacing
   const processContent = (content: string) => {
     const lines = content.split('\n');
     const elements: React.ReactNode[] = [];
@@ -16,14 +16,37 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
     while (currentIndex < lines.length) {
       const line = lines[currentIndex];
 
+      // Handle video content
+      if (line.includes('<video')) {
+        const videoMatch = line.match(/src="([^"]+)"/);
+        if (videoMatch) {
+          elements.push(
+            <div key={currentIndex} className="my-8">
+              <div className="relative group overflow-hidden rounded-xl shadow-lg">
+                <video
+                  controls
+                  className="w-full h-80 object-cover"
+                  poster=""
+                >
+                  <source src={videoMatch[1]} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          );
+        }
+        currentIndex++;
+        continue;
+      }
+
       // Handle table detection with modern styling
-      if (line.includes('|') && line.includes('Tool') && line.includes('Best For') && line.includes('Catch')) {
+      if (line.includes('|') && line.includes('Mistake') && line.includes('Fix')) {
         const tableData = [];
         let tableIndex = currentIndex + 2;
         
         while (tableIndex < lines.length && lines[tableIndex].includes('|') && lines[tableIndex].trim() !== '') {
           const cells = lines[tableIndex].split('|').map(cell => cell.trim()).filter(cell => cell !== '');
-          if (cells.length >= 3) {
+          if (cells.length >= 2) {
             tableData.push(cells);
           }
           tableIndex++;
@@ -31,23 +54,20 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
 
         if (tableData.length > 0) {
           elements.push(
-            <div key={currentIndex} className="my-16">
-              <h3 className="text-3xl font-bold text-center mb-8 gradient-text">Quick Tool Snapshot</h3>
-              <div className="overflow-hidden rounded-2xl shadow-2xl border-0">
+            <div key={currentIndex} className="my-10">
+              <div className="overflow-hidden rounded-xl shadow-lg border-0">
                 <Table>
                   <TableHeader className="bg-gradient-to-r from-blue-600 to-purple-600">
                     <TableRow>
-                      <TableHead className="text-white font-bold text-lg py-6">Tool</TableHead>
-                      <TableHead className="text-white font-bold text-lg py-6">Best For</TableHead>
-                      <TableHead className="text-white font-bold text-lg py-6">Catch</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-4">Mistake</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-4">Fix</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {tableData.map((row, idx) => (
                       <TableRow key={idx} className={idx % 2 === 0 ? "bg-white hover:bg-blue-50" : "bg-blue-50/50 hover:bg-blue-100"}>
-                        <TableCell className="font-bold text-blue-600 text-lg py-6">{row[0]}</TableCell>
-                        <TableCell className="text-gray-700 text-base py-6">{row[1]}</TableCell>
-                        <TableCell className="text-gray-600 text-base py-6">{row[2]}</TableCell>
+                        <TableCell className="font-bold text-blue-600 text-base py-4">{row[0]}</TableCell>
+                        <TableCell className="text-gray-700 text-base py-4">{row[1]}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -64,20 +84,20 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
       // Handle main headers with beautiful styling
       if (line.startsWith('# ')) {
         elements.push(
-          <div key={currentIndex} className="text-center my-20">
-            <h1 className="text-5xl md:text-6xl font-bold gradient-text mb-6 leading-tight">
+          <div key={currentIndex} className="text-center my-12">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4 leading-tight">
               {line.slice(2)}
             </h1>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
         );
       } else if (line.startsWith('## ')) {
         const title = line.slice(3);
         elements.push(
-          <div key={currentIndex} className="my-16">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">{title}</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+          <div key={currentIndex} className="my-10">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">{title}</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
             </div>
           </div>
         );
@@ -86,21 +106,21 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
         const isNumbered = /^\d+\./.test(title);
         
         elements.push(
-          <div key={currentIndex} className="my-12">
-            <div className="flex items-center gap-4 mb-6">
+          <div key={currentIndex} className="my-8">
+            <div className="flex items-center gap-3 mb-4">
               {isNumbered && (
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold shadow-lg">
                   {title.match(/^\d+/)?.[0]}
                 </span>
               )}
-              <h3 className="text-3xl font-bold gradient-text">
+              <h3 className="text-2xl font-bold gradient-text">
                 {isNumbered ? title.replace(/^\d+\.\s*/, '') : title}
               </h3>
             </div>
           </div>
         );
       } else if (line.trim() === '') {
-        elements.push(<div key={currentIndex} className="h-6" />);
+        elements.push(<div key={currentIndex} className="h-4" />);
       } else if (line.startsWith('![')) {
         // Handle images with modern styling
         const altMatch = line.match(/!\[(.*?)\]/);
@@ -108,17 +128,17 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
         
         if (altMatch && urlMatch) {
           elements.push(
-            <div key={currentIndex} className="my-12">
-              <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
+            <div key={currentIndex} className="my-8">
+              <div className="relative group overflow-hidden rounded-xl shadow-lg">
                 <img
                   src={urlMatch[1]}
                   alt={altMatch[1]}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {altMatch[1] && (
-                <p className="text-center text-gray-600 italic mt-4 text-lg">{altMatch[1]}</p>
+                <p className="text-center text-gray-600 italic mt-3 text-base">{altMatch[1]}</p>
               )}
             </div>
           );
@@ -151,12 +171,12 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
           }
           
           elements.push(
-            <div key={currentIndex} className={`my-6 ${bgColor} ${borderColor} border-l-4 rounded-r-lg p-6`}>
-              <div className="flex items-start gap-3">
+            <div key={currentIndex} className={`my-4 ${bgColor} ${borderColor} border-l-4 rounded-r-lg p-4`}>
+              <div className="flex items-start gap-2">
                 <div className={`w-2 h-2 rounded-full ${borderColor.replace('border-l-', 'bg-')} mt-2 flex-shrink-0`}></div>
                 <div>
-                  <span className={`font-bold ${textColor} text-lg`}>{label}:</span>
-                  <span className="text-gray-700 ml-2 text-lg leading-relaxed">{contentText}</span>
+                  <span className={`font-bold ${textColor} text-base`}>{label}:</span>
+                  <span className="text-gray-700 ml-2 text-base leading-relaxed">{contentText}</span>
                 </div>
               </div>
             </div>
@@ -165,7 +185,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
           elements.push(
             <p 
               key={currentIndex} 
-              className="mb-6 leading-relaxed text-gray-700 text-lg"
+              className="mb-4 leading-relaxed text-gray-700 text-base"
             >
               {cleanText}
             </p>
@@ -181,8 +201,8 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
 
   return (
     <div className="prose prose-lg max-w-none">
-      <div className="bg-white/90 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden">
-        <div className="p-8 md:p-12">
+      <div className="bg-white/90 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden">
+        <div className="p-6 md:p-8">
           {processContent(content)}
         </div>
       </div>

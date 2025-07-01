@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 export interface BlogPost {
@@ -184,7 +183,7 @@ And if you're ready to take your brand beyond LinkedIn, start building your own 
             slug: "create-infographics-with-canva-free",
             title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
             description: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
-            featured_image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            featured_image: "https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/f5c5b491-9f43-4bd2-a9d4-67ccef950dce/social_media_hero2x.png",
             date: "2025-01-03",
             author: "Heidi Digital Team",
             category: "Design & Content",
@@ -193,15 +192,16 @@ And if you're ready to take your brand beyond LinkedIn, start building your own 
             seo_description: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
             content: `In today's digital world, people are bombarded with more information than ever. To stand out, you need content that's easy to understand and visually appealing. That's where infographics come in — and Canva makes it easy for anyone to design one, even with zero graphic design experience.
 
-![Canva Infographic Design](https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
-
 Whether you're a beginner, marketer, or small business owner, this guide will show you how to create infographics with Canva for free — and do it well.
 
 ## Why Infographics Matter in the Age of Visual Content
 
-Infographics combine information and visuals to turn complex data into bite-sized, engaging content. Whether it's a static image, animated graphic, or interactive map, infographics make your message easier to digest and remember.
+<video controls className="w-full h-80 object-cover rounded-xl shadow-lg mb-6">
+  <source src="https://content-management-files.canva.com/83029a82-c0b0-4f7a-947e-27a5cb82271f/593069357.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-![Visual Content Statistics](https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+Infographics combine information and visuals to turn complex data into bite-sized, engaging content. Whether it's a static image, animated graphic, or interactive map, infographics make your message easier to digest and remember.
 
 Here's why they're so powerful:
 
@@ -227,9 +227,9 @@ Infographics break down difficult data into digestible chunks. Instead of boring
 
 ## How to Create Infographics with Canva: A Step-by-Step Guide
 
-You don't need expensive software or design skills to make an infographic. With Canva for beginners, anyone can start designing in minutes.
+![Canva Design Process](https://content-management-files.canva.com/1c13d213-d8c5-4e8f-aaf7-e565216bd6d7/og_image_free.png)
 
-![Canva Design Process](https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+You don't need expensive software or design skills to make an infographic. With Canva for beginners, anyone can start designing in minutes.
 
 ### Step 1: Define Your Goal
 
@@ -244,6 +244,8 @@ Before you start designing, be clear on the following:
 Use the 5W1H method to map out your content. Then, gather only the most important data points, ideas, or visuals you want to include.
 
 ### Step 2: Log In to Canva and Choose a Template
+
+![Login to Canva](https://images.ctfassets.net/nuloos7fnddp/7F7xKYHtL00apH0sh6cQe5/d2f3917cf58bfd27cfb801e042679f4c/8391d2cf-5855-49c3-8419-14e806faaea4_EN-sign-up-log-in.jpg)
 
 - Go to Canva.com and sign in (you can use your Google or Facebook account)  
 - Search "infographic" in the Canva template library
@@ -269,8 +271,6 @@ Keep things simple. A clean layout improves understanding and makes your infogra
 ### Step 4: Download & Share
 
 Click "Download" and select PNG, JPG, or PDF. If Canva asks for payment, double-check that all elements used are free. You can also publish directly to social media or embed the infographic on your blog or website.
-
-![Infographic Design Tips](https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
 ## Tips for Designing Professional Infographics
 
@@ -309,8 +309,6 @@ Use simple, clean fonts like Montserrat or Open Sans. Bold your titles, and make
 ## Optimizing Infographics for Different Platforms
 
 Your infographic needs to look good everywhere — on your site, on social media, and in presentations.
-
-![Social Media Infographics](https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
 
 ### For Websites
 
