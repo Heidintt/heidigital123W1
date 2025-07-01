@@ -1,11 +1,20 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
+import { useSEO } from "@/hooks/useSEO";
 import { MapPin, Mail, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
+  // Set SEO for contact page
+  useSEO({
+    title: "Contact Heidi Digital - Get Your Free Marketing Consultation",
+    description: "Get in touch with our digital marketing experts. Contact Heidi Digital today for a free consultation and discover how we can transform your business.",
+    keywords: "contact heidi digital, marketing consultation, digital marketing contact, get in touch, marketing experts",
+    url: "https://heidigital.info/contact",
+    type: "website"
+  });
+
   return (
     <Layout>
       <Hero
@@ -87,7 +96,6 @@ const Contact = () => {
       <section className="py-6 px-4">
         <div className="container mx-auto">
           <div className="h-[300px] rounded-lg overflow-hidden shadow-md">
-            {/* In a real implementation, you would embed a Google Map or similar here */}
             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
               <p className="text-gray-500 text-sm">Map Placeholder - In a real implementation, an interactive map would be displayed here</p>
             </div>

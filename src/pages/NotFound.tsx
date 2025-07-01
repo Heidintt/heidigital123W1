@@ -6,9 +6,19 @@ import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const NotFound = () => {
   const location = useLocation();
+
+  // Set SEO for 404 page
+  useSEO({
+    title: "Page Not Found (404) | Heidi Digital",
+    description: "The page you're looking for could not be found. Return to Heidi Digital's homepage to explore our marketing solutions and services.",
+    keywords: "404, page not found, heidi digital",
+    url: `https://heidigital.info${location.pathname}`,
+    type: "website"
+  });
 
   useEffect(() => {
     console.error(

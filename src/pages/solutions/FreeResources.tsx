@@ -4,12 +4,22 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
+import { useSEO } from "@/hooks/useSEO";
 import ResourceCard from "@/components/solutions/ResourceCard";
 import ResourceFilter from "@/components/solutions/ResourceFilter";
 import { resources } from "@/data/resourcesData";
 
 const FreeResources = () => {
   const [selectedLabel, setSelectedLabel] = useState<string>("All");
+
+  // Set SEO for free resources page
+  useSEO({
+    title: "Free Marketing Resources & Tools | Heidi Digital",
+    description: "Access valuable free marketing resources including guides, templates, and tools to help you master digital marketing and grow your business.",
+    keywords: "free marketing resources, marketing templates, marketing guides, free tools, digital marketing resources",
+    url: "https://heidigital.info/solutions/free-resources",
+    type: "website"
+  });
 
   // Get all unique labels
   const allLabels = Array.from(new Set(resources.flatMap(resource => resource.labels)));

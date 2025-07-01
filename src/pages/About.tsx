@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
+import { useSEO } from "@/hooks/useSEO";
 import CompanyIntroduction from "@/components/about/CompanyIntroduction";
 import MissionVision from "@/components/about/MissionVision";
 import ExpertiseAreas from "@/components/about/ExpertiseAreas";
@@ -10,6 +11,15 @@ import CoreValues from "@/components/about/CoreValues";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 
 const About = () => {
+  // Set SEO for about page
+  useSEO({
+    title: "About Heidi Digital - Your Trusted Marketing Partner",
+    description: "Learn about Heidi Digital's mission, values, and expertise in AI-powered digital marketing. Discover why we're the trusted partner for your brand development journey.",
+    keywords: "about heidi digital, marketing agency, digital marketing experts, AI marketing specialists, brand development",
+    url: "https://heidigital.info/about",
+    type: "website"
+  });
+
   return (
     <Layout>
       <Hero

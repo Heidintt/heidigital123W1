@@ -6,10 +6,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { useSEO } from "@/hooks/useSEO";
 import { BlogPost } from "@/types/blogPost";
 
 const Blog = () => {
   const { posts, loading, error } = useBlogPosts();
+
+  // Set SEO for blog page
+  useSEO({
+    title: "Marketing Blog - Insights & Resources | Heidi Digital",
+    description: "Expert perspectives, actionable tips, and the latest trends in digital marketing and AI. Stay ahead with our comprehensive marketing resources.",
+    keywords: "marketing blog, digital marketing tips, AI marketing, SEO guides, content marketing, social media marketing",
+    url: "https://heidigital.info/blog",
+    type: "website"
+  });
 
   const categories = [
     "All Categories",
