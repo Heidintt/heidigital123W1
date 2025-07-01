@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -21,29 +22,28 @@ const Index = () => {
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   });
 
-  const { hero, about, services, portfolio, testimonials, callToAction } = homepageData;
-
   return (
     <Layout>
       <Hero
-        title={hero.title}
-        subtitle={hero.subtitle}
-        backgroundImage={hero.backgroundImage}
+        title={homepageData.hero_title}
+        subtitle={homepageData.hero_subtitle}
+        backgroundImage={homepageData.hero_image}
       />
 
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={about.title}
-            subtitle={about.subtitle}
+            title="About Heidi Digital"
+            subtitle="Your trusted partner in digital marketing success"
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-            {about.content.map((paragraph, index) => (
-              <p key={index} className="text-gray-600 text-base">
-                {paragraph}
-              </p>
-            ))}
+            <p className="text-gray-600 text-base">
+              We are a leading digital marketing agency specializing in AI-powered marketing solutions that drive real results for businesses of all sizes.
+            </p>
+            <p className="text-gray-600 text-base">
+              Our expert team combines cutting-edge technology with proven marketing strategies to help your brand reach its full potential in the digital landscape.
+            </p>
           </div>
         </div>
       </section>
@@ -51,8 +51,8 @@ const Index = () => {
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={services.title}
-            subtitle={services.subtitle}
+            title="Our Services"
+            subtitle="Comprehensive digital marketing solutions tailored for your success"
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
@@ -66,14 +66,29 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={portfolio.title}
-            subtitle={portfolio.subtitle}
+            title="Our Portfolio"
+            subtitle="Success stories from our valued clients"
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {portfolio.items.map((item) => (
-              <PortfolioCard key={item.id} {...item} />
-            ))}
+            <PortfolioCard
+              title="FMCG DAO Strategy"
+              description="Revolutionizing FMCG brand engagement through DAO-driven marketing strategies."
+              image="https://images.unsplash.com/photo-1519389950473-47a04ca0ecd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/fmcg-dao-strategy"
+            />
+            <PortfolioCard
+              title="Microlino EV Campaign"
+              description="Driving awareness and pre-orders for the Microlino electric vehicle."
+              image="https://images.unsplash.com/photo-1617584184774-0119c3392e19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/microlino-strategy"
+            />
+            <PortfolioCard
+              title="I Choose The Sun"
+              description="Creating a viral campaign for Sun Life, promoting financial security."
+              image="https://images.unsplash.com/photo-1598515220910-044ca3489489?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
+              link="/portfolio/i-choose-the-sun"
+            />
           </div>
         </div>
       </section>
@@ -81,25 +96,25 @@ const Index = () => {
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={testimonials.title}
-            subtitle={testimonials.subtitle}
+            title="Client Testimonials"
+            subtitle="What our clients say about working with us"
             centered
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.items.map((item) => (
-              <TestimonialCard key={item.id} {...item} />
+            {homepageData.testimonials.map((testimonial) => (
+              <TestimonialCard key={testimonial.name} {...testimonial} />
             ))}
           </div>
         </div>
       </section>
 
       <CallToAction
-        title={callToAction.title}
-        description={callToAction.description}
-        primaryButtonText={callToAction.primaryButtonText}
-        primaryButtonLink={callToAction.primaryButtonLink}
-        secondaryButtonText={callToAction.secondaryButtonText}
-        secondaryButtonLink={callToAction.secondaryButtonLink}
+        title={homepageData.cta_text}
+        description="Ready to transform your business with our expert marketing solutions? Let's discuss how we can help you achieve your goals."
+        primaryButtonText="Get Started Today"
+        primaryButtonLink={homepageData.cta_link}
+        secondaryButtonText="View Our Services"
+        secondaryButtonLink="/services"
         backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
       />
     </Layout>
