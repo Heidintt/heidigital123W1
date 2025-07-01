@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -7,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { BlogPost } from "@/types/blogPost";
 
 const Blog = () => {
   const { posts, loading, error } = useBlogPosts();
