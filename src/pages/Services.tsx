@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -6,6 +7,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 import servicesData from "@/data/services.json";
+import { Brain, PenTool, Search, Share2, Palette, Target } from "lucide-react";
 
 const Services = () => {
   // Set SEO for services page with explicit indexing
@@ -17,6 +19,15 @@ const Services = () => {
     type: "website",
     robots: "index, follow, max-image-preview:large"
   });
+
+  const iconMap = {
+    Brain,
+    PenTool,
+    Search,
+    Share2,
+    Palette,
+    Target
+  };
 
   return (
     <Layout>
@@ -35,13 +46,14 @@ const Services = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {servicesData.map((service) => (
+            {servicesData.services.map((service, index) => (
               <ServiceCard
-                key={service.id}
+                key={index}
                 title={service.title}
                 description={service.description}
-                icon={service.icon}
-                link={service.link}
+                icon={iconMap[service.icon as keyof typeof iconMap]}
+                features={service.features}
+                price={service.price}
               />
             ))}
           </div>

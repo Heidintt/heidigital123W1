@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -9,6 +10,7 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 import servicesData from "@/data/services.json";
 import homepageData from "@/data/homepage.json";
+import { Brain, PenTool, Search, Share2 } from "lucide-react";
 
 const Index = () => {
   // Set SEO for homepage with explicit indexing
@@ -21,29 +23,37 @@ const Index = () => {
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   });
 
-  const { hero, about, services, portfolio, testimonials, callToAction } = homepageData;
+  const iconMap = {
+    Brain,
+    PenTool,
+    Search,
+    Share2
+  };
 
   return (
     <Layout>
       <Hero
-        title={hero.title}
-        subtitle={hero.subtitle}
-        backgroundImage={hero.backgroundImage}
+        title={homepageData.hero_title}
+        subtitle={homepageData.hero_subtitle}
+        backgroundImage={homepageData.hero_image}
+        ctaText={homepageData.cta_text}
+        ctaLink={homepageData.cta_link}
       />
 
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={about.title}
-            subtitle={about.subtitle}
+            title="About Heidi Digital"
+            subtitle="AI-Powered Marketing Solutions That Drive Results"
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-            {about.content.map((paragraph, index) => (
-              <p key={index} className="text-gray-600 text-base">
-                {paragraph}
-              </p>
-            ))}
+            <p className="text-gray-600 text-base">
+              We are a leading digital marketing agency specializing in AI-powered solutions that transform businesses and drive measurable results.
+            </p>
+            <p className="text-gray-600 text-base">
+              Our expert team combines cutting-edge technology with creative strategies to help your brand succeed in the digital landscape.
+            </p>
           </div>
         </div>
       </section>
@@ -51,13 +61,18 @@ const Index = () => {
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={services.title}
-            subtitle={services.subtitle}
+            title="Our Services"
+            subtitle="Comprehensive AI-powered marketing solutions tailored to your business needs"
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {servicesData.map((service) => (
-              <ServiceCard key={service.id} {...service} />
+            {homepageData.services.map((service, index) => (
+              <ServiceCard 
+                key={index} 
+                title={service.title}
+                description={service.description}
+                icon={iconMap[service.icon as keyof typeof iconMap]}
+              />
             ))}
           </div>
         </div>
@@ -66,14 +81,32 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={portfolio.title}
-            subtitle={portfolio.subtitle}
+            title="Our Work"
+            subtitle="Explore our successful digital marketing campaigns and case studies"
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {portfolio.items.map((item) => (
-              <PortfolioCard key={item.id} {...item} />
-            ))}
+            <PortfolioCard
+              title="FMCG DAO Strategy"
+              description="Revolutionizing FMCG brand engagement through DAO-driven marketing strategies."
+              image="https://images.unsplash.com/photo-1519389950473-47a04ca0ecd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              categories={["Strategy", "DAO"]}
+              link="/portfolio/fmcg-dao-strategy"
+            />
+            <PortfolioCard
+              title="Microlino EV Campaign"
+              description="Driving awareness and pre-orders for the Microlino electric vehicle with innovative digital campaigns."
+              image="https://images.unsplash.com/photo-1617584184774-0119c3392e19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEVWfGVufDB8fDB8fHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+              categories={["Campaign", "EV"]}
+              link="/portfolio/microlino-strategy"
+            />
+            <PortfolioCard
+              title="I Choose The Sun"
+              description="Creating a viral campaign for Sun Life, promoting financial security and bright futures."
+              image="https://images.unsplash.com/photo-1598515220910-044ca3489489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3VubGlnaHR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
+              categories={["Viral", "Campaign"]}
+              link="/portfolio/i-choose-the-sun"
+            />
           </div>
         </div>
       </section>
@@ -81,25 +114,32 @@ const Index = () => {
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title={testimonials.title}
-            subtitle={testimonials.subtitle}
+            title="What Our Clients Say"
+            subtitle="Testimonials from satisfied customers"
             centered
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.items.map((item) => (
-              <TestimonialCard key={item.id} {...item} />
+            {homepageData.testimonials.map((item, index) => (
+              <TestimonialCard 
+                key={index} 
+                quote={item.quote}
+                author={item.name}
+                company={item.company}
+                rating={item.rating}
+                image={item.image}
+              />
             ))}
           </div>
         </div>
       </section>
 
       <CallToAction
-        title={callToAction.title}
-        description={callToAction.description}
-        primaryButtonText={callToAction.primaryButtonText}
-        primaryButtonLink={callToAction.primaryButtonLink}
-        secondaryButtonText={callToAction.secondaryButtonText}
-        secondaryButtonLink={callToAction.secondaryButtonLink}
+        title="Ready to Grow Your Business?"
+        description="Transform your digital presence with our AI-powered marketing solutions"
+        primaryButtonText={homepageData.cta_text}
+        primaryButtonLink={homepageData.cta_link}
+        secondaryButtonText="View Our Portfolio"
+        secondaryButtonLink="/portfolio"
         backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
       />
     </Layout>
