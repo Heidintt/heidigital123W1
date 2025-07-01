@@ -7,6 +7,7 @@ import ServiceCard from "@/components/ServiceCard";
 import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 import servicesData from "@/data/services.json";
+import { getIcon } from "@/utils/iconMapping";
 
 const Services = () => {
   // Set SEO for services page with explicit indexing
@@ -41,7 +42,7 @@ const Services = () => {
                 key={service.title}
                 title={service.title}
                 description={service.description}
-                icon={service.icon}
+                icon={getIcon(service.icon)}
               />
             ))}
           </div>
