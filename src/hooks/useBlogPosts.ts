@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 
 export interface BlogPost {
@@ -66,11 +67,8 @@ Instead of "Marketing Manager at ABC Corp," use:
 Structure it like this:
 
 **Hook** – What problem do you solve?
-
 **Journey** – What led you here?
-
 **Value** – What can others expect from you? (E.g., "I share weekly tips on performance marketing.")
-
 **Call-to-Action** – Invite people to connect, collaborate, or message you.
 
 **Use the STAR Method in Experience:**
@@ -96,17 +94,13 @@ LinkedIn favors content that sparks real interaction. People follow thought lead
 **Use Engaging Content Formats:**
 
 **Carousels:** E.g., "5 LinkedIn Tips and Tricks for Marketers"
-
 **Text posts:** Personal anecdotes or lessons
-
 **Polls:** Great for engagement and quick market feedback
 
 **Try This Winning Post Formula:**
 
 **Hook:** Ask a bold question or make a big promise
-
 **Body:** Share useful insights or personal experience
-
 **Engagement CTA:** "What's your take on this?" or "Have you tried this in your own marketing strategy?"
 
 ## Mistake #3: You're Not Actively Networking
@@ -151,7 +145,6 @@ Choose 2–3 content pillars. For marketers, that could be:
 **Create a Content Calendar:**
 
 **Beginner:** Post 2–3 times weekly on set days.
-
 **Intermediate:** Mix formats and post 3–5 times weekly.
 
 **Use Batch Creation:**
@@ -195,11 +188,6 @@ And if you're ready to take your brand beyond LinkedIn, start building your own 
 Whether you're a beginner, marketer, or small business owner, this guide will show you how to create infographics with Canva for free — and do it well.
 
 ## Why Infographics Matter in the Age of Visual Content
-
-<video controls className="w-full h-80 object-cover rounded-xl shadow-lg mb-6">
-  <source src="https://content-management-files.canva.com/83029a82-c0b0-4f7a-947e-27a5cb82271f/593069357.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
 
 Infographics combine information and visuals to turn complex data into bite-sized, engaging content. Whether it's a static image, animated graphic, or interactive map, infographics make your message easier to digest and remember.
 
@@ -257,13 +245,9 @@ Use the 5W1H method to map out your content. Then, gather only the most importan
 Now comes the fun part. Replace the placeholder content with your own.
 
 **Edit Text:** Add your headline, subheadings, and short paragraphs.
-
 **Choose Fonts:** Stick with 2-3 fonts max for consistency and readability.
-
 **Add Icons & Images:** Use free elements from Canva's library or upload your own visuals.
-
 **Adjust Colors:** Match your brand colors or pick a modern, minimalist color palette.
-
 **Organize Layout:** Use a top-down or left-right reading flow with clear sections.
 
 Keep things simple. A clean layout improves understanding and makes your infographic more shareable.
@@ -313,9 +297,7 @@ Your infographic needs to look good everywhere — on your site, on social media
 ### For Websites
 
 **Size:** Max width ~800px
-
 **Format:** Use WebP for best speed and SEO, or PNG for detail.
-
 **SEO Tip:** Name files with keywords (e.g., infographic-canva-tips.webp) and add Alt text like "how to design an infographic using Canva."
 
 ### For Social Media

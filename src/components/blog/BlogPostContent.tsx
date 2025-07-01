@@ -7,7 +7,7 @@ interface BlogPostContentProps {
 }
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
-  // Simplified content processing with unified styling and reduced spacing
+  // Simplified content processing with reduced spacing
   const processContent = (content: string) => {
     const lines = content.split('\n');
     const elements: React.ReactNode[] = [];
@@ -15,29 +15,6 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
 
     while (currentIndex < lines.length) {
       const line = lines[currentIndex];
-
-      // Handle video content
-      if (line.includes('<video')) {
-        const videoMatch = line.match(/src="([^"]+)"/);
-        if (videoMatch) {
-          elements.push(
-            <div key={currentIndex} className="my-8">
-              <div className="relative group overflow-hidden rounded-xl shadow-lg">
-                <video
-                  controls
-                  className="w-full h-80 object-cover"
-                  poster=""
-                >
-                  <source src={videoMatch[1]} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          );
-        }
-        currentIndex++;
-        continue;
-      }
 
       // Handle table detection with modern styling
       if (line.includes('|') && line.includes('Mistake') && line.includes('Fix')) {
@@ -54,20 +31,20 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
 
         if (tableData.length > 0) {
           elements.push(
-            <div key={currentIndex} className="my-10">
+            <div key={currentIndex} className="my-6">
               <div className="overflow-hidden rounded-xl shadow-lg border-0">
                 <Table>
                   <TableHeader className="bg-gradient-to-r from-blue-600 to-purple-600">
                     <TableRow>
-                      <TableHead className="text-white font-bold text-lg py-4">Mistake</TableHead>
-                      <TableHead className="text-white font-bold text-lg py-4">Fix</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-3">Mistake</TableHead>
+                      <TableHead className="text-white font-bold text-lg py-3">Fix</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {tableData.map((row, idx) => (
                       <TableRow key={idx} className={idx % 2 === 0 ? "bg-white hover:bg-blue-50" : "bg-blue-50/50 hover:bg-blue-100"}>
-                        <TableCell className="font-bold text-blue-600 text-base py-4">{row[0]}</TableCell>
-                        <TableCell className="text-gray-700 text-base py-4">{row[1]}</TableCell>
+                        <TableCell className="font-bold text-blue-600 text-base py-3">{row[0]}</TableCell>
+                        <TableCell className="text-gray-700 text-base py-3">{row[1]}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -84,8 +61,8 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
       // Handle main headers with beautiful styling
       if (line.startsWith('# ')) {
         elements.push(
-          <div key={currentIndex} className="text-center my-12">
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-4 leading-tight">
+          <div key={currentIndex} className="text-center my-6">
+            <h1 className="text-4xl md:text-5xl font-bold gradient-text mb-3 leading-tight">
               {line.slice(2)}
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -94,9 +71,9 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
       } else if (line.startsWith('## ')) {
         const title = line.slice(3);
         elements.push(
-          <div key={currentIndex} className="my-10">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-3">{title}</h2>
+          <div key={currentIndex} className="my-6">
+            <div className="text-center mb-5">
+              <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-2">{title}</h2>
               <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
             </div>
           </div>
@@ -106,8 +83,8 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
         const isNumbered = /^\d+\./.test(title);
         
         elements.push(
-          <div key={currentIndex} className="my-8">
-            <div className="flex items-center gap-3 mb-4">
+          <div key={currentIndex} className="my-4">
+            <div className="flex items-center gap-3 mb-3">
               {isNumbered && (
                 <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold shadow-lg">
                   {title.match(/^\d+/)?.[0]}
@@ -120,7 +97,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
           </div>
         );
       } else if (line.trim() === '') {
-        elements.push(<div key={currentIndex} className="h-4" />);
+        elements.push(<div key={currentIndex} className="h-2" />);
       } else if (line.startsWith('![')) {
         // Handle images with modern styling
         const altMatch = line.match(/!\[(.*?)\]/);
@@ -128,7 +105,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
         
         if (altMatch && urlMatch) {
           elements.push(
-            <div key={currentIndex} className="my-8">
+            <div key={currentIndex} className="my-5">
               <div className="relative group overflow-hidden rounded-xl shadow-lg">
                 <img
                   src={urlMatch[1]}
@@ -138,7 +115,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               {altMatch[1] && (
-                <p className="text-center text-gray-600 italic mt-3 text-base">{altMatch[1]}</p>
+                <p className="text-center text-gray-600 italic mt-2 text-base">{altMatch[1]}</p>
               )}
             </div>
           );
@@ -171,7 +148,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
           }
           
           elements.push(
-            <div key={currentIndex} className={`my-4 ${bgColor} ${borderColor} border-l-4 rounded-r-lg p-4`}>
+            <div key={currentIndex} className={`my-3 ${bgColor} ${borderColor} border-l-4 rounded-r-lg p-3`}>
               <div className="flex items-start gap-2">
                 <div className={`w-2 h-2 rounded-full ${borderColor.replace('border-l-', 'bg-')} mt-2 flex-shrink-0`}></div>
                 <div>
@@ -185,7 +162,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ content }) => {
           elements.push(
             <p 
               key={currentIndex} 
-              className="mb-4 leading-relaxed text-gray-700 text-base"
+              className="mb-2 leading-relaxed text-gray-700 text-base"
             >
               {cleanText}
             </p>
