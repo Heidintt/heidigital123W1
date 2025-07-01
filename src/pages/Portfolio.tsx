@@ -106,7 +106,7 @@ const Portfolio = () => {
           backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         />
 
-        <section className="py-12 px-4" style={{backgroundColor: '#ffffff'}}>
+        <section className="py-8 px-4" style={{backgroundColor: '#ffffff'}}>
           <div className="container mx-auto max-w-7xl">
             <SectionHeading
               title="Case Studies"
@@ -114,7 +114,7 @@ const Portfolio = () => {
               centered
             />
 
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <div className="flex flex-wrap justify-center gap-2 mb-6">
               {categories.map((category, index) => (
                 <Button
                   key={index}
@@ -128,7 +128,7 @@ const Portfolio = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredItems.map((item) => (
                 <PortfolioCard
                   key={item.id}
@@ -142,7 +142,7 @@ const Portfolio = () => {
             </div>
 
             {filteredItems.length === 0 && (
-              <div className="text-center py-12">
+              <div className="text-center py-8">
                 <p className="text-gray-500 text-lg">No portfolio items found for this category.</p>
               </div>
             )}
