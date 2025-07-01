@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -7,7 +8,7 @@ import PortfolioCard from "@/components/PortfolioCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
-import { getIconByName } from "@/utils/iconMapping";
+import servicesData from "@/data/services.json";
 import homepageData from "@/data/homepage.json";
 
 const Index = () => {
@@ -58,12 +59,7 @@ const Index = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
             {homepageData.services.map((service, index) => (
-              <ServiceCard 
-                key={index} 
-                title={service.title}
-                description={service.description}
-                icon={getIconByName(service.icon)}
-              />
+              <ServiceCard key={index} {...service} />
             ))}
           </div>
         </div>
