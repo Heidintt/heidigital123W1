@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -36,14 +35,13 @@ const Services = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {servicesData.services.map((service, index) => (
+            {servicesData.map((service) => (
               <ServiceCard
-                key={index}
+                key={service.id}
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
-                features={service.features}
-                price={service.price}
+                link={service.link}
               />
             ))}
           </div>

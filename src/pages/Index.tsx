@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -22,30 +21,29 @@ const Index = () => {
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   });
 
+  const { hero, about, services, portfolio, testimonials, callToAction } = homepageData;
+
   return (
     <Layout>
       <Hero
-        title={homepageData.hero_title}
-        subtitle={homepageData.hero_subtitle}
-        backgroundImage={homepageData.hero_image}
-        ctaText={homepageData.cta_text}
-        ctaLink={homepageData.cta_link}
+        title={hero.title}
+        subtitle={hero.subtitle}
+        backgroundImage={hero.backgroundImage}
       />
 
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title="About Heidi Digital"
-            subtitle="We combine human creativity with AI precision to deliver marketing solutions that actually work"
+            title={about.title}
+            subtitle={about.subtitle}
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-            <p className="text-gray-600 text-base">
-              At Heidi Digital, we specialize in AI-powered marketing solutions that transform how businesses connect with their audiences. Our innovative approach combines cutting-edge technology with creative strategy.
-            </p>
-            <p className="text-gray-600 text-base">
-              From SEO optimization to social media management, we deliver measurable results that drive growth and enhance your brand's digital presence in today's competitive marketplace.
-            </p>
+            {about.content.map((paragraph, index) => (
+              <p key={index} className="text-gray-600 text-base">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </section>
@@ -53,13 +51,13 @@ const Index = () => {
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title="Our Services"
-            subtitle="Comprehensive AI-powered marketing solutions tailored to your business needs"
+            title={services.title}
+            subtitle={services.subtitle}
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {homepageData.services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+            {servicesData.map((service) => (
+              <ServiceCard key={service.id} {...service} />
             ))}
           </div>
         </div>
@@ -68,32 +66,14 @@ const Index = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title="Featured Work"
-            subtitle="Explore our successful digital marketing campaigns and case studies"
+            title={portfolio.title}
+            subtitle={portfolio.subtitle}
             centered
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            <PortfolioCard
-              title="FMCG DAO Strategy"
-              description="Revolutionizing FMCG brand engagement through DAO-driven marketing strategies."
-              image="https://images.unsplash.com/photo-1519389950473-47a04ca0ecd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              categories={["Strategy", "Web3"]}
-              link="/portfolio/fmcg-dao-strategy"
-            />
-            <PortfolioCard
-              title="Microlino EV Campaign"
-              description="Driving awareness and pre-orders for the Microlino electric vehicle with innovative digital campaigns."
-              image="https://images.unsplash.com/photo-1617584184774-0119c3392e19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEVWfGVufDB8fDB8fHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
-              categories={["Digital Marketing", "Campaign"]}
-              link="/portfolio/microlino-strategy"
-            />
-            <PortfolioCard
-              title="I Choose The Sun"
-              description="Creating a viral campaign for Sun Life, promoting financial security and bright futures."
-              image="https://images.unsplash.com/photo-1598515220910-044ca3489489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3VubGlnaHR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60"
-              categories={["Social Media", "Viral"]}
-              link="/portfolio/i-choose-the-sun"
-            />
+            {portfolio.items.map((item) => (
+              <PortfolioCard key={item.id} {...item} />
+            ))}
           </div>
         </div>
       </section>
@@ -101,32 +81,25 @@ const Index = () => {
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <SectionHeading
-            title="Client Testimonials"
-            subtitle="See what our clients say about working with us"
+            title={testimonials.title}
+            subtitle={testimonials.subtitle}
             centered
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {homepageData.testimonials.map((testimonial, index) => (
-              <TestimonialCard 
-                key={index} 
-                quote={testimonial.quote}
-                author={testimonial.name}
-                company={testimonial.company}
-                rating={testimonial.rating}
-                image={testimonial.image}
-              />
+            {testimonials.items.map((item) => (
+              <TestimonialCard key={item.id} {...item} />
             ))}
           </div>
         </div>
       </section>
 
       <CallToAction
-        title="Ready to Grow Your Business?"
-        description="Discover how our AI-powered marketing solutions can transform your digital presence and drive measurable results."
-        primaryButtonText="Get Started Today"
-        primaryButtonLink="/contact"
-        secondaryButtonText="View Our Services"
-        secondaryButtonLink="/services"
+        title={callToAction.title}
+        description={callToAction.description}
+        primaryButtonText={callToAction.primaryButtonText}
+        primaryButtonLink={callToAction.primaryButtonLink}
+        secondaryButtonText={callToAction.secondaryButtonText}
+        secondaryButtonLink={callToAction.secondaryButtonLink}
         backgroundClass="bg-gradient-to-r from-heidigital-blue to-heidigital-purple"
       />
     </Layout>
