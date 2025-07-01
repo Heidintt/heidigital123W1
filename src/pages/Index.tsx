@@ -1,392 +1,190 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
-import BlogCard from "@/components/BlogCard";
 import PortfolioCard from "@/components/PortfolioCard";
+import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
-import ContactForm from "@/components/ContactForm";
-import { Link } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 import { 
-  BarChart3, PenSquare, Search, Megaphone, Users, 
-  Settings, Brain, FileText, Download, Lightbulb,
-  Mail, ArrowRight, Zap, Shield, Target,
-  Globe, TrendingUp, Award, Rocket, Star, CheckCircle
+  Brain, Zap, Users, Image, Target, BarChart3 
 } from "lucide-react";
 
 const Index = () => {
+  // SEO optimization for homepage
+  useSEO({
+    title: "Heidi Digital - AI-Powered Marketing Solutions | Digital Marketing Agency",
+    description: "Professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform your business.",
+    keywords: "digital marketing, AI marketing, SEO, social media marketing, content creation, branding, digital advertising, marketing agency",
+    url: "https://heidigital.info/",
+    type: "website"
+  });
+
+  const services = [
+    {
+      icon: Brain,
+      title: "AI Marketing Strategy",
+      description: "Leverage artificial intelligence to create data-driven marketing strategies that deliver measurable results and optimize your marketing ROI.",
+      price: "Competitive & Flexible"
+    },
+    {
+      icon: Zap,
+      title: "Content Creation & SEO",
+      description: "AI-generated content that ranks high on search engines and engages your target audience with compelling storytelling.",
+      price: "Competitive & Flexible"
+    },
+    {
+      icon: Users,
+      title: "Social Media Management",
+      description: "Comprehensive social media strategy and management powered by AI insights to build and grow your online community.",
+      price: "Competitive & Flexible"
+    },
+    {
+      icon: Image,
+      title: "Branding & Design",
+      description: "Create compelling brand identities that resonate with your target audience and stand out in the competitive marketplace.",
+      price: "Competitive & Flexible"
+    },
+    {
+      icon: Target,
+      title: "Digital Advertising",
+      description: "Maximize your ROI with AI-optimized advertising campaigns across Google, Facebook, and other major platforms.",
+      price: "Competitive & Flexible"
+    },
+    {
+      icon: BarChart3,
+      title: "SEO Optimization",
+      description: "Boost your search engine rankings with our comprehensive SEO strategies and technical optimization techniques.",
+      price: "Competitive & Flexible"
+    }
+  ];
+
+  const portfolioItems = [
+    {
+      id: "fmcg-dao-strategy",
+      title: "Web3 DAO Models in FMCG Marketing Strategy",
+      description: "Academic research exploring how Web3-based community-owned DAO models can transform brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035.",
+      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Marketing Strategy", "Academic Research", "Web3 & Blockchain", "Consumer Engagement"],
+      link: "/portfolio/fmcg-dao-strategy"
+    },
+    {
+      id: "microlino-strategy",
+      title: "Microlino 2026 Australian Launch Campaign",
+      description: "Comprehensive strategic marketing communications campaign for Microlino's Australian market entry, featuring the 'Half the Space, Twice the Life' concept and integrated multi-channel approach.",
+      image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications", "EV Marketing"],
+      link: "/portfolio/microlino-strategy"
+    },
+    {
+      id: "i-choose-the-sun",
+      title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
+      description: "A viral influencer-led social media campaign promoting positivity during COVID-19 pandemic, generating 75.6M views and 8,000+ user videos.",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Social Media", "Influencer Marketing", "Campaign Strategy"],
+      link: "/portfolio/i-choose-the-sun"
+    }
+  ];
+
   return (
     <Layout>
-      {/* Hero Section with Banner Background */}
       <Hero
         title="Transform Your Digital Future"
-        subtitle="Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape."
-        ctaText="Start Your Journey"
+        subtitle="AI-powered marketing solutions that drive real results and accelerate your business growth in the digital landscape"
+        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        ctaText="Get Started Today"
         ctaLink="/contact"
-        secondaryCtaText="Explore Solutions"
-        secondaryCtaLink="/solutions"
-        backgroundImage="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        secondaryCtaText="View Our Work"
+        secondaryCtaLink="/portfolio"
       />
 
-      {/* Features Highlight Section */}
-      <section className="py-6 px-4 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="py-16 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="text-center group">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Rocket className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base font-bold mb-2 text-gray-900">Launch Fast</h3>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                Get your digital presence up and running quickly with our streamlined processes
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <Star className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base font-bold mb-2 text-gray-900">Premium Quality</h3>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                Every project receives our full attention to detail and commitment to excellence
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <CheckCircle className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base font-bold mb-2 text-gray-900">Proven Results</h3>
-              <p className="text-gray-600 text-xs leading-relaxed">
-                Data-driven strategies that deliver measurable outcomes for your business
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <SectionHeading
+            title="Our Digital Marketing Services"
+            subtitle="End-to-end marketing solutions designed to transform your business and drive sustainable growth"
+            centered
+          />
 
-      {/* Services Section */}
-      <section className="py-10 px-4 bg-white" aria-label="Our digital marketing services">
-        <div className="container mx-auto">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-2 rounded-full font-medium mb-4 text-xs">
-              <Settings className="w-3 h-3" />
-              Our Expertise
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight tracking-tight">
-              Next-Generation
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
-                Digital Solutions
-              </span>
-            </h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive marketing solutions engineered for Australian businesses 
-              ready to dominate the digital landscape
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" role="list">
-            <div className="group bg-gradient-to-br from-white to-blue-50/50 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-blue-200 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Megaphone className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-900 leading-tight">Social Media Mastery</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-xs">
-                Strategic social media campaigns that build authentic connections and drive measurable engagement across all platforms.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-white to-purple-50/50 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <PenSquare className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-900 leading-tight">Content Excellence</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-xs">
-                Compelling, data-driven content that resonates with Australian audiences and converts visitors into loyal customers.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-white to-green-50/50 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Search className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-900 leading-tight">SEO Domination</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-xs">
-                Advanced SEO strategies that put your business at the top of Australian search results and drive organic growth.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-white to-pink-50/50 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-pink-200 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Users className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-900 leading-tight">Brand Evolution</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-xs">
-                Strategic brand development that positions your business as a leader in the Australian market.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-white to-cyan-50/50 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-cyan-200 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <BarChart3 className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-900 leading-tight">Precision Advertising</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-xs">
-                Data-driven advertising campaigns that maximize ROI and reach your ideal Australian customers.
-              </p>
-            </div>
-
-            <div className="group bg-gradient-to-br from-white to-orange-50/50 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 hover:border-orange-200 transform hover:-translate-y-2">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Brain className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-900 leading-tight">AI Innovation</h3>
-              <p className="text-gray-600 mb-3 leading-relaxed text-xs">
-                Cutting-edge AI solutions that automate, optimize, and revolutionize your marketing approach.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              Explore All Services <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section with Image */}
-      <section className="py-12 px-4 bg-gradient-to-br from-gray-50 to-blue-50/30" aria-label="About Heidigital Australia">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-xl"></div>
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Modern digital workspace with advanced analytics"
-                className="rounded-xl shadow-xl relative z-10"
-                loading="lazy"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                price={service.price}
               />
-            </div>
-            
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
-                <Award className="w-4 h-4" />
-                Innovation Leaders
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-                Pioneering the Future of 
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
-                  Digital Marketing
-                </span>
-              </h2>
-              
-              <div className="space-y-4 text-base text-gray-600 leading-relaxed">
-                <p>
-                  At Heidigital Australia, we merge cutting-edge technology with proven marketing methodologies to deliver unprecedented results for forward-thinking businesses.
-                </p>
-                <p>
-                  Our data-driven approach combines deep market insights with innovative strategies, ensuring every campaign is optimized for maximum impact in the Australian digital landscape.
-                </p>
-                <p>
-                  As pioneers in next-generation marketing solutions, we're not just keeping up with digital transformation—we're leading it.
-                </p>
-              </div>
-              
-              <div className="flex flex-wrap gap-4 mt-6">
-                <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
-                  <Shield className="w-4 h-4" />
-                  <span className="font-medium text-sm">Fresh Perspective</span>
-                </div>
-                <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full">
-                  <Target className="w-4 h-4" />
-                  <span className="font-medium text-sm">Focused Approach</span>
-                </div>
-                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full">
-                  <TrendingUp className="w-4 h-4" />
-                  <span className="font-medium text-sm">Growth Mindset</span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Technology Solutions Section */}
-      <section className="py-12 px-4 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" aria-label="Technology-powered marketing solutions">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 px-4 py-2 rounded-full font-medium mb-4 border border-white/20 text-sm">
-              <Brain className="w-4 h-4" />
-              Technology-Powered Solutions
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight tracking-tight">
-              Advanced Technology
-              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mt-2">
-                Meets Marketing Excellence
-              </span>
-            </h2>
-            <p className="text-base md:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
-              Harness the power of cutting-edge technology and data analytics to revolutionize your marketing strategy
-            </p>
-          </div>
+          <SectionHeading
+            title="Featured Portfolio"
+            subtitle="Discover our success stories and see how we've helped businesses achieve remarkable growth"
+            centered
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
-            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Brain className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold mb-4 leading-tight">Intelligent Content Systems</h3>
-              <p className="text-white/70 leading-relaxed text-sm">
-                Advanced algorithms create high-converting, SEO-optimized content that adapts to your brand voice and audience preferences in real-time.
-              </p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Lightbulb className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold mb-4 leading-tight">Predictive Market Analytics</h3>
-              <p className="text-white/70 leading-relaxed text-sm">
-                Machine learning models predict market trends, consumer behavior, and campaign performance to keep you ahead of the competition.
-              </p>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <Settings className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold mb-4 leading-tight">Automated Optimization</h3>
-              <p className="text-white/70 leading-relaxed text-sm">
-                Self-learning systems continuously optimize campaigns, budgets, and targeting to maximize ROI while minimizing manual intervention.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/solutions/ai-tools"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold text-base transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              Explore Technology Tools <ArrowRight className="w-5 h-5" />
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {portfolioItems.map((item) => (
+              <PortfolioCard
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                categories={item.categories}
+                link={item.link}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Portfolio Preview Section */}
-      <section className="py-12 px-4 bg-gray-50" aria-label="Our portfolio showcase">
+      <section className="py-12 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
-              <Globe className="w-4 h-4" />
-              Success Stories
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 leading-tight tracking-tight">
-              Proven Results for
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
-                Forward-Thinking Brands
-              </span>
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Discover how we've transformed businesses across industries with innovative digital strategies
-            </p>
-          </div>
+          <SectionHeading
+            title="What Our Clients Say"
+            subtitle="Success stories from businesses we've helped transform"
+            centered
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
-            <PortfolioCard
-              title="FMCG DAO Marketing Revolution"
-              description="Pioneering research into Web3-based community governance models that transformed brand loyalty and consumer engagement by 350%."
-              image="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              categories={["Web3 Strategy", "Consumer Research"]}
-              link="/portfolio/fmcg-dao-strategy"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <TestimonialCard
+              quote="Heidigital transformed our social media strategy, increasing our engagement by 200% in just three months. Their data-driven approach has been a game-changer."
+              author="James Wilson"
+              company="TechStart Inc."
+              rating={5}
             />
-            <PortfolioCard
-              title="Microlino EV Launch Strategy"
-              description="Comprehensive market entry campaign for revolutionary electric vehicle, generating 75M+ impressions and driving pre-orders."
-              image="https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              categories={["Campaign Strategy", "EV Marketing"]}
-              link="/portfolio/microlino-strategy"
+            <TestimonialCard
+              quote="The SEO optimization services helped us achieve a 78% increase in organic traffic and significantly improved our conversion rates. Highly recommend!"
+              author="Linda Chen"
+              company="Global Retail Solutions"
+              rating={5}
             />
-            <PortfolioCard
-              title="Sun Life Viral Campaign"
-              description="'I Choose The Sun' influencer campaign achieved 75.6M views and 8,000+ user-generated videos during challenging times."
-              image="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              categories={["Viral Marketing", "Influencer Strategy"]}
-              link="/portfolio/i-choose-the-sun"
+            <TestimonialCard
+              quote="Working with Heidigital on our AI marketing initiatives has given us a competitive edge. Their innovative approach has revolutionized how we connect with customers."
+              author="Robert Taylor"
+              company="Innovate Financial"
+              rating={5}
             />
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-base group"
-            >
-              View All Case Studies 
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section - Fixed button visibility */}
       <CallToAction
-        title="Ready to Transform Your Digital Presence?"
-        description="Join forward-thinking Australian businesses that are revolutionizing their marketing with our cutting-edge solutions. Let's build your digital future together."
-        primaryButtonText="Start Your Transformation"
+        title="Ready to Transform Your Business?"
+        description="Let's discuss how our AI-powered marketing solutions can drive significant growth for your business in today's competitive landscape."
+        primaryButtonText="Get Free Consultation"
         primaryButtonLink="/contact"
-        secondaryButtonText="Explore Our Solutions"
+        secondaryButtonText="View All Services"
         secondaryButtonLink="/services"
-        backgroundClass="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600"
+        backgroundClass="bg-gradient-to-r from-blue-600 to-purple-600"
       />
-
-      {/* Contact Section - Removed phone number */}
-      <section className="py-12 px-4 bg-white" aria-label="Contact form and information">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-4 text-sm">
-                <Mail className="w-4 h-4" />
-                Get in Touch
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-                Let's Start Your
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">
-                  Digital Journey
-                </span>
-              </h2>
-              
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                Ready to revolutionize your marketing? Our experts are standing by to craft your personalized digital transformation strategy.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-base mb-1">Email Us</h3>
-                    <a href="mailto:info@heidigital.com.au" className="text-blue-600 hover:text-blue-700 text-sm">
-                      info@heidigital.com.au
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-gray-50 to-blue-50/50 p-6 rounded-xl shadow-md border border-gray-100">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

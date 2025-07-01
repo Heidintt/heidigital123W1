@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -6,12 +5,18 @@ import SectionHeading from "@/components/SectionHeading";
 import PortfolioCard from "@/components/PortfolioCard";
 import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
-
-console.log("Portfolio.tsx file is loading");
+import { useSEO } from "@/hooks/useSEO";
 
 const Portfolio = () => {
-  console.log("Portfolio component is starting to render");
-  
+  // SEO optimization for portfolio page
+  useSEO({
+    title: "Portfolio - Our Success Stories | Heidi Digital",
+    description: "Explore our success stories and see how we've helped businesses achieve remarkable growth through digital marketing campaigns and strategies.",
+    keywords: "portfolio, case studies, digital marketing success, marketing campaigns, client results",
+    url: "https://heidigital.info/portfolio",
+    type: "website"
+  });
+
   const [activeCategory, setActiveCategory] = useState("All");
   
   const portfolioItems = [

@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -6,6 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import CallToAction from "@/components/CallToAction";
+import { useSEO } from "@/hooks/useSEO";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
   Brain, CheckCircle2, ArrowRight, Target, Zap, 
@@ -15,6 +15,15 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Services = () => {
+  // SEO optimization for services page
+  useSEO({
+    title: "Digital Marketing Services - AI-Powered Solutions | Heidi Digital",
+    description: "Comprehensive digital marketing services including AI marketing strategy, SEO, social media management, content creation, branding, and digital advertising.",
+    keywords: "digital marketing services, AI marketing, SEO services, social media management, content creation, branding, digital advertising",
+    url: "https://heidigital.info/services",
+    type: "website"
+  });
+
   const services = [
     {
       icon: Brain,
