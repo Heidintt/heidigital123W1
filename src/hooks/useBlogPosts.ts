@@ -25,6 +25,337 @@ export const useBlogPosts = () => {
       try {
         const newBlogPosts: BlogPost[] = [
           {
+            slug: "linkedin-personal-branding-mistakes-marketing-services",
+            title: "4 Common LinkedIn Personal Branding Mistakes That Kill Your Marketing Success",
+            description: "Are you unknowingly sabotaging your LinkedIn personal branding efforts? Discover 4 common mistakes professionals make and how to build a compelling personal brand on LinkedIn that attracts clients, jobs, and growth in marketing services.",
+            featured_image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            date: "2025-01-02",
+            author: "Heidi Digital Team",
+            category: "LinkedIn Marketing",
+            tags: ["LinkedIn", "Personal Branding", "Marketing Services", "Professional Development", "Social Media", "Digital Marketing"],
+            seo_title: "4 Common LinkedIn Personal Branding Mistakes That Kill Your Marketing Success",
+            seo_description: "Are you unknowingly sabotaging your LinkedIn personal branding efforts? Discover 4 common mistakes professionals make and how to build a compelling personal brand on LinkedIn that attracts clients, jobs, and growth in marketing services.",
+            content: `LinkedIn is no longer just a platform for online resumes—it's the digital stage for professionals to build their personal brand on LinkedIn, showcase expertise, and grow their influence in industries like marketing services, SEO, and content marketing. But even experienced professionals often fall into traps that weaken their visibility and impact.
+
+![LinkedIn Personal Branding Strategy](https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+Here are four of the most common mistakes that could be holding your profile back—plus practical ways to fix them and grow your professional presence using AI tools, automation, and a clear personal branding strategy.
+
+## Why LinkedIn Personal Branding Matters in 2025
+
+LinkedIn has evolved from a simple networking platform to a powerful business development tool. With over 900 million users worldwide, it's where decisions happen, deals are made, and careers are built. Your personal brand on LinkedIn isn't just about getting noticed—it's about establishing authority, building trust, and creating opportunities.
+
+![Professional Networking on LinkedIn](https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+## Mistake #1: Your Profile Reads Like a Resume, Not a Personal Brand
+
+Most users treat their LinkedIn profile like a static CV—just job titles, dates, and responsibilities. But if you want to build a personal brand on LinkedIn, your profile needs to tell a story, not just list facts.
+
+### Why It's a Problem
+
+A resume gets you a job interview. A LinkedIn profile, however, should help you connect, influence, and generate leads. It should answer: "Why should someone follow or hire me?"
+
+### How to Fix It
+
+**Optimize Your Headline:**
+Instead of "Marketing Manager at ABC Corp," use:
+"Helping B2B SaaS brands grow with data-driven content marketing & SEO services."
+
+**Pro tip:** Use keywords like "digital marketing services," "marketing consulting," or "lead generation" in your headline.
+
+**Write a Strong About Section:**
+Structure it like this:
+
+**Hook** – What problem do you solve?
+
+**Journey** – What led you here?
+
+**Value** – What can others expect from you? (E.g., "I share weekly tips on performance marketing.")
+
+**Call-to-Action** – Invite people to connect, collaborate, or message you.
+
+**Use the STAR Method in Experience:**
+Instead of duties, highlight impact.
+Example: "Grew organic reach by 45% in 6 months by launching a video-led social media strategy."
+
+![LinkedIn Profile Optimization](https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+## Mistake #2: Your Content Is Self-Promotional Instead of Valuable
+
+You're posting, but are you adding value? Many professionals only share job wins, company news, or personal milestones. This feels self-centered—and audiences tune out.
+
+### Why It's a Problem
+
+LinkedIn favors content that sparks real interaction. People follow thought leaders who educate and inspire, not those who just broadcast.
+
+### How to Fix It
+
+**Follow the 80/20 Rule:**
+- 80% value (tips, insights, helpful stories)
+- 20% promotion (milestones, product news)
+
+**Use Engaging Content Formats:**
+
+**Carousels:** E.g., "5 LinkedIn Tips and Tricks for Marketers"
+
+**Text posts:** Personal anecdotes or lessons
+
+**Polls:** Great for engagement and quick market feedback
+
+**Try This Winning Post Formula:**
+
+**Hook:** Ask a bold question or make a big promise
+
+**Body:** Share useful insights or personal experience
+
+**Engagement CTA:** "What's your take on this?" or "Have you tried this in your own marketing strategy?"
+
+## Mistake #3: You're Not Actively Networking
+
+If you're only posting and not engaging with others, you're missing half the value of LinkedIn.
+
+### Why It's a Problem
+
+Engagement is a two-way street. Leaving thoughtful comments builds visibility, relationships, and opens doors to career growth and professional development.
+
+### How to Fix It
+
+**Comment Daily:**
+Reply to 5–10 posts per day with thoughtful insights.
+Example: "Love this perspective, [Name]! I've used a similar tactic in content marketing services and saw great results."
+
+**Follow Industry Voices:**
+Engage with experts in SEO, digital marketing, and marketing automation. Be visible in their comments section.
+
+**Respond to Everyone:**
+When someone comments on your post, reply! It builds rapport and boosts future reach.
+
+![LinkedIn Networking Strategy](https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+## Mistake #4: You're Inconsistent and Lacking a Clear Niche
+
+One day you're posting about marketing, the next it's your cat, then a random article. It confuses your audience and the algorithm.
+
+### Why It's a Problem
+
+To build trust and authority, you need to be consistent and focused. Personal branding for marketers means showing up regularly with a clear theme.
+
+### How to Fix It
+
+**Define Your Niche:**
+Choose 2–3 content pillars. For marketers, that could be:
+
+- Performance marketing
+- Marketing consulting  
+- Social media strategy
+
+**Create a Content Calendar:**
+
+**Beginner:** Post 2–3 times weekly on set days.
+
+**Intermediate:** Mix formats and post 3–5 times weekly.
+
+**Use Batch Creation:**
+Set aside 1–2 hours weekly to plan and schedule all your posts. Tools like Buffer, Later, or Hypefury make it easy.
+
+## Bonus: How AI and Automation Can Boost Your LinkedIn Personal Branding in 2025
+
+Want to build your brand faster? Embrace tools like:
+
+- **ChatGPT or Notion AI:** To brainstorm post ideas or improve your writing
+- **Scheduling Tools:** Automate your weekly content
+- **Profile Analyzers:** Get instant feedback to optimize your LinkedIn profile
+
+**Pro Tip:** Pair your LinkedIn presence with a personal website on Lovable, Wix AI, or WordPress to showcase your work and digital marketing services in full.
+
+## Final Thoughts: Build With Purpose
+
+LinkedIn personal branding is no longer optional—it's essential. Whether you're in marketing services, SEO, or just starting out, avoid these four mistakes, and you'll build a magnetic profile that drives opportunity.
+
+**Today's Action Plan:**
+
+- Update your headline with strong keywords
+- Leave one thoughtful comment
+- Plan 2 posts for this week using the 80/20 rule
+
+And if you're ready to take your brand beyond LinkedIn, start building your own portfolio site today. Your future clients and collaborators are already searching.`
+          },
+          {
+            slug: "create-infographics-with-canva-free",
+            title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
+            description: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
+            featured_image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+            date: "2025-01-03",
+            author: "Heidi Digital Team",
+            category: "Design & Content",
+            tags: ["Canva", "Infographics", "Content Marketing", "Visual Design", "Free Tools", "Digital Marketing"],
+            seo_title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
+            seo_description: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
+            content: `In today's digital world, people are bombarded with more information than ever. To stand out, you need content that's easy to understand and visually appealing. That's where infographics come in — and Canva makes it easy for anyone to design one, even with zero graphic design experience.
+
+![Canva Infographic Design](https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+Whether you're a beginner, marketer, or small business owner, this guide will show you how to create infographics with Canva for free — and do it well.
+
+## Why Infographics Matter in the Age of Visual Content
+
+Infographics combine information and visuals to turn complex data into bite-sized, engaging content. Whether it's a static image, animated graphic, or interactive map, infographics make your message easier to digest and remember.
+
+![Visual Content Statistics](https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+Here's why they're so powerful:
+
+### Grab Attention & Stick in People's Minds
+
+Studies show our brains process visuals 60,000 times faster than text. That's why infographics often outperform plain articles. With eye-catching design and concise information, they help your audience remember key messages longer — a major win for visual storytelling.
+
+### Boost Engagement & Shareability
+
+Infographics get more shares, likes, and comments than text-only content — especially on platforms like LinkedIn and Instagram. This makes them a cost-effective strategy for marketers and small business owners to boost organic reach.
+
+### Help with SEO & Content Marketing
+
+A well-designed infographic can improve SEO performance by increasing dwell time and earning backlinks. This means better rankings, more traffic, and stronger domain authority — all key parts of a smart digital marketing strategy.
+
+### Build Brand Credibility
+
+Infographics present information in a professional, clean, and structured way. This boosts your perceived credibility, making your brand look more trustworthy and up-to-date with modern content marketing tools.
+
+### Simplify Complex Information
+
+Infographics break down difficult data into digestible chunks. Instead of boring readers with paragraphs, you can turn charts, stats, or timelines into a story they'll actually enjoy. This is essential for anyone trying to communicate ideas clearly, especially in infographic marketing.
+
+## How to Create Infographics with Canva: A Step-by-Step Guide
+
+You don't need expensive software or design skills to make an infographic. With Canva for beginners, anyone can start designing in minutes.
+
+![Canva Design Process](https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+### Step 1: Define Your Goal
+
+Before you start designing, be clear on the following:
+
+- What is the key message you want to share?
+- Who is your audience? (e.g., students, small business owners, marketers)
+- Where will you publish it? (Social media? Blog? Presentation?)
+- Why are you using an infographic instead of text?
+- How should readers interpret your data?
+
+Use the 5W1H method to map out your content. Then, gather only the most important data points, ideas, or visuals you want to include.
+
+### Step 2: Log In to Canva and Choose a Template
+
+- Go to Canva.com and sign in (you can use your Google or Facebook account)  
+- Search "infographic" in the Canva template library
+- Choose a free template that fits your topic and message
+- **Pro tip:** avoid templates with a crown icon — those require a paid subscription
+
+### Step 3: Customize Your Infographic
+
+Now comes the fun part. Replace the placeholder content with your own.
+
+**Edit Text:** Add your headline, subheadings, and short paragraphs.
+
+**Choose Fonts:** Stick with 2-3 fonts max for consistency and readability.
+
+**Add Icons & Images:** Use free elements from Canva's library or upload your own visuals.
+
+**Adjust Colors:** Match your brand colors or pick a modern, minimalist color palette.
+
+**Organize Layout:** Use a top-down or left-right reading flow with clear sections.
+
+Keep things simple. A clean layout improves understanding and makes your infographic more shareable.
+
+### Step 4: Download & Share
+
+Click "Download" and select PNG, JPG, or PDF. If Canva asks for payment, double-check that all elements used are free. You can also publish directly to social media or embed the infographic on your blog or website.
+
+![Infographic Design Tips](https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+## Tips for Designing Professional Infographics
+
+Follow these infographic design tips to ensure your work is both beautiful and functional:
+
+### Keep It Simple
+
+Less is more. Don't overload your infographic with too much information. Use bullet points, icons, and white space to improve clarity.
+
+### Use Colors Wisely
+
+Stick to 1-2 main colors and 2-3 accents. Use contrast to highlight key info but avoid clashing shades that strain the eyes.
+
+### Visualize Data
+
+Replace long text blocks with charts, icons, or diagrams. Pie charts, bar graphs, and timelines are great for showing trends or comparisons.
+
+### Organize Content Logically
+
+Use headings, arrows, and boxes to guide the reader's eye. Group related info together and ensure the flow is easy to follow.
+
+### Choose Readable Fonts
+
+Use simple, clean fonts like Montserrat or Open Sans. Bold your titles, and make sure body text is at least 14pt for easy reading.
+
+## Common Infographic Design Mistakes to Avoid
+
+| Mistake | Fix |
+|---------|-----|
+| Too much info | Cut non-essential text or split into multiple infographics |
+| Inconsistent design | Stick to a brand style guide with specific fonts/colors |
+| Low-quality images | Use high-resolution icons and avoid blurry visuals |
+| Too many fonts | Limit to 2-3 styles to keep things clean |
+| Weak hierarchy | Emphasize key points with bold text and size variation |
+
+## Optimizing Infographics for Different Platforms
+
+Your infographic needs to look good everywhere — on your site, on social media, and in presentations.
+
+![Social Media Infographics](https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+
+### For Websites
+
+**Size:** Max width ~800px
+
+**Format:** Use WebP for best speed and SEO, or PNG for detail.
+
+**SEO Tip:** Name files with keywords (e.g., infographic-canva-tips.webp) and add Alt text like "how to design an infographic using Canva."
+
+### For Social Media
+
+- Use square (1:1) or vertical (4:5 or 9:16) formats
+- Facebook & Instagram prioritize portrait visuals
+- Pinterest prefers 1000x1500px or 1080x1920px
+- On LinkedIn, use 1200px+ wide images for best engagement
+
+### For Presentations
+
+Use infographics to summarize key points. Make sure titles pop, text is legible from a distance, and colors are consistent across slides.
+
+## Real Examples of Infographics in Action
+
+Infographics are everywhere — from classroom lessons to marketing reports. Here's how different industries use them:
+
+### In Marketing
+
+Use infographics to explain strategies, compare tools (like SEO vs. SEM), or highlight campaign results. Great for content marketing tools and case studies.
+
+### In Education
+
+Teachers use them to visualize timelines, historical events, or scientific concepts. They help students grasp big ideas fast.
+
+### For Small Businesses
+
+A small brand can showcase services, share behind-the-scenes processes, or even design infographic-style resumes. It's a great way to stand out on a budget.
+
+## Final Thoughts: Infographics Are a Smart, Free Power Move
+
+Infographics are no longer just a "nice-to-have" — they're a must-have. With Canva, you can create stunning, effective visuals that boost your content marketing strategy, drive engagement, and build brand trust — without spending a cent.
+
+Whether you're new to design or simply looking to level up your visual content, following this guide will set you on the right path. So go ahead — pick a template, add your story, and let your content speak visually.
+
+**Pro Tip:** Combine your infographics with strong headlines, social posts, and blog content to create a powerful content marketing strategy that drives traffic and builds trust.`
+          },
+          {
             slug: "10-free-ai-marketing-tools-2025",
             title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
             description: "Elevate your marketing in 2025 with 10 free AI tools for content creation, visual design, SEO, and automation. Perfect for small businesses, startups, and solo marketers looking to save time and boost results.",

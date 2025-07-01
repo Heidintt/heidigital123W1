@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -250,6 +251,27 @@
   </url>
   
   <!-- Blog Posts -->
+  <url>
+    <loc>https://heidigital.info/blog/linkedin-personal-branding-mistakes-marketing-services</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://heidigital.info/blog/create-infographics-with-canva-free</loc>
+    <lastmod>2025-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://heidigital.info/blog/10-free-ai-marketing-tools-2025</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <url>
     <loc>https://heidigital.info/blog/ai-marketing-complete-guide</loc>
     <lastmod>2025-07-01</lastmod>
