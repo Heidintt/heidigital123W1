@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -6,7 +7,7 @@ import NotFound from "./NotFound";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostCallToAction from "@/components/blog/BlogPostCallToAction";
-import { BlogPost } from "@/types/blogPost";
+import type { BlogPost as BlogPostType } from "@/types/blogPost";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
