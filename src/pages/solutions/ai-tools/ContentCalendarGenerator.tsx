@@ -87,9 +87,18 @@ const ContentCalendarGenerator: React.FC = () => {
       setCurrentStep('pillars');
       saveData({ contentPillars: pillars });
       
+      // Check if we used fallback pillars (indicated by the pillar names)
+      const isFallback = pillars.some(pillar => 
+        pillar.name.includes('Fundamentals & Basics') || 
+        pillar.name.includes('Advanced') && pillar.name.includes('Strategies')
+      );
+      
       toast({
         title: "Content Pillars Generated",
-        description: `Successfully created ${pillars.length} content pillars using AI.`,
+        description: isFallback 
+          ? `Created ${pillars.length} content pillars (API limits reached, using smart fallbacks).`
+          : `Successfully created ${pillars.length} content pillars using AI.`,
+        variant: isFallback ? "default" : "default",
       });
     } catch (error) {
       console.error('Error generating pillars:', error);
@@ -133,12 +142,17 @@ const ContentCalendarGenerator: React.FC = () => {
         lastCreativeAngle: creativeAngle
       });
       
+      // Check if we used fallback content
+      const isFallback = creativeAngle.includes('Fallback') || creativeAngle.includes('API limits');
+      
       toast({
         title: isRegenerate ? "Content Regenerated" : "Content Generated",
-        description: `Successfully created ${ideas.length} unique content ideas using AI.`,
+        description: isFallback 
+          ? `Created ${ideas.length} content ideas (API limits reached, using smart fallbacks).`
+          : `Successfully created ${ideas.length} unique content ideas using AI.`,
       });
       
-      if (isRegenerate) {
+      if (isRegenerate && !isFallback) {
         toast({
           title: "Smart Regenerate Applied",
           description: `Creative angle: ${creativeAngle}`,

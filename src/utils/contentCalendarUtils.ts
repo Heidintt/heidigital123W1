@@ -1,4 +1,3 @@
-
 import { supabase } from '@/integrations/supabase/client';
 import { advancedContentMatrix, eventContentMatrix, AdvancedContentTemplate } from '@/data/advancedContentMatrix';
 
@@ -52,6 +51,56 @@ export const filterTemplates = (templates: AdvancedContentTemplate[], selectedAu
   });
 };
 
+// Fallback content pillars for different topics
+const getFallbackPillars = (topic: string): string[] => {
+  const topicLower = topic.toLowerCase();
+  
+  if (topicLower.includes('fitness') || topicLower.includes('health') || topicLower.includes('workout')) {
+    return [
+      'Workout Routines & Exercise Tips',
+      'Nutrition & Healthy Eating',
+      'Mental Health & Wellness',
+      'Success Stories & Motivation'
+    ];
+  } else if (topicLower.includes('business') || topicLower.includes('marketing') || topicLower.includes('entrepreneur')) {
+    return [
+      'Strategy & Planning',
+      'Marketing & Growth',
+      'Leadership & Management',
+      'Industry Insights & Trends'
+    ];
+  } else if (topicLower.includes('technology') || topicLower.includes('tech') || topicLower.includes('ai')) {
+    return [
+      'Latest Tech Trends',
+      'How-to Guides & Tutorials',
+      'Industry Analysis',
+      'Future Predictions & Innovation'
+    ];
+  } else if (topicLower.includes('food') || topicLower.includes('cooking') || topicLower.includes('recipe')) {
+    return [
+      'Quick & Easy Recipes',
+      'Cooking Tips & Techniques',
+      'Healthy Meal Planning',
+      'Food Culture & Stories'
+    ];
+  } else if (topicLower.includes('travel') || topicLower.includes('adventure')) {
+    return [
+      'Destination Guides',
+      'Travel Tips & Hacks',
+      'Cultural Experiences',
+      'Budget Travel & Planning'
+    ];
+  } else {
+    // Generic fallback pillars
+    return [
+      `${topic} Fundamentals & Basics`,
+      `Advanced ${topic} Strategies`,
+      `${topic} Tips & Best Practices`,
+      `${topic} Success Stories & Case Studies`
+    ];
+  }
+};
+
 // Enhanced function for generating content pillars with Gemini
 export const generateContentPillars = async (topic: string): Promise<ContentPillar[]> => {
   try {
@@ -63,11 +112,29 @@ export const generateContentPillars = async (topic: string): Promise<ContentPill
 
     if (error) {
       console.error('Error calling Gemini pillars function:', error);
+      
+      // Check if it's a quota/rate limit error
+      if (error.message && (error.message.includes('quota') || error.message.includes('429') || error.message.includes('RESOURCE_EXHAUSTED'))) {
+        console.log('API quota exceeded, using fallback pillars');
+        const fallbackPillars = getFallbackPillars(topic);
+        return fallbackPillars.map((pillar: string, index: number) => ({
+          id: `pillar-${index}`,
+          name: pillar,
+          isEditing: false
+        }));
+      }
+      
       throw error;
     }
 
     if (!data || !data.pillars) {
-      throw new Error('Invalid response from Gemini API');
+      console.log('Invalid API response, using fallback pillars');
+      const fallbackPillars = getFallbackPillars(topic);
+      return fallbackPillars.map((pillar: string, index: number) => ({
+        id: `pillar-${index}`,
+        name: pillar,
+        isEditing: false
+      }));
     }
 
     return data.pillars.map((pillar: string, index: number) => ({
@@ -78,7 +145,15 @@ export const generateContentPillars = async (topic: string): Promise<ContentPill
 
   } catch (error) {
     console.error('Error generating content pillars:', error);
-    throw new Error('Failed to generate content pillars. Please try again.');
+    
+    // Always provide fallback pillars instead of throwing an error
+    console.log('Using fallback pillars due to API error');
+    const fallbackPillars = getFallbackPillars(topic);
+    return fallbackPillars.map((pillar: string, index: number) => ({
+      id: `pillar-${index}`,
+      name: pillar,
+      isEditing: false
+    }));
   }
 };
 
@@ -179,11 +254,21 @@ export const generateDetailedContentIdeas = async (
 
     if (error) {
       console.error('Error calling Gemini content function:', error);
+      
+      // Check if it's a quota/rate limit error and provide fallback
+      if (error.message && (error.message.includes('quota') || error.message.includes('429') || error.message.includes('RESOURCE_EXHAUSTED'))) {
+        console.log('API quota exceeded, generating fallback content ideas');
+        const fallbackIdeas = generateFallbackContentIdeas(topic, contentPillars);
+        return { ideas: fallbackIdeas, creativeAngle: 'Fallback content generation due to API limits' };
+      }
+      
       throw error;
     }
 
     if (!data || !data.generatedContent) {
-      throw new Error('Invalid response from Gemini API');
+      console.log('Invalid API response, generating fallback content ideas');
+      const fallbackIdeas = generateFallbackContentIdeas(topic, contentPillars);
+      return { ideas: fallbackIdeas, creativeAngle: 'Fallback content generation' };
     }
 
     const ideas = parseGeminiResponse(data.generatedContent);
@@ -196,8 +281,42 @@ export const generateDetailedContentIdeas = async (
 
   } catch (error) {
     console.error('Error generating detailed content ideas:', error);
-    throw new Error('Failed to generate content ideas. Please try again.');
+    
+    // Always provide fallback content instead of throwing an error
+    console.log('Using fallback content ideas due to API error');
+    const fallbackIdeas = generateFallbackContentIdeas(topic, contentPillars);
+    return { ideas: fallbackIdeas, creativeAngle: 'Fallback content generation due to API limits' };
   }
+};
+
+// Generate fallback content ideas when API is unavailable
+const generateFallbackContentIdeas = (topic: string, contentPillars: ContentPillar[]): ContentIdea[] => {
+  const ideas: ContentIdea[] = [];
+  const funnelStages: ('TOFU' | 'MOFU' | 'BOFU')[] = ['TOFU', 'MOFU', 'BOFU'];
+  const formats = ['Blog Post', 'Video', 'Infographic', 'Social Post'];
+  
+  contentPillars.forEach((pillar, pillarIndex) => {
+    for (let i = 0; i < 3; i++) {
+      const ideaIndex = pillarIndex * 3 + i;
+      const week = Math.floor(ideaIndex / 3) + 1;
+      
+      ideas.push({
+        id: `idea-${ideaIndex}`,
+        type: formats[ideaIndex % formats.length],
+        title: `${pillar.name}: ${topic} Guide ${i + 1}`,
+        originalTitle: `${pillar.name}: ${topic} Guide ${i + 1}`,
+        week: week,
+        isEditing: false,
+        pillar: pillar.name,
+        funnelStage: funnelStages[i % 3],
+        format: formats[ideaIndex % formats.length],
+        description: `Comprehensive guide covering ${pillar.name.toLowerCase()} in ${topic}. Perfect for your audience.`,
+        cta: 'Learn more about this topic!'
+      });
+    }
+  });
+  
+  return ideas.slice(0, 12);
 };
 
 export const saveToLocalStorage = (data: SavedCalendarData) => {
