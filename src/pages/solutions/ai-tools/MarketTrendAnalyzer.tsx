@@ -1,11 +1,22 @@
-
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import { useSEO } from "@/hooks/useSEO";
 import MarketTrendAnalyzerTool from "@/components/market-trend/MarketTrendAnalyzerTool";
 
 const MarketTrendAnalyzer = () => {
+  // Add no-index meta tag
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.name = 'robots';
+    metaTag.content = 'noindex, nofollow';
+    document.head.appendChild(metaTag);
+
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []);
+
   useSEO({
     title: "Market Trend Analysis & Prediction Tool | Heidi Digital",
     description: "Analyze market trends, detect spikes, and predict future patterns with our AI-powered market trend analysis tool. Built by Heidi Digital team.",

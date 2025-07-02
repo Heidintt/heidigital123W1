@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
@@ -20,6 +19,18 @@ import { Loader2, Globe, CheckCircle, Brain, Edit, BarChart3, Users } from "luci
 import { useToast } from "@/hooks/use-toast";
 
 const MultilingualContentGenerator = () => {
+  // Add no-index meta tag
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.name = 'robots';
+    metaTag.content = 'noindex, nofollow';
+    document.head.appendChild(metaTag);
+
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []);
+
   const [productName, setProductName] = useState("");
   const [industry, setIndustry] = useState("");
   const [targetAudience, setTargetAudience] = useState("");

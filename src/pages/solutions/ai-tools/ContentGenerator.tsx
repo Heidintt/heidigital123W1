@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -14,11 +13,23 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/components/ui/select";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const ContentGenerator = () => {
+  // Add no-index meta tag
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.name = 'robots';
+    metaTag.content = 'noindex, nofollow';
+    document.head.appendChild(metaTag);
+
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []);
+
   const [prompt, setPrompt] = useState("");
   const [contentType, setContentType] = useState("blog");
   const [tone, setTone] = useState("professional");

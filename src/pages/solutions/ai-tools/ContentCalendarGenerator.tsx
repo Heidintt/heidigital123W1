@@ -15,6 +15,18 @@ import {
 } from '@/utils/contentCalendarUtils';
 
 const ContentCalendarGenerator: React.FC = () => {
+  // Add no-index meta tag
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.name = 'robots';
+    metaTag.content = 'noindex, nofollow';
+    document.head.appendChild(metaTag);
+
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []);
+
   const { toast } = useToast();
   const [topic, setTopic] = useState('');
   const [event, setEvent] = useState('');

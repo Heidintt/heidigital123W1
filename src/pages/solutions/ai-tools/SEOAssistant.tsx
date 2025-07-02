@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import { useToast } from "@/hooks/use-toast";
@@ -14,6 +13,18 @@ import SEODetailedAnalysis from "@/components/seo-assistant/SEODetailedAnalysis"
 import SEOImprovementSuggestions from "@/components/seo-assistant/SEOImprovementSuggestions";
 
 const SEOAssistant = () => {
+  // Add no-index meta tag
+  useEffect(() => {
+    const metaTag = document.createElement('meta');
+    metaTag.name = 'robots';
+    metaTag.content = 'noindex, nofollow';
+    document.head.appendChild(metaTag);
+
+    return () => {
+      document.head.removeChild(metaTag);
+    };
+  }, []);
+
   const [websiteUrl, setWebsiteUrl] = useState("");
   const [targetKeyword, setTargetKeyword] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
