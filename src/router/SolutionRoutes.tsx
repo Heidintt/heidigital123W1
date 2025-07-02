@@ -1,7 +1,6 @@
-
 import { Routes, Route } from "react-router-dom";
 import FreeResources from "@/pages/solutions/FreeResources";
-import AITools from "@/pages/solutions/AITools";
+import MarketingToolsHub from "@/pages/solutions/MarketingToolsHub";
 import ContentGenerator from "@/pages/solutions/ai-tools/ContentGenerator";
 import SEOArticleGenerator from "@/pages/solutions/ai-tools/SEOArticleGenerator";
 import MultilingualContentGenerator from "@/pages/solutions/ai-tools/MultilingualContentGenerator";
@@ -20,9 +19,17 @@ export const SolutionRoutes = () => {
   return (
     <Routes>
       <Route path="free-resources" element={<FreeResources />} />
-      <Route path="ai-tools" element={<AITools />} />
+      <Route path="tools" element={<MarketingToolsHub />} />
       
-      {/* AI Tools sub-routes */}
+      {/* Marketing Tools sub-routes */}
+      <Route path="tools/content-generator" element={<ContentGenerator />} />
+      <Route path="tools/seo-article-generator" element={<SEOArticleGenerator />} />
+      <Route path="tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
+      <Route path="tools/seo-assistant" element={<SEOAssistant />} />
+      <Route path="tools/roi-calculator" element={<ROICalculator />} />
+      
+      {/* Keep old AI Tools routes for backward compatibility */}
+      <Route path="ai-tools" element={<MarketingToolsHub />} />
       <Route path="ai-tools/content-generator" element={<ContentGenerator />} />
       <Route path="ai-tools/seo-article-generator" element={<SEOArticleGenerator />} />
       <Route path="ai-tools/multilingual-content-generator" element={<MultilingualContentGenerator />} />
