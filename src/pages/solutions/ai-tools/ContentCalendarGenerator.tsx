@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import * as XLSX from 'xlsx';
+import { useToast } from '@/hooks/use-toast';
 import ContentCalendarControlPanel from '@/components/content-calendar/ContentCalendarControlPanel';
 import StrategicContentDisplay from '@/components/content-calendar/StrategicContentDisplay';
 import {
@@ -15,6 +15,7 @@ import {
 } from '@/utils/contentCalendarUtils';
 
 const ContentCalendarGenerator: React.FC = () => {
+  const { toast } = useToast();
   const [topic, setTopic] = useState('');
   const [event, setEvent] = useState('');
   const [audience, setAudience] = useState('General Audience');
@@ -25,6 +26,8 @@ const ContentCalendarGenerator: React.FC = () => {
   const [isGeneratingContent, setIsGeneratingContent] = useState(false);
   const [generatedIdeas, setGeneratedIdeas] = useState<ContentIdea[]>([]);
   const [currentStep, setCurrentStep] = useState<'initial' | 'pillars' | 'content'>('initial');
+  const [previousTitles, setPreviousTitles] = useState<string[]>([]);
+  const [lastCreativeAngle, setLastCreativeAngle] = useState<string>('');
   
   // Pillar editing states
   const [editingPillarId, setEditingPillarId] = useState<string | null>(null);
@@ -83,28 +86,77 @@ const ContentCalendarGenerator: React.FC = () => {
       setContentPillars(pillars);
       setCurrentStep('pillars');
       saveData({ contentPillars: pillars });
+      
+      toast({
+        title: "Content Pillars Generated",
+        description: `Successfully created ${pillars.length} content pillars using AI.`,
+      });
     } catch (error) {
       console.error('Error generating pillars:', error);
-      alert('Error generating content pillars. Please try again.');
+      toast({
+        title: "Error",
+        description: "Failed to generate content pillars. Please try again.",
+        variant: "destructive",
+      });
     }
     setIsGeneratingPillars(false);
   };
 
-  const handleGenerateContent = async () => {
+  const handleGenerateContent = async (isRegenerate = false) => {
     if (!topic.trim() || platforms.length === 0 || contentPillars.length === 0) return;
 
     setIsGeneratingContent(true);
     try {
-      const primaryPlatform = platforms[0]; // Use first selected platform as primary
-      const ideas = await generateDetailedContentIdeas(topic, audience, goal, primaryPlatform, contentPillars);
+      const primaryPlatform = platforms[0];
+      const previousTitlesToAvoid = isRegenerate ? previousTitles : undefined;
+      
+      const { ideas, creativeAngle } = await generateDetailedContentIdeas(
+        topic, 
+        audience, 
+        goal, 
+        primaryPlatform, 
+        contentPillars,
+        previousTitlesToAvoid,
+        isRegenerate
+      );
+      
+      // Store previous titles for next regeneration
+      const newTitles = ideas.map(idea => idea.title);
+      setPreviousTitles(newTitles);
+      setLastCreativeAngle(creativeAngle);
+      
       setGeneratedIdeas(ideas);
       setCurrentStep('content');
-      saveData({ ideas });
+      saveData({ 
+        ideas, 
+        previousTitles: newTitles,
+        lastCreativeAngle: creativeAngle
+      });
+      
+      toast({
+        title: isRegenerate ? "Content Regenerated" : "Content Generated",
+        description: `Successfully created ${ideas.length} unique content ideas using AI.`,
+      });
+      
+      if (isRegenerate) {
+        toast({
+          title: "Smart Regenerate Applied",
+          description: `Creative angle: ${creativeAngle}`,
+        });
+      }
     } catch (error) {
       console.error('Error generating content:', error);
-      alert('Error generating content ideas. Please try again.');
+      toast({
+        title: "Error",
+        description: "Failed to generate content ideas. Please try again.",
+        variant: "destructive",
+      });
     }
     setIsGeneratingContent(false);
+  };
+
+  const handleRegenerateIdeas = () => {
+    handleGenerateContent(true);
   };
 
   const onSavePillarEdit = () => {
@@ -194,6 +246,13 @@ const ContentCalendarGenerator: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Create professional, strategic content calendars with AI-powered content pillars, funnel-aligned ideas, and comprehensive planning.
           </p>
+          {lastCreativeAngle && (
+            <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+              <p className="text-sm text-blue-700">
+                <strong>Last Creative Angle:</strong> {lastCreativeAngle}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Control Panel */}
@@ -213,7 +272,7 @@ const ContentCalendarGenerator: React.FC = () => {
           isGeneratingPillars={isGeneratingPillars}
           isGeneratingContent={isGeneratingContent}
           onGeneratePillars={handleGeneratePillars}
-          onGenerateContent={handleGenerateContent}
+          onGenerateContent={() => handleGenerateContent(false)}
           currentStep={currentStep}
           editingPillarId={editingPillarId}
           setEditingPillarId={setEditingPillarId}
@@ -237,7 +296,7 @@ const ContentCalendarGenerator: React.FC = () => {
             copyToClipboard={copyToClipboard}
             exportToExcel={exportToExcel}
             onClearCalendar={clearCalendar}
-            onRegenerateIdeas={handleGenerateContent}
+            onRegenerateIdeas={handleRegenerateIdeas}
             isGenerateEnabled={isGenerateEnabled && contentPillars.length > 0}
             isGenerating={isGeneratingContent}
           />
