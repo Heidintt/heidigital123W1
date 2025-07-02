@@ -53,17 +53,30 @@ export const generateContentIdeas = (
 
   const shuffledTemplates = shuffleArray(filteredTemplates);
   const ideas: ContentIdea[] = [];
+  const usedTemplates: Set<string> = new Set();
   let lastTwoTypes: string[] = [];
 
   for (let i = 0; i < 12; i++) {
-    let selectedTemplate = shuffledTemplates[i % shuffledTemplates.length];
+    let selectedTemplate: AdvancedContentTemplate;
     let attempts = 0;
-    
-    while (lastTwoTypes.includes(selectedTemplate.type) && attempts < shuffledTemplates.length) {
-      selectedTemplate = shuffledTemplates[(i + attempts) % shuffledTemplates.length];
-      attempts++;
-    }
+    const maxAttempts = shuffledTemplates.length * 2;
 
+    // Smart selection algorithm
+    do {
+      const templateIndex = (i + attempts) % shuffledTemplates.length;
+      selectedTemplate = shuffledTemplates[templateIndex];
+      attempts++;
+      
+      // Check if we should skip this template
+      const shouldSkip = 
+        // Avoid same type in consecutive picks within the last 2 selections
+        lastTwoTypes.includes(selectedTemplate.type) ||
+        // If we have enough unused templates, avoid repeating until we've used more unique ones
+        (usedTemplates.has(selectedTemplate.template) && (shuffledTemplates.length - usedTemplates.size) > 3);
+        
+    } while (shouldSkip && attempts < maxAttempts);
+
+    // Generate the content idea
     let generatedTitle = selectedTemplate.template.replace(/{topic}/g, topic);
     if (useEventMatrix && event.trim()) {
       generatedTitle = generatedTitle.replace(/{event}/g, event);
@@ -78,6 +91,8 @@ export const generateContentIdeas = (
       isEditing: false
     });
 
+    // Update tracking
+    usedTemplates.add(selectedTemplate.template);
     lastTwoTypes.push(selectedTemplate.type);
     if (lastTwoTypes.length > 2) {
       lastTwoTypes.shift();
