@@ -2,12 +2,24 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, BarChart3, Layers, Code } from "lucide-react";
+import { ArrowRight, Brain, BarChart3, Calendar, TrendingUp, Calculator, FileText, Globe, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 
 const AIToolsSection = () => {
   const aiTools = [
+    {
+      title: "Content Calendar Generator",
+      description: "Generate a month's worth of creative content ideas based on any topic with 12 diverse suggestions.",
+      icon: <Calendar className="h-10 w-10 text-heisocial-purple" />,
+      link: "/solutions/ai-tools/content-calendar-generator",
+    },
+    {
+      title: "Market Trend Analyzer",
+      description: "Analyze market trends, detect spikes, and predict future patterns with advanced analytics.",
+      icon: <TrendingUp className="h-10 w-10 text-heisocial-purple" />,
+      link: "/solutions/ai-tools/market-trend-analyzer",
+    },
     {
       title: "Content Generator",
       description: "AI-powered content creation tool for social media posts, blog articles, and marketing copy.",
@@ -15,22 +27,22 @@ const AIToolsSection = () => {
       link: "/solutions/ai-tools/content-generator",
     },
     {
-      title: "SEO Analyzer",
+      title: "SEO Assistant",
       description: "Advanced AI tool that analyzes your website and provides actionable SEO recommendations.",
       icon: <BarChart3 className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/ai-tools/seo-analyzer",
+      link: "/solutions/ai-tools/seo-assistant",
     },
     {
-      title: "Audience Insights",
-      description: "Leverage AI to gain deeper understanding of your target audience and their behaviors.",
-      icon: <Layers className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/ai-tools/audience-insights",
+      title: "SEO Article Generator",
+      description: "Generate comprehensive, SEO-optimized articles with proper structure and keyword integration.",
+      icon: <FileText className="h-10 w-10 text-heisocial-purple" />,
+      link: "/solutions/ai-tools/seo-article-generator",
     },
     {
-      title: "Campaign Optimizer",
-      description: "AI-driven tool that analyzes and optimizes your marketing campaigns for maximum ROI.",
-      icon: <Code className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/ai-tools/campaign-optimizer",
+      title: "Multilingual Content Generator",
+      description: "Create content in multiple languages to reach global audiences with AI translation.",
+      icon: <Globe className="h-10 w-10 text-heisocial-purple" />,
+      link: "/solutions/ai-tools/multilingual-content-generator",
     },
   ];
 
@@ -43,7 +55,7 @@ const AIToolsSection = () => {
           centered
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {aiTools.map((tool, index) => (
             <Card key={index} className="card-hover">
               <CardHeader>

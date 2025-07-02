@@ -2,85 +2,87 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Calculator, FileText, Search, TrendingUp } from "lucide-react";
+import { ArrowRight, Calculator, FileSearch, Calendar, BookOpen, Mail, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 
 const MarketingToolsSection = () => {
   const marketingTools = [
     {
-      title: "AI Content Generator",
-      description: "AI-powered content creation tool for social media posts, blog articles, and marketing copy.",
-      icon: <Brain className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/tools/content-generator",
-      badge: "AI"
+      title: "ROI Calculator",
+      description: "Calculate and optimize your digital marketing ROI with real-time insights and budget recommendations.",
+      icon: <Calculator className="h-10 w-10 text-heidigital-blue" />,
+      link: "/solutions/free-resources/roi-calculator",
+      category: "Free Tool"
     },
     {
-      title: "SEO Article Generator",
-      description: "Create SEO-optimized articles that rank high on Google search results with professional templates.",
-      icon: <FileText className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/tools/seo-article-generator",
-      badge: "AI"
+      title: "Content Calendar Generator",
+      description: "Generate a month's worth of creative content ideas based on any topic with AI-powered suggestions.",
+      icon: <Calendar className="h-10 w-10 text-heidigital-blue" />,
+      link: "/solutions/ai-tools/content-calendar-generator",
+      category: "AI Tool"
     },
     {
       title: "Market Trend Analyzer",
-      description: "Advanced market trend analysis with spike detection and prediction capabilities. Track consumer behavior patterns.",
-      icon: <TrendingUp className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/tools/market-trend-analyzer",
-      badge: "NEW"
+      description: "Analyze market trends, detect spikes, and predict future patterns with real Google Trends data.",
+      icon: <TrendingUp className="h-10 w-10 text-heidigital-blue" />,
+      link: "/solutions/ai-tools/market-trend-analyzer",
+      category: "AI Tool"
     },
     {
-      title: "SEO Assistant",
-      description: "AI-powered SEO analysis tool that provides actionable recommendations for better rankings.",
-      icon: <Search className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/tools/seo-assistant",
-      badge: "AI"
+      title: "SEO Guide",
+      description: "Comprehensive SEO guide with actionable strategies to improve your search engine rankings.",
+      icon: <FileSearch className="h-10 w-10 text-heidigital-blue" />,
+      link: "/solutions/free-resources/seo-guide",
+      category: "Free Resource"
     },
     {
-      title: "ROI Calculator",
-      description: "Interactive calculator to measure and optimize your digital marketing ROI with real-time insights.",
-      icon: <Calculator className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/tools/roi-calculator",
-      badge: "HEIDI DIGITAL"
+      title: "Local SEO Checklist",
+      description: "Complete checklist to optimize your local business for better local search visibility.",
+      icon: <Target className="h-10 w-10 text-heidigital-blue" />,
+      link: "/solutions/free-resources/local-seo-checklist",
+      category: "Free Resource"
+    },
+    {
+      title: "Email Marketing Guide",
+      description: "Master email marketing with proven strategies, templates, and best practices.",
+      icon: <Mail className="h-10 w-10 text-heidigital-blue" />,
+      link: "/solutions/free-resources/email-guide",
+      category: "Free Resource"
     },
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         <SectionHeading
-          title="Marketing Tools Hub"
-          subtitle="Powerful AI-driven tools and custom solutions designed by our team"
+          title="Marketing Tools & Resources"
+          subtitle="Comprehensive collection of tools and resources to boost your marketing success"
           centered
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {marketingTools.map((tool, index) => (
-            <Card key={index} className="card-hover">
+            <Card key={index} className="card-hover bg-white">
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="bg-heisocial-lightpurple p-4 rounded-lg w-fit">
+                  <div className="bg-blue-50 p-4 rounded-lg w-fit">
                     {tool.icon}
                   </div>
-                  <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                    tool.badge === 'HEIDI DIGITAL' 
-                      ? 'bg-purple-100 text-purple-700'
-                      : tool.badge === 'NEW'
-                      ? 'bg-orange-100 text-orange-700'
-                      : 'bg-blue-100 text-blue-700'
-                  }`}>
-                    {tool.badge}
+                  <span className="text-xs bg-heidigital-blue/10 text-heidigital-blue px-2 py-1 rounded-full font-medium">
+                    {tool.category}
                   </span>
                 </div>
-                <CardTitle>{tool.title}</CardTitle>
+                <CardTitle className="text-lg">{tool.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base">{tool.description}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button asChild className="bg-heisocial-purple hover:bg-heisocial-purple/90">
-                  <Link to={tool.link} className="flex items-center">
-                    Try Tool <ArrowRight className="ml-2 h-4 w-4" />
+                <Button asChild className="bg-heidigital-blue hover:bg-heidigital-blue/90 w-full">
+                  <Link to={tool.link} className="flex items-center justify-center">
+                    {tool.category === "AI Tool" ? "Try Tool" : "Access Resource"} 
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>
@@ -89,9 +91,14 @@ const MarketingToolsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button asChild variant="outline" className="border-heisocial-purple text-heisocial-purple hover:bg-heisocial-purple/10">
-            <Link to="/solutions/tools">Explore All Marketing Tools</Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild variant="outline" className="border-heidigital-blue text-heidigital-blue hover:bg-heidigital-blue/10">
+              <Link to="/solutions/ai-tools">View All AI Tools</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-heidigital-blue text-heidigital-blue hover:bg-heidigital-blue/10">
+              <Link to="/solutions/free-resources">View All Free Resources</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
