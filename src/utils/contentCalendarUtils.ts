@@ -74,7 +74,7 @@ export const generateContentPillars = async (topic: string): Promise<ContentPill
   }));
 };
 
-// New function for generating detailed content calendar
+// Updated function for generating detailed content calendar with enhanced creative prompt
 export const generateDetailedContentPrompt = (
   topic: string,
   audience: string,
@@ -85,7 +85,7 @@ export const generateDetailedContentPrompt = (
 ): string => {
   const pillarsText = contentPillars.map(p => p.name).join(', ');
   
-  return `You are an expert Content Strategist with 10 years of experience, specializing in creating highly engaging, creative, and business-oriented content plans.
+  return `You are a Creative Content Strategist with 10 years of experience, famous for generating viral, engaging, and genuinely valuable content ideas.
 
 Based on the following information:
 - **Main Topic:** ${topic}
@@ -100,19 +100,20 @@ Your task is to build a detailed Content Calendar. You must ensure the following
 2. **Format Diversity:** Suggest a variety of formats suitable for the platform, not just articles. Examples: Short-form Video (Reels/Shorts), Carousels, Infographics, Livestream Q&A, Case Studies, Behind-the-scenes content.
 3. **Marketing Funnel Allocation:** Logically assign ideas to the three customer journey stages: Top of Funnel (TOFU - Awareness), Middle of Funnel (MOFU - Consideration), and Bottom of Funnel (BOFU - Conversion).
 4. **Creativity and Depth:** Each idea must have a unique angle and avoid generic statements.
-5. **Output Structure:** Return the result as a complete Markdown table with the following columns:
+5. **Output Structure:** Return the result as a complete Markdown table with the following **EXTREMELY DETAILED** column requirements:
+
    - **Week:** (Week 1, Week 2,...)
    - **Content Pillar:** (The pillar this idea belongs to)
    - **Funnel Stage:** (TOFU, MOFU, BOFU)
-   - **Suggested Title:** (A catchy, attention-grabbing headline)
+   - **Suggested Title:** (This is the most critical part. Generate a **specific, engaging, and viral-worthy headline** for a real article or video. **STRICTLY PROHIBIT** the use of generic, meaningless phrases like '${topic} Strategy' or 'Focus Week'. The title must evoke curiosity and look like a real headline someone would actually click. For example: "5 Common ${topic} Mistakes That Are Sabotaging Your Results" instead of "${topic} Topic Week 1".)
    - **Format:** (Video, Carousel, Blog Post, etc.)
-   - **Brief Description/Notes:** (Briefly explain the content and why it would appeal to the target audience)
-   - **Call to Action (CTA):** (e.g., "Share your thoughts below," "Save this post for later," "Learn more at the link in bio," "Register now")
+   - **Brief Description/Notes:** (Write a short description (1-2 sentences) **for the end-user (the viewer/reader)**, summarizing the post's main content and the value they will get. **ABSOLUTELY DO NOT** write a strategic description like 'content focusing on...'. Write it like an actual social media caption that would appear under a real post.)
+   - **Call to Action (CTA):** (A specific CTA that fits the content and goal. E.g., "Comment with the mistake you were making!", "Save this for later!", "Get your free consultation at the link in bio.")
 
 Begin.`;
 };
 
-// Mock function to simulate AI call for detailed content calendar
+// Enhanced mock function to simulate AI call for detailed content calendar with more creative output
 export const generateDetailedContentIdeas = async (
   topic: string,
   audience: string,
@@ -123,16 +124,49 @@ export const generateDetailedContentIdeas = async (
   // Simulate API call delay
   await new Promise(resolve => setTimeout(resolve, 2000));
   
-  const formats = ['Video', 'Carousel', 'Blog Post', 'Infographic', 'Case Study', 'Live Q&A'];
+  const formats = ['Video', 'Carousel', 'Blog Post', 'Infographic', 'Case Study', 'Live Q&A', 'Short-form Video', 'Tutorial'];
   const funnelStages = ['TOFU', 'MOFU', 'BOFU'];
+  
+  // More creative CTAs
   const ctas = [
-    'Share your thoughts below',
-    'Save this post for later',
-    'Learn more at the link in bio',
-    'Register now',
-    'Tag someone who needs this',
+    'Comment your biggest challenge below',
+    'Save this post for later reference',
+    'Share this with someone who needs it',
+    'Tag a friend who should see this',
+    'Try this and let me know your results',
+    'Get your free guide at the link in bio',
+    'Book a free consultation today',
     'What\'s your experience with this?'
   ];
+  
+  // Creative title templates based on topic
+  const getTitleTemplate = (pillar: string, topic: string, week: number) => {
+    const templates = [
+      `5 ${topic} Mistakes That Are Costing You Results`,
+      `The ${topic} Secret Nobody Talks About`,
+      `Why Your ${topic} Strategy Isn't Working (And How to Fix It)`,
+      `${topic} Game-Changer: This Simple Trick Works Every Time`,
+      `Before vs After: My ${topic} Transformation Story`,
+      `The Truth About ${topic} That Will Shock You`,
+      `${topic} Hack: Get Better Results in Half the Time`,
+      `Stop Doing ${topic} Wrong: The Right Way to See Results`,
+      `${topic} Myths Busted: What Really Works`,
+      `From Zero to Hero: My ${topic} Journey`
+    ];
+    return templates[week % templates.length];
+  };
+  
+  // Creative descriptions
+  const getDescription = (title: string, audience: string) => {
+    const descriptions = [
+      `Discover the game-changing insights that transformed my approach to this topic. You'll be amazed by how simple changes can yield incredible results.`,
+      `Ready to level up your game? This post reveals the strategies that actually work, backed by real experience and proven results.`,
+      `Ever wondered why some people succeed while others struggle? Here's the insider knowledge that makes all the difference.`,
+      `This breakthrough method has helped thousands achieve their goals faster. Your journey to success starts with this one simple shift.`,
+      `Don't waste another day making these common mistakes. Learn the proven system that delivers consistent, measurable results.`
+    ];
+    return descriptions[Math.floor(Math.random() * descriptions.length)];
+  };
   
   const ideas: ContentIdea[] = [];
   
@@ -142,8 +176,8 @@ export const generateDetailedContentIdeas = async (
     const funnelStage = funnelStages[Math.floor(Math.random() * funnelStages.length)];
     const cta = ctas[Math.floor(Math.random() * ctas.length)];
     
-    const title = `${topic} Strategy: ${pillar.name.split(' ')[0]} Focus Week ${Math.floor(i / 3) + 1}`;
-    const description = `Strategic content focusing on ${pillar.name.toLowerCase()} designed for ${audience.toLowerCase()} to achieve ${goal.toLowerCase()}.`;
+    const title = getTitleTemplate(pillar.name, topic, i);
+    const description = getDescription(title, audience);
     
     ideas.push({
       id: `idea-${i}`,
