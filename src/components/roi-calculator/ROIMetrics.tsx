@@ -15,11 +15,13 @@ interface CalculatedMetrics {
   revenue: number;
   customers: number;
   roas: number;
-  cpa: number;
+  cpl: number;
   arpc: number;
-  conversionRate: number;
+  leadConversionRate: number;
+  customerConversionRate: number;
   cpc: number;
   cac: number;
+  roi: number;
   budgetRecommendation: string;
 }
 
@@ -43,10 +45,15 @@ const ROIMetrics = ({ data }: ROIMetricsProps) => {
 
   const totalSpend = data.reduce((sum, item) => sum + item.spend, 0);
   const totalRevenue = data.reduce((sum, item) => sum + item.revenue, 0);
-  const totalConversions = data.reduce((sum, item) => sum + item.conversions, 0);
+  const totalLeads = data.reduce((sum, item) => sum + item.conversions, 0);
   const totalClicks = data.reduce((sum, item) => sum + item.clicks, 0);
+  const totalCustomers = data.reduce((sum, item) => sum + item.customers, 0);
+  
+  // Calculate totals using proper formulas
+  const overallROI = totalSpend > 0 ? ((totalRevenue - totalSpend) / totalSpend) : 0;
   const overallROAS = totalSpend > 0 ? totalRevenue / totalSpend : 0;
-  const overallConversionRate = totalClicks > 0 ? totalConversions / totalClicks : 0;
+  const overallLeadConversionRate = totalClicks > 0 ? totalLeads / totalClicks : 0;
+  const overallCustomerConversionRate = totalClicks > 0 ? totalCustomers / totalClicks : 0;
 
   return (
     <TooltipProvider>
@@ -71,6 +78,22 @@ const ROIMetrics = ({ data }: ROIMetricsProps) => {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Overall ROI</CardTitle>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Info className="h-4 w-4 text-gray-400" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Return on Investment: (Revenue - Spend) ÷ Spend</p>
+                </TooltipContent>
+              </Tooltip>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">{formatPercentage(overallROI)}</div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">Overall ROAS</CardTitle>
               <Tooltip>
                 <TooltipTrigger>
@@ -83,22 +106,6 @@ const ROIMetrics = ({ data }: ROIMetricsProps) => {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{overallROAS.toFixed(2)}x</div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Overall Conversion Rate</CardTitle>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Info className="h-4 w-4 text-gray-400" />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Conversions ÷ Clicks</p>
-                </TooltipContent>
-              </Tooltip>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{formatPercentage(overallConversionRate)}</div>
             </CardContent>
           </Card>
         </div>
@@ -115,10 +122,12 @@ const ROIMetrics = ({ data }: ROIMetricsProps) => {
                   <tr className="border-b">
                     <th className="text-left p-2">Channel</th>
                     <th className="text-left p-2">Campaign</th>
+                    <th className="text-right p-2">ROI</th>
                     <th className="text-right p-2">ROAS</th>
-                    <th className="text-right p-2">CPA</th>
+                    <th className="text-right p-2">CPL</th>
                     <th className="text-right p-2">ARPC</th>
-                    <th className="text-right p-2">Conv. Rate</th>
+                    <th className="text-right p-2">Lead Conv %</th>
+                    <th className="text-right p-2">Customer Conv %</th>
                     <th className="text-right p-2">CPC</th>
                     <th className="text-right p-2">CAC</th>
                     <th className="text-center p-2">Recommendation</th>
@@ -129,10 +138,12 @@ const ROIMetrics = ({ data }: ROIMetricsProps) => {
                     <tr key={item.id} className="border-b hover:bg-gray-50">
                       <td className="p-2 font-medium">{item.channel}</td>
                       <td className="p-2">{item.campaignName}</td>
+                      <td className="p-2 text-right">{formatPercentage(item.roi)}</td>
                       <td className="p-2 text-right">{item.roas.toFixed(2)}x</td>
-                      <td className="p-2 text-right">{formatCurrency(item.cpa)}</td>
+                      <td className="p-2 text-right">{formatCurrency(item.cpl)}</td>
                       <td className="p-2 text-right">{formatCurrency(item.arpc)}</td>
-                      <td className="p-2 text-right">{formatPercentage(item.conversionRate)}</td>
+                      <td className="p-2 text-right">{formatPercentage(item.leadConversionRate)}</td>
+                      <td className="p-2 text-right">{formatPercentage(item.customerConversionRate)}</td>
                       <td className="p-2 text-right">{formatCurrency(item.cpc)}</td>
                       <td className="p-2 text-right">{formatCurrency(item.cac)}</td>
                       <td className="p-2 text-center">
@@ -143,6 +154,20 @@ const ROIMetrics = ({ data }: ROIMetricsProps) => {
                     </tr>
                   ))}
                 </tbody>
+                <tfoot>
+                  <tr className="border-t-2 font-bold bg-gray-50">
+                    <td className="p-2" colSpan={2}>TOTALS</td>
+                    <td className="p-2 text-right">{formatPercentage(overallROI)}</td>
+                    <td className="p-2 text-right">{overallROAS.toFixed(2)}x</td>
+                    <td className="p-2 text-right">-</td>
+                    <td className="p-2 text-right">-</td>
+                    <td className="p-2 text-right">{formatPercentage(overallLeadConversionRate)}</td>
+                    <td className="p-2 text-right">{formatPercentage(overallCustomerConversionRate)}</td>
+                    <td className="p-2 text-right">-</td>
+                    <td className="p-2 text-right">-</td>
+                    <td className="p-2 text-center">-</td>
+                  </tr>
+                </tfoot>
               </table>
             </div>
           </CardContent>

@@ -15,11 +15,13 @@ interface CalculatedMetrics {
   revenue: number;
   customers: number;
   roas: number;
-  cpa: number;
+  cpl: number;
   arpc: number;
-  conversionRate: number;
+  leadConversionRate: number;
+  customerConversionRate: number;
   cpc: number;
   cac: number;
+  roi: number;
   budgetRecommendation: string;
 }
 
@@ -61,16 +63,17 @@ const BudgetOptimizer = ({ data }: BudgetOptimizerProps) => {
     }
   };
 
-  const getEfficiencyScore = (roas: number) => {
-    if (roas >= 3) return 100;
-    if (roas >= 2) return 80;
-    if (roas >= 1.5) return 60;
-    if (roas >= 1) return 40;
+  const getEfficiencyScore = (roi: number) => {
+    const roiPercent = roi * 100;
+    if (roiPercent >= 100) return 100;
+    if (roiPercent >= 50) return 80;
+    if (roiPercent >= 25) return 60;
+    if (roiPercent >= 0) return 40;
     return 20;
   };
 
-  // Sort by ROAS for better optimization display
-  const sortedData = [...data].sort((a, b) => b.roas - a.roas);
+  // Sort by ROI for better optimization display
+  const sortedData = [...data].sort((a, b) => b.roi - a.roi);
 
   return (
     <div className="space-y-6">
@@ -87,7 +90,7 @@ const BudgetOptimizer = ({ data }: BudgetOptimizerProps) => {
               const suggestedBudget = getSuggestedBudgetChange(item.spend, item.budgetRecommendation);
               const budgetChange = suggestedBudget - item.spend;
               const budgetChangePercent = item.spend > 0 ? (budgetChange / item.spend) * 100 : 0;
-              const efficiencyScore = getEfficiencyScore(item.roas);
+              const efficiencyScore = getEfficiencyScore(item.roi);
               
               return (
                 <div key={item.id} className="border rounded-lg p-4 space-y-3">
@@ -120,8 +123,8 @@ const BudgetOptimizer = ({ data }: BudgetOptimizerProps) => {
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600">Current ROAS</p>
-                      <p className="font-semibold">{item.roas.toFixed(2)}x</p>
+                      <p className="text-sm text-gray-600">Current ROI</p>
+                      <p className="font-semibold">{(item.roi * 100).toFixed(1)}%</p>
                     </div>
                   </div>
 
@@ -135,13 +138,13 @@ const BudgetOptimizer = ({ data }: BudgetOptimizerProps) => {
 
                   <div className="text-sm text-gray-600">
                     {item.budgetRecommendation === "Strongly Increase" && 
-                      "🚀 This channel is performing exceptionally well. Consider increasing budget significantly to maximize returns."}
+                      "🚀 This channel has excellent ROI. Consider significantly increasing budget to maximize returns."}
                     {item.budgetRecommendation === "Increase" && 
-                      "📈 This channel shows good performance. A moderate budget increase could yield better results."}
+                      "📈 This channel shows good ROI. A moderate budget increase could yield better results."}
                     {item.budgetRecommendation === "Maintain" && 
-                      "✅ This channel is performing adequately. Maintain current budget while monitoring performance."}
+                      "✅ This channel has decent ROI. Maintain current budget while monitoring performance."}
                     {item.budgetRecommendation === "Decrease / Re-evaluate" && 
-                      "⚠️ This channel is underperforming. Consider reducing budget or optimizing the campaign strategy."}
+                      "⚠️ This channel has poor ROI. Consider reducing budget or optimizing the campaign strategy."}
                   </div>
                 </div>
               );

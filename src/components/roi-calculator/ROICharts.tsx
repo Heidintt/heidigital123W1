@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell, LineChart, Line, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 interface CalculatedMetrics {
   id: string;
@@ -14,11 +14,13 @@ interface CalculatedMetrics {
   revenue: number;
   customers: number;
   roas: number;
-  cpa: number;
+  cpl: number;
   arpc: number;
-  conversionRate: number;
+  leadConversionRate: number;
+  customerConversionRate: number;
   cpc: number;
   cac: number;
+  roi: number;
   budgetRecommendation: string;
 }
 
@@ -29,8 +31,8 @@ interface ROIChartsProps {
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#82CA9D'];
 
 const chartConfig = {
-  roas: {
-    label: "ROAS",
+  roi: {
+    label: "ROI %",
     color: "#2563eb",
   },
   spend: {
@@ -45,8 +47,9 @@ const chartConfig = {
 
 const ROICharts = ({ data }: ROIChartsProps) => {
   // Prepare data for charts
-  const roasData = data.map(item => ({
+  const performanceData = data.map(item => ({
     channel: item.channel,
+    roi: item.roi * 100, // Convert to percentage
     roas: item.roas
   }));
 
@@ -55,6 +58,7 @@ const ROICharts = ({ data }: ROIChartsProps) => {
     spend: item.spend
   }));
 
+  // Grouped bar chart data for Revenue vs Spend comparison
   const revenueVsSpendData = data.map(item => ({
     channel: item.channel,
     spend: item.spend,
@@ -64,19 +68,19 @@ const ROICharts = ({ data }: ROIChartsProps) => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* ROAS Bar Chart */}
+        {/* ROI Performance Bar Chart */}
         <Card>
           <CardHeader>
-            <CardTitle>ROAS by Channel</CardTitle>
+            <CardTitle>ROI Performance by Channel</CardTitle>
           </CardHeader>
           <CardContent>
             <ChartContainer config={chartConfig} className="min-h-[300px]">
-              <BarChart data={roasData}>
+              <BarChart data={performanceData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="channel" />
                 <YAxis />
                 <ChartTooltip content={<ChartTooltipContent />} />
-                <Bar dataKey="roas" fill="var(--color-roas)" />
+                <Bar dataKey="roi" fill="var(--color-roi)" name="ROI %" />
               </BarChart>
             </ChartContainer>
           </CardContent>
@@ -113,21 +117,21 @@ const ROICharts = ({ data }: ROIChartsProps) => {
         </Card>
       </div>
 
-      {/* Revenue vs Spend Line Chart */}
+      {/* Revenue vs Spend Grouped Bar Chart (Replaced Pie Chart) */}
       <Card>
         <CardHeader>
-          <CardTitle>Revenue vs Spend by Channel</CardTitle>
+          <CardTitle>Revenue vs Spend Comparison by Channel</CardTitle>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig} className="min-h-[400px]">
-            <LineChart data={revenueVsSpendData}>
+            <BarChart data={revenueVsSpendData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="channel" />
               <YAxis />
               <ChartTooltip content={<ChartTooltipContent />} />
-              <Line type="monotone" dataKey="spend" stroke="var(--color-spend)" strokeWidth={2} />
-              <Line type="monotone" dataKey="revenue" stroke="var(--color-revenue)" strokeWidth={2} />
-            </LineChart>
+              <Bar dataKey="spend" fill="var(--color-spend)" name="Spend ($)" />
+              <Bar dataKey="revenue" fill="var(--color-revenue)" name="Revenue ($)" />
+            </BarChart>
           </ChartContainer>
         </CardContent>
       </Card>
@@ -153,7 +157,7 @@ const ROICharts = ({ data }: ROIChartsProps) => {
               <tbody>
                 {data.map((item) => {
                   const profit = item.revenue - item.spend;
-                  const roi = item.spend > 0 ? ((profit / item.spend) * 100) : 0;
+                  const roi = item.roi * 100;
                   const performanceColor = roi > 50 ? 'text-green-600' : roi > 0 ? 'text-yellow-600' : 'text-red-600';
                   const performanceIcon = roi > 50 ? '🚀' : roi > 0 ? '📈' : '📉';
                   

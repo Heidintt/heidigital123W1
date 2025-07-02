@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Trash2, Download, Info } from "lucide-react";
+import { Plus, Trash2, Download, Edit } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import ROICharts from "./ROICharts";
 import ROIMetrics from "./ROIMetrics";
@@ -24,11 +24,13 @@ interface MarketingChannel {
 
 interface CalculatedMetrics extends MarketingChannel {
   roas: number;
-  cpa: number;
+  cpl: number;
   arpc: number;
-  conversionRate: number;
+  leadConversionRate: number;
+  customerConversionRate: number;
   cpc: number;
   cac: number;
+  roi: number;
   budgetRecommendation: string;
 }
 
@@ -85,35 +87,40 @@ const defaultChannels: MarketingChannel[] = [
   }
 ];
 
-// Safe divide function to prevent division by zero
+// Enhanced safe divide function to handle edge cases properly
 const safeDivide = (numerator: number, denominator: number): number => {
   if (!denominator || denominator === 0) return 0;
-  return numerator / denominator;
+  const result = numerator / denominator;
+  if (!isFinite(result) || isNaN(result)) return 0;
+  return result;
 };
 
 // Budget optimizer function
-const getBudgetRecommendation = (roas: number): string => {
-  if (roas > 2.5) return "Strongly Increase";
-  if (roas > 1.5) return "Increase";
-  if (roas < 1) return "Decrease / Re-evaluate";
+const getBudgetRecommendation = (roi: number): string => {
+  if (roi > 1.5) return "Strongly Increase";
+  if (roi > 0.5) return "Increase";
+  if (roi < 0) return "Decrease / Re-evaluate";
   return "Maintain";
 };
 
 const ROICalculatorTool = () => {
   const [channels, setChannels] = useState<MarketingChannel[]>(defaultChannels);
   const [calculatedData, setCalculatedData] = useState<CalculatedMetrics[]>([]);
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   // Calculate metrics whenever channels change
   useEffect(() => {
     const calculated = channels.map(channel => ({
       ...channel,
       roas: safeDivide(channel.revenue, channel.spend),
-      cpa: safeDivide(channel.spend, channel.conversions),
+      cpl: safeDivide(channel.spend, channel.conversions), // Cost Per Lead
       arpc: safeDivide(channel.revenue, channel.customers),
-      conversionRate: safeDivide(channel.conversions, channel.clicks),
+      leadConversionRate: safeDivide(channel.conversions, channel.clicks),
+      customerConversionRate: safeDivide(channel.customers, channel.clicks),
       cpc: safeDivide(channel.spend, channel.clicks),
       cac: safeDivide(channel.spend, channel.customers),
-      budgetRecommendation: getBudgetRecommendation(safeDivide(channel.revenue, channel.spend))
+      roi: safeDivide((channel.revenue - channel.spend), channel.spend), // ROI = (Revenue - Cost) / Cost
+      budgetRecommendation: getBudgetRecommendation(safeDivide((channel.revenue - channel.spend), channel.spend))
     }));
     setCalculatedData(calculated);
   }, [channels]);
@@ -134,6 +141,9 @@ const ROICalculatorTool = () => {
 
   const removeChannel = (id: string) => {
     setChannels(channels.filter(channel => channel.id !== id));
+    if (editingId === id) {
+      setEditingId(null);
+    }
   };
 
   const updateChannel = (id: string, field: keyof MarketingChannel, value: string | number) => {
@@ -142,10 +152,14 @@ const ROICalculatorTool = () => {
     ));
   };
 
+  const toggleEdit = (id: string) => {
+    setEditingId(editingId === id ? null : id);
+  };
+
   const exportData = () => {
     const csvContent = [
       // Headers
-      ["Channel", "Campaign", "Spend", "Clicks", "Conversions", "Revenue", "Customers", "ROAS", "CPA", "ARPC", "Conversion Rate", "CPC", "CAC", "Budget Recommendation"].join(","),
+      ["Channel", "Campaign", "Spend", "Clicks", "Leads", "Revenue", "Customers", "ROI", "ROAS", "CPL", "ARPC", "Lead Conv Rate", "Customer Conv Rate", "CPC", "CAC", "Budget Recommendation"].join(","),
       // Data rows
       ...calculatedData.map(row => [
         row.channel,
@@ -155,10 +169,12 @@ const ROICalculatorTool = () => {
         row.conversions,
         row.revenue,
         row.customers,
+        (row.roi * 100).toFixed(2) + "%",
         row.roas.toFixed(2),
-        row.cpa.toFixed(2),
+        row.cpl.toFixed(2),
         row.arpc.toFixed(2),
-        (row.conversionRate * 100).toFixed(2) + "%",
+        (row.leadConversionRate * 100).toFixed(2) + "%",
+        (row.customerConversionRate * 100).toFixed(2) + "%",
         row.cpc.toFixed(2),
         row.cac.toFixed(2),
         row.budgetRecommendation
@@ -200,10 +216,12 @@ const ROICalculatorTool = () => {
               <div className="mt-6">
                 <h3 className="font-semibold mb-3">Key Metrics Calculated:</h3>
                 <ul className="space-y-1 text-sm">
+                  <li><strong>ROI (Return on Investment)</strong> = (Revenue - Spend) ÷ Spend</li>
                   <li><strong>ROAS (Return on Ad Spend)</strong> = Revenue ÷ Spend</li>
-                  <li><strong>CPA (Cost Per Acquisition)</strong> = Spend ÷ Conversions</li>
+                  <li><strong>CPL (Cost Per Lead)</strong> = Spend ÷ Leads</li>
                   <li><strong>ARPC (Average Revenue Per Customer)</strong> = Revenue ÷ Customers</li>
-                  <li><strong>Conversion Rate</strong> = Conversions ÷ Clicks</li>
+                  <li><strong>Lead Conversion Rate</strong> = Leads ÷ Clicks</li>
+                  <li><strong>Customer Conversion Rate</strong> = Customers ÷ Clicks</li>
                   <li><strong>CPC (Cost Per Click)</strong> = Spend ÷ Clicks</li>
                   <li><strong>CAC (Customer Acquisition Cost)</strong> = Spend ÷ Customers</li>
                 </ul>
@@ -232,15 +250,24 @@ const ROICalculatorTool = () => {
               <Card key={channel.id}>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-lg">Channel {index + 1}</CardTitle>
-                  {channels.length > 1 && (
+                  <div className="flex space-x-2">
                     <Button
-                      onClick={() => removeChannel(channel.id)}
+                      onClick={() => toggleEdit(channel.id)}
                       variant="outline"
                       size="sm"
                     >
-                      <Trash2 className="h-4 w-4" />
+                      <Edit className="h-4 w-4" />
                     </Button>
-                  )}
+                    {channels.length > 1 && (
+                      <Button
+                        onClick={() => removeChannel(channel.id)}
+                        variant="outline"
+                        size="sm"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    )}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -250,6 +277,7 @@ const ROICalculatorTool = () => {
                         id={`channel-${channel.id}`}
                         value={channel.channel}
                         onChange={(e) => updateChannel(channel.id, 'channel', e.target.value)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                     <div>
@@ -258,6 +286,7 @@ const ROICalculatorTool = () => {
                         id={`campaign-${channel.id}`}
                         value={channel.campaignName}
                         onChange={(e) => updateChannel(channel.id, 'campaignName', e.target.value)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                     <div>
@@ -267,6 +296,7 @@ const ROICalculatorTool = () => {
                         type="number"
                         value={channel.spend}
                         onChange={(e) => updateChannel(channel.id, 'spend', parseFloat(e.target.value) || 0)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                     <div>
@@ -276,15 +306,17 @@ const ROICalculatorTool = () => {
                         type="number"
                         value={channel.clicks}
                         onChange={(e) => updateChannel(channel.id, 'clicks', parseInt(e.target.value) || 0)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                     <div>
-                      <Label htmlFor={`conversions-${channel.id}`}>Conversions</Label>
+                      <Label htmlFor={`conversions-${channel.id}`}>Leads</Label>
                       <Input
                         id={`conversions-${channel.id}`}
                         type="number"
                         value={channel.conversions}
                         onChange={(e) => updateChannel(channel.id, 'conversions', parseInt(e.target.value) || 0)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                     <div>
@@ -294,6 +326,7 @@ const ROICalculatorTool = () => {
                         type="number"
                         value={channel.revenue}
                         onChange={(e) => updateChannel(channel.id, 'revenue', parseFloat(e.target.value) || 0)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                     <div>
@@ -303,6 +336,7 @@ const ROICalculatorTool = () => {
                         type="number"
                         value={channel.customers}
                         onChange={(e) => updateChannel(channel.id, 'customers', parseInt(e.target.value) || 0)}
+                        disabled={editingId !== channel.id && editingId !== null}
                       />
                     </div>
                   </div>
