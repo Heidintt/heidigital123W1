@@ -1,7 +1,7 @@
 
 import React from "react";
 import AIToolCard from "./AIToolCard";
-import { Bot, Edit, BarChart3, Users, Globe, Search, FileText, Calendar } from "lucide-react";
+import { Bot, Edit, BarChart3, Users, Globe, Search, FileText, Calendar, Calculator, TrendingUp } from "lucide-react";
 
 const AIToolsGrid = () => {
   const aiTools = [
@@ -46,6 +46,22 @@ const AIToolsGrid = () => {
       badge: { text: "NEW", variant: "new" as const }
     },
     {
+      icon: <TrendingUp className="h-12 w-12" />,
+      title: "Market Trend Analyzer",
+      description: "Analyze market trends, detect spikes, and predict future patterns with advanced analytics",
+      content: "Advanced market trend analysis with spike detection and predictions using real Google Trends data.",
+      link: "/solutions/ai-tools/market-trend-analyzer",
+      badge: { text: "NEW", variant: "new" as const }
+    },
+    {
+      icon: <Calculator className="h-12 w-12" />,
+      title: "ROI Calculator",
+      description: "Calculate and optimize your digital marketing ROI with real-time insights",
+      content: "Comprehensive ROI calculator with budget recommendations, performance metrics, and visual dashboards.",
+      link: "/solutions/free-resources/roi-calculator",
+      badge: { text: "FREE TOOL", variant: "new" as const }
+    },
+    {
       icon: <Bot className="h-12 w-12" />,
       title: "Chatbot Builder",
       description: "Build custom conversational chatbots for your website and social media",
@@ -64,13 +80,6 @@ const AIToolsGrid = () => {
       title: "Audience Segmentation",
       description: "Powerful AI-driven audience segmentation and targeting",
       content: "Identify and target your most valuable customer segments with precision using advanced AI algorithms.",
-      link: "/contact"
-    },
-    {
-      icon: <Globe className="h-12 w-12" />,
-      title: "Social Media Manager",
-      description: "AI-powered social media management and optimization",
-      content: "Optimize your social media strategy with AI recommendations, automated posting, and performance tracking.",
       link: "/contact"
     }
   ];
