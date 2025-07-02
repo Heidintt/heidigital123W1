@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import ContentCalendarControlPanel from '@/components/content-calendar/ContentCalendarControlPanel';
-import ContentIdeasDisplay from '@/components/content-calendar/ContentIdeasDisplay';
+import StrategicContentDisplay from '@/components/content-calendar/StrategicContentDisplay';
 import {
   ContentIdea,
+  ContentPillar,
   SavedCalendarData,
-  generateContentIdeas,
+  generateContentPillars,
+  generateDetailedContentIdeas,
   saveToLocalStorage,
   loadFromLocalStorage
 } from '@/utils/contentCalendarUtils';
@@ -17,10 +19,16 @@ const ContentCalendarGenerator: React.FC = () => {
   const [event, setEvent] = useState('');
   const [audience, setAudience] = useState('General Audience');
   const [platforms, setPlatforms] = useState<string[]>([]);
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [goal, setGoal] = useState('');
+  const [contentPillars, setContentPillars] = useState<ContentPillar[]>([]);
+  const [isGeneratingPillars, setIsGeneratingPillars] = useState(false);
+  const [isGeneratingContent, setIsGeneratingContent] = useState(false);
   const [generatedIdeas, setGeneratedIdeas] = useState<ContentIdea[]>([]);
-  const [editingId, setEditingId] = useState<string | null>(null);
-  const [editingValue, setEditingValue] = useState('');
+  const [currentStep, setCurrentStep] = useState<'initial' | 'pillars' | 'content'>('initial');
+  
+  // Pillar editing states
+  const [editingPillarId, setEditingPillarId] = useState<string | null>(null);
+  const [editingPillarValue, setEditingPillarValue] = useState('');
 
   // Load saved data on component mount
   useEffect(() => {
@@ -30,7 +38,15 @@ const ContentCalendarGenerator: React.FC = () => {
       setEvent(savedData.event);
       setAudience(savedData.audience);
       setPlatforms(savedData.platforms);
+      setGoal(savedData.goal || '');
+      setContentPillars(savedData.contentPillars || []);
       setGeneratedIdeas(savedData.ideas);
+      
+      if (savedData.ideas.length > 0) {
+        setCurrentStep('content');
+      } else if (savedData.contentPillars && savedData.contentPillars.length > 0) {
+        setCurrentStep('pillars');
+      }
     }
   }, []);
 
@@ -41,6 +57,8 @@ const ContentCalendarGenerator: React.FC = () => {
       event,
       audience,
       platforms,
+      goal,
+      contentPillars,
       ideas: generatedIdeas,
       timestamp: Date.now(),
       ...data
@@ -56,43 +74,74 @@ const ContentCalendarGenerator: React.FC = () => {
     }
   };
 
-  const handleGenerateContentIdeas = async () => {
-    if (!topic.trim() || platforms.length === 0) return;
+  const handleGeneratePillars = async () => {
+    if (!topic.trim()) return;
 
-    setIsGenerating(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
+    setIsGeneratingPillars(true);
     try {
-      const ideas = generateContentIdeas(topic, event, audience, platforms);
+      const pillars = await generateContentPillars(topic);
+      setContentPillars(pillars);
+      setCurrentStep('pillars');
+      saveData({ contentPillars: pillars });
+    } catch (error) {
+      console.error('Error generating pillars:', error);
+      alert('Error generating content pillars. Please try again.');
+    }
+    setIsGeneratingPillars(false);
+  };
+
+  const handleGenerateContent = async () => {
+    if (!topic.trim() || platforms.length === 0 || contentPillars.length === 0) return;
+
+    setIsGeneratingContent(true);
+    try {
+      const primaryPlatform = platforms[0]; // Use first selected platform as primary
+      const ideas = await generateDetailedContentIdeas(topic, audience, goal, primaryPlatform, contentPillars);
       setGeneratedIdeas(ideas);
+      setCurrentStep('content');
       saveData({ ideas });
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'An error occurred while generating content ideas.');
+      console.error('Error generating content:', error);
+      alert('Error generating content ideas. Please try again.');
     }
-
-    setIsGenerating(false);
+    setIsGeneratingContent(false);
   };
 
-  const startEditing = (id: string, currentTitle: string) => {
-    setEditingId(id);
-    setEditingValue(currentTitle);
-  };
-
-  const saveEdit = () => {
-    if (editingId) {
-      const updatedIdeas = generatedIdeas.map(idea =>
-        idea.id === editingId ? { ...idea, title: editingValue } : idea
+  const onSavePillarEdit = () => {
+    if (editingPillarId && editingPillarValue.trim()) {
+      const updatedPillars = contentPillars.map(pillar =>
+        pillar.id === editingPillarId 
+          ? { ...pillar, name: editingPillarValue.trim() }
+          : pillar
       );
-      setGeneratedIdeas(updatedIdeas);
-      saveData({ ideas: updatedIdeas });
+      setContentPillars(updatedPillars);
+      saveData({ contentPillars: updatedPillars });
     }
-    setEditingId(null);
-    setEditingValue('');
+    setEditingPillarId(null);
+    setEditingPillarValue('');
   };
 
-  const cancelEdit = () => {
-    setEditingId(null);
-    setEditingValue('');
+  const onCancelPillarEdit = () => {
+    setEditingPillarId(null);
+    setEditingPillarValue('');
+  };
+
+  const onAddPillar = () => {
+    const newPillar: ContentPillar = {
+      id: `pillar-${Date.now()}`,
+      name: 'New Content Pillar',
+      isEditing: false
+    };
+    const updatedPillars = [...contentPillars, newPillar];
+    setContentPillars(updatedPillars);
+    setEditingPillarId(newPillar.id);
+    setEditingPillarValue(newPillar.name);
+  };
+
+  const onDeletePillar = (id: string) => {
+    const updatedPillars = contentPillars.filter(pillar => pillar.id !== id);
+    setContentPillars(updatedPillars);
+    saveData({ contentPillars: updatedPillars });
   };
 
   const copyToClipboard = async (text: string) => {
@@ -106,24 +155,30 @@ const ContentCalendarGenerator: React.FC = () => {
   const exportToExcel = () => {
     const exportData = generatedIdeas.map(idea => ({
       Week: `Week ${idea.week}`,
-      'Content Type': idea.type,
-      Title: idea.title
+      'Content Pillar': idea.pillar,
+      'Funnel Stage': idea.funnelStage,
+      'Suggested Title': idea.title,
+      'Format': idea.format,
+      'Brief Description/Notes': idea.description,
+      'Call to Action (CTA)': idea.cta
     }));
 
     const worksheet = XLSX.utils.json_to_sheet(exportData);
     const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Content Calendar');
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Strategic Content Calendar');
 
-    const fileName = `content-calendar-${topic.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.xlsx`;
+    const fileName = `strategic-content-calendar-${topic.toLowerCase().replace(/\s+/g, '-')}-${Date.now()}.xlsx`;
     XLSX.writeFile(workbook, fileName);
   };
 
   const clearCalendar = () => {
     setGeneratedIdeas([]);
+    setContentPillars([]);
+    setCurrentStep('initial');
     localStorage.removeItem('contentCalendarData');
   };
 
-  const isGenerateEnabled = topic.trim() !== '' && platforms.length > 0;
+  const isGenerateEnabled = topic.trim() !== '' && platforms.length > 0 && goal.trim() !== '';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
@@ -134,10 +189,10 @@ const ContentCalendarGenerator: React.FC = () => {
             <div className="p-3 bg-indigo-100 rounded-full">
               <Calendar className="h-8 w-8 text-indigo-600" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900">Advanced Content Strategy Planner</h1>
+            <h1 className="text-4xl font-bold text-gray-900">Strategic Content Calendar Generator</h1>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Create personalized content calendars with advanced filtering, inline editing, and export capabilities.
+            Create professional, strategic content calendars with AI-powered content pillars, funnel-aligned ideas, and comprehensive planning.
           </p>
         </div>
 
@@ -151,30 +206,40 @@ const ContentCalendarGenerator: React.FC = () => {
           setAudience={setAudience}
           platforms={platforms}
           handlePlatformChange={handlePlatformChange}
-          isGenerating={isGenerating}
-          onGenerate={handleGenerateContentIdeas}
+          goal={goal}
+          setGoal={setGoal}
+          contentPillars={contentPillars}
+          setContentPillars={setContentPillars}
+          isGeneratingPillars={isGeneratingPillars}
+          isGeneratingContent={isGeneratingContent}
+          onGeneratePillars={handleGeneratePillars}
+          onGenerateContent={handleGenerateContent}
+          currentStep={currentStep}
+          editingPillarId={editingPillarId}
+          setEditingPillarId={setEditingPillarId}
+          editingPillarValue={editingPillarValue}
+          setEditingPillarValue={setEditingPillarValue}
+          onSavePillarEdit={onSavePillarEdit}
+          onCancelPillarEdit={onCancelPillarEdit}
+          onAddPillar={onAddPillar}
+          onDeletePillar={onDeletePillar}
         />
 
-        {/* Interactive Workspace */}
-        <div className="max-w-6xl mx-auto">
-          <ContentIdeasDisplay
+        {/* Strategic Content Display */}
+        <div className="max-w-7xl mx-auto">
+          <StrategicContentDisplay
             generatedIdeas={generatedIdeas}
-            editingId={editingId}
-            editingValue={editingValue}
-            startEditing={startEditing}
-            saveEdit={saveEdit}
-            cancelEdit={cancelEdit}
-            setEditingValue={setEditingValue}
+            topic={topic}
+            audience={audience}
+            goal={goal}
+            platforms={platforms}
+            contentPillars={contentPillars}
             copyToClipboard={copyToClipboard}
             exportToExcel={exportToExcel}
-            topic={topic}
-            event={event}
-            audience={audience}
-            platforms={platforms}
             onClearCalendar={clearCalendar}
-            onRegenerateIdeas={handleGenerateContentIdeas}
-            isGenerateEnabled={isGenerateEnabled}
-            isGenerating={isGenerating}
+            onRegenerateIdeas={handleGenerateContent}
+            isGenerateEnabled={isGenerateEnabled && contentPillars.length > 0}
+            isGenerating={isGeneratingContent}
           />
         </div>
       </div>
