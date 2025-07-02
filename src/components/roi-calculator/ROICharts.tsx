@@ -43,14 +43,32 @@ const chartConfig = {
     label: "Revenue",
     color: "#16a34a",
   },
+  roas: {
+    label: "ROAS",
+    color: "#7c3aed",
+  },
 };
 
 const ROICharts = ({ data }: ROIChartsProps) => {
+  // Early return if no data
+  if (!data || data.length === 0) {
+    return (
+      <div className="space-y-6">
+        <Card>
+          <CardContent className="p-8 text-center">
+            <h3 className="text-lg font-medium text-gray-600">No Data Available</h3>
+            <p className="text-gray-500 mt-2">Please add marketing channel data to view the dashboard.</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   // Prepare data for charts
   const performanceData = data.map(item => ({
     channel: item.channel,
-    roi: item.roi * 100, // Convert to percentage
-    roas: item.roas
+    roi: Math.round(item.roi * 100), // Convert to percentage and round
+    roas: Math.round(item.roas * 100) / 100 // Round to 2 decimals
   }));
 
   const budgetData = data.map(item => ({
@@ -58,7 +76,6 @@ const ROICharts = ({ data }: ROIChartsProps) => {
     spend: item.spend
   }));
 
-  // Grouped bar chart data for Revenue vs Spend comparison
   const revenueVsSpendData = data.map(item => ({
     channel: item.channel,
     spend: item.spend,
@@ -92,7 +109,7 @@ const ROICharts = ({ data }: ROIChartsProps) => {
             <CardTitle>Budget Allocation by Channel</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="min-h-[300px] flex items-center justify-center">
+            <ChartContainer config={chartConfig} className="min-h-[300px]">
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
@@ -112,12 +129,12 @@ const ROICharts = ({ data }: ROIChartsProps) => {
                   <ChartTooltip content={<ChartTooltipContent />} />
                 </PieChart>
               </ResponsiveContainer>
-            </div>
+            </ChartContainer>
           </CardContent>
         </Card>
       </div>
 
-      {/* Revenue vs Spend Grouped Bar Chart (Replaced Pie Chart) */}
+      {/* Revenue vs Spend Grouped Bar Chart */}
       <Card>
         <CardHeader>
           <CardTitle>Revenue vs Spend Comparison by Channel</CardTitle>
