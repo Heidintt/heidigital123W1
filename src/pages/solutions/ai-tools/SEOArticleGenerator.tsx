@@ -175,7 +175,7 @@ ${primary} không còn là tùy chọn mà đã trở thành yêu cầu bắt bu
 
           {generatedArticle && (
             <GeneratedArticleDisplay
-              article={generatedArticle}
+              generatedArticle={generatedArticle}
               onClear={() => setGeneratedArticle("")}
             />
           )}
