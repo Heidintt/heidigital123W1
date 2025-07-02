@@ -35,7 +35,7 @@ Return the result as a simple numbered list with just the pillar names, one per 
 
     console.log('Generating content pillars for topic:', topic);
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${geminiApiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-latest:generateContent?key=${geminiApiKey}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ Return the result as a simple numbered list with just the pillar names, one per 
     }
 
     const data = await response.json();
-    console.log('Content pillars generated successfully');
+    console.log('Content pillars generated successfully with Gemini 1.5 Pro');
 
     if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
       throw new Error('Invalid response format from Gemini API');
@@ -86,7 +86,7 @@ Return the result as a simple numbered list with just the pillar names, one per 
     console.error('Error in generate-pillars-with-gemini function:', error);
     return new Response(JSON.stringify({ 
       error: error.message,
-      details: 'Failed to generate content pillars with Gemini API'
+      details: 'Failed to generate content pillars with Gemini 1.5 Pro API'
     }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
