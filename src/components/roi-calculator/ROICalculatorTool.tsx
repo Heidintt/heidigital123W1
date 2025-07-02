@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ROIInstructions from "./ROIInstructions";
@@ -5,30 +6,13 @@ import DataInputSection from "./DataInputSection";
 import ROICharts from "./ROICharts";
 import ROIMetrics from "./ROIMetrics";
 import BudgetOptimizer from "./BudgetOptimizer";
-import { calculateMetrics, defaultChannels, exportToCSV } from "./calculatorUtils";
-
-interface MarketingChannel {
-  id: string;
-  channel: string;
-  campaignName: string;
-  spend: number;
-  clicks: number;
-  conversions: number;
-  revenue: number;
-  customers: number;
-}
-
-interface CalculatedMetrics extends MarketingChannel {
-  roas: number;
-  cpl: number;
-  arpc: number;
-  leadConversionRate: number;
-  customerConversionRate: number;
-  cpc: number;
-  cac: number;
-  roi: number;
-  budgetRecommendation: string;
-}
+import { 
+  calculateMetrics, 
+  defaultChannels, 
+  exportToCSV,
+  type MarketingChannel,
+  type CalculatedMetrics 
+} from "./calculatorUtils";
 
 const ROICalculatorTool = () => {
   const [channels, setChannels] = useState<MarketingChannel[]>(defaultChannels);
@@ -38,9 +22,10 @@ const ROICalculatorTool = () => {
   // Calculate metrics whenever channels change
   useEffect(() => {
     try {
+      console.log('Calculating metrics for channels:', channels);
       const calculated = calculateMetrics(channels);
+      console.log('Calculated data:', calculated);
       setCalculatedData(calculated);
-      console.log('Calculated data:', calculated); // Debug log
     } catch (error) {
       console.error('Error calculating metrics:', error);
       setCalculatedData([]);
