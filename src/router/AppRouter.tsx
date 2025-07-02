@@ -15,7 +15,7 @@ import Sitemap from "@/pages/Sitemap";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import LoadingSpinner from "@/components/LoadingSpinner";
-import { SolutionRoutes } from "./SolutionRoutes";
+import SolutionRoutes from "./SolutionRoutes";
 import { PortfolioRoutes } from "./PortfolioRoutes";
 import { ServiceRoutes } from "./ServiceRoutes";
 
