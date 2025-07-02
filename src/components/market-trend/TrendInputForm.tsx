@@ -104,7 +104,7 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Worldwide</SelectItem>
+                <SelectItem value="WORLDWIDE">Worldwide</SelectItem>
                 <SelectItem value="US">United States</SelectItem>
                 <SelectItem value="VN">Vietnam</SelectItem>
                 <SelectItem value="GB">United Kingdom</SelectItem>
