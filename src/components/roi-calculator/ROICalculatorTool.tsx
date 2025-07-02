@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ROIInstructions from "./ROIInstructions";
@@ -38,8 +37,14 @@ const ROICalculatorTool = () => {
 
   // Calculate metrics whenever channels change
   useEffect(() => {
-    const calculated = calculateMetrics(channels);
-    setCalculatedData(calculated);
+    try {
+      const calculated = calculateMetrics(channels);
+      setCalculatedData(calculated);
+      console.log('Calculated data:', calculated); // Debug log
+    } catch (error) {
+      console.error('Error calculating metrics:', error);
+      setCalculatedData([]);
+    }
   }, [channels]);
 
   const addChannel = () => {
