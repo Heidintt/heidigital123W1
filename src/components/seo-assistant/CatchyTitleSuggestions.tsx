@@ -23,8 +23,8 @@ const CatchyTitleSuggestions: React.FC<CatchyTitleSuggestionsProps> = ({
   const handleCopyTitle = (title: string) => {
     navigator.clipboard.writeText(title);
     toast({
-      title: "Đã sao chép!",
-      description: "Tiêu đề đã được sao chép vào clipboard"
+      title: "Copied!",
+      description: "Title has been copied to clipboard"
     });
   };
 
@@ -47,7 +47,7 @@ const CatchyTitleSuggestions: React.FC<CatchyTitleSuggestionsProps> = ({
           Catchy Title Suggestions
         </CardTitle>
         <CardDescription>
-          Các gợi ý tiêu đề hấp dẫn sẵn sàng sử dụng
+          Ready-to-use engaging title suggestions
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -83,7 +83,7 @@ const CatchyTitleSuggestions: React.FC<CatchyTitleSuggestionsProps> = ({
         
         <div className="mt-4 text-xs text-yellow-600 flex items-center gap-1">
           <span>🎯</span>
-          <span>Click vào icon copy để sao chép tiêu đề bạn thích</span>
+          <span>Click the copy icon to copy your favorite title</span>
         </div>
       </CardContent>
     </Card>

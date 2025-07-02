@@ -66,7 +66,7 @@ const SEOAssistant = () => {
         ],
         searchIntent: {
           type: "Informational",
-          explanation: "Người dùng tìm kiếm từ khóa này chủ yếu để tìm hiểu kiến thức, định nghĩa, và cách làm, chứ chưa sẵn sàng mua hàng. Nội dung nên tập trung vào việc cung cấp hướng dẫn và giải đáp thắc mắc."
+          explanation: "Users searching for this keyword are primarily seeking knowledge, definitions, and how-to guides, rather than ready to make a purchase. Content should focus on providing guidance and answering questions."
         },
         relatedEntities: [
           "SEO Copywriting",
@@ -78,16 +78,16 @@ const SEOAssistant = () => {
           "Content Strategy"
         ],
         audiencePersona: {
-          persona: "Marketer hoặc Chủ doanh nghiệp nhỏ",
-          problems: "Đang gặp khó khăn trong việc thu hút khách hàng tiềm năng và chưa biết cách tạo ra nội dung có giá trị.",
-          desires: "Tìm kiếm một hướng dẫn thực tế, có thể áp dụng ngay để cải thiện chiến lược nội dung của mình."
+          persona: "Marketer or Small Business Owner",
+          problems: "Struggling with attracting potential customers and don't know how to create valuable content.",
+          desires: "Looking for practical guidance that can be applied immediately to improve their content strategy."
         },
         titleSuggestions: [
-          { type: "List", title: "10 Sai Lầm Chết Người Khi Làm Content Marketing (Và Cách Sửa)" },
-          { type: "How-to", title: "Hướng Dẫn Content Marketing Từ A-Z Cho Người Mới Bắt Đầu" },
-          { type: "Question", title: "Content Marketing Có Thực Sự Hiệu Quả Trong Năm 2024?" },
-          { type: "Secret", title: "Bí Mật Ít Ai Biết Để Tạo Ra Content Thu Hút Hàng Ngàn Click" },
-          { type: "Benefit", title: "Tăng Gấp Đôi Lượng Khách Hàng Tiềm Năng Với Chiến Lược Content Này" }
+          { type: "List", title: "10 Deadly Content Marketing Mistakes (And How to Fix Them)" },
+          { type: "How-to", title: "Complete Content Marketing Guide for Beginners A-Z" },
+          { type: "Question", title: "Is Content Marketing Really Effective in 2024?" },
+          { type: "Secret", title: "Little-Known Secret to Create Content That Gets Thousands of Clicks" },
+          { type: "Benefit", title: "Double Your Lead Generation with This Content Strategy" }
         ]
       };
       

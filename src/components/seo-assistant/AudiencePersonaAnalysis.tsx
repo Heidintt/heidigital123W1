@@ -22,7 +22,7 @@ const AudiencePersonaAnalysis: React.FC<AudiencePersonaAnalysisProps> = ({
           Target Audience Persona
         </CardTitle>
         <CardDescription>
-          Phân tích đối tượng mục tiêu cho từ khóa này
+          Analysis of your target audience for this keyword
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -32,7 +32,7 @@ const AudiencePersonaAnalysis: React.FC<AudiencePersonaAnalysisProps> = ({
               <div className="flex items-start gap-2">
                 <Target className="h-4 w-4 text-purple-600 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-purple-800 mb-1">Chân dung:</p>
+                  <p className="font-medium text-purple-800 mb-1">Profile:</p>
                   <p className="text-gray-700 text-sm">{persona}</p>
                 </div>
               </div>
@@ -40,7 +40,7 @@ const AudiencePersonaAnalysis: React.FC<AudiencePersonaAnalysisProps> = ({
               <div className="flex items-start gap-2">
                 <HelpCircle className="h-4 w-4 text-red-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-red-700 mb-1">Vấn đề:</p>
+                  <p className="font-medium text-red-700 mb-1">Problems:</p>
                   <p className="text-gray-700 text-sm">{problems}</p>
                 </div>
               </div>
@@ -48,7 +48,7 @@ const AudiencePersonaAnalysis: React.FC<AudiencePersonaAnalysisProps> = ({
               <div className="flex items-start gap-2">
                 <span className="text-green-600 mt-1">✨</span>
                 <div>
-                  <p className="font-medium text-green-700 mb-1">Mong muốn:</p>
+                  <p className="font-medium text-green-700 mb-1">Desires:</p>
                   <p className="text-gray-700 text-sm">{desires}</p>
                 </div>
               </div>

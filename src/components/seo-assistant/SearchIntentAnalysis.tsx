@@ -31,13 +31,13 @@ const SearchIntentAnalysis: React.FC<SearchIntentAnalysisProps> = ({
           Search Intent Analysis
         </CardTitle>
         <CardDescription>
-          Phân tích ý định tìm kiếm của người dùng
+          Analysis of user search intent and purpose
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <span className="font-medium text-gray-700">Loại:</span>
+            <span className="font-medium text-gray-700">Type:</span>
             <Badge className={getIntentBadgeColor(intentType)}>
               {intentType}
             </Badge>
@@ -47,7 +47,7 @@ const SearchIntentAnalysis: React.FC<SearchIntentAnalysisProps> = ({
             <div className="flex items-start gap-2">
               <Info className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="font-medium text-gray-800 mb-2">Diễn giải:</p>
+                <p className="font-medium text-gray-800 mb-2">Explanation:</p>
                 <p className="text-gray-700 text-sm leading-relaxed">{explanation}</p>
               </div>
             </div>

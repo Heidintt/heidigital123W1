@@ -19,7 +19,7 @@ const RelatedEntitiesSection: React.FC<RelatedEntitiesSectionProps> = ({
           Related Entities & Topics
         </CardTitle>
         <CardDescription>
-          Các thực thể và chủ đề liên quan nên đề cập trong nội dung
+          Related entities and topics to include in your content
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -39,7 +39,7 @@ const RelatedEntitiesSection: React.FC<RelatedEntitiesSectionProps> = ({
         
         <div className="mt-3 text-xs text-green-600 flex items-center gap-1">
           <span>💡</span>
-          <span>Đề cập các chủ đề này để tăng độ chuyên sâu và uy tín cho nội dung</span>
+          <span>Include these topics to increase content depth and authority</span>
         </div>
       </CardContent>
     </Card>
