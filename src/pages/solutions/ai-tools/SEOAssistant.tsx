@@ -9,6 +9,10 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Search, BarChart3, Target, CheckCircle, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import SearchIntentAnalysis from "@/components/seo-assistant/SearchIntentAnalysis";
+import RelatedEntitiesSection from "@/components/seo-assistant/RelatedEntitiesSection";
+import AudiencePersonaAnalysis from "@/components/seo-assistant/AudiencePersonaAnalysis";
+import CatchyTitleSuggestions from "@/components/seo-assistant/CatchyTitleSuggestions";
 
 const SEOAssistant = () => {
   const [websiteUrl, setWebsiteUrl] = useState("");
@@ -60,6 +64,32 @@ const SEOAssistant = () => {
           "Include keyword in first paragraph",
           "Add more internal links",
           "Optimize images with alt text containing keywords"
+        ],
+        // New advanced features data
+        searchIntent: {
+          type: "Informational",
+          explanation: "Người dùng tìm kiếm từ khóa này chủ yếu để tìm hiểu kiến thức, định nghĩa, và cách làm, chứ chưa sẵn sàng mua hàng. Nội dung nên tập trung vào việc cung cấp hướng dẫn và giải đáp thắc mắc."
+        },
+        relatedEntities: [
+          "SEO Copywriting",
+          "Social Media Strategy", 
+          "Customer Journey",
+          "Brand Awareness",
+          "Marketing Funnel",
+          "Email Marketing",
+          "Content Strategy"
+        ],
+        audiencePersona: {
+          persona: "Marketer hoặc Chủ doanh nghiệp nhỏ",
+          problems: "Đang gặp khó khăn trong việc thu hút khách hàng tiềm năng và chưa biết cách tạo ra nội dung có giá trị.",
+          desires: "Tìm kiếm một hướng dẫn thực tế, có thể áp dụng ngay để cải thiện chiến lược nội dung của mình."
+        },
+        titleSuggestions: [
+          { type: "List", title: "10 Sai Lầm Chết Người Khi Làm Content Marketing (Và Cách Sửa)" },
+          { type: "How-to", title: "Hướng Dẫn Content Marketing Từ A-Z Cho Người Mới Bắt Đầu" },
+          { type: "Question", title: "Content Marketing Có Thực Sự Hiệu Quả Trong Năm 2024?" },
+          { type: "Secret", title: "Bí Mật Ít Ai Biết Để Tạo Ra Content Thu Hút Hàng Ngàn Click" },
+          { type: "Benefit", title: "Tăng Gấp Đôi Lượng Khách Hàng Tiềm Năng Với Chiến Lược Content Này" }
         ]
       };
       
@@ -208,6 +238,23 @@ const SEOAssistant = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Advanced Analysis Features */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <SearchIntentAnalysis 
+                  intentType={analysis.searchIntent.type}
+                  explanation={analysis.searchIntent.explanation}
+                />
+                <AudiencePersonaAnalysis 
+                  persona={analysis.audiencePersona.persona}
+                  problems={analysis.audiencePersona.problems}
+                  desires={analysis.audiencePersona.desires}
+                />
+              </div>
+
+              <RelatedEntitiesSection entities={analysis.relatedEntities} />
+              
+              <CatchyTitleSuggestions suggestions={analysis.titleSuggestions} />
 
               {/* Detailed Analysis */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
