@@ -7,7 +7,7 @@ import CallToAction from "@/components/CallToAction";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Bot, Edit, BarChart3, Users, Globe, Search, FileText } from "lucide-react";
+import { Bot, Edit, BarChart3, Users, Globe, Search, FileText, Calendar } from "lucide-react";
 
 const AITools = () => {
   return (
@@ -112,6 +112,29 @@ const AITools = () => {
               <CardFooter>
                 <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
                   <Link to="/solutions/ai-tools/seo-assistant">Try Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-purple-500">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <Calendar className="h-12 w-12 text-heisocial-blue" />
+                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-semibold">NEW</span>
+                </div>
+                <CardTitle>Content Calendar Generator</CardTitle>
+                <CardDescription>
+                  Generate a month's worth of creative content ideas based on any topic
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  AI-powered tool that creates 12 diverse content ideas organized into a 4-week calendar format for your marketing campaigns.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+                  <Link to="/solutions/ai-tools/content-calendar-generator">Try Now</Link>
                 </Button>
               </CardFooter>
             </Card>
