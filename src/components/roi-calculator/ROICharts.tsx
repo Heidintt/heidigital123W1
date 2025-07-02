@@ -46,38 +46,23 @@ const chartConfig = {
 };
 
 const ROICharts = ({ data }: ROIChartsProps) => {
-  // Add error boundary and data validation
-  if (!data || data.length === 0) {
-    return (
-      <div className="space-y-6">
-        <Card>
-          <CardContent className="p-6">
-            <div className="text-center text-gray-500">
-              Không có dữ liệu để hiển thị biểu đồ. Vui lòng thêm dữ liệu kênh marketing trong tab "Data Input".
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
-  // Prepare data for charts with safe fallbacks
+  // Prepare data for charts
   const performanceData = data.map(item => ({
-    channel: item.channel || 'Unknown',
-    roi: isFinite(item.roi) ? item.roi * 100 : 0, // Convert to percentage and handle NaN/Infinity
-    roas: isFinite(item.roas) ? item.roas : 0
+    channel: item.channel,
+    roi: item.roi * 100, // Convert to percentage
+    roas: item.roas
   }));
 
   const budgetData = data.map(item => ({
-    channel: item.channel || 'Unknown',
-    spend: isFinite(item.spend) ? item.spend : 0
+    channel: item.channel,
+    spend: item.spend
   }));
 
   // Grouped bar chart data for Revenue vs Spend comparison
   const revenueVsSpendData = data.map(item => ({
-    channel: item.channel || 'Unknown',
-    spend: isFinite(item.spend) ? item.spend : 0,
-    revenue: isFinite(item.revenue) ? item.revenue : 0
+    channel: item.channel,
+    spend: item.spend,
+    revenue: item.revenue
   }));
 
   return (
@@ -132,7 +117,7 @@ const ROICharts = ({ data }: ROIChartsProps) => {
         </Card>
       </div>
 
-      {/* Revenue vs Spend Grouped Bar Chart */}
+      {/* Revenue vs Spend Grouped Bar Chart (Replaced Pie Chart) */}
       <Card>
         <CardHeader>
           <CardTitle>Revenue vs Spend Comparison by Channel</CardTitle>
@@ -171,16 +156,16 @@ const ROICharts = ({ data }: ROIChartsProps) => {
               </thead>
               <tbody>
                 {data.map((item) => {
-                  const profit = (item.revenue || 0) - (item.spend || 0);
-                  const roi = isFinite(item.roi) ? item.roi * 100 : 0;
+                  const profit = item.revenue - item.spend;
+                  const roi = item.roi * 100;
                   const performanceColor = roi > 50 ? 'text-green-600' : roi > 0 ? 'text-yellow-600' : 'text-red-600';
                   const performanceIcon = roi > 50 ? '🚀' : roi > 0 ? '📈' : '📉';
                   
                   return (
                     <tr key={item.id} className="border-b hover:bg-gray-50">
                       <td className="p-3 font-medium">{item.channel}</td>
-                      <td className="p-3 text-right">${(item.spend || 0).toFixed(2)}</td>
-                      <td className="p-3 text-right">${(item.revenue || 0).toFixed(2)}</td>
+                      <td className="p-3 text-right">${item.spend.toFixed(2)}</td>
+                      <td className="p-3 text-right">${item.revenue.toFixed(2)}</td>
                       <td className={`p-3 text-right ${profit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                         ${profit.toFixed(2)}
                       </td>

@@ -3,7 +3,17 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Plus, Download } from "lucide-react";
 import ChannelCard from "./ChannelCard";
-import { type MarketingChannel } from "./calculatorUtils";
+
+interface MarketingChannel {
+  id: string;
+  channel: string;
+  campaignName: string;
+  spend: number;
+  clicks: number;
+  conversions: number;
+  revenue: number;
+  customers: number;
+}
 
 interface DataInputSectionProps {
   channels: MarketingChannel[];

@@ -6,13 +6,30 @@ import DataInputSection from "./DataInputSection";
 import ROICharts from "./ROICharts";
 import ROIMetrics from "./ROIMetrics";
 import BudgetOptimizer from "./BudgetOptimizer";
-import { 
-  calculateMetrics, 
-  defaultChannels, 
-  exportToCSV,
-  type MarketingChannel,
-  type CalculatedMetrics 
-} from "./calculatorUtils";
+import { calculateMetrics, defaultChannels, exportToCSV } from "./calculatorUtils";
+
+interface MarketingChannel {
+  id: string;
+  channel: string;
+  campaignName: string;
+  spend: number;
+  clicks: number;
+  conversions: number;
+  revenue: number;
+  customers: number;
+}
+
+interface CalculatedMetrics extends MarketingChannel {
+  roas: number;
+  cpl: number;
+  arpc: number;
+  leadConversionRate: number;
+  customerConversionRate: number;
+  cpc: number;
+  cac: number;
+  roi: number;
+  budgetRecommendation: string;
+}
 
 const ROICalculatorTool = () => {
   const [channels, setChannels] = useState<MarketingChannel[]>(defaultChannels);
@@ -21,15 +38,8 @@ const ROICalculatorTool = () => {
 
   // Calculate metrics whenever channels change
   useEffect(() => {
-    try {
-      console.log('Calculating metrics for channels:', channels);
-      const calculated = calculateMetrics(channels);
-      console.log('Calculated data:', calculated);
-      setCalculatedData(calculated);
-    } catch (error) {
-      console.error('Error calculating metrics:', error);
-      setCalculatedData([]);
-    }
+    const calculated = calculateMetrics(channels);
+    setCalculatedData(calculated);
   }, [channels]);
 
   const addChannel = () => {
