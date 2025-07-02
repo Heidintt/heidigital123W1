@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import TrendInputForm from "./TrendInputForm";
@@ -6,8 +5,9 @@ import TrendChart from "./TrendChart";
 import SpikeDetection from "./SpikeDetection";
 import TrendMetrics from "./TrendMetrics";
 import TrendExport from "./TrendExport";
+import AIInsightsCard from "./AIInsightsCard";
 import { fetchTrendAnalysis, TrendApiResponse } from "@/services/trendApi";
-import { detectSpikes } from "./trendAnalysisUtils";
+import { generateInsightSummary } from "./generateInsightSummary";
 
 export interface TrendData {
   date: string;
@@ -34,11 +34,14 @@ const MarketTrendAnalyzerTool = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [spikeData, setSpikeData] = useState<any>({});
   const [error, setError] = useState<string | null>(null);
+  const [aiInsightSummary, setAiInsightSummary] = useState<string>("");
+  const [isGeneratingInsights, setIsGeneratingInsights] = useState(false);
 
   const handleAnalysis = async (params: AnalysisParams) => {
     setIsAnalyzing(true);
     setError(null);
     setAnalysisParams(params);
+    setAiInsightSummary("");
     
     try {
       // For now, we'll analyze the first keyword (single keyword analysis)
@@ -73,6 +76,14 @@ const MarketTrendAnalyzerTool = () => {
       };
       
       setSpikeData(spikes);
+      
+      // Generate AI insights after data is loaded
+      setIsGeneratingInsights(true);
+      setTimeout(() => {
+        const summary = generateInsightSummary(keyword, transformedData, spikes);
+        setAiInsightSummary(summary);
+        setIsGeneratingInsights(false);
+      }, 1500); // Small delay for better UX
       
     } catch (error) {
       console.error("Analysis error:", error);
@@ -128,6 +139,14 @@ const MarketTrendAnalyzerTool = () => {
               keywords={analysisParams.keywords} 
             />
           </div>
+          
+          {/* AI Insights Section */}
+          <AIInsightsCard 
+            summary={aiInsightSummary}
+            keyword={analysisParams.keywords[0]}
+            isGenerating={isGeneratingInsights}
+          />
+          
           <TrendExport 
             data={trendData} 
             spikeData={spikeData}
