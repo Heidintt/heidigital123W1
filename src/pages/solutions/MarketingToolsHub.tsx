@@ -7,7 +7,7 @@ import CallToAction from "@/components/CallToAction";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Bot, Edit, BarChart3, Users, Globe, Search, FileText, Calculator } from "lucide-react";
+import { Bot, Edit, BarChart3, Users, Globe, Search, FileText, Calculator, TrendingUp } from "lucide-react";
 
 const MarketingToolsHub = () => {
   return (
@@ -113,6 +113,30 @@ const MarketingToolsHub = () => {
               <CardFooter>
                 <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
                   <Link to="/solutions/tools/seo-assistant">Try Now</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+
+            {/* New Market Trend Analyzer */}
+            <Card className="hover:shadow-lg transition-shadow border-2 border-orange-500">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="h-12 w-12 text-heisocial-blue" />
+                  <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold">NEW</span>
+                </div>
+                <CardTitle>Market Trend Analyzer</CardTitle>
+                <CardDescription>
+                  Advanced market trend analysis with spike detection and predictions
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Analyze keyword trends, detect market spikes, and get insights into consumer behavior patterns. Built by Heidi Digital team.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+                  <Link to="/solutions/tools/market-trend-analyzer">Try Now</Link>
                 </Button>
               </CardFooter>
             </Card>

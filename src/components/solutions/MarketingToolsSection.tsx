@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Calculator, FileText, Search } from "lucide-react";
+import { ArrowRight, Brain, Calculator, FileText, Search, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -23,11 +23,11 @@ const MarketingToolsSection = () => {
       badge: "AI"
     },
     {
-      title: "ROI Calculator",
-      description: "Interactive calculator to measure and optimize your digital marketing ROI with real-time insights.",
-      icon: <Calculator className="h-10 w-10 text-heisocial-purple" />,
-      link: "/solutions/tools/roi-calculator",
-      badge: "HEIDI DIGITAL"
+      title: "Market Trend Analyzer",
+      description: "Advanced market trend analysis with spike detection and prediction capabilities. Track consumer behavior patterns.",
+      icon: <TrendingUp className="h-10 w-10 text-heisocial-purple" />,
+      link: "/solutions/tools/market-trend-analyzer",
+      badge: "NEW"
     },
     {
       title: "SEO Assistant",
@@ -35,6 +35,13 @@ const MarketingToolsSection = () => {
       icon: <Search className="h-10 w-10 text-heisocial-purple" />,
       link: "/solutions/tools/seo-assistant",
       badge: "AI"
+    },
+    {
+      title: "ROI Calculator",
+      description: "Interactive calculator to measure and optimize your digital marketing ROI with real-time insights.",
+      icon: <Calculator className="h-10 w-10 text-heisocial-purple" />,
+      link: "/solutions/tools/roi-calculator",
+      badge: "HEIDI DIGITAL"
     },
   ];
 
@@ -57,7 +64,9 @@ const MarketingToolsSection = () => {
                   </div>
                   <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
                     tool.badge === 'HEIDI DIGITAL' 
-                      ? 'bg-purple-100 text-purple-700' 
+                      ? 'bg-purple-100 text-purple-700'
+                      : tool.badge === 'NEW'
+                      ? 'bg-orange-100 text-orange-700'
                       : 'bg-blue-100 text-blue-700'
                   }`}>
                     {tool.badge}
