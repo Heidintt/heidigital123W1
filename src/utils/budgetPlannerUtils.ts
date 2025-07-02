@@ -1,5 +1,5 @@
 
-import { BudgetPlannerState, ChannelCalculations, OverallCalculations } from "@/types/budgetPlanner";
+import { BudgetPlannerState, ChannelCalculations, OverallCalculations, SavedPlan } from "@/types/budgetPlanner";
 
 export const calculateChannelMetrics = (plannerState: BudgetPlannerState): ChannelCalculations[] => {
   const { channels, totalBudget, planningMode, campaignGoal, leadToCustomerRate } = plannerState;
@@ -29,13 +29,13 @@ export const calculateChannelMetrics = (plannerState: BudgetPlannerState): Chann
     const totalLeadsRequired = campaignGoal / (leadToCustomerRate / 100);
     
     // Simple distribution - divide leads proportionally based on CVR efficiency
-    const totalCVREfficiency = channels.reduce((sum, channel) => sum + (channel.cvr / channel.cpc), 0);
+    const totalCVREfficiency = channels.reduce((sum, channel) => sum + (channel.cvr / Math.max(channel.cpc, 0.01)), 0);
     
     return channels.map(channel => {
-      const channelEfficiency = channel.cvr / channel.cpc;
-      const channelLeadShare = channelEfficiency / totalCVREfficiency;
+      const channelEfficiency = channel.cvr / Math.max(channel.cpc, 0.01);
+      const channelLeadShare = totalCVREfficiency > 0 ? channelEfficiency / totalCVREfficiency : 0;
       const estimatedLeads = totalLeadsRequired * channelLeadShare;
-      const estimatedClicks = estimatedLeads / (channel.cvr / 100);
+      const estimatedClicks = channel.cvr > 0 ? estimatedLeads / (channel.cvr / 100) : 0;
       const allocatedBudget = estimatedClicks * channel.cpc;
       const cpl = estimatedLeads > 0 ? allocatedBudget / estimatedLeads : 0;
       const estimatedRevenue = estimatedLeads * channel.valuePerLead;
@@ -77,4 +77,63 @@ export const calculateOverallMetrics = (
     overallROI,
     averageCAC
   };
+};
+
+// Save/Load functionality
+export const savePlan = (plannerState: BudgetPlannerState, planName: string): void => {
+  const savedPlan: SavedPlan = {
+    id: Date.now().toString(),
+    name: planName,
+    data: plannerState,
+    savedAt: new Date().toISOString()
+  };
+
+  const existingPlans = getSavedPlans();
+  existingPlans.push(savedPlan);
+  localStorage.setItem('budgetPlannerSavedPlans', JSON.stringify(existingPlans));
+};
+
+export const getSavedPlans = (): SavedPlan[] => {
+  const saved = localStorage.getItem('budgetPlannerSavedPlans');
+  return saved ? JSON.parse(saved) : [];
+};
+
+export const loadPlan = (planId: string): BudgetPlannerState | null => {
+  const savedPlans = getSavedPlans();
+  const plan = savedPlans.find(p => p.id === planId);
+  return plan ? plan.data : null;
+};
+
+export const deleteSavedPlan = (planId: string): void => {
+  const savedPlans = getSavedPlans();
+  const filteredPlans = savedPlans.filter(p => p.id !== planId);
+  localStorage.setItem('budgetPlannerSavedPlans', JSON.stringify(filteredPlans));
+};
+
+// Export to CSV functionality
+export const exportToCSV = (channelCalculations: ChannelCalculations[]): void => {
+  const headers = ['Channel', 'Budget ($)', 'Clicks', 'Conversions (Leads)', 'Cost Per Lead (CPL)', 'Revenue ($)', 'ROAS'];
+  
+  const csvContent = [
+    headers.join(','),
+    ...channelCalculations.map(channel => [
+      `"${channel.name}"`,
+      channel.allocatedBudget.toFixed(2),
+      Math.round(channel.estimatedClicks),
+      channel.estimatedLeads.toFixed(1),
+      channel.cpl.toFixed(2),
+      channel.estimatedRevenue.toFixed(2),
+      channel.roas.toFixed(2)
+    ].join(','))
+  ].join('\n');
+
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(blob);
+  link.setAttribute('href', url);
+  link.setAttribute('download', `marketing-budget-plan-${new Date().toISOString().split('T')[0]}.csv`);
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };

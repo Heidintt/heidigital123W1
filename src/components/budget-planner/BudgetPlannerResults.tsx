@@ -1,11 +1,14 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Download } from "lucide-react";
 import BudgetAllocationChart from "./BudgetAllocationChart";
 import PerformanceComparisonChart from "./PerformanceComparisonChart";
 import { BudgetPlannerState, ChannelCalculations, OverallCalculations } from "@/types/budgetPlanner";
-import { calculateChannelMetrics, calculateOverallMetrics } from "@/utils/budgetPlannerUtils";
+import { calculateChannelMetrics, calculateOverallMetrics, exportToCSV } from "@/utils/budgetPlannerUtils";
+import { toast } from "sonner";
 
 interface BudgetPlannerResultsProps {
   plannerState: BudgetPlannerState;
@@ -14,6 +17,18 @@ interface BudgetPlannerResultsProps {
 const BudgetPlannerResults: React.FC<BudgetPlannerResultsProps> = ({ plannerState }) => {
   const channelCalculations = calculateChannelMetrics(plannerState);
   const overallCalculations = calculateOverallMetrics(plannerState, channelCalculations);
+
+  const totalAllocation = plannerState.channels.reduce((sum, channel) => sum + channel.budgetAllocation, 0);
+  const isValidAllocation = plannerState.planningMode === 'goal-first' || Math.abs(totalAllocation - 100) <= 0.1;
+
+  const handleExportCSV = () => {
+    try {
+      exportToCSV(channelCalculations);
+      toast.success("Data exported successfully!");
+    } catch (error) {
+      toast.error("Failed to export data");
+    }
+  };
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -33,10 +48,39 @@ const BudgetPlannerResults: React.FC<BudgetPlannerResultsProps> = ({ plannerStat
     return `${(value * 100).toFixed(1)}%`;
   };
 
+  if (!isValidAllocation && plannerState.planningMode === 'budget-first') {
+    return (
+      <div className="space-y-6">
+        <div className="text-center p-8">
+          <div className="text-6xl mb-4">⚠️</div>
+          <h3 className="text-xl font-semibold mb-2 text-red-600">Invalid Budget Allocation</h3>
+          <p className="text-gray-600 mb-4">
+            Your total budget allocation is {totalAllocation.toFixed(1)}%. 
+            Please adjust your channel allocations to equal exactly 100% to see results.
+          </p>
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-left max-w-md mx-auto">
+            <h4 className="font-medium text-red-800 mb-2">Quick Fix:</h4>
+            <ul className="text-sm text-red-700 space-y-1">
+              <li>• Use the sliders to adjust budget percentages</li>
+              <li>• Each slider automatically adjusts others</li>
+              <li>• Total must equal 100%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-xl font-semibold mb-4">Campaign Results & Analysis</h3>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-xl font-semibold">Campaign Results & Analysis</h3>
+          <Button onClick={handleExportCSV} variant="outline" size="sm">
+            <Download className="h-4 w-4 mr-2" />
+            Export CSV
+          </Button>
+        </div>
         
         {/* Overall Summary */}
         <Card className="mb-6">
@@ -54,7 +98,9 @@ const BudgetPlannerResults: React.FC<BudgetPlannerResultsProps> = ({ plannerStat
                 <div className="text-2xl font-bold text-blue-600">
                   {formatCurrency(overallCalculations.totalBudget)}
                 </div>
-                <div className="text-sm text-gray-600">Total Budget</div>
+                <div className="text-sm text-gray-600">
+                  {plannerState.planningMode === 'goal-first' ? 'Required Budget' : 'Total Budget'}
+                </div>
               </div>
               
               <div className="text-center p-3 bg-green-50 rounded-lg">

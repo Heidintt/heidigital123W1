@@ -37,3 +37,10 @@ export interface OverallCalculations {
   overallROI: number;
   averageCAC: number; // Customer Acquisition Cost
 }
+
+export interface SavedPlan {
+  id: string;
+  name: string;
+  data: BudgetPlannerState;
+  savedAt: string;
+}
