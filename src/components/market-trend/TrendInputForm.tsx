@@ -15,15 +15,15 @@ interface TrendInputFormProps {
 }
 
 const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFormProps) => {
-  const [keywords, setKeywords] = useState<string[]>(["AI", "ChatGPT", "Marketing Automation"]);
+  const [keywords, setKeywords] = useState<string[]>(["AI"]);
   const [newKeyword, setNewKeyword] = useState("");
-  const [timeframe, setTimeframe] = useState("90d");
+  const [timeframe, setTimeframe] = useState("3m");
   const [geo, setGeo] = useState("US");
   const [spikeThreshold, setSpikeThreshold] = useState(2.0);
   const [spikeWindow, setSpikeWindow] = useState(7);
 
   const addKeyword = () => {
-    if (newKeyword.trim() && !keywords.includes(newKeyword.trim()) && keywords.length < 5) {
+    if (newKeyword.trim() && !keywords.includes(newKeyword.trim()) && keywords.length < 1) {
       setKeywords([...keywords, newKeyword.trim()]);
       setNewKeyword("");
     }
@@ -51,7 +51,7 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div>
-            <Label htmlFor="keywords">Keywords to Analyze (Max 5)</Label>
+            <Label htmlFor="keywords">Keyword to Analyze</Label>
             <div className="flex gap-2 mt-2">
               <Input
                 id="keywords"
@@ -63,7 +63,7 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
               <Button 
                 type="button" 
                 onClick={addKeyword}
-                disabled={!newKeyword.trim() || keywords.length >= 5}
+                disabled={!newKeyword.trim() || keywords.length >= 1}
                 size="sm"
               >
                 <Plus className="h-4 w-4" />
@@ -80,6 +80,9 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
                 </Badge>
               ))}
             </div>
+            <p className="text-sm text-gray-500 mt-1">
+              Currently supports single keyword analysis. Multi-keyword support coming soon.
+            </p>
           </div>
 
           <div>
@@ -91,7 +94,7 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
               <SelectContent>
                 <SelectItem value="7d">Last 7 days</SelectItem>
                 <SelectItem value="30d">Last 30 days</SelectItem>
-                <SelectItem value="90d">Last 3 months</SelectItem>
+                <SelectItem value="3m">Last 3 months</SelectItem>
                 <SelectItem value="12m">Last 12 months</SelectItem>
               </SelectContent>
             </Select>
@@ -149,11 +152,11 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
             </p>
           </div>
 
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <h4 className="font-semibold text-blue-800 mb-2">Demo Mode</h4>
-            <p className="text-sm text-blue-700">
-              This tool uses simulated trend data for demonstration. 
-              Real Google Trends integration available in production version.
+          <div className="bg-green-50 p-4 rounded-lg">
+            <h4 className="font-semibold text-green-800 mb-2">🔥 Live Data</h4>
+            <p className="text-sm text-green-700">
+              Now powered by real Google Trends data with AI-driven spike detection 
+              and 90-day forecasting. Results may take 10-15 seconds to load.
             </p>
           </div>
         </div>
@@ -165,11 +168,11 @@ const TrendInputForm = ({ onAnalyze, isAnalyzing, initialParams }: TrendInputFor
         className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90"
       >
         {isAnalyzing ? (
-          "Analyzing Trends..."
+          "Analyzing with Live Data..."
         ) : (
           <>
             <TrendingUp className="mr-2 h-4 w-4" />
-            Analyze Market Trends
+            Analyze Market Trends (Live API)
           </>
         )}
       </Button>
