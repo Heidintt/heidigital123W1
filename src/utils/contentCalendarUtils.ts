@@ -1,4 +1,3 @@
-
 import { advancedContentMatrix, eventContentMatrix, AdvancedContentTemplate } from '@/data/advancedContentMatrix';
 
 export interface ContentIdea {
@@ -60,6 +59,7 @@ export const generateContentIdeas = (
     let selectedTemplate: AdvancedContentTemplate;
     let attempts = 0;
     const maxAttempts = shuffledTemplates.length * 2;
+    let shouldSkip = false;
 
     // Smart selection algorithm
     do {
@@ -68,7 +68,7 @@ export const generateContentIdeas = (
       attempts++;
       
       // Check if we should skip this template
-      const shouldSkip = 
+      shouldSkip = 
         // Avoid same type in consecutive picks within the last 2 selections
         lastTwoTypes.includes(selectedTemplate.type) ||
         // If we have enough unused templates, avoid repeating until we've used more unique ones
