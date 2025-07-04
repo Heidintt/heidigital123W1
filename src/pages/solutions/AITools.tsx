@@ -4,7 +4,6 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import AIToolsSection from "@/components/solutions/AIToolsSection";
 import FeaturedToolSection from "@/components/solutions/FeaturedToolSection";
-import AIToolsFeatures from "@/components/solutions/AIToolsFeatures";
 import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -26,7 +25,6 @@ const AITools = () => {
         backgroundImage="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      <AIToolsFeatures />
       <AIToolsSection />
       <FeaturedToolSection />
 
