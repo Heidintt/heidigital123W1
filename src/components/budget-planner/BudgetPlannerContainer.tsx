@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { BudgetPlannerState, MarketingChannel, PlanningMode } from "@/types/budgetPlanner";
 import BudgetPlannerInputs from "./BudgetPlannerInputs";
 import BudgetPlannerResults from "./BudgetPlannerResults";
-import { calculateChannelMetrics, calculateOverallMetrics } from "@/utils/budgetPlannerUtils";
 
 const BudgetPlannerContainer = () => {
   const [plannerState, setPlannerState] = useState<BudgetPlannerState>({
@@ -75,9 +74,6 @@ const BudgetPlannerContainer = () => {
     }));
   };
 
-  const channelCalculations = calculateChannelMetrics(plannerState);
-  const overallCalculations = calculateOverallMetrics(plannerState, channelCalculations);
-
   return (
     <div className="space-y-8">
       <BudgetPlannerInputs
@@ -89,8 +85,6 @@ const BudgetPlannerContainer = () => {
       />
       
       <BudgetPlannerResults
-        channelCalculations={channelCalculations}
-        overallCalculations={overallCalculations}
         plannerState={plannerState}
       />
     </div>
