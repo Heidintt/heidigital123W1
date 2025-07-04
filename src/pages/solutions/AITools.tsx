@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,11 +9,11 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 
 const AITools = () => {
-  // SEO optimization for AI Tools page
+  // SEO optimization for Tools page
   useSEO({
-    title: "AI Marketing Tools & Automation | Free AI-Powered Solutions | Heidi Digital",
-    description: "Powerful AI marketing tools to automate your campaigns. Free ROI calculator, budget planner, and AI-powered marketing solutions for businesses.",
-    keywords: "AI marketing tools, marketing automation, AI-powered solutions, free marketing tools, ROI calculator, budget planner, marketing AI",
+    title: "Marketing Tools & Calculators | Free Digital Marketing Solutions | Heidi Digital",
+    description: "Comprehensive marketing tools including ROI calculator, budget planner, and optimization solutions. Free tools for businesses to improve marketing performance.",
+    keywords: "marketing tools, ROI calculator, budget planner, marketing automation, digital marketing solutions, free marketing tools",
     url: "https://heidigital.info/solutions/ai-tools",
     type: "website"
   });
@@ -20,8 +21,8 @@ const AITools = () => {
   return (
     <Layout>
       <Hero
-        title="AI Marketing Tools"
-        subtitle="Harness the power of artificial intelligence to automate and optimize your marketing campaigns"
+        title="Marketing Tools"
+        subtitle="Comprehensive suite of marketing tools to automate, optimize, and enhance your digital campaigns"
         backgroundImage="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
@@ -30,8 +31,8 @@ const AITools = () => {
       <FeaturedToolSection />
 
       <CallToAction
-        title="Ready to Transform Your Marketing with AI?"
-        description="Discover how our AI-powered tools can revolutionize your marketing strategy and drive better results."
+        title="Ready to Optimize Your Marketing?"
+        description="Discover how our comprehensive toolkit can help you achieve better results and drive growth for your business."
         primaryButtonText="Explore All Tools"
         primaryButtonLink="/solutions"
         secondaryButtonText="Contact Us"
