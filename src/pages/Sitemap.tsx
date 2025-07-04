@@ -1,12 +1,20 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
 import { Link } from "react-router-dom";
 import { ExternalLink, FileText, Calendar } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const Sitemap = () => {
+  useSEO({
+    title: "Website Sitemap | Complete Site Structure | Heidi Digital",
+    description: "Browse our complete website sitemap with all pages, services, tools and resources. Find everything on Heidi Digital easily. XML sitemap available for search engines.",
+    keywords: "sitemap, website structure, site navigation, xml sitemap, website pages, site map",
+    url: "https://heidigital.info/sitemap",
+    type: "website"
+  });
+
   return (
     <Layout>
       <Hero

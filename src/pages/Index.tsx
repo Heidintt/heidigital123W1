@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -15,9 +14,9 @@ import {
 const Index = () => {
   // SEO optimization for homepage
   useSEO({
-    title: "Heidi Digital - AI-Powered Marketing Solutions | Digital Marketing Agency",
-    description: "Professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform your business.",
-    keywords: "digital marketing, AI marketing, SEO, social media marketing, content creation, branding, digital advertising, marketing agency",
+    title: "Digital Marketing Agency | AI-Powered Solutions | Heidi Digital",
+    description: "Transform your business with AI-powered digital marketing strategies. Expert SEO, social media, content creation & branding services. Get your free consultation today!",
+    keywords: "digital marketing agency, AI marketing solutions, SEO services, social media marketing, content creation, branding, digital advertising",
     url: "https://heidigital.info/",
     type: "website"
   });

@@ -8,9 +8,9 @@ import { MapPin, Mail, Clock, MessageSquare } from "lucide-react";
 const Contact = () => {
   // Set SEO for contact page
   useSEO({
-    title: "Contact Heidi Digital - Get Your Free Marketing Consultation",
-    description: "Get in touch with our digital marketing experts. Contact Heidi Digital today for a free consultation and discover how we can transform your business.",
-    keywords: "contact heidi digital, marketing consultation, digital marketing contact, get in touch, marketing experts",
+    title: "Contact Us | Get Free Marketing Consultation | Heidi Digital",
+    description: "Ready to grow your business? Contact our digital marketing experts for a free consultation. Get custom strategies, competitive quotes & proven results. Call today!",
+    keywords: "contact digital marketing agency, free marketing consultation, get marketing quote, marketing experts contact, digital marketing help, marketing consultation australia",
     url: "https://heidigital.info/contact",
     type: "website"
   });

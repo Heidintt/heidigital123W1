@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -13,9 +12,9 @@ import WhyChooseUs from "@/components/about/WhyChooseUs";
 const About = () => {
   // Set SEO for about page
   useSEO({
-    title: "About Heidi Digital - Your Trusted Marketing Partner",
-    description: "Learn about Heidi Digital's mission, values, and expertise in AI-powered digital marketing. Discover why we're the trusted partner for your brand development journey.",
-    keywords: "about heidi digital, marketing agency, digital marketing experts, AI marketing specialists, brand development",
+    title: "About Us | Top Digital Marketing Agency | Heidi Digital",
+    description: "Meet Heidi Digital: Leading AI-powered marketing experts with proven results. Discover our mission, values & why we're Australia's trusted digital marketing partner.",
+    keywords: "about heidi digital, digital marketing agency, AI marketing experts, marketing specialists, brand development team, marketing consultants australia",
     url: "https://heidigital.info/about",
     type: "website"
   });

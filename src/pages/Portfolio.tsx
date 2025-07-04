@@ -10,9 +10,9 @@ import { useSEO } from "@/hooks/useSEO";
 const Portfolio = () => {
   // SEO optimization for portfolio page
   useSEO({
-    title: "Portfolio - Our Success Stories | Heidi Digital",
-    description: "Explore our success stories and see how we've helped businesses achieve remarkable growth through digital marketing campaigns and strategies.",
-    keywords: "portfolio, case studies, digital marketing success, marketing campaigns, client results",
+    title: "Marketing Portfolio & Case Studies | Proven Results | Heidi Digital",
+    description: "Explore our successful marketing campaigns & case studies. See how we've helped businesses achieve 200% growth, viral campaigns & market dominance. View results now!",
+    keywords: "marketing portfolio, case studies, marketing campaign results, success stories, digital marketing examples, campaign case studies, marketing ROI",
     url: "https://heidigital.info/portfolio",
     type: "website"
   });

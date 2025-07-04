@@ -1,10 +1,18 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
+import { useSEO } from "@/hooks/useSEO";
 
 const PrivacyPolicy = () => {
+  useSEO({
+    title: "Privacy Policy | Data Protection & Security | Heidi Digital",
+    description: "Learn how Heidi Digital protects your privacy and personal data. Transparent privacy policy covering data collection, usage, and your rights. Updated 2024.",
+    keywords: "privacy policy, data protection, personal data security, GDPR compliance, data privacy rights, information security",
+    url: "https://heidigital.info/privacy-policy",
+    type: "website"
+  });
+
   return (
     <Layout>
       <Hero

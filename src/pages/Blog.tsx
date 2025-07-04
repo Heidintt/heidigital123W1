@@ -14,9 +14,9 @@ const Blog = () => {
 
   // Set SEO for blog page
   useSEO({
-    title: "Marketing Blog - Insights & Resources | Heidi Digital",
-    description: "Expert perspectives, actionable tips, and the latest trends in digital marketing and AI. Stay ahead with our comprehensive marketing resources.",
-    keywords: "marketing blog, digital marketing tips, AI marketing, SEO guides, content marketing, social media marketing",
+    title: "Digital Marketing Blog | Expert Tips & Latest Trends | Heidi Digital",
+    description: "Stay ahead with expert digital marketing insights, AI marketing tips, SEO guides & latest industry trends. Free actionable content to grow your business. Read now!",
+    keywords: "digital marketing blog, marketing tips, AI marketing insights, SEO guides, content marketing strategies, social media tips, marketing trends 2024",
     url: "https://heidigital.info/blog",
     type: "website"
   });

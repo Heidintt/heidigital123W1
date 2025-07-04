@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -12,9 +11,9 @@ import NewsletterSection from "@/components/solutions/NewsletterSection";
 const Solutions = () => {
   // Set SEO for solutions page
   useSEO({
-    title: "Marketing Solutions & Tools Hub | Heidi Digital",
-    description: "Explore our cutting-edge marketing tools and free resources to enhance your marketing strategy. Transform your digital marketing with innovative solutions.",
-    keywords: "marketing solutions, marketing tools, AI marketing tools, free marketing resources, digital marketing hub, marketing automation",
+    title: "AI Marketing Tools & Free Resources | Solution Hub | Heidi Digital",
+    description: "Access cutting-edge AI marketing tools, free templates, ROI calculators & expert resources. Transform your digital marketing strategy with innovative solutions. Try now!",
+    keywords: "AI marketing tools, free marketing resources, marketing templates, ROI calculator, digital marketing hub, marketing automation tools, SEO tools",
     url: "https://heidigital.info/solutions",
     type: "website"
   });

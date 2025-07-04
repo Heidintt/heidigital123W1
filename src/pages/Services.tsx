@@ -17,9 +17,9 @@ import { Link } from "react-router-dom";
 const Services = () => {
   // SEO optimization for services page
   useSEO({
-    title: "Digital Marketing Services - AI-Powered Solutions | Heidi Digital",
-    description: "Comprehensive digital marketing services including AI marketing strategy, SEO, social media management, content creation, branding, and digital advertising.",
-    keywords: "digital marketing services, AI marketing, SEO services, social media management, content creation, branding, digital advertising",
+    title: "Digital Marketing Services | SEO, Social Media & AI Solutions",
+    description: "Expert digital marketing services: AI strategy, SEO optimization, social media management, content creation & PPC advertising. Get measurable results. Free consultation!",
+    keywords: "digital marketing services, SEO services, social media management, AI marketing strategy, content creation, PPC advertising, branding services",
     url: "https://heidigital.info/services",
     type: "website"
   });
