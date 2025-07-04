@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -25,7 +26,7 @@ const Portfolio = () => {
       title: "Web3 DAO Models in FMCG Marketing Strategy",
       description: "Academic research exploring how Web3-based community-owned DAO models can transform brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035.",
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Marketing Strategy", "Academic Research", "Web3 & Blockchain", "Consumer Engagement"],
+      categories: ["Marketing Strategy", "Academic Research", "Consumer Engagement"],
       link: "/portfolio/fmcg-dao-strategy"
     },
     {
@@ -33,7 +34,7 @@ const Portfolio = () => {
       title: "Microlino 2026 Australian Launch Campaign",
       description: "Comprehensive strategic marketing communications campaign for Microlino's Australian market entry, featuring the 'Half the Space, Twice the Life' concept and integrated multi-channel approach.",
       image: "https://images.unsplash.com/photo-1517672651691-24622a91b550?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications", "EV Marketing"],
+      categories: ["Campaign Strategy", "Digital Marketing", "Integrated Communications"],
       link: "/portfolio/microlino-strategy"
     },
     {
@@ -80,9 +81,7 @@ const Portfolio = () => {
     "Influencer Marketing",
     "Event Marketing",
     "Content Strategy",
-    "EV Marketing",
     "Academic Research",
-    "Web3 & Blockchain",
     "Consumer Engagement",
     "Integrated Communications",
     "Nightlife"
@@ -91,11 +90,6 @@ const Portfolio = () => {
   const filteredItems = activeCategory === "All" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.categories.includes(activeCategory));
-
-  console.log("Portfolio items:", portfolioItems.length);
-  console.log("Filtered items:", filteredItems.length);
-  console.log("Active category:", activeCategory);
-  console.log("About to render Portfolio JSX");
 
   return (
     <div style={{minHeight: '100vh', backgroundColor: '#f8f9fa'}}>
@@ -160,7 +154,5 @@ const Portfolio = () => {
     </div>
   );
 };
-
-console.log("Portfolio component defined, about to export");
 
 export default Portfolio;
