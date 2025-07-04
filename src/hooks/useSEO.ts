@@ -5,6 +5,7 @@ interface SEOProps {
   title?: string;
   description?: string;
   keywords?: string;
+  robots?: string;
   image?: string;
   url?: string;
   type?: string;
@@ -14,6 +15,7 @@ export const useSEO = ({
   title = "Heidi Digital - AI-Powered Marketing Solutions",
   description = "Professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform your business.",
   keywords = "digital marketing, AI marketing, SEO, social media marketing, content creation, branding, digital advertising, marketing agency",
+  robots = "index, follow",
   image = "https://heidigital.info/og-image.jpg",
   url = "https://heidigital.info/",
   type = "website"
@@ -45,6 +47,7 @@ export const useSEO = ({
     // Update basic meta tags
     updateMetaTag('description', description);
     updateMetaTag('keywords', keywords);
+    updateMetaTag('robots', robots);
     
     // Update Open Graph tags
     updateMetaTag('og:title', title, true);
@@ -68,5 +71,5 @@ export const useSEO = ({
       canonicalLink.href = url;
       document.head.appendChild(canonicalLink);
     }
-  }, [title, description, keywords, image, url, type]);
+  }, [title, description, keywords, robots, image, url, type]);
 };
