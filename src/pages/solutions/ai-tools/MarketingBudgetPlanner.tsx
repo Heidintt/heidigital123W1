@@ -1,7 +1,8 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import BudgetPlannerInputs from "@/components/budget-planner/BudgetPlannerInputs";
+import BudgetPlannerContainer from "@/components/budget-planner/BudgetPlannerContainer";
 import { useSEO } from "@/hooks/useSEO";
 
 const MarketingBudgetPlanner = () => {
@@ -24,7 +25,7 @@ const MarketingBudgetPlanner = () => {
 
       <section className="py-16 px-4">
         <div className="container mx-auto">
-          <BudgetPlannerInputs />
+          <BudgetPlannerContainer />
         </div>
       </section>
     </Layout>
