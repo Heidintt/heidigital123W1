@@ -100,7 +100,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/solutions/ai-tools" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Marketing Tools
+                  AI Tools
                 </Link>
               </li>
             </ul>

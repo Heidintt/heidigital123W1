@@ -1,61 +1,48 @@
 
 import React from "react";
-import { Calculator, TrendingUp } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
 const AIToolsFeatures = () => {
   const features = [
     {
-      icon: <Calculator className="h-12 w-12" />,
-      title: "ROI Calculator",
-      description: "Calculate and track your marketing return on investment with precision",
-      points: [
-        "Real-time ROI calculations across all channels",
-        "Budget optimization recommendations",
-        "Performance tracking and analytics",
-        "Export detailed reports for stakeholders"
-      ]
+      number: "1",
+      title: "User-Friendly",
+      description: "Intuitive interfaces designed for marketers, not technical experts"
     },
     {
-      icon: <TrendingUp className="h-12 w-12" />,
-      title: "Budget Planning Tools",
-      description: "Strategic budget allocation and campaign planning made simple",
-      points: [
-        "Multi-channel budget distribution",
-        "Campaign forecasting and projections",
-        "Resource allocation optimization",
-        "Performance-based budget adjustments"
-      ]
+      number: "2",
+      title: "Time-Saving",
+      description: "Automate repetitive tasks and focus on strategic initiatives"
+    },
+    {
+      number: "3",
+      title: "Data-Driven",
+      description: "Make decisions based on insights, not guesswork"
+    },
+    {
+      number: "4",
+      title: "Constantly Evolving",
+      description: "Regular updates with new features and improved AI capabilities"
     }
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
-        <SectionHeading 
-          title="Powerful Marketing Tools" 
-          subtitle="Advanced tools designed to optimize your marketing performance and ROI" 
-          centered 
+        <SectionHeading
+          title="Why Choose Our AI Tools"
+          subtitle="Powerful features to boost your marketing effectiveness"
+          centered
         />
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {features.map((feature, index) => (
-            <div key={index} className="text-center">
-              <div className="bg-heidigital-lightblue p-6 rounded-full w-fit mx-auto mb-6">
-                <div className="text-heidigital-blue">
-                  {feature.icon}
-                </div>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="bg-heisocial-lightblue h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-heisocial-blue">{feature.number}</span>
               </div>
-              <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-              <p className="text-gray-600 mb-6">{feature.description}</p>
-              <ul className="text-left space-y-2">
-                {feature.points.map((point, pointIndex) => (
-                  <li key={pointIndex} className="flex items-start">
-                    <span className="text-heidigital-blue mr-2">•</span>
-                    <span className="text-gray-700">{point}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>

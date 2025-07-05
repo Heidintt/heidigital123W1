@@ -2,40 +2,41 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import AIToolsSection from "@/components/solutions/AIToolsSection";
-import FeaturedToolSection from "@/components/solutions/FeaturedToolSection";
+import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
-import { useSEO } from "@/hooks/useSEO";
+import AIToolsGrid from "@/components/solutions/AIToolsGrid";
+import AIToolsFeatures from "@/components/solutions/AIToolsFeatures";
 
 const AITools = () => {
-  // SEO optimization for Tools page
-  useSEO({
-    title: "Marketing Tools & Calculators | Free Digital Marketing Solutions | Heidi Digital",
-    description: "Comprehensive marketing tools including ROI calculator, budget planner, and optimization solutions. Free tools for businesses to improve marketing performance.",
-    keywords: "marketing tools, ROI calculator, budget planner, marketing automation, digital marketing solutions, free marketing tools",
-    url: "https://heidigital.info/solutions/ai-tools",
-    type: "website"
-  });
-
   return (
     <Layout>
       <Hero
-        title="Marketing Tools"
-        subtitle="Comprehensive suite of marketing tools to automate, optimize, and enhance your digital campaigns"
-        backgroundImage="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        title="AI Marketing Tools"
+        subtitle="Supercharge your marketing with our powerful AI-powered tools"
+        backgroundImage="https://images.unsplash.com/photo-1558346547-4439467bd1d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      <AIToolsSection />
-      <FeaturedToolSection />
+      <section className="py-16 px-4 bg-white">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Our AI Tools Collection"
+            subtitle="Cutting-edge AI tools to streamline your marketing workflow"
+            centered
+          />
+          <AIToolsGrid />
+        </div>
+      </section>
+
+      <AIToolsFeatures />
 
       <CallToAction
-        title="Ready to Optimize Your Marketing?"
-        description="Discover how our comprehensive toolkit can help you achieve better results and drive growth for your business."
-        primaryButtonText="Explore All Tools"
-        primaryButtonLink="/solutions"
-        secondaryButtonText="Contact Us"
-        secondaryButtonLink="/contact"
-        backgroundClass="bg-gradient-to-r from-purple-600 to-blue-600"
+        title="Ready to Supercharge Your Marketing?"
+        description="Get started with our AI tools today and see the difference they can make for your business"
+        primaryButtonText="Contact Us"
+        primaryButtonLink="/contact"
+        secondaryButtonText="View Services"
+        secondaryButtonLink="/services"
+        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
       />
     </Layout>
   );

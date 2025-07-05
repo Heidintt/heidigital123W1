@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,7 +9,7 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 
 const Portfolio = () => {
-  // SEO optimization for portfolio page (already optimized)
+  // SEO optimization for portfolio page
   useSEO({
     title: "Marketing Portfolio & Case Studies | Proven Results | Heidi Digital",
     description: "Explore our successful marketing campaigns & case studies. See how we've helped businesses achieve 200% growth, viral campaigns & market dominance. View results now!",

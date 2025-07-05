@@ -1,29 +1,40 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import ROICalculatorTool from "@/components/roi-calculator/ROICalculatorTool";
 import { useSEO } from "@/hooks/useSEO";
+import ROICalculatorTool from "@/components/roi-calculator/ROICalculatorTool";
 
 const ROICalculator = () => {
-  // SEO optimization for ROI Calculator
+  // Set SEO for ROI Calculator page
   useSEO({
-    title: "Free Marketing ROI Calculator | Campaign Performance Analytics | Heidi Digital",
-    description: "Calculate marketing ROI, track campaign performance, and optimize your marketing spend with our free comprehensive ROI calculator tool.",
-    keywords: "ROI calculator, marketing ROI, campaign analytics, marketing performance, return on investment, marketing metrics",
-    url: "https://heidigital.info/solutions/free-resources/roi-calculator",
+    title: "Interactive ROI Calculator - Digital Marketing Tool | Heidi Digital",
+    description: "Free interactive ROI calculator for digital marketing campaigns. Calculate ROAS, CPA, conversion rates, and optimize your marketing budget with real-time insights.",
+    keywords: "ROI calculator, ROAS calculator, digital marketing calculator, marketing metrics, campaign ROI, budget optimizer",
+    url: "https://heidigital.info/solutions/tools/roi-calculator",
     type: "website"
   });
 
   return (
     <Layout>
       <Hero
-        title="Marketing ROI Calculator"
-        subtitle="Calculate your marketing return on investment and optimize your campaign performance with detailed analytics"
-        backgroundImage="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        title="Interactive ROI Calculator"
+        subtitle="Calculate and optimize your digital marketing ROI with real-time insights and budget recommendations. Designed by Heidi Digital team."
+        backgroundImage="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      <section className="py-16 px-4">
+      <section className="py-8 px-4 bg-gray-50">
         <div className="container mx-auto">
+          <div className="bg-white rounded-lg p-6 shadow-sm mb-6">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">
+                🎯 Designed by Heidi Digital Team
+              </span>
+            </div>
+            <p className="text-center text-gray-600">
+              This comprehensive ROI calculator was custom-built by our team to help marketers make data-driven decisions and optimize their campaign performance.
+            </p>
+          </div>
           <ROICalculatorTool />
         </div>
       </section>

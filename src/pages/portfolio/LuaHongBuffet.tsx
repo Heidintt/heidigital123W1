@@ -1,366 +1,467 @@
-
 import React from "react";
-import { ArrowLeft, Calendar, Users, MapPin, Utensils } from "lucide-react";
 import Layout from "@/components/Layout";
+import Hero from "@/components/Hero";
+import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import CallToAction from "@/components/CallToAction";
 import { Badge } from "@/components/ui/badge";
-import { useSEO } from "@/hooks/useSEO";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Check, Calendar, Star, Users, Flame, CircleDollarSign, Image } from "lucide-react";
 
 const LuaHongBuffet = () => {
-  // SEO optimization for Lua Hong Buffet case study
-  useSEO({
-    title: "Hot Pot Restaurant Marketing Strategy | Food & Beverage Case Study | Heidi Digital",
-    description: "Comprehensive marketing strategy for Lửa Hồng Buffet in Ho Chi Minh City. Event marketing, social media strategy for restaurant industry.",
-    keywords: "restaurant marketing, hot pot marketing, food beverage strategy, Ho Chi Minh City, event marketing, social media restaurant",
-    url: "https://heidigital.info/portfolio/lua-hong-buffet",
-    type: "article"
-  });
+  const contentCalendarData = [
+    { date: "June 1", contentType: "Announcement Post", contentIdea: "Buffet Battle teaser", platform: "Facebook, IG" },
+    { date: "June 3", contentType: "Video Clip", contentIdea: "\"Types of People at Hot Pot Buffets\" - Comedy Clip", platform: "TikTok, IG Reels" },
+    { date: "June 5", contentType: "UGC Contest", contentIdea: "Launch \"Most Creative Customer\" competition", platform: "TikTok, IG, FB" },
+    { date: "June 7", contentType: "Livestream Event", contentIdea: "Weekly eating challenge livestream", platform: "TikTok, FB" },
+    { date: "June 10", contentType: "Interactive Story", contentIdea: "Mystery topping clue release", platform: "IG Stories" },
+    { date: "June 12", contentType: "Promotional Post", contentIdea: "Reminder Spin-the-Wheel Event", platform: "FB, IG" },
+    { date: "June 14", contentType: "Mini Event", contentIdea: "Spin-the-Wheel onsite", platform: "Onsite, FB Live" },
+    { date: "June 17", contentType: "UGC Feature", contentIdea: "Highlight customer-generated content", platform: "IG, TikTok" },
+    { date: "June 20", contentType: "Video Clip", contentIdea: "\"Eat without Burning Up!\" Challenge highlights", platform: "TikTok" },
+    { date: "June 22", contentType: "Livestream Event", contentIdea: "Hot Pot cooking demonstration", platform: "TikTok, FB" },
+    { date: "June 25", contentType: "Event Coverage", contentIdea: "Buffet Battle Live event coverage", platform: "IG, FB Live" },
+    { date: "June 28", contentType: "Wrap-up Post", contentIdea: "Buffet Battle highlights", platform: "FB, IG" },
+    { date: "June 30", contentType: "Monthly Recap", contentIdea: "Best moments of the month", platform: "IG, TikTok" },
+  ];
+
+  const budgetData = [
+    { item: "Content Production & Viral Clips", budget: "15,000,000" },
+    { item: "Major Events (3 events)", budget: "21,000,000" },
+    { item: "Mini-events (6 events)", budget: "9,000,000" },
+    { item: "Livestream & Mini-games", budget: "7,000,000" },
+    { item: "Gifts & Customer Incentives", budget: "8,000,000" },
+    { item: "Decor & Check-in Setup", budget: "8,000,000" },
+    { item: "Contingency", budget: "2,000,000" },
+    { item: "Total", budget: "70,000,000 VND" },
+  ];
+
+  const objectives = [
+    {
+      title: "Brand Awareness",
+      description: "Achieve 100,000 organic interactions on social media (particularly TikTok and Instagram) within 6 months.",
+      icon: <Star className="h-6 w-6 text-heisocial-purple" />,
+    },
+    {
+      title: "Customer Base",
+      description: "Achieve 85% of customers aged 16-35 within the first 6 months.",
+      icon: <Users className="h-6 w-6 text-heisocial-purple" />,
+    },
+    {
+      title: "Events",
+      description: "Organize at least 3 major events and 6 mini-events within 6 months.",
+      icon: <Calendar className="h-6 w-6 text-heisocial-purple" />,
+    },
+    {
+      title: "Content",
+      description: "Create at least 3 viral content pieces per month (each achieving >100,000 organic reach).",
+      icon: <Flame className="h-6 w-6 text-heisocial-purple" />,
+    },
+  ];
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        {/* Header Section */}
-        <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white py-16">
-          <div className="container mx-auto px-4">
-            <Button
-              variant="ghost"
-              className="text-white hover:bg-white/10 mb-6"
-              onClick={() => window.history.back()}
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Portfolio
-            </Button>
-            
-            <div className="max-w-4xl">
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="secondary" className="bg-white/20 text-white">Restaurant Marketing</Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white">Event Strategy</Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white">Social Media</Badge>
-                <Badge variant="secondary" className="bg-white/20 text-white">Youth Marketing</Badge>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Lửa Hồng Buffet Marketing Strategy
-              </h1>
-              
-              <p className="text-xl text-red-100 mb-8 leading-relaxed">
-                Comprehensive marketing strategy for a vibrant hot pot buffet in Ho Chi Minh City, targeting youth demographics 
-                through interactive content, engaging events, and community-building initiatives.
-              </p>
-              
-              <div className="flex flex-wrap gap-6 text-red-100">
-                <div className="flex items-center">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  2023-2024 Strategy
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="mr-2 h-5 w-5" />
-                  Ho Chi Minh City
-                </div>
-                <div className="flex items-center">
-                  <Utensils className="mr-2 h-5 w-5" />
-                  Hot Pot Buffet
-                </div>
-                <div className="flex items-center">
-                  <Users className="mr-2 h-5 w-5" />
-                  Youth Focus
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Hero
+        title="Lửa Hồng Buffet Marketing Strategy"
+        subtitle="Bringing vibrant energy and youthful atmosphere to a hotpot buffet experience in Ho Chi Minh City"
+        backgroundImage="https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      />
 
-        <div className="container mx-auto px-4 py-16">
-          {/* Project Overview */}
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold mb-8">Project Overview</h2>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-gray-600 mb-8">
-                Lửa Hồng Buffet needed to establish itself as the go-to destination for young diners in 
-                Ho Chi Minh City's competitive hot pot market. The strategy focused on creating memorable 
-                experiences that would encourage social sharing and repeat visits.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-red-600">Challenge</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Compete in saturated HCMC hot pot market while targeting budget-conscious youth demographics</p>
-                  </CardContent>
-                </Card>
+      {/* Overview Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Overview"
+            subtitle="Lửa Hồng Buffet - Hot Pot Buffet"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
+            <div>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Brand Name</h3>
+                    <p>Lửa Hồng Buffet - Hot Pot Buffet</p>
+                  </div>
+                </div>
                 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-orange-600">Strategy</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Interactive experiences, social media first approach, and community-building initiatives</p>
-                  </CardContent>
-                </Card>
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Location</h3>
+                    <p>Binh Thanh District, Ho Chi Minh City</p>
+                  </div>
+                </div>
                 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-yellow-600">Results</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>45% increase in youth customer base, 60% boost in weekend reservations</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-
-          {/* Target Audience Analysis */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Target Audience Analysis</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Primary Target: Young Adults (18-28)</h3>
-                <div className="space-y-4">
-                  <div className="border-l-4 border-red-500 pl-4">
-                    <h4 className="font-semibold text-red-600">Students and Young Professionals</h4>
-                    <p className="text-gray-600">University students and entry-level professionals seeking affordable social dining</p>
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Concept</h3>
+                    <p>A diverse hot pot buffet with a vibrant and youthful atmosphere</p>
                   </div>
-                  <div className="border-l-4 border-orange-500 pl-4">
-                    <h4 className="font-semibold text-orange-600">Social Media Active Users</h4>
-                    <p className="text-gray-600">Heavy Instagram, TikTok, and Facebook users who share dining experiences</p>
-                  </div>
-                  <div className="border-l-4 border-yellow-500 pl-4">
-                    <h4 className="font-semibold text-yellow-600">Group Dining Enthusiasts</h4>
-                    <p className="text-gray-600">Prefer communal dining experiences with friends and social groups</p>
+                </div>
+                
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Vision</h3>
+                    <p>To become the go-to destination for young people seeking a fun dining experience with friends and family.</p>
                   </div>
                 </div>
               </div>
-              
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Secondary Target: Young Families (25-35)</h3>
-                <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-lg border border-red-200">
-                  <h4 className="font-semibold mb-4 text-red-700">Characteristics</h4>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Parents looking for affordable family dining options</li>
-                    <li>• Interested in authentic Vietnamese cuisine experiences</li>
-                    <li>• Value convenience and quality for family outings</li>
-                    <li>• Weekend dining preference with children</li>
-                  </ul>
-                  
-                  <h4 className="font-semibold mb-2 mt-4 text-orange-700">Marketing Approach</h4>
-                  <p className="text-gray-600 text-sm">
-                    Family-friendly promotions, kid-friendly menu options, and weekend special events 
-                    designed to accommodate families with children.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
-
-          {/* Strategic Approach */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Strategic Approach</h2>
             
-            <div className="mb-8">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold text-red-600">"Where Fire Meets Fun"</h3>
-                <p className="text-gray-600">Brand positioning as a social experience destination, not just a dining venue</p>
+            <div className="relative">
+              <div className="rounded-lg overflow-hidden shadow-xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Hot Pot Buffet Experience" 
+                  className="w-full h-auto"
+                />
+                <div className="absolute top-0 right-0 bg-heisocial-purple text-white px-4 py-2 rounded-bl-lg font-bold">
+                  Case Study
+                </div>
               </div>
             </div>
+          </div>
 
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 mb-12">
+            <h3 className="text-2xl font-bold text-heisocial-blue mb-6">Specific Objectives</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="border-red-200">
-                <CardHeader>
-                  <CardTitle className="text-red-600 text-center">
-                    <div className="text-4xl mb-2">🎯</div>
-                    Differentiation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-sm space-y-2">
-                    <li>• Interactive hot pot experience</li>
-                    <li>• Instagram-worthy presentation</li>
-                    <li>• Affordable student pricing</li>
-                    <li>• Late-night availability</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-orange-200">
-                <CardHeader>
-                  <CardTitle className="text-orange-600 text-center">
-                    <div className="text-4xl mb-2">📱</div>
-                    Social Media
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-sm space-y-2">
-                    <li>• Daily food photography</li>
-                    <li>• Customer experience videos</li>
-                    <li>• User-generated content</li>
-                    <li>• Interactive challenges</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-yellow-200">
-                <CardHeader>
-                  <CardTitle className="text-yellow-600 text-center">
-                    <div className="text-4xl mb-2">🎉</div>
-                    Events
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-sm space-y-2">
-                    <li>• Student discount nights</li>
-                    <li>• Group dining competitions</li>
-                    <li>• Birthday celebrations</li>
-                    <li>• Corporate team building</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-green-200">
-                <CardHeader>
-                  <CardTitle className="text-green-600 text-center">
-                    <div className="text-4xl mb-2">🤝</div>
-                    Community
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="text-sm space-y-2">
-                    <li>• University partnerships</li>
-                    <li>• Influencer collaborations</li>
-                    <li>• Customer loyalty programs</li>
-                    <li>• Local community events</li>
-                  </ul>
-                </CardContent>
-              </Card>
+              {objectives.map((objective, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center mb-4">
+                    {objective.icon}
+                    <h4 className="ml-2 font-bold">{objective.title}</h4>
+                  </div>
+                  <p className="text-gray-600 text-sm">{objective.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Marketing Tactics */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Key Marketing Tactics</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Social Media Marketing</h3>
-                <div className="space-y-4">
-                  <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                    <h4 className="font-semibold text-red-600 mb-2">Instagram Strategy</h4>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• High-quality food photography posted daily</li>
-                      <li>• Stories featuring customer experiences</li>
-                      <li>• Reels showcasing cooking process</li>
-                      <li>• User-generated content reposting</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
-                    <h4 className="font-semibold text-orange-600 mb-2">TikTok Content</h4>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Fun cooking videos and time-lapse content</li>
-                      <li>• Staff personality showcases</li>
-                      <li>• Trending audio adaptations</li>
-                      <li>• Customer reaction videos</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Event Marketing</h3>
-                <div className="space-y-4">
-                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-                    <h4 className="font-semibold text-yellow-600 mb-2">Student-Focused Events</h4>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Study session specials during exam periods</li>
-                      <li>• University partnership events</li>
-                      <li>• Graduation celebration packages</li>
-                      <li>• Inter-university competition nights</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
-                    <h4 className="font-semibold text-green-600 mb-2">Community Events</h4>
-                    <ul className="text-sm text-gray-700 space-y-1">
-                      <li>• Family night specials</li>
-                      <li>• Corporate lunch packages</li>
-                      <li>• Birthday party hosting</li>
-                      <li>• Holiday celebration events</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Results Achieved */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Results Achieved</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="text-center p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-lg border border-red-200">
-                <div className="text-4xl font-bold text-red-600 mb-2">45%</div>
-                <p className="text-sm text-gray-600 font-medium">Youth Customer Increase</p>
-                <p className="text-xs text-gray-500 mt-1">18-28 age demographic growth</p>
-              </div>
-              <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg border border-orange-200">
-                <div className="text-4xl font-bold text-orange-600 mb-2">60%</div>
-                <p className="text-sm text-gray-600 font-medium">Weekend Reservations</p>
-                <p className="text-xs text-gray-500 mt-1">Boost in weekend bookings</p>
-              </div>
-              <div className="text-center p-6 bg-gradient-to-br from-yellow-50 to-green-50 rounded-lg border border-yellow-200">
-                <div className="text-4xl font-bold text-yellow-600 mb-2">200%</div>
-                <p className="text-sm text-gray-600 font-medium">Social Media Growth</p>
-                <p className="text-xs text-gray-500 mt-1">Followers across platforms</p>
-              </div>
-              <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg border border-green-200">
-                <div className="text-4xl font-bold text-green-600 mb-2">80%</div>
-                <p className="text-sm text-gray-600 font-medium">Customer Retention</p>
-                <p className="text-xs text-gray-500 mt-1">Return customer rate</p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-red-600">Business Impact</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>• <span className="font-medium">Brand Recognition:</span> Established as top youth dining destination</li>
-                  <li>• <span className="font-medium">Community Building:</span> Created loyal customer base and advocates</li>
-                  <li>• <span className="font-medium">Market Position:</span> Recognized as premier group dining spot</li>
-                  <li>• <span className="font-medium">Word-of-Mouth:</span> High organic referral rates</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-orange-600">Social Media Success</h3>
-                <div className="bg-red-900/10 p-4 rounded-lg border border-red-200">
-                  <ul className="text-sm text-red-800 space-y-1">
-                    <li>• Instagram engagement rate: 8.5% (industry avg: 1.9%)</li>
-                    <li>• TikTok videos achieving 50K+ average views</li>
-                    <li>• Facebook community group: 5,000+ members</li>
-                    <li>• User-generated content increased 300%</li>
-                    <li>• Brand hashtag trending locally</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <Card className="bg-gradient-to-r from-red-600 to-orange-600 text-white">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Ready to Spice Up Your Restaurant Marketing?</h3>
-              <p className="mb-6 text-red-100">
-                Let's create a comprehensive marketing strategy that fills your restaurant with happy customers.
-              </p>
-              <Button variant="secondary" size="lg">
-                <a href="/contact">Get Your Strategy</a>
-              </Button>
-            </CardContent>
-          </Card>
         </div>
-      </div>
+      </section>
+
+      {/* Target Audience Section */}
+      <section className="py-12 px-4 bg-gradient-to-r from-red-600 to-orange-500 text-white">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Target Audience Insights"
+            subtitle="Understanding the 16-35 year old demographic"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+              <p className="text-white/90">Enjoy unique and exciting dining experiences.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">🎬</div>
+              <p className="text-white/90">Easily attracted by trending and highly interactive content.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">📱</div>
+              <p className="text-white/90">Love sharing their experiences on social media and actively seek attractive check-in spots.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">🎉</div>
+              <p className="text-white/90">Frequently gather with friends and prefer venues with events and entertainment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Strategy Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Content Strategy"
+            subtitle="Dining Should Be Fun – Fun Means Lửa Hồng"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-500">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <Flame className="h-6 w-6 text-red-500 mr-2" />
+                Unique Viral Content
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex">
+                  <span className="text-red-500 mr-2">•</span>
+                  <span><strong>Food Challenge "Eat without Burning Up!"</strong>: Series featuring unusual toppings and increasing spice levels; successful participants receive direct discounts.</span>
+                </li>
+                <li className="flex">
+                  <span className="text-red-500 mr-2">•</span>
+                  <span><strong>Parody Videos "Types of People at Hot Pot Buffets"</strong>: Funny, relatable TikTok clips that encourage sharing.</span>
+                </li>
+                <li className="flex">
+                  <span className="text-red-500 mr-2">•</span>
+                  <span><strong>"Mystery Topping" Series</strong>: Weekly challenges for customers to find and film mystery toppings, with special rewards.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-orange-500">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <Users className="h-6 w-6 text-orange-500 mr-2" />
+                UGC Content
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <span>Encourage customers to create review and check-in videos, offering monthly awards for "Most Creative Customer."</span>
+                </li>
+                <li className="flex">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <span>Establish a "Wall of Fame" both online and offline to honor viral contributors.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-yellow-500">
+              <h3 className="text-xl font-bold mb-4 flex items-center">
+                <Calendar className="h-6 w-6 text-yellow-500 mr-2" />
+                Livestream & Real-time Content
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex">
+                  <span className="text-yellow-500 mr-2">•</span>
+                  <span>Host livestreamed events, eating challenges, and interactive Q&A sessions on TikTok and Facebook.</span>
+                </li>
+                <li className="flex">
+                  <span className="text-yellow-500 mr-2">•</span>
+                  <span>Implement online mini-games during livestreams to attract immediate offline visits.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Events & Experiences Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Events & Experiences"
+            subtitle="Event Marketing Strategy"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="bg-red-500 p-3 rounded-full text-white mr-4">
+                  <Star className="h-6 w-6" />
+                </div>
+                <h3 className="text-2xl font-bold">Major Events</h3>
+              </div>
+              
+              <div className="space-y-8">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="font-bold text-lg mb-2">Lửa Hồng Neon Night</h4>
+                  <p className="text-gray-600 mb-4">Live DJ, overnight hot pot buffet, neon-themed photo areas.</p>
+                  <Badge variant="outline" className="bg-red-50 text-red-500 border-red-200">Quarterly Event</Badge>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="font-bold text-lg mb-2">"Hot Pot Speed Dating"</h4>
+                  <p className="text-gray-600 mb-4">Quick-dating event aimed at young singles who love food and meeting new people.</p>
+                  <Badge variant="outline" className="bg-red-50 text-red-500 border-red-200">Special Event</Badge>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="font-bold text-lg mb-2">Buffet Battle</h4>
+                  <p className="text-gray-600 mb-4">Competitive eating and fun quizzes about food, livestreamed with big prizes.</p>
+                  <Badge variant="outline" className="bg-red-50 text-red-500 border-red-200">Flagship Event</Badge>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="bg-orange-500 p-3 rounded-full text-white mr-4">
+                  <Calendar className="h-6 w-6" />
+                </div>
+                <h3 className="text-2xl font-bold">Mini Events</h3>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="font-bold text-lg mb-2">Exclusive Dipping Sauce Workshops</h4>
+                  <p className="text-gray-600">Learn to create Lửa Hồng's signature dipping sauces with our chef.</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="font-bold text-lg mb-2">Happy Hour Discounts</h4>
+                  <p className="text-gray-600">Special pricing during fixed weekly hours to drive traffic during slower periods.</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h4 className="font-bold text-lg mb-2">Spin-the-Wheel Games</h4>
+                  <p className="text-gray-600">Onsite games offering vouchers and free toppings to enhance the dining experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Concept Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Space & Visual Concept"
+            subtitle="Creating a vibrant dining environment"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-red-600 to-red-500 text-white">
+              <Image className="mx-auto h-12 w-12 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Modern Decor</h3>
+              <p>Featuring neon photo spots and humorous slogans to engage the young audience.</p>
+            </div>
+            
+            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-orange-600 to-orange-500 text-white">
+              <Image className="mx-auto h-12 w-12 mb-4" />
+              <h3 className="text-xl font-bold mb-2">Vibrant Color Palette</h3>
+              <p>Primary Visual Colors: Neon red, burnt orange, vibrant yellow accents.</p>
+            </div>
+            
+            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-yellow-600 to-yellow-500 text-white">
+              <Image className="mx-auto h-12 w-12 mb-4" />
+              <h3 className="text-xl font-bold mb-2">"Fire Check-in" Spot</h3>
+              <p>Interactive area featuring LED screens, neon lighting, and trending funny quotes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Budget Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Estimated Budget"
+            subtitle="Investment allocation for the marketing plan"
+            centered
+          />
+          
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-3xl mx-auto">
+            <div className="p-6 bg-gradient-to-r from-red-600 to-orange-500 text-white">
+              <div className="flex items-center">
+                <CircleDollarSign className="h-8 w-8 mr-3" />
+                <h3 className="text-2xl font-bold">Budget Breakdown</h3>
+              </div>
+            </div>
+            
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Item</TableHead>
+                  <TableHead className="text-right">Budget (VND)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {budgetData.map((item, index) => (
+                  <TableRow key={index} className={item.item === "Total" ? "font-bold bg-gray-50" : ""}>
+                    <TableCell>{item.item}</TableCell>
+                    <TableCell className="text-right">{item.budget}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Calendar Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Content Calendar Demo"
+            subtitle="Strategic content planning for June"
+            centered
+          />
+          
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-5xl mx-auto">
+            <div className="p-6 bg-gradient-to-r from-heisocial-blue to-heisocial-purple text-white">
+              <div className="flex items-center">
+                <Calendar className="h-8 w-8 mr-3" />
+                <h3 className="text-2xl font-bold">June Content Schedule</h3>
+              </div>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Date</TableHead>
+                    <TableHead>Content Type</TableHead>
+                    <TableHead>Content Idea</TableHead>
+                    <TableHead>Platform</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {contentCalendarData.map((row, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{row.date}</TableCell>
+                      <TableCell>{row.contentType}</TableCell>
+                      <TableCell>{row.contentIdea}</TableCell>
+                      <TableCell>{row.platform}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Conclusion Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-red-600 to-orange-500 text-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Conclusion & Highlights
+            </h2>
+            <p className="text-white/90 max-w-3xl mx-auto text-lg">
+              Combining unique offline experiences, humorous online content, and meaningful engagement with young customers, Lửa Hồng's marketing strategy will create a memorable, fun brand that easily resonates and spreads within the youth community of Ho Chi Minh City.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3">🚀 Viral Potential</h3>
+              <p className="text-white/80">Creating content that naturally encourages sharing and participation from the target demographic.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3">🎯 Focused Targeting</h3>
+              <p className="text-white/80">Strategy specifically designed for the 16-35 age demographic and their social behaviors.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3">🔄 Online-Offline Integration</h3>
+              <p className="text-white/80">Seamless connection between digital content and in-restaurant experiences to drive real traffic.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CallToAction
+        title="Ready to Create Your Own Marketing Success Story?"
+        description="Let's discuss how our strategic marketing expertise can help your business achieve remarkable growth."
+        primaryButtonText="Get Started"
+        primaryButtonLink="/contact"
+        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+      />
     </Layout>
   );
 };

@@ -60,7 +60,7 @@ const Navbar = () => {
                   <Link to="/solutions/free-resources" className="w-full">Free Resources</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link to="/solutions/ai-tools" className="w-full">Marketing Tools</Link>
+                  <Link to="/solutions/ai-tools" className="w-full">AI Tools</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -124,7 +124,7 @@ const Navbar = () => {
                     className="block text-gray-600 hover:text-heidigital-blue py-1"
                     onClick={() => setIsOpen(false)}
                   >
-                    Marketing Tools
+                    AI Tools
                   </Link>
                 </div>
               </div>
