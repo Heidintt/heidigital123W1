@@ -17,7 +17,7 @@ const FinalCTASection = () => {
           <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700">
             <Link to="/contact">Start Your Transformation</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-blue-600">
+          <Button asChild variant="outline" size="lg" className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-blue-600">
             <Link to="/portfolio">View Our Work</Link>
           </Button>
         </div>

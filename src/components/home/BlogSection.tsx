@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -25,7 +24,7 @@ const BlogSection = () => {
     {
       title: "Creating Stunning Infographics with Canva",
       excerpt: "Master the art of visual storytelling with Canva's powerful design tools and create infographics that engage and convert.",
-      image: "https://images.unsplash.com/photo-1558655146-364adaf25c46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/lovable-uploads/07c72233-1f4d-4a85-8868-853974c80b8d.png",
       date: "Dec 15, 2024",
       category: "Design",
       link: "/blog/canva-infographics"
