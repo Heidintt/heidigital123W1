@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
+          <div className="bg-gradient-to-r from-heidigital-blue/20 via-heidigital-purple/20 to-heidigital-blue/20 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in text-white drop-shadow-2xl leading-tight">
               {title}
             </h1>
