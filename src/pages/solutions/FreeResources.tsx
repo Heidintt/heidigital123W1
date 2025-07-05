@@ -7,7 +7,9 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 import ResourceCard from "@/components/solutions/ResourceCard";
 import ResourceFilter from "@/components/solutions/ResourceFilter";
-import { resources } from "@/data/resourcesData";
+
+// Import dữ liệu từ file JSON
+import freeResourcesData from "@/data/free-resources.json";
 
 const FreeResources = () => {
   const [selectedLabel, setSelectedLabel] = useState<string>("All");
@@ -21,14 +23,17 @@ const FreeResources = () => {
     type: "website"
   });
 
+  // Sử dụng dữ liệu từ JSON file
+  const resources = freeResourcesData.resources || [];
+
   // Get all unique labels
-  const allLabels = Array.from(new Set(resources.flatMap(resource => resource.labels)));
+  const allLabels = Array.from(new Set(resources.flatMap(resource => resource.labels || [])));
   const labelOptions = ["All", ...allLabels.sort()];
 
   // Filter resources based on selected label
   const filteredResources = selectedLabel === "All" 
     ? resources 
-    : resources.filter(resource => resource.labels.includes(selectedLabel));
+    : resources.filter(resource => resource.labels?.includes(selectedLabel));
 
   return (
     <Layout>
@@ -56,11 +61,11 @@ const FreeResources = () => {
             {filteredResources.map((resource, index) => (
               <ResourceCard
                 key={index}
-                title={resource.title}
+                title={resource.title || resource.name}
                 description={resource.description}
-                type={resource.type}
-                labels={resource.labels}
-                image={resource.image}
+                type={resource.type || "Resource"}
+                labels={resource.labels || []}
+                image={resource.image || "https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"}
                 link={resource.link}
               />
             ))}
