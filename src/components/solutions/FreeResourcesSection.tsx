@@ -4,24 +4,19 @@ import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import ResourceCard from "./ResourceCard";
 import ResourceFilter from "./ResourceFilter";
-
-// Import dữ liệu từ file JSON
-import freeResourcesData from "@/data/solutions/free-resources.json";
+import { resources } from "@/data/resourcesData";
 
 const FreeResourcesSection = () => {
   const [selectedLabel, setSelectedLabel] = useState<string>("All");
 
-  // Sử dụng dữ liệu từ JSON file
-  const resources = freeResourcesData.resources || [];
-
-  // Get all unique labels - sử dụng category thay vì labels
-  const allLabels = Array.from(new Set(resources.map(resource => resource.category).filter(Boolean)));
+  // Get all unique labels
+  const allLabels = Array.from(new Set(resources.flatMap(resource => resource.labels)));
   const labelOptions = ["All", ...allLabels.sort()];
 
-  // Filter resources based on selected label - sử dụng category thay vì labels
+  // Filter resources based on selected label
   const filteredResources = selectedLabel === "All" 
     ? resources 
-    : resources.filter(resource => resource.category === selectedLabel);
+    : resources.filter(resource => resource.labels.includes(selectedLabel));
 
   return (
     <section className="py-16 px-4">
@@ -45,7 +40,7 @@ const FreeResourcesSection = () => {
               title={resource.title}
               description={resource.description}
               type={resource.type}
-              labels={[resource.category]}
+              labels={resource.labels}
               image={resource.image}
               link={resource.link}
             />
