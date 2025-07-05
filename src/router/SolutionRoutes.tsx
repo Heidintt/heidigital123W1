@@ -14,6 +14,7 @@ import OnPageSEOChecklist from "@/pages/solutions/free-resources/OnPageSEOCheckl
 import SEOOptimizationChecklist from "@/pages/solutions/free-resources/SEOOptimizationChecklist";
 import SocialMediaGrowthTools from "@/pages/solutions/free-resources/SocialMediaGrowthTools";
 import MarketingWithCanva from "@/pages/solutions/free-resources/MarketingWithCanva";
+import CROGuide from "@/pages/solutions/free-resources/CROGuide";
 
 const SolutionRoutes = () => {
   return (
@@ -32,6 +33,7 @@ const SolutionRoutes = () => {
       <Route path="free-resources/seo-optimization-checklist" element={<SEOOptimizationChecklist />} />
       <Route path="free-resources/social-media-growth-tools" element={<SocialMediaGrowthTools />} />
       <Route path="free-resources/marketing-with-canva" element={<MarketingWithCanva />} />
+      <Route path="free-resources/cro-guide" element={<CROGuide />} />
       
       {/* 410 Gone responses for removed AI Tools */}
       <Route path="ai-tools/content-generator" element={
@@ -127,14 +129,6 @@ const SolutionRoutes = () => {
       <Route path="free-resources/email-guide" element={
         <GonePage 
           title="Email Guide No Longer Available"
-          description="This resource has been discontinued. Explore our other free resources."
-          redirectUrl="/solutions/free-resources"
-          redirectDelay={5}
-        />
-      } />
-      <Route path="free-resources/cro-guide" element={
-        <GonePage 
-          title="CRO Guide No Longer Available"
           description="This resource has been discontinued. Explore our other free resources."
           redirectUrl="/solutions/free-resources"
           redirectDelay={5}
