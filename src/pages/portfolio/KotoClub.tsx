@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Check, Calendar, Star, Users, Music, Wine, Shield, TrendingUp } from "lucide-react";
+import { Check, Calendar, Star, Users, Music, Wine, Shield, TrendingUp, Network } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
 const KotoClub = () => {
