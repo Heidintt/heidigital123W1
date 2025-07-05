@@ -1,686 +1,581 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Calendar, Instagram, Facebook, TrendingUp, Users, CircleDollarSign, Star, Target, MapPin, Clock, Award, Music } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
-import SocialMediaPost from "@/components/SocialMediaPost";
+import { Button } from "@/components/ui/button";
+import CallToAction from "@/components/CallToAction";
+import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Check, Calendar, Star, Users, Music, Wine, Shield, TrendingUp } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const KotoClub = () => {
-  const brandConcept = [
-    {
-      icon: <Target className="w-6 h-6 text-purple-500" />,
-      element: "Positioning Statement",
-      description: "Koto Club: The premium nightlife destination where mature energy, sophistication, and unforgettable experiences converge in the heart of Da Nang.",
-    },
-    {
-      icon: <Music className="w-6 h-6 text-blue-500" />,
-      element: "Unique Value Proposition",
-      description: "Curated music experiences with deep house, live saxophone, and retro vibes - designed for the discerning 22-40 demographic seeking quality over chaos.",
-    },
-    {
-      icon: <Star className="w-6 h-6 text-purple-500" />,
-      element: "Brand Personality",
-      description: "Sophisticated yet approachable, exclusive but welcoming, trendy yet timeless - where every night tells a story worth remembering.",
-    },
-    {
-      icon: <Award className="w-6 h-6 text-blue-500" />,
-      element: "Experience Promise",
-      description: "Premium cocktails, curated ambiance, and VIP treatment that transforms ordinary nights into extraordinary memories.",
-    },
-  ];
+  // SEO optimization
+  useSEO({
+    title: "Koto Club Da Nang Premium Nightlife Marketing Strategy | Heidi Digital",
+    description: "Comprehensive marketing strategy for Koto Club Da Nang - Premium nightlife venue targeting affluent guests. Complete brand positioning, VIP programs, and digital marketing approach.",
+    keywords: "Koto Club Da Nang, nightlife marketing, premium venue marketing, VIP experience, Da Nang nightlife, luxury club marketing, brand positioning, nightclub strategy, premium hospitality",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    url: "https://heidigital.info/portfolio/koto-club",
+    type: "article"
+  });
 
-  const strategicObjectives = [
-    {
-      icon: <TrendingUp className="w-6 h-6 text-purple-500" />,
-      title: "Brand Recognition",
-      description: "Establish Koto Club as Da Nang's premier nightlife destination for the 22-40 demographic",
-      target: "35% increase in brand awareness by mid-2025"
-    },
-    {
-      icon: <Users className="w-6 h-6 text-blue-500" />,
-      title: "Customer Growth",
-      description: "Build a loyal customer base of tourists and locals seeking premium experiences",
-      target: "75% weekend occupancy rate consistently"
-    },
-    {
-      icon: <CircleDollarSign className="w-6 h-6 text-purple-500" />,
-      title: "Revenue Excellence",
-      description: "Maximize revenue through VIP services and premium pricing strategy",
-      target: "25% VIP table booking rate"
-    },
-    {
-      icon: <Star className="w-6 h-6 text-blue-500" />,
-      title: "Social Influence",
-      description: "Create buzz and social media presence that drives organic growth",
-      target: "80% increase in social media followers"
-    },
-  ];
-
-  const targetSegments = [
-    {
-      segment: "International Tourists",
-      age: "22-40 years",
-      profile: "Mid-to-high income visitors seeking premium nightlife experiences",
-      behavior: "Value quality service, willing to pay for exclusive experiences, active on social media",
-      pain_points: "Limited knowledge of local venues, concerns about quality and safety",
-      motivation: "Create memorable vacation experiences, social media content, networking"
-    },
-    {
-      segment: "Local Professionals",
-      age: "25-40 years", 
-      profile: "Established professionals and expats in Da Nang/Hoi An/Hue area",
-      behavior: "Regular entertainment budget, appreciate consistent quality, referral-driven",
-      pain_points: "Lack of sophisticated venues, inconsistent service quality",
-      motivation: "Regular social outlet, professional networking, stress relief"
-    },
-    {
-      segment: "Special Occasion Groups",
-      age: "22-35 years",
-      profile: "Celebrating birthdays, anniversaries, corporate events",
-      behavior: "Higher spending during celebrations, group bookings, photo-sharing",
-      pain_points: "Finding venues that can accommodate groups with style",
-      motivation: "Making celebrations memorable, impressing guests"
-    }
-  ];
-
-  const competitiveAnalysis = [
-    {
-      competitor: "Sky Bar Da Nang",
-      strengths: "Rooftop location, city views",
-      weaknesses: "Limited music variety, inconsistent service",
-      opportunity: "Superior music curation and VIP experience"
-    },
-    {
-      competitor: "Local Beach Clubs",
-      strengths: "Beach proximity, tourist traffic",
-      weaknesses: "Seasonal dependency, younger crowd focus",
-      opportunity: "Year-round operation, mature demographic targeting"
-    },
-    {
-      competitor: "Hotel Bars",
-      strengths: "Consistent quality, tourist base",
-      weaknesses: "Limited atmosphere, early closing",
-      opportunity: "Extended hours, energetic but sophisticated atmosphere"
-    }
-  ];
-
-  const marketingTactics = [
-    {
-      category: "Product (Experience)",
-      items: [
-        "Upgrade cocktail menu: Signature drinks aimed at 30+ crowd",
-        "Special music nights: Deep house, live saxophone, retro house vibes",
-        "VIP packages: Premium bottle service with dedicated areas",
-        "Themed nights: Monthly curated experiences"
+  // Structured Data for SEO
+  React.useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://heidigital.info/portfolio/koto-club#article",
+          "headline": "Koto Club Da Nang Premium Nightlife Marketing Strategy",
+          "description": "Complete marketing strategy for premium nightlife venue in Da Nang targeting affluent guests with VIP experiences and exclusive services.",
+          "author": {
+            "@type": "Organization",
+            "name": "Heidi Digital",
+            "url": "https://heidigital.info"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Heidi Digital",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://heidigital.info/og-image.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/portfolio/koto-club"
+          },
+          "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+          "datePublished": "2024-01-01",
+          "dateModified": "2024-12-29"
+        },
+        {
+          "@type": "CaseStudy",
+          "name": "Koto Club Marketing Strategy",
+          "description": "Premium nightlife venue marketing strategy for Da Nang market",
+          "client": "Koto Club",
+          "industry": "Hospitality & Entertainment",
+          "location": "Da Nang, Vietnam"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://heidigital.info"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Portfolio",
+              "item": "https://heidigital.info/portfolio"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Koto Club Strategy",
+              "item": "https://heidigital.info/portfolio/koto-club"
+            }
+          ]
+        }
       ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const keyFeatures = [
+    {
+      title: "Premium Venue",
+      description: "High-end clubbing experience with state-of-the-art sound and lighting systems.",
+      icon: <Music className="h-6 w-6 text-heisocial-purple" />,
     },
     {
-      category: "Price",
-      items: [
-        "Maintain mid-high pricing positioning",
-        "Early night happy hour deals (7-9PM) to attract after-dinner crowd", 
-        "VIP table packages with value-added services",
-        "Loyalty program with exclusive member pricing"
-      ]
+      title: "Exclusive VIP Services",
+      description: "Personalized services including private tables, bottle service, and dedicated staff.",
+      icon: <Wine className="h-6 w-6 text-heisocial-purple" />,
     },
     {
-      category: "Place",
-      items: [
-        "Create more exclusive VIP spaces with premium comfort",
-        "Enhanced table service and bottle packages",
-        "Premium sofa areas designed for conversation",
-        "Strategic lighting and sound zones"
-      ]
+      title: "Safety & Security",
+      description: "Ensuring a secure environment with professional security personnel and strict entry policies.",
+      icon: <Shield className="h-6 w-6 text-heisocial-purple" />,
     },
     {
-      category: "Promotion",
-      items: [
-        "Targeted Facebook + Instagram ads (age 22-40)",
-        "Google Ads optimization for nightlife keywords",
-        "Hotel package promotions with bundled deals",
-        "Influencer partnerships with lifestyle content creators",
-        "Loyalty offers: Every 5th visit rewards program"
-      ]
-    }
+      title: "Trending Events",
+      description: "Hosting top DJs and themed nights to attract a diverse and affluent clientele.",
+      icon: <TrendingUp className="h-6 w-6 text-heisocial-purple" />,
+    },
   ];
 
-  const contentStrategy = [
+  const targetAudiences = [
     {
-      pillar: "Lifestyle Moments",
-      description: "Sophisticated nightlife experiences, premium cocktail artistry",
-      frequency: "Daily posts",
-      platforms: "Instagram, Facebook"
+      title: "Affluent Locals",
+      description: "High-income residents of Da Nang seeking premium entertainment options.",
     },
     {
-      pillar: "Music & Atmosphere", 
-      description: "Behind-the-scenes DJ content, live music highlights",
-      frequency: "3x per week",
-      platforms: "Instagram Stories, TikTok"
+      title: "Expats",
+      description: "International professionals and tourists looking for a sophisticated nightlife experience.",
     },
     {
-      pillar: "VIP Experience",
-      description: "Exclusive service moments, premium space showcases",
-      frequency: "2x per week", 
-      platforms: "Instagram, Facebook"
+      title: "Event Tourists",
+      description: "Visitors attending special events and parties in Da Nang.",
     },
-    {
-      pillar: "Customer Stories",
-      description: "Testimonials, celebration moments, group experiences",
-      frequency: "Weekly",
-      platforms: "All platforms"
-    }
   ];
 
-  const budgetData = [
-    { category: "Social Media Ads (FB, IG)", cost: 3000, percentage: "20%" },
-    { category: "Influencer Collaborations", cost: 2500, percentage: "17%" },
-    { category: "Monthly Event Themes & Decor", cost: 4500, percentage: "30%" },
-    { category: "Partnerships (Hotels, Tour Groups)", cost: 1500, percentage: "10%" },
-    { category: "Content Creation & Photography", cost: 2000, percentage: "13%" },
-    { category: "Loyalty Program Development", cost: 1000, percentage: "7%" },
-    { category: "Contingency & Market Response", cost: 1000, percentage: "3%" }
+  const brandValues = [
+    {
+      title: "Exclusivity",
+      description: "Offering a unique and high-end experience that sets Koto Club apart.",
+    },
+    {
+      title: "Luxury",
+      description: "Providing top-tier services and amenities to cater to a discerning clientele.",
+    },
+    {
+      title: "Innovation",
+      description: "Continuously updating the club's offerings to stay ahead of nightlife trends.",
+    },
   ];
 
-  const kpis = [
-    { 
-      category: "Brand Awareness",
-      metrics: [
-        "3M+ social media reach monthly",
-        "6M+ impressions across platforms", 
-        "Local brand recognition: 40%"
-      ]
+  const digitalMarketingChannels = [
+    {
+      title: "Social Media",
+      description: "Targeted ads and engaging content on platforms like Facebook and Instagram.",
     },
     {
-      category: "Customer Engagement", 
-      metrics: [
-        "75% weekend occupancy rate",
-        "25% VIP table booking rate",
-        "90-minute average session duration"
-      ]
+      title: "Influencer Marketing",
+      description: "Collaborations with local and international influencers to promote events and services.",
     },
     {
-      category: "Social Performance",
-      metrics: [
-        "80% increase in followers",
-        "5% engagement rate target",
-        "1000+ UGC posts monthly"
-      ]
+      title: "SEO Optimization",
+      description: "Improving online visibility through strategic keyword targeting and content creation.",
     },
     {
-      category: "Revenue Impact",
-      metrics: [
-        "400 loyalty program members",
-        "20% repeat customer rate",
-        "15% revenue growth monthly"
-      ]
-    }
+      title: "Email Marketing",
+      description: "Personalized newsletters and promotions to keep VIP clients informed and engaged.",
+    },
   ];
 
-  const socialMediaPosts = [
+  const partnershipOpportunities = [
     {
-      month: "January",
-      title: "New Year, New Legends",
-      caption: "2025, we're not just celebrating the New Year — we're creating new legends. 🍸\n\nJoin us for a night where neon dreams light up Da Nang's skyline. Exclusive cocktails, live DJs, and unforgettable memories await.\n\nStep into the future at Koto Club.",
-      visualConcept: "Background: Neon skyline Đà Nẵng + Club vibe. Model: Cầm ly cocktail ánh neon xanh tím.",
-      specials: [
-        "Dress Code: Futuristic Neon",
-        "Complimentary Welcome Shot for Early Birds"
-      ],
-      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb"
+      title: "Luxury Hotels",
+      description: "Collaborating with high-end hotels to offer exclusive packages and concierge services.",
     },
     {
-      month: "March",
-      title: "Spring Awakening - Rebirth in Lights",
-      caption: "Spring isn't just a season. It's a state of mind. 🌸✨\n\nThis March, awaken your senses under the pulse of neon lights.\n\nLimited edition 'Spring Bloom' cocktails and live sets from Da Nang's top DJs.\n\nKoto Club — where your new story begins.",
-      visualConcept: "Background: Neon flowers or light petals falling. Model: Cười rạng rỡ giữa khung neon lấp lánh.",
-      specials: ["Special: Free Signature Cocktail for first 30 guests"],
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22"
+      title: "Premium Brands",
+      description: "Partnering with luxury brands for sponsored events and product placements.",
     },
     {
-      month: "July",
-      title: "Summer High - Neon Beach Party",
-      caption: "When the sun goes down, the real summer begins. 🔥🏖️\n\nThis July, Koto turns into a Neon Beach Paradise — tropical beats, icy cocktails, and glowing vibes.\n\nDance barefoot. Shine without limits.",
-      visualConcept: "Background: Neon palm trees, biển đêm lung linh. Model: Cầm ván lướt neon, đeo kính phản quang.",
-      specials: ["Dress Code: Beach Glam with Neon Accessories"],
-      image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21"
+      title: "Event Organizers",
+      description: "Working with event organizers to host after-parties and special events.",
     },
-    {
-      month: "August",
-      title: "Hot Nights, Cool Lights",
-      caption: "Turn up the heat, cool down with neon. 🔥🌌\n\nAugust at Koto Club is pure fire — electrifying music, bold flavors, and nights you'll never forget.\n\nVIP Bottle Service Specials available all month.",
-      visualConcept: "Background: Neon lửa và băng (fire & ice theme). Model: Cheers ly cocktail khói mát lạnh dưới ánh đèn.",
-      specials: ["Special: VIP table discount for pre-bookings"],
-      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b"
-    },
-    {
-      month: "December",
-      title: "Neon Wonderland Christmas",
-      caption: "Santa got a neon upgrade 🎅🏼✨\n\nCelebrate Christmas with a twist — sparkling cocktails, dazzling lights, and the coolest party in Da Nang.\n\nCome dressed in white or silver — let's glow together!",
-      visualConcept: "Background: Cây thông Noel neon, người mặc đồ trắng/silver.",
-      specials: ["Special: Free Neon Christmas Shot for everyone dressed in theme!"],
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05"
-    }
   ];
 
-  const riskMitigation = [
+  const budgetBreakdown = [
+    { item: "Marketing Campaigns", budget: "30%" },
+    { item: "VIP Services", budget: "25%" },
+    { item: "Event Production", budget: "20%" },
+    { item: "Partnerships", budget: "15%" },
+    { item: "Contingency", budget: "10%" },
+  ];
+
+  const successMetrics = [
     {
-      risk: "Seasonal Tourism Fluctuations",
-      impact: "High",
-      mitigation: "Develop local customer base, off-season promotions, corporate event targeting"
+      title: "Increased Revenue",
+      description: "Tracking revenue growth from VIP services and event attendance.",
     },
     {
-      risk: "Competition from New Venues", 
-      impact: "Medium",
-      mitigation: "Continuous experience innovation, loyalty program strengthening, exclusive partnerships"
+      title: "Customer Satisfaction",
+      description: "Measuring customer satisfaction through surveys and feedback forms.",
     },
     {
-      risk: "Economic Downturn Impact",
-      impact: "Medium", 
-      mitigation: "Flexible pricing tiers, value-focused packages, cost optimization strategies"
+      title: "Brand Awareness",
+      description: "Monitoring social media engagement and website traffic.",
     },
     {
-      risk: "Social Media Algorithm Changes",
-      impact: "Medium",
-      mitigation: "Diversified platform strategy, email marketing, influencer partnerships"
-    }
+      title: "VIP Client Retention",
+      description: "Tracking the retention rate of VIP clients and repeat customers.",
+    },
   ];
 
   return (
     <Layout>
       <Hero
-        title="Koto Club Da Nang"
-        subtitle="2025 First Half Marketing Strategy"
-        backgroundImage="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        title="Koto Club Marketing Strategy"
+        subtitle="Premium nightlife experience in the heart of Da Nang"
+        backgroundImage="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      <div className="container mx-auto px-4 py-12 space-y-16">
-        {/* Brand Introduction & Concept */}
-        <section>
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
-                Brand Introduction & Strategic Concept
-              </span>
-            </h3>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+      {/* Overview Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Project Overview"
+            subtitle="Koto Club - Premium Nightlife"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
+            <div>
               <div className="space-y-6">
-                <div className="bg-slate-700 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-purple-300 flex items-center">
-                    <MapPin className="mr-3" />
-                    Vision & Mission
-                  </h4>
-                  <p className="text-gray-300 mb-3">
-                    <strong>Vision:</strong> To be Da Nang's most sought-after premium nightlife destination, where sophisticated experiences meet unforgettable memories.
-                  </p>
-                  <p className="text-gray-300">
-                    <strong>Mission:</strong> Creating curated nightlife experiences that cater to discerning adults seeking quality, sophistication, and authentic connections.
-                  </p>
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Brand Name</h3>
+                    <p>Koto Club - Premium Nightlife</p>
+                  </div>
                 </div>
                 
-                <div className="bg-slate-600 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-blue-300 flex items-center">
-                    <Clock className="mr-3" />
-                    Market Context
-                  </h4>
-                  <p className="text-gray-300">
-                    Da Nang's nightlife scene is evolving, with increasing demand for sophisticated venues that cater to mature professionals and international visitors seeking premium experiences beyond typical tourist bars.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="space-y-6">
-                {brandConcept.slice(0, 2).map((item, index) => (
-                  <div key={index} className="bg-slate-600 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-green-300 flex items-center">
-                      {item.icon}
-                      <span className="ml-3">{item.element}</span>
-                    </h4>
-                    <p className="text-gray-300">{item.description}</p>
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Location</h3>
+                    <p>Da Nang, Vietnam</p>
                   </div>
-                ))}
+                </div>
+                
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Concept</h3>
+                    <p>A premium nightlife venue offering exclusive experiences and top-tier services.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <div>
+                    <h3 className="font-bold">Vision</h3>
+                    <p>To become the premier nightlife destination in Da Nang, attracting affluent locals and international visitors.</p>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {brandConcept.slice(2).map((item, index) => (
-                <div key={index} className="bg-slate-500 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-purple-300 flex items-center">
-                    {item.icon}
-                    <span className="ml-3">{item.element}</span>
-                  </h4>
-                  <p className="text-gray-300">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Strategic Objectives */}
-        <section>
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
-                Strategic Objectives 2025
-              </span>
-            </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {strategicObjectives.map((objective, index) => (
-                <div key={index} className="bg-slate-700 p-6 rounded-lg text-center">
-                  <div className="mb-4">{objective.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{objective.title}</h3>
-                  <p className="text-gray-300 mb-3">{objective.description}</p>
-                  <div className="bg-slate-600 p-3 rounded">
-                    <p className="text-sm font-semibold text-yellow-300">{objective.target}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Target Market Analysis */}
-        <section>
-          <SectionHeading 
-            title="Target Market Analysis" 
-            subtitle="Understanding Our Audience" 
-          />
-          <div className="space-y-6">
-            {targetSegments.map((segment, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 border border-gray-100">
-                <h3 className="text-2xl font-bold mb-4 text-heisocial-purple">{segment.segment}</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">Demographics & Profile</h4>
-                    <p className="text-sm text-gray-600 mb-2"><strong>Age:</strong> {segment.age}</p>
-                    <p className="text-sm text-gray-600">{segment.profile}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">Behavior & Preferences</h4>
-                    <p className="text-sm text-gray-600">{segment.behavior}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">Pain Points & Motivations</h4>
-                    <p className="text-sm text-gray-600 mb-2"><strong>Challenges:</strong> {segment.pain_points}</p>
-                    <p className="text-sm text-gray-600"><strong>Drivers:</strong> {segment.motivation}</p>
-                  </div>
+            <div className="relative">
+              <div className="rounded-lg overflow-hidden shadow-xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                  alt="Koto Club Nightlife Experience" 
+                  className="w-full h-auto"
+                />
+                <div className="absolute top-0 right-0 bg-heisocial-purple text-white px-4 py-2 rounded-bl-lg font-bold">
+                  Case Study
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </section>
 
-        {/* Competitive Analysis */}
-        <section>
-          <SectionHeading 
-            title="Competitive Landscape Analysis" 
-            subtitle="Positioning Against Competition" 
-          />
-          <Card>
-            <CardContent className="pt-6">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Competitor</TableHead>
-                    <TableHead>Key Strengths</TableHead>
-                    <TableHead>Weaknesses</TableHead>
-                    <TableHead>Our Opportunity</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {competitiveAnalysis.map((comp, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{comp.competitor}</TableCell>
-                      <TableCell>{comp.strengths}</TableCell>
-                      <TableCell>{comp.weaknesses}</TableCell>
-                      <TableCell className="text-heisocial-purple font-medium">{comp.opportunity}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Marketing Mix Strategy */}
-        <section>
-          <SectionHeading title="Marketing Mix Strategy (4Ps)" subtitle="Comprehensive Market Approach" />
-          <div className="grid md:grid-cols-2 gap-6">
-            {marketingTactics.map((tactic, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <h3 className="text-xl font-semibold text-heisocial-blue">{tactic.category}</h3>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {tactic.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <Star className="w-4 h-4 text-heisocial-purple mr-2 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* Content Strategy & Social Media */}
-        <section>
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
-                Content Strategy & Social Media Framework
-              </span>
-            </h3>
-            
+          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 mb-12">
+            <h3 className="text-2xl font-bold text-heisocial-blue mb-6">Key Features</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {contentStrategy.map((pillar, index) => (
-                <div key={index} className="bg-slate-700 p-6 rounded-lg">
-                  <h4 className="text-lg font-bold mb-3 text-purple-300">{pillar.pillar}</h4>
-                  <p className="text-gray-300 text-sm mb-3">{pillar.description}</p>
-                  <div className="space-y-1">
-                    <p className="text-xs text-blue-300"><strong>Frequency:</strong> {pillar.frequency}</p>
-                    <p className="text-xs text-green-300"><strong>Platforms:</strong> {pillar.platforms}</p>
+              {keyFeatures.map((feature, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="flex items-center mb-4">
+                    {feature.icon}
+                    <h4 className="ml-2 font-bold">{feature.title}</h4>
                   </div>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Budget Allocation */}
-        <section>
-          <SectionHeading title="Marketing Budget Allocation" subtitle="Strategic Investment Plan - $15,500 Total" />
-          <Card>
-            <CardContent className="pt-6">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>Category</TableHead>
-                    <TableHead className="text-right">Investment (USD)</TableHead>
-                    <TableHead className="text-right">Budget %</TableHead>
-                    <TableHead>Strategic Focus</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {budgetData.map((item, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{item.category}</TableCell>
-                      <TableCell className="text-right">${item.cost.toLocaleString()}</TableCell>
-                      <TableCell className="text-right text-heisocial-purple font-semibold">{item.percentage}</TableCell>
-                      <TableCell className="text-sm text-gray-600">
-                        {item.category.includes('Social Media') && "Digital reach & engagement optimization"}
-                        {item.category.includes('Influencer') && "Authentic testimonials & lifestyle content"}
-                        {item.category.includes('Event') && "Experience enhancement & atmosphere creation"}
-                        {item.category.includes('Partnerships') && "Strategic collaborations & cross-promotion"}
-                        {item.category.includes('Content') && "Professional visual storytelling"}
-                        {item.category.includes('Loyalty') && "Customer retention & lifetime value"}
-                        {item.category.includes('Contingency') && "Agile response to market opportunities"}
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                  <TableRow className="font-bold bg-slate-50">
-                    <TableCell>TOTAL INVESTMENT</TableCell>
-                    <TableCell className="text-right">
-                      ${budgetData.reduce((acc, item) => acc + item.cost, 0).toLocaleString()}
-                    </TableCell>
-                    <TableCell className="text-right">100%</TableCell>
-                    <TableCell className="text-heisocial-blue">Comprehensive market penetration</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* KPIs & Success Metrics */}
-        <section>
-          <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-            <h3 className="text-3xl font-bold text-center mb-8">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
-                Key Performance Indicators & Success Metrics
-              </span>
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {kpis.map((kpi, index) => (
-                <div key={index} className="bg-slate-700 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-purple-300">{kpi.category}</h4>
-                  <ul className="space-y-2">
-                    {kpi.metrics.map((metric, metricIndex) => (
-                      <li key={metricIndex} className="text-sm text-gray-300 flex items-start">
-                        <Star className="w-3 h-3 text-yellow-400 mr-2 mt-1 flex-shrink-0" />
-                        {metric}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Social Media Campaign Preview */}
-        <section>
-          <SectionHeading 
-            title="Social Media Campaign Preview" 
-            subtitle="2025 Content Calendar Highlights" 
+      {/* Market Analysis Section */}
+      <section className="py-12 px-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Market Analysis"
+            subtitle="Understanding the Nightlife Scene in Da Nang"
+            centered
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {socialMediaPosts.map((post, index) => (
-              <SocialMediaPost
-                key={index}
-                month={post.month}
-                title={post.title}
-                caption={post.caption}
-                visualConcept={post.visualConcept}
-                specials={post.specials}
-                image={post.image}
-              />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">🌃</div>
+              <p className="text-white/90">Da Nang's nightlife market is growing, with increasing demand for high-quality entertainment.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">💰</div>
+              <p className="text-white/90">Affluent locals and tourists are willing to spend on premium experiences.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">🎉</div>
+              <p className="text-white/90">There is a gap in the market for a venue that offers both luxury and innovation.</p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <div className="text-4xl mb-4">📈</div>
+              <p className="text-white/90">The rise in tourism and expat population supports the need for a premium nightlife destination.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Audience Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Target Audience"
+            subtitle="Identifying the Ideal Clientele"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {targetAudiences.map((audience, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <Users className="h-6 w-6 text-purple-500 mr-2" />
+                  {audience.title}
+                </h3>
+                <p>{audience.description}</p>
+              </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
+      
+      {/* Brand Positioning Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Brand Positioning"
+            subtitle="Creating a Unique Identity"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {brandValues.map((value, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-pink-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <Star className="h-6 w-6 text-pink-500 mr-2" />
+                  {value.title}
+                </h3>
+                <p>{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Risk Management */}
-        <section>
-          <SectionHeading title="Risk Management & Mitigation" subtitle="Proactive Strategic Planning" />
-          <Card>
-            <CardContent className="pt-6">
+      {/* VIP Program Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="VIP Program"
+            subtitle="Enhancing Customer Loyalty"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <h3 className="text-2xl font-bold text-heisocial-blue mb-6">VIP Membership Benefits</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <span>Exclusive access to VIP areas</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <span>Priority reservations and personalized service</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <span>Special discounts on bottle service and events</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
+                  <span>Invitations to exclusive VIP events and parties</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-bold text-heisocial-blue mb-6">Tiered Membership Levels</h3>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Risk Factor</TableHead>
-                    <TableHead>Impact Level</TableHead>
-                    <TableHead>Mitigation Strategy</TableHead>
+                    <TableHead>Tier</TableHead>
+                    <TableHead>Benefits</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {riskMitigation.map((risk, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="font-medium">{risk.risk}</TableCell>
-                      <TableCell>
-                        <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                          risk.impact === 'High' ? 'bg-red-100 text-red-800' :
-                          risk.impact === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-green-100 text-green-800'
-                        }`}>
-                          {risk.impact}
-                        </span>
-                      </TableCell>
-                      <TableCell className="text-sm">{risk.mitigation}</TableCell>
-                    </TableRow>
-                  ))}
+                  <TableRow>
+                    <TableCell>Gold</TableCell>
+                    <TableCell>Access to VIP areas, priority reservations</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Platinum</TableCell>
+                    <TableCell>Gold benefits + discounts on bottle service</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Diamond</TableCell>
+                    <TableCell>Platinum benefits + exclusive event invitations</TableCell>
+                  </TableRow>
                 </TableBody>
               </Table>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Implementation Timeline */}
-        <section>
-          <SectionHeading title="2025 Implementation Roadmap" subtitle="Quarterly Strategic Milestones" />
-          <div className="space-y-8">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center">
-                <span className="text-2xl text-white font-bold">Q1</span>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-xl font-bold text-purple-600 mb-2">Foundation & Brand Establishment (Jan-Mar)</h4>
-                <p className="text-gray-600">Brand identity refinement, staff training, initial marketing campaigns, social media launch, partnership development</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-2xl text-white font-bold">Q2</span>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-xl font-bold text-blue-600 mb-2">Growth & Optimization (Apr-Jun)</h4>
-                <p className="text-gray-600">Loyalty program launch, influencer collaborations, VIP experience enhancement, customer feedback integration</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-2xl text-white font-bold">Q3</span>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-xl font-bold text-green-600 mb-2">Expansion & Innovation (Jul-Sep)</h4>
-                <p className="text-gray-600">Summer campaigns, new service offerings, corporate event packages, market expansion strategies</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
-                <span className="text-2xl text-white font-bold">Q4</span>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-xl font-bold text-orange-600 mb-2">Consolidation & Planning (Oct-Dec)</h4>
-                <p className="text-gray-600">Holiday season campaigns, annual performance review, 2026 strategic planning, customer appreciation events</p>
-              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Final Positioning Statement */}
-        <section className="text-center py-12 bg-gradient-to-r from-heisocial-purple/10 via-heisocial-blue/10 to-heisocial-purple/10 rounded-lg">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Strategic Positioning Statement
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-700 italic mb-6">
-            "Koto Club: Where mature energy, sophisticated experiences, and unforgettable nights converge in the heart of Da Nang."
-          </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            By mid-2025, Koto Club will be recognized as Da Nang's premier nightlife destination for discerning adults who value quality, sophistication, and authentic connections in an environment that celebrates both local culture and international standards.
-          </p>
-        </section>
-      </div>
+      {/* Digital Marketing Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Digital Marketing Strategy"
+            subtitle="Reaching the Target Audience Online"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {digitalMarketingChannels.map((channel, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <TrendingUp className="h-6 w-6 text-purple-500 mr-2" />
+                  {channel.title}
+                </h3>
+                <p>{channel.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partnership Strategy Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Partnership Strategy"
+            subtitle="Collaborating for Mutual Growth"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {partnershipOpportunities.map((opportunity, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-pink-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <Network className="h-6 w-6 text-pink-500 mr-2" />
+                  {opportunity.title}
+                </h3>
+                <p>{opportunity.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Implementation Timeline Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Implementation Timeline"
+            subtitle="Phased Approach to Success"
+            centered
+          />
+          
+          <Table className="bg-white rounded-lg shadow-lg">
+            <TableHeader>
+              <TableRow>
+                <TableHead>Phase</TableHead>
+                <TableHead>Timeline</TableHead>
+                <TableHead>Activities</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>Phase 1: Launch</TableCell>
+                <TableCell>Month 1-3</TableCell>
+                <TableCell>Brand launch, initial marketing campaigns, VIP program setup</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Phase 2: Growth</TableCell>
+                <TableCell>Month 4-6</TableCell>
+                <TableCell>Expand marketing efforts, host major events, build partnerships</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Phase 3: Sustain</TableCell>
+                <TableCell>Month 7-12</TableCell>
+                <TableCell>Maintain brand presence, optimize VIP program, ensure customer loyalty</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </section>
+
+      {/* Budget Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Budget Allocation"
+            subtitle="Strategic Investment for Maximum Impact"
+            centered
+          />
+          
+          <Table className="bg-white rounded-lg shadow-lg">
+            <TableHeader>
+              <TableRow>
+                <TableHead>Item</TableHead>
+                <TableHead>Budget</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {budgetBreakdown.map((item, index) => (
+                <TableRow key={index}>
+                  <TableCell>{item.item}</TableCell>
+                  <TableCell>{item.budget}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </section>
+
+      {/* Success Metrics Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Success Metrics"
+            subtitle="Measuring Performance and Achieving Goals"
+            centered
+          />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {successMetrics.map((metric, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <TrendingUp className="h-6 w-6 text-purple-500 mr-2" />
+                  {metric.title}
+                </h3>
+                <p>{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CallToAction
+        title="Ready to Elevate Your Premium Brand?"
+        description="Let's discuss how our strategic marketing expertise can help your luxury business achieve remarkable growth."
+        primaryButtonText="Get Started"
+        primaryButtonLink="/contact"
+        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+      />
     </Layout>
   );
 };

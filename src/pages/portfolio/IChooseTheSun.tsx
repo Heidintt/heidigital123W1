@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -7,8 +6,99 @@ import CallToAction from "@/components/CallToAction";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Check, ExternalLink } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const IChooseTheSun = () => {
+  // SEO optimization
+  useSEO({
+    title: "Sun Life Vietnam I Choose The Sun Campaign | 75.6M Views Case Study | Heidi Digital",
+    description: "Discover how Sun Life Vietnam's 'I Choose The Sun' TikTok and Facebook campaign achieved 75.6M views during COVID-19. Complete digital marketing case study with H'Hen Niê brand ambassador strategy.",
+    keywords: "TikTok marketing, viral campaign, Sun Life Vietnam, COVID-19 marketing, H'Hen Niê, digital marketing case study, social media campaign, brand ambassador, Facebook marketing, pandemic marketing",
+    image: "/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png",
+    url: "https://heidigital.info/portfolio/i-choose-the-sun",
+    type: "article"
+  });
+
+  // Structured Data for SEO
+  React.useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://heidigital.info/portfolio/i-choose-the-sun#article",
+          "headline": "Sun Life Vietnam I Choose The Sun Campaign Case Study",
+          "description": "Complete analysis of Sun Life Vietnam's viral TikTok and Facebook campaign that achieved 75.6M views during COVID-19 pandemic.",
+          "author": {
+            "@type": "Organization",
+            "name": "Heidi Digital",
+            "url": "https://heidigital.info"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Heidi Digital",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://heidigital.info/og-image.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/portfolio/i-choose-the-sun"
+          },
+          "image": "/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png",
+          "datePublished": "2024-01-01",
+          "dateModified": "2024-12-29"
+        },
+        {
+          "@type": "CaseStudy",
+          "name": "I Choose The Sun Campaign",
+          "description": "Viral social media campaign for Sun Life Vietnam achieving 75.6M views",
+          "client": "Sun Life Vietnam",
+          "industry": "Financial Services & Insurance",
+          "campaign": {
+            "@type": "MarketingCampaign",
+            "name": "I Choose The Sun",
+            "budget": "1.2 billion VND",
+            "results": "75.6M total views, 8,000+ user-generated videos"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://heidigital.info"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Portfolio",
+              "item": "https://heidigital.info/portfolio"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "I Choose The Sun Campaign",
+              "item": "https://heidigital.info/portfolio/i-choose-the-sun"
+            }
+          ]
+        }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <Layout>
       <Hero

@@ -7,8 +7,95 @@ import CallToAction from "@/components/CallToAction";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Check, Calendar, Star, Users, Flame, CircleDollarSign, Image } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const LuaHongBuffet = () => {
+  // SEO optimization
+  useSEO({
+    title: "Lửa Hồng Buffet Marketing Strategy | Hot Pot Restaurant Ho Chi Minh City | Heidi Digital",
+    description: "Complete marketing strategy for Lửa Hồng Buffet - Hot pot buffet restaurant in Ho Chi Minh City. Social media campaigns, viral content, and youth-focused dining experiences.",
+    keywords: "Lửa Hồng Buffet, hot pot restaurant marketing, Ho Chi Minh City restaurant, social media marketing, restaurant branding, viral content, TikTok marketing, Facebook marketing, dining experience",
+    image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    url: "https://heidigital.info/portfolio/lua-hong-buffet",
+    type: "article"
+  });
+
+  // Structured Data for SEO
+  React.useEffect(() => {
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://heidigital.info/portfolio/lua-hong-buffet#article",
+          "headline": "Lửa Hồng Buffet Marketing Strategy Case Study",
+          "description": "Comprehensive marketing strategy for hot pot buffet restaurant targeting young demographics in Ho Chi Minh City with social media campaigns.",
+          "author": {
+            "@type": "Organization",
+            "name": "Heidi Digital",
+            "url": "https://heidigital.info"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Heidi Digital",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://heidigital.info/og-image.jpg"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/portfolio/lua-hong-buffet"
+          },
+          "image": "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+          "datePublished": "2024-01-01",
+          "dateModified": "2024-12-29"
+        },
+        {
+          "@type": "CaseStudy",
+          "name": "Lửa Hồng Buffet Marketing Strategy",
+          "description": "Social media marketing strategy for hot pot buffet restaurant in Ho Chi Minh City",
+          "client": "Lửa Hồng Buffet",
+          "industry": "Food & Beverage",
+          "location": "Binh Thanh District, Ho Chi Minh City",
+          "budget": "70,000,000 VND"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://heidigital.info"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Portfolio",
+              "item": "https://heidigital.info/portfolio"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Lửa Hồng Buffet Strategy",
+              "item": "https://heidigital.info/portfolio/lua-hong-buffet"
+            }
+          ]
+        }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const contentCalendarData = [
     { date: "June 1", contentType: "Announcement Post", contentIdea: "Buffet Battle teaser", platform: "Facebook, IG" },
     { date: "June 3", contentType: "Video Clip", contentIdea: "\"Types of People at Hot Pot Buffets\" - Comedy Clip", platform: "TikTok, IG Reels" },
