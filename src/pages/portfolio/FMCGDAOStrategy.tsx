@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft, Calendar, Users, TrendingUp, BookOpen } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -71,184 +72,169 @@ const FMCGDAOStrategy = () => {
         </div>
 
         <div className="container mx-auto px-4 py-16">
-          {/* Research Framework & Methodology */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                  Research Framework & Methodology
-                </span>
-              </h3>
+          {/* Research Overview */}
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold mb-8">Research Overview</h2>
+            <div className="max-w-4xl mx-auto">
+              <p className="text-lg text-gray-600 mb-8">
+                This academic research project explores the potential transformation of FMCG marketing through 
+                Web3-based Decentralized Autonomous Organization (DAO) models, examining how community governance 
+                and token economics could revolutionize brand loyalty and consumer engagement by 2035.
+              </p>
               
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="bg-slate-700 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-blue-300">Research Context</h4>
-                  <p className="text-gray-300 mb-4">FMCG industry transformation drivers by 2035:</p>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• Declining traditional brand loyalty</li>
-                    <li>• Consumer demand for transparency</li>
-                    <li>• Rise of community-driven commerce</li>
-                    <li>• Web3 technology mainstream adoption</li>
-                  </ul>
-                </div>
-
-                <div className="bg-slate-600 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-purple-300">Research Questions</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• How can DAOs enhance FMCG brand loyalty?</li>
-                    <li>• What governance models optimize consumer engagement?</li>
-                    <li>• How do token incentives impact purchase behavior?</li>
-                    <li>• What are the implementation challenges?</li>
-                  </ul>
-                </div>
-
-                <div className="bg-slate-500 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold mb-4 text-indigo-300">Methodology</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• <span className="font-medium">Literature Review:</span> 200+ academic sources</li>
-                    <li>• <span className="font-medium">Case Studies:</span> 15 Web3 brand examples</li>
-                    <li>• <span className="font-medium">Expert Interviews:</span> 25+ industry leaders</li>
-                    <li>• <span className="font-medium">Predictive Modeling:</span> 2035 scenarios</li>
-                  </ul>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-blue-600">Research Problem</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Traditional FMCG marketing faces declining brand loyalty and increasing demand for transparency and community involvement</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-purple-600">Methodology</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Literature review, case study analysis, expert interviews, and predictive modeling for 2035 scenarios</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-indigo-600">Expected Impact</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>Framework for FMCG brands to evaluate and implement DAO marketing strategies for competitive advantage</p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
 
-          {/* Theoretical Foundation */}
+          {/* Research Questions & Framework */}
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                  Theoretical Foundation & Literature Review
-                </span>
-              </h3>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="bg-slate-700 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-blue-300">Traditional Marketing Theories</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-cyan-300">Brand Loyalty Theory (Jacoby & Chestnut, 1978)</h5>
-                        <p className="text-xs text-gray-300">Traditional loyalty based on repeat purchase behavior and attitudinal commitment</p>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-green-300">Relationship Marketing (Berry, 1983)</h5>
-                        <p className="text-xs text-gray-300">Long-term customer relationships through value creation and trust building</p>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-yellow-300">Consumer Engagement Theory (Brodie et al., 2011)</h5>
-                        <p className="text-xs text-gray-300">Multi-dimensional construct including cognitive, emotional, and behavioral aspects</p>
-                      </div>
-                    </div>
+            <h2 className="text-3xl font-bold mb-8 text-center">Research Questions & Framework</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Key Research Questions</h3>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h4 className="font-semibold text-blue-600">Consumer Engagement</h4>
+                    <p className="text-gray-600">How can DAOs enhance FMCG brand loyalty and consumer engagement?</p>
                   </div>
+                  <div className="border-l-4 border-purple-500 pl-4">
+                    <h4 className="font-semibold text-purple-600">Governance Models</h4>
+                    <p className="text-gray-600">What governance structures optimize consumer participation and brand value?</p>
+                  </div>
+                  <div className="border-l-4 border-indigo-500 pl-4">
+                    <h4 className="font-semibold text-indigo-600">Token Economics</h4>
+                    <p className="text-gray-600">How do token incentives impact purchase behavior and brand advocacy?</p>
+                  </div>
+                  <div className="border-l-4 border-cyan-500 pl-4">
+                    <h4 className="font-semibold text-cyan-600">Implementation Challenges</h4>
+                    <p className="text-gray-600">What are the barriers and solutions for FMCG DAO adoption?</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Theoretical Framework</h3>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-200">
+                  <h4 className="font-semibold mb-4 text-blue-700">Integrated Model Approach</h4>
+                  <p className="text-gray-700 mb-4">
+                    Combining traditional marketing theory with blockchain technology and community governance principles 
+                    to create a comprehensive framework for FMCG DAO implementation.
+                  </p>
                   
-                  <div className="bg-slate-600 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-purple-300">Web3 & DAO Literature</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-pink-300">Decentralized Governance (Buterin, 2014)</h5>
-                        <p className="text-xs text-gray-300">Community-driven decision making through blockchain consensus mechanisms</p>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-orange-300">Token Economics (Catalini & Gans, 2016)</h5>
-                        <p className="text-xs text-gray-300">Economic incentive alignment through programmable digital assets</p>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-indigo-300">Community Ownership (Hassan & De Filippi, 2021)</h5>
-                        <p className="text-xs text-gray-300">Stakeholder capitalism through distributed ownership structures</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-slate-600 p-6 rounded-lg">
-                  <h4 className="text-2xl font-bold mb-6 text-blue-300">Research Gap Identification</h4>
-                  <div className="space-y-4">
-                    <div>
-                      <h5 className="font-bold text-lg text-purple-300">Current Literature Limitations</h5>
-                      <ul className="text-sm text-gray-300 space-y-1">
-                        <li>• Limited FMCG-specific DAO research</li>
-                        <li>• Lack of empirical consumer behavior data</li>
-                        <li>• Theoretical frameworks need industry adaptation</li>
-                        <li>• Implementation challenges understudied</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h6 className="font-bold text-green-300">Research Contribution</h6>
-                      <ul className="text-sm text-gray-300 space-y-1">
-                        <li>• First comprehensive FMCG DAO framework</li>
-                        <li>• Predictive models for 2035 adoption</li>
-                        <li>• Consumer engagement measurement tools</li>
-                        <li>• Implementation roadmap for brands</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h6 className="font-bold text-yellow-300">Expected Impact</h6>
-                      <p className="text-sm text-gray-300 italic">"This research will provide the foundational framework for FMCG brands to evaluate and implement DAO marketing strategies, potentially transforming the industry by 2035."</p>
-                    </div>
+                  <div className="space-y-3">
+                    <h5 className="font-medium text-purple-600">Core Theoretical Components:</h5>
+                    <ul className="text-sm space-y-1 text-gray-600">
+                      <li>• Brand Loyalty Theory (Jacoby & Chestnut, 1978)</li>
+                      <li>• Relationship Marketing (Berry, 1983)</li>
+                      <li>• Consumer Engagement Theory (Brodie et al., 2011)</li>
+                      <li>• Decentralized Governance (Buterin, 2014)</li>
+                      <li>• Token Economics (Catalini & Gans, 2016)</li>
+                      <li>• Community Ownership Models (Hassan & De Filippi, 2021)</li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* DAO Framework for FMCG */}
+          {/* Proposed DAO Framework */}
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                  Proposed DAO Framework for FMCG Marketing
-                </span>
-              </h3>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                <div className="bg-slate-700 p-8 rounded-lg text-center">
-                  <div className="text-4xl mb-4">🏛️</div>
-                  <h4 className="text-xl font-bold mb-4 text-blue-300">Governance Layer</h4>
-                  <p className="text-sm">Community-driven brand decisions through token-based voting</p>
+            <h2 className="text-3xl font-bold mb-8 text-center">Proposed DAO Framework for FMCG</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <Card className="border-blue-200">
+                <CardHeader>
+                  <CardTitle className="text-blue-600 text-center">
+                    <div className="text-4xl mb-2">🏛️</div>
+                    Governance Layer
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm space-y-2">
+                    <li>• Community-driven brand decisions</li>
+                    <li>• Token-based voting mechanisms</li>
+                    <li>• Transparent decision processes</li>
+                    <li>• Stakeholder representation</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-purple-200">
+                <CardHeader>
+                  <CardTitle className="text-purple-600 text-center">
+                    <div className="text-4xl mb-2">🪙</div>
+                    Token Economics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm space-y-2">
+                    <li>• Loyalty rewards through brand tokens</li>
+                    <li>• Utility-based token design</li>
+                    <li>• Programmable incentive structures</li>
+                    <li>• Value distribution mechanisms</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-indigo-200">
+                <CardHeader>
+                  <CardTitle className="text-indigo-600 text-center">
+                    <div className="text-4xl mb-2">🤝</div>
+                    Community Ownership
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm space-y-2">
+                    <li>• Shared value creation models</li>
+                    <li>• Co-ownership of brand assets</li>
+                    <li>• Community-driven product development</li>
+                    <li>• Collaborative marketing initiatives</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-xl font-semibold mb-4">Implementation Timeline</h3>
+              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <h4 className="font-semibold text-blue-600 mb-2">Phase 1: Foundation (2025-2027)</h4>
+                  <p className="text-sm text-gray-600">Token launch, community building, basic governance structures</p>
                 </div>
-                
-                <div className="bg-slate-600 p-8 rounded-lg text-center">
-                  <div className="text-4xl mb-4">🪙</div>
-                  <h4 className="text-xl font-bold mb-4 text-purple-300">Token Economics</h4>
-                  <p className="text-sm">Loyalty rewards through programmable brand tokens</p>
+                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <h4 className="font-semibold text-purple-600 mb-2">Phase 2: Integration (2028-2032)</h4>
+                  <p className="text-sm text-gray-600">Product development participation, supply chain transparency</p>
                 </div>
-                
-                <div className="bg-slate-500 p-8 rounded-lg text-center">
-                  <div className="text-4xl mb-4">🤝</div>
-                  <h4 className="text-xl font-bold mb-4 text-indigo-300">Community Ownership</h4>
-                  <p className="text-sm">Shared value creation and brand co-ownership</p>
-                </div>
-              </div>
-              
-              <div className="bg-slate-700 p-6 rounded-lg">
-                <h4 className="text-xl font-bold mb-4 text-yellow-300">Implementation Stages</h4>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold">1</span>
-                    </div>
-                    <h5 className="font-bold text-blue-300 mb-2">Foundation (2025-2027)</h5>
-                    <p className="text-xs text-gray-300">Token launch, community building, basic governance</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-purple-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold">2</span>
-                    </div>
-                    <h5 className="font-bold text-purple-300 mb-2">Integration (2028-2032)</h5>
-                    <p className="text-xs text-gray-300">Product development participation, supply chain transparency</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="bg-indigo-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-white font-bold">3</span>
-                    </div>
-                    <h5 className="font-bold text-indigo-300 mb-2">Maturation (2033-2035)</h5>
-                    <p className="text-xs text-gray-300">Full community ownership, autonomous operations</p>
-                  </div>
+                <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                  <h4 className="font-semibold text-indigo-600 mb-2">Phase 3: Maturation (2033-2035)</h4>
+                  <p className="text-sm text-gray-600">Full community ownership, autonomous operations</p>
                 </div>
               </div>
             </div>
@@ -256,188 +242,86 @@ const FMCGDAOStrategy = () => {
 
           {/* Projected Impact Analysis */}
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                  Projected Impact Analysis (2035 Scenarios)
-                </span>
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">65%</div>
-                  <p className="text-sm text-gray-600 font-medium">Projected Brand Loyalty Increase</p>
-                  <p className="text-xs text-gray-500 mt-1">Through community governance participation</p>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg border border-green-200">
-                  <div className="text-4xl font-bold text-green-600 mb-2">2035</div>
-                  <p className="text-sm text-gray-600 font-medium">Mainstream Adoption Timeline</p>
-                  <p className="text-xs text-gray-500 mt-1">For FMCG DAO implementation</p>
-                </div>
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-violet-50 rounded-lg border border-purple-200">
-                  <div className="text-4xl font-bold text-purple-600 mb-2">40%</div>
-                  <p className="text-sm text-gray-600 font-medium">Marketing Cost Reduction</p>
-                  <p className="text-xs text-gray-500 mt-1">Through community-driven promotion</p>
-                </div>
+            <h2 className="text-3xl font-bold mb-8 text-center">Projected Impact Analysis (2035)</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+                <div className="text-4xl font-bold text-blue-600 mb-2">65%</div>
+                <p className="text-sm text-gray-600 font-medium">Brand Loyalty Increase</p>
+                <p className="text-xs text-gray-500 mt-1">Through community governance</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg border border-purple-200">
+                <div className="text-4xl font-bold text-purple-600 mb-2">40%</div>
+                <p className="text-sm text-gray-600 font-medium">Marketing Cost Reduction</p>
+                <p className="text-xs text-gray-500 mt-1">Community-driven promotion</p>
+              </div>
+              <div className="text-center p-6 bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-lg border border-indigo-200">
+                <div className="text-4xl font-bold text-indigo-600 mb-2">2035</div>
+                <p className="text-sm text-gray-600 font-medium">Mainstream Adoption</p>
+                <p className="text-xs text-gray-500 mt-1">Timeline for FMCG DAOs</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">Key Research Findings</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• <span className="font-medium">Consumer Engagement:</span> 3x higher in DAO communities</li>
+                  <li>• <span className="font-medium">Brand Trust:</span> Significant increase through transparency</li>
+                  <li>• <span className="font-medium">Innovation Speed:</span> 2x faster product development</li>
+                  <li>• <span className="font-medium">Market Response:</span> Real-time consumer feedback integration</li>
+                </ul>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-lg font-semibold mb-4 text-blue-300">Key Research Findings</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>• <span className="font-medium">Consumer Engagement:</span> 3x higher in DAO communities</li>
-                    <li>• <span className="font-medium">Brand Trust:</span> Significant increase through transparency</li>
-                    <li>• <span className="font-medium">Innovation Speed:</span> 2x faster product development cycles</li>
-                    <li>• <span className="font-medium">Market Response:</span> Real-time consumer feedback integration</li>
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-purple-600">Implementation Challenges</h3>
+                <div className="bg-blue-900/10 p-4 rounded-lg border border-blue-200">
+                  <ul className="text-sm text-blue-800 space-y-1">
+                    <li>• Regulatory compliance across jurisdictions</li>
+                    <li>• Technical infrastructure development costs</li>
+                    <li>• Consumer education and adoption barriers</li>
+                    <li>• Organizational resistance to change</li>
+                    <li>• Token volatility and economic stability</li>
                   </ul>
                 </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold mb-4 text-purple-300">Implementation Challenges</h4>
-                  <div className="bg-blue-900/30 p-4 rounded-lg border border-blue-700">
-                    <ul className="text-sm text-blue-200 space-y-1">
-                      <li>• Regulatory compliance in multiple jurisdictions</li>
-                      <li>• Technical infrastructure development costs</li>
-                      <li>• Consumer education and adoption barriers</li>
-                      <li>• Traditional organizational resistance to change</li>
-                      <li>• Token volatility and economic stability concerns</li>
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* Case Studies & Examples */}
+          {/* Academic Contribution */}
           <div className="mb-16">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                  Case Studies & Early Adopter Analysis
-                </span>
-              </h3>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="bg-slate-700 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-blue-300">Pioneering Brands Analysis</h4>
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-green-400 pl-4">
-                        <h5 className="font-bold text-green-300">Starbucks Odyssey</h5>
-                        <p className="text-sm text-gray-300">NFT-based loyalty program showing early Web3 integration success</p>
-                      </div>
-                      <div className="border-l-4 border-blue-400 pl-4">
-                        <h5 className="font-bold text-blue-300">Nike .SWOOSH</h5>
-                        <p className="text-sm text-gray-300">Community-driven product design through digital collectibles</p>
-                      </div>
-                      <div className="border-l-4 border-purple-400 pl-4">
-                        <h5 className="font-bold text-purple-300">Adidas Into the Metaverse</h5>
-                        <p className="text-sm text-gray-300">Brand community building in virtual environments</p>
-                      </div>
-                    </div>
+            <h2 className="text-3xl font-bold mb-8 text-center">Academic Contribution & Future Research</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Research Contributions</h3>
+                <div className="space-y-4">
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-600 mb-2">Theoretical Framework</h4>
+                    <p className="text-sm text-gray-700">First comprehensive FMCG DAO framework integrating marketing theory with blockchain technology</p>
                   </div>
                   
-                  <div className="bg-slate-600 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-purple-300">Success Factors Identified</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Clear value proposition for community participation</li>
-                      <li>• Seamless integration with existing customer experience</li>
-                      <li>• Strong brand foundation before Web3 implementation</li>
-                      <li>• Progressive rollout with select customer segments</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-slate-600 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-indigo-300">Theoretical Model Validation</h4>
-                    <div className="space-y-3">
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-yellow-300">Community Engagement Index</h5>
-                        <p className="text-xs text-gray-300">Composite metric measuring participation, retention, and advocacy</p>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-green-300">Token Utility Score</h5>
-                        <p className="text-xs text-gray-300">Assessment of token value creation and circulation patterns</p>
-                      </div>
-                      <div>
-                        <h5 className="font-bold text-sm mb-1 text-blue-300">Governance Effectiveness Rating</h5>
-                        <p className="text-xs text-gray-300">Evaluation of decision-making speed and community satisfaction</p>
-                      </div>
-                    </div>
+                  <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                    <h4 className="font-semibold text-purple-600 mb-2">Measurement Tools</h4>
+                    <p className="text-sm text-gray-700">Novel consumer engagement metrics for DAO-based marketing environments</p>
                   </div>
                   
-                  <div className="bg-slate-500 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-green-300">Future Research Directions</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Longitudinal studies on DAO marketing effectiveness</li>
-                      <li>• Cross-cultural adoption patterns analysis</li>
-                      <li>• Regulatory framework development requirements</li>
-                      <li>• Integration with AI and IoT technologies</li>
-                      <li>• Sustainability and ESG compliance implications</li>
-                    </ul>
+                  <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200">
+                    <h4 className="font-semibold text-indigo-600 mb-2">Implementation Guidelines</h4>
+                    <p className="text-sm text-gray-700">Practical roadmap for brands to evaluate and implement DAO strategies</p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Research Conclusions & Implications */}
-          <div className="mb-16">
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg shadow-lg p-10 text-white">
-              <h3 className="text-3xl font-bold text-center mb-8">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300">
-                  Research Conclusions & Strategic Implications
-                </span>
-              </h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="bg-slate-700 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-green-300">Key Conclusions</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• DAO models will become viable for FMCG by 2030-2035</li>
-                      <li>• Early adopters will gain significant competitive advantages</li>
-                      <li>• Consumer engagement quality improves dramatically</li>
-                      <li>• Traditional marketing paradigms require fundamental shifts</li>
-                      <li>• Regulatory clarity is essential for widespread adoption</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-slate-600 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-yellow-300">Industry Implications</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Marketing departments need Web3 expertise</li>
-                      <li>• Brand ownership concepts will evolve</li>
-                      <li>• Consumer data relationships transform</li>
-                      <li>• Supply chain transparency increases</li>
-                      <li>• New metrics for success measurement needed</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-slate-600 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-blue-300">Academic Contributions</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• First comprehensive FMCG DAO framework</li>
-                      <li>• Novel consumer engagement measurement tools</li>
-                      <li>• Predictive adoption models for Web3 marketing</li>
-                      <li>• Integration of blockchain and marketing theory</li>
-                      <li>• Practical implementation guidelines</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-slate-500 p-6 rounded-lg">
-                    <h4 className="text-xl font-bold mb-4 text-purple-300">Future Research Agenda</h4>
-                    <ul className="space-y-2 text-gray-300">
-                      <li>• Empirical testing of proposed frameworks</li>
-                      <li>• Cross-industry comparative studies</li>
-                      <li>• Consumer psychology in DAO environments</li>
-                      <li>• Regulatory impact assessment</li>
-                      <li>• Long-term sustainability analysis</li>
-                    </ul>
-                  </div>
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Future Research Directions</h3>
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-200">
+                  <ul className="space-y-3 text-gray-700">
+                    <li>• <span className="font-medium text-blue-600">Empirical Testing:</span> Longitudinal studies on DAO marketing effectiveness</li>
+                    <li>• <span className="font-medium text-purple-600">Cross-Cultural Analysis:</span> Adoption patterns across different markets</li>
+                    <li>• <span className="font-medium text-indigo-600">Regulatory Framework:</span> Policy development requirements</li>
+                    <li>• <span className="font-medium text-cyan-600">Technology Integration:</span> AI and IoT in DAO marketing</li>
+                    <li>• <span className="font-medium text-blue-600">Sustainability:</span> ESG compliance in DAO models</li>
+                  </ul>
                 </div>
               </div>
             </div>
