@@ -14,10 +14,10 @@ const FinalCTASection = () => {
           Join forward-thinking Australian businesses that are revolutionizing their marketing with our cutting-edge solutions. Let's build your digital future together.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 font-semibold">
             <Link to="/contact">Start Your Transformation</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+          <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-purple-600 font-semibold">
             <Link to="/portfolio">View Our Work</Link>
           </Button>
         </div>
