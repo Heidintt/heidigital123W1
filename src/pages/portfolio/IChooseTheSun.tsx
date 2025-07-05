@@ -11,7 +11,7 @@ import { useSEO } from "@/hooks/useSEO";
 const IChooseTheSun = () => {
   // SEO optimization
   useSEO({
-    title: "Sun Life Vietnam I Choose The Sun Campaign | 75.6M Views Case Study | Heidi Digital",
+    title: "Sun Life Vietnam I Choose The Sun Campaign | Case Study | Heidi Digital",
     description: "Discover how Sun Life Vietnam's 'I Choose The Sun' TikTok and Facebook campaign achieved 75.6M views during COVID-19. Complete digital marketing case study with H'Hen Niê brand ambassador strategy.",
     keywords: "TikTok marketing, viral campaign, Sun Life Vietnam, COVID-19 marketing, H'Hen Niê, digital marketing case study, social media campaign, brand ambassador, Facebook marketing, pandemic marketing",
     image: "/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png",
