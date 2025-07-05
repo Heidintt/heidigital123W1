@@ -12,7 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 const KotoClub = () => {
   // SEO optimization
   useSEO({
-    title: "Koto Club Da Nang Premium Nightlife Strategy | Heidigital",
+    title: "Koto Club Da Nang Premium Nightlife Marketing Strategy | Heidi Digital",
     description: "Comprehensive marketing strategy for Koto Club Da Nang - Premium nightlife venue targeting affluent guests. Complete brand positioning, VIP programs, and digital marketing approach.",
     keywords: "Koto Club Da Nang, nightlife marketing, premium venue marketing, VIP experience, Da Nang nightlife, luxury club marketing, brand positioning, nightclub strategy, premium hospitality",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",

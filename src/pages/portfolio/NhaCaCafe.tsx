@@ -12,7 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 const NhaCaCafe = () => {
   // SEO optimization
   useSEO({
-    title: "Nha Ca Cafe Branding & Marketing Strategy | Heidi Digital",
+    title: "Nha Ca Cafe Branding & Marketing Strategy | Cat Cafe Vietnam | Heidi Digital",
     description: "Complete branding and marketing strategy for Nha Ca Cafe - Vietnam's premier cat cafe experience. Brand identity, workshop programs, and creative community building strategies.",
     keywords: "Nha Ca Cafe, cat cafe marketing, Vietnam cafe branding, creative workshops, photography, cat therapy, community building, brand identity, creative space marketing, cafe strategy",
     image: "/uploads/nha-ca-thumb.jpg",

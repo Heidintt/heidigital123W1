@@ -12,7 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 const FMCGDAOStrategy = () => {
   // SEO optimization
   useSEO({
-    title: "FMCG DAO Web3 Marketing Strategy | Heidi Digital",
+    title: "FMCG DAO Web3 Marketing Strategy | Blockchain Brand Loyalty Research | Heidi Digital",
     description: "Comprehensive research on FMCG DAO implementation for Web3 brand loyalty programs. Complete framework for blockchain-based consumer engagement and decentralized marketing strategies.",
     keywords: "FMCG DAO, Web3 marketing, blockchain brand loyalty, decentralized marketing, consumer engagement, DAO framework, cryptocurrency rewards, NFT loyalty programs, Web3 strategy, blockchain research",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
