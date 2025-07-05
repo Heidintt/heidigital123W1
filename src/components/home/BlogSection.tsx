@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -22,12 +23,12 @@ const BlogSection = () => {
       link: "/blog/linkedin-personal-branding"
     },
     {
-      title: "Creating Stunning Infographics with Canva",
-      excerpt: "Master the art of visual storytelling with Canva's powerful design tools and create infographics that engage and convert.",
-      image: "/lovable-uploads/07c72233-1f4d-4a85-8868-853974c80b8d.png",
-      date: "Dec 15, 2024",
-      category: "Design",
-      link: "/blog/canva-infographics"
+      title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
+      excerpt: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
+      image: "https://images.ctfassets.net/lzny33ho1g45/6VcDGWbQfWElVwAiMWLk9c/54a88cca295511333240c2919fc3f084/best-ai-productivity.jpg?w=1520&fm=jpg&q=31&fit=thumb&h=760",
+      date: "Jan 1, 2025",
+      category: "AI Tools",
+      link: "/blog/free-ai-tools-marketing-2025"
     }
   ];
 
