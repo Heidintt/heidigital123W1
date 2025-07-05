@@ -6,6 +6,7 @@ import ValuePropsSection from "@/components/home/ValuePropsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import TechnologySection from "@/components/home/TechnologySection";
 import PortfolioSection from "@/components/home/PortfolioSection";
+import BlogSection from "@/components/home/BlogSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 import ContactSection from "@/components/home/ContactSection";
 import { useSEO } from "@/hooks/useSEO";
@@ -36,6 +37,7 @@ const Index = () => {
       <ServicesSection />
       <TechnologySection />
       <PortfolioSection />
+      <BlogSection />
       <FinalCTASection />
       <ContactSection />
     </Layout>
