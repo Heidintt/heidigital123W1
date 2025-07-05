@@ -6,7 +6,7 @@ import ResourceCard from "./ResourceCard";
 import ResourceFilter from "./ResourceFilter";
 
 // Import dữ liệu từ file JSON
-import freeResourcesData from "@/data/free-resources.json";
+import freeResourcesData from "@/data/solutions/free-resources.json";
 
 const FreeResourcesSection = () => {
   const [selectedLabel, setSelectedLabel] = useState<string>("All");
@@ -14,14 +14,14 @@ const FreeResourcesSection = () => {
   // Sử dụng dữ liệu từ JSON file
   const resources = freeResourcesData.resources || [];
 
-  // Get all unique labels
-  const allLabels = Array.from(new Set(resources.flatMap(resource => resource.labels || [])));
+  // Get all unique labels - sử dụng category thay vì labels
+  const allLabels = Array.from(new Set(resources.map(resource => resource.category).filter(Boolean)));
   const labelOptions = ["All", ...allLabels.sort()];
 
-  // Filter resources based on selected label
+  // Filter resources based on selected label - sử dụng category thay vì labels
   const filteredResources = selectedLabel === "All" 
     ? resources 
-    : resources.filter(resource => resource.labels?.includes(selectedLabel));
+    : resources.filter(resource => resource.category === selectedLabel);
 
   return (
     <section className="py-16 px-4">
@@ -42,11 +42,11 @@ const FreeResourcesSection = () => {
           {filteredResources.map((resource, index) => (
             <ResourceCard
               key={index}
-              title={resource.title || resource.name}
+              title={resource.title}
               description={resource.description}
-              type={resource.type || "Resource"}
-              labels={resource.labels || []}
-              image={resource.image || "https://images.unsplash.com/photo-1543286386-2e659306cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"}
+              type={resource.type}
+              labels={[resource.category]}
+              image={resource.image}
               link={resource.link}
             />
           ))}
