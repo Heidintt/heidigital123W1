@@ -38,10 +38,17 @@ const Hero: React.FC<HeroProps> = ({
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-r from-heidigital-blue/20 via-heidigital-purple/20 to-heidigital-blue/20 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in text-white drop-shadow-2xl leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in text-white leading-tight" 
+                style={{ 
+                  textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6), 1px 1px 3px rgba(0,0,0,0.9)' 
+                }}>
               {title}
             </h1>
-            <p className="text-base md:text-lg mb-6 opacity-90 animate-fade-in text-white drop-shadow-lg leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            <p className="text-base md:text-lg mb-6 opacity-90 animate-fade-in text-white leading-relaxed" 
+               style={{ 
+                 animationDelay: "0.2s",
+                 textShadow: '1px 1px 4px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.5)' 
+               }}>
               {subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "0.4s" }}>
