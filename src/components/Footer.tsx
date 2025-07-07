@@ -1,45 +1,19 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">Heidigital</h3>
             <p className="text-gray-300 mb-4">
               Empowering businesses with innovative digital marketing solutions and cutting-edge strategies.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-heidigital-blue transition-colors"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-heidigital-blue transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-heidigital-blue transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-heidigital-blue transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div>
           </div>
 
           {/* Services */}
@@ -74,10 +48,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links & Contact */}
           <div>
             <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2 mb-6">
               <li>
                 <Link to="/about" className="text-gray-300 hover:text-heidigital-blue transition-colors">
                   About Us
@@ -104,25 +78,13 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-lg font-bold mb-4">Contact Us</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="mr-2 mt-1 text-heidigital-blue" size={18} />
-                <span className="text-gray-300">
-                  123 Marketing Street, Digital City, Australia
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Mail className="mr-2 text-heidigital-blue" size={18} />
-                <a href="mailto:info@heidigital.com.au" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  info@heidigital.com.au
-                </a>
-              </li>
-            </ul>
+            <div className="flex items-center">
+              <Mail className="mr-2 text-heidigital-blue" size={18} />
+              <a href="mailto:contact@heidigital.info" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                contact@heidigital.info
+              </a>
+            </div>
           </div>
         </div>
 

@@ -1,9 +1,10 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
 import { useSEO } from "@/hooks/useSEO";
-import { MapPin, Mail, Clock, MessageSquare } from "lucide-react";
+import { Mail, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
   // Enhanced SEO for contact page
@@ -29,20 +30,7 @@ const Contact = () => {
       "name": "Heidi Digital",
       "description": "Leading digital marketing agency in Australia providing comprehensive marketing solutions",
       "url": "https://heidigital.info",
-      "telephone": "+61-XXX-XXX-XXX",
-      "email": "info@heidigital.info",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Marketing Street",
-        "addressLocality": "Digital City",
-        "postalCode": "10010",
-        "addressCountry": "AU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-33.8688",
-        "longitude": "151.2093"
-      },
+      "email": "contact@heidigital.info",
       "openingHours": [
         "Mo-Fr 09:00-18:00"
       ],
@@ -50,8 +38,7 @@ const Contact = () => {
         {
           "@type": "ContactPoint",
           "contactType": "Customer Service",
-          "telephone": "+61-XXX-XXX-XXX",
-          "email": "info@heidigital.info",
+          "email": "contact@heidigital.info",
           "availableLanguage": ["English"],
           "hoursAvailable": {
             "@type": "OpeningHoursSpecification",
@@ -63,7 +50,7 @@ const Contact = () => {
         {
           "@type": "ContactPoint",
           "contactType": "Sales",
-          "email": "sales@heidigital.info",
+          "email": "contact@heidigital.info",
           "availableLanguage": ["English"]
         }
       ],
@@ -164,22 +151,11 @@ const Contact = () => {
                 <div className="space-y-5 mb-8">
                   <div className="flex items-start">
                     <div className="bg-heidigital-lightpurple p-3 rounded-full mr-4">
-                      <MapPin className="h-4 w-4 text-heidigital-purple" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium mb-1 text-base">Our Location</h3>
-                      <p className="text-gray-600 text-sm">
-                        123 Marketing Street, Digital City, 10010
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="bg-heidigital-lightpurple p-3 rounded-full mr-4">
                       <Mail className="h-4 w-4 text-heidigital-purple" />
                     </div>
                     <div>
                       <h3 className="font-medium mb-1 text-base">Email Address</h3>
-                      <p className="text-gray-600 text-sm">info@heidigital.com.au</p>
+                      <p className="text-gray-600 text-sm">contact@heidigital.info</p>
                     </div>
                   </div>
                   <div className="flex items-start">

@@ -1,8 +1,11 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
+
 const ContactSection = () => {
-  return <section className="py-20 px-4 bg-white">
+  return (
+    <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -54,6 +57,8 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ContactSection;
