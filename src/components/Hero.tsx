@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({
       style={{
         backgroundImage: backgroundImage 
           ? `url(${backgroundImage})` 
-          : `url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)`
+          : `url(https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)`
       }}
     >
       {/* Enhanced overlay for better text visibility */}
