@@ -11,4 +11,5 @@ export interface BlogPost {
   content: string;
   seo_title?: string;
   seo_description?: string;
+  updated_at?: string;
 }
