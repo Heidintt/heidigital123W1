@@ -1,20 +1,20 @@
 
 {
-  "hero_title": "AI-Powered Marketing Solutions That Drive Results",
-  "hero_subtitle": "Transform your business with cutting-edge AI marketing strategies, creative content, and data-driven solutions from Heidi Digital",
+  "hero_title": "Marketing services",
+  "hero_subtitle": "Transform your business with cutting-edge marketing strategies, creative content, and data-driven solutions from Heidi Digital",
   "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
   "cta_text": "Get Started Today",
   "cta_link": "/contact",
   "services": [
     {
-      "title": "AI Marketing Strategy",
+      "title": "Marketing Strategy",
       "description": "Leverage artificial intelligence to create personalized marketing campaigns that convert",
       "icon": "Brain",
       "link": "/services/ai-marketing"
     },
     {
       "title": "Content Creation", 
-      "description": "AI-powered content that engages your audience and drives meaningful connections",
+      "description": "content that engages your audience and drives meaningful connections",
       "icon": "PenTool",
       "link": "/services/content-creation"
     },
