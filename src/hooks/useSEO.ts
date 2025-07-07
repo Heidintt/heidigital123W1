@@ -14,6 +14,13 @@ interface SEOProps {
   modifiedTime?: string;
   locale?: string;
   siteName?: string;
+  // New props for enhanced SEO
+  articleAuthor?: string;
+  articleSection?: string;
+  articleTags?: string[];
+  twitterCreator?: string;
+  schemaType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'ProfilePage';
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 export const useSEO = ({
@@ -28,7 +35,13 @@ export const useSEO = ({
   publishedTime,
   modifiedTime,
   locale = "en_AU",
-  siteName = "Heidi Digital"
+  siteName = "Heidi Digital",
+  articleAuthor,
+  articleSection,
+  articleTags = [],
+  twitterCreator = "@heidigital",
+  schemaType = "WebPage",
+  breadcrumbs = []
 }: SEOProps = {}) => {
   
   useEffect(() => {
@@ -84,7 +97,7 @@ export const useSEO = ({
     updateMetaTag('og:image', image, true);
     updateMetaTag('og:image:width', '1200', true);
     updateMetaTag('og:image:height', '630', true);
-    updateMetaTag('og:image:alt', 'Heidi Digital - AI-Powered Marketing Solutions', true);
+    updateMetaTag('og:image:alt', title, true);
     updateMetaTag('og:url', url, true);
     updateMetaTag('og:type', type, true);
     updateMetaTag('og:locale', locale, true);
@@ -97,16 +110,26 @@ export const useSEO = ({
     if (modifiedTime) {
       updateMetaTag('og:article:modified_time', modifiedTime, true);
     }
-    updateMetaTag('og:article:author', author, true);
+    if (articleAuthor) {
+      updateMetaTag('og:article:author', articleAuthor, true);
+    }
+    if (articleSection) {
+      updateMetaTag('og:article:section', articleSection, true);
+    }
+    if (articleTags.length > 0) {
+      articleTags.forEach(tag => {
+        updateMetaTag('og:article:tag', tag, true);
+      });
+    }
     
     // Enhanced Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:site', '@heidigital');
-    updateMetaTag('twitter:creator', '@heidigital');
+    updateMetaTag('twitter:creator', twitterCreator);
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', image);
-    updateMetaTag('twitter:image:alt', 'Heidi Digital - AI-Powered Marketing Solutions');
+    updateMetaTag('twitter:image:alt', title);
     
     // Additional Twitter tags
     updateMetaTag('twitter:domain', 'heidigital.info');
@@ -123,7 +146,7 @@ export const useSEO = ({
     updateMetaTag('msapplication-TileImage', image);
     updateMetaTag('msapplication-config', '/browserconfig.xml');
     
-    // Update canonical URL with enhanced attributes
+    // Update canonical URL
     let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (canonicalLink) {
       canonicalLink.href = url;
@@ -175,6 +198,79 @@ export const useSEO = ({
         document.head.appendChild(link);
       }
     });
+
+    // Add WebPage structured data
+    const webPageSchema = {
+      "@context": "https://schema.org",
+      "@type": schemaType,
+      "name": title,
+      "description": description,
+      "url": url,
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": siteName,
+        "url": "https://heidigital.info"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": image,
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": publishedTime || new Date().toISOString(),
+      "dateModified": modifiedTime || new Date().toISOString(),
+      "author": {
+        "@type": "Organization",
+        "name": "Heidi Digital"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Heidi Digital",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://heidigital.info/logo.png"
+        }
+      }
+    };
+
+    // Add breadcrumb structured data if provided
+    if (breadcrumbs.length > 0) {
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbs.map((crumb, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "name": crumb.name,
+          "item": crumb.url
+        }))
+      };
+
+      const breadcrumbScript = document.createElement('script');
+      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.id = 'breadcrumb-schema';
+      breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
+      
+      const existingBreadcrumb = document.getElementById('breadcrumb-schema');
+      if (existingBreadcrumb) {
+        existingBreadcrumb.remove();
+      }
+      
+      document.head.appendChild(breadcrumbScript);
+    }
+
+    // Add WebPage schema
+    const webPageScript = document.createElement('script');
+    webPageScript.type = 'application/ld+json';
+    webPageScript.id = 'webpage-schema';
+    webPageScript.textContent = JSON.stringify(webPageSchema);
     
-  }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName]);
+    const existingWebPage = document.getElementById('webpage-schema');
+    if (existingWebPage) {
+      existingWebPage.remove();
+    }
+    
+    document.head.appendChild(webPageScript);
+    
+  }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs]);
 };

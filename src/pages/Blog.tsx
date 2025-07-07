@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -13,14 +12,116 @@ import { BlogPost } from "@/types/blogPost";
 const Blog = () => {
   const { posts, loading, error } = useBlogPosts();
 
-  // Set SEO for blog page
+  // Enhanced SEO for blog page
   useSEO({
-    title: "Digital Marketing Blog | Expert Tips & Latest Trends | Heidi Digital",
-    description: "Stay ahead with expert digital marketing insights, AI marketing tips, SEO guides & latest industry trends. Free actionable content to grow your business. Read now!",
-    keywords: "digital marketing blog, marketing tips, AI marketing insights, SEO guides, content marketing strategies, social media tips, marketing trends 2024",
+    title: "Digital Marketing Blog Australia | Expert Tips & AI Marketing Insights | Heidi Digital",
+    description: "Stay ahead with expert digital marketing insights, AI marketing strategies, SEO guides & latest industry trends. Free actionable content to grow your Australian business. Read now!",
+    keywords: "digital marketing blog australia, marketing tips, AI marketing insights, SEO guides australia, content marketing strategies, social media tips, marketing trends 2024, business growth tips",
     url: "https://heidigital.info/blog",
-    type: "website"
+    type: "website",
+    image: "https://heidigital.info/og-blog.jpg",
+    schemaType: "CollectionPage",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Blog", url: "https://heidigital.info/blog" }
+    ]
   });
+
+  // Add Blog and Article structured data
+  React.useEffect(() => {
+    const blogSchema = {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Heidi Digital Marketing Blog",
+      "description": "Expert insights, tips, and strategies for digital marketing success in Australia",
+      "url": "https://heidigital.info/blog",
+      "author": {
+        "@type": "Organization",
+        "name": "Heidi Digital"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Heidi Digital",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://heidigital.info/logo.png"
+        }
+      },
+      "inLanguage": "en-AU",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Digital Marketing"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI Marketing"
+        },
+        {
+          "@type": "Thing",
+          "name": "SEO"
+        },
+        {
+          "@type": "Thing",
+          "name": "Social Media Marketing"
+        }
+      ]
+    };
+
+    if (posts.length > 0) {
+      const articleListSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Digital Marketing Blog Articles",
+        "description": "Latest articles about digital marketing, AI, and business growth strategies",
+        "numberOfItems": posts.length,
+        "itemListElement": posts.slice(0, 10).map((post, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.description,
+            "url": `https://heidigital.info/blog/${post.slug}`,
+            "datePublished": post.date,
+            "author": {
+              "@type": "Person",
+              "name": post.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Heidi Digital"
+            },
+            "image": post.featured_image
+          }
+        }))
+      };
+
+      const schemas = [blogSchema, articleListSchema];
+      schemas.forEach((schema, index) => {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = `blog-schema-${index}`;
+        script.textContent = JSON.stringify(schema);
+        
+        const existing = document.getElementById(`blog-schema-${index}`);
+        if (existing) {
+          existing.remove();
+        }
+        
+        document.head.appendChild(script);
+      });
+
+      return () => {
+        schemas.forEach((_, index) => {
+          const script = document.getElementById(`blog-schema-${index}`);
+          if (script) {
+            script.remove();
+          }
+        });
+      };
+    }
+  }, [posts]);
 
   const categories = [
     "All Categories",
@@ -60,14 +161,13 @@ const Blog = () => {
 
   return (
     <Layout>
-      <Hero
-        title="Marketing Insights & Resources"
-        subtitle="Expert perspectives, actionable tips, and the latest trends in digital marketing and AI"
-      />
+      <main role="main">
+        <Hero
+          title="Marketing Insights & Resources"
+          subtitle="Expert perspectives, actionable tips, and the latest trends in digital marketing and AI"
+        />
 
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          {/* Search and Filter */}
+        <section className="py-16 px-4" aria-label="Blog Articles">
           <div className="mb-12">
             <div className="flex flex-col md:flex-row gap-4 mb-8">
               <div className="relative flex-grow">
@@ -188,8 +288,8 @@ const Blog = () => {
               </div>
             </div>
           )}
-        </div>
-      </section>
+        </section>
+      </main>
     </Layout>
   );
 };
