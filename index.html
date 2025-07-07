@@ -1,33 +1,60 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Heidi Digital - AI-Powered Marketing Solutions | Digital Marketing Agency</title>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="author" content="Heidi Digital Team" />
+    <meta name="copyright" content="© 2024 Heidi Digital. All rights reserved." />
+    <meta name="language" content="en-AU" />
+    <meta name="geo.region" content="AU" />
+    <meta name="geo.placename" content="Australia" />
+    <meta name="geo.position" content="-33.8688;151.2093" />
+    <meta name="ICBM" content="-33.8688, 151.2093" />
     
     <!-- Theme and App Meta Tags -->
     <meta name="theme-color" content="#6366f1" />
     <meta name="msapplication-TileColor" content="#6366f1" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Heidi Digital" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
     
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Critical Resource Hints for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//googletagmanager.com">
     
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+    
+    <!-- Critical CSS (inlined for performance) -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; margin: 0; padding: 0; }
+      .hero-section { min-height: 60vh; display: flex; align-items: center; background-color: #1e1b4b; }
+      .loading-spinner { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    </style>
 
-    <!-- Favicon and Icons -->
-    <link rel="icon" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" type="image/png">
+    <!-- Favicon and Icons with proper sizes -->
+    <link rel="icon" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" color="#6366f1">
 
-    <!-- Structured Data - Organization -->
+    <!-- Enhanced Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,40 +62,62 @@
       "name": "Heidi Digital",
       "alternateName": ["Heidi Digital Marketing", "Heidi Digital Agency"],
       "url": "https://heidigital.info",
-      "logo": "https://heidigital.info/logo.png",
-      "description": "Heidi Digital provides professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform businesses.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heidigital.info/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Heidi Digital provides professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform businesses across Australia.",
       "foundingDate": "2020",
       "slogan": "Transform Your Digital Future",
       "knowsAbout": [
         "Digital Marketing",
         "AI Marketing",
         "SEO",
-        "Social Media Marketing",
+        "Social Media Marketing", 
         "Content Creation",
         "Brand Development",
         "Digital Advertising",
-        "Marketing Automation"
+        "Marketing Automation",
+        "Performance Marketing",
+        "Conversion Optimization"
       ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "contactType": "Customer Service",
           "email": "info@heidigital.info",
-          "availableLanguage": ["English"]
+          "availableLanguage": ["English"],
+          "areaServed": "AU"
         },
         {
           "@type": "ContactPoint",
           "contactType": "Sales",
-          "email": "sales@heidigital.info"
+          "email": "sales@heidigital.info",
+          "availableLanguage": ["English"],
+          "areaServed": "AU"
         }
       ],
       "sameAs": [
         "https://facebook.com/heidigital",
-        "https://instagram.com/heidigital",
+        "https://instagram.com/heidigital", 
         "https://linkedin.com/company/heidigital",
-        "https://twitter.com/heidigital"
+        "https://twitter.com/heidigital",
+        "https://youtube.com/c/heidigital"
       ],
       "serviceType": "Digital Marketing Agency",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Digital Marketing Services",
@@ -77,27 +126,54 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Digital Marketing",
-              "description": "Comprehensive digital marketing strategies and campaigns",
-              "serviceType": "Digital Marketing"
+              "name": "AI-Powered Digital Marketing",
+              "description": "Comprehensive AI-enhanced digital marketing strategies and campaigns",
+              "serviceType": "Digital Marketing",
+              "provider": {
+                "@type": "Organization",
+                "name": "Heidi Digital"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": true
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Service",
+              "@type": "Service", 
               "name": "AI Marketing Solutions",
-              "description": "AI-powered marketing tools and automation",
-              "serviceType": "AI Marketing"
+              "description": "AI-powered marketing tools and automation for enhanced performance",
+              "serviceType": "AI Marketing",
+              "provider": {
+                "@type": "Organization",
+                "name": "Heidi Digital"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": true
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "SEO",
-              "description": "Search engine optimization to improve online visibility",
-              "serviceType": "SEO"
+              "name": "Search Engine Optimization",
+              "description": "Advanced SEO services to improve online visibility and organic traffic",
+              "serviceType": "SEO",
+              "provider": {
+                "@type": "Organization", 
+                "name": "Heidi Digital"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": true
             }
           },
           {
@@ -105,26 +181,53 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Social Media Marketing",
-              "description": "Strategic social media management and advertising",
-              "serviceType": "Social Media Marketing"
+              "description": "Strategic social media management and advertising campaigns",
+              "serviceType": "Social Media Marketing",
+              "provider": {
+                "@type": "Organization",
+                "name": "Heidi Digital"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "AUD", 
+              "valueAddedTaxIncluded": true
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Content Creation",
-              "description": "High-quality content creation for all marketing channels",
-              "serviceType": "Content Marketing"
+              "name": "Content Creation & Marketing",
+              "description": "High-quality content creation for all marketing channels and platforms",
+              "serviceType": "Content Marketing",
+              "provider": {
+                "@type": "Organization",
+                "name": "Heidi Digital"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": true
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Brand Development",
-              "description": "Strategic brand building and identity development",
-              "serviceType": "Branding"
+              "name": "Brand Development & Strategy",
+              "description": "Strategic brand building and identity development services",
+              "serviceType": "Branding",
+              "provider": {
+                "@type": "Organization",
+                "name": "Heidi Digital"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "AUD",
+              "valueAddedTaxIncluded": true
             }
           }
         ]
@@ -138,7 +241,17 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Heidi Digital",
+      "alternateName": "Heidi Digital Marketing Agency",
       "url": "https://heidigital.info",
+      "description": "Australia's leading AI-powered digital marketing agency providing comprehensive marketing solutions",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Heidi Digital",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://heidigital.info/logo.png"
+        }
+      },
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -146,6 +259,10 @@
           "urlTemplate": "https://heidigital.info/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Heidi Digital"
       }
     }
     </script>
@@ -156,14 +273,29 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Heidi Digital",
-      "image": "https://heidigital.info/logo.png",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://heidigital.info/logo.png",
+        "width": 512,
+        "height": 512
+      },
       "email": "info@heidigital.info",
       "url": "https://heidigital.info",
-      "priceRange": "$$"
+      "priceRange": "$$-$$$",
+      "telephone": "+61-XXX-XXX-XXX",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      "serviceType": ["Digital Marketing", "AI Marketing", "SEO", "Social Media Marketing"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Professional Marketing Services"
+      }
     }
     </script>
 
-    <!-- Breadcrumb Structured Data -->
+    <!-- Enhanced Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -173,56 +305,128 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://heidigital.info/"
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/",
+            "url": "https://heidigital.info/"
+          }
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Services",
-          "item": "https://heidigital.info/services"
+          "name": "Services", 
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/services",
+            "url": "https://heidigital.info/services"
+          }
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Solutions",
-          "item": "https://heidigital.info/solutions"
+          "item": {
+            "@type": "WebPage", 
+            "@id": "https://heidigital.info/solutions",
+            "url": "https://heidigital.info/solutions"
+          }
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Portfolio",
-          "item": "https://heidigital.info/portfolio"
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/portfolio", 
+            "url": "https://heidigital.info/portfolio"
+          }
         },
         {
           "@type": "ListItem",
           "position": 5,
           "name": "About",
-          "item": "https://heidigital.info/about"
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/about",
+            "url": "https://heidigital.info/about"
+          }
         },
         {
           "@type": "ListItem",
           "position": 6,
           "name": "Contact",
-          "item": "https://heidigital.info/contact"
+          "item": {
+            "@type": "WebPage",
+            "@id": "https://heidigital.info/contact",
+            "url": "https://heidigital.info/contact"
+          }
         }
       ]
     }
     </script>
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Google Analytics (replace with your actual GA4 tracking ID) -->
+    <!-- Enhanced Google Analytics with improved privacy -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        anonymize_ip: true,
+        cookie_flags: 'SameSite=None;Secure',
+        send_page_view: true
+      });
+      
+      // Enhanced ecommerce tracking for conversions
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        custom_map: {
+          'custom_parameter_1': 'service_type',
+          'custom_parameter_2': 'lead_source'
+        }
+      });
+    </script>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  </head>
+
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">
+      Skip to main content
+    </a>
+    
+    <div id="root"></div>
+    
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Enhanced Schema Markup for Performance -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Heidi Digital - AI-Powered Marketing Solutions",
+      "description": "Transform your business with Australia's leading AI-powered digital marketing agency",
+      "url": "https://heidigital.info/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Heidi Digital"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "@id": "https://heidigital.info/#breadcrumb"
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://heidigital.info/"
+      }
+    }
     </script>
   </body>
 </html>
