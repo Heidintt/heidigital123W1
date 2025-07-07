@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -23,7 +24,6 @@ const Solutions = () => {
       <Hero
         title="Solution Hub"
         subtitle="Explore our cutting-edge tools and free resources to enhance your marketing strategy"
-        backgroundImage="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <MarketingToolsSection />

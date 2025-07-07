@@ -13,7 +13,6 @@ const AITools = () => {
       <Hero
         title="AI Marketing Tools"
         subtitle="Supercharge your marketing with our powerful AI-powered tools"
-        backgroundImage="https://images.unsplash.com/photo-1558346547-4439467bd1d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <section className="py-16 px-4 bg-white">

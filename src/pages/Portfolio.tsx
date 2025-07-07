@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -97,7 +96,6 @@ const Portfolio = () => {
         <Hero
           title="Our Portfolio"
           subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-          backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         />
 
         <section className="py-8 px-4" style={{backgroundColor: '#ffffff'}}>

@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -68,7 +69,6 @@ const Services = () => {
       <Hero
         title="Comprehensive Digital Marketing Services"
         subtitle="AI-powered marketing solutions that drive real results and accelerate your business growth in the digital landscape"
-        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         ctaText="Get Started Today"
         ctaLink="/contact"
         secondaryCtaText="View Our Work"

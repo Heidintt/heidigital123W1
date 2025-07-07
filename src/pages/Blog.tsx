@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -62,7 +63,6 @@ const Blog = () => {
       <Hero
         title="Marketing Insights & Resources"
         subtitle="Expert perspectives, actionable tips, and the latest trends in digital marketing and AI"
-        backgroundImage="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <section className="py-16 px-4">

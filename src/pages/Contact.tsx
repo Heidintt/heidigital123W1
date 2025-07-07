@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -20,7 +21,6 @@ const Contact = () => {
       <Hero
         title="Contact Us"
         subtitle="Get in touch with our team to discuss how we can help your business grow"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
       <section className="py-12 px-4">

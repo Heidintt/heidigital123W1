@@ -26,7 +26,6 @@ const Index = () => {
       <Hero
         title="Transform Your Digital Future"
         subtitle="Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape."
-        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
         ctaText="Start Your Journey"
         ctaLink="/contact"
         secondaryCtaText="Explore Solutions"
