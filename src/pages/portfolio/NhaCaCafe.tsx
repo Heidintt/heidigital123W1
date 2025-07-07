@@ -3,604 +3,656 @@ import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import SectionHeading from "@/components/SectionHeading";
-import { Button } from "@/components/ui/button";
 import CallToAction from "@/components/CallToAction";
-import { Badge } from "@/components/ui/badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Check, Calendar, Star, Users, Coffee, Heart, Camera, Palette } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
+import { MapPin, Users, Star, Target, Coffee, Heart, Camera, Palette, TrendingUp, DollarSign, BarChart3, Calendar } from "lucide-react";
 
 const NhaCaCafe = () => {
   // SEO optimization
   useSEO({
-    title: "Nha Ca Cafe Branding & Marketing Strategy | Heidigital",
-    description: "Complete branding and marketing strategy for Nha Ca Cafe - Vietnam's premier cat cafe experience. Brand identity, workshop programs, and creative community building strategies.",
-    keywords: "Nha Ca Cafe, cat cafe marketing, Vietnam cafe branding, creative workshops, photography, cat therapy, community building, brand identity, creative space marketing, cafe strategy",
+    title: "Nha Ca Cafe Marketing Plan 2025 | Cat Cafe Strategy | Heidigital",
+    description: "Comprehensive marketing strategy for Nha Ca Cafe - Where Coffee Meows & Creativity Grows! Complete brand identity, workshops, and community engagement plan.",
+    keywords: "Nha Ca Cafe, cat cafe marketing, Vietnam cafe branding, creative workshops, Thai Nguyen marketing, cat therapy, community building, marketing plan 2025",
     image: "/uploads/nha-ca-thumb.jpg",
     url: "https://heidigital.info/portfolio/nha-ca-cafe",
     type: "article"
   });
 
-  // Structured Data for SEO
-  React.useEffect(() => {
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Article",
-          "@id": "https://heidigital.info/portfolio/nha-ca-cafe#article",
-          "headline": "Nha Ca Cafe Branding & Marketing Strategy",
-          "description": "Comprehensive branding and marketing strategy for Vietnam's premier cat cafe combining pet therapy with creative community experiences.",
-          "author": {
-            "@type": "Organization",
-            "name": "Heidi Digital",
-            "url": "https://heidigital.info"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Heidi Digital",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://heidigital.info/og-image.jpg"
-            }
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://heidigital.info/portfolio/nha-ca-cafe"
-          },
-          "image": "/uploads/nha-ca-thumb.jpg",
-          "datePublished": "2024-01-01",
-          "dateModified": "2024-12-29"
-        },
-        {
-          "@type": "CaseStudy",
-          "name": "Nha Ca Cafe Branding Strategy",
-          "description": "Complete brand identity and marketing strategy for cat cafe with creative community focus",
-          "client": "Nha Ca Cafe",
-          "industry": "Food & Beverage, Creative Services",
-          "services": ["Branding", "Photography", "Digital Portfolio", "Workshop Programs"]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://heidigital.info"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Portfolio",
-              "item": "https://heidigital.info/portfolio"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Nha Ca Cafe",
-              "item": "https://heidigital.info/portfolio/nha-ca-cafe"
-            }
-          ]
-        }
-      ]
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(structuredData);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
-
-  const objectives = [
-    {
-      title: "Brand Awareness",
-      description: "Increase brand visibility and recognition within the local community and among tourists.",
-      icon: <Star className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Customer Engagement",
-      description: "Enhance customer interaction and loyalty through unique experiences and community events.",
-      icon: <Heart className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Workshop Participation",
-      description: "Drive participation in creative workshops and events, establishing Nha Ca Cafe as a creative hub.",
-      icon: <Palette className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Photography",
-      description: "Showcase the cafe's unique atmosphere and photogenic cats through high-quality photography.",
-      icon: <Camera className="h-6 w-6 text-heisocial-purple" />,
-    },
-  ];
-
-  const workshopData = [
-    {
-      title: "Cat Photography Workshop",
-      description: "Learn how to capture the best moments with our feline friends.",
-      icon: <Camera className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Creative Writing with Cats",
-      description: "Find inspiration and purr-fect your writing skills in the company of cats.",
-      icon: <Palette className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Cat Therapy Sessions",
-      description: "Relax and de-stress with our certified cat therapists.",
-      icon: <Heart className="h-6 w-6 text-heisocial-purple" />,
-    },
-  ];
-
-  const brandValues = [
-    {
-      title: "Community",
-      description: "Creating a welcoming space for cat lovers and creative minds.",
-      icon: <Users className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Creativity",
-      description: "Inspiring artistic expression through workshops and events.",
-      icon: <Palette className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Compassion",
-      description: "Promoting animal welfare and responsible pet ownership.",
-      icon: <Heart className="h-6 w-6 text-heisocial-purple" />,
-    },
-    {
-      title: "Coffee",
-      description: "Serving high-quality coffee and treats in a cozy environment.",
-      icon: <Coffee className="h-6 w-6 text-heisocial-purple" />,
-    },
-  ];
-
   return (
     <Layout>
-      <Hero
-        title="Nha Ca Cafe"
-        subtitle="Where Creativity Purrs to Life - Complete branding and marketing strategy for Vietnam's premier cat cafe experience"
-        backgroundImage="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-      />
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] bg-gradient-to-br from-purple-600 via-pink-500 to-purple-700 flex items-center justify-center text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            Marketing Plan for <span className="text-pink-300">Nhà Cá Cafe</span> (2025)
+          </h1>
+          <p className="text-xl md:text-2xl mb-2">Where Coffee Meows & Creativity Grows!</p>
+          <p className="text-lg text-pink-200 italic">Nơi Cà Phê Kêu Meo & Ý Tưởng Đậm Chồi!</p>
+        </div>
+      </section>
 
-      {/* Project Overview Section */}
-      <section className="py-16 px-4">
+      {/* Brand Introduction & Concept */}
+      <section className="py-16 px-4 bg-slate-800 text-white">
         <div className="container mx-auto">
-          <SectionHeading
-            title="Project Overview"
-            subtitle="Nha Ca Cafe - Cat Cafe"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
-            <div>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
-                  <div>
-                    <h3 className="font-bold">Brand Name</h3>
-                    <p>Nha Ca Cafe - Cat Cafe</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
-                  <div>
-                    <h3 className="font-bold">Location</h3>
-                    <p>Ho Chi Minh City, Vietnam</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
-                  <div>
-                    <h3 className="font-bold">Concept</h3>
-                    <p>A unique cat cafe that combines pet therapy with creative community experiences.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <Check className="text-heisocial-purple mr-2 h-5 w-5 mt-1" />
-                  <div>
-                    <h3 className="font-bold">Vision</h3>
-                    <p>To become a leading destination for cat lovers and creative enthusiasts in Vietnam.</p>
-                  </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-pink-400">Brand Introduction & Concept</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-slate-700 p-8 rounded-xl">
+              <div className="flex items-start mb-4">
+                <MapPin className="h-6 w-6 text-pink-400 mr-3 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Location & Setting</h3>
+                  <p className="text-gray-300">Located in downtown Thai Nguyen near universities and high schools, Nhà Cá Cafe combines coffee culture with artistic interior design and feline charm.</p>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-                  alt="Cat Cafe Experience"
-                  className="w-full h-auto"
-                />
-                <div className="absolute top-0 right-0 bg-heisocial-purple text-white px-4 py-2 rounded-bl-lg font-bold">
-                  Case Study
+            <div className="bg-slate-700 p-8 rounded-xl">
+              <div className="flex items-start mb-4">
+                <Target className="h-6 w-6 text-green-400 mr-3 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Unique Proposition</h3>
+                  <p className="text-gray-300">The only cat-themed café in Thai Nguyen offering monthly workshops and an "Instagrammable" experience in a cozy, trend-driven environment.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-700 p-8 rounded-xl">
+              <div className="flex items-start mb-4">
+                <Users className="h-6 w-6 text-blue-400 mr-3 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Founding Vision</h3>
+                  <p className="text-gray-300">Founded by an architect and interior designer, the café aims to be a creative hub for students, young professionals, and cat lovers.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-700 p-8 rounded-xl">
+              <div className="flex items-start mb-4">
+                <Star className="h-6 w-6 text-purple-400 mr-3 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Experience Promise</h3>
+                  <p className="text-gray-300">Every visit combines premium coffee, creative inspiration, and therapeutic cat interactions in a beautifully designed space.</p>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100 mb-12">
-            <h3 className="text-2xl font-bold text-heisocial-blue mb-6">Specific Objectives</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {objectives.map((objective, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    {objective.icon}
-                    <h4 className="ml-2 font-bold">{objective.title}</h4>
-                  </div>
-                  <p className="text-gray-600 text-sm">{objective.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Market Analysis Section */}
-      <section className="py-12 px-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Market Analysis"
-            subtitle="Understanding the Cat Cafe Trend"
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <div className="text-4xl mb-4">🐱</div>
-              <p className="text-white/90">Growing popularity of cat cafes worldwide.</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <div className="text-4xl mb-4">☕</div>
-              <p className="text-white/90">Demand for unique and relaxing cafe experiences.</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <div className="text-4xl mb-4">📸</div>
-              <p className="text-white/90">Social media influence on cafe visits and sharing.</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <div className="text-4xl mb-4">🎨</div>
-              <p className="text-white/90">Interest in creative workshops and community events.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Brand Concept Section */}
+      {/* Brand Identity & Values */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Brand Concept"
-            subtitle="Creating a Purr-fectly Creative Space"
+            title="Brand Identity & Values"
+            subtitle="Building a Memorable Cat Café Experience"
             centered
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-pink-500">
-              <h3 className="text-xl font-bold mb-4 flex items-center">
-                <Coffee className="h-6 w-6 text-pink-500 mr-2" />
-                Cozy Cafe Atmosphere
-              </h3>
-              <p>Comfortable seating, warm lighting, and a welcoming environment for cat lovers.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                <Coffee className="h-8 w-8 text-orange-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Brand Mascots</h3>
+              <p className="text-gray-600">Four resident 'boss' cats: Mèo, Luna, Simba, and Whiskers - each with distinct personalities for storytelling</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
-              <h3 className="text-xl font-bold mb-4 flex items-center">
-                <Heart className="h-6 w-6 text-purple-500 mr-2" />
-                Cat Therapy
-              </h3>
-              <p>Providing a therapeutic and relaxing experience with friendly cats.</p>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-pink-100 rounded-full flex items-center justify-center">
+                <Palette className="h-8 w-8 text-pink-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Visual Identity</h3>
+              <p className="text-gray-600">Warm earth tones with pops of cat-themed colors. Minimalist yet cozy aesthetic for Instagram appeal</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-indigo-500">
-              <h3 className="text-xl font-bold mb-4 flex items-center">
-                <Palette className="h-6 w-6 text-indigo-500 mr-2" />
-                Creative Workshops
-              </h3>
-              <p>Offering a variety of workshops and events to inspire creativity and community engagement.</p>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <Coffee className="h-8 w-8 text-blue-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Product Philosophy</h3>
+              <p className="text-gray-600">Premium coffee meets artistic ambiance - every cup tells a story, every visit sparks creativity</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center">
+                <Heart className="h-8 w-8 text-red-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Brand Values</h3>
+              <p className="text-gray-600">Community, Creativity, Comfort, and Cat Love - creating a space where humans and felines coexist harmoniously</p>
+            </div>
+          </div>
+
+          {/* Strategic Objectives */}
+          <div className="bg-slate-800 text-white p-8 rounded-xl">
+            <h3 className="text-3xl font-bold text-center mb-8 text-pink-400">Strategic Objectives for 2025</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-slate-700 p-6 rounded-lg text-center">
+                <Users className="h-8 w-8 text-blue-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Brand Awareness</h4>
+                <p className="text-sm text-gray-300">20,000+ social media followers by Q4 2025, gain feature coverage in 3+ local media outlets</p>
+              </div>
+
+              <div className="bg-slate-700 p-6 rounded-lg text-center">
+                <TrendingUp className="h-8 w-8 text-purple-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Foot Traffic</h4>
+                <p className="text-sm text-gray-300">Increase daily customers from 100 to 130 through enhanced promotions and experiences</p>
+              </div>
+
+              <div className="bg-slate-700 p-6 rounded-lg text-center">
+                <DollarSign className="h-8 w-8 text-green-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Revenue Growth</h4>
+                <p className="text-sm text-gray-300">Boost monthly sales through workshops, seasonal menus, and loyalty programs</p>
+              </div>
+
+              <div className="bg-slate-700 p-6 rounded-lg text-center">
+                <Users className="h-8 w-8 text-indigo-400 mx-auto mb-3" />
+                <h4 className="font-bold mb-2">Community Engagement</h4>
+                <p className="text-sm text-gray-300">12 creative workshops per year with 80%+ attendance, 5+ local partnerships</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Target Audience Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Target Audience Analysis */}
+      <section className="py-16 px-4 bg-slate-800 text-white">
         <div className="container mx-auto">
-          <SectionHeading
-            title="Target Audience"
-            subtitle="Who We're Meant to Attract"
-            centered
-          />
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-pink-400">Target Audience Analysis</h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Cat Lovers</h4>
-              <p className="text-gray-600">Individuals who adore cats and seek a unique experience.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div className="bg-slate-700 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Users className="h-6 w-6 text-blue-400 mr-3" />
+                <h3 className="text-xl font-bold">Students (15-25 years)</h3>
+              </div>
+              <p className="text-gray-300">Seeking study-friendly, 'Instagrammable' spots</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Creative Enthusiasts</h4>
-              <p className="text-gray-600">People interested in photography, writing, and other creative pursuits.</p>
+            <div className="bg-slate-700 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Users className="h-6 w-6 text-purple-400 mr-3" />
+                <h3 className="text-xl font-bold">Young Professionals (25-35 years)</h3>
+              </div>
+              <p className="text-gray-300">Looking for creative, relaxing spaces to socialize</p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Students & Young Professionals</h4>
-              <p className="text-gray-600">Those looking for a relaxing and inspiring environment.</p>
+            <div className="bg-slate-700 p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Heart className="h-6 w-6 text-pink-400 mr-3" />
+                <h3 className="text-xl font-bold">Cat Lovers</h3>
+              </div>
+              <p className="text-gray-300">Both locals and tourists seeking unique experiences</p>
             </div>
+          </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Tourists</h4>
-              <p className="text-gray-600">Visitors seeking unique and memorable experiences in Ho Chi Minh City.</p>
+          <div className="bg-slate-700 p-8 rounded-xl">
+            <h3 className="text-2xl font-bold mb-6 text-pink-400">Primary Persona</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-xl font-bold mb-4">Minh Anh</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li><strong>Age:</strong> 22</li>
+                  <li><strong>Occupation:</strong> University student (Art & Design)</li>
+                  <li><strong>Income:</strong> 3-5 million VND/month (part-time + family support)</li>
+                  <li><strong>Location:</strong> Thai Nguyen city center</li>
+                </ul>
+              </div>
+              <div>
+                <div className="mb-4">
+                  <h5 className="font-bold text-green-400 mb-2">Goals & Motivations</h5>
+                  <ul className="text-sm text-gray-300 space-y-1">
+                    <li>• Find inspiring study spaces</li>
+                    <li>• Connect with like-minded creatives</li>
+                    <li>• Create Instagram-worthy content</li>
+                    <li>• Learn new artistic skills</li>
+                  </ul>
+                </div>
+                <div className="mb-4">
+                  <h5 className="font-bold text-orange-400 mb-2">Pain Points</h5>
+                  <ul className="text-sm text-gray-300 space-y-1">
+                    <li>• Limited budget for entertainment</li>
+                    <li>• Lack of creative inspiration</li>
+                    <li>• Need for social connection</li>
+                    <li>• Stress from academic pressure</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-bold text-purple-400 mb-2">Digital Behavior</h5>
+                  <p className="text-sm text-gray-300">Active on Instagram, TikTok, and Facebook. Shares lifestyle content and follows cat accounts.</p>
+                  <p className="text-sm text-gray-300 italic mt-2">"I want a cozy place where I can study, be creative, and share beautiful moments with cute cats."</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Brand Identity Section */}
+      {/* Marketing Mix Strategy */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Brand Identity"
-            subtitle="Visual Elements and Messaging"
+            title="Marketing Mix Strategy (4Ps)"
+            subtitle="Comprehensive Approach to Market Positioning"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-pink-600 to-pink-500 text-white">
-              <Palette className="mx-auto h-12 w-12 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Color Palette</h3>
-              <p>Soft pinks, warm grays, and natural greens to create a calming atmosphere.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-600">Product</h3>
+                <p className="text-gray-600 mb-4">Specialty coffee, cat-themed pastries, creative workshops, and unique café experience with resident cats</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Signature 'Paw-fect' drinks</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Cat-shaped pastries</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Monthly creative workshops</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Instagram-worthy ambiance</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-600">Place</h3>
+                <p className="text-gray-600 mb-4">Strategic location in downtown Thai Nguyen near universities and high schools</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> High foot traffic area</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Easy accessibility</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Proximity to target market</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Cozy interior design</li>
+                </ul>
+              </div>
             </div>
 
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-purple-600 to-purple-500 text-white">
-              <Coffee className="mx-auto h-12 w-12 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Typography</h3>
-              <p>Elegant and readable fonts that convey creativity and comfort.</p>
-            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-600">Price</h3>
+                <p className="text-gray-600 mb-4">Premium positioning with student-friendly options and workshop packages</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Coffee: 35,000-85,000 VND</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Workshop: 80,000-100,000 VND</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Student discount: 20%</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Combo deals available</li>
+                </ul>
+              </div>
 
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-indigo-600 to-indigo-500 text-white">
-              <Camera className="mx-auto h-12 w-12 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Imagery</h3>
-              <p>High-quality photos of cats, coffee, and creative activities.</p>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
-            <h3 className="text-2xl font-bold text-heisocial-blue mb-6">Brand Values</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {brandValues.map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                  <div className="flex items-center mb-4">
-                    {value.icon}
-                    <h4 className="ml-2 font-bold">{value.title}</h4>
-                  </div>
-                  <p className="text-gray-600 text-sm">{value.description}</p>
-                </div>
-              ))}
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-600">Promotion</h3>
+                <p className="text-gray-600 mb-4">Integrated digital marketing with focus on social media and community engagement</p>
+                <ul className="space-y-2">
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Social media campaigns</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Influencer partnerships</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Workshop marketing</li>
+                  <li className="flex items-center"><Star className="h-4 w-4 text-purple-500 mr-2" /> Loyalty programs</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Workshop Program Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Creative Workshop Calendar */}
+      <section className="py-16 px-4 bg-slate-800 text-white">
         <div className="container mx-auto">
-          <SectionHeading
-            title="Workshop Program"
-            subtitle="Creative and Therapeutic Activities"
-            centered
-          />
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-pink-400">2025 Creative Workshop Calendar</h2>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {workshopData.map((workshop, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  {workshop.icon}
-                  <h4 className="ml-2 font-bold">{workshop.title}</h4>
-                </div>
-                <p className="text-gray-600 text-sm">{workshop.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {[
+              { month: "January", title: "Festive Creativity", desc: "Cat-themed Tết greeting cards and lucky money envelopes", color: "blue" },
+              { month: "February", title: "Valentine's Love", desc: "Design heartfelt cards with a feline twist", color: "blue" },
+              { month: "March", title: "Art & Design", desc: "DIY home décor techniques with founder", color: "blue" },
+              { month: "April", title: "Spring Inspirations", desc: "Craft handmade décor with spring colors", color: "blue" },
+              { month: "May", title: "Cat Care Basics", desc: "Pet care tips with local vet", color: "blue" },
+              { month: "June", title: "Summer Refresh", desc: "Create innovative, refreshing beverages", color: "blue" },
+              { month: "July", title: "Back-to-School", desc: "Customize creative school supplies", color: "blue" },
+              { month: "August", title: "DIY Home Décor", desc: "Hands-on interior decoration workshop", color: "blue" },
+              { month: "September", title: "Autumn & Cat Moments", desc: "Photography session with café cats", color: "blue" },
+              { month: "October", title: "Halloween Creativity", desc: "Craft Halloween accessories and décor", color: "blue" },
+              { month: "November", title: "Art & Relaxation", desc: "Painting and journaling session", color: "blue" },
+              { month: "December", title: "Christmas & New Year", desc: "Create festive cat-themed ornaments", color: "blue" }
+            ].map((workshop, index) => (
+              <div key={index} className="bg-slate-700 p-6 rounded-lg">
+                <h4 className="text-blue-400 font-semibold mb-1">{workshop.month}</h4>
+                <h5 className="font-bold mb-2">{workshop.title}</h5>
+                <p className="text-sm text-gray-300">{workshop.desc}</p>
               </div>
             ))}
           </div>
+
+          <div className="bg-slate-700 p-8 rounded-xl">
+            <h3 className="text-2xl font-bold mb-6 text-yellow-400">Workshop Strategy & Pricing</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-bold text-green-400 mb-4">Pricing Structure</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Standard Fee: 80,000-100,000 VND per ticket</li>
+                  <li>• Student Discount: 20% off with valid student ID</li>
+                  <li>• Combo Offer: "Workshop + Coffee" package for 150,000 VND</li>
+                  <li>• Group bookings (3+): 15% discount</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-purple-400 mb-4">Marketing Approach</h4>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Pre-Event: Social media countdowns and university partnerships</li>
+                  <li>• During Event: Live streaming and real-time content</li>
+                  <li>• Post-Event: UGC sharing and 10% next session discount</li>
+                  <li>• Monthly themes align with cultural events and seasons</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Marketing Strategy Section */}
+      {/* Social Media & Content Strategy */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Marketing Strategy"
-            subtitle="Reaching Cat Lovers and Creative Minds"
+            title="Social Media & Content Strategy"
             centered
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-pink-500">
-              <h3 className="text-xl font-bold mb-4 flex items-center">
-                <Star className="h-6 w-6 text-pink-500 mr-2" />
-                Social Media Marketing
-              </h3>
-              <ul className="list-disc pl-5 text-gray-600">
-                <li>Engaging content on Instagram, Facebook, and TikTok</li>
-                <li>Cat photography contests and user-generated content</li>
-                <li>Partnerships with cat influencers and local artists</li>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div className="bg-slate-800 text-white p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-6 text-pink-400">Content Pillars</h3>
+              <div className="space-y-4">
+                <div className="bg-slate-700 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">#MeowOfTheDay</h4>
+                  <p className="text-sm text-gray-300">Daily posts showcasing café cats' antics</p>
+                </div>
+                <div className="bg-slate-700 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">#WorkshopWednesday</h4>
+                  <p className="text-sm text-gray-300">Weekly workshop highlights and teasers</p>
+                </div>
+                <div className="bg-slate-700 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">#NhaCaStories</h4>
+                  <p className="text-sm text-gray-300">Customer testimonials and behind-the-scenes content</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-800 text-white p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-6 text-green-400">Platform Strategy</h3>
+              <div className="space-y-4">
+                <div className="bg-slate-700 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Instagram & TikTok</h4>
+                  <p className="text-sm text-gray-300">Short, engaging videos of café décor and cats</p>
+                </div>
+                <div className="bg-slate-700 p-4 rounded-lg">
+                  <h4 className="font-bold mb-2">Facebook & Zalo</h4>
+                  <p className="text-sm text-gray-300">Event announcements and targeted local ads</p>
+                </div>
+              </div>
+              
+              <div className="mt-6 bg-slate-700 p-4 rounded-lg">
+                <h4 className="font-bold text-blue-400 mb-3">Content Calendar Highlights</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  <li>• Monday: #MeowMotivation - Inspirational quotes with cats</li>
+                  <li>• Wednesday: #WorkshopWednesday - Behind-the-scenes prep</li>
+                  <li>• Friday: #FeelGoodFriday - Customer highlights and UGC</li>
+                  <li>• Daily: Cat moments, coffee art, and café atmosphere</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Marketing Budget & Investment Plan */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <SectionHeading
+            title="Marketing Budget & Investment Plan"
+            subtitle="Annual Marketing Investment: 100-120 million VND"
+            centered
+          />
+
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-slate-800 text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left">Category</th>
+                    <th className="px-6 py-4 text-center">Allocation (VND)</th>
+                    <th className="px-6 py-4 text-center">Percentage</th>
+                    <th className="px-6 py-4 text-left">Key Activities</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-6 py-4 font-medium">Workshop Materials & Setup</td>
+                    <td className="px-6 py-4 text-center">30,000,000</td>
+                    <td className="px-6 py-4 text-center">25%</td>
+                    <td className="px-6 py-4">Materials for 12 workshops, decorations, equipment</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Digital Marketing & Ads</td>
+                    <td className="px-6 py-4 text-center">30,000,000</td>
+                    <td className="px-6 py-4 text-center">25%</td>
+                    <td className="px-6 py-4">Facebook, Instagram, TikTok ads, influencer partnerships</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium">Seasonal Décor & Ambiance</td>
+                    <td className="px-6 py-4 text-center">20,000,000</td>
+                    <td className="px-6 py-4 text-center">17%</td>
+                    <td className="px-6 py-4">Monthly themed decorations, photo props, lighting</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Community Partnerships</td>
+                    <td className="px-6 py-4 text-center">10,000,000</td>
+                    <td className="px-6 py-4 text-center">8%</td>
+                    <td className="px-6 py-4">University collaborations, local artist partnerships</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium">Content Creation & PR</td>
+                    <td className="px-6 py-4 text-center">10,000,000</td>
+                    <td className="px-6 py-4 text-center">8%</td>
+                    <td className="px-6 py-4">Professional photography, video content, PR activities</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Loyalty Program & Rewards</td>
+                    <td className="px-6 py-4 text-center">5,000,000</td>
+                    <td className="px-6 py-4 text-center">4%</td>
+                    <td className="px-6 py-4">Customer rewards, referral bonuses, VIP perks</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 font-medium">Events & Special Occasions</td>
+                    <td className="px-6 py-4 text-center">10,000,000</td>
+                    <td className="px-6 py-4 text-center">8%</td>
+                    <td className="px-6 py-4">Grand opening, anniversary, holiday celebrations</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Contingency & Flexibility</td>
+                    <td className="px-6 py-4 text-center">5,000,000</td>
+                    <td className="px-6 py-4 text-center">4%</td>
+                    <td className="px-6 py-4">Unexpected opportunities, market adjustments</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KPIs & Success Metrics */}
+      <section className="py-16 px-4 bg-slate-800 text-white">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-pink-400">Key Performance Indicators & Success Metrics</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="bg-slate-700 p-6 rounded-lg text-center">
+              <TrendingUp className="h-8 w-8 text-green-400 mx-auto mb-3" />
+              <h4 className="font-bold mb-2">Social Growth</h4>
+              <p className="text-sm text-gray-300">300-500 new followers monthly</p>
+            </div>
+
+            <div className="bg-slate-700 p-6 rounded-lg text-center">
+              <BarChart3 className="h-8 w-8 text-blue-400 mx-auto mb-3" />
+              <h4 className="font-bold mb-2">Workshop Success</h4>
+              <p className="text-sm text-gray-300">60%+ attendance rate, 4/5+ ratings</p>
+            </div>
+
+            <div className="bg-slate-700 p-6 rounded-lg text-center">
+              <DollarSign className="h-8 w-8 text-yellow-400 mx-auto mb-3" />
+              <h4 className="font-bold mb-2">Sales Growth</h4>
+              <p className="text-sm text-gray-300">Increase through combos and loyalty</p>
+            </div>
+
+            <div className="bg-slate-700 p-6 rounded-lg text-center">
+              <Target className="h-8 w-8 text-purple-400 mx-auto mb-3" />
+              <h4 className="font-bold mb-2">Engagement</h4>
+              <p className="text-sm text-gray-300">5%+ engagement rate target</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-slate-700 p-6 rounded-xl">
+              <h4 className="font-bold text-blue-400 mb-4">Brand Awareness</h4>
+              <ul className="text-sm text-gray-300 space-y-2">
+                <li>• Social media reach: 50,000+ monthly</li>
+                <li>• Local media mentions: 3+ per quarter</li>
+                <li>• Brand recognition in target area: 40%</li>
+                <li>• Website traffic: 5,000+ monthly visitors</li>
               </ul>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-purple-500">
-              <h3 className="text-xl font-bold mb-4 flex items-center">
-                <Calendar className="h-6 w-6 text-purple-500 mr-2" />
-                Events and Workshops
-              </h3>
-              <ul className="list-disc pl-5 text-gray-600">
-                <li>Weekly cat photography workshops</li>
-                <li>Monthly creative writing sessions</li>
-                <li>Special events for cat adoption and animal welfare</li>
+            <div className="bg-slate-700 p-6 rounded-xl">
+              <h4 className="font-bold text-green-400 mb-4">Customer Engagement</h4>
+              <ul className="text-sm text-gray-300 space-y-2">
+                <li>• Daily customers: 100 → 130</li>
+                <li>• Workshop attendance rate: 80%+</li>
+                <li>• Customer retention rate: 60%+</li>
+                <li>• Average session duration: 90+ minutes</li>
               </ul>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg border-t-4 border-indigo-500">
-              <h3 className="text-xl font-bold mb-4 flex items-center">
-                <Users className="h-6 w-6 text-indigo-500 mr-2" />
-                Community Building
-              </h3>
-              <ul className="list-disc pl-5 text-gray-600">
-                <li>Loyalty programs for regular customers</li>
-                <li>Partnerships with local businesses and organizations</li>
-                <li>Creating a welcoming and inclusive environment</li>
+            <div className="bg-slate-700 p-6 rounded-xl">
+              <h4 className="font-bold text-purple-400 mb-4">Financial Performance</h4>
+              <ul className="text-sm text-gray-300 space-y-2">
+                <li>• Monthly revenue growth: 15%</li>
+                <li>• Workshop revenue: 20M VND/month</li>
+                <li>• Customer lifetime value: +25%</li>
+                <li>• Marketing ROI: 3:1 target</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Digital Portfolio Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      {/* Risk Management */}
+      <section className="py-16 px-4">
         <div className="container mx-auto">
           <SectionHeading
-            title="Digital Portfolio"
-            subtitle="Showcasing the Cafe's Unique Charm"
+            title="Risk Management & Mitigation Strategies"
+            subtitle="Proactive Measures for Sustainable Success"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1573865526739-107569ca9778?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
-                alt="Cat Cafe Interior"
-                className="w-full h-48 object-cover rounded-md mb-4"
-              />
-              <p className="text-gray-600">Interior design and cozy atmosphere.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="border border-red-200 p-6 rounded-lg">
+                <h4 className="font-bold text-red-600 mb-2">Low Workshop Attendance</h4>
+                <p className="text-sm text-gray-600 mb-3"><strong>Risk:</strong> Seasonal fluctuations, competing events</p>
+                <p className="text-sm text-gray-700"><strong>Mitigation:</strong> Last-minute promotions, flexible scheduling, online workshops option</p>
+              </div>
+
+              <div className="border border-blue-200 p-6 rounded-lg">
+                <h4 className="font-bold text-blue-600 mb-2">Cat Health & Safety Concerns</h4>
+                <p className="text-sm text-gray-600 mb-3"><strong>Risk:</strong> Cat illness, customer allergies, hygiene issues</p>
+                <p className="text-sm text-gray-700"><strong>Mitigation:</strong> Regular vet checkups, clear allergy warnings, strict cleanliness protocols</p>
+              </div>
             </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
-                alt="Cats in the Cafe"
-                className="w-full h-48 object-cover rounded-md mb-4"
-              />
-              <p className="text-gray-600">Friendly cats and their playful interactions.</p>
-            </div>
+            <div className="space-y-6">
+              <div className="border border-orange-200 p-6 rounded-lg">
+                <h4 className="font-bold text-orange-600 mb-2">Social Media Algorithm Changes</h4>
+                <p className="text-sm text-gray-600 mb-3"><strong>Risk:</strong> Reduced organic reach, changing platform policies</p>
+                <p className="text-sm text-gray-700"><strong>Mitigation:</strong> Diversified platform strategy, email list building, paid promotion budget</p>
+              </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <img
-                src="https://images.unsplash.com/photo-1497953444336-e3959b597a7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60"
-                alt="Workshop Session"
-                className="w-full h-48 object-cover rounded-md mb-4"
-              />
-              <p className="text-gray-600">Participants enjoying a creative workshop.</p>
+              <div className="border border-purple-200 p-6 rounded-lg">
+                <h4 className="font-bold text-purple-600 mb-2">Seasonal Revenue Fluctuations</h4>
+                <p className="text-sm text-gray-600 mb-3"><strong>Risk:</strong> Academic calendar impacts, holiday periods</p>
+                <p className="text-sm text-gray-700"><strong>Mitigation:</strong> Tourist targeting during breaks, special holiday packages, online engagement</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Implementation Roadmap Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <SectionHeading
-            title="Implementation Roadmap"
-            subtitle="Timeline and Key Milestones"
-            centered
-          />
-
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Phase</TableHead>
-                <TableHead>Timeline</TableHead>
-                <TableHead>Activities</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell>Phase 1: Brand Launch</TableCell>
-                <TableCell>Month 1-3</TableCell>
-                <TableCell>
-                  <ul>
-                    <li>Establish brand identity and visual elements</li>
-                    <li>Launch social media profiles</li>
-                    <li>Host grand opening event</li>
-                  </ul>
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Phase 2: Community Building</TableCell>
-                <TableCell>Month 4-6</TableCell>
-                <TableCell>
-                  <ul>
-                    <li>Organize weekly workshops and events</li>
-                    <li>Partner with local businesses</li>
-                    <li>Implement loyalty programs</li>
-                  </ul>
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>Phase 3: Expansion</TableCell>
-                <TableCell>Month 7-12</TableCell>
-                <TableCell>
-                  <ul>
-                    <li>Explore new workshop themes</li>
-                    <li>Expand partnerships and collaborations</li>
-                    <li>Evaluate and refine marketing strategies</li>
-                  </ul>
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      </section>
-
-      {/* Success Metrics Section */}
+      {/* Implementation Timeline */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading
-            title="Success Metrics"
-            subtitle="Measuring Our Impact"
+            title="Implementation Timeline 2025"
+            subtitle="Quarterly Roadmap for Success"
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Social Media Engagement</h4>
-              <p className="text-gray-600">Tracking likes, shares, and comments on social media platforms.</p>
+          <div className="space-y-8">
+            <div className="flex items-start">
+              <div className="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                Q1
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-blue-600 mb-2">Foundation & Launch (Jan-Mar)</h3>
+                <p className="text-gray-600">Brand identity finalization, social media setup, first 3 workshops, local partnerships establishment</p>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Workshop Participation</h4>
-              <p className="text-gray-600">Measuring the number of attendees and feedback from workshops.</p>
+            <div className="flex items-start">
+              <div className="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                Q2
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-green-600 mb-2">Growth & Engagement (Apr-Jun)</h3>
+                <p className="text-gray-600">Influencer collaborations, customer loyalty program launch, workshop expansion, university partnerships</p>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Customer Loyalty</h4>
-              <p className="text-gray-600">Monitoring repeat visits and customer feedback.</p>
+            <div className="flex items-start">
+              <div className="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                Q3
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-purple-600 mb-2">Expansion & Innovation (Jul-Sep)</h3>
+                <p className="text-gray-600">New service offerings, advanced workshops, community events, seasonal campaigns</p>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="font-bold text-lg mb-2">Brand Awareness</h4>
-              <p className="text-gray-600">Assessing brand recognition through surveys and local media coverage.</p>
+            <div className="flex items-start">
+              <div className="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-6 flex-shrink-0">
+                Q4
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-orange-600 mb-2">Optimization & Planning (Oct-Dec)</h3>
+                <p className="text-gray-600">Holiday campaigns, year-end analysis, 2026 strategy development, anniversary preparation</p>
+              </div>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg">
+              Start Your Cat Café Marketing Journey
+            </button>
           </div>
         </div>
       </section>
 
       <CallToAction
-        title="Ready to Build Your Creative Brand?"
-        description="Let's discuss how our branding and marketing expertise can help your creative business thrive."
+        title="Ready to Build Your Creative Cat Café Brand?"
+        description="Let's discuss how our branding and marketing expertise can help your unique café concept thrive and create a purr-fect community space."
         primaryButtonText="Get Started"
         primaryButtonLink="/contact"
-        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+        backgroundClass="bg-gradient-to-r from-pink-500 to-purple-600"
       />
     </Layout>
   );
