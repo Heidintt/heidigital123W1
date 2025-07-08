@@ -1,5 +1,4 @@
 
-
 # Build settings
 [build]
   publish = "dist"
@@ -11,55 +10,22 @@
   targetPort = 8080
   port = 8888
 
-# Enable pre-rendering for better SEO and social media sharing
-[[plugins]]
-  package = "@netlify/plugin-prerender-spa"
-  
-  [plugins.inputs]
-    # Prerender these specific routes and patterns
-    routes = [
-      "/",
-      "/about",
-      "/services", 
-      "/portfolio",
-      "/blog",
-      "/blog/free-ai-tools-marketing-2025",
-      "/blog/linkedin-personal-branding-guide",
-      "/blog/canva-infographics-guide",
-      "/contact",
-      "/solutions",
-      "/privacy-policy",
-      "/terms-of-service"
-    ]
-    # Enhanced crawler detection for better social media sharing
-    crawlerUserAgents = [
-      "facebookexternalhit",
-      "facebookexternalhit/1.1",
-      "Facebot",
-      "linkedinbot", 
-      "LinkedInBot/1.0",
-      "twitterbot",
-      "Twitterbot/1.0",
-      "googlebot",
-      "Googlebot/2.1",
-      "bingbot",
-      "BingBot/2.0",
-      "slackbot",
-      "Slackbot-LinkExpanding",
-      "whatsapp",
-      "WhatsApp/2.0",
-      "TelegramBot",
-      "SkypeUriPreview",
-      "discordbot",
-      "RedditBot",
-      "applebot"
-    ]
-    # Force pre-rendering for all crawlers
-    ignoreHTMLErrors = false
-    # Set a longer timeout for complex pages
-    renderAfterTime = 2000
+# Enhanced headers for better social media sharing
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Cache static assets
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# Headers for static files
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
@@ -77,15 +43,6 @@
   [headers.values]
     Content-Type = "application/manifest+json; charset=UTF-8"
     Cache-Control = "public, max-age=86400"
-
-# Enhanced headers for better social media sharing
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "index, follow"
-    X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
 
 # Blog post redirects
 [[redirects]]
@@ -119,4 +76,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
