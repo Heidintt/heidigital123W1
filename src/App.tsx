@@ -1,23 +1,23 @@
 
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import { HelmetProvider } from 'react-helmet-async';
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import AppRouter from "./router/AppRouter";
+import AppRouter from "@/router/AppRouter";
+import { useSEO } from "@/hooks/useSEO";
 
 const queryClient = new QueryClient();
 
 function App() {
+  // Set default SEO for the app
+  useSEO();
+
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <AppRouter />
-          <Toaster />
-        </BrowserRouter>
-      </QueryClientProvider>
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <AppRouter />
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 }
 

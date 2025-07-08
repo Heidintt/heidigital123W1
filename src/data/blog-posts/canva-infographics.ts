@@ -5,7 +5,7 @@ export const canvaInfographicsPost: BlogPost = {
   slug: "create-infographics-with-canva-free",
   title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
   description: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
-  featured_image: "/lovable-uploads/9d823562-8394-4d41-98d1-a50f09d4cd7c.png",
+  featured_image: "https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/f5c5b491-9f43-4bd2-a9d4-67ccef950dce/social_media_hero2x.png",
   date: "2025-01-03",
   author: "Heidi Digital Team",
   category: "Design & Content",
@@ -25,8 +25,6 @@ Here's why they're so powerful:
 ### Grab Attention & Stick in People's Minds
 
 Studies show our brains process visuals 60,000 times faster than text. That's why infographics often outperform plain articles. With eye-catching design and concise information, they help your audience remember key messages longer — a major win for visual storytelling.
-
-![Canva Design Process](https://content-management-files.canva.com/1c13d213-d8c5-4e8f-aaf7-e565216bd6d7/og_image_free.png)
 
 ### Boost Engagement & Shareability
 

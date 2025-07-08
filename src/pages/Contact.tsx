@@ -1,11 +1,27 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
-import SEO from "@/components/SEO/SEO";
+import { useSEO } from "@/hooks/useSEO";
 import { Mail, Clock, MessageSquare } from "lucide-react";
 
 const Contact = () => {
+  // Enhanced SEO for contact page
+  useSEO({
+    title: "Contact Us | Free Marketing Consultation & Custom Quotes | Heidi Digital",
+    description: "Ready to grow your Australian business? Contact our digital marketing experts for a free consultation. Get custom strategies, competitive quotes & proven results. Call today - response within 24hrs!",
+    keywords: "contact digital marketing agency australia, free marketing consultation, get marketing quote, marketing experts contact, digital marketing help sydney, marketing consultation australia, business growth consultation",
+    url: "https://heidigital.info/contact",
+    type: "website",
+    image: "https://heidigital.info/og-contact.jpg",
+    schemaType: "ContactPage",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Contact", url: "https://heidigital.info/contact" }
+    ]
+  });
+
   // Add LocalBusiness and ContactPoint structured data
   React.useEffect(() => {
     const localBusinessSchema = {
@@ -115,12 +131,6 @@ const Contact = () => {
 
   return (
     <Layout>
-      <SEO
-        title="Contact Us | Free Marketing Consultation & Custom Quotes | Heidi Digital"
-        description="Ready to grow your Australian business? Contact our digital marketing experts for a free consultation. Get custom strategies, competitive quotes & proven results. Call today - response within 24hrs!"
-        keywords="contact digital marketing agency australia, free marketing consultation, get marketing quote, marketing experts contact, digital marketing help sydney, marketing consultation australia, business growth consultation"
-        imageUrl="https://heidigital.info/og-contact.jpg"
-      />
       <main role="main">
         <Hero
           title="Contact Us"

@@ -2,7 +2,6 @@
 # Build settings
 [build]
   publish = "dist"
-  command = "npm run build"
 
 # Local dev server settings for Vite (port 8080)
 [dev]
@@ -10,22 +9,7 @@
   targetPort = 8080
   port = 8888
 
-# Enhanced headers for better social media sharing
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "index, follow"
-    X-Frame-Options = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    # Cache static assets
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
+# Headers for static files
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
@@ -43,6 +27,12 @@
   [headers.values]
     Content-Type = "application/manifest+json; charset=UTF-8"
     Cache-Control = "public, max-age=86400"
+
+# Allow search engines to index all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
 
 # Blog post redirects
 [[redirects]]
@@ -71,58 +61,12 @@
   status = 200
   force = true
 
-# Crawler detection and static page serving for main pages
-[[redirects]]
-  from = "/about"
-  to = "/about.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-[[redirects]]
-  from = "/services"
-  to = "/services.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-[[redirects]]
-  from = "/portfolio"
-  to = "/portfolio.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-[[redirects]]
-  from = "/solutions"
-  to = "/solutions.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-# Crawler detection and static blog page serving
-[[redirects]]
-  from = "/blog/free-ai-tools-marketing-2025"
-  to = "/blog/free-ai-tools-marketing-2025.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-[[redirects]]
-  from = "/blog/linkedin-personal-branding-mistakes-marketing-services"
-  to = "/blog/linkedin-personal-branding-mistakes-marketing-services.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
-[[redirects]]
-  from = "/blog/create-infographics-with-canva-free"
-  to = "/blog/create-infographics-with-canva-free.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
-
 # SPA fallback cho tất cả các route khác (priority thấp nhất)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Plugin Visual Editor
+[[plugins]]
+  package = "@netlify/plugin-visual-editor"

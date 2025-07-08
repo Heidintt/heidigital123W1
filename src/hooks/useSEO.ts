@@ -1,5 +1,10 @@
 
 import { useEffect } from 'react';
+import { useBasicMetaTags } from './seo/useBasicMetaTags';
+import { useOpenGraphTags } from './seo/useOpenGraphTags';
+import { useTwitterCardTags } from './seo/useTwitterCardTags';
+import { useStructuredData } from './seo/useStructuredData';
+import { usePerformanceLinks } from './seo/usePerformanceLinks';
 
 interface SEOProps {
   title?: string;
@@ -14,6 +19,7 @@ interface SEOProps {
   modifiedTime?: string;
   locale?: string;
   siteName?: string;
+  // New props for enhanced SEO
   articleAuthor?: string;
   articleSection?: string;
   articleTags?: string[];
@@ -44,109 +50,58 @@ export const useSEO = ({
 }: SEOProps = {}) => {
   
   useEffect(() => {
-    // Update document title
-    if (title) {
-      document.title = title;
-    }
+    // Use basic meta tags hook
+    const { updateMetaTag } = useBasicMetaTags({
+      title,
+      description,
+      keywords,
+      robots,
+      author,
+      locale
+    });
 
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = description;
-      document.head.appendChild(meta);
-    }
+    // Use Open Graph tags hook
+    useOpenGraphTags({
+      title,
+      description,
+      image,
+      url,
+      type,
+      locale,
+      siteName,
+      publishedTime,
+      modifiedTime,
+      articleAuthor,
+      articleSection,
+      articleTags,
+      updateMetaTag
+    });
 
-    // Update meta keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', keywords);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'keywords';
-      meta.content = keywords;
-      document.head.appendChild(meta);
-    }
+    // Use Twitter Card tags hook
+    useTwitterCardTags({
+      title,
+      description,
+      image,
+      url,
+      twitterCreator,
+      updateMetaTag
+    });
 
-    // Update robots meta
-    const metaRobots = document.querySelector('meta[name="robots"]');
-    if (metaRobots) {
-      metaRobots.setAttribute('content', robots);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'robots';
-      meta.content = robots;
-      document.head.appendChild(meta);
-    }
+    // Use structured data hook
+    useStructuredData({
+      title,
+      description,
+      image,
+      url,
+      siteName,
+      publishedTime,
+      modifiedTime,
+      schemaType,
+      breadcrumbs
+    });
 
-    // Update Open Graph tags
-    const updateOrCreateOGTag = (property: string, content: string) => {
-      const ogTag = document.querySelector(`meta[property="${property}"]`);
-      if (ogTag) {
-        ogTag.setAttribute('content', content);
-      } else {
-        const meta = document.createElement('meta');
-        meta.setAttribute('property', property);
-        meta.setAttribute('content', content);
-        document.head.appendChild(meta);
-      }
-    };
-
-    updateOrCreateOGTag('og:title', title);
-    updateOrCreateOGTag('og:description', description);
-    updateOrCreateOGTag('og:image', image);
-    updateOrCreateOGTag('og:url', url);
-    updateOrCreateOGTag('og:type', type);
-    updateOrCreateOGTag('og:site_name', siteName);
-    updateOrCreateOGTag('og:locale', locale);
-
-    // Update Twitter Card tags
-    const updateOrCreateTwitterTag = (name: string, content: string) => {
-      const twitterTag = document.querySelector(`meta[name="${name}"]`);
-      if (twitterTag) {
-        twitterTag.setAttribute('content', content);
-      } else {
-        const meta = document.createElement('meta');
-        meta.setAttribute('name', name);
-        meta.setAttribute('content', content);
-        document.head.appendChild(meta);
-      }
-    };
-
-    updateOrCreateTwitterTag('twitter:card', 'summary_large_image');
-    updateOrCreateTwitterTag('twitter:title', title);
-    updateOrCreateTwitterTag('twitter:description', description);
-    updateOrCreateTwitterTag('twitter:image', image);
-    updateOrCreateTwitterTag('twitter:creator', twitterCreator);
-
-    // Article specific tags
-    if (type === 'article') {
-      if (articleAuthor) updateOrCreateOGTag('article:author', articleAuthor);
-      if (articleSection) updateOrCreateOGTag('article:section', articleSection);
-      if (publishedTime) updateOrCreateOGTag('article:published_time', publishedTime);
-      if (modifiedTime) updateOrCreateOGTag('article:modified_time', modifiedTime);
-      
-      articleTags.forEach(tag => {
-        const meta = document.createElement('meta');
-        meta.setAttribute('property', 'article:tag');
-        meta.setAttribute('content', tag);
-        document.head.appendChild(meta);
-      });
-    }
-
-    // Update canonical link
-    const canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (canonicalLink) {
-      canonicalLink.setAttribute('href', url);
-    } else {
-      const link = document.createElement('link');
-      link.rel = 'canonical';
-      link.href = url;
-      document.head.appendChild(link);
-    }
+    // Use performance links hook
+    usePerformanceLinks(url);
     
   }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs]);
 };
