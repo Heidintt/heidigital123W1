@@ -5,7 +5,7 @@ export const linkedinPersonalBrandingPost: BlogPost = {
   slug: "linkedin-personal-branding-mistakes-marketing-services",
   title: "4 Common LinkedIn Personal Branding Mistakes That Kill Your Marketing Success",
   description: "Are you unknowingly sabotaging your LinkedIn personal branding efforts? Discover 4 common mistakes professionals make and how to build a compelling personal brand on LinkedIn that attracts clients, jobs, and growth in marketing services.",
-  featured_image: "/images/blog/linkedin-branding-hero.jpg",
+  featured_image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
   date: "2025-01-02",
   author: "Heidi Digital Team",
   category: "LinkedIn Marketing",

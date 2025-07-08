@@ -34,12 +34,6 @@
   [headers.values]
     X-Robots-Tag = "index, follow"
 
-# Blog post redirects
-[[redirects]]
-  from = "/blog/10-free-ai-marketing-tools-2025"
-  to = "/blog/free-ai-tools-marketing-2025"
-  status = 301
-
 # Static file redirects với priority cao nhất
 [[redirects]]
   from = "/sitemap.xml"
