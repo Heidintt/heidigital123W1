@@ -80,6 +80,25 @@
   status = 200
   conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
+# Blog post static pages for crawlers
+[[redirects]]
+  from = "/blog/free-ai-tools-marketing-2025"
+  to = "/blog-free-ai-tools-marketing-2025-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/blog/create-infographics-with-canva-free"
+  to = "/blog-create-infographics-with-canva-free-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/blog/linkedin-personal-branding-mistakes-marketing-services"
+  to = "/blog-linkedin-personal-branding-mistakes-marketing-services-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
 # SPA fallback cho tất cả các route khác (priority thấp nhất)
 [[redirects]]
   from = "/*"

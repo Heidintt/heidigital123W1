@@ -16,12 +16,23 @@ const BlogPost = () => {
 
   const post = posts.find(p => p.slug === slug);
 
-  // Enhanced SEO with post-specific data
+  // Enhanced SEO with post-specific data and absolute image URL
+  const absoluteImageUrl = post?.featured_image 
+    ? (post.featured_image.startsWith('http') ? post.featured_image : `https://heidigital.info${post.featured_image}`)
+    : "https://heidigital.info/og-blog.jpg";
+    
+  console.log('BlogPost SEO Debug:', {
+    postSlug: slug,
+    originalImage: post?.featured_image,
+    absoluteImageUrl,
+    postTitle: post?.title
+  });
+
   useSEO({
     title: post ? (post.seo_title || `${post.title} | Digital Marketing Blog | Heidi Digital`) : "Blog Post - Heidi Digital",
     description: post ? (post.seo_description || post.description) : "Read our latest marketing insights and expert tips for business growth.",
     keywords: post ? post.tags?.join(", ") : "marketing, digital marketing, blog, business tips",
-    image: post?.featured_image || "https://heidigital.info/og-blog.jpg",
+    image: absoluteImageUrl,
     url: `https://heidigital.info/blog/${slug}`,
     type: "article",
     articleAuthor: post?.author,
@@ -44,7 +55,7 @@ const BlogPost = () => {
         "@type": "Article",
         "headline": post.title,
         "description": post.description,
-        "image": post.featured_image,
+        "image": absoluteImageUrl,
         "url": `https://heidigital.info/blog/${post.slug}`,
         "datePublished": post.date,
         "dateModified": post.updated_at || post.date,
@@ -88,7 +99,7 @@ const BlogPost = () => {
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.description,
-        "image": post.featured_image,
+        "image": absoluteImageUrl,
         "url": `https://heidigital.info/blog/${post.slug}`,
         "datePublished": post.date,
         "dateModified": post.updated_at || post.date,

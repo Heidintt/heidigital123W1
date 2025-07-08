@@ -91,10 +91,11 @@ export const useSEO = ({
     updateMetaTag('copyright', `© ${new Date().getFullYear()} Heidi Digital. All rights reserved.`);
     updateMetaTag('rights', 'Heidi Digital');
     
-    // Enhanced Open Graph tags
+    // Enhanced Open Graph tags with absolute URL conversion
+    const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
     updateMetaTag('og:title', title, true);
     updateMetaTag('og:description', description, true);
-    updateMetaTag('og:image', image, true);
+    updateMetaTag('og:image', absoluteImageUrl, true);
     updateMetaTag('og:image:width', '1200', true);
     updateMetaTag('og:image:height', '630', true);
     updateMetaTag('og:image:alt', title, true);
@@ -128,7 +129,7 @@ export const useSEO = ({
     updateMetaTag('twitter:creator', twitterCreator);
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
-    updateMetaTag('twitter:image', image);
+    updateMetaTag('twitter:image', absoluteImageUrl);
     updateMetaTag('twitter:image:alt', title);
     
     // Additional Twitter tags
@@ -143,7 +144,7 @@ export const useSEO = ({
     
     // Microsoft specific tags
     updateMetaTag('msapplication-TileColor', '#6366f1');
-    updateMetaTag('msapplication-TileImage', image);
+    updateMetaTag('msapplication-TileImage', absoluteImageUrl);
     updateMetaTag('msapplication-config', '/browserconfig.xml');
     
     // Update canonical URL
@@ -213,7 +214,7 @@ export const useSEO = ({
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": image,
+        "url": absoluteImageUrl,
         "width": 1200,
         "height": 630
       },
