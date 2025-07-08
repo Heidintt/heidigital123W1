@@ -1,4 +1,5 @@
 
+
 # Build settings
 [build]
   publish = "dist"
@@ -22,7 +23,9 @@
       "/services", 
       "/portfolio",
       "/blog",
-      "/blog/*",
+      "/blog/free-ai-tools-marketing-2025",
+      "/blog/linkedin-personal-branding-guide",
+      "/blog/canva-infographics-guide",
       "/contact",
       "/solutions",
       "/privacy-policy",
@@ -116,3 +119,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
