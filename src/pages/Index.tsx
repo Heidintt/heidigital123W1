@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,19 +9,8 @@ import BlogSection from "@/components/home/BlogSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 import ContactSection from "@/components/home/ContactSection";
 import SEO from "@/components/SEO/SEO";
-import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
-  // Enhanced SEO optimization for homepage with comprehensive meta tags
-  useSEO({
-    title: "Digital Marketing Agency Australia | AI-Powered Solutions | Heidi Digital",
-    description: "Transform your business with Australia's leading AI-powered digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
-    keywords: "digital marketing agency australia, AI marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
-    url: "https://heidigital.info/",
-    type: "website",
-    image: "https://heidigital.info/og-homepage.jpg"
-  });
-
   // Add JSON-LD structured data for enhanced SEO
   React.useEffect(() => {
     // FAQ Schema for homepage
@@ -293,7 +283,12 @@ const Index = () => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO
+        title="Digital Marketing Agency Australia | AI-Powered Solutions | Heidi Digital"
+        description="Transform your business with Australia's leading AI-powered digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!"
+        keywords="digital marketing agency australia, AI marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency"
+        imageUrl="https://heidigital.info/og-homepage.jpg"
+      />
       <main role="main">
         <Hero
           title="Transform Your Digital Future"
