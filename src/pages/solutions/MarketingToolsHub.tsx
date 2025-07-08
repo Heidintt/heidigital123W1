@@ -8,8 +8,25 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Bot, Edit, BarChart3, Users, Globe, Search, FileText, Calculator, TrendingUp } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 const MarketingToolsHub = () => {
+  // Enhanced SEO for Marketing Tools Hub
+  useSEO({
+    title: "Marketing Tools Hub | Free Digital Marketing Tools & Resources | Heidi Digital",
+    description: "Access our comprehensive marketing tools hub with free calculators, planners, and resources to optimize your digital marketing campaigns and boost ROI.",
+    keywords: "marketing tools hub, digital marketing tools, marketing calculators, free marketing resources, marketing planning tools, AI marketing tools",
+    url: "https://heidigital.info/solutions/marketing-tools",
+    type: "website",
+    image: "https://heidigital.info/og-marketing-tools.jpg",
+    schemaType: "CollectionPage",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Solutions", url: "https://heidigital.info/solutions" },
+      { name: "Marketing Tools", url: "https://heidigital.info/solutions/marketing-tools" }
+    ]
+  });
+
   return (
     <Layout>
       <Hero

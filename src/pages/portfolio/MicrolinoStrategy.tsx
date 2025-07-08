@@ -1,7 +1,24 @@
 import React from "react";
 import Layout from "@/components/Layout";
+import { useSEO } from "@/hooks/useSEO";
 
 const MicrolinoStrategy = () => {
+  // SEO optimization
+  useSEO({
+    title: "Microlino Marketing Strategy | Portfolio Case Study | Heidi Digital",
+    description: "Discover our innovative marketing strategy for Microlino, featuring automotive digital marketing, brand awareness campaigns, and market positioning.",
+    keywords: "Microlino marketing, automotive marketing strategy, portfolio case study, brand awareness, digital marketing campaign, EV marketing",
+    url: "https://heidigital.info/portfolio/microlino-strategy",
+    type: "article",
+    image: "https://heidigital.info/og-portfolio.jpg",
+    schemaType: "ProfilePage",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Portfolio", url: "https://heidigital.info/portfolio" },
+      { name: "Microlino Strategy", url: "https://heidigital.info/portfolio/microlino-strategy" }
+    ]
+  });
+
   return (
     <Layout>
       <section className="py-16 px-4 bg-white">
