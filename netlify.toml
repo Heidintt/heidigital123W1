@@ -2,6 +2,7 @@
 # Build settings
 [build]
   publish = "dist"
+  command = "npm run build"
 
 # Local dev server settings for Vite (port 8080)
 [dev]
@@ -115,7 +116,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Plugin Visual Editor
-[[plugins]]
-  package = "@netlify/plugin-visual-editor"
