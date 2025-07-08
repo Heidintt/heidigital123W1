@@ -1,12 +1,11 @@
 
 import { BlogPost } from '@/types/blogPost';
-import aiToolsHeroImage from '@/assets/blog/ai-tools-marketing-hero.jpg';
 
 export const aiToolsMarketingPost: BlogPost = {
   slug: "free-ai-tools-marketing-2025", 
   title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
   description: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
-  featured_image: aiToolsHeroImage,
+  featured_image: "https://heidigital.info/images/blog/ai-tools-marketing-hero.jpg",
   date: "2025-01-01",
   author: "Heidi Digital Team", 
   category: "AI Marketing",

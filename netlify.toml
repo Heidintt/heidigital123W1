@@ -14,31 +14,46 @@
   package = "@netlify/plugin-prerender-spa"
   
   [plugins.inputs]
-    # Prerender these specific routes
+    # Prerender these specific routes and patterns
     routes = [
       "/",
       "/about",
       "/services", 
       "/portfolio",
       "/blog",
+      "/blog/*",
       "/contact",
       "/solutions",
       "/privacy-policy",
-      "/terms-of-service",
-      "/blog/free-ai-tools-marketing-2025",
-      "/blog/linkedin-personal-branding-guide",
-      "/blog/canva-infographics-marketing"
+      "/terms-of-service"
     ]
-    # Only prerender for bots and crawlers
+    # Enhanced crawler detection for better social media sharing
     crawlerUserAgents = [
       "facebookexternalhit",
+      "facebookexternalhit/1.1",
+      "Facebot",
       "linkedinbot", 
+      "LinkedInBot/1.0",
       "twitterbot",
+      "Twitterbot/1.0",
       "googlebot",
+      "Googlebot/2.1",
       "bingbot",
+      "BingBot/2.0",
       "slackbot",
-      "whatsapp"
+      "Slackbot-LinkExpanding",
+      "whatsapp",
+      "WhatsApp/2.0",
+      "TelegramBot",
+      "SkypeUriPreview",
+      "discordbot",
+      "RedditBot",
+      "applebot"
     ]
+    # Force pre-rendering for all crawlers
+    ignoreHTMLErrors = false
+    # Set a longer timeout for complex pages
+    renderAfterTime = 2000
 
 # Headers for static files
 [[headers]]
@@ -59,11 +74,14 @@
     Content-Type = "application/manifest+json; charset=UTF-8"
     Cache-Control = "public, max-age=86400"
 
-# Allow search engines to index all pages
+# Enhanced headers for better social media sharing
 [[headers]]
   for = "/*"
   [headers.values]
     X-Robots-Tag = "index, follow"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
 # Blog post redirects
 [[redirects]]

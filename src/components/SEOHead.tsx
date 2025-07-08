@@ -49,11 +49,47 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   // Tự động tạo canonical URL nếu không được cung cấp
   const canonicalUrl = url || `https://heidigital.info${location.pathname}`;
   
-  // Đảm bảo image là absolute URL
+  // Đảm bảo image là absolute URL và có proper dimensions
   const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
   
   // Xác định type dựa trên isArticle
   const contentType = isArticle ? "article" : type;
+
+  // Enhanced structured data for better social sharing
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": isArticle ? "Article" : "WebPage",
+    "headline": title,
+    "description": description,
+    "image": {
+      "@type": "ImageObject",
+      "url": absoluteImageUrl,
+      "width": 1200,
+      "height": 630
+    },
+    "url": canonicalUrl,
+    "author": isArticle && articleAuthor ? {
+      "@type": "Person",
+      "name": articleAuthor
+    } : {
+      "@type": "Organization",
+      "name": "Heidi Digital"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heidi Digital",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heidigital.info/logo.png"
+      }
+    },
+    "datePublished": publishedTime,
+    "dateModified": modifiedTime || publishedTime,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    }
+  };
 
   return (
     <Helmet>
@@ -67,7 +103,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
-      {/* Open Graph Tags */}
+      {/* Enhanced Open Graph Tags */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={absoluteImageUrl} />
@@ -94,7 +130,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         </>
       )}
       
-      {/* Twitter Card Tags */}
+      {/* Enhanced Twitter Card Tags */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
@@ -106,6 +142,9 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* LinkedIn specific tags */}
       <meta property="linkedin:owner" content="heidi-digital" />
+      
+      {/* Facebook specific tags */}
+      <meta property="fb:app_id" content="" />
       
       {/* Additional meta tags for better indexing */}
       <meta name="theme-color" content="#6366f1" />
@@ -125,6 +164,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Copyright */}
       <meta name="copyright" content={`© ${new Date().getFullYear()} Heidi Digital. All rights reserved.`} />
+
+      {/* Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
     </Helmet>
   );
 };

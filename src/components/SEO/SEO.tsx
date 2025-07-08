@@ -35,11 +35,37 @@ const SEO: React.FC<SEOProps> = ({
   const defaultImage = "https://heidigital.info/og-homepage.jpg";
   const defaultKeywords = "digital marketing agency australia, AI marketing solutions, SEO services australia, social media marketing, content creation, branding agency";
 
+  // Ensure absolute URLs for images
+  const processedImageUrl = imageUrl ? 
+    (imageUrl.startsWith('http') ? imageUrl : `https://heidigital.info${imageUrl}`) 
+    : defaultImage;
+
+  // Debug logging in development
+  React.useEffect(() => {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('SEO Component Debug:', {
+        title: title || defaultTitle,
+        description: description || defaultDescription,
+        imageUrl: processedImageUrl,
+        isArticle,
+        keywords: keywords || defaultKeywords,
+        publishedTime,
+        modifiedTime,
+        articleTags,
+        socialDebuggers: {
+          facebook: `https://developers.facebook.com/tools/debug/sharing/?q=${encodeURIComponent(window.location.href)}`,
+          linkedin: `https://www.linkedin.com/post-inspector/inspect/${encodeURIComponent(window.location.href)}`,
+          twitter: `https://cards-dev.twitter.com/validator`
+        }
+      });
+    }
+  }, [title, description, processedImageUrl, isArticle, keywords, publishedTime, modifiedTime, articleTags]);
+
   return (
     <SEOHead
       title={title || defaultTitle}
       description={description || defaultDescription}
-      image={imageUrl || defaultImage}
+      image={processedImageUrl}
       keywords={keywords || defaultKeywords}
       isArticle={isArticle}
       articleAuthor={articleAuthor}
