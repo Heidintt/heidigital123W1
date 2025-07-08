@@ -2,7 +2,6 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import ValuePropsSection from "@/components/home/ValuePropsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import TechnologySection from "@/components/home/TechnologySection";
 import PortfolioSection from "@/components/home/PortfolioSection";
@@ -303,10 +302,6 @@ const Index = () => {
           secondaryCtaText="Explore Solutions"
           secondaryCtaLink="/solutions"
         />
-
-        <section aria-label="Value Propositions">
-          <ValuePropsSection />
-        </section>
 
         <section aria-label="Our Services">
           <ServicesSection />
