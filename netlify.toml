@@ -71,6 +71,25 @@
   status = 200
   force = true
 
+# Crawler detection and static blog page serving
+[[redirects]]
+  from = "/blog/free-ai-tools-marketing-2025"
+  to = "/blog/free-ai-tools-marketing-2025.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/blog/linkedin-personal-branding-mistakes-marketing-services"
+  to = "/blog/linkedin-personal-branding-mistakes-marketing-services.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/blog/create-infographics-with-canva-free"
+  to = "/blog/create-infographics-with-canva-free.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
 # SPA fallback cho tất cả các route khác (priority thấp nhất)
 [[redirects]]
   from = "/*"
