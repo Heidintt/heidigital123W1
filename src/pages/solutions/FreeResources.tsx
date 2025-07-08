@@ -6,7 +6,24 @@ import CallToAction from "@/components/CallToAction";
 import { ExternalLink, FileText, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useSEO } from "@/hooks/useSEO";
+
 const FreeResources = () => {
+  // Enhanced SEO for Free Resources page
+  useSEO({
+    title: "Free Marketing Resources & Learning Materials | Expert Guides & Tools | Heidi Digital",
+    description: "Access valuable free marketing resources including courses, guides, checklists and tools from industry leaders. Master digital marketing with expert learning materials and boost your skills.",
+    keywords: "free marketing resources, marketing courses, digital marketing guides, marketing checklists, SEO tools, social media resources, marketing learning materials, free marketing education",
+    url: "https://heidigital.info/solutions/free-resources",
+    type: "website",
+    image: "https://heidigital.info/og-free-resources.jpg",
+    schemaType: "CollectionPage",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Solutions", url: "https://heidigital.info/solutions" },
+      { name: "Free Resources", url: "https://heidigital.info/solutions/free-resources" }
+    ]
+  });
   const resources = [{
     title: "Google Digital Marketing & E-commerce Professional Certificate",
     description: "Comprehensive professional certificate program covering digital marketing and e-commerce fundamentals.",
