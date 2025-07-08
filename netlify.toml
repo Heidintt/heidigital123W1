@@ -71,6 +71,56 @@
   status = 200
   force = true
 
+# Crawler detection and static page serving for main pages
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+# Crawler detection and static blog page serving
+[[redirects]]
+  from = "/blog/free-ai-tools-marketing-2025"
+  to = "/blog/free-ai-tools-marketing-2025.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/blog/linkedin-personal-branding-mistakes-marketing-services"
+  to = "/blog/linkedin-personal-branding-mistakes-marketing-services.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
+[[redirects]]
+  from = "/blog/create-infographics-with-canva-free"
+  to = "/blog/create-infographics-with-canva-free.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit*", "linkedinbot*", "twitterbot*", "googlebot*", "bingbot*", "slackbot*", "whatsapp*", "telegrambot*", "skypeuripreview*", "discordbot*", "redditbot*", "applebot*"]}
+
 # SPA fallback cho tất cả các route khác (priority thấp nhất)
 [[redirects]]
   from = "/*"
