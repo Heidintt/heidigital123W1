@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useSEO } from "@/hooks/useSEO";
 import defaultOgImage from "@/assets/blog/default-og-image.jpg";
@@ -14,12 +15,28 @@ const BlogPostSEO: React.FC<BlogPostSEOProps> = ({ post, slug }) => {
     (typeof post.featured_image === 'string' ? post.featured_image : defaultOgImage) : 
     defaultOgImage;
     
-  // Force Facebook to recrawl by adding timestamp to URLs
+  // Auto-convert relative URLs to absolute URLs for social sharing
   const currentUrl = `https://heidigital.info/blog/${slug}`;
-  // Use proper absolute URL for images
-  const imageUrl = typeof featuredImage === 'string' && featuredImage.startsWith('http') 
-    ? `${featuredImage}?v=${Date.now()}`
-    : `https://heidigital.info${featuredImage}?v=${Date.now()}`;
+  
+  // Enhanced image URL logic - converts relative paths to absolute URLs
+  const getAbsoluteImageUrl = (imageUrl: string) => {
+    if (!imageUrl) return `https://heidigital.info${defaultOgImage}`;
+    
+    // If already absolute URL, use as-is with cache busting
+    if (imageUrl.startsWith('http')) {
+      return `${imageUrl}?v=${Date.now()}`;
+    }
+    
+    // If relative URL (starts with /), convert to absolute
+    if (imageUrl.startsWith('/')) {
+      return `https://heidigital.info${imageUrl}?v=${Date.now()}`;
+    }
+    
+    // For imported assets, fallback to absolute URL
+    return `https://heidigital.info${defaultOgImage}?v=${Date.now()}`;
+  };
+  
+  const imageUrl = getAbsoluteImageUrl(featuredImage);
   
   useSEO({
     title: post ? (post.seo_title || `${post.title} | Digital Marketing Blog | Heidi Digital`) : "Blog Post - Heidi Digital",
@@ -41,21 +58,23 @@ const BlogPostSEO: React.FC<BlogPostSEOProps> = ({ post, slug }) => {
     ]
   });
 
-  // Enhanced meta tags specifically for Facebook
+  // Enhanced meta tags specifically for Facebook and social platforms
   React.useEffect(() => {
     if (post) {
       // Remove existing meta tags to prevent conflicts
       const existingTags = document.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"], meta[property^="fb:"]');
       existingTags.forEach(tag => tag.remove());
       
-      // Add Facebook-specific meta tags
+      // Add comprehensive social media meta tags
       const metaTags = [
         { property: 'og:title', content: post.seo_title || post.title },
         { property: 'og:description', content: post.seo_description || post.description },
         { property: 'og:image', content: imageUrl },
+        { property: 'og:image:secure_url', content: imageUrl },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:image:alt', content: post.title },
+        { property: 'og:image:type', content: 'image/jpeg' },
         { property: 'og:url', content: currentUrl },
         { property: 'og:type', content: 'article' },
         { property: 'og:site_name', content: 'Heidi Digital' },
@@ -66,9 +85,11 @@ const BlogPostSEO: React.FC<BlogPostSEOProps> = ({ post, slug }) => {
         { property: 'article:modified_time', content: post.updated_at || post.date },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@heidigital' },
+        { name: 'twitter:creator', content: '@heidigital' },
         { name: 'twitter:title', content: post.seo_title || post.title },
         { name: 'twitter:description', content: post.seo_description || post.description },
         { name: 'twitter:image', content: imageUrl },
+        { name: 'twitter:image:alt', content: post.title },
         { property: 'fb:app_id', content: '' }, // Add your Facebook App ID here if you have one
       ];
 

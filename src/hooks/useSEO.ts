@@ -49,6 +49,27 @@ export const useSEO = ({
   breadcrumbs = []
 }: SEOProps = {}) => {
   
+  // Helper function to convert relative URLs to absolute URLs
+  const getAbsoluteUrl = (inputUrl: string) => {
+    if (!inputUrl) return "https://heidigital.info/og-image.jpg";
+    
+    // If already absolute URL, return as-is
+    if (inputUrl.startsWith('http')) {
+      return inputUrl;
+    }
+    
+    // If relative URL (starts with /), convert to absolute
+    if (inputUrl.startsWith('/')) {
+      return `https://heidigital.info${inputUrl}`;
+    }
+    
+    // For other cases, assume it needs the domain prefix
+    return `https://heidigital.info/${inputUrl}`;
+  };
+
+  // Ensure image URL is absolute for social sharing
+  const absoluteImageUrl = getAbsoluteUrl(image);
+  
   useEffect(() => {
     // Use basic meta tags hook
     const { updateMetaTag } = useBasicMetaTags({
@@ -60,11 +81,11 @@ export const useSEO = ({
       locale
     });
 
-    // Use Open Graph tags hook
+    // Use Open Graph tags hook with absolute image URL
     useOpenGraphTags({
       title,
       description,
-      image,
+      image: absoluteImageUrl,
       url,
       type,
       locale,
@@ -77,21 +98,21 @@ export const useSEO = ({
       updateMetaTag
     });
 
-    // Use Twitter Card tags hook
+    // Use Twitter Card tags hook with absolute image URL
     useTwitterCardTags({
       title,
       description,
-      image,
+      image: absoluteImageUrl,
       url,
       twitterCreator,
       updateMetaTag
     });
 
-    // Use structured data hook
+    // Use structured data hook with absolute image URL
     useStructuredData({
       title,
       description,
-      image,
+      image: absoluteImageUrl,
       url,
       siteName,
       publishedTime,
@@ -103,5 +124,5 @@ export const useSEO = ({
     // Use performance links hook
     usePerformanceLinks(url);
     
-  }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs]);
+  }, [title, description, keywords, robots, absoluteImageUrl, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs]);
 };
