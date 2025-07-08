@@ -24,7 +24,10 @@ const BlogPost = () => {
     
   // Force Facebook to recrawl by adding timestamp to URLs
   const currentUrl = `https://heidigital.info/blog/${slug}`;
-  const imageUrl = `https://heidigital.info${featuredImage}?v=${Date.now()}`;
+  // Use proper absolute URL for images
+  const imageUrl = typeof featuredImage === 'string' && featuredImage.startsWith('http') 
+    ? `${featuredImage}?v=${Date.now()}`
+    : `https://heidigital.info${featuredImage}?v=${Date.now()}`;
   
   useSEO({
     title: post ? (post.seo_title || `${post.title} | Digital Marketing Blog | Heidi Digital`) : "Blog Post - Heidi Digital",

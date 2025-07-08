@@ -91,13 +91,15 @@ export const useSEO = ({
     updateMetaTag('copyright', `© ${new Date().getFullYear()} Heidi Digital. All rights reserved.`);
     updateMetaTag('rights', 'Heidi Digital');
     
-    // Enhanced Open Graph tags
+    // Enhanced Open Graph tags - Always provide og:image explicitly
     updateMetaTag('og:title', title, true);
     updateMetaTag('og:description', description, true);
-    updateMetaTag('og:image', image, true);
+    updateMetaTag('og:image', image.startsWith('http') ? image : `https://heidigital.info${image}`, true);
+    updateMetaTag('og:image:secure_url', image.startsWith('http') ? image : `https://heidigital.info${image}`, true);
     updateMetaTag('og:image:width', '1200', true);
     updateMetaTag('og:image:height', '630', true);
     updateMetaTag('og:image:alt', title, true);
+    updateMetaTag('og:image:type', 'image/jpeg', true);
     updateMetaTag('og:url', url, true);
     updateMetaTag('og:type', type, true);
     updateMetaTag('og:locale', locale, true);
