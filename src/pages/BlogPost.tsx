@@ -18,16 +18,7 @@ const BlogPost = () => {
 
   const post = posts.find(p => p.slug === slug);
 
-  // Calculate image URL for structured data and debug components
-  const featuredImage = post?.featured_image ? 
-    (typeof post.featured_image === 'string' ? post.featured_image : defaultOgImage) : 
-    defaultOgImage;
-    
-  const currentUrl = `https://heidigital.info/blog/${slug}`;
-  const imageUrl = typeof featuredImage === 'string' && featuredImage.startsWith('http') 
-    ? featuredImage
-    : `https://heidigital.info${featuredImage}`;
-
+  // Loading state with basic SEO
   if (loading) {
     return (
       <Layout>
@@ -46,6 +37,7 @@ const BlogPost = () => {
     );
   }
 
+  // Error state with basic SEO
   if (error) {
     return (
       <Layout>
@@ -63,13 +55,24 @@ const BlogPost = () => {
     );
   }
 
+  // Not found case
   if (!post) {
     return <NotFound />;
   }
 
+  // Calculate image URL for structured data and debug components
+  const featuredImage = post?.featured_image ? 
+    (typeof post.featured_image === 'string' ? post.featured_image : defaultOgImage) : 
+    defaultOgImage;
+    
+  const currentUrl = `https://heidigital.info/blog/${slug}`;
+  const imageUrl = typeof featuredImage === 'string' && featuredImage.startsWith('http') 
+    ? featuredImage
+    : `https://heidigital.info${featuredImage}`;
+
   return (
     <Layout>
-      {/* SEO Head for article */}
+      {/* SEO Head for article - only render when post data is available */}
       <SEO
         title={post.seo_title || `${post.title} | Digital Marketing Blog | Heidi Digital`}
         description={post.seo_description || post.description}
