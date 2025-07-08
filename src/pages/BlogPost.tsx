@@ -25,8 +25,8 @@ const BlogPost = () => {
     
   const currentUrl = `https://heidigital.info/blog/${slug}`;
   const imageUrl = typeof featuredImage === 'string' && featuredImage.startsWith('http') 
-    ? `${featuredImage}?v=${Date.now()}`
-    : `https://heidigital.info${featuredImage}?v=${Date.now()}`;
+    ? featuredImage
+    : `https://heidigital.info${featuredImage}`;
 
   if (loading) {
     return (
@@ -59,10 +59,10 @@ const BlogPost = () => {
 
   return (
     <Layout>
-      {/* Handle SEO */}
+      {/* SEO Head - This will be rendered in document head */}
       <BlogPostSEO post={post} slug={slug!} />
       
-      {/* Handle structured data */}
+      {/* Structured data */}
       <BlogPostStructuredData 
         post={post} 
         imageUrl={imageUrl} 
