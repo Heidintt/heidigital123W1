@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -8,6 +7,7 @@ import PortfolioSection from "@/components/home/PortfolioSection";
 import BlogSection from "@/components/home/BlogSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 import ContactSection from "@/components/home/ContactSection";
+import SEO from "@/components/SEO/SEO";
 import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
@@ -293,6 +293,7 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO />
       <main role="main">
         <Hero
           title="Transform Your Digital Future"

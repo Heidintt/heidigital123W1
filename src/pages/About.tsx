@@ -1,9 +1,8 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
-import { useSEO } from "@/hooks/useSEO";
+import SEO from "@/components/SEO/SEO";
 import CompanyIntroduction from "@/components/about/CompanyIntroduction";
 import MissionVision from "@/components/about/MissionVision";
 import ExpertiseAreas from "@/components/about/ExpertiseAreas";
@@ -11,21 +10,6 @@ import CoreValues from "@/components/about/CoreValues";
 import WhyChooseUs from "@/components/about/WhyChooseUs";
 
 const About = () => {
-  // Enhanced SEO for about page
-  useSEO({
-    title: "About Us | Leading AI Digital Marketing Experts Australia | Heidi Digital",
-    description: "Meet Heidi Digital's expert team of AI-powered marketing specialists. Discover our proven track record, innovative approach & why Australian businesses trust us for digital transformation.",
-    keywords: "about heidi digital, digital marketing agency australia, AI marketing experts, marketing specialists australia, brand development team, marketing consultants, digital transformation experts",
-    url: "https://heidigital.info/about",
-    type: "website",
-    image: "https://heidigital.info/og-about.jpg",
-    schemaType: "AboutPage",
-    breadcrumbs: [
-      { name: "Home", url: "https://heidigital.info/" },
-      { name: "About Us", url: "https://heidigital.info/about" }
-    ]
-  });
-
   // Add Organization and Team structured data
   React.useEffect(() => {
     const organizationSchema = {
@@ -141,6 +125,12 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO
+        title="About Us | Leading AI Digital Marketing Experts Australia | Heidi Digital"
+        description="Meet Heidi Digital's expert team of AI-powered marketing specialists. Discover our proven track record, innovative approach & why Australian businesses trust us for digital transformation."
+        keywords="about heidi digital, digital marketing agency australia, AI marketing experts, marketing specialists australia, brand development team"
+        imageUrl="https://heidigital.info/og-about.jpg"
+      />
       <main role="main">
         <Hero
           title="About Heidigital"

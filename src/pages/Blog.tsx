@@ -6,26 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
-import { useSEO } from "@/hooks/useSEO";
+import SEO from "@/components/SEO/SEO";
 import { BlogPost } from "@/types/blogPost";
 
 const Blog = () => {
   const { posts, loading, error } = useBlogPosts();
-
-  // Enhanced SEO for blog page
-  useSEO({
-    title: "Digital Marketing Blog Australia | Expert Tips & AI Marketing Insights | Heidi Digital",
-    description: "Stay ahead with expert digital marketing insights, AI marketing strategies, SEO guides & latest industry trends. Free actionable content to grow your Australian business. Read now!",
-    keywords: "digital marketing blog australia, marketing tips, AI marketing insights, SEO guides australia, content marketing strategies, social media tips, marketing trends 2024, business growth tips",
-    url: "https://heidigital.info/blog",
-    type: "website",
-    image: "https://heidigital.info/og-blog.jpg",
-    schemaType: "CollectionPage",
-    breadcrumbs: [
-      { name: "Home", url: "https://heidigital.info/" },
-      { name: "Blog", url: "https://heidigital.info/blog" }
-    ]
-  });
 
   // Add Blog and Article structured data
   React.useEffect(() => {
@@ -47,25 +32,7 @@ const Blog = () => {
           "url": "https://heidigital.info/logo.png"
         }
       },
-      "inLanguage": "en-AU",
-      "about": [
-        {
-          "@type": "Thing",
-          "name": "Digital Marketing"
-        },
-        {
-          "@type": "Thing",
-          "name": "AI Marketing"
-        },
-        {
-          "@type": "Thing",
-          "name": "SEO"
-        },
-        {
-          "@type": "Thing",
-          "name": "Social Media Marketing"
-        }
-      ]
+      "inLanguage": "en-AU"
     };
 
     if (posts.length > 0) {
@@ -137,6 +104,11 @@ const Blog = () => {
   if (loading) {
     return (
       <Layout>
+        <SEO
+          title="Digital Marketing Blog Australia | Loading... | Heidi Digital"
+          description="Loading our latest digital marketing insights and expert tips for Australian businesses."
+          keywords="digital marketing blog australia, marketing tips, loading"
+        />
         <div className="min-h-[60vh] flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-heisocial-blue mx-auto mb-4"></div>
@@ -150,6 +122,11 @@ const Blog = () => {
   if (error) {
     return (
       <Layout>
+        <SEO
+          title="Blog Error | Heidi Digital"
+          description="We're experiencing technical difficulties loading our blog posts. Please try again later."
+          noIndex={true}
+        />
         <div className="min-h-[60vh] flex items-center justify-center">
           <div className="text-center">
             <p className="text-red-500">Error loading blog posts: {error}</p>
@@ -161,6 +138,12 @@ const Blog = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Digital Marketing Blog Australia | Expert Tips & AI Marketing Insights | Heidi Digital"
+        description="Stay ahead with expert digital marketing insights, AI marketing strategies, SEO guides & latest industry trends. Free actionable content to grow your Australian business. Read now!"
+        keywords="digital marketing blog australia, marketing tips, AI marketing insights, SEO guides australia, content marketing strategies, social media tips, marketing trends 2024"
+        imageUrl="https://heidigital.info/og-blog.jpg"
+      />
       <main role="main">
         <Hero
           title="Marketing Insights & Resources"

@@ -9,6 +9,37 @@
   targetPort = 8080
   port = 8888
 
+# Enable pre-rendering for better SEO and social media sharing
+[[plugins]]
+  package = "@netlify/plugin-prerender-spa"
+  
+  [plugins.inputs]
+    # Prerender these specific routes
+    routes = [
+      "/",
+      "/about",
+      "/services", 
+      "/portfolio",
+      "/blog",
+      "/contact",
+      "/solutions",
+      "/privacy-policy",
+      "/terms-of-service",
+      "/blog/free-ai-tools-marketing-2025",
+      "/blog/linkedin-personal-branding-guide",
+      "/blog/canva-infographics-marketing"
+    ]
+    # Only prerender for bots and crawlers
+    crawlerUserAgents = [
+      "facebookexternalhit",
+      "linkedinbot", 
+      "twitterbot",
+      "googlebot",
+      "bingbot",
+      "slackbot",
+      "whatsapp"
+    ]
+
 # Headers for static files
 [[headers]]
   for = "/sitemap.xml"
