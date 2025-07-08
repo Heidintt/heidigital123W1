@@ -1,11 +1,10 @@
-
 import { BlogPost } from '@/types/blogPost';
 
 export const canvaInfographicsPost: BlogPost = {
   slug: "create-infographics-with-canva-free",
   title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
   description: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
-  featured_image: "https://content-management-files.canva.com/cdn-cgi/image/f=auto,q=70/f5c5b491-9f43-4bd2-a9d4-67ccef950dce/social_media_hero2x.png",
+  featured_image: "/images/blog/canva-infographics-og.jpg",
   date: "2025-01-03",
   author: "Heidi Digital Team",
   category: "Design & Content",
