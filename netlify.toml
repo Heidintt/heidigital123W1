@@ -34,6 +34,50 @@
   [headers.values]
     X-Robots-Tag = "index, follow"
 
+# Static HTML for Social Media Crawlers - Main Pages
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
+# Static HTML for Social Media Crawlers - Blog Posts
+[[redirects]]
+  from = "/blog/free-ai-tools-marketing-2025"
+  to = "/blog/free-ai-tools-marketing-2025.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
+[[redirects]]
+  from = "/blog/linkedin-personal-branding-mistakes-marketing-services"
+  to = "/blog/linkedin-personal-branding-mistakes-marketing-services.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "Twitterbot", "LinkedInBot", "WhatsApp", "Slackbot-LinkExpanding", "SkypeUriPreview", "TelegramBot", "Discordbot", "AppleBot", "Googlebot", "bingbot", "yandex", "Applebot", "facebot", "ia_archiver"]}
+
 # Blog post redirects
 [[redirects]]
   from = "/blog/10-free-ai-marketing-tools-2025"
