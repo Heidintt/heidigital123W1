@@ -75,6 +75,30 @@
   conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
+  from = "/services"
+  to = "/services-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
   from = "/blog"
   to = "/blog-static.html"
   status = 200
