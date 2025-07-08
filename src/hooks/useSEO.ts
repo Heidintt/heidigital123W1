@@ -130,10 +130,18 @@ export const useSEO = ({
     updateMetaTag('twitter:description', description);
     updateMetaTag('twitter:image', image);
     updateMetaTag('twitter:image:alt', title);
+    updateMetaTag('twitter:image:width', '1200');
+    updateMetaTag('twitter:image:height', '630');
     
     // Additional Twitter tags
     updateMetaTag('twitter:domain', 'heidigital.info');
     updateMetaTag('twitter:url', url);
+    
+    // Facebook specific tags
+    updateMetaTag('fb:app_id', '');
+    
+    // LinkedIn specific tags  
+    updateMetaTag('linkedin:owner', 'heidi-digital');
     
     // Mobile optimization
     updateMetaTag('mobile-web-app-capable', 'yes');

@@ -1,11 +1,12 @@
 
 import { BlogPost } from '@/types/blogPost';
+import aiToolsHeroImage from '@/assets/blog/ai-tools-marketing-hero.jpg';
 
 export const aiToolsMarketingPost: BlogPost = {
   slug: "free-ai-tools-marketing-2025", 
   title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
   description: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
-  featured_image: "https://images.ctfassets.net/lzny33ho1g45/6VcDGWbQfWElVwAiMWLk9c/54a88cca295511333240c2919fc3f084/best-ai-productivity.jpg?w=1520&fm=jpg&q=31&fit=thumb&h=760",
+  featured_image: aiToolsHeroImage,
   date: "2025-01-01",
   author: "Heidi Digital Team", 
   category: "AI Marketing",

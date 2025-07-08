@@ -8,6 +8,7 @@ import NotFound from "./NotFound";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import BlogPostCallToAction from "@/components/blog/BlogPostCallToAction";
+import defaultOgImage from "@/assets/blog/default-og-image.jpg";
 import type { BlogPost as BlogPostType } from "@/types/blogPost";
 
 const BlogPost = () => {
@@ -17,11 +18,15 @@ const BlogPost = () => {
   const post = posts.find(p => p.slug === slug);
 
   // Enhanced SEO with post-specific data
+  const featuredImage = post?.featured_image ? 
+    (typeof post.featured_image === 'string' ? post.featured_image : defaultOgImage) : 
+    defaultOgImage;
+    
   useSEO({
     title: post ? (post.seo_title || `${post.title} | Digital Marketing Blog | Heidi Digital`) : "Blog Post - Heidi Digital",
     description: post ? (post.seo_description || post.description) : "Read our latest marketing insights and expert tips for business growth.",
     keywords: post ? post.tags?.join(", ") : "marketing, digital marketing, blog, business tips",
-    image: post?.featured_image || "https://heidigital.info/og-blog.jpg",
+    image: `https://heidigital.info${featuredImage}`,
     url: `https://heidigital.info/blog/${slug}`,
     type: "article",
     articleAuthor: post?.author,
@@ -29,6 +34,7 @@ const BlogPost = () => {
     articleTags: post?.tags,
     publishedTime: post?.date,
     modifiedTime: post?.updated_at || post?.date,
+    twitterCreator: "@heidigital",
     breadcrumbs: [
       { name: "Home", url: "https://heidigital.info/" },
       { name: "Blog", url: "https://heidigital.info/blog" },
@@ -44,7 +50,7 @@ const BlogPost = () => {
         "@type": "Article",
         "headline": post.title,
         "description": post.description,
-        "image": post.featured_image,
+        "image": `https://heidigital.info${featuredImage}`,
         "url": `https://heidigital.info/blog/${post.slug}`,
         "datePublished": post.date,
         "dateModified": post.updated_at || post.date,
@@ -88,7 +94,7 @@ const BlogPost = () => {
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.description,
-        "image": post.featured_image,
+        "image": `https://heidigital.info${featuredImage}`,
         "url": `https://heidigital.info/blog/${post.slug}`,
         "datePublished": post.date,
         "dateModified": post.updated_at || post.date,
