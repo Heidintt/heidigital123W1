@@ -21,59 +21,30 @@ const Index = () => {
     image: "https://heidigital.info/og-homepage.jpg"
   });
 
-  // Add JSON-LD structured data for enhanced SEO
+  // Optimized structured data for better SEO performance
   React.useEffect(() => {
-    // FAQ Schema for homepage
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What digital marketing services does Heidi Digital offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Heidi Digital offers comprehensive AI-powered digital marketing services including SEO, social media marketing, content creation, branding, digital advertising, and marketing automation solutions specifically designed for Australian businesses."
-          }
-        },
-        {
-          "@type": "Question", 
-          "name": "How can AI-powered marketing help my business?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AI-powered marketing helps businesses optimize campaigns, improve targeting, automate processes, and increase ROI by up to 300%. Our AI tools analyze data patterns to create more effective marketing strategies and personalized customer experiences."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why choose Heidi Digital over other marketing agencies?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Heidi Digital combines cutting-edge AI technology with proven marketing expertise, offering personalized strategies, transparent reporting, and measurable results. We specialize in helping Australian businesses achieve sustainable growth in the digital landscape."
-          }
-        }
-      ]
-    };
-
     // LocalBusiness Schema for Australian presence
     const localBusinessSchema = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": "https://heidigital.info",
       "name": "Heidi Digital",
-      "alternateName": "Heidi Digital Marketing Agency",
       "description": "Leading AI-powered digital marketing agency in Australia specializing in SEO, social media marketing, and brand development",
       "url": "https://heidigital.info",
-      "telephone": "+61-XXX-XXX-XXX",
       "email": "info@heidigital.info",
-      "logo": "https://heidigital.info/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://heidigital.info/logo.png",
+        "width": 512,
+        "height": 512
+      },
       "image": "https://heidigital.info/og-homepage.jpg",
-      "priceRange": "$$-$$$",
-      "openingHours": ["Mo-Fr 09:00-18:00"],
+      "priceRange": "AUD 500-5000",
+      "openingHours": "Mo-Fr 09:00-18:00",
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "-33.8688",
-        "longitude": "151.2093"
+        "latitude": -33.8688,
+        "longitude": 151.2093
       },
       "address": {
         "@type": "PostalAddress",
@@ -81,93 +52,16 @@ const Index = () => {
         "addressRegion": "NSW",
         "addressLocality": "Sydney"
       },
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "Australia"
-        },
-        {
-          "@type": "State",
-          "name": "New South Wales"
-        },
-        {
-          "@type": "City",
-          "name": "Sydney"
-        }
-      ],
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "-33.8688",
-          "longitude": "151.2093"
-        },
-        "geoRadius": "1000000"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI-Powered Digital Marketing Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Marketing Strategy",
-              "description": "Comprehensive AI-powered marketing strategy development and implementation"
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "priceCurrency": "AUD"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO Optimization",
-              "description": "Advanced SEO services to improve search engine rankings and organic traffic"
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "priceCurrency": "AUD"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service", 
-              "name": "Social Media Marketing",
-              "description": "Strategic social media management and advertising campaigns"
-            },
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "priceCurrency": "AUD"
-            }
-          }
-        ]
+      "areaServed": {
+        "@type": "Country",
+        "name": "Australia"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sarah Johnson"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "reviewBody": "Heidi Digital transformed our online presence completely. Their AI-powered approach increased our leads by 250% in just 3 months!"
-        }
-      ]
+        "ratingValue": 4.9,
+        "reviewCount": 127,
+        "bestRating": 5
+      }
     };
 
     // Service Schema for digital marketing services
@@ -181,98 +75,36 @@ const Index = () => {
         "url": "https://heidigital.info"
       },
       "serviceType": "Digital Marketing",
-      "description": "Comprehensive AI-powered digital marketing services including SEO, social media marketing, content creation, and brand development for Australian businesses",
+      "description": "Comprehensive AI-powered digital marketing services including SEO, social media marketing, content creation, and brand development",
       "areaServed": "Australia",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Digital Marketing Solutions",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Search Engine Optimization (SEO)",
-              "description": "Advanced SEO strategies to improve search rankings and drive organic traffic"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service", 
-              "name": "Social Media Marketing",
-              "description": "Strategic social media management and paid advertising campaigns"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Content Marketing",
-              "description": "High-quality content creation and distribution strategies"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Brand Development", 
-              "description": "Complete brand identity development and positioning strategies"
-            }
-          }
-        ]
-      }
-    };
-
-    // HowTo Schema for marketing process
-    const howToSchema = {
-      "@context": "https://schema.org",
-      "@type": "HowTo",
-      "name": "How to Transform Your Digital Marketing with AI",
-      "description": "Step-by-step guide to implementing AI-powered digital marketing strategies for business growth",
-      "totalTime": "P30D",
-      "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": "AUD",
-        "value": "2000"
-      },
-      "step": [
+      "offers": [
         {
-          "@type": "HowToStep",
-          "name": "Strategy Development",
-          "text": "Analyze your current digital presence and develop a comprehensive AI-powered marketing strategy",
-          "position": 1
+          "@type": "Offer",
+          "name": "SEO Services",
+          "description": "Advanced SEO strategies to improve search rankings",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock"
         },
         {
-          "@type": "HowToStep", 
-          "name": "Implementation",
-          "text": "Deploy AI tools and automation systems to optimize your marketing campaigns",
-          "position": 2
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Optimization",
-          "text": "Continuously monitor and optimize performance using AI-driven insights and analytics",
-          "position": 3
-        },
-        {
-          "@type": "HowToStep",
-          "name": "Scaling",
-          "text": "Scale successful campaigns and expand to new channels for maximum growth",
-          "position": 4
+          "@type": "Offer",
+          "name": "Social Media Marketing",
+          "description": "Strategic social media management and advertising",
+          "priceCurrency": "AUD",
+          "availability": "https://schema.org/InStock"
         }
       ]
     };
 
     // Insert schemas into head
-    const schemas = [faqSchema, localBusinessSchema, serviceSchema, howToSchema];
+    const schemas = [localBusinessSchema, serviceSchema];
     schemas.forEach((schema, index) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';
-      script.id = `schema-${index}`;
+      script.id = `homepage-schema-${index}`;
       script.textContent = JSON.stringify(schema);
       
       // Remove existing schema if present
-      const existing = document.getElementById(`schema-${index}`);
+      const existing = document.getElementById(`homepage-schema-${index}`);
       if (existing) {
         existing.remove();
       }
@@ -283,7 +115,7 @@ const Index = () => {
     // Cleanup function
     return () => {
       schemas.forEach((_, index) => {
-        const script = document.getElementById(`schema-${index}`);
+        const script = document.getElementById(`homepage-schema-${index}`);
         if (script) {
           script.remove();
         }
@@ -293,38 +125,55 @@ const Index = () => {
 
   return (
     <Layout>
-      <main role="main">
+      <main role="main" id="main-content">
+        {/* Proper H1 heading structure for SEO */}
         <Hero
           title="Transform Your Digital Future"
           subtitle="Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape."
           ctaText="Start Your Journey"
           ctaLink="/contact"
           secondaryCtaText="Explore Solutions"
-          secondaryCtaLink="/solutions"
+          secondaryCtaLink="/solutions/free-resources"
         />
 
-        <section aria-label="Our Services">
-          <ServicesSection />
+        {/* Content sections with proper heading hierarchy */}
+        <section aria-label="Our Services" className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Our Digital Marketing Services</h2>
+            <ServicesSection />
+          </div>
         </section>
 
-        <section aria-label="Technology & Tools">
-          <TechnologySection />
+        <section aria-label="Technology & Tools" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">AI-Powered Marketing Technology</h2>
+            <TechnologySection />
+          </div>
         </section>
 
-        <section aria-label="Portfolio Showcase">
-          <PortfolioSection />
+        <section aria-label="Portfolio Showcase" className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Success Stories</h2>
+            <PortfolioSection />
+          </div>
         </section>
 
-        <section aria-label="Latest Blog Posts">
-          <BlogSection />
+        <section aria-label="Latest Blog Posts" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Marketing Insights & Tips</h2>
+            <BlogSection />
+          </div>
         </section>
 
-        <section aria-label="Final Call to Action">
+        <section aria-label="Final Call to Action" className="py-16">
           <FinalCTASection />
         </section>
 
-        <section aria-label="Contact Information">
-          <ContactSection />
+        <section aria-label="Contact Information" className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">Get Started Today</h2>
+            <ContactSection />
+          </div>
         </section>
       </main>
     </Layout>
