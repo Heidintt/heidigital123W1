@@ -11,9 +11,9 @@ import ContactSection from "@/components/home/ContactSection";
 import { useSEO } from "@/hooks/useSEO";
 
 const Index = () => {
-  // Enhanced SEO optimization for homepage with comprehensive meta tags
+  // Enhanced SEO optimization for homepage with updated meta title
   useSEO({
-    title: "Digital Marketing Agency Australia | AI-Powered Solutions | Heidi Digital",
+    title: "Cutting-edge marketing solutions | Heidigital",
     description: "Transform your business with Australia's leading AI-powered digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
     keywords: "digital marketing agency australia, AI marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
     url: "https://heidigital.info/",

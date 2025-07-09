@@ -42,7 +42,7 @@ const AIToolCard: React.FC<AIToolCardProps> = ({
 
   const getBorderClasses = () => {
     if (highlighted) {
-      return "border-2 border-heisocial-blue";
+      return "border-2 border-blue-600";
     }
     return "";
   };
@@ -52,7 +52,7 @@ const AIToolCard: React.FC<AIToolCardProps> = ({
       <CardHeader>
         {badge ? (
           <div className="flex items-center gap-2 mb-2">
-            <div className="h-12 w-12 text-heisocial-blue">
+            <div className="h-12 w-12 text-blue-600">
               {icon}
             </div>
             <span className={`px-2 py-1 rounded-full text-xs font-semibold ${getBadgeClasses(badge.variant)}`}>
@@ -60,7 +60,7 @@ const AIToolCard: React.FC<AIToolCardProps> = ({
             </span>
           </div>
         ) : (
-          <div className="h-12 w-12 text-heisocial-blue mb-4">
+          <div className="h-12 w-12 text-blue-600 mb-4">
             {icon}
           </div>
         )}
@@ -71,7 +71,7 @@ const AIToolCard: React.FC<AIToolCardProps> = ({
         <p className="text-gray-600">{content}</p>
       </CardContent>
       <CardFooter>
-        <Button asChild className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
+        <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white">
           <Link to={link}>
             {link.includes("/contact") ? "Coming Soon" : "Try Now"}
           </Link>

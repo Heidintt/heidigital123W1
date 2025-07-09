@@ -35,12 +35,12 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
       <CardHeader>
         <div className="space-x-2 mb-2">
           {categories.map((category, index) => (
-            <Badge key={index} variant="secondary" className="bg-heisocial-lightpurple text-heisocial-purple">
+            <Badge key={index} variant="secondary" className="bg-purple-100 text-purple-700">
               {category}
             </Badge>
           ))}
         </div>
-        <CardTitle className="hover:text-heisocial-blue transition-colors">
+        <CardTitle className="hover:text-blue-600 transition-colors">
           <Link to={link}>{title}</Link>
         </CardTitle>
       </CardHeader>
@@ -48,7 +48,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
         <CardDescription>{description}</CardDescription>
       </CardContent>
       <CardFooter>
-        <Button asChild className="bg-heisocial-purple hover:bg-heisocial-purple/90 text-white">
+        <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
           <Link to={link} className="flex items-center">
             View Case Study <ExternalLink className="ml-2 h-4 w-4" />
           </Link>

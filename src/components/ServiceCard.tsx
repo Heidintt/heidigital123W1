@@ -40,7 +40,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Ico
         )}
       </CardContent>
       <CardFooter>
-        <Button variant="ghost" className="p-0 hover:bg-transparent text-blue-600 hover:text-purple-600 w-full justify-start">
+        <Button variant="outline" className="w-full justify-start border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
           Learn More →
         </Button>
       </CardFooter>

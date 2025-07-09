@@ -11,42 +11,42 @@ const MarketingToolsSection = () => {
     {
       title: "ROI Calculator",
       description: "Calculate and optimize your digital marketing ROI with real-time insights and budget recommendations.",
-      icon: <Calculator className="h-10 w-10 text-heidigital-blue" />,
+      icon: <Calculator className="h-10 w-10 text-blue-600" />,
       link: "/solutions/free-resources/roi-calculator",
       category: "Free Tool"
     },
     {
       title: "Content Calendar Generator",
       description: "Generate a month's worth of creative content ideas based on any topic with AI-powered suggestions.",
-      icon: <Calendar className="h-10 w-10 text-heidigital-blue" />,
+      icon: <Calendar className="h-10 w-10 text-blue-600" />,
       link: "/solutions/ai-tools/content-calendar-generator",
       category: "AI Tool"
     },
     {
       title: "Market Trend Analyzer",
       description: "Analyze market trends, detect spikes, and predict future patterns with real Google Trends data.",
-      icon: <TrendingUp className="h-10 w-10 text-heidigital-blue" />,
+      icon: <TrendingUp className="h-10 w-10 text-blue-600" />,
       link: "/solutions/ai-tools/market-trend-analyzer",
       category: "AI Tool"
     },
     {
       title: "SEO Guide",
       description: "Comprehensive SEO guide with actionable strategies to improve your search engine rankings.",
-      icon: <FileSearch className="h-10 w-10 text-heidigital-blue" />,
+      icon: <FileSearch className="h-10 w-10 text-blue-600" />,
       link: "/solutions/free-resources/seo-guide",
       category: "Free Resource"
     },
     {
       title: "Local SEO Checklist",
       description: "Complete checklist to optimize your local business for better local search visibility.",
-      icon: <Target className="h-10 w-10 text-heidigital-blue" />,
+      icon: <Target className="h-10 w-10 text-blue-600" />,
       link: "/solutions/free-resources/local-seo-checklist",
       category: "Free Resource"
     },
     {
       title: "Email Marketing Guide",
       description: "Master email marketing with proven strategies, templates, and best practices.",
-      icon: <Mail className="h-10 w-10 text-heidigital-blue" />,
+      icon: <Mail className="h-10 w-10 text-blue-600" />,
       link: "/solutions/free-resources/email-guide",
       category: "Free Resource"
     },
@@ -69,7 +69,7 @@ const MarketingToolsSection = () => {
                   <div className="bg-blue-50 p-4 rounded-lg w-fit">
                     {tool.icon}
                   </div>
-                  <span className="text-xs bg-heidigital-blue/10 text-heidigital-blue px-2 py-1 rounded-full font-medium">
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium">
                     {tool.category}
                   </span>
                 </div>
@@ -79,7 +79,7 @@ const MarketingToolsSection = () => {
                 <CardDescription className="text-base">{tool.description}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button asChild className="bg-heidigital-blue hover:bg-heidigital-blue/90 w-full">
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white w-full">
                   <Link to={tool.link} className="flex items-center justify-center">
                     {tool.category === "AI Tool" ? "Try Tool" : "Access Resource"} 
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -92,10 +92,10 @@ const MarketingToolsSection = () => {
 
         <div className="text-center mt-12">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild variant="outline" className="border-heidigital-blue text-heidigital-blue hover:bg-heidigital-blue/10">
+            <Button asChild variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
               <Link to="/solutions/ai-tools">View All AI Tools</Link>
             </Button>
-            <Button asChild variant="outline" className="border-heidigital-blue text-heidigital-blue hover:bg-heidigital-blue/10">
+            <Button asChild variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
               <Link to="/solutions/free-resources">View All Free Resources</Link>
             </Button>
           </div>
