@@ -48,16 +48,14 @@ Disallow: /test/
 # Sitemap
 Sitemap: https://heidigital.info/sitemap.xml
 
-# Specific bot configurations with optimized crawl delays
+# Specific bot configurations with compliant crawl delays
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
-Request-rate: 1/10s
+# Removed crawl-delay as it's not officially supported by Googlebot
 
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 2
-Request-rate: 1/15s
 
 User-agent: Slurp
 Allow: /
@@ -69,11 +67,9 @@ Crawl-delay: 2
 
 User-agent: facebookexternalhit
 Allow: /
-Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: LinkedInBot
 Allow: /
@@ -81,7 +77,6 @@ Crawl-delay: 2
 
 User-agent: WhatsApp
 Allow: /
-Crawl-delay: 1
 
 # Block bad bots
 User-agent: AhrefsBot
