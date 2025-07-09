@@ -23,22 +23,6 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' &&
     componentTagger(),
-    // Custom plugin để tự động generate static files khi build
-    {
-      name: 'generate-static-html',
-      closeBundle() {
-        if (mode === 'production') {
-          // Chạy script generate static files sau khi build xong
-          const { execSync } = require('child_process');
-          try {
-            execSync('node scripts/generate-static.js', { stdio: 'inherit' });
-            console.log('✅ Static HTML files generated successfully!');
-          } catch (error) {
-            console.error('❌ Error generating static HTML files:', error);
-          }
-        }
-      }
-    }
   ].filter(Boolean),
   resolve: {
     alias: {

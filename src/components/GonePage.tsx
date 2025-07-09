@@ -12,7 +12,7 @@ interface GonePageProps {
 
 const GonePage: React.FC<GonePageProps> = ({ 
   title = "Page No Longer Available", 
-  description = "This page has been permanently removed and is no longer available.",
+  description = "This page has been removed and is no longer available.",
   redirectUrl,
   redirectDelay = 5
 }) => {

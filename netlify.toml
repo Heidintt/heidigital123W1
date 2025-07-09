@@ -60,7 +60,19 @@
   to = "/410"
   status = 410
 
-# Static file redirects with highest priority
+# Redirect main solutions page to free resources
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions/free-resources"
+  status = 301
+
+# Blog post redirects
+[[redirects]]
+  from = "/blog/10-free-ai-marketing-tools-2025"
+  to = "/blog/free-ai-tools-marketing-2025"
+  status = 301
+
+# Static file redirects với priority cao nhất
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
@@ -81,146 +93,155 @@
   status = 200
   force = true
 
-
-# SERVE STATIC HTML TO ALL CRAWLERS (including Semrush)
-# Main pages static redirects
+# Serve static HTML to social media crawlers
 [[redirects]]
   from = "/"
   to = "/index-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/about"
   to = "/about-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/services"
   to = "/services-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/portfolio"
   to = "/portfolio-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/contact"
   to = "/contact-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/blog"
   to = "/blog-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
-# Solutions pages static redirects
-[[redirects]]
-  from = "/solutions"
-  to = "/solutions-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/solutions/free-resources"
-  to = "/solutions-free-resources-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/solutions/ai-tools"
-  to = "/solutions-ai-tools-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/solutions/marketing-tools"
-  to = "/solutions-marketing-tools-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-# Portfolio sub-pages static redirects
-[[redirects]]
-  from = "/portfolio/fmcg-dao-strategy"
-  to = "/portfolio-fmcg-dao-strategy-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/portfolio/microlino-strategy"
-  to = "/portfolio-microlino-strategy-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/portfolio/i-choose-the-sun"
-  to = "/portfolio-i-choose-the-sun-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/portfolio/nha-ca-cafe"
-  to = "/portfolio-nha-ca-cafe-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/portfolio/koto-club"
-  to = "/portfolio-koto-club-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-[[redirects]]
-  from = "/portfolio/lua-hong-buffet"
-  to = "/portfolio-lua-hong-buffet-static.html"
-  status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
-
-# Blog post static redirects
+# Blog post static pages for crawlers
 [[redirects]]
   from = "/blog/free-ai-tools-marketing-2025"
   to = "/blog-free-ai-tools-marketing-2025-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/blog/create-infographics-with-canva-free"
   to = "/blog-create-infographics-with-canva-free-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/blog/linkedin-personal-branding-mistakes-marketing-services"
   to = "/blog-linkedin-personal-branding-mistakes-marketing-services-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
-# Free resources static redirects
+# Solutions sub-pages static pages for crawlers
+[[redirects]]
+  from = "/solutions/free-resources"
+  to = "/solutions-free-resources-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/solutions/ai-tools"
+  to = "/solutions-ai-tools-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/solutions/marketing-tools-hub"
+  to = "/solutions-marketing-tools-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/solutions/ai-tools/marketing-budget-planner"
+  to = "/ai-tools-marketing-budget-planner-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/solutions/free-resources/roi-calculator"
+  to = "/free-resources-roi-calculator-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/solutions/free-resources/on-page-seo-checklist"
+  to = "/free-resources-on-page-seo-checklist-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
 [[redirects]]
   from = "/solutions/free-resources/seo-optimization-checklist"
   to = "/free-resources-seo-optimization-checklist-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
   from = "/solutions/free-resources/social-media-growth-tools"
   to = "/free-resources-social-media-growth-tools-static.html"
   status = 200
-  conditions = {User-Agent = ["*bot*", "*crawler*", "*spider*", "*crawling*", "facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "semrush*", "ahrefs*", "moz*", "majestic*", "screaming*"]}
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
-# Redirect main solutions page to free resources for human users
 [[redirects]]
-  from = "/solutions"
-  to = "/solutions/free-resources"
-  status = 301
+  from = "/solutions/free-resources/marketing-with-canva"
+  to = "/free-resources-marketing-with-canva-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
-# SPA fallback for all other routes (lowest priority)
+# Portfolio sub-pages static pages for crawlers
+[[redirects]]
+  from = "/portfolio/fmcg-dao-strategy"
+  to = "/portfolio-fmcg-dao-strategy-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/portfolio/microlino-strategy"
+  to = "/portfolio-microlino-strategy-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/portfolio/i-choose-the-sun"
+  to = "/portfolio-i-choose-the-sun-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/portfolio/nha-ca-cafe"
+  to = "/portfolio-nha-ca-cafe-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/portfolio/koto-club"
+  to = "/portfolio-koto-club-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+[[redirects]]
+  from = "/portfolio/lua-hong-buffet"
+  to = "/portfolio-lua-hong-buffet-static.html"
+  status = 200
+  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
+
+# SPA fallback cho tất cả các route khác (priority thấp nhất)
 [[redirects]]
   from = "/*"
   to = "/index.html"

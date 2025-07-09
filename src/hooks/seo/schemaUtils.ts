@@ -174,10 +174,6 @@ export const addMediaToSchema = (
 };
 
 export const createBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url: string }>) => {
-  if (!breadcrumbs || breadcrumbs.length === 0) {
-    return null;
-  }
-
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -188,7 +184,6 @@ export const createBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url: s
       "item": {
         "@type": "WebPage",
         "@id": crumb.url,
-        "name": crumb.name,
         "url": crumb.url
       }
     }))
@@ -196,8 +191,6 @@ export const createBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url: s
 };
 
 export const injectSchema = (schema: any, id: string) => {
-  if (!schema) return;
-  
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.id = id;

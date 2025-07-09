@@ -73,12 +73,12 @@ const MarketingToolsHub = () => {
                 </div>
                 <CardTitle>SEO Article Generator</CardTitle>
                 <CardDescription>
-                  Generate professional SEO articles with Google-optimized templates
+                  Tạo bài viết SEO chuẩn Google với template chuyên nghiệp
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Create 1200+ word SEO articles with H1-H6 structure, meta tags, and optimized keywords. Templates based on latest SEO best practices.
+                  Viết bài SEO 1200+ từ với cấu trúc H1-H6, meta tags, và từ khóa tối ưu. Template dựa trên best practices SEO mới nhất.
                 </p>
               </CardContent>
               <CardFooter>
