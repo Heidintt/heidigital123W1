@@ -66,6 +66,9 @@ export const useSEO = ({
     // Update document title
     document.title = title;
     
+    // Declare absoluteImageUrl once at the top
+    const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
+    
     // Helper function to update meta tags
     const updateMetaTag = (name: string, content: string, property?: boolean) => {
       const selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
@@ -123,7 +126,6 @@ export const useSEO = ({
     updateMetaTag('rating', 'General');
     
     // Enhanced Open Graph tags with absolute URL conversion
-    const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
     updateMetaTag('og:title', title, true);
     updateMetaTag('og:description', description, true);
     updateMetaTag('og:image', absoluteImageUrl, true);
@@ -255,8 +257,6 @@ export const useSEO = ({
     });
 
     // Enhanced WebPage structured data based on schema type
-    const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
-    
     // Use any type to allow dynamic schema properties
     const baseSchema: any = {
       "@context": "https://schema.org",
