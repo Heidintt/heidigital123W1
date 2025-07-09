@@ -13,7 +13,7 @@ const Index = () => {
   // Enhanced SEO optimization for homepage with updated meta title
   useSEO({
     title: "Cutting-edge marketing solutions | Heidigital",
-    description: "Transform your business with Australia's leading AI-powered digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
+    description: "Transform your business with Australia's digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
     keywords: "digital marketing agency australia, AI marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
     url: "https://heidigital.info/",
     type: "website",
@@ -28,7 +28,7 @@ const Index = () => {
       "@type": "LocalBusiness",
       "@id": "https://heidigital.info",
       "name": "Heidi Digital",
-      "description": "Leading AI-powered digital marketing agency in Australia specializing in SEO, social media marketing, and brand development",
+      "description": "Digital marketing agency in Australia specializing in SEO, social media marketing, and brand development",
       "url": "https://heidigital.info",
       "email": "info@heidigital.info",
       "logo": {
@@ -67,14 +67,14 @@ const Index = () => {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "AI-Powered Digital Marketing Services",
+      "name": "Digital Marketing Services",
       "provider": {
         "@type": "Organization",
         "name": "Heidi Digital",
         "url": "https://heidigital.info"
       },
       "serviceType": "Digital Marketing",
-      "description": "Comprehensive AI-powered digital marketing services including SEO, social media marketing, content creation, and brand development",
+      "description": "Comprehensive digital marketing services including SEO, social media marketing, content creation, and brand development",
       "areaServed": "Australia",
       "offers": [
         {
