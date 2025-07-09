@@ -234,7 +234,7 @@ export const useSEO = ({
       }
     };
 
-    // Add breadcrumb structured data if provided
+    // Add breadcrumb structured data if provided - FIX FOR GOOGLE STRUCTURED DATA ERROR
     if (breadcrumbs.length > 0) {
       const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -243,7 +243,10 @@ export const useSEO = ({
           "@type": "ListItem",
           "position": index + 1,
           "name": crumb.name,
-          "item": crumb.url
+          "item": {
+            "@type": "WebPage",
+            "@id": crumb.url
+          }
         }))
       };
 

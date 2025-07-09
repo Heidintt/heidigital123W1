@@ -60,6 +60,12 @@
   to = "/410"
   status = 410
 
+# Redirect main solutions page to free resources
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions/free-resources"
+  status = 301
+
 # Blog post redirects
 [[redirects]]
   from = "/blog/10-free-ai-marketing-tools-2025"
@@ -109,12 +115,6 @@
 [[redirects]]
   from = "/portfolio"
   to = "/portfolio-static.html"
-  status = 200
-  conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
-
-[[redirects]]
-  from = "/solutions"
-  to = "/solutions-static.html"
   status = 200
   conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 

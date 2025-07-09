@@ -35,6 +35,9 @@ Disallow: /blog/ai-marketing-complete-guide
 # Disallow removed solutions tools
 Disallow: /solutions/tools/seo-assistant
 
+# Disallow main solutions page - redirect to free resources
+Disallow: /solutions
+
 # Sitemap
 Sitemap: https://heidigital.info/sitemap.xml
 
