@@ -14,7 +14,7 @@ export const aiToolsMarketingPost: BlogPost = {
   seo_description: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
   content: `The marketing landscape is evolving at warp speed, and by 2025, AI won't just be a buzzword—it'll be the backbone of every successful campaign. Forget clunky, expensive software; a new wave of AI tools for marketing is empowering businesses to achieve incredible results without breaking the bank. These aren't just basic free trials; many offer robust features that can genuinely transform your strategy, helping you with hyper-personalization, automation, and AI-powered content creation.
 
-![AI Marketing Tools Overview](https://images.ctfassets.net/lzny33ho1g45/6VcDGWbQfWElVwAiMWLk9c/54a88cca295511333240c2919fc3f084/best-ai-productivity.jpg?w=1520&fm=jpg&q=31&fit=thumb&h=760)
+![AI Marketing Tools Overview](https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124669.jpg)
 
 We've scoured the market to bring you the most innovative, effective, and popular free AI marketing tools that are set to redefine how you approach campaigns in 2025. Get ready to dive in!
 
