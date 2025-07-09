@@ -48,10 +48,9 @@ Disallow: /test/
 # Sitemap
 Sitemap: https://heidigital.info/sitemap.xml
 
-# Specific bot configurations with compliant crawl delays
+# Specific bot configurations - Googlebot doesn't support crawl-delay
 User-agent: Googlebot
 Allow: /
-# Removed crawl-delay as it's not officially supported by Googlebot
 
 User-agent: Bingbot
 Allow: /
