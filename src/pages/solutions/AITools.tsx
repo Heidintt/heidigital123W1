@@ -25,7 +25,7 @@ const AITools = () => {
     ]
   });
 
-  // Add AI Tools structured data
+  // Add AI Tools structured data - removed product/offer schemas to avoid merchant policy errors
   React.useEffect(() => {
     const softwareApplicationSchema = {
       "@context": "https://schema.org",
@@ -36,12 +36,6 @@ const AITools = () => {
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web Browser",
       "softwareVersion": "3.0",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "AUD",
-        "availability": "https://schema.org/InStock"
-      },
       "author": {
         "@type": "Organization",
         "name": "Heidi Digital"
@@ -66,41 +60,7 @@ const AITools = () => {
       }
     };
 
-    const productSchema = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "AI Marketing Tools Collection",
-      "description": "Advanced AI-powered marketing tools designed to automate and optimize your marketing campaigns",
-      "brand": {
-        "@type": "Organization",
-        "name": "Heidi Digital"
-      },
-      "category": "Marketing Software",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "AUD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://heidigital.info/solutions/ai-tools"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Marketing Professional"
-          },
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "reviewBody": "These AI tools have transformed our marketing efficiency. The automation features save us hours every week."
-        }
-      ]
-    };
-
-    const schemas = [softwareApplicationSchema, productSchema];
+    const schemas = [softwareApplicationSchema];
     schemas.forEach((schema, index) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';

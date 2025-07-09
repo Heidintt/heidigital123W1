@@ -123,13 +123,26 @@ export const useSEO = ({
     });
 
     // Inject breadcrumb schema if provided
-    if (breadcrumbs.length > 0) {
+    if (breadcrumbs && breadcrumbs.length > 0) {
       const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs);
-      injectSchema(breadcrumbSchema, 'breadcrumb-schema');
+      if (breadcrumbSchema) {
+        injectSchema(breadcrumbSchema, 'breadcrumb-schema');
+      }
     }
 
     // Inject main page schema
     injectSchema(finalSchema, 'webpage-schema');
+    
+    // Cleanup function to remove schemas when component unmounts
+    return () => {
+      const schemas = ['breadcrumb-schema', 'webpage-schema'];
+      schemas.forEach(id => {
+        const script = document.getElementById(id);
+        if (script) {
+          script.remove();
+        }
+      });
+    };
     
   }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs, alternateUrls, canonicalUrl, imageAlt, videoUrl, audioUrl, rating, priceRange, availability, category]);
 };
