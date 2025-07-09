@@ -38,20 +38,57 @@ Disallow: /solutions/tools/seo-assistant
 # Disallow main solutions page - redirect to free resources
 Disallow: /solutions
 
+# Disallow admin and development areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /dev/
+Disallow: /test/
+
 # Sitemap
 Sitemap: https://heidigital.info/sitemap.xml
 
-# Specific bot configurations
+# Specific bot configurations with optimized crawl delays
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
+Request-rate: 1/10s
 
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+Request-rate: 1/15s
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 3
+
+User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 2
 
 User-agent: facebookexternalhit
 Allow: /
+Crawl-delay: 1
 
 User-agent: Twitterbot
 Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

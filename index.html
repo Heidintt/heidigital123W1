@@ -4,19 +4,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Heidi Digital - AI-Powered Marketing Solutions | Digital Marketing Agency</title>
+    <title>Cutting-edge marketing solutions | Heidigital</title>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="bingbot" content="index, follow" />
     
     <!-- Enhanced SEO Meta Tags -->
     <meta name="author" content="Heidi Digital Team" />
-    <meta name="copyright" content="© 2024 Heidi Digital. All rights reserved." />
+    <meta name="copyright" content="© 2025 Heidi Digital. All rights reserved." />
     <meta name="language" content="en-AU" />
+    <meta name="content-language" content="en-AU" />
     <meta name="geo.region" content="AU" />
+    <meta name="geo.country" content="Australia" />
     <meta name="geo.placename" content="Australia" />
     <meta name="geo.position" content="-33.8688;151.2093" />
     <meta name="ICBM" content="-33.8688, 151.2093" />
+    <meta name="classification" content="Business" />
+    <meta name="category" content="Digital Marketing" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
     
     <!-- Theme and App Meta Tags -->
     <meta name="theme-color" content="#6366f1" />
@@ -24,6 +31,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Heidi Digital" />
+    <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="mobile-web-app-capable" content="yes" />
     
@@ -33,24 +41,72 @@
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="dns-prefetch" href="//www.google-analytics.com">
     <link rel="dns-prefetch" href="//googletagmanager.com">
+    <link rel="dns-prefetch" href="//connect.facebook.net">
+    <link rel="dns-prefetch" href="//platform.twitter.com">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
     
-    <!-- Critical CSS (inlined for performance) -->
+    <!-- Preload critical images -->
+    <link rel="preload" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" as="image" type="image/png">
+    
+    <!-- Critical CSS (enhanced for better performance) -->
     <style>
       /* Critical above-the-fold styles */
-      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; margin: 0; padding: 0; }
-      .hero-section { min-height: 60vh; display: flex; align-items: center; background-color: #1e1b4b; }
-      .loading-spinner { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+      * { box-sizing: border-box; }
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .hero-section { 
+        min-height: 60vh; 
+        display: flex; 
+        align-items: center; 
+        background-color: #1e1b4b;
+        background-image: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      }
+      .loading-spinner { 
+        position: fixed; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+      /* Prevent layout shift */
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      .btn-primary {
+        background-color: #6366f1;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.2s;
+      }
+      .btn-primary:hover { background-color: #4f46e5; }
+      /* Optimize font loading */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+      }
     </style>
 
-    <!-- Favicon and Icons with proper sizes -->
-    <link rel="icon" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" type="image/png" sizes="32x32">
+    <!-- Favicon and Icons with comprehensive sizes -->
+    <link rel="icon" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" type="image/png" sizes="any">
     <link rel="apple-touch-icon" sizes="180x180" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png" color="#6366f1">
 
@@ -87,6 +143,17 @@
         "@type": "Country",
         "name": "Australia"
       },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AU",
+        "addressRegion": "NSW",
+        "addressLocality": "Sydney"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.8688",
+        "longitude": "151.2093"
+      },
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -111,6 +178,8 @@
         "https://youtube.com/c/heidigital"
       ],
       "serviceType": "Digital Marketing Agency",
+      "priceRange": "$$-$$$",
+      "openingHours": ["Mo-Fr 09:00-18:00"],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -138,7 +207,12 @@
               "@type": "PriceSpecification",
               "priceCurrency": "AUD",
               "valueAddedTaxIncluded": true
-            }
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
@@ -156,7 +230,12 @@
               "@type": "PriceSpecification",
               "priceCurrency": "AUD",
               "valueAddedTaxIncluded": true
-            }
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
@@ -174,7 +253,12 @@
               "@type": "PriceSpecification",
               "priceCurrency": "AUD",
               "valueAddedTaxIncluded": true
-            }
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
@@ -192,7 +276,12 @@
               "@type": "PriceSpecification",
               "priceCurrency": "AUD", 
               "valueAddedTaxIncluded": true
-            }
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
@@ -210,7 +299,12 @@
               "@type": "PriceSpecification",
               "priceCurrency": "AUD",
               "valueAddedTaxIncluded": true
-            }
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
@@ -228,14 +322,19 @@
               "@type": "PriceSpecification",
               "priceCurrency": "AUD",
               "valueAddedTaxIncluded": true
-            }
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            "availability": "https://schema.org/InStock"
           }
         ]
       }
     }
     </script>
 
-    <!-- Website Structured Data -->
+    <!-- Enhanced Website Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -244,12 +343,15 @@
       "alternateName": "Heidi Digital Marketing Agency",
       "url": "https://heidigital.info",
       "description": "Australia's leading AI-powered digital marketing agency providing comprehensive marketing solutions",
+      "inLanguage": "en-AU",
       "publisher": {
         "@type": "Organization",
         "name": "Heidi Digital",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://heidigital.info/logo.png"
+          "url": "https://heidigital.info/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "potentialAction": {
@@ -267,7 +369,7 @@
     }
     </script>
 
-    <!-- Professional Service Structured Data -->
+    <!-- Enhanced Professional Service Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -283,11 +385,23 @@
       "url": "https://heidigital.info",
       "priceRange": "$$-$$$",
       "telephone": "+61-XXX-XXX-XXX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AU",
+        "addressRegion": "NSW",
+        "addressLocality": "Sydney"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.8688",
+        "longitude": "151.2093"
+      },
       "areaServed": {
         "@type": "Country",
         "name": "Australia"
       },
       "serviceType": ["Digital Marketing", "AI Marketing", "SEO", "Social Media Marketing"],
+      "openingHours": ["Mo-Fr 09:00-18:00"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Professional Marketing Services"
@@ -295,77 +409,7 @@
     }
     </script>
 
-    <!-- Enhanced Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": {
-            "@type": "WebPage",
-            "@id": "https://heidigital.info/",
-            "url": "https://heidigital.info/"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services", 
-          "item": {
-            "@type": "WebPage",
-            "@id": "https://heidigital.info/services",
-            "url": "https://heidigital.info/services"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Solutions",
-          "item": {
-            "@type": "WebPage", 
-            "@id": "https://heidigital.info/solutions",
-            "url": "https://heidigital.info/solutions"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Portfolio",
-          "item": {
-            "@type": "WebPage",
-            "@id": "https://heidigital.info/portfolio", 
-            "url": "https://heidigital.info/portfolio"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "About",
-          "item": {
-            "@type": "WebPage",
-            "@id": "https://heidigital.info/about",
-            "url": "https://heidigital.info/about"
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Contact",
-          "item": {
-            "@type": "WebPage",
-            "@id": "https://heidigital.info/contact",
-            "url": "https://heidigital.info/contact"
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- Enhanced Google Analytics with improved privacy -->
+    <!-- Enhanced Google Analytics with improved privacy and performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -374,14 +418,18 @@
       gtag('config', 'GA_MEASUREMENT_ID', {
         anonymize_ip: true,
         cookie_flags: 'SameSite=None;Secure',
-        send_page_view: true
-      });
-      
-      // Enhanced ecommerce tracking for conversions
-      gtag('config', 'GA_MEASUREMENT_ID', {
+        send_page_view: true,
+        page_title: 'Cutting-edge marketing solutions | Heidigital',
         custom_map: {
           'custom_parameter_1': 'service_type',
           'custom_parameter_2': 'lead_source'
+        }
+      });
+      
+      // Enhanced Core Web Vitals tracking
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        custom_map: {
+          'metric_id': 'custom_parameter_3'
         }
       });
     </script>
@@ -392,6 +440,21 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(function(err) {
+              console.log('ServiceWorker registration failed');
+            });
+        });
+      }
+    </script>
   </head>
 
   <body>
@@ -411,16 +474,38 @@
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Heidi Digital - AI-Powered Marketing Solutions",
+      "name": "Cutting-edge marketing solutions | Heidigital",
       "description": "Transform your business with Australia's leading AI-powered digital marketing agency",
       "url": "https://heidigital.info/",
-      "mainEntity": {
+      "inLanguage": "en-AU",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Heidi Digital",
+        "url": "https://heidigital.info"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://heidigital.info/og-homepage.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2025-01-01T00:00:00+00:00",
+      "dateModified": "2025-01-09T00:00:00+00:00",
+      "author": {
         "@type": "Organization",
         "name": "Heidi Digital"
       },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "@id": "https://heidigital.info/#breadcrumb"
+      "publisher": {
+        "@type": "Organization",
+        "name": "Heidi Digital",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://heidigital.info/logo.png"
+        }
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Heidi Digital"
       },
       "potentialAction": {
         "@type": "ReadAction",

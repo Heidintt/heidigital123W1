@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png"/>
+      <square150x150logo src="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png"/>
+      <wide310x150logo src="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png"/>
+      <square310x310logo src="/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png"/>
+      <TileColor>#6366f1</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>

@@ -1,17 +1,77 @@
 
 {
-  "name": "Heidigital",
-  "short_name": "Heidigital",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
-  "description": "Heidigital web app",
+  "name": "Heidi Digital - AI-Powered Marketing Solutions",
+  "short_name": "Heidi Digital",
+  "description": "Australia's leading AI-powered digital marketing agency providing comprehensive marketing solutions",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "start_url": "/",
+  "categories": ["business", "marketing", "productivity"],
+  "lang": "en-AU",
+  "dir": "ltr"
 }
