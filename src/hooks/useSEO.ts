@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 
 interface SEOProps {
@@ -256,7 +255,10 @@ export const useSEO = ({
     });
 
     // Enhanced WebPage structured data based on schema type
-    const baseSchema = {
+    const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
+    
+    // Use any type to allow dynamic schema properties
+    const baseSchema: any = {
       "@context": "https://schema.org",
       "@type": schemaType,
       "name": title,
