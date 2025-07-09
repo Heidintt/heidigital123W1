@@ -28,6 +28,13 @@ Disallow: /solutions/free-resources/email-guide
 Disallow: /solutions/free-resources/cro-guide
 Disallow: /solutions/free-resources/ai-playbook
 
+# Disallow removed blog posts
+Disallow: /blog/marketing-trends-2025
+Disallow: /blog/ai-marketing-complete-guide
+
+# Disallow removed solutions tools
+Disallow: /solutions/tools/seo-assistant
+
 # Sitemap
 Sitemap: https://heidigital.info/sitemap.xml
 

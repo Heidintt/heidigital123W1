@@ -34,6 +34,32 @@
   [headers.values]
     X-Robots-Tag = "index, follow"
 
+# 410 Gone responses for permanently deleted pages
+[[redirects]]
+  from = "/solutions/tools/seo-assistant"
+  to = "/410"
+  status = 410
+
+[[redirects]]
+  from = "/solutions/free-resources/local-seo-checklist"
+  to = "/410"
+  status = 410
+
+[[redirects]]
+  from = "/blog/marketing-trends-2025"
+  to = "/410"
+  status = 410
+
+[[redirects]]
+  from = "/blog/ai-marketing-complete-guide"
+  to = "/410"
+  status = 410
+
+[[redirects]]
+  from = "/services/ai-marketing"
+  to = "/410"
+  status = 410
+
 # Blog post redirects
 [[redirects]]
   from = "/blog/10-free-ai-marketing-tools-2025"
@@ -137,7 +163,7 @@
   conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
 [[redirects]]
-  from = "/solutions/marketing-tools"
+  from = "/solutions/marketing-tools-hub"
   to = "/solutions-marketing-tools-static.html"
   status = 200
   conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
