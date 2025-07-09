@@ -141,7 +141,7 @@ const Index = () => {
         </section>
 
         {/* Services section with H2 heading - hidden visually */}
-        <section aria-label="Our Services" className="py-12">
+        <section aria-label="Our Services" className="py-6">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Our Digital Marketing Services</h2>
             <ServicesSection />
@@ -149,7 +149,7 @@ const Index = () => {
         </section>
 
         {/* Technology section with H2 heading - hidden visually */}
-        <section aria-label="Technology & Tools" className="py-12 bg-gray-50">
+        <section aria-label="Technology & Tools" className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">AI-Powered Marketing Technology</h2>
             <TechnologySection />
@@ -157,7 +157,7 @@ const Index = () => {
         </section>
 
         {/* Portfolio section with H2 heading - hidden visually */}
-        <section aria-label="Portfolio Showcase" className="py-12">
+        <section aria-label="Portfolio Showcase" className="py-6">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Success Stories</h2>
             <PortfolioSection />
@@ -165,7 +165,7 @@ const Index = () => {
         </section>
 
         {/* Blog section with H2 heading - hidden visually */}
-        <section aria-label="Latest Blog Posts" className="py-12 bg-gray-50">
+        <section aria-label="Latest Blog Posts" className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Marketing Insights & Tips</h2>
             <BlogSection />
@@ -173,12 +173,12 @@ const Index = () => {
         </section>
 
         {/* Final CTA section */}
-        <section aria-label="Final Call to Action" className="py-12">
+        <section aria-label="Final Call to Action" className="py-6">
           <FinalCTASection />
         </section>
 
         {/* Contact section with H2 heading - hidden visually */}
-        <section aria-label="Contact Information" className="py-12 bg-gray-50">
+        <section aria-label="Contact Information" className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Get Started Today</h2>
             <ContactSection />
