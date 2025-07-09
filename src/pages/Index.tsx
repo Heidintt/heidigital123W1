@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -126,52 +125,62 @@ const Index = () => {
   return (
     <Layout>
       <main role="main" id="main-content">
-        {/* Proper H1 heading structure for SEO */}
-        <Hero
-          title="Transform Your Digital Future"
-          subtitle="Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape."
-          ctaText="Start Your Journey"
-          ctaLink="/contact"
-          secondaryCtaText="Explore Solutions"
-          secondaryCtaLink="/solutions/free-resources"
-        />
+        {/* Main H1 heading for SEO - hidden visually but accessible to screen readers */}
+        <h1 className="sr-only">Heidi Digital - Australia's Leading AI-Powered Digital Marketing Agency</h1>
+        
+        {/* Hero section with H2 heading */}
+        <section aria-label="Hero">
+          <Hero
+            title="Transform Your Digital Future"
+            subtitle="Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape."
+            ctaText="Start Your Journey"
+            ctaLink="/contact"
+            secondaryCtaText="Explore Solutions"
+            secondaryCtaLink="/solutions/free-resources"
+          />
+        </section>
 
-        {/* Content sections with proper heading hierarchy */}
-        <section aria-label="Our Services" className="py-16">
+        {/* Services section with H2 heading - hidden visually */}
+        <section aria-label="Our Services" className="py-12">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Digital Marketing Services</h2>
+            <h2 className="sr-only">Our Digital Marketing Services</h2>
             <ServicesSection />
           </div>
         </section>
 
-        <section aria-label="Technology & Tools" className="py-16 bg-gray-50">
+        {/* Technology section with H2 heading - hidden visually */}
+        <section aria-label="Technology & Tools" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">AI-Powered Marketing Technology</h2>
+            <h2 className="sr-only">AI-Powered Marketing Technology</h2>
             <TechnologySection />
           </div>
         </section>
 
-        <section aria-label="Portfolio Showcase" className="py-16">
+        {/* Portfolio section with H2 heading - hidden visually */}
+        <section aria-label="Portfolio Showcase" className="py-12">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Success Stories</h2>
+            <h2 className="sr-only">Success Stories</h2>
             <PortfolioSection />
           </div>
         </section>
 
-        <section aria-label="Latest Blog Posts" className="py-16 bg-gray-50">
+        {/* Blog section with H2 heading - hidden visually */}
+        <section aria-label="Latest Blog Posts" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Marketing Insights & Tips</h2>
+            <h2 className="sr-only">Marketing Insights & Tips</h2>
             <BlogSection />
           </div>
         </section>
 
-        <section aria-label="Final Call to Action" className="py-16">
+        {/* Final CTA section */}
+        <section aria-label="Final Call to Action" className="py-12">
           <FinalCTASection />
         </section>
 
-        <section aria-label="Contact Information" className="py-16 bg-gray-50">
+        {/* Contact section with H2 heading - hidden visually */}
+        <section aria-label="Contact Information" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Get Started Today</h2>
+            <h2 className="sr-only">Get Started Today</h2>
             <ContactSection />
           </div>
         </section>
