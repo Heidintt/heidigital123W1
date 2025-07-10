@@ -1,6 +1,6 @@
 
 import { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
 import Portfolio from "@/pages/Portfolio";
 import About from "@/pages/About";
@@ -20,10 +20,8 @@ import { PortfolioRoutes } from "./PortfolioRoutes";
 import { ServiceRoutes } from "./ServiceRoutes";
 
 const AppRouter = () => {
-  console.log("AppRouter loading...");
-  
   return (
-    <Suspense fallback={<LoadingSpinner />}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
@@ -49,7 +47,7 @@ const AppRouter = () => {
         
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Suspense>
+    </BrowserRouter>
   );
 };
 
