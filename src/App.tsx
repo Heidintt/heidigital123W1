@@ -18,8 +18,10 @@ function App() {
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <Toaster />
-          <AppRouter />
+          <div className="app-wrapper">
+            <Toaster />
+            <AppRouter />
+          </div>
         </BrowserRouter>
       </QueryClientProvider>
     </ErrorBoundary>

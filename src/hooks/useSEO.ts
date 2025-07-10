@@ -1,187 +1,96 @@
 
-import { useEffect } from 'react';
-import { SEOProps } from './seo/types';
-import { updateBasicMetaTags } from './seo/metaTagUtils';
-import { updateOpenGraphTags } from './seo/openGraphUtils';
-import { updateTwitterCardTags } from './seo/twitterUtils';
-import { updateMobileOptimizationTags } from './seo/mobileUtils';
-import { updateCanonicalUrl, updateAlternateLinks, updatePerformanceLinks } from './seo/linkUtils';
-import { 
-  createBaseSchema, 
-  enhanceSchemaForType, 
-  addMediaToSchema, 
-  createBreadcrumbSchema, 
-  injectSchema 
-} from './seo/schemaUtils';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export const useSEO = ({
-  title = "Heidi Digital - AI-Powered Marketing Solutions",
-  description = "Professional AI-powered marketing solutions, digital marketing services, SEO, social media marketing and content creation to transform your business.",
-  keywords = "digital marketing, AI marketing, SEO, social media marketing, content creation, branding, digital advertising, marketing agency",
-  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
-  image = "https://heidigital.info/og-image.jpg",
-  url = "https://heidigital.info/",
-  type = "website",
-  author = "Heidi Digital Team",
-  publishedTime,
-  modifiedTime,
-  locale = "en_AU",
-  siteName = "Heidi Digital",
-  articleAuthor,
-  articleSection,
-  articleTags = [],
-  twitterCreator = "@heidigital",
-  schemaType = "WebPage",
-  breadcrumbs = [],
-  alternateUrls = [],
-  canonicalUrl,
-  imageAlt,
-  videoUrl,
-  audioUrl,
-  rating,
-  priceRange,
-  availability,
-  category
-}: SEOProps = {}) => {
-  
+interface SEOProps {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  url?: string;
+  type?: string;
+  image?: string;
+}
+
+export const useSEO = (props?: SEOProps) => {
+  const location = useLocation();
+
   useEffect(() => {
     try {
-      console.log("useSEO: Starting SEO setup...");
-      
-      // Update document title safely
-      if (typeof document !== 'undefined' && document.title !== title) {
+      // Safe DOM manipulation with error handling
+      const setMetaTag = (name: string, content: string) => {
+        try {
+          let element = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+          if (!element) {
+            element = document.createElement('meta');
+            element.setAttribute('name', name);
+            document.head.appendChild(element);
+          }
+          element.setAttribute('content', content);
+        } catch (error) {
+          console.warn(`Failed to set meta tag ${name}:`, error);
+        }
+      };
+
+      const setPropertyTag = (property: string, content: string) => {
+        try {
+          let element = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
+          if (!element) {
+            element = document.createElement('meta');
+            element.setAttribute('property', property);
+            document.head.appendChild(element);
+          }
+          element.setAttribute('content', content);
+        } catch (error) {
+          console.warn(`Failed to set property tag ${property}:`, error);
+        }
+      };
+
+      // Default values
+      const defaultTitle = "Heidigital - Digital Marketing Agency | Expert Marketing Solutions";
+      const defaultDescription = "Transform your business with Heidigital's expert digital marketing services. We deliver innovative strategies, creative campaigns, and measurable results for sustainable growth.";
+      const defaultKeywords = "digital marketing, marketing agency, social media marketing, SEO, content marketing, branding, digital advertising";
+      const defaultImage = "https://heidigital.info/og-homepage.jpg";
+      const baseUrl = "https://heidigital.info";
+
+      // Set title
+      const title = props?.title || defaultTitle;
+      if (document.title !== title) {
         document.title = title;
       }
-      
-      // Get absolute image URL
-      const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
-      
-      // Update all meta tags with error handling
-      try {
-        updateBasicMetaTags({ description, keywords, robots, author, title, locale });
-      } catch (error) {
-        console.warn("Error updating basic meta tags:", error);
-      }
-      
-      try {
-        updateOpenGraphTags({
-          title,
-          description,
-          absoluteImageUrl,
-          imageAlt,
-          url,
-          type,
-          locale,
-          siteName,
-          publishedTime,
-          modifiedTime,
-          articleAuthor,
-          articleSection,
-          articleTags,
-          videoUrl,
-          audioUrl
-        });
-      } catch (error) {
-        console.warn("Error updating OpenGraph tags:", error);
-      }
-      
-      try {
-        updateTwitterCardTags({
-          twitterCreator,
-          title,
-          description,
-          absoluteImageUrl,
-          imageAlt,
-          url,
-          priceRange
-        });
-      } catch (error) {
-        console.warn("Error updating Twitter cards:", error);
-      }
-      
-      try {
-        updateMobileOptimizationTags(absoluteImageUrl, siteName);
-      } catch (error) {
-        console.warn("Error updating mobile tags:", error);
-      }
-      
-      // Update canonical and alternate URLs
-      try {
-        updateCanonicalUrl(canonicalUrl, url);
-        updateAlternateLinks(alternateUrls, url);
-        updatePerformanceLinks();
-      } catch (error) {
-        console.warn("Error updating link tags:", error);
-      }
 
-      // Create and inject structured data with error handling
+      // Set meta tags
+      setMetaTag("description", props?.description || defaultDescription);
+      setMetaTag("keywords", props?.keywords || defaultKeywords);
+
+      // Set Open Graph tags
+      setPropertyTag("og:title", title);
+      setPropertyTag("og:description", props?.description || defaultDescription);
+      setPropertyTag("og:type", props?.type || "website");
+      setPropertyTag("og:url", props?.url || `${baseUrl}${location.pathname}`);
+      setPropertyTag("og:image", props?.image || defaultImage);
+      setPropertyTag("og:site_name", "Heidigital");
+
+      // Set Twitter tags
+      setMetaTag("twitter:card", "summary_large_image");
+      setMetaTag("twitter:title", title);
+      setMetaTag("twitter:description", props?.description || defaultDescription);
+      setMetaTag("twitter:image", props?.image || defaultImage);
+
+      // Set canonical URL
       try {
-        const baseSchema = createBaseSchema({
-          schemaType,
-          title,
-          description,
-          url,
-          siteName,
-          absoluteImageUrl,
-          imageAlt,
-          publishedTime,
-          modifiedTime,
-          articleAuthor
-        });
-
-        const enhancedSchema = enhanceSchemaForType(baseSchema, schemaType, {
-          title,
-          articleSection,
-          description,
-          articleTags,
-          keywords,
-          url,
-          rating,
-          category
-        });
-
-        const finalSchema = addMediaToSchema(enhancedSchema, {
-          videoUrl,
-          audioUrl,
-          absoluteImageUrl,
-          title,
-          description
-        });
-
-        // Inject breadcrumb schema if provided
-        if (breadcrumbs && breadcrumbs.length > 0) {
-          const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs);
-          if (breadcrumbSchema) {
-            injectSchema(breadcrumbSchema, 'breadcrumb-schema');
-          }
+        let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+        if (!canonical) {
+          canonical = document.createElement('link');
+          canonical.setAttribute('rel', 'canonical');
+          document.head.appendChild(canonical);
         }
+        canonical.setAttribute('href', props?.url || `${baseUrl}${location.pathname}`);
+      } catch (error) {
+        console.warn("Failed to set canonical URL:", error);
+      }
 
-        // Inject main page schema
-        injectSchema(finalSchema, 'webpage-schema');
-      } catch (error) {
-        console.warn("Error updating structured data:", error);
-      }
-      
-      console.log("useSEO: SEO setup completed successfully");
-      
     } catch (error) {
-      console.error("useSEO: Critical error in SEO setup:", error);
+      console.error("SEO setup failed:", error);
     }
-    
-    // Cleanup function with error handling
-    return () => {
-      try {
-        const schemas = ['breadcrumb-schema', 'webpage-schema'];
-        schemas.forEach(id => {
-          const script = document.getElementById(id);
-          if (script) {
-            script.remove();
-          }
-        });
-      } catch (error) {
-        console.warn("Error cleaning up SEO schemas:", error);
-      }
-    };
-    
-  }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs, alternateUrls, canonicalUrl, imageAlt, videoUrl, audioUrl, rating, priceRange, availability, category]);
+  }, [props, location.pathname]);
 };
