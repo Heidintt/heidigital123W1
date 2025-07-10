@@ -1,6 +1,7 @@
 
 import { Toaster } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter } from "react-router-dom";
 import AppRouter from "@/router/AppRouter";
 import { useSEO } from "@/hooks/useSEO";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -16,8 +17,10 @@ function App() {
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <Toaster />
-        <AppRouter />
+        <BrowserRouter>
+          <Toaster />
+          <AppRouter />
+        </BrowserRouter>
       </QueryClientProvider>
     </ErrorBoundary>
   );
