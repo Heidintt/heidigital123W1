@@ -45,103 +45,142 @@ export const useSEO = ({
 }: SEOProps = {}) => {
   
   useEffect(() => {
-    // Update document title
-    document.title = title;
-    
-    // Get absolute image URL
-    const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
-    
-    // Update all meta tags
-    updateBasicMetaTags({ description, keywords, robots, author, title, locale });
-    
-    updateOpenGraphTags({
-      title,
-      description,
-      absoluteImageUrl,
-      imageAlt,
-      url,
-      type,
-      locale,
-      siteName,
-      publishedTime,
-      modifiedTime,
-      articleAuthor,
-      articleSection,
-      articleTags,
-      videoUrl,
-      audioUrl
-    });
-    
-    updateTwitterCardTags({
-      twitterCreator,
-      title,
-      description,
-      absoluteImageUrl,
-      imageAlt,
-      url,
-      priceRange
-    });
-    
-    updateMobileOptimizationTags(absoluteImageUrl, siteName);
-    
-    // Update canonical and alternate URLs
-    updateCanonicalUrl(canonicalUrl, url);
-    updateAlternateLinks(alternateUrls, url);
-    updatePerformanceLinks();
-
-    // Create and inject structured data
-    const baseSchema = createBaseSchema({
-      schemaType,
-      title,
-      description,
-      url,
-      siteName,
-      absoluteImageUrl,
-      imageAlt,
-      publishedTime,
-      modifiedTime,
-      articleAuthor
-    });
-
-    const enhancedSchema = enhanceSchemaForType(baseSchema, schemaType, {
-      title,
-      articleSection,
-      description,
-      articleTags,
-      keywords,
-      url,
-      rating,
-      category
-    });
-
-    const finalSchema = addMediaToSchema(enhancedSchema, {
-      videoUrl,
-      audioUrl,
-      absoluteImageUrl,
-      title,
-      description
-    });
-
-    // Inject breadcrumb schema if provided
-    if (breadcrumbs && breadcrumbs.length > 0) {
-      const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs);
-      if (breadcrumbSchema) {
-        injectSchema(breadcrumbSchema, 'breadcrumb-schema');
+    try {
+      console.log("useSEO: Starting SEO setup...");
+      
+      // Update document title safely
+      if (typeof document !== 'undefined' && document.title !== title) {
+        document.title = title;
       }
-    }
+      
+      // Get absolute image URL
+      const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
+      
+      // Update all meta tags with error handling
+      try {
+        updateBasicMetaTags({ description, keywords, robots, author, title, locale });
+      } catch (error) {
+        console.warn("Error updating basic meta tags:", error);
+      }
+      
+      try {
+        updateOpenGraphTags({
+          title,
+          description,
+          absoluteImageUrl,
+          imageAlt,
+          url,
+          type,
+          locale,
+          siteName,
+          publishedTime,
+          modifiedTime,
+          articleAuthor,
+          articleSection,
+          articleTags,
+          videoUrl,
+          audioUrl
+        });
+      } catch (error) {
+        console.warn("Error updating OpenGraph tags:", error);
+      }
+      
+      try {
+        updateTwitterCardTags({
+          twitterCreator,
+          title,
+          description,
+          absoluteImageUrl,
+          imageAlt,
+          url,
+          priceRange
+        });
+      } catch (error) {
+        console.warn("Error updating Twitter cards:", error);
+      }
+      
+      try {
+        updateMobileOptimizationTags(absoluteImageUrl, siteName);
+      } catch (error) {
+        console.warn("Error updating mobile tags:", error);
+      }
+      
+      // Update canonical and alternate URLs
+      try {
+        updateCanonicalUrl(canonicalUrl, url);
+        updateAlternateLinks(alternateUrls, url);
+        updatePerformanceLinks();
+      } catch (error) {
+        console.warn("Error updating link tags:", error);
+      }
 
-    // Inject main page schema
-    injectSchema(finalSchema, 'webpage-schema');
-    
-    // Cleanup function to remove schemas when component unmounts
-    return () => {
-      const schemas = ['breadcrumb-schema', 'webpage-schema'];
-      schemas.forEach(id => {
-        const script = document.getElementById(id);
-        if (script) {
-          script.remove();
+      // Create and inject structured data with error handling
+      try {
+        const baseSchema = createBaseSchema({
+          schemaType,
+          title,
+          description,
+          url,
+          siteName,
+          absoluteImageUrl,
+          imageAlt,
+          publishedTime,
+          modifiedTime,
+          articleAuthor
+        });
+
+        const enhancedSchema = enhanceSchemaForType(baseSchema, schemaType, {
+          title,
+          articleSection,
+          description,
+          articleTags,
+          keywords,
+          url,
+          rating,
+          category
+        });
+
+        const finalSchema = addMediaToSchema(enhancedSchema, {
+          videoUrl,
+          audioUrl,
+          absoluteImageUrl,
+          title,
+          description
+        });
+
+        // Inject breadcrumb schema if provided
+        if (breadcrumbs && breadcrumbs.length > 0) {
+          const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs);
+          if (breadcrumbSchema) {
+            injectSchema(breadcrumbSchema, 'breadcrumb-schema');
+          }
         }
-      });
+
+        // Inject main page schema
+        injectSchema(finalSchema, 'webpage-schema');
+      } catch (error) {
+        console.warn("Error updating structured data:", error);
+      }
+      
+      console.log("useSEO: SEO setup completed successfully");
+      
+    } catch (error) {
+      console.error("useSEO: Critical error in SEO setup:", error);
+    }
+    
+    // Cleanup function with error handling
+    return () => {
+      try {
+        const schemas = ['breadcrumb-schema', 'webpage-schema'];
+        schemas.forEach(id => {
+          const script = document.getElementById(id);
+          if (script) {
+            script.remove();
+          }
+        });
+      } catch (error) {
+        console.warn("Error cleaning up SEO schemas:", error);
+      }
     };
     
   }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, locale, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs, alternateUrls, canonicalUrl, imageAlt, videoUrl, audioUrl, rating, priceRange, availability, category]);
