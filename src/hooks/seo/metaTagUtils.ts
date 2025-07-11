@@ -39,34 +39,26 @@ export const updateBasicMetaTags = ({
   updateMetaTag('robots', robots);
   updateMetaTag('author', author);
   
-  // Enhanced robots directives for better crawling
-  updateMetaTag('googlebot', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+  // Simplified robots directives
+  updateMetaTag('googlebot', 'index, follow, max-snippet:-1, max-image-preview:large');
   updateMetaTag('bingbot', 'index, follow');
-  updateMetaTag('yandex', 'index, follow');
-  updateMetaTag('facebookbot', 'index, follow');
   
-  // Geo-targeting for Australian businesses (enhanced)
+  // Geo-targeting for Australian businesses
   updateMetaTag('geo.region', 'AU');
   updateMetaTag('geo.country', 'Australia'); 
   updateMetaTag('geo.placename', 'Australia');
-  updateMetaTag('geo.position', '-33.8688;151.2093');
-  updateMetaTag('ICBM', '-33.8688, 151.2093');
-  updateMetaTag('DC.title', title);
   
-  // Language and locale (enhanced)
+  // Language and locale
   updateMetaTag('language', 'en-AU');
   updateMetaTag('locale', locale);
   updateMetaTag('content-language', 'en-AU');
   
-  // Copyright and rights
+  // Copyright and publisher info
   updateMetaTag('copyright', `© ${new Date().getFullYear()} Heidi Digital. All rights reserved.`);
-  updateMetaTag('rights', 'Heidi Digital');
   updateMetaTag('publisher', 'Heidi Digital');
   
-  // Enhanced classification
+  // Classification
   updateMetaTag('classification', 'Business');
   updateMetaTag('category', 'Digital Marketing');
-  updateMetaTag('coverage', 'Worldwide'); 
-  updateMetaTag('distribution', 'Global');
   updateMetaTag('rating', 'General');
 };

@@ -34,15 +34,11 @@ export const updateAlternateLinks = (alternateUrls: Array<{ hreflang: string; hr
 };
 
 export const updatePerformanceLinks = () => {
+  // Simplified and optimized performance links
   const performanceLinks = [
     { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
-    { rel: 'dns-prefetch', href: '//images.unsplash.com' },
     { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
-    { rel: 'dns-prefetch', href: '//googletagmanager.com' },
-    { rel: 'dns-prefetch', href: '//connect.facebook.net' },
-    { rel: 'dns-prefetch', href: '//platform.twitter.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-    { rel: 'preconnect', href: 'https://images.unsplash.com' }
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' }
   ];
   
   performanceLinks.forEach(({ rel, href, crossorigin }) => {
