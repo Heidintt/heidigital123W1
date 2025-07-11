@@ -1,25 +1,60 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // In a real implementation, you would submit the form data to a backend service
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    // Reset form
     const form = e.target as HTMLFormElement;
-    form.reset();
+    const formData = new FormData(form);
+    
+    const contactData = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      console.log("Sending contact form data:", contactData);
+      
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: contactData,
+      });
+
+      if (error) {
+        console.error("Supabase function error:", error);
+        throw error;
+      }
+
+      console.log("Email sent successfully:", data);
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you as soon as possible. Please check your email for confirmation.",
+      });
+      
+      // Reset form
+      form.reset();
+    } catch (error) {
+      console.error("Error sending contact form:", error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact us directly at contact@heidigital.info",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -31,8 +66,10 @@ const ContactForm = () => {
           </label>
           <Input
             id="name"
+            name="name"
             placeholder="Your name"
             required
+            disabled={isSubmitting}
           />
         </div>
         <div className="space-y-2">
@@ -41,9 +78,11 @@ const ContactForm = () => {
           </label>
           <Input
             id="email"
+            name="email"
             type="email"
             placeholder="your@email.com"
             required
+            disabled={isSubmitting}
           />
         </div>
       </div>
@@ -53,8 +92,10 @@ const ContactForm = () => {
         </label>
         <Input
           id="subject"
+          name="subject"
           placeholder="How can we help you?"
           required
+          disabled={isSubmitting}
         />
       </div>
       <div className="space-y-2">
@@ -63,14 +104,20 @@ const ContactForm = () => {
         </label>
         <Textarea
           id="message"
+          name="message"
           placeholder="Your message here..."
           rows={5}
           required
+          disabled={isSubmitting}
           className="resize-none"
         />
       </div>
-      <Button type="submit" className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
-        Send Message
+      <Button 
+        type="submit" 
+        className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>
   );
