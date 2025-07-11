@@ -17,7 +17,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SolutionRoutes from "./SolutionRoutes";
 import { PortfolioRoutes } from "./PortfolioRoutes";
-import { ServiceRoutes } from "./ServiceRoutes";
+import ServiceRoutes from "./ServiceRoutes";
 
 const AppRouter = () => {
   return (
