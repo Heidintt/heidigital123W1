@@ -217,20 +217,20 @@ const Services = () => {
   const services = [
     {
       icon: Brain,
-      title: "AI Marketing Strategy",
-      description: "Leverage artificial intelligence to create data-driven marketing strategies that deliver measurable results and optimize your marketing ROI.",
+      title: "Marketing Strategy",
+      description: "Create data-driven marketing strategies that deliver measurable results and optimize your marketing ROI.",
       price: "Competitive & Flexible"
     },
     {
       icon: Zap,
       title: "Content Creation & SEO",
-      description: "AI-generated content that ranks high on search engines and engages your target audience with compelling storytelling.",
+      description: "Create content that ranks high on search engines and engages your target audience with compelling storytelling.",
       price: "Competitive & Flexible"
     },
     {
       icon: Users,
       title: "Social Media Management",
-      description: "Comprehensive social media strategy and management powered by AI insights to build and grow your online community.",
+      description: "Comprehensive social media strategy and management to build and grow your online community.",
       price: "Competitive & Flexible"
     },
     {
@@ -242,7 +242,7 @@ const Services = () => {
     {
       icon: Target,
       title: "Digital Advertising",
-      description: "Maximize your ROI with AI-optimized advertising campaigns across Google, Facebook, and other major platforms.",
+      description: "Maximize your ROI with advertising campaigns across Google, Facebook, and other major platforms.",
       price: "Competitive & Flexible"
     },
     {
