@@ -1,31 +1,67 @@
-
 User-agent: *
 Allow: /
 
-# Allow all main content
-Allow: /services/
-Allow: /solutions/
-Allow: /portfolio/
-Allow: /blog/
-Allow: /about
-Allow: /contact
+# Disallow removed service pages
+Disallow: /services/social-media
+Disallow: /services/content-creation
+Disallow: /services/seo
+Disallow: /services/branding
+Disallow: /services/digital-ads
+Disallow: /services/ai-marketing
 
-# Disallow admin and private areas only
+# Disallow removed AI tools
+Disallow: /solutions/ai-tools/content-generator
+Disallow: /solutions/ai-tools/seo-assistant
+Disallow: /solutions/ai-tools/seo-article-generator
+Disallow: /solutions/ai-tools/market-trend-analyzer
+Disallow: /solutions/ai-tools/multilingual-content-generator
+Disallow: /solutions/ai-tools/content-calendar-generator
+
+# Disallow removed free resources
+Disallow: /solutions/free-resources/seo-guide
+Disallow: /solutions/free-resources/content-calendar
+Disallow: /solutions/free-resources/local-seo-checklist
+Disallow: /solutions/free-resources/content-templates
+Disallow: /solutions/free-resources/social-toolkit
+Disallow: /solutions/free-resources/email-guide
+Disallow: /solutions/free-resources/cro-guide
+Disallow: /solutions/free-resources/ai-playbook
+
+# Disallow removed blog posts
+Disallow: /blog/marketing-trends-2025
+Disallow: /blog/ai-marketing-complete-guide
+
+# Disallow removed solutions tools
+Disallow: /solutions/tools/seo-assistant
+
+# Disallow main solutions page - redirect to free resources
+Disallow: /solutions
+
+# Disallow admin and development areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.well-known/
+Disallow: /dev/
+Disallow: /test/
 
 # Sitemap
 Sitemap: https://heidigital.info/sitemap.xml
 
-# Specific bot configurations
+# Specific bot configurations - Googlebot doesn't support crawl-delay
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
+# Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+# Crawl-delay: 3
+
+User-agent: DuckDuckBot
+Allow: /
+# Crawl-delay: 2
 
 User-agent: facebookexternalhit
 Allow: /
@@ -35,11 +71,12 @@ Allow: /
 
 User-agent: LinkedInBot
 Allow: /
+# Crawl-delay: 2
 
 User-agent: WhatsApp
 Allow: /
 
-# Block aggressive crawlers only
+# Block bad bots
 User-agent: AhrefsBot
 Disallow: /
 

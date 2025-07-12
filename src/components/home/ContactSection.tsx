@@ -1,59 +1,9 @@
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
-import { sendContactEmail, initEmailJS } from "@/utils/emailjs";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // Initialize EmailJS when component mounts
-  useEffect(() => {
-    initEmailJS();
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    const form = e.target as HTMLFormElement;
-    const formData = new FormData(form);
-    
-    const contactData = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
-      message: formData.get('message') as string,
-    };
-
-    try {
-      console.log("Sending homepage contact form data via EmailJS:", contactData);
-      
-      await sendContactEmail(contactData);
-
-      console.log("Email sent successfully via EmailJS");
-      
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible. Thank you for contacting us!",
-      });
-      
-      // Reset form
-      form.reset();
-    } catch (error) {
-      console.error("Error sending contact form:", error);
-      toast({
-        title: "Error sending message",
-        description: "Please try again later or contact us directly at contact@heidigital.info",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
@@ -81,60 +31,27 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input 
-                    type="text" 
-                    name="name"
-                    placeholder="Your name" 
-                    required
-                    disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50" 
-                  />
+                  <input type="text" placeholder="Your name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    name="email"
-                    placeholder="your@email.com" 
-                    required
-                    disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50" 
-                  />
+                  <input type="email" placeholder="your@email.com" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                <input 
-                  type="text" 
-                  name="subject"
-                  placeholder="How can we help you?" 
-                  required
-                  disabled={isSubmitting}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50" 
-                />
+                <input type="text" placeholder="How can we help you?" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea 
-                  rows={4} 
-                  name="message"
-                  placeholder="Your message here..." 
-                  required
-                  disabled={isSubmitting}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
-                ></textarea>
+                <textarea rows={4} placeholder="Your message here..." className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
               </div>
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
+              <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600">
+                Send Message
               </Button>
             </form>
           </div>

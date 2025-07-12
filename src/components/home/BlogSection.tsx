@@ -7,12 +7,12 @@ import { Calendar, ArrowRight } from "lucide-react";
 const BlogSection = () => {
   const blogPosts = [
     {
-      title: "Creating Infographics with Canva",
-      excerpt: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing",
-      image: "https://heidigital.info/images/blog/canva-infographics-hero.jpg",
+      title: "AI Marketing Complete Guide 2024",
+      excerpt: "Discover how artificial intelligence is revolutionizing marketing strategies and learn practical tips to implement AI in your campaigns.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       date: "Dec 27, 2024",
-      category: "Canva",
-      link: "/blog/create-infographics-with-canva-free"
+      category: "AI Marketing",
+      link: "/blog/ai-marketing-complete-guide-2024"
     },
     {
       title: "LinkedIn Personal Branding Strategies",
@@ -20,7 +20,7 @@ const BlogSection = () => {
       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       date: "Dec 20, 2024",
       category: "Social Media",
-      link: "/blog/linkedin-personal-branding-mistakes-marketing-services"
+      link: "/blog/linkedin-personal-branding"
     },
     {
       title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",

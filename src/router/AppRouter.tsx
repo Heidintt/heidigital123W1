@@ -17,38 +17,36 @@ import TermsOfService from "@/pages/TermsOfService";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import SolutionRoutes from "./SolutionRoutes";
 import { PortfolioRoutes } from "./PortfolioRoutes";
-import ServiceRoutes from "./ServiceRoutes";
+import { ServiceRoutes } from "./ServiceRoutes";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Suspense fallback={<LoadingSpinner />}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/sitemap" element={<Sitemap />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/robots.txt" element={<RobotsTXT />} />
-          
-          {/* Service sub-routes */}
-          <Route path="/services/*" element={<ServiceRoutes />} />
-          
-          {/* Solution sub-routes */}
-          <Route path="/solutions/*" element={<SolutionRoutes />} />
-          
-          {/* Portfolio sub-routes */}
-          <Route path="/portfolio/*" element={<PortfolioRoutes />} />
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/robots.txt" element={<RobotsTXT />} />
+        
+        {/* Service sub-routes */}
+        <Route path="/services/*" element={<ServiceRoutes />} />
+        
+        {/* Solution sub-routes */}
+        <Route path="/solutions/*" element={<SolutionRoutes />} />
+        
+        {/* Portfolio sub-routes */}
+        <Route path="/portfolio/*" element={<PortfolioRoutes />} />
+        
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </BrowserRouter>
   );
 };
