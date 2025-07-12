@@ -1,13 +1,18 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { sendContactEmail, initEmailJS } from "@/utils/emailjs";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,22 +29,15 @@ const ContactSection = () => {
     };
 
     try {
-      console.log("Sending homepage contact form data:", contactData);
+      console.log("Sending homepage contact form data via EmailJS:", contactData);
       
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: contactData,
-      });
+      await sendContactEmail(contactData);
 
-      if (error) {
-        console.error("Supabase function error:", error);
-        throw error;
-      }
-
-      console.log("Email sent successfully:", data);
+      console.log("Email sent successfully via EmailJS");
       
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible. Please check your email for confirmation.",
+        description: "We'll get back to you as soon as possible. Thank you for contacting us!",
       });
       
       // Reset form
