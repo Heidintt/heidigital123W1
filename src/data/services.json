@@ -1,12 +1,11 @@
-
 {
   "title": "Our Services",
-  "subtitle": "Comprehensive AI-powered marketing solutions tailored to your business needs",
+  "subtitle": "Comprehensive marketing solutions tailored to your business needs",
   "hero_image": "/lovable-uploads/fefd1347-66f9-4719-9f81-f8bc34f5de53.png",
   "services": [
     {
-      "title": "AI Marketing Strategy",
-      "description": "Leverage artificial intelligence to create data-driven marketing strategies that deliver measurable results",
+      "title": "Marketing Strategy",
+      "description": "Create data-driven marketing strategies that deliver measurable results",
       "image": "/lovable-uploads/4712d239-b2f3-444d-92fa-6b80b6eb52a0.png",
       "icon": "Brain",
       "features": [
