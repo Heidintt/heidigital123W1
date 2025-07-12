@@ -14,7 +14,7 @@ const Index = () => {
   useSEO({
     title: "Cutting-edge marketing solutions | Heidigital",
     description: "Transform your business with Australia's digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
-    keywords: "digital marketing agency australia, AI marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
+    keywords: "digital marketing agency australia, marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
     url: "https://heidigital.info/",
     type: "website",
     image: "https://heidigital.info/og-homepage.jpg"
@@ -126,7 +126,7 @@ const Index = () => {
     <Layout>
       <main role="main" id="main-content">
         {/* Main H1 heading for SEO - hidden visually but accessible to screen readers */}
-        <h1 className="sr-only">Heidi Digital - Australia's Leading AI-Powered Digital Marketing Agency</h1>
+        <h1 className="sr-only">Heidi Digital - Australia's Digital Marketing Agency</h1>
         
         {/* Hero section with H2 heading */}
         <section aria-label="Hero">
