@@ -3,9 +3,9 @@ import emailjs from '@emailjs/browser';
 
 // EmailJS configuration - you'll need to update these with your actual values
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'your_service_id', // Replace with your EmailJS service ID
-  TEMPLATE_ID: 'your_template_id', // Replace with your EmailJS template ID
-  PUBLIC_KEY: 'your_public_key', // Replace with your EmailJS public key
+  SERVICE_ID: 'service_m4172rp', // Replace with your EmailJS service ID
+  TEMPLATE_ID: 'template_ed6ovx9', // Replace with your EmailJS template ID
+  PUBLIC_KEY: 'IRgU-g7wqB97Jx4W7', // Replace with your EmailJS public key
 };
 
 // Initialize EmailJS
