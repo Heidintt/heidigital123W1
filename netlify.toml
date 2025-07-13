@@ -1,3 +1,4 @@
+
 [functions]
   directory = "netlify/functions"
 
@@ -73,27 +74,6 @@
   from = "/blog/10-free-ai-marketing-tools-2025"
   to = "/blog/free-ai-tools-marketing-2025"
   status = 301
-
-# Static file redirects với priority cao nhất
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "/sitemap.xml"
-  status = 200
-  force = true
-  headers = {Content-Type = "application/xml"}
-
-[[redirects]]
-  from = "/robots.txt"
-  to = "/robots.txt"
-  status = 200
-  force = true
-  headers = {Content-Type = "text/plain"}
-
-[[redirects]]
-  from = "/site.webmanifest"
-  to = "/site.webmanifest"
-  status = 200
-  force = true
 
 # Serve static HTML to social media crawlers
 [[redirects]]
