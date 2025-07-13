@@ -229,11 +229,6 @@
   status = 200
   conditions = {User-Agent = ["facebookexternalhit", "twitterbot", "linkedinbot", "slurp", "whatsapp", "*bot*", "*crawler*", "*spider*"]}
 
-# SPA fallback cho tất cả các route khác (priority thấp nhất)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 # Plugin Visual Editor
 [[plugins]]
