@@ -75,6 +75,12 @@
   to = "/blog/free-ai-tools-marketing-2025"
   status = 301
 
+# Redirect old sitemap route to sitemap-page for human visitors
+[[redirects]]
+  from = "/sitemap"
+  to = "/sitemap-page"
+  status = 301
+
 # Serve static HTML to social media crawlers
 [[redirects]]
   from = "/"
