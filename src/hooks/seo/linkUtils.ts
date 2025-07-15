@@ -13,20 +13,24 @@ export const updateCanonicalUrl = (canonicalUrl?: string, url?: string) => {
 };
 
 export const updateAlternateLinks = (alternateUrls: Array<{ hreflang: string; href: string }>, url: string) => {
-  // Remove existing alternate links first
+  const defaultAlternateLinks = [
+    { hreflang: 'en-AU', href: url },
+    { hreflang: 'en', href: url },
+    { hreflang: 'x-default', href: url }
+  ];
+  
+  const allAlternateLinks = alternateUrls.length > 0 ? alternateUrls : defaultAlternateLinks;
+  
+  // Remove existing alternate links
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => link.remove());
   
-  // Only add alternate links if explicitly provided
-  // Don't add default alternate links to avoid hreflang conflicts
-  if (alternateUrls && alternateUrls.length > 0) {
-    alternateUrls.forEach(({ hreflang, href }) => {
-      const alternateLink = document.createElement('link');
-      alternateLink.rel = 'alternate';
-      alternateLink.hreflang = hreflang;
-      alternateLink.href = href;
-      document.head.appendChild(alternateLink);
-    });
-  }
+  allAlternateLinks.forEach(({ hreflang, href }) => {
+    const alternateLink = document.createElement('link');
+    alternateLink.rel = 'alternate';
+    alternateLink.hreflang = hreflang;
+    alternateLink.href = href;
+    document.head.appendChild(alternateLink);
+  });
 };
 
 export const updatePerformanceLinks = () => {
