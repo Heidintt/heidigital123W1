@@ -21,28 +21,28 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Digital Marketing
+                <Link to="/services/social-media" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  Social Media Strategy
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/free-resources" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Free Resources
+                <Link to="/services/content-creation" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  Content Creation
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/ai-tools" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  AI Tools
+                <Link to="/services/seo" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  SEO Optimization
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/marketing-tools-hub" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Marketing Tools
+                <Link to="/services/branding" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  Branding & Identity
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Blog & Insights
+                <Link to="/services/digital-ads" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  Digital Advertising
                 </Link>
               </li>
             </ul>
@@ -63,13 +63,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Contact
+                <Link to="/blog" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link to="/sitemap-page" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Sitemap
+                <Link to="/solutions/free-resources" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  Free Resources
+                </Link>
+              </li>
+              <li>
+                <Link to="/solutions/ai-tools" className="text-gray-300 hover:text-heidigital-blue transition-colors">
+                  AI Tools
                 </Link>
               </li>
             </ul>
@@ -95,7 +100,7 @@ const Footer = () => {
               <Link to="/terms-of-service" className="text-gray-400 text-sm hover:text-heidigital-blue transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/sitemap-page" className="text-gray-400 text-sm hover:text-heidigital-blue transition-colors">
+              <Link to="/sitemap" className="text-gray-400 text-sm hover:text-heidigital-blue transition-colors">
                 Sitemap
               </Link>
             </div>

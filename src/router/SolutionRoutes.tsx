@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import Solutions from "@/pages/Solutions";
 import AITools from "@/pages/solutions/AITools";
@@ -11,6 +10,10 @@ import MarketingBudgetPlanner from "@/pages/solutions/ai-tools/MarketingBudgetPl
 
 // New Free Resources
 import ROICalculator from "@/pages/solutions/free-resources/ROICalculator";
+import OnPageSEOChecklist from "@/pages/solutions/free-resources/OnPageSEOChecklist";
+import SEOOptimizationChecklist from "@/pages/solutions/free-resources/SEOOptimizationChecklist";
+import SocialMediaGrowthTools from "@/pages/solutions/free-resources/SocialMediaGrowthTools";
+import MarketingWithCanva from "@/pages/solutions/free-resources/MarketingWithCanva";
 
 const SolutionRoutes = () => {
   return (
@@ -24,39 +27,11 @@ const SolutionRoutes = () => {
       <Route path="ai-tools/marketing-budget-planner" element={<MarketingBudgetPlanner />} />
       <Route path="free-resources/roi-calculator" element={<ROICalculator />} />
       
-      {/* 410 Gone responses for removed Free Resources */}
-      <Route path="free-resources/on-page-seo-checklist" element={
-        <GonePage 
-          title="On-Page SEO Checklist No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
-          redirectDelay={5}
-        />
-      } />
-      <Route path="free-resources/seo-optimization-checklist" element={
-        <GonePage 
-          title="SEO Optimization Checklist No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
-          redirectDelay={5}
-        />
-      } />
-      <Route path="free-resources/social-media-growth-tools" element={
-        <GonePage 
-          title="Social Media Growth Tools No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
-          redirectDelay={5}
-        />
-      } />
-      <Route path="free-resources/marketing-with-canva" element={
-        <GonePage 
-          title="Marketing with Canva Guide No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
-          redirectDelay={5}
-        />
-      } />
+      {/* New Free Resources Routes */}
+      <Route path="free-resources/on-page-seo-checklist" element={<OnPageSEOChecklist />} />
+      <Route path="free-resources/seo-optimization-checklist" element={<SEOOptimizationChecklist />} />
+      <Route path="free-resources/social-media-growth-tools" element={<SocialMediaGrowthTools />} />
+      <Route path="free-resources/marketing-with-canva" element={<MarketingWithCanva />} />
       
       {/* 410 Gone responses for removed AI Tools */}
       <Route path="ai-tools/content-generator" element={
@@ -108,12 +83,12 @@ const SolutionRoutes = () => {
         />
       } />
       
-      {/* 410 Gone responses for other removed Free Resources */}
+      {/* 410 Gone responses for removed Free Resources */}
       <Route path="free-resources/seo-guide" element={
         <GonePage 
           title="SEO Guide No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
+          description="This resource has been replaced with updated SEO checklists."
+          redirectUrl="/solutions/free-resources/seo-optimization-checklist"
           redirectDelay={5}
         />
       } />
@@ -128,24 +103,24 @@ const SolutionRoutes = () => {
       <Route path="free-resources/local-seo-checklist" element={
         <GonePage 
           title="Local SEO Checklist No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
+          description="This resource has been consolidated into our main SEO checklist."
+          redirectUrl="/solutions/free-resources/seo-optimization-checklist"
           redirectDelay={5}
         />
       } />
       <Route path="free-resources/content-templates" element={
         <GonePage 
           title="Content Templates No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
+          description="This resource has been discontinued. Check out our Canva marketing guide."
+          redirectUrl="/solutions/free-resources/marketing-with-canva"
           redirectDelay={5}
         />
       } />
       <Route path="free-resources/social-toolkit" element={
         <GonePage 
           title="Social Toolkit No Longer Available"
-          description="This resource has been discontinued. Please visit our main free resources page to explore other valuable marketing materials."
-          redirectUrl="/solutions/free-resources"
+          description="This resource has been replaced with our social media growth tools."
+          redirectUrl="/solutions/free-resources/social-media-growth-tools"
           redirectDelay={5}
         />
       } />
