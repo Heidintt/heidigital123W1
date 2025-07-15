@@ -218,38 +218,32 @@ const Services = () => {
     {
       icon: Brain,
       title: "Marketing Strategy",
-      description: "Create data-driven marketing strategies that deliver measurable results and optimize your marketing ROI.",
-      price: "Competitive & Flexible"
+      description: "Create data-driven marketing strategies that deliver measurable results and optimize your marketing ROI."
     },
     {
       icon: Zap,
       title: "Content Creation & SEO",
-      description: "Create content that ranks high on search engines and engages your target audience with compelling storytelling.",
-      price: "Competitive & Flexible"
+      description: "Create content that ranks high on search engines and engages your target audience with compelling storytelling."
     },
     {
       icon: Users,
       title: "Social Media Management",
-      description: "Comprehensive social media strategy and management to build and grow your online community.",
-      price: "Competitive & Flexible"
+      description: "Comprehensive social media strategy and management to build and grow your online community."
     },
     {
       icon: Image,
       title: "Branding & Design",
-      description: "Create compelling brand identities that resonate with your target audience and stand out in the competitive marketplace.",
-      price: "Competitive & Flexible"
+      description: "Create compelling brand identities that resonate with your target audience and stand out in the competitive marketplace."
     },
     {
       icon: Target,
       title: "Digital Advertising",
-      description: "Maximize your ROI with advertising campaigns across Google, Facebook, and other major platforms.",
-      price: "Competitive & Flexible"
+      description: "Maximize your ROI with advertising campaigns across Google, Facebook, and other major platforms."
     },
     {
       icon: BarChart3,
       title: "SEO Optimization",
-      description: "Boost your search engine rankings with our comprehensive SEO strategies and technical optimization techniques.",
-      price: "Competitive & Flexible"
+      description: "Boost your search engine rankings with our comprehensive SEO strategies and technical optimization techniques."
     }
   ];
 
@@ -275,13 +269,34 @@ const Services = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <ServiceCard
+                <div
                   key={index}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  price={service.price}
-                />
+                  className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden"
+                >
+                  {/* Background gradient on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon with gradient background */}
+                    <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <service.icon className="h-8 w-8 text-white" />
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold mb-4 text-gray-800 group-hover:text-blue-700 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {service.description}
+                    </p>
+                    
+                    {/* Decorative element */}
+                    <div className="absolute top-6 right-6 w-16 h-16 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500"></div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
