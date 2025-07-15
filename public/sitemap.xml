@@ -109,12 +109,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://heidigital.info/solutions/marketing-tools-hub</loc>
-    <lastmod>2025-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
   <!-- AI Tools (only existing ones) -->
   <url>
@@ -127,30 +121,6 @@
   <!-- Free Resources (only existing ones) -->
   <url>
     <loc>https://heidigital.info/solutions/free-resources/roi-calculator</loc>
-    <lastmod>2025-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/on-page-seo-checklist</loc>
-    <lastmod>2025-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/seo-optimization-checklist</loc>
-    <lastmod>2025-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/social-media-growth-tools</loc>
-    <lastmod>2025-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/marketing-with-canva</loc>
     <lastmod>2025-01-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
