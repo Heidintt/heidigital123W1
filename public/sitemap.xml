@@ -52,11 +52,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heidigital.info/solutions/marketing-tools-hub</loc>
-    <lastmod>2025-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
   <!-- Portfolio pages - chỉ giữ lại active pages -->
   <url>
@@ -127,30 +122,6 @@
   <!-- Free Resources - chỉ giữ lại active resources -->
   <url>
     <loc>https://heidigital.info/solutions/free-resources/roi-calculator</loc>
-    <lastmod>2025-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/on-page-seo-checklist</loc>
-    <lastmod>2025-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/seo-optimization-checklist</loc>
-    <lastmod>2025-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/social-media-growth-tools</loc>
-    <lastmod>2025-07-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://heidigital.info/solutions/free-resources/marketing-with-canva</loc>
     <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
