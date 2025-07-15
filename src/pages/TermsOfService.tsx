@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -7,7 +8,7 @@ import { useSEO } from "@/hooks/useSEO";
 const TermsOfService = () => {
   useSEO({
     title: "Terms of Service | Legal Agreement | Heidi Digital",
-    description: "Read our terms of service and legal agreements for using Heidi Digital's marketing services and website. Clear guidelines and user responsibilities. Updated 2024.",
+    description: "Read our terms of service and legal agreements for using Heidi Digital's marketing services and website. Clear guidelines and user responsibilities. Updated 2025.",
     keywords: "terms of service, legal agreement, terms and conditions, user agreement, service terms, website terms",
     url: "https://heidigital.info/terms-of-service",
     type: "website"
@@ -25,14 +26,14 @@ const TermsOfService = () => {
         <div className="container mx-auto max-w-3xl">
           <SectionHeading
             title="Our Terms of Service"
-            subtitle="Last updated: April 9, 2025"
+            subtitle="Last updated: July 15, 2025"
             centered
           />
 
           <div className="prose prose-base max-w-none mt-10">
             <h2 className="text-xl font-bold mb-4">1. Agreement to Terms</h2>
             <p className="mb-6 text-base">
-              By accessing our website at www.heidigital.com.au or using our services, you agree to be bound by these Terms of Service. If you do not agree to these Terms, you must not access or use our services.
+              By accessing our website at heidigital.info or using our services, you agree to be bound by these Terms of Service. If you do not agree to these Terms, you must not access or use our services.
             </p>
 
             <h2 className="text-xl font-bold mb-4">2. Use of Services</h2>
@@ -52,7 +53,7 @@ const TermsOfService = () => {
 
             <h2 className="text-xl font-bold mb-4">3. Intellectual Property</h2>
             <p className="mb-6 text-base">
-              The services and their entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof), are owned by Heidigital, its licensors, or other providers of such material and are protected by copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+              The services and their entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof), are owned by Heidi Digital, its licensors, or other providers of such material and are protected by copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>
 
             <h2 className="text-xl font-bold mb-4">4. User Content</h2>
@@ -70,12 +71,12 @@ const TermsOfService = () => {
 
             <h2 className="text-xl font-bold mb-4">6. Limitation of Liability</h2>
             <p className="mb-6 text-base">
-              In no event shall Heidigital, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.
+              In no event shall Heidi Digital, its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the services.
             </p>
 
             <h2 className="text-xl font-bold mb-4">7. Governing Law</h2>
             <p className="mb-6 text-base">
-              These Terms shall be governed and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
+              These Terms shall be governed and construed in accordance with the laws of Australia, without regard to its conflict of law provisions.
             </p>
 
             <h2 className="text-xl font-bold mb-4">8. Changes to Terms</h2>
@@ -85,7 +86,7 @@ const TermsOfService = () => {
 
             <h2 className="text-xl font-bold mb-4">9. Contact Us</h2>
             <p className="mb-6 text-base">
-              If you have any questions about these Terms, please contact us at info@heidigital.com.au.
+              If you have any questions about these Terms, please contact us at contact@heidigital.info.
             </p>
           </div>
         </div>
