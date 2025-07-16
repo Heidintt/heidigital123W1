@@ -100,11 +100,11 @@ const AITools = () => {
           subtitle="Supercharge your marketing with our powerful tools"
         />
 
-        <section className="py-16 px-4 bg-white" aria-label="AI Tools Collection">
+        <section className="py-16 px-4 bg-white" aria-label="Tools Collection">
           <div className="container mx-auto">
             <SectionHeading
-              title="Our AI Tools Collection"
-              subtitle="Cutting-edge AI tools to streamline your marketing workflow"
+              title="Our Tools Collection"
+              subtitle="Cutting-edge marketing tools to streamline your marketing workflow"
               centered
             />
             <AIToolsGrid />
