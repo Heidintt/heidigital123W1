@@ -18,7 +18,7 @@ const MarketingBudgetPlanner = () => {
     canonicalUrl: "https://heidigital.info/solutions/ai-tools/marketing-budget-planner",
     type: "website",
     image: "https://heidigital.info/og-budget-planner.jpg",
-    schemaType: "WebApplication",
+    schemaType: "WebPage", // <-- Sửa từ "WebApplication" thành "WebPage"
     breadcrumbs: [
       { name: "Home", url: "https://heidigital.info/" },
       { name: "Solutions", url: "https://heidigital.info/solutions" },
@@ -69,17 +69,6 @@ const MarketingBudgetPlanner = () => {
     };
   }, []);
 
-  // Xóa đoạn code set meta thủ công cũ
-  // useEffect(() => {
-  //   const metaTag = document.createElement('meta');
-  //   metaTag.name = 'robots';
-  //   metaTag.content = 'index, follow';
-  //   document.head.appendChild(metaTag);
-  //   return () => {
-  //     document.head.removeChild(metaTag);
-  //   };
-  // }, []);
-
   const [plannerState, setPlannerState] = useState<BudgetPlannerState>({
     planningMode: 'budget-first',
     totalBudget: 10000,
@@ -121,7 +110,41 @@ const MarketingBudgetPlanner = () => {
     ]
   });
 
-  // ... phần code còn lại giữ nguyên
+  const updatePlannerState = (updates: Partial<BudgetPlannerState>) => {
+    setPlannerState(prev => ({ ...prev, ...updates }));
+  };
+
+  const updateChannel = (channelId: string, updates: Partial<MarketingChannel>) => {
+    setPlannerState(prev => ({
+      ...prev,
+      channels: prev.channels.map(channel =>
+        channel.id === channelId ? { ...channel, ...updates } : channel
+      )
+    }));
+  };
+
+  const addChannel = () => {
+    const newChannel: MarketingChannel = {
+      id: Date.now().toString(),
+      name: 'New Channel',
+      budgetAllocation: 0,
+      cpc: 1.0,
+      cvr: 2.0,
+      valuePerLead: 100
+    };
+    
+    setPlannerState(prev => ({
+      ...prev,
+      channels: [...prev.channels, newChannel]
+    }));
+  };
+
+  const removeChannel = (channelId: string) => {
+    setPlannerState(prev => ({
+      ...prev,
+      channels: prev.channels.filter(channel => channel.id !== channelId)
+    }));
+  };
 
   return (
     <Layout>
@@ -131,7 +154,43 @@ const MarketingBudgetPlanner = () => {
         backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
 
-      {/* ... phần JSX còn lại giữ nguyên */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-7xl">
+          <SectionHeading
+            title="Interactive Budget Planning Tool"
+            subtitle="Choose your planning approach and configure your marketing channels"
+            centered
+          />
+
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-12">
+            {/* Left Column - Inputs */}
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <BudgetPlannerInputs
+                plannerState={plannerState}
+                updatePlannerState={updatePlannerState}
+                updateChannel={updateChannel}
+                addChannel={addChannel}
+                removeChannel={removeChannel}
+              />
+            </div>
+
+            {/* Right Column - Results */}
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <BudgetPlannerResults plannerState={plannerState} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CallToAction
+        title="Ready to optimize your marketing budget?"
+        description="Start planning your campaigns with data-driven insights and maximize your ROI"
+        primaryButtonText="Start Planning"
+        primaryButtonLink="#planner"
+        secondaryButtonText="View More Tools"
+        secondaryButtonLink="/solutions/ai-tools"
+        backgroundClass="bg-gradient-to-r from-heisocial-blue to-heisocial-purple"
+      />
     </Layout>
   );
 };
