@@ -1,56 +1,89 @@
-<!DOCTYPE html>
-<html lang="en-AU">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary Meta Tags -->
-  <title>Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital</title>
-  <meta name="title" content="Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital">
-  <meta name="description" content="Discover our comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics.">
-  <meta name="keywords" content="Nha Ca Cafe marketing, hospitality marketing, restaurant marketing strategy, portfolio case study, local SEO">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="author" content="Heidi Digital Team">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://heidigital.info/portfolio/nha-ca-cafe">
-  <meta property="og:title" content="Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital">
-  <meta property="og:description" content="Discover our comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics.">
-  <meta property="og:image" content="https://heidigital.info/og-portfolio.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital">
-  <meta property="og:locale" content="en_AU">
-  <meta property="og:site_name" content="Heidi Digital">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://heidigital.info/portfolio/nha-ca-cafe">
-  <meta name="twitter:title" content="Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital">
-  <meta name="twitter:description" content="Discover our comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics.">
-  <meta name="twitter:image" content="https://heidigital.info/og-portfolio.jpg">
-  <meta name="twitter:image:alt" content="Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital">
-  <meta name="twitter:site" content="@heidigital">
-  <meta name="twitter:creator" content="@heidigital">
-  
-  <!-- Canonical -->
-  <link rel="canonical" href="https://heidigital.info/portfolio/nha-ca-cafe">
-</head>
-<body>
-  <div id="static-content">
-    <h1>Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital</h1>
-    <p>Discover our comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics.</p>
-  </div>
-  
-  <!-- Redirect to main SPA for human users -->
-  <script>
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isCrawler = /bot|crawler|spider|crawling|facebookexternalhit|twitterbot|linkedinbot|slurp|whatsapp/i.test(userAgent);
+import React from "react";
+import Layout from "@/components/Layout";
+import { useSEO } from "@/hooks/useSEO";
+// Import các component Portfolio detail khác của bạn
+
+const NhaCaCafe = () => {
+  // Enhanced SEO for portfolio detail page
+  useSEO({
+    title: "Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital",
+    description: "Discover our comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics.",
+    keywords: "Nha Ca Cafe marketing, hospitality marketing, restaurant marketing strategy, portfolio case study, local SEO",
+    url: "https://heidigital.info/portfolio/nha-ca-cafe",
+    canonicalUrl: "https://heidigital.info/portfolio/nha-ca-cafe",
+    type: "website",
+    image: "https://heidigital.info/og-portfolio.jpg",
+    schemaType: "CreativeWork",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Portfolio", url: "https://heidigital.info/portfolio" },
+      { name: "Nha Ca Cafe", url: "https://heidigital.info/portfolio/nha-ca-cafe" }
+    ]
+  });
+
+  // Add CreativeWork structured data
+  React.useEffect(() => {
+    const portfolioSchema = {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Nha Ca Cafe Marketing Strategy",
+      "description": "Comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics",
+      "creator": {
+        "@type": "Organization",
+        "name": "Heidi Digital",
+        "url": "https://heidigital.info"
+      },
+      "url": "https://heidigital.info/portfolio/nha-ca-cafe",
+      "genre": "Marketing Strategy",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Hospitality Marketing"
+        },
+        {
+          "@type": "Thing",
+          "name": "Local SEO"
+        },
+        {
+          "@type": "Thing",
+          "name": "Social Media Marketing"
+        }
+      ],
+      "datePublished": "2025-01-16",
+      "dateModified": "2025-01-16"
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'nha-ca-cafe-schema';
+    script.textContent = JSON.stringify(portfolioSchema);
     
-    if (!isCrawler) {
-      window.location.replace('/portfolio/nha-ca-cafe');
+    const existing = document.getElementById('nha-ca-cafe-schema');
+    if (existing) {
+      existing.remove();
     }
-  </script>
-</body>
-</html>
+    
+    document.head.appendChild(script);
+
+    return () => {
+      const script = document.getElementById('nha-ca-cafe-schema');
+      if (script) {
+        script.remove();
+      }
+    };
+  }, []);
+
+  return (
+    <Layout>
+      <main role="main">
+        {/* Thêm nội dung Portfolio detail của bạn ở đây */}
+        <h1>Nha Ca Cafe Marketing Strategy | Portfolio Case Study | Heidi Digital</h1>
+        <p>Discover our comprehensive marketing strategy for Nha Ca Cafe, featuring hospitality marketing, local SEO, and social media engagement tactics.</p>
+        
+        {/* Thêm chi tiết case study, hình ảnh, kết quả, v.v. */}
+      </main>
+    </Layout>
+  );
+};
+
+export default NhaCaCafe;
