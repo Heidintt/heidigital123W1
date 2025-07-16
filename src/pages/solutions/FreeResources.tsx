@@ -15,6 +15,7 @@ const FreeResources = () => {
     description: "Access valuable free marketing resources including courses, guides, checklists and tools from industry leaders. Master digital marketing with expert learning materials and boost your skills.",
     keywords: "free marketing resources, marketing courses, digital marketing guides, marketing checklists, SEO tools, social media resources, marketing learning materials, free marketing education",
     url: "https://heidigital.info/solutions/free-resources",
+    canonicalUrl: "https://heidigital.info/solutions/free-resources"
     type: "website",
     image: "https://heidigital.info/og-free-resources.jpg",
     schemaType: "CollectionPage",
