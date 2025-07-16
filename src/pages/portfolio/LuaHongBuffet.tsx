@@ -17,6 +17,7 @@ const LuaHongBuffet = () => {
     keywords: "Lửa Hồng Buffet, hot pot restaurant marketing, Ho Chi Minh City restaurant, social media marketing, restaurant branding, viral content, TikTok marketing, Facebook marketing, dining experience",
     image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
     url: "https://heidigital.info/portfolio/lua-hong-buffet",
+    canonicalUrl: "heidigital.info/portfolio/lua-hong-buffet",
     type: "article"
   });
 

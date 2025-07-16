@@ -15,6 +15,7 @@ const NhaCaCafe = () => {
     keywords: "Nha Ca Cafe, cat cafe marketing, Vietnam cafe branding, creative workshops, Thai Nguyen marketing, cat therapy, community building, marketing plan 2025",
     image: "/uploads/nha-ca-thumb.jpg",
     url: "https://heidigital.info/portfolio/nha-ca-cafe",
+    canonicalUrl: "heidigital.info/portfolio/nha-ca-cafe",
     type: "article"
   });
 
