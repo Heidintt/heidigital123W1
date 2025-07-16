@@ -136,12 +136,12 @@ const Portfolio = () => {
       link: "/portfolio/microlino-strategy"
     },
     {
-      id: "i-choose-the-sun",
-      title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
-      description: "A viral influencer-led social media campaign promoting positivity during COVID-19 pandemic, generating 75.6M views and 8,000+ user videos.",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Social Media", "Influencer Marketing", "Campaign Strategy"],
-      link: "/portfolio/i-choose-the-sun"
+      id: "nha-ca-cafe",
+      title: "Nhà Cá Cafe Marketing Strategy",
+      description: "Comprehensive marketing plan for a unique cat-themed café in Thai Nguyen, combining coffee culture with creative workshops and feline charm.",
+      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Marketing Strategy", "Social Media", "Brand Development"],
+      link: "/portfolio/nha-ca-cafe"
     },
     {
       id: "lua-hong-buffet",
@@ -150,14 +150,6 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Marketing Strategy", "Event Marketing", "Content Strategy"],
       link: "/portfolio/lua-hong-buffet"
-    },
-    {
-      id: "nha-ca-cafe",
-      title: "Nhà Cá Cafe Marketing Strategy",
-      description: "Comprehensive marketing plan for a unique cat-themed café in Thai Nguyen, combining coffee culture with creative workshops and feline charm.",
-      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Marketing Strategy", "Social Media", "Brand Development"],
-      link: "/portfolio/nha-ca-cafe"
     },
     {
       id: "koto-club",
@@ -171,12 +163,11 @@ const Portfolio = () => {
 
   const categories = [
     "All",
-    "Social Media",
     "Marketing Strategy",
     "Campaign Strategy",
     "Brand Development",
     "Digital Marketing",
-    "Influencer Marketing",
+    "Social Media",
     "Event Marketing",
     "Content Strategy",
     "Academic Research",

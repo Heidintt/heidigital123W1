@@ -67,20 +67,20 @@ const PortfolioSection = () => {
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="h-48 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Sun Life Viral Campaign"
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Nha Ca Cafe Marketing Strategy"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="p-6">
               <div className="flex flex-wrap gap-2 mb-3">
-                <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded-full text-xs font-medium">Viral Marketing</span>
-                <span className="bg-cyan-100 text-cyan-700 px-2 py-1 rounded-full text-xs font-medium">Influencer Strategy</span>
+                <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded-full text-xs font-medium">Brand Development</span>
+                <span className="bg-cyan-100 text-cyan-700 px-2 py-1 rounded-full text-xs font-medium">Marketing Strategy</span>
               </div>
-              <h3 className="text-xl font-bold mb-3">Sun Life Viral Campaign</h3>
-              <p className="text-gray-600 mb-4">'I Choose The Sun' influencer campaign achieved 75.6M views and 8,000+ user-generated videos during challenging times.</p>
+              <h3 className="text-xl font-bold mb-3">Nha Ca Cafe Marketing Plan</h3>
+              <p className="text-gray-600 mb-4">Comprehensive marketing strategy for a unique cat-themed café combining coffee culture with creative workshops and feline charm.</p>
               <Button asChild variant="outline" size="sm">
-                <Link to="/portfolio/i-choose-the-sun">View Case Study</Link>
+                <Link to="/portfolio/nha-ca-cafe">View Case Study</Link>
               </Button>
             </div>
           </div>
