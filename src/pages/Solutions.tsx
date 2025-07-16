@@ -18,6 +18,7 @@ const Solutions = () => {
     description: "Explore our comprehensive marketing solutions including AI-powered tools, free resources, calculators, and templates to boost your digital marketing success.",
     keywords: "marketing solutions, AI marketing tools, free marketing resources, digital marketing hub, marketing calculators, SEO tools, content marketing tools",
     url: "https://heidigital.info/solutions",
+    canonicalUrl: "heidigital.info/solutions",
     type: "website",
     image: "https://heidigital.info/og-solutions.jpg",
     schemaType: "CollectionPage",
