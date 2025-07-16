@@ -1,39 +1,40 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main pages -->
   <url>
     <loc>https://heidigital.info/</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://heidigital.info/services</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://heidigital.info/portfolio</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://heidigital.info/blog</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://heidigital.info/about</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://heidigital.info/contact</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -41,42 +42,42 @@
   <!-- Portfolio pages -->
   <url>
     <loc>https://heidigital.info/portfolio/fmcg-dao-strategy</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://heidigital.info/portfolio/microlino-strategy</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://heidigital.info/portfolio/i-choose-the-sun</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://heidigital.info/portfolio/lua-hong-buffet</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://heidigital.info/portfolio/nha-ca-cafe</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://heidigital.info/portfolio/koto-club</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Blog posts (only existing ones) -->
+  <!-- Blog posts -->
   <url>
     <loc>https://heidigital.info/blog/linkedin-personal-branding-mistakes-marketing-services</loc>
     <lastmod>2025-01-02</lastmod>
@@ -98,30 +99,54 @@
 
   <!-- Solutions pages -->
   <url>
+    <loc>https://heidigital.info/solutions</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://heidigital.info/solutions/ai-tools</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://heidigital.info/solutions/free-resources</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- AI Tools (only existing ones) -->
+  <!-- AI Tools -->
   <url>
     <loc>https://heidigital.info/solutions/ai-tools/marketing-budget-planner</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Free Resources (only existing ones) -->
+  <!-- Free Resources -->
   <url>
     <loc>https://heidigital.info/solutions/free-resources/roi-calculator</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://heidigital.info/solutions/free-resources/seo-guide</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://heidigital.info/solutions/free-resources/content-templates</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://heidigital.info/solutions/free-resources/ai-playbook</loc>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -129,14 +154,20 @@
   <!-- Legal pages -->
   <url>
     <loc>https://heidigital.info/privacy-policy</loc>
-    <lastmod>2025-01-04</lastmod>
+    <lastmod>2025-01-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://heidigital.info/terms-of-service</loc>
-    <lastmod>2025-01-04</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>yearly</changefreq> 
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://heidigital.info/sitemap</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>

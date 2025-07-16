@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -10,6 +11,7 @@ const TermsOfService = () => {
     description: "Read our terms of service and legal agreements for using Heidi Digital's marketing services and website. Clear guidelines and user responsibilities. Updated 2024.",
     keywords: "terms of service, legal agreement, terms and conditions, user agreement, service terms, website terms",
     url: "https://heidigital.info/terms-of-service",
+    canonicalUrl: "https://heidigital.info/terms-of-service",
     type: "website"
   });
 

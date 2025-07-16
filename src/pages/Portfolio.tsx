@@ -9,12 +9,13 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 
 const Portfolio = () => {
-  // Enhanced SEO for portfolio page
+  // Enhanced SEO for portfolio page with corrected canonical URL
   useSEO({
     title: "Marketing Portfolio & Case Studies | 300% ROI Proven Results | Heidi Digital",
     description: "Explore our award-winning marketing campaigns & detailed case studies. See how we've helped businesses achieve 300% growth, viral campaigns & market dominance. View proven results now!",
     keywords: "marketing portfolio, case studies, marketing campaign results, success stories australia, digital marketing examples, campaign case studies, marketing ROI, viral marketing campaigns",
     url: "https://heidigital.info/portfolio",
+    canonicalUrl: "https://heidigital.info/portfolio",
     type: "website",
     image: "https://heidigital.info/og-portfolio.jpg",
     schemaType: "CollectionPage",

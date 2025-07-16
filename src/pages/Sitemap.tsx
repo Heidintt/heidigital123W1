@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -12,6 +13,7 @@ const Sitemap = () => {
     description: "Browse our complete website sitemap with all pages, services, tools and resources. Find everything on Heidi Digital easily. XML sitemap available for search engines.",
     keywords: "sitemap, website structure, site navigation, xml sitemap, website pages, site map",
     url: "https://heidigital.info/sitemap",
+    canonicalUrl: "https://heidigital.info/sitemap",
     type: "website"
   });
 
