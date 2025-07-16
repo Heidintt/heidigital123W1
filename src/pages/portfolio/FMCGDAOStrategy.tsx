@@ -15,6 +15,7 @@ const FMCGDAOStrategy = () => {
     keywords: "Web3, DAO, FMCG, marketing strategy, blockchain, community governance, brand loyalty, decentralized autonomous organization",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
     url: "https://heidigital.info/portfolio/fmcg-dao-strategy",
+    canonicalUrl: "heidigital.info/portfolio/fmcg-dao-strategy",
     type: "article"
   });
 
