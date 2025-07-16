@@ -15,6 +15,7 @@ const AITools = () => {
     description: "Supercharge your marketing with our powerful AI-powered tools. Free automated campaign optimization, performance analytics, content generation & ROI tracking. Try now!",
     keywords: "AI marketing tools, automated marketing, AI campaign optimization, marketing automation tools, AI analytics, content generation tools, marketing AI software, free AI tools",
     url: "https://heidigital.info/solutions/ai-tools",
+    canonical: "heidigital.info/solutions/ai-tools", // <-- Thêm dòng này
     type: "website",
     image: "https://heidigital.info/og-ai-tools.jpg",
     schemaType: "CollectionPage",
