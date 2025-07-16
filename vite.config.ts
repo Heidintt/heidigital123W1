@@ -1,9 +1,9 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { EventEmitter } from "events";
+import { viteStaticCopy } from "vite-plugin-static-copy"; // Thêm dòng này
 
 // Tăng số lượng EventEmitter listeners để tránh warning và crash
 EventEmitter.defaultMaxListeners = 100;
@@ -21,8 +21,15 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/_redirects',
+          dest: '.' // copy vào gốc dist
+        }
+      ]
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {

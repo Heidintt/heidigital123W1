@@ -63,7 +63,7 @@ const Index = () => {
         {/* Main H1 heading for SEO - hidden visually but accessible to screen readers */}
         <h1 className="sr-only">Heidi Digital - Australia's Digital Marketing Agency</h1>
         
-        {/* Hero section with H2 heading */}
+        {/* Hero section với H2 heading (Đảm bảo Hero render bằng H2, KHÔNG phải H1) */}
         <section aria-label="Hero">
           <Hero
             title="Transform Your Digital Future"
@@ -72,7 +72,7 @@ const Index = () => {
             ctaLink="/contact"
             secondaryCtaText="Explore Solutions"
             secondaryCtaLink="/solutions/free-resources"
-            headingLevel="h2" {/* Đảm bảo Hero render bằng H2, KHÔNG phải H1 */}
+            headingLevel="h2"
           />
         </section>
 
