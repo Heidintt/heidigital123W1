@@ -8,6 +8,7 @@ import BlogSection from "@/components/home/BlogSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 import ContactSection from "@/components/home/ContactSection";
 import { useSEO } from "@/hooks/useSEO";
+import { createLocalBusinessSchema, createServiceSchema } from "@/hooks/seo/localBusinessUtils";
 
 const Index = () => {
   // Enhanced SEO optimization for homepage with updated meta title
@@ -22,77 +23,11 @@ const Index = () => {
 
   // Optimized structured data for better SEO performance
   React.useEffect(() => {
-    // LocalBusiness Schema for Australian presence
-    const localBusinessSchema = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://heidigital.info",
-      "name": "Heidi Digital",
-      "description": "Digital marketing agency in Australia specializing in SEO, social media marketing, and brand development",
-      "url": "https://heidigital.info",
-      "email": "info@heidigital.info",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://heidigital.info/logo.png",
-        "width": 512,
-        "height": 512
-      },
-      "image": "https://heidigital.info/og-homepage.jpg",
-      "priceRange": "AUD 500-5000",
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -33.8688,
-        "longitude": 151.2093
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "AU",
-        "addressRegion": "NSW",
-        "addressLocality": "Sydney"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": 4.9,
-        "reviewCount": 127,
-        "bestRating": 5
-      }
-    };
-
-    // Service Schema for digital marketing services
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Digital Marketing Services",
-      "provider": {
-        "@type": "Organization",
-        "name": "Heidi Digital",
-        "url": "https://heidigital.info"
-      },
-      "serviceType": "Digital Marketing",
-      "description": "Comprehensive digital marketing services including SEO, social media marketing, content creation, and brand development",
-      "areaServed": "Australia",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "SEO Services",
-          "description": "Advanced SEO strategies to improve search rankings",
-          "priceCurrency": "AUD",
-          "availability": "https://schema.org/InStock"
-        },
-        {
-          "@type": "Offer",
-          "name": "Social Media Marketing",
-          "description": "Strategic social media management and advertising",
-          "priceCurrency": "AUD",
-          "availability": "https://schema.org/InStock"
-        }
-      ]
-    };
+    // Create standardized LocalBusiness schema
+    const localBusinessSchema = createLocalBusinessSchema();
+    
+    // Create Service schema
+    const serviceSchema = createServiceSchema();
 
     // Insert schemas into head
     const schemas = [localBusinessSchema, serviceSchema];

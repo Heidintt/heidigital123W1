@@ -27,7 +27,7 @@ const Solutions = () => {
     ]
   });
 
-  // Add Solutions structured data - removed product schemas to avoid merchant policy errors
+  // Add Solutions structured data with LocalBusiness publisher
   React.useEffect(() => {
     const collectionSchema = {
       "@context": "https://schema.org",
@@ -65,7 +65,7 @@ const Solutions = () => {
         ]
       },
       "publisher": {
-        "@type": "Organization",
+        "@type": "LocalBusiness",
         "name": "Heidi Digital",
         "url": "https://heidigital.info"
       }

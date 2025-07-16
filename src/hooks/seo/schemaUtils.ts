@@ -34,8 +34,9 @@ export const createBaseSchema = ({
       "name": siteName,
       "url": "https://heidigital.info",
       "publisher": {
-        "@type": "Organization",
-        "name": "Heidi Digital"
+        "@type": "LocalBusiness",
+        "name": "Heidi Digital",
+        "url": "https://heidigital.info"
       }
     },
     "primaryImageOfPage": {
@@ -48,12 +49,12 @@ export const createBaseSchema = ({
     "datePublished": publishedTime || new Date().toISOString(),
     "dateModified": modifiedTime || new Date().toISOString(),
     "author": {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": articleAuthor || "Heidi Digital",
       "url": "https://heidigital.info"
     },
     "publisher": {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "Heidi Digital",
       "url": "https://heidigital.info",
       "logo": {
@@ -97,7 +98,7 @@ export const enhanceSchemaForType = (
       "@type": "NewsArticle",
       "headline": title,
       "articleSection": articleSection || "Digital Marketing",
-      "wordCount": description.length * 5, // Estimate
+      "wordCount": description.length * 5,
       "keywords": articleTags.join(", ") || keywords,
       "articleBody": description,
       "mainEntityOfPage": {

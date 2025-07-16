@@ -25,7 +25,7 @@ const AITools = () => {
     ]
   });
 
-  // Add AI Tools structured data - removed product/offer schemas to avoid merchant policy errors
+  // Add AI Tools structured data with proper offers
   React.useEffect(() => {
     const softwareApplicationSchema = {
       "@context": "https://schema.org",
@@ -37,8 +37,9 @@ const AITools = () => {
       "operatingSystem": "Web Browser",
       "softwareVersion": "3.0",
       "author": {
-        "@type": "Organization",
-        "name": "Heidi Digital"
+        "@type": "LocalBusiness",
+        "name": "Heidi Digital",
+        "url": "https://heidigital.info"
       },
       "featureList": [
         "AI Campaign Optimization",
@@ -57,31 +58,36 @@ const AITools = () => {
         "ratingValue": "4.8",
         "reviewCount": "95",
         "bestRating": "5"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "AI Marketing Tools Access",
+        "description": "Full access to our AI marketing tools suite",
+        "priceCurrency": "AUD",
+        "price": "0",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2025-01-01",
+        "category": "Free Tools"
       }
     };
 
-    const schemas = [softwareApplicationSchema];
-    schemas.forEach((schema, index) => {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.id = `ai-tools-schema-${index}`;
-      script.textContent = JSON.stringify(schema);
-      
-      const existing = document.getElementById(`ai-tools-schema-${index}`);
-      if (existing) {
-        existing.remove();
-      }
-      
-      document.head.appendChild(script);
-    });
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'ai-tools-schema';
+    script.textContent = JSON.stringify(softwareApplicationSchema);
+    
+    const existing = document.getElementById('ai-tools-schema');
+    if (existing) {
+      existing.remove();
+    }
+    
+    document.head.appendChild(script);
 
     return () => {
-      schemas.forEach((_, index) => {
-        const script = document.getElementById(`ai-tools-schema-${index}`);
-        if (script) {
-          script.remove();
-        }
-      });
+      const script = document.getElementById('ai-tools-schema');
+      if (script) {
+        script.remove();
+      }
     };
   }, []);
 

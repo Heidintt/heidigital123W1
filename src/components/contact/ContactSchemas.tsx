@@ -1,44 +1,16 @@
 
 import React, { useEffect } from 'react';
+import { createLocalBusinessSchema } from '@/hooks/seo/localBusinessUtils';
 
 const ContactSchemas = () => {
   useEffect(() => {
-    const localBusinessSchema = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Heidi Digital",
-      "description": "Leading digital marketing agency in Australia providing comprehensive marketing solutions",
-      "url": "https://heidigital.info",
-      "email": "contact@heidigital.info",
-      "openingHours": [
-        "Mo-Fr 09:00-18:00"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "contactType": "Customer Service",
-          "email": "contact@heidigital.info",
-          "availableLanguage": ["English"],
-          "hoursAvailable": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          }
-        },
-        {
-          "@type": "ContactPoint",
-          "contactType": "Sales",
-          "email": "contact@heidigital.info",
-          "availableLanguage": ["English"]
-        }
-      ],
-      "priceRange": "$$-$$$",
-      "serviceArea": {
-        "@type": "Country",
-        "name": "Australia"
-      }
-    };
+    // Use standardized LocalBusiness schema
+    const localBusinessSchema = createLocalBusinessSchema({
+      name: "Heidi Digital",
+      description: "Leading digital marketing agency in Australia providing comprehensive marketing solutions",
+      url: "https://heidigital.info",
+      email: "contact@heidigital.info"
+    });
 
     const contactPageSchema = {
       "@context": "https://schema.org",
@@ -47,8 +19,9 @@ const ContactSchemas = () => {
       "description": "Contact Australia's leading digital marketing agency for expert consultation and custom marketing solutions",
       "url": "https://heidigital.info/contact",
       "mainEntity": {
-        "@type": "Organization",
-        "name": "Heidi Digital"
+        "@type": "LocalBusiness",
+        "name": "Heidi Digital",
+        "url": "https://heidigital.info"
       }
     };
 
