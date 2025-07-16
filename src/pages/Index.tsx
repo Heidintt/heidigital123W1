@@ -72,10 +72,7 @@ const Index = () => {
             ctaLink="/contact"
             secondaryCtaText="Explore Solutions"
             secondaryCtaLink="/solutions/free-resources"
-<<<<<<< HEAD
             headingLevel="h2"
-=======
->>>>>>> cb4a700d896dcb988770239b9abc68bb3284a626
           />
         </section>
 
