@@ -72,6 +72,7 @@ const Index = () => {
             ctaLink="/contact"
             secondaryCtaText="Explore Solutions"
             secondaryCtaLink="/solutions/free-resources"
+            headingLevel="h2" {/* Đảm bảo Hero render bằng H2, KHÔNG phải H1 */}
           />
         </section>
 
