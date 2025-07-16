@@ -96,8 +96,8 @@ const AITools = () => {
     <Layout>
       <main role="main">
         <Hero
-          title="AI Marketing Tools"
-          subtitle="Supercharge your marketing with our powerful AI-powered tools"
+          title="Marketing Tools"
+          subtitle="Supercharge your marketing with our powerful tools"
         />
 
         <section className="py-16 px-4 bg-white" aria-label="AI Tools Collection">
@@ -111,14 +111,14 @@ const AITools = () => {
           </div>
         </section>
 
-        <section aria-label="AI Tools Features">
+        <section aria-label="Tools Features">
           <AIToolsFeatures />
         </section>
 
         <section aria-label="Call to Action">
           <CallToAction
             title="Ready to Supercharge Your Marketing?"
-            description="Get started with our AI tools today and see the difference they can make for your business"
+            description="Get started with our tools today and see the difference they can make for your business"
             primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
             secondaryButtonText="View Services"
