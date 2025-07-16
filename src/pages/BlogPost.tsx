@@ -34,6 +34,7 @@ const BlogPost = () => {
     keywords: post ? post.tags?.join(", ") : "marketing, digital marketing, blog, business tips",
     image: absoluteImageUrl,
     url: `https://heidigital.info/blog/${slug}`,
+    canonicalUrl: `https://heidigital.info/blog/${slug}`,
     type: "article",
     articleAuthor: post?.author,
     articleSection: post?.category,

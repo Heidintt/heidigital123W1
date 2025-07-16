@@ -18,6 +18,7 @@ const Blog = () => {
     description: "Stay ahead with expert digital marketing insights, AI marketing strategies, SEO guides & latest industry trends. Free actionable content to grow your Australian business. Read now!",
     keywords: "digital marketing blog australia, marketing tips, AI marketing insights, SEO guides australia, content marketing strategies, social media tips, marketing trends 2024, business growth tips",
     url: "https://heidigital.info/blog",
+    canonicalUrl: "heidigital.info/blog",
     type: "website",
     image: "https://heidigital.info/og-blog.jpg",
     schemaType: "CollectionPage",

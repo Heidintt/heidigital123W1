@@ -17,6 +17,7 @@ const NotFound = () => {
     description: "The page you're looking for could not be found. Return to Heidi Digital's homepage to explore our marketing solutions and services.",
     keywords: "404, page not found, heidi digital",
     url: `https://heidigital.info${location.pathname}`,
+    canonicalUrl: `https://heidigital.info${location.pathname}`,
     type: "website"
   });
 
