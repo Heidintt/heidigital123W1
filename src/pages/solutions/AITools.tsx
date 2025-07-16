@@ -11,9 +11,9 @@ import { useSEO } from "@/hooks/useSEO";
 const AITools = () => {
   // Enhanced SEO for AI Tools page
   useSEO({
-    title: "Free AI Marketing Tools | Automated Campaign Optimization & Analytics | Heidi Digital",
-    description: "Supercharge your marketing with our powerful AI-powered tools. Free automated campaign optimization, performance analytics, content generation & ROI tracking. Try now!",
-    keywords: "AI marketing tools, automated marketing, AI campaign optimization, marketing automation tools, AI analytics, content generation tools, marketing AI software, free AI tools",
+    title: "Free Marketing Tools | Automated Campaign Optimization & Analytics | Heidi Digital",
+    description: "Supercharge your marketing with our powerful tools. Free automated campaign optimization, performance analytics, content generation & ROI tracking. Try now!",
+    keywords: "Marketing tools, automated marketing, AI campaign optimization, marketing automation tools, AI analytics, content generation tools, marketing AI software, free AI tools",
     url: "https://heidigital.info/solutions/ai-tools",
     canonicalUrl: "https://heidigital.info/solutions/ai-tools",
     type: "website",
@@ -31,8 +31,8 @@ const AITools = () => {
     const softwareApplicationSchema = {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "AI Marketing Tools Suite",
-      "description": "Comprehensive collection of AI-powered marketing tools for campaign optimization and performance analytics",
+      "name": "Marketing Tools Suite",
+      "description": "Comprehensive collection of marketing tools for campaign optimization and performance analytics",
       "url": "https://heidigital.info/solutions/ai-tools",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web Browser",
