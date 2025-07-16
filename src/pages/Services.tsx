@@ -21,6 +21,7 @@ const Services = () => {
     description: "Expert digital marketing services in Australia: SEO, social media management, content creation, PPC advertising & brand development. Get measurable results with free consultation!",
     keywords: "digital marketing services australia, SEO services, social media management, AI marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
     url: "https://heidigital.info/services",
+    canonical: "https://heidigital.info/services", // <-- Thêm dòng này
     type: "website",
     image: "https://heidigital.info/og-services.jpg",
     schemaType: "CollectionPage",
