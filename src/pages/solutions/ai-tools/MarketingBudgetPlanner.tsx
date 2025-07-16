@@ -13,7 +13,7 @@ const MarketingBudgetPlanner = () => {
   useEffect(() => {
     const metaTag = document.createElement('meta');
     metaTag.name = 'robots';
-    metaTag.content = 'noindex, nofollow';
+    metaTag.content = 'index, follow';
     document.head.appendChild(metaTag);
 
     return () => {
