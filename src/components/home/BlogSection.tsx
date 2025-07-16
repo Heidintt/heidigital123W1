@@ -7,20 +7,20 @@ import { Calendar, ArrowRight } from "lucide-react";
 const BlogSection = () => {
   const blogPosts = [
     {
-      title: "AI Marketing Complete Guide 2024",
-      excerpt: "Discover how artificial intelligence is revolutionizing marketing strategies and learn practical tips to implement AI in your campaigns.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
+      excerpt: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
+      image: "https://ba9e6e30-76db-4489-adf7-b9400d58a196.lovableproject.com/images/blog/canva-infographics-hero.jpg",
       date: "Dec 27, 2024",
       category: "AI Marketing",
-      link: "/blog/ai-marketing-complete-guide-2024"
+      link: "/blog/create-infographics-with-canva-free"
     },
     {
       title: "LinkedIn Personal Branding Strategies",
       excerpt: "Build a powerful personal brand on LinkedIn that attracts opportunities and establishes you as an industry thought leader.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1685586784805-8d96eaeaa5ff?q=80&w=1201&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       date: "Dec 20, 2024",
       category: "Social Media",
-      link: "/blog/linkedin-personal-branding"
+      link: "/blog/linkedin-personal-branding-mistakes-marketing-services"
     },
     {
       title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
