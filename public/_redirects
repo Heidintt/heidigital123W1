@@ -1,3 +1,19 @@
+# Sitemap and robots
 /sitemap.xml    /sitemap.xml    200
 /robots.txt     /robots.txt     200
+
+# Blog redirects
+/blog/ai-marketing-complete-guide-2024 /blog/free-ai-tools-marketing-2025 301
+/blog/linkedin-personal-branding /blog/linkedin-personal-branding-mistakes-marketing-services 301
+/blog/marketing-trends-2025 /blog 301
+/blog/10-free-ai-marketing-tools-2025 /blog/free-ai-tools-marketing-2025 301
+
+# Solutions redirects
+/solutions/free-resources/local-seo-checklist /solutions/free-resources 301
+/solutions/free-resources/marketing-with-canva /solutions/free-resources 301
+/solutions/free-resources/on-page-seo-checklist /solutions/free-resources 301
+/solutions/free-resources/social-media-growth-tools /solutions/free-resources 301
+/solutions/tools/seo-assistant /solutions/ai-tools 301
+
+# Catch all - must be last
 /*              /index.html     200
