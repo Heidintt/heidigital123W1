@@ -10,6 +10,7 @@ const OnPageSEOChecklist = () => {
     description: "Complete on-page SEO checklist to optimize your website pages for better search rankings. Free downloadable checklist with actionable tips.",
     keywords: "on-page SEO checklist, SEO optimization, website optimization, search rankings",
     url: "https://heidigital.info/solutions/free-resources/on-page-seo-checklist",
+    canonicalUrl: "https://heidigital.info/solutions/free-resources/on-page-seo-checklist",
     type: "website"
   });
 

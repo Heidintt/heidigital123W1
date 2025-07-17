@@ -10,7 +10,7 @@ const MarketingWithCanva = () => {
     description: "Master Canva for marketing with our complete guide. Create professional marketing materials, social media graphics, and brand assets.",
     keywords: "canva marketing guide, canva design, marketing graphics, social media design",
     url: "https://heidigital.info/solutions/free-resources/marketing-with-canva",
-    canonicalUrl: "heidigital.info/solutions/free-resources/marketing-with-canva",
+    canonicalUrl: "https://heidigital.info/solutions/free-resources/marketing-with-canva",
     type: "website"
   });
 

@@ -10,6 +10,7 @@ const SocialMediaGrowthTools = () => {
     description: "Collection of free tools and proven strategies to grow your social media presence organically. Boost engagement and followers.",
     keywords: "free social media tools, social media growth, engagement tools, followers growth",
     url: "https://heidigital.info/solutions/free-resources/social-media-growth-tools",
+    canonicalUrl: "heidigital.info/solutions/free-resources/social-media-growth-tools",
     type: "website"
   });
 

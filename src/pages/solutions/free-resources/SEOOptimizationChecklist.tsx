@@ -10,6 +10,7 @@ const SEOOptimizationChecklist = () => {
     description: "Comprehensive SEO audit checklist covering technical, on-page, and off-page optimization. Free download with actionable steps.",
     keywords: "SEO optimization checklist, SEO audit, technical SEO, website optimization",
     url: "https://heidigital.info/solutions/free-resources/seo-optimization-checklist",
+    canonicalUrl: "heidigital.info/solutions/free-resources/seo-optimization-checklist",
     type: "website"
   });
 

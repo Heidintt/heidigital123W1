@@ -12,6 +12,7 @@ const ROICalculator = () => {
     description: "Free interactive ROI calculator for digital marketing campaigns. Calculate ROAS, CPA, conversion rates, and optimize your marketing budget with real-time insights.",
     keywords: "ROI calculator, ROAS calculator, digital marketing calculator, marketing metrics, campaign ROI, budget optimizer",
     url: "https://heidigital.info/solutions/tools/roi-calculator",
+    canonicalUrl: "https://heidigital.info/solutions/tools/roi-calculator",
     type: "website"
   });
 
