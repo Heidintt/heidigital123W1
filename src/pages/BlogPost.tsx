@@ -1,14 +1,16 @@
+
 import React from "react";
 import { useParams } from "react-router-dom";
-import ReactMarkdown from 'react-markdown';
 import Layout from "@/components/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { blogPosts } from '@/data/blog-posts';
+import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import BlogPostContent from "@/components/blog/BlogPostContent";
 
 const BlogPost = () => {
   const { slug } = useParams();
   
-  // Tìm blog post theo slug
+  // Find blog post by slug
   const post = blogPosts.find(p => p.slug === slug);
 
   useSEO({
@@ -46,37 +48,12 @@ const BlogPost = () => {
   return (
     <Layout>
       <main role="main">
-        <article className="max-w-4xl mx-auto px-4 py-8">
-          <header className="mb-8">
-            <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-            <div className="flex items-center text-gray-600 mb-4">
-              <span>By {post.author}</span>
-              <span className="mx-2">•</span>
-              <span>{new Date(post.date).toLocaleDateString()}</span>
-              {post.updated_at && (
-                <>
-                  <span className="mx-2">•</span>
-                  <span>Updated: {new Date(post.updated_at).toLocaleDateString()}</span>
-                </>
-              )}
-            </div>
-            {post.featured_image && (
-              <img 
-                src={post.featured_image} 
-                alt={post.title}
-                className="w-full h-64 object-cover rounded-lg mb-6"
-              />
-            )}
-          </header>
-
-          <div className="prose prose-lg max-w-none">
-            <p className="text-xl text-gray-700 mb-6">{post.description}</p>
-            {/* THAY ĐỔI: Thêm className markdown-content */}
-            <ReactMarkdown className="markdown-content">
-              {post.content}
-            </ReactMarkdown>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50">
+          <div className="max-w-5xl mx-auto px-4 py-12">
+            <BlogPostHeader post={post} />
+            <BlogPostContent content={post.content} />
           </div>
-        </article>
+        </div>
       </main>
     </Layout>
   );
