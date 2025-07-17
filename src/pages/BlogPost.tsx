@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import ReactMarkdown from 'react-markdown';
 import Layout from "@/components/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { blogPosts } from '@/data/blog-posts';
@@ -70,7 +71,10 @@ const BlogPost = () => {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-6">{post.description}</p>
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            {/* THAY ĐỔI: Dùng ReactMarkdown thay vì dangerouslySetInnerHTML */}
+            <ReactMarkdown className="prose prose-lg max-w-none">
+              {post.content}
+            </ReactMarkdown>
           </div>
         </article>
       </main>
