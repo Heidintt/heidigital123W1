@@ -17,7 +17,7 @@ const Index = () => {
     description: "Transform your business with Australia's digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
     keywords: "digital marketing agency australia, marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
     url: "https://heidigital.info/",
-    canonicalUrl: "https://heidigital.info",
+    canonicalUrl: "https://heidigital.info/",
     type: "website",
     image: "https://heidigital.info/og-homepage.jpg"
   });
