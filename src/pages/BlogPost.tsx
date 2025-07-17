@@ -71,8 +71,8 @@ const BlogPost = () => {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-gray-700 mb-6">{post.description}</p>
-            {/* THAY ĐỔI: Dùng ReactMarkdown thay vì dangerouslySetInnerHTML */}
-            <ReactMarkdown className="prose prose-lg max-w-none">
+            {/* THAY ĐỔI: Thêm className markdown-content */}
+            <ReactMarkdown className="markdown-content">
               {post.content}
             </ReactMarkdown>
           </div>
