@@ -38,9 +38,6 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Clean parameters (remove tracking params)
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&fbclid&gclid
-
 # Allow all public content
 Allow: /services/
 Allow: /solutions/
