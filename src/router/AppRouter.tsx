@@ -1,4 +1,3 @@
-
 import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "@/pages/Index";
@@ -26,7 +25,13 @@ const AppRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/solutions" element={<Solutions />} />
+        
+        {/* Portfolio sub-routes TRƯỚC portfolio chính */}
+        <Route path="/portfolio/*" element={<PortfolioRoutes />} />
+        
+        {/* Portfolio page chính SAU sub-routes */}
         <Route path="/portfolio" element={<Portfolio />} />
+        
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
@@ -39,9 +44,6 @@ const AppRouter = () => {
         
         {/* Solution sub-routes */}
         <Route path="/solutions/*" element={<SolutionRoutes />} />
-        
-        {/* Portfolio sub-routes */}
-        <Route path="/portfolio/*" element={<PortfolioRoutes />} />
         
         <Route path="*" element={<NotFound />} />
       </Routes>
