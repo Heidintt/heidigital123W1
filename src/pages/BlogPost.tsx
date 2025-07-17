@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { blogPosts } from '@/data/blog-posts'; // Import trực tiếp
+import { blogPosts } from '@/data/blog-posts';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -11,13 +11,15 @@ const BlogPost = () => {
   const post = blogPosts.find(p => p.slug === slug);
 
   useSEO({
-    title: post ? `${post.title} | Heidi Digital Blog` : "Blog Post | Heidi Digital",
-    description: post ? post.description : "Read our latest insights on digital marketing, AI strategies, and business growth tips.",
+    title: post ? (post.seo_title || `${post.title} | Heidi Digital Blog`) : "Blog Post | Heidi Digital",
+    description: post ? (post.seo_description || post.description) : "Read our latest insights on digital marketing, AI strategies, and business growth tips.",
+    keywords: post ? post.tags.join(', ') : "digital marketing blog, AI marketing, business growth, marketing tips",
     url: `https://heidigital.info/blog/${slug}`,
     canonicalUrl: `https://heidigital.info/blog/${slug}`,
     type: "article",
     image: post ? post.featured_image : "https://heidigital.info/og-blog.jpg",
     publishedTime: post ? post.date : undefined,
+    modifiedTime: post ? post.updated_at : undefined,
     author: post ? post.author : "Heidi Digital Team",
     schemaType: "Article",
     breadcrumbs: [
@@ -50,6 +52,12 @@ const BlogPost = () => {
               <span>By {post.author}</span>
               <span className="mx-2">•</span>
               <span>{new Date(post.date).toLocaleDateString()}</span>
+              {post.updated_at && (
+                <>
+                  <span className="mx-2">•</span>
+                  <span>Updated: {new Date(post.updated_at).toLocaleDateString()}</span>
+                </>
+              )}
             </div>
             {post.featured_image && (
               <img 
