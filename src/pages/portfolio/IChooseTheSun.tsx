@@ -16,7 +16,7 @@ const IChooseTheSun = () => {
     keywords: "TikTok marketing, viral campaign, Sun Life Vietnam, COVID-19 marketing, H'Hen Niê, digital marketing case study, social media campaign, brand ambassador, Facebook marketing, pandemic marketing",
     image: "/lovable-uploads/68e4b8a7-07fc-4da3-aa0f-29c41e7cd19b.png",
     url: "https://heidigital.info/portfolio/i-choose-the-sun",
-    canonicalUrl: "i-choose-the-sun",
+    canonicalUrl: "https://heidigital.info/portfolio/i-choose-the-sun",
     type: "article"
   });
 

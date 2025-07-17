@@ -9,6 +9,7 @@ const MicrolinoStrategy = () => {
     description: "Discover our innovative marketing strategy for Microlino, featuring automotive digital marketing, brand awareness campaigns, and market positioning.",
     keywords: "Microlino marketing, automotive marketing strategy, portfolio case study, brand awareness, digital marketing campaign, EV marketing",
     url: "https://heidigital.info/portfolio/microlino-strategy",
+    canonicalUrl: "https://heidigital.info/portfolio/microlino-strategy",
     type: "article",
     image: "https://heidigital.info/og-portfolio.jpg",
     schemaType: "ProfilePage",
