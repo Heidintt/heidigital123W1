@@ -1,4 +1,3 @@
-
 export const normalizeUrl = (url: string): string => {
   // Remove trailing slash for consistency, except for root URL
   if (url.endsWith('/') && url !== 'https://heidigital.info/') {
@@ -20,30 +19,8 @@ export const updateCanonicalUrl = (canonicalUrl?: string, url?: string) => {
   }
 };
 
-export const updateAlternateLinks = (alternateUrls: Array<{ hreflang: string; href: string }>, url: string) => {
-  const normalizedUrl = normalizeUrl(url);
-  const defaultAlternateLinks = [
-    { hreflang: 'en-AU', href: normalizedUrl },
-    { hreflang: 'en', href: normalizedUrl },
-    { hreflang: 'x-default', href: normalizedUrl }
-  ];
-  
-  const allAlternateLinks = alternateUrls.length > 0 ? alternateUrls.map(link => ({
-    ...link,
-    href: normalizeUrl(link.href)
-  })) : defaultAlternateLinks;
-  
-  // Remove existing alternate links
-  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => link.remove());
-  
-  allAlternateLinks.forEach(({ hreflang, href }) => {
-    const alternateLink = document.createElement('link');
-    alternateLink.rel = 'alternate';
-    alternateLink.hreflang = hreflang;
-    alternateLink.href = href;
-    document.head.appendChild(alternateLink);
-  });
-};
+// XÓA HOÀN TOÀN HÀM NÀY
+// export const updateAlternateLinks = (alternateUrls: Array<{ hreflang: string; href: string }>, url: string) => { ... };
 
 export const updatePerformanceLinks = () => {
   const performanceLinks = [
