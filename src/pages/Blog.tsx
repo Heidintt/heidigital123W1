@@ -12,18 +12,18 @@ import { BlogPost } from "@/types/blogPost";
 const Blog = () => {
   const { posts, loading, error } = useBlogPosts();
 
-  // Enhanced SEO for blog page
+  // Enhanced SEO for blog page - FIXED canonical URLs
   useSEO({
     title: "Digital Marketing Blog Australia | Expert Tips & AI Marketing Insights | Heidi Digital",
     description: "Stay ahead with expert digital marketing insights, AI marketing strategies, SEO guides & latest industry trends. Free actionable content to grow your Australian business. Read now!",
     keywords: "digital marketing blog australia, marketing tips, AI marketing insights, SEO guides australia, content marketing strategies, social media tips, marketing trends 2024, business growth tips",
     url: "https://heidigital.info/blog",
-    canonicalUrl: "heidigital.info/blog",
+    canonicalUrl: "https://heidigital.info/blog", // FIXED: Added https://
     type: "website",
     image: "https://heidigital.info/og-blog.jpg",
     schemaType: "CollectionPage",
     breadcrumbs: [
-      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Home", url: "https://heidigital.info" }, // FIXED: Removed trailing slash
       { name: "Blog", url: "https://heidigital.info/blog" }
     ]
   });
@@ -35,7 +35,7 @@ const Blog = () => {
       "@type": "Blog",
       "name": "Heidi Digital Marketing Blog",
       "description": "Expert insights, tips, and strategies for digital marketing success in Australia",
-      "url": "https://heidigital.info/blog",
+      "url": "https://heidigital.info/blog", // FIXED: Ensure canonical URL
       "author": {
         "@type": "Organization",
         "name": "Heidi Digital"
@@ -83,7 +83,7 @@ const Blog = () => {
             "@type": "Article",
             "headline": post.title,
             "description": post.description,
-            "url": `https://heidigital.info/blog/${post.slug}`,
+            "url": `https://heidigital.info/blog/${post.slug}`, // FIXED: Ensure canonical URL
             "datePublished": post.date,
             "author": {
               "@type": "Person",
