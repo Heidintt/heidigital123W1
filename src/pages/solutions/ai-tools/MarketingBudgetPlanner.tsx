@@ -11,7 +11,7 @@ import { useSEO } from "@/hooks/useSEO";
 const MarketingBudgetPlanner = () => {
   // Enhanced SEO for budget planner page
   useSEO({
-    title: "Marketing Campaign Budget Planner | Free AI Tool | Heidi Digital",
+    title: "Marketing Campaign Budget Planner tool | Heidigital",
     description: "Plan your marketing budget with precision using our interactive AI-powered planning tool. Allocate resources and forecast results with data-driven insights.",
     keywords: "marketing budget planner, campaign budget tool, marketing ROI calculator, budget allocation tool, marketing planning software",
     url: "https://heidigital.info/solutions/ai-tools/marketing-budget-planner",

@@ -14,7 +14,7 @@ const Blog = () => {
 
   // Enhanced SEO for blog page - FIXED canonical URLs
   useSEO({
-    title: "Digital Marketing Blog Australia | Expert Tips & AI Marketing Insights | Heidi Digital",
+    title: "Digital Marketing Blog Australia | Heidigital",
     description: "Stay ahead with expert digital marketing insights, AI marketing strategies, SEO guides & latest industry trends. Free actionable content to grow your Australian business. Read now!",
     keywords: "digital marketing blog australia, marketing tips, AI marketing insights, SEO guides australia, content marketing strategies, social media tips, marketing trends 2024, business growth tips",
     url: "https://heidigital.info/blog",

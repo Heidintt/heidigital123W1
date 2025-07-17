@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 const Services = () => {
   // Enhanced SEO for services page
   useSEO({
-    title: "Digital Marketing Services Australia | SEO, Social Media & PPC | Heidi Digital",
+    title: "Digital Marketing Services | SEO, Social Media",
     description: "Expert digital marketing services in Australia: SEO, social media management, content creation, PPC advertising & brand development. Get measurable results with free consultation!",
     keywords: "digital marketing services australia, SEO services, social media management, AI marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
     url: "https://heidigital.info/services",

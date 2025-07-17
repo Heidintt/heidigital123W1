@@ -9,7 +9,7 @@ import { useSEO } from "@/hooks/useSEO";
 
 const Sitemap = () => {
   useSEO({
-    title: "Website Sitemap | Complete Site Structure | Heidi Digital",
+    title: "Website Sitemap | Heidi Digital",
     description: "Browse our complete website sitemap with all pages, services, tools and resources. Find everything on Heidi Digital easily. XML sitemap available for search engines.",
     keywords: "sitemap, website structure, site navigation, xml sitemap, website pages, site map",
     url: "https://heidigital.info/sitemap",

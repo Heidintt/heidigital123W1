@@ -13,7 +13,7 @@ import WhyChooseUs from "@/components/about/WhyChooseUs";
 const About = () => {
   // Enhanced SEO for about page with corrected canonical URL
   useSEO({
-    title: "About Us | Leading AI Digital Marketing Experts Australia | Heidi Digital",
+    title: "Digital Marketing Experts Australia | Heidi Digital",
     description: "Meet Heidi Digital's expert team of AI-powered marketing specialists. Discover our proven track record, innovative approach & why Australian businesses trust us for digital transformation.",
     keywords: "about heidi digital, digital marketing agency australia, AI marketing experts, marketing specialists australia, brand development team, marketing consultants, digital transformation experts",
     url: "https://heidigital.info/about",

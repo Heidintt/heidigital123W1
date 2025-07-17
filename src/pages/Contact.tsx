@@ -11,7 +11,7 @@ import ContactSchemas from "@/components/contact/ContactSchemas";
 const Contact = () => {
   // Enhanced SEO for contact page with corrected canonical URL
   useSEO({
-    title: "Contact Us | Free Marketing Consultation & Custom Quotes | Heidi Digital",
+    title: "Contact Us | Marketing Consultation",
     description: "Ready to grow your Australian business? Contact our digital marketing experts for a free consultation. Get custom strategies, competitive quotes & proven results. Call today - response within 24hrs!",
     keywords: "contact digital marketing agency australia, free marketing consultation, get marketing quote, marketing experts contact, digital marketing help sydney, marketing consultation australia, business growth consultation",
     url: "https://heidigital.info/contact",

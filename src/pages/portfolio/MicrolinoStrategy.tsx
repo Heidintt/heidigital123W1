@@ -5,7 +5,7 @@ import { useSEO } from "@/hooks/useSEO";
 const MicrolinoStrategy = () => {
   // SEO optimization
   useSEO({
-    title: "Microlino Marketing Strategy | Portfolio Case Study | Heidi Digital",
+    title: "Microlino Marketing Strategy | Heidigital",
     description: "Discover our innovative marketing strategy for Microlino, featuring automotive digital marketing, brand awareness campaigns, and market positioning.",
     keywords: "Microlino marketing, automotive marketing strategy, portfolio case study, brand awareness, digital marketing campaign, EV marketing",
     url: "https://heidigital.info/portfolio/microlino-strategy",

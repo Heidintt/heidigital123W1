@@ -10,7 +10,7 @@ import { MapPin, Users, Star, Target, Coffee, Heart, Camera, Palette, TrendingUp
 const NhaCaCafe = () => {
   // SEO optimization
   useSEO({
-    title: "Nha Ca Cafe Marketing Plan 2025 | Cat Cafe Strategy | Heidigital",
+    title: "Nha Ca Cafe Marketing Plan 2025 | Heidigital",
     description: "Comprehensive marketing strategy for Nha Ca Cafe - Where Coffee Meows & Creativity Grows! Complete brand identity, workshops, and community engagement plan.",
     keywords: "Nha Ca Cafe, cat cafe marketing, Vietnam cafe branding, creative workshops, Thai Nguyen marketing, cat therapy, community building, marketing plan 2025",
     image: "/uploads/nha-ca-thumb.jpg",

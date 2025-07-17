@@ -10,7 +10,7 @@ import { useSEO } from "@/hooks/useSEO";
 const FMCGDAOStrategy = () => {
   // SEO optimization
   useSEO({
-    title: "Web3 DAO Models in FMCG Marketing Strategy | Academic Research",
+    title: "Web3 DAO Models in FMCG Marketing Strategy - Heidigital",
     description: "Academic research exploring how Web3-based community-owned DAO models can transform brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035.",
     keywords: "Web3, DAO, FMCG, marketing strategy, blockchain, community governance, brand loyalty, decentralized autonomous organization",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",

@@ -8,7 +8,7 @@ import ROICalculatorTool from "@/components/roi-calculator/ROICalculatorTool";
 const ROICalculator = () => {
   // Set SEO for ROI Calculator page
   useSEO({
-    title: "Interactive ROI Calculator - Digital Marketing Tool | Heidi Digital",
+    title: "Interactive ROI Calculator - Digital Marketing Tool",
     description: "Free interactive ROI calculator for digital marketing campaigns. Calculate ROAS, CPA, conversion rates, and optimize your marketing budget with real-time insights.",
     keywords: "ROI calculator, ROAS calculator, digital marketing calculator, marketing metrics, campaign ROI, budget optimizer",
     url: "https://heidigital.info/solutions/tools/roi-calculator",
