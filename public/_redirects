@@ -10,6 +10,7 @@
 
 # New blog redirects - redirect old URLs to main blog page
 /blog/ai-marketing-complete-guide /blog 301
+/blog/10-free-ai-marketing-tools-2025 /blog 301
 
 # Solutions redirects
 /solutions/free-resources/local-seo-checklist /solutions/free-resources 301
