@@ -18,33 +18,17 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-bold mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/services/social-media" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Social Media Strategy
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/content-creation" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Content Creation
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/seo" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  SEO Optimization
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/branding" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Branding & Identity
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/digital-ads" className="text-gray-300 hover:text-heidigital-blue transition-colors">
-                  Digital Advertising
-                </Link>
-              </li>
+            <h4 className="text-lg font-bold mb-4">
+              <Link to="/services" className="hover:text-heidigital-blue transition-colors">
+                Our Services
+              </Link>
+            </h4>
+            <ul className="space-y-2 text-gray-300">
+              <li>Social Media Strategy</li>
+              <li>Content Creation</li>
+              <li>SEO Optimization</li>
+              <li>Branding & Identity</li>
+              <li>Digital Advertising</li>
             </ul>
           </div>
 
