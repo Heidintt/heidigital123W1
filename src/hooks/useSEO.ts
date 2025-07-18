@@ -81,43 +81,45 @@ export const useSEO = ({
     updateMobileOptimizationTags(absoluteImageUrl, siteName);
     
     // Update canonical URL with debugging
-    console.log('�� useSEO - canonicalUrl:', canonicalUrl);
+    console.log(' useSEO - canonicalUrl:', canonicalUrl);
     console.log('🔍 useSEO - url:', url);
     updateCanonicalUrl(canonicalUrl, url);
     updatePerformanceLinks();
 
     // Create and inject structured data
     const baseSchema = createBaseSchema({
+      schemaType,
       title,
       description,
       url,
-      image: absoluteImageUrl,
-      type: schemaType,
-      author,
+      siteName,
+      absoluteImageUrl,
+      imageAlt,
       publishedTime,
       modifiedTime,
+      articleAuthor
+    });
+
+    const enhancedSchema = enhanceSchemaForType(baseSchema, schemaType, {
+      title,
+      description,
+      articleSection,
+      articleTags,
+      keywords,
+      url,
       rating,
-      priceRange,
-      availability,
       category
     });
 
-    const enhancedSchema = enhanceSchemaForType(baseSchema, type, {
-      articleAuthor,
-      articleSection,
-      articleTags,
-      videoUrl,
-      audioUrl
-    });
-
     const schemaWithMedia = addMediaToSchema(enhancedSchema, {
-      image: absoluteImageUrl,
-      imageAlt,
       videoUrl,
-      audioUrl
+      audioUrl,
+      absoluteImageUrl,
+      title,
+      description
     });
 
-    const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs, url);
+    const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs);
     
     const finalSchema = breadcrumbs.length > 0 
       ? [schemaWithMedia, breadcrumbSchema]

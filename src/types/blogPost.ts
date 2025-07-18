@@ -10,19 +10,22 @@ export interface BlogPost {
   seo_title: string;
   seo_description: string;
   content: string;
+  updated_at?: string; // Add this field
 }
 
-// Helper function to find blog post by slug
+// Import and export the blog posts array
+import { blogPosts } from '@/data/blog-posts';
+export { blogPosts };
+
+// Helper functions
 export const findBlogPostBySlug = (slug: string): BlogPost | undefined => {
   return blogPosts.find(post => post.slug === slug);
 };
 
-// Helper function to get all blog posts
 export const getAllBlogPosts = (): BlogPost[] => {
   return blogPosts;
 };
 
-// Helper function to get featured blog posts
 export const getFeaturedBlogPosts = (): BlogPost[] => {
   return blogPosts.filter(post => 
     post.category === "AI Marketing" || 
@@ -31,12 +34,10 @@ export const getFeaturedBlogPosts = (): BlogPost[] => {
   );
 };
 
-// Helper function to get blog posts by category
 export const getBlogPostsByCategory = (category: string): BlogPost[] => {
   return blogPosts.filter(post => post.category === category);
 };
 
-// Helper function to search blog posts by tags
 export const searchBlogPostsByTags = (searchTags: string[]): BlogPost[] => {
   return blogPosts.filter(post => 
     searchTags.some(tag => 
@@ -46,7 +47,3 @@ export const searchBlogPostsByTags = (searchTags: string[]): BlogPost[] => {
     )
   );
 };
-
-// Import and export the blog posts array
-import { blogPosts } from '@/data/blog-posts';
-export { blogPosts };

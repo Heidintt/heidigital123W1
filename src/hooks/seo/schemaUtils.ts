@@ -1,4 +1,3 @@
-
 export const createBaseSchema = ({
   schemaType,
   title,
@@ -196,7 +195,7 @@ export const createBreadcrumbSchema = (breadcrumbs: Array<{ name: string; url: s
   };
 };
 
-export const injectSchema = (schema: any, id: string) => {
+export const injectSchema = (schema: any, id: string = 'structured-data') => {
   if (!schema) return;
   
   const script = document.createElement('script');

@@ -1,4 +1,3 @@
-
 // Helper function to update meta tags
 export const updateMetaTag = (name: string, content: string, property?: boolean) => {
   const selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
@@ -24,14 +23,14 @@ export const updateBasicMetaTags = ({
   robots,
   author,
   title,
-  locale
+  locale = 'en_AU' // Make locale optional with default
 }: {
   description: string;
   keywords: string;
   robots: string;
   author: string;
   title: string;
-  locale: string;
+  locale?: string; // Make locale optional
 }) => {
   // Basic meta tags
   updateMetaTag('description', description);

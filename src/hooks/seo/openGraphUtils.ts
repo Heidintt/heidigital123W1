@@ -1,4 +1,3 @@
-
 import { updateMetaTag } from './metaTagUtils';
 
 export const updateOpenGraphTags = ({
@@ -8,7 +7,7 @@ export const updateOpenGraphTags = ({
   imageAlt,
   url,
   type,
-  locale,
+  locale = 'en_AU', // Make locale optional with default
   siteName,
   publishedTime,
   modifiedTime,
@@ -24,7 +23,7 @@ export const updateOpenGraphTags = ({
   imageAlt?: string;
   url: string;
   type: string;
-  locale: string;
+  locale?: string; // Make locale optional
   siteName: string;
   publishedTime?: string;
   modifiedTime?: string;

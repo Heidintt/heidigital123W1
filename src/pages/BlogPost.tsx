@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useParams } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -22,9 +21,9 @@ const BlogPost = () => {
     type: "article",
     image: post ? post.featured_image : "https://heidigital.info/og-blog.jpg",
     publishedTime: post ? post.date : undefined,
-    modifiedTime: post ? post.updated_at : undefined,
+    modifiedTime: post ? (post.updated_at || post.date) : undefined, // Fix: use updated_at or fallback to date
     author: post ? post.author : "Heidi Digital Team",
-    schemaType: "Article",
+    schemaType: "NewsArticle" as const, // Fix: use NewsArticle instead of Article
     breadcrumbs: [
       { name: "Home", url: "https://heidigital.info/" },
       { name: "Blog", url: "https://heidigital.info/blog" },
