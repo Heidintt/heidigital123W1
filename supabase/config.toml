@@ -1,1 +1,34 @@
+
 project_id = "yroritnzsvmxuiabipxk"
+
+[api]
+enabled = true
+port = 54321
+schemes = ["http", "https"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[auth]
+enabled = true
+port = 54324
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
+enable_confirmations = false
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = false
+
+[db]
+port = 54322
+
+[functions.send-contact-email]
+verify_jwt = false
+
+[storage]
+enabled = true
+port = 54323
+file_size_limit = "50MiB"
