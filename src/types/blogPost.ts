@@ -1,5 +1,20 @@
-// src/data/blog-posts.ts
-export const blogPosts = [
+export interface BlogPost {
+  slug: string;
+  title: string;
+  description: string;
+  seo_title: string;
+  seo_description: string;
+  author: string;
+  date: string;
+  updated_at: string;
+  content: string;
+  featured_image: string;
+  category: string;
+  tags: string[];
+}
+
+// Export the blog posts array with proper typing
+export const blogPosts: BlogPost[] = [
   {
     slug: "free-ai-tools-marketing-2025",
     title: "Free AI Tools for Marketing 2025: Complete Guide",
@@ -43,3 +58,18 @@ export const blogPosts = [
     tags: ["LinkedIn", "personal branding", "marketing services", "professional growth", "social media"]
   }
 ];
+
+// Helper function to find blog post by slug
+export const findBlogPostBySlug = (slug: string): BlogPost | undefined => {
+  return blogPosts.find(post => post.slug === slug);
+};
+
+// Helper function to get all blog posts
+export const getAllBlogPosts = (): BlogPost[] => {
+  return blogPosts;
+};
+
+// Helper function to get featured blog posts
+export const getFeaturedBlogPosts = (): BlogPost[] => {
+  return blogPosts.filter(post => post.category === "AI Marketing" || post.category === "Content Creation");
+};
