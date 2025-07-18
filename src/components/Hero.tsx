@@ -10,8 +10,11 @@ interface HeroProps {
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
   backgroundImage?: string;
-  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"; // Thêm dòng này
+  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }
+
+const DEFAULT_BG =
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80";
 
 const Hero: React.FC<HeroProps> = ({
   title,
@@ -21,19 +24,26 @@ const Hero: React.FC<HeroProps> = ({
   secondaryCtaText,
   secondaryCtaLink,
   backgroundImage,
-  headingLevel = "h1", // Giá trị mặc định là h1
+  headingLevel = "h1",
 }) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
+  const bg = backgroundImage || DEFAULT_BG;
 
   return (
     <div
       className="relative px-4 py-16 md:py-24 flex items-center min-h-[60vh] bg-cover bg-center"
       style={{
-        backgroundImage: backgroundImage 
-          ? `url(${backgroundImage})` 
-          : `url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)`
+        backgroundImage: `url(${bg})`,
       }}
     >
+      {/* Preload LCP image for browser priority (hidden) */}
+      <img
+        src={bg}
+        alt=""
+        style={{ display: "none" }}
+        fetchpriority="high"
+      />
+
       {/* Enhanced overlay for better text visibility */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
       <div className="absolute inset-0 backdrop-blur-[0.5px]" />
@@ -43,20 +53,27 @@ const Hero: React.FC<HeroProps> = ({
           <div className="bg-gradient-to-r from-heidigital-blue/20 via-heidigital-purple/20 to-heidigital-blue/20 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
             <HeadingTag
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in text-white leading-tight"
-              style={{ 
-                textShadow: '2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6), 1px 1px 3px rgba(0,0,0,0.9)' 
+              style={{
+                textShadow:
+                  "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6), 1px 1px 3px rgba(0,0,0,0.9)",
               }}
             >
               {title}
             </HeadingTag>
-            <p className="text-base md:text-lg mb-6 opacity-90 animate-fade-in text-white leading-relaxed" 
-               style={{ 
-                 animationDelay: "0.2s",
-                 textShadow: '1px 1px 4px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.5)' 
-               }}>
+            <p
+              className="text-base md:text-lg mb-6 opacity-90 animate-fade-in text-white leading-relaxed"
+              style={{
+                animationDelay: "0.2s",
+                textShadow:
+                  "1px 1px 4px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.5)",
+              }}
+            >
               {subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <div
+              className="flex flex-col sm:flex-row gap-3 animate-fade-in"
+              style={{ animationDelay: "0.4s" }}
+            >
               {ctaText && (
                 <Button
                   asChild
