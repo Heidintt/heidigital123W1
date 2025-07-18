@@ -30,18 +30,15 @@ const Hero: React.FC<HeroProps> = ({
   const bg = backgroundImage || DEFAULT_BG;
 
   return (
-    <div
-      className="relative px-4 py-16 md:py-24 flex items-center min-h-[60vh] bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${bg})`,
-      }}
-    >
-      {/* Preload LCP image for browser priority (hidden) */}
+    <div className="relative px-4 py-16 md:py-24 flex items-center min-h-[60vh]">
+      {/* Dùng <img> làm background LCP */}
       <img
         src={bg}
         alt=""
-        style={{ display: "none" }}
+        className="absolute inset-0 w-full h-full object-cover -z-10"
         fetchPriority="high"
+        draggable={false}
+        decoding="async"
       />
 
       {/* Enhanced overlay for better text visibility */}
