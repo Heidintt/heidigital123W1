@@ -8,12 +8,18 @@
 /blog/marketing-trends-2025 /blog 301
 /blog/10-free-ai-marketing-tools-2025 /blog/free-ai-tools-marketing-2025 301
 
+# New blog redirects - redirect old URLs to main blog page
+/blog/ai-marketing-complete-guide /blog 301
+
 # Solutions redirects
 /solutions/free-resources/local-seo-checklist /solutions/free-resources 301
 /solutions/free-resources/marketing-with-canva /solutions/free-resources 301
 /solutions/free-resources/on-page-seo-checklist /solutions/free-resources 301
 /solutions/free-resources/social-media-growth-tools /solutions/free-resources 301
 /solutions/tools/seo-assistant /solutions/ai-tools 301
+
+# New services redirects - redirect old service pages to blog
+/services/ai-marketing /blog 301
 
 # Portfolio canonical redirects - fix duplicate content issues
 /portfolio/i-choose-the-sun/    /portfolio/i-choose-the-sun    301
