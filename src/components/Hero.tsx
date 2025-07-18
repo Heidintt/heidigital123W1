@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({
         src={bg}
         alt=""
         style={{ display: "none" }}
-        fetchpriority="high"
+        fetchPriority="high"
       />
 
       {/* Enhanced overlay for better text visibility */}
