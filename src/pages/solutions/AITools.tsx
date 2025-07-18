@@ -22,7 +22,7 @@ const AITools = () => {
     breadcrumbs: [
       { name: "Home", url: "https://heidigital.info/" },
       { name: "Solutions", url: "https://heidigital.info/solutions" },
-      { name: "AI Tools", url: "https://heidigital.info/solutions/ai-tools" }
+      { name: "Marketing Tools", url: "https://heidigital.info/solutions/ai-tools" }
     ]
   });
 
