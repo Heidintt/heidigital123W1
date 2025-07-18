@@ -1,7 +1,6 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-import ContactForm from "@/components/contact/ContactForm"; // Thêm dòng này
+import ContactForm from "@/components/ContactForm"; // Đúng đường dẫn
 
 const ContactSection = () => {
   return (
@@ -31,7 +30,7 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="bg-gray-50 p-8 rounded-2xl">
-            {/* Thay thế form HTML bằng ContactForm */}
+            {/* Sử dụng ContactForm component */}
             <ContactForm />
           </div>
         </div>
