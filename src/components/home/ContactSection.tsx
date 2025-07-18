@@ -1,7 +1,7 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
+import ContactForm from "@/components/contact/ContactForm"; // Thêm dòng này
 
 const ContactSection = () => {
   return (
@@ -31,29 +31,8 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                  <input type="text" placeholder="Your name" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                  <input type="email" placeholder="your@email.com" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                <input type="text" placeholder="How can we help you?" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                <textarea rows={4} placeholder="Your message here..." className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-              </div>
-              <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600">
-                Send Message
-              </Button>
-            </form>
+            {/* Thay thế form HTML bằng ContactForm */}
+            <ContactForm />
           </div>
         </div>
       </div>
