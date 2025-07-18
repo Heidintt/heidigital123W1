@@ -87,7 +87,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification email to admin
     const adminEmailResponse = await resend.emails.send({
       from: "Heidigital Contact Form <onboarding@resend.dev>",
-      to: ["contact@heisocial.info"], // Changed from admin@heidigital.info to contact@heisocial.info
+      to: ["contact@heidigital.info"], // Changed from admin@heidigital.info to contact@heidigital.info
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
