@@ -31,7 +31,7 @@ const ServicesSection = () => {
               <Link to="/solutions/free-resources">🎁 Free Resources</Link>
             </Button>
             <Button asChild variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white">
-              <Link to="/solutions">🚀 Marketing Tools</Link>
+              <Link to="solutions/ai-tools">🚀 Marketing Tools</Link>
             </Button>
           </div>
         </div>
