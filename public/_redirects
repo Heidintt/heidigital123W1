@@ -15,5 +15,14 @@
 /solutions/free-resources/social-media-growth-tools /solutions/free-resources 301
 /solutions/tools/seo-assistant /solutions/ai-tools 301
 
+# Portfolio canonical redirects - fix duplicate content issues
+/portfolio/i-choose-the-sun/    /portfolio/i-choose-the-sun    301
+/portfolio/koto-club/    /portfolio/koto-club    301
+/portfolio/*/index.html    /portfolio/:splat    301
+/i-choose-the-sun    /portfolio/i-choose-the-sun    301
+/koto-club    /portfolio/koto-club    301
+/portfolio/i-choose-the-sun/index.html    /portfolio/i-choose-the-sun    301
+/portfolio/koto-club/index.html    /portfolio/koto-club    301
+
 # Catch all - must be last
 /*              /index.html     200

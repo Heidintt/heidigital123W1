@@ -4,7 +4,7 @@ import { updateBasicMetaTags } from './seo/metaTagUtils';
 import { updateOpenGraphTags } from './seo/openGraphUtils';
 import { updateTwitterCardTags } from './seo/twitterUtils';
 import { updateMobileOptimizationTags } from './seo/mobileUtils';
-import { updateCanonicalUrl, updatePerformanceLinks } from './seo/linkUtils'; // XÓA: updateAlternateLinks
+import { updateCanonicalUrl, updatePerformanceLinks } from './seo/linkUtils';
 import { 
   createBaseSchema, 
   enhanceSchemaForType, 
@@ -24,7 +24,6 @@ export const useSEO = ({
   author = "Heidi Digital Team",
   publishedTime,
   modifiedTime,
-  // XÓA: locale = "en_AU",
   siteName = "Heidi Digital",
   articleAuthor,
   articleSection,
@@ -32,7 +31,6 @@ export const useSEO = ({
   twitterCreator = "@heidigital",
   schemaType = "WebPage",
   breadcrumbs = [],
-  // XÓA: alternateUrls = [],
   canonicalUrl,
   imageAlt,
   videoUrl,
@@ -51,7 +49,7 @@ export const useSEO = ({
     const absoluteImageUrl = image.startsWith('http') ? image : `https://heidigital.info${image}`;
     
     // Update all meta tags
-    updateBasicMetaTags({ description, keywords, robots, author, title }); // XÓA: locale
+    updateBasicMetaTags({ description, keywords, robots, author, title });
     
     updateOpenGraphTags({
       title,
@@ -60,7 +58,6 @@ export const useSEO = ({
       imageAlt,
       url,
       type,
-      // XÓA: locale,
       siteName,
       publishedTime,
       modifiedTime,
@@ -83,12 +80,61 @@ export const useSEO = ({
     
     updateMobileOptimizationTags(absoluteImageUrl, siteName);
     
-    // Update canonical URL only (XÓA alternate)
+    // Update canonical URL with debugging
+    console.log('�� useSEO - canonicalUrl:', canonicalUrl);
+    console.log('🔍 useSEO - url:', url);
     updateCanonicalUrl(canonicalUrl, url);
-    // XÓA: updateAlternateLinks(alternateUrls, url);
     updatePerformanceLinks();
 
-    // ... rest of the code remains the same
+    // Create and inject structured data
+    const baseSchema = createBaseSchema({
+      title,
+      description,
+      url,
+      image: absoluteImageUrl,
+      type: schemaType,
+      author,
+      publishedTime,
+      modifiedTime,
+      rating,
+      priceRange,
+      availability,
+      category
+    });
+
+    const enhancedSchema = enhanceSchemaForType(baseSchema, type, {
+      articleAuthor,
+      articleSection,
+      articleTags,
+      videoUrl,
+      audioUrl
+    });
+
+    const schemaWithMedia = addMediaToSchema(enhancedSchema, {
+      image: absoluteImageUrl,
+      imageAlt,
+      videoUrl,
+      audioUrl
+    });
+
+    const breadcrumbSchema = createBreadcrumbSchema(breadcrumbs, url);
     
-  }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs, canonicalUrl, imageAlt, videoUrl, audioUrl, rating, priceRange, availability, category]); // XÓA: locale, alternateUrls
+    const finalSchema = breadcrumbs.length > 0 
+      ? [schemaWithMedia, breadcrumbSchema]
+      : schemaWithMedia;
+
+    injectSchema(finalSchema);
+
+    // Cleanup function
+    return () => {
+      // Remove any dynamically added canonical links on unmount
+      const canonicalLinks = document.querySelectorAll('link[rel="canonical"]');
+      canonicalLinks.forEach(link => {
+        if (link.getAttribute('data-dynamic') === 'true') {
+          link.remove();
+        }
+      });
+    };
+    
+  }, [title, description, keywords, robots, image, url, type, author, publishedTime, modifiedTime, siteName, articleAuthor, articleSection, articleTags, twitterCreator, schemaType, breadcrumbs, canonicalUrl, imageAlt, videoUrl, audioUrl, rating, priceRange, availability, category]);
 };

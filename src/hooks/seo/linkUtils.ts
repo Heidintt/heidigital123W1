@@ -7,20 +7,24 @@ export const normalizeUrl = (url: string): string => {
 };
 
 export const updateCanonicalUrl = (canonicalUrl?: string, url?: string) => {
-  const finalCanonicalUrl = normalizeUrl(canonicalUrl || url || window.location.href);
-  let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-  if (canonicalLink) {
-    canonicalLink.href = finalCanonicalUrl;
-  } else {
-    canonicalLink = document.createElement('link');
-    canonicalLink.rel = 'canonical';
-    canonicalLink.href = finalCanonicalUrl;
-    document.head.appendChild(canonicalLink);
-  }
-};
+  // Remove any existing canonical links first
+  const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
+  existingCanonicals.forEach(link => link.remove());
 
-// XÓA HOÀN TOÀN HÀM NÀY
-// export const updateAlternateLinks = (alternateUrls: Array<{ hreflang: string; href: string }>, url: string) => { ... };
+  // Create new canonical link
+  const canonicalLink = document.createElement('link');
+  canonicalLink.rel = 'canonical';
+  
+  // Use canonicalUrl if provided, otherwise use url or current location
+  const finalCanonicalUrl = normalizeUrl(canonicalUrl || url || window.location.href);
+  canonicalLink.href = finalCanonicalUrl;
+  
+  // Add to head
+  document.head.appendChild(canonicalLink);
+  
+  // Debug logging
+  console.log('✅ Canonical URL set to:', finalCanonicalUrl);
+};
 
 export const updatePerformanceLinks = () => {
   const performanceLinks = [
