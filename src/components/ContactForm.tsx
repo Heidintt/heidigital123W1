@@ -1,76 +1,145 @@
-
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner"; // Thay đổi: Sử dụng Sonner thay vì shadcn toast
+import { Send, Loader2 } from "lucide-react";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email"),
+  subject: z.string().min(5, "Subject must be at least 5 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
-  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
     
-    // In a real implementation, you would submit the form data to a backend service
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    
-    // Reset form
-    const form = e.target as HTMLFormElement;
-    form.reset();
+    try {
+      // Google Analytics tracking
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'form_submit', {
+          event_category: 'Contact',
+          event_label: 'Contact Form',
+          value: 1
+        });
+      }
+
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Success toast using Sonner
+      toast.success("Message sent successfully!", {
+        description: "We'll get back to you as soon as possible.",
+        duration: 5000,
+      });
+      
+      // Reset form
+      reset();
+      
+    } catch (error) {
+      // Error toast using Sonner
+      toast.error("Something went wrong!", {
+        description: "Please try again or contact us directly.",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium">
-            Full Name
-          </label>
+          <Label htmlFor="name">Full Name *</Label>
           <Input
             id="name"
+            {...register("name")}
             placeholder="Your name"
-            required
+            className={errors.name ? "border-red-500" : ""}
           />
+          {errors.name && (
+            <p className="text-sm text-red-500">{errors.name.message}</p>
+          )}
         </div>
+
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium">
-            Email Address
-          </label>
+          <Label htmlFor="email">Email Address *</Label>
           <Input
             id="email"
             type="email"
+            {...register("email")}
             placeholder="your@email.com"
-            required
+            className={errors.email ? "border-red-500" : ""}
           />
+          {errors.email && (
+            <p className="text-sm text-red-500">{errors.email.message}</p>
+          )}
         </div>
       </div>
+
       <div className="space-y-2">
-        <label htmlFor="subject" className="text-sm font-medium">
-          Subject
-        </label>
+        <Label htmlFor="subject">Subject *</Label>
         <Input
           id="subject"
+          {...register("subject")}
           placeholder="How can we help you?"
-          required
+          className={errors.subject ? "border-red-500" : ""}
         />
+        {errors.subject && (
+          <p className="text-sm text-red-500">{errors.subject.message}</p>
+        )}
       </div>
+
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium">
-          Message
-        </label>
+        <Label htmlFor="message">Message *</Label>
         <Textarea
           id="message"
+          {...register("message")}
           placeholder="Your message here..."
           rows={5}
-          required
-          className="resize-none"
+          className={`resize-none ${errors.message ? "border-red-500" : ""}`}
         />
+        {errors.message && (
+          <p className="text-sm text-red-500">{errors.message.message}</p>
+        )}
       </div>
-      <Button type="submit" className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90">
-        Send Message
+
+      <Button 
+        type="submit" 
+        disabled={isSubmitting}
+        className="w-full bg-heisocial-blue hover:bg-heisocial-blue/90"
+      >
+        {isSubmitting ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Sending...
+          </>
+        ) : (
+          <>
+            <Send className="mr-2 h-4 w-4" />
+            Send Message
+          </>
+        )}
       </Button>
     </form>
   );
