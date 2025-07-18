@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/home/ServicesSection";
-import TechnologySection from "@/components/home/TechnologySection";
-import PortfolioSection from "@/components/home/PortfolioSection";
-import BlogSection from "@/components/home/BlogSection";
-import FinalCTASection from "@/components/home/FinalCTASection";
-import ContactSection from "@/components/home/ContactSection";
+// Lazy load các section lớn
+const TechnologySection = React.lazy(() => import("@/components/home/TechnologySection"));
+const PortfolioSection = React.lazy(() => import("@/components/home/PortfolioSection"));
+const BlogSection = React.lazy(() => import("@/components/home/BlogSection"));
+const FinalCTASection = React.lazy(() => import("@/components/home/FinalCTASection"));
+const ContactSection = React.lazy(() => import("@/components/home/ContactSection"));
 import { useSEO } from "@/hooks/useSEO";
 import { createLocalBusinessSchema, createServiceSchema } from "@/hooks/seo/localBusinessUtils";
 
@@ -26,7 +27,6 @@ const Index = () => {
   React.useEffect(() => {
     // Create standardized LocalBusiness schema
     const localBusinessSchema = createLocalBusinessSchema();
-    
     // Create Service schema
     const serviceSchema = createServiceSchema();
 
@@ -37,13 +37,11 @@ const Index = () => {
       script.type = 'application/ld+json';
       script.id = `homepage-schema-${index}`;
       script.textContent = JSON.stringify(schema);
-      
       // Remove existing schema if present
       const existing = document.getElementById(`homepage-schema-${index}`);
       if (existing) {
         existing.remove();
       }
-      
       document.head.appendChild(script);
     });
 
@@ -89,7 +87,9 @@ const Index = () => {
         <section aria-label="Technology & Tools" className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">AI-Powered Marketing Technology</h2>
-            <TechnologySection />
+            <Suspense fallback={<div>Loading technology...</div>}>
+              <TechnologySection />
+            </Suspense>
           </div>
         </section>
 
@@ -97,7 +97,9 @@ const Index = () => {
         <section aria-label="Portfolio Showcase" className="py-6">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Success Stories</h2>
-            <PortfolioSection />
+            <Suspense fallback={<div>Loading portfolio...</div>}>
+              <PortfolioSection />
+            </Suspense>
           </div>
         </section>
 
@@ -105,20 +107,26 @@ const Index = () => {
         <section aria-label="Latest Blog Posts" className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Marketing Insights & Tips</h2>
-            <BlogSection />
+            <Suspense fallback={<div>Loading blog...</div>}>
+              <BlogSection />
+            </Suspense>
           </div>
         </section>
 
         {/* Final CTA section */}
         <section aria-label="Final Call to Action" className="py-6">
-          <FinalCTASection />
+          <Suspense fallback={<div>Loading...</div>}>
+            <FinalCTASection />
+          </Suspense>
         </section>
 
         {/* Contact section with H2 heading - hidden visually */}
         <section aria-label="Contact Information" className="py-6 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Get Started Today</h2>
-            <ContactSection />
+            <Suspense fallback={<div>Loading contact...</div>}>
+              <ContactSection />
+            </Suspense>
           </div>
         </section>
       </main>
