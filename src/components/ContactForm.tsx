@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -99,6 +98,7 @@ const ContactForm = () => {
               id="name"
               {...register("name")}
               placeholder="Your full name"
+              autoComplete="name"
               className={`transition-colors ${
                 errors.name 
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500" 
@@ -123,6 +123,7 @@ const ContactForm = () => {
               type="email"
               {...register("email")}
               placeholder="your@email.com"
+              autoComplete="email"
               className={`transition-colors ${
                 errors.email 
                   ? "border-red-500 focus:border-red-500 focus:ring-red-500" 
@@ -147,6 +148,7 @@ const ContactForm = () => {
             id="subject"
             {...register("subject")}
             placeholder="How can we help you?"
+            autoComplete="off"
             className={`transition-colors ${
               errors.subject 
                 ? "border-red-500 focus:border-red-500 focus:ring-red-500" 
@@ -171,6 +173,7 @@ const ContactForm = () => {
             {...register("message")}
             placeholder="Tell us about your project or how we can help..."
             rows={5}
+            autoComplete="off"
             className={`resize-none transition-colors ${
               errors.message 
                 ? "border-red-500 focus:border-red-500 focus:ring-red-500" 
