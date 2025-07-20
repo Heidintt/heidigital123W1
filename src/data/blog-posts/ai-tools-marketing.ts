@@ -1,20 +1,6 @@
+content: `The marketing landscape is evolving at warp speed, and by 2025, AI won't just be a buzzword—it'll be the backbone of every successful campaign. Forget clunky, expensive software; a new wave of AI tools for marketing is empowering businesses to achieve incredible results without breaking the bank. These aren't just basic free trials; many offer robust features that can genuinely transform your strategy, helping you with hyper-personalization, automation, and AI-powered content creation.
 
-import { BlogPost } from '@/types/blogPost';
-
-export const aiToolsMarketingPost: BlogPost = {
-  slug: "free-ai-tools-marketing-2025", 
-  title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
-  description: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
-  featured_image: "/images/blog/ai-tools-marketing-hero.jpg",
-  date: "2025-01-01",
-  author: "Heidi Digital Team", 
-  category: "AI Marketing",
-  tags: ["AI Tools", "Marketing", "SEO", "Content Creation", "2025 Trends", "Free Tools"],
-  seo_title: "10 Best Free AI Tools for Marketing in 2025 (No Budget Needed)",
-  seo_description: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
-  content: `The marketing landscape is evolving at warp speed, and by 2025, AI won't just be a buzzword—it'll be the backbone of every successful campaign. Forget clunky, expensive software; a new wave of AI tools for marketing is empowering businesses to achieve incredible results without breaking the bank. These aren't just basic free trials; many offer robust features that can genuinely transform your strategy, helping you with hyper-personalization, automation, and AI-powered content creation.
-
-![AI Marketing Tools Overview](https://img.freepik.com/free-photo/ai-technology-microchip-background-digital-transformation-concept_53876-124669.jpg)
+![AI Marketing Tools Overview](/images/blog/ai-tools/ai-marketing-overview.jpg)
 
 We've scoured the market to bring you the most innovative, effective, and popular free AI marketing tools that are set to redefine how you approach campaigns in 2025. Get ready to dive in!
 
@@ -47,7 +33,7 @@ This AI content creation tool helps generate email copy, product descriptions, a
 • **Use Case:** High-volume content generation.
 • **Highlight:** Maintains brand tone with templates.
 
-![Copy.ai Interface](https://techcrunch.com/wp-content/uploads/2021/10/Copy.ai-Image.png)
+![Copy.ai Interface](/images/blog/ai-tools/copy-ai-interface.png)
 
 ### 3. Buffer AI Assistant (Free Tier)
 
@@ -65,7 +51,7 @@ Perfect for AI-driven content strategy and keyword ideation.
 
 ### 5. Ideogram AI (Free)
 
-![Ideogram AI](https://daneclement.com/wp-content/uploads/2024/05/ideogram.png)
+![Ideogram AI](/images/blog/ai-tools/ideogram-ai.png)
 
 A visual AI content tool that gets text inside images right—great for social media visuals and ads.
 
@@ -76,7 +62,7 @@ A visual AI content tool that gets text inside images right—great for social m
 
 An all-in-one AI marketing design platform with integrated copywriting via Magic Write.
 
-![Canva Magic Write](https://images.ctfassets.net/kftzwdyauwt9/bcyEWNucFNbUsrKs9mTHf/28f330217e84323f4804a1380ffa59d2/3.jpg?w=3840&q=90&fm=webp)
+![Canva Magic Write](/images/blog/ai-tools/canva-magic-write.jpg)
 
 • **Use Case:** Generating headlines, captions, and visuals.
 • **Best For:** Marketers with minimal design skills.
@@ -97,7 +83,7 @@ A research and summarization AI tool perfect for marketing teams managing large 
 
 ### 9. Creatify (Free Plan)
 
-![Creatify AI](https://storage.googleapis.com/swipe-insight/content/images/article_images/tool_8447035224.webp)
+![Creatify AI](/images/blog/ai-tools/creatify-ai.webp)
 
 This tool creates UGC-style video ads using AI avatars - a must for modern video marketing automation.
 
@@ -122,4 +108,3 @@ A design-forward AI marketing tool for generating creative ads and visual A/B te
 AI is changing the game—and with these top free AI marketing tools, you don't need a big budget to compete. Whether you're creating content, optimizing ads, analyzing user behavior, or automating campaigns, these tools will empower you to market smarter in 2025.
 
 Which AI tool will you try first to supercharge your digital marketing efforts?`
-};
