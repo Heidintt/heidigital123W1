@@ -2,6 +2,15 @@
 /sitemap.xml    /sitemap.xml    200
 /robots.txt     /robots.txt     200
 
+# Pages removed - redirect to homepage
+/faq / 301
+/solutions / 301
+/services/content-creation / 301
+/solutions/free-resources/seo-optimization-checklist / 301
+/solutions/tools/roi-calculator / 301
+/solutions/free-resources / 301
+/solutions/marketing-tools / 301
+
 # Blog redirects
 /blog/ai-marketing-complete-guide-2024 /blog/free-ai-tools-marketing-2025 301
 /blog/linkedin-personal-branding /blog/linkedin-personal-branding-mistakes-marketing-services 301

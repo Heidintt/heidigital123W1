@@ -6,7 +6,6 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 // Lazy load main pages
 const About = lazy(() => import("@/pages/About"));
 const Services = lazy(() => import("@/pages/Services"));
-const Solutions = lazy(() => import("@/pages/Solutions"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const Contact = lazy(() => import("@/pages/Contact"));
@@ -30,14 +29,6 @@ export const MainRoutes = () => {
         element={
           <Suspense fallback={<LoadingSpinner />}>
             <Services />
-          </Suspense>
-        }
-      />
-      <Route
-        path="solutions"
-        element={
-          <Suspense fallback={<LoadingSpinner />}>
-            <Solutions />
           </Suspense>
         }
       />

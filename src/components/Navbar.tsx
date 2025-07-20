@@ -2,13 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,20 +44,6 @@ const Navbar = () => {
             <Link to="/services" className="text-gray-700 hover:text-heidigital-blue transition-colors">
               Services
             </Link>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-gray-700 hover:text-heidigital-blue transition-colors">
-                Solutions <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem>
-                  <Link to="/solutions/free-resources" className="w-full">Free Resources</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/solutions/ai-tools" className="w-full">AI Tools</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
             
             <Link to="/portfolio" className="text-gray-700 hover:text-heidigital-blue transition-colors">
               Portfolio
@@ -109,25 +89,6 @@ const Navbar = () => {
               >
                 Services
               </Link>
-              <div className="py-2">
-                <div className="font-medium mb-2">Solutions</div>
-                <div className="ml-4 space-y-2">
-                  <Link
-                    to="/solutions/free-resources"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Free Resources
-                  </Link>
-                  <Link
-                    to="/solutions/ai-tools"
-                    className="block text-gray-600 hover:text-heidigital-blue py-1"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    AI Tools
-                  </Link>
-                </div>
-              </div>
               <Link
                 to="/portfolio"
                 className="text-gray-700 hover:text-heidigital-blue py-2 transition-colors"

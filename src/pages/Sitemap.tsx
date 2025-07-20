@@ -90,12 +90,6 @@ const Sitemap = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solutions" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>Solutions</span>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.9</span>
-                  </Link>
-                </li>
-                <li>
                   <Link to="/portfolio" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
                     <span>Portfolio</span>
                     <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.8</span>
@@ -206,12 +200,6 @@ const Sitemap = () => {
                 <li>
                   <Link to="/solutions/free-resources/content-templates" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
                     <span>Content Templates</span>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.6</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/free-resources/roi-calculator" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>ROI Calculator</span>
                     <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.6</span>
                   </Link>
                 </li>

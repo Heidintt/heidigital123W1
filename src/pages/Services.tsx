@@ -159,38 +159,7 @@ const Services = () => {
       }
     };
 
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What digital marketing services does Heidi Digital offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We offer comprehensive AI-powered digital marketing services including SEO optimization, social media management, content creation, brand development, digital advertising, and marketing automation specifically designed for Australian businesses."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much do your digital marketing services cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our pricing is flexible and competitive, tailored to your specific project needs, timeline, and budget. We offer project-based pricing with no hidden fees and transparent cost breakdown. Contact us for a custom quote."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you work with small businesses or only large enterprises?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We work with businesses of all sizes across Australia, from startups and small businesses to large enterprises. Our scalable solutions are designed to grow with your business and deliver results regardless of company size."
-          }
-        }
-      ]
-    };
-
-    const schemas = [serviceSchema, localBusinessSchema, faqSchema];
+    const schemas = [serviceSchema, localBusinessSchema];
     schemas.forEach((schema, index) => {
       const script = document.createElement('script');
       script.type = 'application/ld+json';

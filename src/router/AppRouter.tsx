@@ -4,7 +4,6 @@ import Index from "@/pages/Index";
 import Portfolio from "@/pages/Portfolio";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
-import Solutions from "@/pages/Solutions";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import Contact from "@/pages/Contact";
@@ -24,7 +23,6 @@ const AppRouter = () => {
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/solutions" element={<Solutions />} />
         
         {/* Portfolio sub-routes TRƯỚC portfolio chính */}
         <Route path="/portfolio/*" element={<PortfolioRoutes />} />

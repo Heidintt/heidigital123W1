@@ -45,7 +45,7 @@ const ContactInfo = () => {
           <div>
             <h3 className="font-medium mb-1 text-base">Looking for quick answers?</h3>
             <p className="text-gray-600 mb-3 text-sm">
-              Check out our <a href="/faq" className="text-heidigital-blue hover:underline">FAQ page</a> for answers to common questions, or visit our <a href="/blog" className="text-heidigital-blue hover:underline">blog</a> for insights and resources.
+              Visit our <a href="/blog" className="text-heidigital-blue hover:underline">blog</a> for insights and resources, or browse our <a href="/solutions/free-resources" className="text-heidigital-blue hover:underline">free resources</a> for helpful tools and guides.
             </p>
           </div>
         </div>

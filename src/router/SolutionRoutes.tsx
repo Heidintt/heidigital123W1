@@ -9,9 +9,7 @@ import GonePage from "@/components/GonePage";
 import MarketingBudgetPlanner from "@/pages/solutions/ai-tools/MarketingBudgetPlanner";
 
 // New Free Resources
-import ROICalculator from "@/pages/solutions/free-resources/ROICalculator";
 import OnPageSEOChecklist from "@/pages/solutions/free-resources/OnPageSEOChecklist";
-import SEOOptimizationChecklist from "@/pages/solutions/free-resources/SEOOptimizationChecklist";
 import SocialMediaGrowthTools from "@/pages/solutions/free-resources/SocialMediaGrowthTools";
 import MarketingWithCanva from "@/pages/solutions/free-resources/MarketingWithCanva";
 
@@ -25,11 +23,9 @@ const SolutionRoutes = () => {
       
       {/* Keep only 2 AI Tools */}
       <Route path="ai-tools/marketing-budget-planner" element={<MarketingBudgetPlanner />} />
-      <Route path="free-resources/roi-calculator" element={<ROICalculator />} />
       
       {/* New Free Resources Routes */}
       <Route path="free-resources/on-page-seo-checklist" element={<OnPageSEOChecklist />} />
-      <Route path="free-resources/seo-optimization-checklist" element={<SEOOptimizationChecklist />} />
       <Route path="free-resources/social-media-growth-tools" element={<SocialMediaGrowthTools />} />
       <Route path="free-resources/marketing-with-canva" element={<MarketingWithCanva />} />
       
@@ -88,7 +84,7 @@ const SolutionRoutes = () => {
         <GonePage 
           title="SEO Guide No Longer Available"
           description="This resource has been replaced with updated SEO checklists."
-          redirectUrl="/solutions/free-resources/seo-optimization-checklist"
+          redirectUrl="/solutions/free-resources"
           redirectDelay={5}
         />
       } />
@@ -104,7 +100,7 @@ const SolutionRoutes = () => {
         <GonePage 
           title="Local SEO Checklist No Longer Available"
           description="This resource has been consolidated into our main SEO checklist."
-          redirectUrl="/solutions/free-resources/seo-optimization-checklist"
+          redirectUrl="/solutions/free-resources"
           redirectDelay={5}
         />
       } />
