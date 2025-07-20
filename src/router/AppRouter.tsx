@@ -35,7 +35,7 @@ const AppRouter = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/sitemap" element={<Sitemap />} />
+        <Route path="/sitemap-page" element={<Sitemap />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         
