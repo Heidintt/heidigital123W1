@@ -62,11 +62,11 @@
   to = "/410"
   status = 410
 
-# Redirect main solutions page to free resources
-[[redirects]]
-  from = "/solutions"
-  to = "/solutions/free-resources"
-  status = 301
+# Redirect main solutions page to free resources - DISABLED (now redirects to homepage via _redirects)
+# [[redirects]]
+#   from = "/solutions"
+#   to = "/solutions/free-resources"
+#   status = 301
 
 # Blog post redirects
 [[redirects]]

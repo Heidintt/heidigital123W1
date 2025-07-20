@@ -2,6 +2,13 @@
 /sitemap.xml    /sitemap.xml    200
 /robots.txt     /robots.txt     200
 
+# Redirect specific pages to homepage (301 redirects for SEO)
+/faq                                              /               301
+/solutions                                        /               301
+/services/content-creation                        /               301
+/solutions/free-resources/seo-optimization-checklist  /           301
+/solutions/tools/roi-calculator                   /               301
+
 # Blog redirects
 /blog/ai-marketing-complete-guide-2024 /blog/free-ai-tools-marketing-2025 301
 /blog/linkedin-personal-branding /blog/linkedin-personal-branding-mistakes-marketing-services 301

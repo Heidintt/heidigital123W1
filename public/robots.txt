@@ -38,9 +38,14 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
+# Disallow pages being removed from website
+Disallow: /faq
+Disallow: /services/content-creation
+Disallow: /solutions/free-resources/seo-optimization-checklist
+Disallow: /solutions/tools/roi-calculator
+
 # Allow all public content
 Allow: /services/
-Allow: /solutions/
 Allow: /portfolio/
 Allow: /blog/
 Allow: /about
