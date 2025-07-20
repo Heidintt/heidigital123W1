@@ -13,6 +13,7 @@ import Sitemap from "@/pages/Sitemap";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import GonePage from "@/components/GonePage";
 import SolutionRoutes from "./SolutionRoutes";
 import { PortfolioRoutes } from "./PortfolioRoutes";
 import { ServiceRoutes } from "./ServiceRoutes";
@@ -38,6 +39,18 @@ const AppRouter = () => {
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        
+        {/* FAQ redirect to homepage */}
+        <Route path="/faq" element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <GonePage 
+              title="FAQ Page No Longer Available"
+              description="This page has been discontinued. Please visit our homepage."
+              redirectUrl="/"
+              redirectDelay={5}
+            />
+          </Suspense>
+        } />
         
         {/* Service sub-routes */}
         <Route path="/services/*" element={<ServiceRoutes />} />

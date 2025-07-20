@@ -21,8 +21,8 @@ export const ServiceRoutes = () => {
         element={
           <GonePage 
             title="Content Creation Service No Longer Available"
-            description="This service page has been consolidated. Please visit our main services page."
-            redirectUrl="/services"
+            description="This service page has been consolidated. Please visit our homepage."
+            redirectUrl="/"
             redirectDelay={5}
           />
         } 

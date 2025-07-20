@@ -126,12 +126,6 @@ const Sitemap = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/services/content-creation" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>Content Creation</span>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.8</span>
-                  </Link>
-                </li>
-                <li>
                   <Link to="/services/seo" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
                     <span>SEO Optimization</span>
                     <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.8</span>
@@ -198,26 +192,20 @@ const Sitemap = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solutions/free-resources/seo-guide" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>SEO Guide</span>
+                  <Link to="/solutions/free-resources/on-page-seo-checklist" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
+                    <span>On-Page SEO Checklist</span>
                     <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.6</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solutions/free-resources/content-templates" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>Content Templates</span>
+                  <Link to="/solutions/free-resources/social-media-growth-tools" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
+                    <span>Social Media Growth Tools</span>
                     <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.6</span>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solutions/free-resources/roi-calculator" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>ROI Calculator</span>
-                    <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.6</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/solutions/free-resources/ai-playbook" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
-                    <span>AI Marketing Playbook</span>
+                  <Link to="/solutions/free-resources/marketing-with-canva" className="text-gray-600 hover:text-blue-600 transition-colors text-sm flex items-center justify-between group">
+                    <span>Marketing with Canva</span>
                     <span className="text-xs text-gray-400 group-hover:text-blue-400">Priority: 0.6</span>
                   </Link>
                 </li>

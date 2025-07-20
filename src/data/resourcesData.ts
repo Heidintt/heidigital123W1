@@ -25,14 +25,6 @@ export const resources = [
     link: "/solutions/free-resources/on-page-seo-checklist"
   },
   {
-    title: "SEO Optimization Checklist",
-    description: "Comprehensive SEO audit checklist covering technical, on-page, and off-page optimization",
-    type: "Checklist",
-    labels: ["SEO", "Technical SEO", "Audit", "Optimization"],
-    image: "https://images.unsplash.com/photo-1572177191856-3cde618dee1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "/solutions/free-resources/seo-optimization-checklist"
-  },
-  {
     title: "Free Social Media Growth Tools",
     description: "Collection of free tools and strategies to grow your social media presence organically",
     type: "Toolkit",

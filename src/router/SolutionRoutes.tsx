@@ -11,7 +11,6 @@ import MarketingBudgetPlanner from "@/pages/solutions/ai-tools/MarketingBudgetPl
 // New Free Resources
 import ROICalculator from "@/pages/solutions/free-resources/ROICalculator";
 import OnPageSEOChecklist from "@/pages/solutions/free-resources/OnPageSEOChecklist";
-import SEOOptimizationChecklist from "@/pages/solutions/free-resources/SEOOptimizationChecklist";
 import SocialMediaGrowthTools from "@/pages/solutions/free-resources/SocialMediaGrowthTools";
 import MarketingWithCanva from "@/pages/solutions/free-resources/MarketingWithCanva";
 
@@ -29,9 +28,26 @@ const SolutionRoutes = () => {
       
       {/* New Free Resources Routes */}
       <Route path="free-resources/on-page-seo-checklist" element={<OnPageSEOChecklist />} />
-      <Route path="free-resources/seo-optimization-checklist" element={<SEOOptimizationChecklist />} />
+      <Route path="free-resources/seo-optimization-checklist" element={
+        <GonePage 
+          title="SEO Optimization Checklist No Longer Available"
+          description="This resource has been discontinued. Please visit our homepage."
+          redirectUrl="/"
+          redirectDelay={5}
+        />
+      } />
       <Route path="free-resources/social-media-growth-tools" element={<SocialMediaGrowthTools />} />
       <Route path="free-resources/marketing-with-canva" element={<MarketingWithCanva />} />
+      
+      {/* Redirect deprecated tools routes to homepage */}
+      <Route path="tools/roi-calculator" element={
+        <GonePage 
+          title="ROI Calculator Tool No Longer Available"
+          description="This tool has been discontinued. Please visit our homepage."
+          redirectUrl="/"
+          redirectDelay={5}
+        />
+      } />
       
       {/* 410 Gone responses for removed AI Tools */}
       <Route path="ai-tools/content-generator" element={
