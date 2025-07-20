@@ -6,7 +6,7 @@ const ContactSchemas = () => {
   useEffect(() => {
     // Use standardized LocalBusiness schema
     const localBusinessSchema = createLocalBusinessSchema({
-      name: "Heidi Digital",
+      name: "Heidigital",
       description: "Leading digital marketing agency in Australia providing comprehensive marketing solutions",
       url: "https://heidigital.info",
       email: "contact@heidigital.info"
@@ -15,12 +15,12 @@ const ContactSchemas = () => {
     const contactPageSchema = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact Heidi Digital - Get Free Marketing Consultation",
+      "name": "Contact Heidigital - Get Free Marketing Consultation",
       "description": "Contact Australia's leading digital marketing agency for expert consultation and custom marketing solutions",
       "url": "https://heidigital.info/contact",
       "mainEntity": {
         "@type": "LocalBusiness",
-        "name": "Heidi Digital",
+        "name": "Heidigital",
         "url": "https://heidigital.info"
       }
     };

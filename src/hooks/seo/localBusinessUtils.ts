@@ -1,6 +1,5 @@
-
 export const createLocalBusinessSchema = ({
-  name = "Heidi Digital",
+  name = "Heidigital",
   description = "Leading digital marketing agency in Australia providing comprehensive marketing solutions",
   url = "https://heidigital.info",
   email = "contact@heidigital.info"
@@ -15,10 +14,12 @@ export const createLocalBusinessSchema = ({
     "@type": "LocalBusiness",
     "@id": url,
     "name": name,
-    "alternateName": "Heidi Digital Marketing Agency",
+    "alternateName": "Heidigital Marketing Agency",
     "description": description,
     "url": url,
     "email": email,
+    "telephone": "+61432488786",
+    "priceRange": "$0-$100",
     "logo": {
       "@type": "ImageObject",
       "url": "https://heidigital.info/logo.png",
@@ -29,16 +30,13 @@ export const createLocalBusinessSchema = ({
     "openingHours": "Mo-Fr 09:00-18:00",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Level 5, 123 Collins Street",
-      "addressLocality": "Melbourne",
-      "addressRegion": "VIC",
-      "postalCode": "3000",
-      "addressCountry": "AU"
+      "addressCountry": "AU",
+      "addressRegion": "Australia"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": -37.8136,
-      "longitude": 144.9631
+      "latitude": -25.2744,
+      "longitude": 133.7751
     },
     "areaServed": {
       "@type": "Country",
@@ -56,7 +54,9 @@ export const createLocalBusinessSchema = ({
         "@type": "ContactPoint",
         "contactType": "Customer Service",
         "email": email,
+        "telephone": "+61432488786",
         "availableLanguage": ["English"],
+        "areaServed": "AU",
         "hoursAvailable": {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -64,6 +64,11 @@ export const createLocalBusinessSchema = ({
           "closes": "18:00"
         }
       }
+    ],
+    "sameAs": [
+      "https://facebook.com/heidigital",
+      "https://linkedin.com/company/heidigital",
+      "https://twitter.com/heidigital"
     ]
   };
 };
