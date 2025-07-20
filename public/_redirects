@@ -22,13 +22,6 @@
 # New services redirects - redirect old service pages to blog
 /services/ai-marketing /blog 301
 
-# REDIRECT 5 TRANG CẦN XÓA VỀ HOMEPAGE
-/faq    /    301!
-/heidigital.info/solutions    /    301!
-/services/content-creation    /    301!
-/solutions/free-resources/heidigital.info/solutions/free-resources/seo-optimization-checklist    /    301!
-/solutions/tools/roi-calculator    /    301!
-
 # Portfolio canonical redirects - fix duplicate content issues
 /portfolio/i-choose-the-sun/    /portfolio/i-choose-the-sun    301
 /portfolio/koto-club/    /portfolio/koto-club    301
