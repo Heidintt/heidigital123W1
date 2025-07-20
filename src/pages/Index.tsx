@@ -60,7 +60,7 @@ const Index = () => {
     <Layout>
       <main role="main" id="main-content">
         {/* Main H1 heading for SEO - hidden visually but accessible to screen readers */}
-        <h1 className="sr-only">Heidi Digital - Australia's Digital Marketing Agency</h1>
+        <h1 className="sr-only">Heidigital - Australia's Digital Marketing Agency</h1>
         
         {/* Hero section với H2 heading (Đảm bảo Hero render bằng H2, KHÔNG phải H1) */}
         <section aria-label="Hero">
