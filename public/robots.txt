@@ -38,6 +38,14 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
+# Disallow removed pages (now 410 Gone)
+Disallow: /solutions/free-resources/on-page-seo-checklist
+Disallow: /solutions/free-resources/seo-optimization-checklist
+Disallow: /solutions/free-resources/social-media-growth-tools
+Disallow: /portfolio/fmcg-dao-strategy
+Disallow: /portfolio/lua-hong-buffet
+Disallow: /solutions/marketing-tools
+
 # Allow all public content
 Allow: /services/
 Allow: /solutions/

@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/solutions/free-resources/on-page-seo-checklist",
+      "destination": "/410.html",
+      "statusCode": 410
+    },
+    {
+      "source": "/solutions/free-resources/seo-optimization-checklist",
+      "destination": "/410.html",
+      "statusCode": 410
+    },
+    {
+      "source": "/solutions/free-resources/social-media-growth-tools",
+      "destination": "/410.html",
+      "statusCode": 410
+    },
+    {
+      "source": "/portfolio/fmcg-dao-strategy",
+      "destination": "/410.html",
+      "statusCode": 410
+    },
+    {
+      "source": "/portfolio/lua-hong-buffet",
+      "destination": "/410.html",
+      "statusCode": 410
+    },
+    {
+      "source": "/solutions/marketing-tools",
+      "destination": "/410.html",
+      "statusCode": 410
+    }
+  ]
+}
