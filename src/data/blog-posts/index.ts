@@ -1,11 +1,12 @@
-
 import { BlogPost } from '@/types/blogPost';
 import { linkedinPersonalBrandingPost } from './linkedin-personal-branding';
 import { canvaInfographicsPost } from './canva-infographics';
 import { aiToolsMarketingPost } from './ai-tools-marketing';
 import { masteringDigitalMarketingSEOPost } from './mastering-digital-marketing-seo';
+import { aiDidntKillCreativityPost } from './ai-didnt-kill-creativity-marketing';
 
 export const blogPosts: BlogPost[] = [
+  aiDidntKillCreativityPost,
   masteringDigitalMarketingSEOPost,
   linkedinPersonalBrandingPost,
   canvaInfographicsPost,
