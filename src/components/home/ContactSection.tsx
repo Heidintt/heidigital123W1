@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm"; // Đúng đường dẫn
 
 const ContactSection = () => {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-8 px-4 bg-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
