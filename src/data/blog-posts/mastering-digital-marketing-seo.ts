@@ -5,8 +5,8 @@ export const masteringDigitalMarketingSEOPost: BlogPost = {
   slug: 'mastering-digital-marketing-seo',
   title: 'Why Your Content Fails: Mastering Digital Marketing & SEO for Success',
   description: 'Unlock the secrets to high-performing content. Discover why your digital marketing efforts underperform and how to fix them with psychology-backed SEO and social media strategies.',
-  featured_image: '/lovable-uploads/d6ca6b3c-6dd1-482e-a786-d9d2031de77d.png',
-  date: '2025-01-21',
+  featured_image: '/images/blog/1-content-marketing-and-social-media.jpg',
+  date: '2025-07-21',
   author: 'Heidigital Team',
   category: 'Digital Marketing',
   tags: ['Content Marketing', 'SEO', 'Digital Marketing', 'Social Media', 'Content Strategy', 'Marketing Psychology'],
@@ -16,7 +16,7 @@ export const masteringDigitalMarketingSEOPost: BlogPost = {
 
 Have you ever poured your heart into a blog post, video, or social media campaign, only to see it generate little to no engagement? You might wonder, "Did my content flop because I lack talent?"
 
-![Hero image](${'/lovable-uploads/d6ca6b3c-6dd1-482e-a786-d9d2031de77d.png'})
+![Hero image](/images/blog/1-content-marketing-and-social-media.jpg)
 
 The answer is no.
 
@@ -30,7 +30,7 @@ A common myth among beginner content creators and marketing agencies is that qua
 
 But that's not how content for marketing works in 2025.
 
-![Social media campaign](${'/lovable-uploads/bf62c994-7772-4ca8-ba51-452247878fa2.png'})
+![Social media campaign](/images/blog/2-social-media-campaign.jpg)
 
 High-performing content doesn't just rely on creativity; it's engineered to succeed using three key elements:
 
@@ -68,7 +68,7 @@ If your content is vague, complex, or artsy with no substance - it flops.
 
 Creativity is good, but clarity is conversion gold. Your social media marketing content should be clear, skimmable, and emotionally resonant. This is also a rule every SEO agency and content creator should adopt for blog content and landing pages alike.
 
-![Digital marketing](${'/lovable-uploads/f9895006-8986-45b6-96fc-8607c3517305.png'})
+![Digital marketing](/images/blog/3-digital-marketing.jpg)
 
 ## Why Content Flops: A Real-World Example
 
@@ -116,7 +116,7 @@ What solution can your service or content provide?
 
 Use these insights to shape every piece of content you create.
 
-![Content creation marketing](${'/lovable-uploads/a23605c1-97d3-454a-98d9-09311a3ba743.png'})
+![Content creation marketing](/images/blog/4-content-creation-marketing.jpg)
 
 ### Craft Irresistible Hooks
 
@@ -156,19 +156,7 @@ The best digital marketing agencies don't just post once and hope. They repurpos
 
 ## The 9 Golden Rules of Viral Content Marketing
 
-| Rule | Why It Works |
-|------|-------------|
-| Hook in 3 seconds | Captures attention before the scroll |
-| Solve real problems | Provides immediate value to audience |
-| Use emotional triggers | Creates connection and drives action |
-| Be relatable | Makes audience feel seen and understood |
-| Create urgency | Motivates immediate action |
-| Add visual appeal | Stops the scroll and increases engagement |
-| Include clear CTAs | Guides audience to next step |
-| Be consistent | Builds trust and brand recognition |
-| Repurpose content | Maximizes reach across platforms |
-
-![Viral content](${'/lovable-uploads/4b0b9e00-d609-4fd0-8374-587196a8cae7.png'})
+![Viral content](/images/blog/5-viral-content.png)
 
 ## Final Thought: Build for Virality, Don't Chase It
 
