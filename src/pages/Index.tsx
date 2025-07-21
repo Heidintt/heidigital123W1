@@ -1,9 +1,9 @@
+
 import React, { Suspense } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import ServicesSection from "@/components/home/ServicesSection";
 // Lazy load các section lớn
-const TechnologySection = React.lazy(() => import("@/components/home/TechnologySection"));
 const PortfolioSection = React.lazy(() => import("@/components/home/PortfolioSection"));
 const BlogSection = React.lazy(() => import("@/components/home/BlogSection"));
 const FinalCTASection = React.lazy(() => import("@/components/home/FinalCTASection"));
@@ -80,16 +80,6 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <h2 className="sr-only">Our Digital Marketing Services</h2>
             <ServicesSection />
-          </div>
-        </section>
-
-        {/* Technology section with H2 heading - hidden visually */}
-        <section aria-label="Technology & Tools" className="py-6 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <h2 className="sr-only">AI-Powered Marketing Technology</h2>
-            <Suspense fallback={<div>Loading technology...</div>}>
-              <TechnologySection />
-            </Suspense>
           </div>
         </section>
 

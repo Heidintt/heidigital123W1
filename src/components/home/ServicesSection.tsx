@@ -2,94 +2,176 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
-  Users, PenTool, Search, Image, BarChart3, Brain
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 const ServicesSection = () => {
+  const services = [
+    {
+      title: "Marketing Strategy",
+      description: "Data-driven marketing strategies that deliver measurable results and optimize your marketing ROI.",
+      features: [
+        "AI-powered market analysis",
+        "Predictive customer behavior modeling",
+        "Automated campaign optimization",
+        "Real-time performance monitoring"
+      ],
+      image: "/lovable-uploads/4712d239-b2f3-444d-92fa-6b80b6eb52a0.png",
+      link: "/services/ai-marketing"
+    },
+    {
+      title: "Content Creation & SEO",
+      description: "Content that ranks high on search engines and engages your target audience with compelling storytelling.",
+      features: [
+        "SEO-optimized blog articles",
+        "Social media content creation",
+        "Email marketing campaigns",
+        "Website copy and landing pages"
+      ],
+      image: "/lovable-uploads/16860d8e-50cd-470b-a2f5-cf778cef6db0.png",
+      link: "/services/content-creation"
+    },
+    {
+      title: "Social Media Management",
+      description: "Comprehensive social media strategy and management to build and grow your online community.",
+      features: [
+        "Content planning and scheduling",
+        "Community management",
+        "Influencer partnerships",
+        "Social media advertising"
+      ],
+      image: "/lovable-uploads/895ec4fd-4907-4454-822d-b5a1f565408c.png",
+      link: "/services/social-media"
+    },
+    {
+      title: "Branding & Design",
+      description: "Create compelling brand identities that resonate with your target audience and stand out in the competitive marketplace.",
+      features: [
+        "Logo and brand identity design",
+        "Brand guidelines development",
+        "Marketing materials design",
+        "Website design and development"
+      ],
+      image: "/lovable-uploads/c6af334c-a6a1-49b8-86fc-472db8ef4f91.png",
+      link: "/services/branding"
+    },
+    {
+      title: "Digital Advertising",
+      description: "Maximize your ROI with advertising campaigns across Google, Facebook, and other major platforms.",
+      features: [
+        "Google Ads management",
+        "Facebook & Instagram advertising",
+        "LinkedIn advertising",
+        "Retargeting campaigns"
+      ],
+      image: "/lovable-uploads/64a3f787-87c4-4873-8e73-be1bffa80a3b.png",
+      link: "/services/digital-ads"
+    },
+    {
+      title: "SEO Optimization",
+      description: "Boost your search engine rankings with our comprehensive SEO strategies and technical optimization techniques.",
+      features: [
+        "Technical SEO audits",
+        "Keyword research and optimization",
+        "Link building strategies",
+        "Local SEO optimization"
+      ],
+      image: "/lovable-uploads/80bc8d79-1215-4949-b652-f1e56d9536f5.png",
+      link: "/services/seo"
+    }
+  ];
+
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-20 px-4 bg-white">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4 inline-block">
-            Our Expertise
+            Our Services
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Next-Generation
+            Comprehensive
             <br />
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Digital Solutions
+              Digital Marketing Solutions
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Comprehensive marketing solutions engineered for Australian businesses ready to dominate the digital landscape
+            Transform your business with our comprehensive digital marketing services designed to drive growth and maximize ROI
           </p>
-          
-          {/* Quick Access Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-teal-500 hover:to-emerald-500 text-white">
-              <Link to="/solutions/free-resources">🎁 Free Resources</Link>
-            </Button>
-            <Button asChild variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white">
-              <Link to="solutions/ai-tools">🚀 Marketing Tools</Link>
-            </Button>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-            <div className="bg-gradient-to-br from-blue-400 to-blue-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Users className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">Social Media Mastery</h3>
-            <p className="text-gray-600">Strategic social media campaigns that build authentic connections and drive measurable engagement across all platforms.</p>
-          </div>
+        <div className="space-y-20">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`flex flex-col lg:flex-row items-center gap-12 ${
+                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}
+            >
+              {/* Image Section */}
+              <div className="flex-1">
+                <div className="relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-80 object-cover rounded-2xl shadow-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                </div>
+              </div>
 
-          <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-            <div className="bg-gradient-to-br from-purple-400 to-pink-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
-              <PenTool className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">Content Excellence</h3>
-            <p className="text-gray-600">Compelling, data-driven content that resonates with Australian audiences and converts visitors into loyal customers.</p>
-          </div>
+              {/* Content Section */}
+              <div className="flex-1">
+                <div className="max-w-xl">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">
+                    {service.title}
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  {/* Features List */}
+                  <ul className="space-y-3 mb-8">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-          <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-            <div className="bg-gradient-to-br from-green-400 to-emerald-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Search className="h-8 w-8 text-white" />
+                  <Button 
+                    asChild 
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white group"
+                  >
+                    <Link to={service.link}>
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">SEO Domination</h3>
-            <p className="text-gray-600">Advanced SEO strategies that put your business at the top of Australian search results and drive organic growth.</p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-            <div className="bg-gradient-to-br from-pink-400 to-rose-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Image className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">Brand Evolution</h3>
-            <p className="text-gray-600">Strategic brand development that positions your business as a leader in the Australian market.</p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-            <div className="bg-gradient-to-br from-cyan-400 to-blue-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
-              <BarChart3 className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">Precision Advertising</h3>
-            <p className="text-gray-600">Data-driven advertising campaigns that maximize ROI and reach your ideal Australian customers.</p>
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
-            <div className="bg-gradient-to-br from-orange-400 to-red-600 p-4 rounded-2xl w-fit mb-6 group-hover:scale-110 transition-transform duration-300">
-              <Brain className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">AI Innovation</h3>
-            <p className="text-gray-600">Cutting-edge AI solutions that automate, optimize, and revolutionize your marketing approach.</p>
-          </div>
+          ))}
         </div>
 
-        <div className="text-center">
-          <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white">
-            <Link to="/services">Explore All Services →</Link>
-          </Button>
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-12">
+            <h3 className="text-3xl font-bold mb-4 text-gray-900">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              Get a free consultation and discover how our digital marketing services can help you achieve your business goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white">
+                <Link to="/contact">Get Free Consultation</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+                <Link to="/portfolio">View Our Work</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
