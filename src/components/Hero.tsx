@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface HeroProps {
   title: string;
@@ -31,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div className="relative px-4 py-16 md:py-24 flex items-center min-h-[60vh]">
-      {/* Dùng <img> làm background LCP */}
+      {/* Background image */}
       <img
         src={bg}
         alt=""
@@ -41,58 +42,59 @@ const Hero: React.FC<HeroProps> = ({
         decoding="async"
       />
 
-      {/* Enhanced overlay for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
-      <div className="absolute inset-0 backdrop-blur-[0.5px]" />
+      {/* Modern gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-800/60 via-purple-700/40 to-pink-500/30 backdrop-blur-sm" />
 
+      {/* Glassmorphism card with animation */}
       <div className="container mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-heidigital-blue/20 via-heidigital-purple/20 to-heidigital-blue/20 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="bg-white/20 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/30 shadow-2xl">
             <HeadingTag
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in text-white leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight"
               style={{
-                textShadow:
-                  "2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6), 1px 1px 3px rgba(0,0,0,0.9)",
+                background: "linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                textShadow: "0 2px 16px rgba(80,80,200,0.15)",
               }}
             >
               {title}
             </HeadingTag>
             <p
-              className="text-base md:text-lg mb-6 opacity-90 animate-fade-in text-white leading-relaxed"
-              style={{
-                animationDelay: "0.2s",
-                textShadow:
-                  "1px 1px 4px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.5)",
-              }}
+              className="text-base md:text-xl mb-8 text-white/90 font-medium drop-shadow"
             >
               {subtitle}
             </p>
-            <div
-              className="flex flex-col sm:flex-row gap-3 animate-fade-in"
-              style={{ animationDelay: "0.4s" }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               {ctaText && (
                 <Button
                   asChild
-                  className="bg-heidigital-blue hover:bg-heidigital-blue/90 text-white py-4 px-6 rounded-xl shadow-lg text-sm"
+                  size="lg"
+                  className="rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition"
                 >
                   <a href={ctaLink || "#"}>
-                    {ctaText} <ArrowRight className="ml-2 h-4 w-4" />
+                    {ctaText} <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
               )}
               {secondaryCtaText && (
                 <Button
                   asChild
+                  size="lg"
                   variant="outline"
-                  className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 py-4 px-6 rounded-xl shadow-lg text-sm"
+                  className="rounded-full border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 font-semibold shadow-lg transition"
                 >
                   <a href={secondaryCtaLink || "#"}>{secondaryCtaText}</a>
                 </Button>
               )}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
