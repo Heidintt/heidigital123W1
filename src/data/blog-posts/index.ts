@@ -1,9 +1,12 @@
+
 import { BlogPost } from '@/types/blogPost';
 import { linkedinPersonalBrandingPost } from './linkedin-personal-branding';
 import { canvaInfographicsPost } from './canva-infographics';
 import { aiToolsMarketingPost } from './ai-tools-marketing';
+import { masteringDigitalMarketingSEOPost } from './mastering-digital-marketing-seo';
 
 export const blogPosts: BlogPost[] = [
+  masteringDigitalMarketingSEOPost,
   linkedinPersonalBrandingPost,
   canvaInfographicsPost,
   aiToolsMarketingPost
@@ -45,4 +48,4 @@ export const searchBlogPostsByTags = (searchTags: string[]): BlogPost[] => {
 };
 
 // Export individual posts for direct access
-export { linkedinPersonalBrandingPost, canvaInfographicsPost, aiToolsMarketingPost };
+export { linkedinPersonalBrandingPost, canvaInfographicsPost, aiToolsMarketingPost, masteringDigitalMarketingSEOPost };
