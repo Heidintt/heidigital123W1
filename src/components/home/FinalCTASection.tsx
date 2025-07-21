@@ -8,10 +8,10 @@ const FinalCTASection = () => {
     <section className="py-20 px-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Ready to Transform Your Digital Presence?
+          Let’s grow together
         </h2>
         <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-          Join forward-thinking Australian businesses that are revolutionizing their marketing with our cutting-edge solutions. Let's build your digital future together.
+          At Heidigital, we don’t do cookie-cutter. We craft strategies built around your brand, your goals, and your market - because your growth matters.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700">
