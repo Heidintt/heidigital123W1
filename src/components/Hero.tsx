@@ -42,10 +42,10 @@ const Hero: React.FC<HeroProps> = ({
         decoding="async"
       />
 
-      {/* Modern gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-800/60 via-purple-700/40 to-pink-500/30 backdrop-blur-sm" />
+      {/* Stronger overlay for better text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/70 to-pink-900/60 backdrop-blur-sm" />
 
-      {/* Glassmorphism card with animation */}
+      {/* Glassmorphism card with higher opacity */}
       <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -53,20 +53,23 @@ const Hero: React.FC<HeroProps> = ({
           transition={{ duration: 0.7 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-white/20 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/30 shadow-2xl">
+          <div className="bg-white/70 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/40 shadow-2xl">
             <HeadingTag
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight"
               style={{
-                background: "linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6)",
+                background: "linear-gradient(90deg, #2563eb, #a21caf, #db2777)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                textShadow: "0 2px 16px rgba(80,80,200,0.15)",
+                textShadow: "0 4px 24px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.8)",
               }}
             >
               {title}
             </HeadingTag>
             <p
-              className="text-base md:text-xl mb-8 text-white/90 font-medium drop-shadow"
+              className="text-base md:text-xl mb-8 text-white font-medium"
+              style={{
+                textShadow: "0 2px 8px rgba(0,0,0,0.8), 0 1px 2px rgba(0,0,0,0.8)",
+              }}
             >
               {subtitle}
             </p>
