@@ -1,54 +1,38 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Target } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
       title: "AI Marketing Strategy",
-      description: "Data-driven strategies powered by artificial intelligence for maximum ROI and performance optimization"
+      description: "Data-driven strategies powered by AI for maximum ROI and growth"
     },
     {
       title: "Social Media Management", 
-      description: "Complete social media presence management across all major platforms with content creation"
+      description: "Complete social presence management across all major platforms"
     },
     {
-      title: "Content Creation & Copywriting",
-      description: "Compelling content that engages your audience, tells your story and drives conversions"
+      title: "Content Creation",
+      description: "Compelling content that engages audiences and drives conversions"
     },
     {
-      title: "SEO & Search Optimization",
-      description: "Boost your search rankings with proven SEO techniques and technical optimization"
+      title: "SEO Optimization",
+      description: "Boost search rankings with proven SEO techniques and strategies"
     },
     {
-      title: "Digital Advertising (PPC)",
-      description: "Targeted ad campaigns on Google, Facebook, Instagram and other key advertising platforms"
+      title: "Digital Advertising",
+      description: "Targeted ad campaigns on Google, Facebook, and key platforms"
     },
     {
-      title: "Brand Development & Design",
-      description: "Complete brand identity creation including logo design, brand guidelines and visual assets"
-    },
-    {
-      title: "Website Development",
-      description: "Professional website design and development optimized for conversions and user experience"
-    },
-    {
-      title: "Analytics & Performance Tracking",
-      description: "Comprehensive data analysis and performance reporting for all your marketing campaigns"
-    },
-    {
-      title: "Marketing Automation",
-      description: "Streamline your marketing processes with automated workflows and lead nurturing systems"
-    },
-    {
-      title: "Influencer Marketing",
-      description: "Strategic partnerships with relevant influencers to amplify your brand message and reach"
+      title: "Analytics & Reporting",
+      description: "Comprehensive data analysis and performance tracking"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -56,45 +40,35 @@ const ServicesSection = () => {
             Our Expertise
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Complete
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent ml-3">
+            Comprehensive
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Digital Marketing Solutions
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your business with our comprehensive digital marketing services designed to drive growth and maximize your online presence
+            Transform your business with our full-stack digital marketing services designed to drive growth and maximize your online presence
           </p>
         </div>
 
         {/* Main Content - Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Left Side - Services List */}
           <div className="space-y-8">
-            <div className="mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Everything You Need to Succeed Online
-              </h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                From strategy to execution, we provide end-to-end digital marketing solutions that deliver measurable results for Australian businesses.
-              </p>
-            </div>
-
             {/* Services List */}
-            <div className="space-y-4">
+            <div className="space-y-6">
               {services.map((service, index) => (
                 <div 
                   key={index}
-                  className="bg-white/70 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/90 hover:shadow-lg transition-all duration-300 group"
+                  className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group border border-gray-100"
                 >
                   <div className="flex items-start space-x-4">
-                    {/* Number Badge */}
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      {String(index + 1).padStart(2, '0')}
+                    <div className="flex-shrink-0">
+                      <CheckCircle className="h-6 w-6 text-blue-600 mt-1" />
                     </div>
-                    
                     <div className="flex-1">
-                      <h4 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors text-lg">
+                      <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {service.title}
                       </h4>
                       <p className="text-gray-600 leading-relaxed">
@@ -118,9 +92,9 @@ const ServicesSection = () => {
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-600">
-                    <Link to="/portfolio">
-                      View Our Work
+                  <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 font-semibold">
+                    <Link to="/services">
+                      View All Services
                     </Link>
                   </Button>
                 </div>
@@ -128,71 +102,41 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Hero Image */}
-          <div className="relative lg:sticky lg:top-8">
-            <div className="relative z-10">
+          {/* Right Side - Illustration */}
+          <div className="relative">
+            <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Digital Marketing Team Collaboration"
-                className="w-full h-[600px] lg:h-[700px] object-cover rounded-3xl shadow-2xl"
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Digital Marketing Strategy Illustration"
+                className="w-full h-auto rounded-2xl object-cover"
               />
               
-              {/* Floating Achievement Cards */}
-              <div className="absolute -top-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 animate-pulse">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-green-100 p-3 rounded-xl">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900 text-xl">300%</div>
-                    <div className="text-sm text-gray-500">Average ROI Increase</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 animate-pulse animation-delay-1000">
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-xl">
-                    <Target className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-900 text-xl">75M+</div>
-                    <div className="text-sm text-gray-500">Total Impressions</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute top-1/2 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 animate-bounce">
+              {/* Floating Elements */}
+              <div className="absolute -top-4 -right-4 bg-blue-600 text-white p-4 rounded-2xl shadow-lg">
                 <div className="text-center">
-                  <div className="font-bold text-gray-900 text-lg">150+</div>
-                  <div className="text-xs text-gray-500">Happy Clients</div>
+                  <div className="text-2xl font-bold">300%</div>
+                  <div className="text-sm opacity-90">Growth Average</div>
+                </div>
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 bg-purple-600 text-white p-4 rounded-2xl shadow-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold">50+</div>
+                  <div className="text-sm opacity-90">Happy Clients</div>
+                </div>
+              </div>
+              
+              <div className="absolute top-1/2 -left-6 bg-green-500 text-white p-3 rounded-xl shadow-lg transform -translate-y-1/2">
+                <div className="text-center">
+                  <div className="text-lg font-bold">AI</div>
+                  <div className="text-xs opacity-90">Powered</div>
                 </div>
               </div>
             </div>
 
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl transform rotate-3 scale-105 -z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-l from-pink-400/10 to-yellow-400/10 rounded-3xl transform -rotate-3 scale-110 -z-20"></div>
-          </div>
-        </div>
-
-        {/* Bottom Quick Access */}
-        <div className="mt-20 text-center">
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/30">
-            <h4 className="text-2xl font-bold text-gray-900 mb-4">
-              Explore More Resources
-            </h4>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-teal-500 hover:to-emerald-500 text-white font-semibold">
-                <Link to="/solutions/free-resources">🎁 Free Marketing Resources</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white font-semibold">
-                <Link to="/solutions/ai-tools">🚀 AI Marketing Tools</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white font-semibold">
-                <Link to="/portfolio">📊 View Case Studies</Link>
-              </Button>
-            </div>
+            {/* Background Decoration */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl transform rotate-6 -z-10 opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-200 to-pink-200 rounded-3xl transform -rotate-3 -z-10 opacity-20"></div>
           </div>
         </div>
       </div>
