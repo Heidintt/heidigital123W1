@@ -6,19 +6,19 @@ import { Button } from "@/components/ui/button";
 
 const services = [
   {
-    title: "AI Marketing",
+    title: "Marketing Strategy",
     icon: <Rocket className="h-7 w-7 text-blue-600" />,
-    desc: "Automated growth strategies powered by AI for optimal ROI."
+    desc: "Develop data-driven strategies to boost ROI and performance."
   },
   {
-    title: "Social Media",
+    title: "Social Media management",
     icon: <Globe className="h-7 w-7 text-purple-600" />,
-    desc: "Comprehensive social media management and development."
+    desc: "Build and grow your online presence with expert social strategy."
   },
   {
-    title: "Content Creation",
+    title: "Content Creation & SEO",
     icon: <PenTool className="h-7 w-7 text-pink-500" />,
-    desc: "Creative content that attracts and engages your audience."
+    desc: "Craft high-ranking, engaging content with powerful storytelling."
   },
   {
     title: "SEO & Ads",
@@ -31,9 +31,9 @@ const services = [
     desc: "Data analysis and performance reporting for your campaigns."
   },
   {
-    title: "1:1 Consulting",
+    title: "Branding & Design",
     icon: <CheckCircle className="h-7 w-7 text-cyan-500" />,
-    desc: "Personalized guidance from AI marketing experts."
+    desc: "Design standout brand identities that connect with your audience."
   }
 ];
 
@@ -76,7 +76,7 @@ const ServicesSection = () => (
       </div>
       <div className="flex justify-center">
         <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:from-blue-700 hover:to-purple-700 transition">
-          <Link to="/contact">Get Free Consultation</Link>
+          <Link to="/services">Explore Our Services</Link>
         </Button>
       </div>
     </div>
