@@ -42,13 +42,12 @@ const Hero: React.FC<HeroProps> = ({
       />
 
       {/* Enhanced overlay for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 via-blue-800/30 to-blue-900/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-pink-800/40 via-purple-700/30 to-pink-800/40" />
       <div className="absolute inset-0 backdrop-blur-[0.5px]" />
-
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-heidigital-blue/20 via-heidigital-purple/20 to-heidigital-blue/20 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
+          <div className="bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-pink-600/20 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl">
             <HeadingTag
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in text-white leading-tight"
               style={{
