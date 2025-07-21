@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -136,6 +135,14 @@ const Portfolio = () => {
       link: "/portfolio/microlino-strategy"
     },
     {
+      id: "i-choose-the-sun",
+      title: "Sun Life Vietnam - 'I Choose The Sun' Campaign",
+      description: "A viral influencer-led social media campaign promoting positivity during COVID-19 pandemic, generating 75.6M views and 8,000+ user videos.",
+      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Social Media", "Viral Campaign", "Influencer Marketing"],
+      link: "/portfolio/i-choose-the-sun"
+    },
+    {
       id: "nha-ca-cafe",
       title: "Nhà Cá Cafe Marketing Strategy",
       description: "Comprehensive marketing plan for a unique cat-themed café in Thai Nguyen, combining coffee culture with creative workshops and feline charm.",
@@ -173,7 +180,9 @@ const Portfolio = () => {
     "Academic Research",
     "Consumer Engagement",
     "Integrated Communications",
-    "Nightlife"
+    "Nightlife",
+    "Viral Campaign",
+    "Influencer Marketing"
   ];
 
   const filteredItems = activeCategory === "All" 
