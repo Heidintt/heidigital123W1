@@ -42,8 +42,9 @@ const Hero: React.FC<HeroProps> = ({
       />
 
       {/* Enhanced overlay for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 via-blue-800/30 to-blue-900/40" />
       <div className="absolute inset-0 backdrop-blur-[0.5px]" />
+
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
