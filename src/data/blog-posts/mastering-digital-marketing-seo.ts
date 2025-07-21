@@ -16,8 +16,6 @@ export const masteringDigitalMarketingSEOPost: BlogPost = {
 
 Have you ever poured your heart into a blog post, video, or social media campaign, only to see it generate little to no engagement? You might wonder, "Did my content flop because I lack talent?"
 
-![Hero image](/images/blog/1-content-marketing-and-social-media.jpg)
-
 The answer is no.
 
 Your content didn't flop because you "suck", it underperformed because you unknowingly broke the unspoken rules of modern content marketing. The good news? These rules can be learned, applied, and optimized to transform mediocre results into high-performing campaigns.
