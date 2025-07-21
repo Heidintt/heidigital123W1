@@ -1,91 +1,52 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { 
+  Users, PenTool, Search, Image, BarChart3, Brain, 
+  ArrowRight, CheckCircle, Megaphone, Target
+} from "lucide-react";
 
 const ServicesSection = () => {
   const services = [
     {
-      title: "Marketing Strategy",
-      description: "Data-driven marketing strategies that deliver measurable results and optimize your marketing ROI.",
-      features: [
-        "AI-powered market analysis",
-        "Predictive customer behavior modeling",
-        "Automated campaign optimization",
-        "Real-time performance monitoring"
-      ],
-      image: "/lovable-uploads/4712d239-b2f3-444d-92fa-6b80b6eb52a0.png",
-      link: "/services/ai-marketing"
+      icon: <Brain className="h-6 w-6" />,
+      title: "AI Marketing Strategy",
+      description: "Data-driven strategies powered by artificial intelligence for maximum ROI"
     },
     {
-      title: "Content Creation & SEO",
-      description: "Content that ranks high on search engines and engages your target audience with compelling storytelling.",
-      features: [
-        "SEO-optimized blog articles",
-        "Social media content creation",
-        "Email marketing campaigns",
-        "Website copy and landing pages"
-      ],
-      image: "/lovable-uploads/16860d8e-50cd-470b-a2f5-cf778cef6db0.png",
-      link: "/services/content-creation"
+      icon: <Users className="h-6 w-6" />,
+      title: "Social Media Management", 
+      description: "Complete social media presence management across all major platforms"
     },
     {
-      title: "Social Media Management",
-      description: "Comprehensive social media strategy and management to build and grow your online community.",
-      features: [
-        "Content planning and scheduling",
-        "Community management",
-        "Influencer partnerships",
-        "Social media advertising"
-      ],
-      image: "/lovable-uploads/895ec4fd-4907-4454-822d-b5a1f565408c.png",
-      link: "/services/social-media"
+      icon: <PenTool className="h-6 w-6" />,
+      title: "Content Creation",
+      description: "Compelling content that engages your audience and drives conversions"
     },
     {
-      title: "Branding & Design",
-      description: "Create compelling brand identities that resonate with your target audience and stand out in the competitive marketplace.",
-      features: [
-        "Logo and brand identity design",
-        "Brand guidelines development",
-        "Marketing materials design",
-        "Website design and development"
-      ],
-      image: "/lovable-uploads/c6af334c-a6a1-49b8-86fc-472db8ef4f91.png",
-      link: "/services/branding"
-    },
-    {
-      title: "Digital Advertising",
-      description: "Maximize your ROI with advertising campaigns across Google, Facebook, and other major platforms.",
-      features: [
-        "Google Ads management",
-        "Facebook & Instagram advertising",
-        "LinkedIn advertising",
-        "Retargeting campaigns"
-      ],
-      image: "/lovable-uploads/64a3f787-87c4-4873-8e73-be1bffa80a3b.png",
-      link: "/services/digital-ads"
-    },
-    {
+      icon: <Search className="h-6 w-6" />,
       title: "SEO Optimization",
-      description: "Boost your search engine rankings with our comprehensive SEO strategies and technical optimization techniques.",
-      features: [
-        "Technical SEO audits",
-        "Keyword research and optimization",
-        "Link building strategies",
-        "Local SEO optimization"
-      ],
-      image: "/lovable-uploads/80bc8d79-1215-4949-b652-f1e56d9536f5.png",
-      link: "/services/seo"
+      description: "Boost your search rankings with proven SEO techniques and strategies"
+    },
+    {
+      icon: <Megaphone className="h-6 w-6" />,
+      title: "Digital Advertising",
+      description: "Targeted ad campaigns on Google, Facebook, and other key platforms"
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6" />,
+      title: "Analytics & Reporting",
+      description: "Comprehensive data analysis and performance tracking for your campaigns"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto">
+        {/* Header */}
         <div className="text-center mb-16">
           <span className="bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-4 inline-block">
-            Our Services
+            Our Expertise
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Comprehensive
@@ -94,83 +55,120 @@ const ServicesSection = () => {
               Digital Marketing Solutions
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Transform your business with our comprehensive digital marketing services designed to drive growth and maximize ROI
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Transform your business with our full-stack digital marketing services designed to drive growth and maximize your online presence
           </p>
         </div>
 
-        <div className="space-y-20">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`flex flex-col lg:flex-row items-center gap-12 ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
-            >
-              {/* Image Section */}
-              <div className="flex-1">
-                <div className="relative">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-80 object-cover rounded-2xl shadow-xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+        {/* Main Content - Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Side - Services List */}
+          <div className="space-y-6">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Everything You Need to Succeed Online
+              </h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                From strategy to execution, we provide end-to-end digital marketing solutions that deliver measurable results for Australian businesses.
+              </p>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {services.map((service, index) => (
+                <div 
+                  key={index}
+                  className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group border border-gray-100"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      {service.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        {service.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
 
-              {/* Content Section */}
-              <div className="flex-1">
-                <div className="max-w-xl">
-                  <h3 className="text-3xl font-bold mb-4 text-gray-900">
-                    {service.title}
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
-                  {/* Features List */}
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 mr-3 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button 
-                    asChild 
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white group"
-                  >
-                    <Link to={service.link}>
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            {/* CTA Section */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-3xl text-white mt-8">
+              <div className="flex flex-col sm:flex-row items-center justify-between">
+                <div className="mb-4 sm:mb-0">
+                  <h4 className="text-xl font-bold mb-2">Ready to Get Started?</h4>
+                  <p className="text-blue-100">Get a free consultation and see how we can help grow your business</p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button asChild size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
+                    <Link to="/contact">
+                      Get Free Consultation
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Right Side - Hero Image */}
+          <div className="relative">
+            <div className="relative z-10">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Digital Marketing Team Working"
+                className="w-full h-96 lg:h-[600px] object-cover rounded-3xl shadow-2xl"
+              />
+              
+              {/* Floating Cards */}
+              <div className="absolute -top-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
+                <div className="flex items-center space-x-3">
+                  <div className="bg-green-100 p-2 rounded-lg">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">300%</div>
+                    <div className="text-sm text-gray-500">ROI Increase</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100">
+                <div className="flex items-center space-x-3">
+                  <div className="bg-blue-100 p-2 rounded-lg">
+                    <Target className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900">75M+</div>
+                    <div className="text-sm text-gray-500">Impressions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl transform rotate-6 scale-105 -z-10"></div>
+          </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-12">
-            <h3 className="text-3xl font-bold mb-4 text-gray-900">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Get a free consultation and discover how our digital marketing services can help you achieve your business goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white">
-                <Link to="/contact">Get Free Consultation</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                <Link to="/portfolio">View Our Work</Link>
-              </Button>
-            </div>
+        {/* Bottom Quick Access */}
+        <div className="mt-16 text-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-teal-500 hover:to-emerald-500 text-white">
+              <Link to="/solutions/free-resources">🎁 Free Marketing Resources</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-2 border-purple-500 text-purple-600 hover:bg-purple-500 hover:text-white">
+              <Link to="/solutions/ai-tools">🚀 AI Marketing Tools</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white">
+              <Link to="/portfolio">📊 View Case Studies</Link>
+            </Button>
           </div>
         </div>
       </div>
