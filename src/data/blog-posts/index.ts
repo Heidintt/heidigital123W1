@@ -1,11 +1,14 @@
+
 import { BlogPost } from '@/types/blogPost';
 import { linkedinPersonalBrandingPost } from './linkedin-personal-branding';
 import { canvaInfographicsPost } from './canva-infographics';
 import { aiToolsMarketingPost } from './ai-tools-marketing';
 import { masteringDigitalMarketingSEOPost } from './mastering-digital-marketing-seo';
 import { aiDidntKillCreativityPost } from './ai-didnt-kill-creativity-marketing';
+import { goodInsightDigitalMarketingStrategyPost } from './good-insight-digital-marketing-strategy';
 
 export const blogPosts: BlogPost[] = [
+  goodInsightDigitalMarketingStrategyPost,
   aiDidntKillCreativityPost,
   masteringDigitalMarketingSEOPost,
   linkedinPersonalBrandingPost,
@@ -49,4 +52,4 @@ export const searchBlogPostsByTags = (searchTags: string[]): BlogPost[] => {
 };
 
 // Export individual posts for direct access
-export { linkedinPersonalBrandingPost, canvaInfographicsPost, aiToolsMarketingPost, masteringDigitalMarketingSEOPost };
+export { linkedinPersonalBrandingPost, canvaInfographicsPost, aiToolsMarketingPost, masteringDigitalMarketingSEOPost, aiDidntKillCreativityPost, goodInsightDigitalMarketingStrategyPost };
