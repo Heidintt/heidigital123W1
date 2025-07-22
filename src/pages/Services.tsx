@@ -19,7 +19,7 @@ const Services = () => {
   useSEO({
     title: "Digital Marketing Services | SEO, Social Media",
     description: "Expert digital marketing services in Australia: SEO, social media management, content creation, PPC advertising & brand development. Get measurable results with free consultation!",
-    keywords: "digital marketing services australia, SEO services, social media management, AI marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
+    keywords: "digital marketing services australia, SEO services, social media management, marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
     url: "https://heidigital.info/services",
     type: "website",
     canonicalUrl: "https://heidigital.info/services",
@@ -36,14 +36,14 @@ const Services = () => {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Comprehensive Digital Marketing Services",
+      "name": "Freelance Marketing Support, Built for Results",
       "provider": {
         "@type": "Organization",
         "name": "Heidi Digital",
         "url": "https://heidigital.info"
       },
       "serviceType": "Digital Marketing",
-      "description": "Complete digital marketing solutions including AI strategy, SEO, social media management, content creation, and brand development for Australian businesses",
+      "description": "Complete digital marketing solutions including strategy, SEO, social media management, content creation, and brand development for Australian businesses",
       "areaServed": {
         "@type": "Country",
         "name": "Australia"
