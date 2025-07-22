@@ -52,7 +52,7 @@ const ServicesSection = () => (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
-          Heidigital Marketing Services <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Optimized for Growth</span>
+          Heidigital Marketing Services - <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Optimized for Growth</span>
         </h2>
         <p className="text-gray-500 text-lg">From strategy to execution, we craft tailored campaigns that drive real results.</p>
       </div>
