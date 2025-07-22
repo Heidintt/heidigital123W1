@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import { Send, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
+import Layout from "@/components/Layout";
+import { useSEO } from "@/hooks/useSEO";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -229,4 +231,83 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+const Contact = () => {
+  useSEO({
+    title: "Contact Us - Heidi Digital | Get Your Free Marketing Consultation",
+    description: "Ready to transform your business with AI-powered marketing? Contact Heidi Digital today for your free consultation. Let's discuss how we can help grow your business with proven digital marketing strategies.",
+    keywords: "contact heidi digital, free marketing consultation, digital marketing agency contact, marketing services inquiry, get in touch heidi digital",
+    url: "https://heidigital.info/contact",
+    canonicalUrl: "https://heidigital.info/contact",
+    type: "website",
+    image: "https://heidigital.info/og-contact.jpg",
+    schemaType: "ContactPage",
+    breadcrumbs: [
+      { name: "Home", url: "https://heidigital.info/" },
+      { name: "Contact", url: "https://heidigital.info/contact" }
+    ]
+  });
+
+  React.useEffect(() => {
+    const contactSchema = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Heidi Digital",
+      "description": "Get in touch with Heidi Digital for your free marketing consultation",
+      "url": "https://heidigital.info/contact",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Heidi Digital",
+        "url": "https://heidigital.info",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        }
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'contact-schema';
+    script.textContent = JSON.stringify(contactSchema);
+    
+    const existing = document.getElementById('contact-schema');
+    if (existing) {
+      existing.remove();
+    }
+    
+    document.head.appendChild(script);
+
+    return () => {
+      const script = document.getElementById('contact-schema');
+      if (script) {
+        script.remove();
+      }
+    };
+  }, []);
+
+  return (
+    <Layout>
+      <main role="main" className="py-16">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Get in Touch
+              </h1>
+              <p className="text-xl text-gray-600 mb-8">
+                Ready to transform your business with AI-powered marketing? Contact Heidi Digital today for your free consultation.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </main>
+    </Layout>
+  );
+};
+
+export default Contact;
