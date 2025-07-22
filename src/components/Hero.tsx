@@ -6,7 +6,7 @@ const DEFAULT_BG =
   "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80";
 
 const Hero = ({
-  title = "Transform Your Digital Future",
+  title = "Freelance Marketing Support, Built for Results",
   subtitle = "Cutting-edge digital marketing strategies designed to accelerate your business into tomorrow's competitive landscape.",
   ctaText = "Start Your Journey",
   ctaLink = "#",
