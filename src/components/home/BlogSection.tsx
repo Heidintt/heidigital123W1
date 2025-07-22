@@ -9,7 +9,7 @@ const BlogSection = () => {
     {
       title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
       excerpt: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
-      image: "https://ba9e6e30-76db-4489-adf7-b9400d58a196.lovableproject.com/images/blog/canva-infographics-hero.jpg",
+      image: '/images/blog/1-content-marketing-and-social-media.jpg',
       date: "Dec 27, 2024",
       category: "AI Marketing",
       link: "/blog/create-infographics-with-canva-free"
