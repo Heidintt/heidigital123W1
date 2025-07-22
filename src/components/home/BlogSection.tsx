@@ -9,7 +9,7 @@ const BlogSection = () => {
     {
       title: "The Secret to Creating Simple Yet Effective Infographics with Canva (Free)",
       excerpt: "Learn how to create infographics with Canva for free. This guide covers practical tips, design principles, and real examples to boost content marketing.",
-      image: '/images/blog/1-content-marketing-and-social-media.jpg',
+      image: '/images/blog/canva-infographics-hero.jpg',
       date: "Dec 27, 2024",
       category: "AI Marketing",
       link: "/blog/create-infographics-with-canva-free"
@@ -17,7 +17,7 @@ const BlogSection = () => {
     {
       title: "LinkedIn Personal Branding Strategies",
       excerpt: "Build a powerful personal brand on LinkedIn that attracts opportunities and establishes you as an industry thought leader.",
-      image: "https://images.unsplash.com/photo-1685586784805-8d96eaeaa5ff?q=80&w=1201&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: '/images/blog/linkedin-branding-hero.jpg',
       date: "Dec 20, 2024",
       category: "Social Media",
       link: "/blog/linkedin-personal-branding-mistakes-marketing-services"
@@ -25,7 +25,7 @@ const BlogSection = () => {
     {
       title: "10 Free AI Tools to Revolutionize Your 2025 Marketing Campaigns",
       excerpt: "Discover 10 powerful free AI tools for marketing in 2025 to automate, create, and analyze your campaigns smarter. No credit card required!",
-      image: "https://images.ctfassets.net/lzny33ho1g45/6VcDGWbQfWElVwAiMWLk9c/54a88cca295511333240c2919fc3f084/best-ai-productivity.jpg?w=1520&fm=jpg&q=31&fit=thumb&h=760",
+      image: '/images/blog/ai-tools-marketing-hero.jpg',
       date: "Jan 1, 2025",
       category: "AI Tools",
       link: "/blog/free-ai-tools-marketing-2025"
