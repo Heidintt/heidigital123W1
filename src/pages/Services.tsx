@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -252,8 +253,8 @@ const Services = () => {
     <Layout>
       <main role="main">
         <Hero
-          title="Comprehensive Digital Marketing Services"
-          subtitle="AI-powered marketing solutions that drive real results and accelerate your business growth in the digital landscape"
+          title="Freelance Marketing Services, Built for Results"
+          subtitle="Heidigital - Make your brand visible, searchable, and irresistible - with content and strategy that convert."
           ctaText="Get Started Today"
           ctaLink="/contact"
           secondaryCtaText="View Our Work"
