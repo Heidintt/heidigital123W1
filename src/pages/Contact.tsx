@@ -296,7 +296,7 @@ const Contact = () => {
                 Get in Touch
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Ready to transform your business with AI-powered marketing? Contact Heidi Digital today for your free consultation.
+                Ready to transform your business with? Contact Heidigital today for your free Marketing consultation.
               </p>
             </div>
             
