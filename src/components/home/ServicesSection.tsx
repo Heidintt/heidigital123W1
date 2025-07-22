@@ -52,9 +52,9 @@ const ServicesSection = () => (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-2">
-          Featured Services <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Heisocial AI</span>
+          Heidigital Marketing Services <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Optimized for Growth</span>
         </h2>
-        <p className="text-gray-500 text-lg">Modern, optimized marketing solutions for your digital business</p>
+        <p className="text-gray-500 text-lg">From strategy to execution, we craft tailored campaigns that drive real results.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
         {services.map((s, i) => (
