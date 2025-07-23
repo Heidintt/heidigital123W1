@@ -7,7 +7,7 @@ import NhaCaCafe from "@/pages/portfolio/NhaCaCafe";
 import KotoClub from "@/pages/portfolio/KotoClub";
 import LuaHongBuffet from "@/pages/portfolio/LuaHongBuffet";
 
-const PortfolioRoutes = () => {
+export const PortfolioRoutes = () => {
   return (
     <Routes>
       <Route path="fmcg-dao-strategy" element={<FMCGDAOStrategy />} />
@@ -19,5 +19,3 @@ const PortfolioRoutes = () => {
     </Routes>
   );
 };
-
-export default PortfolioRoutes;

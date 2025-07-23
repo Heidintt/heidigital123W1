@@ -1,24 +1,13 @@
-
 import { Toaster } from "@/components/ui/sonner";
 import { Toaster as ShadcnToaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AppRouter from "@/router/AppRouter";
-import { memo } from "react";
+// Nếu muốn lazy load các section lớn, có thể import React, Suspense ở đây
 
-// Optimize QueryClient with better defaults
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes
-      retry: 1,
-      refetchOnWindowFocus: false,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
-const App = memo(() => {
+function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -28,8 +17,6 @@ const App = memo(() => {
       </TooltipProvider>
     </QueryClientProvider>
   );
-});
-
-App.displayName = "App";
+}
 
 export default App;

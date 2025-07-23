@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import GonePage from "@/components/GonePage";
 
-const ServiceRoutes = () => {
+export const ServiceRoutes = () => {
   return (
     <Routes>
       <Route 
@@ -74,5 +74,3 @@ const ServiceRoutes = () => {
     </Routes>
   );
 };
-
-export default ServiceRoutes;
