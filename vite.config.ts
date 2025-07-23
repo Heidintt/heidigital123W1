@@ -56,6 +56,7 @@ export default defineConfig(({ mode }) => ({
           ui: ['@radix-ui/react-tabs', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
           query: ['@tanstack/react-query'],
           utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
+          supabase: ['@supabase/supabase-js'],
         },
       },
     },
@@ -68,12 +69,17 @@ export default defineConfig(({ mode }) => ({
       'react-router-dom', 
       '@tanstack/react-query',
       'framer-motion',
-      'lucide-react'
+      'lucide-react',
+      '@supabase/supabase-js'
     ],
-    exclude: ['@supabase/supabase-js'],
+    exclude: [],
+    force: true,
   },
   esbuild: {
     target: 'esnext',
     platform: 'browser',
+  },
+  define: {
+    global: 'globalThis',
   },
 }));
