@@ -1,21 +1,20 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { EventEmitter } from "events";
-import { viteStaticCopy } from "vite-plugin-static-copy"; // Thêm dòng này
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
-// Tăng số lượng EventEmitter listeners để tránh warning và crash
+// Increase EventEmitter listeners to prevent warnings
 EventEmitter.defaultMaxListeners = 100;
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
     host: "localhost",
     port: 8080,
     strictPort: true,
     watch: {
-      // Loại trừ node_modules và .git khỏi watcher để tiết kiệm RAM
       ignored: ["**/node_modules/**", "**/.git/**"],
     },
   },
@@ -26,7 +25,7 @@ export default defineConfig(({ mode }) => ({
       targets: [
         {
           src: 'public/_redirects',
-          dest: '.' // copy vào gốc dist
+          dest: '.'
         }
       ]
     }),
@@ -41,19 +40,40 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
-    // Tăng memory limit cho build
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
           ui: ['@radix-ui/react-tabs', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
+          query: ['@tanstack/react-query'],
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
         },
       },
     },
+    chunkSizeWarningLimit: 1000,
   },
-  // Tối ưu cho Netlify Visual Editor
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom', 
+      '@tanstack/react-query',
+      'framer-motion',
+      'lucide-react'
+    ],
+    exclude: ['@supabase/supabase-js'],
+  },
+  esbuild: {
+    target: 'esnext',
+    platform: 'browser',
   },
 }));
