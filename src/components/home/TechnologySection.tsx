@@ -6,7 +6,7 @@ import { Brain, TrendingUp, Zap } from "lucide-react";
 
 const TechnologySection = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white">
+    <section className="py-8 px-4 bg-gradient-to-br from-blue-900 via-purple-900 to-pink-900 text-white">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-4 inline-block">

@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -19,7 +20,7 @@ const Services = () => {
   useSEO({
     title: "Digital Marketing Services | SEO, Social Media",
     description: "Expert digital marketing services in Australia: SEO, social media management, content creation, PPC advertising & brand development. Get measurable results with free consultation!",
-    keywords: "digital marketing services australia, SEO services, social media management, AI marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
+    keywords: "digital marketing services australia, SEO services, social media management, marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
     url: "https://heidigital.info/services",
     type: "website",
     canonicalUrl: "https://heidigital.info/services",
@@ -36,14 +37,14 @@ const Services = () => {
     const serviceSchema = {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Comprehensive Digital Marketing Services",
+      "name": "Freelance Marketing Support, Built for Results",
       "provider": {
         "@type": "Organization",
         "name": "Heidi Digital",
         "url": "https://heidigital.info"
       },
       "serviceType": "Digital Marketing",
-      "description": "Complete digital marketing solutions including AI strategy, SEO, social media management, content creation, and brand development for Australian businesses",
+      "description": "Complete digital marketing solutions including strategy, SEO, social media management, content creation, and brand development for Australian businesses",
       "areaServed": {
         "@type": "Country",
         "name": "Australia"
@@ -252,8 +253,8 @@ const Services = () => {
     <Layout>
       <main role="main">
         <Hero
-          title="Comprehensive Digital Marketing Services"
-          subtitle="AI-powered marketing solutions that drive real results and accelerate your business growth in the digital landscape"
+          title="Freelance Marketing Services, Built for Results"
+          subtitle="Heidigital - Make your brand visible, searchable, and irresistible - with content and strategy that convert."
           ctaText="Get Started Today"
           ctaLink="/contact"
           secondaryCtaText="View Our Work"

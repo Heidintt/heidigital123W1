@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -25,7 +26,7 @@ const PrivacyPolicy = () => {
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-3xl">
           <SectionHeading
-            title="Our Privacy Policy"
+            title="Heidigital Privacy Policy"
             subtitle="Last updated: April 9, 2025"
             centered
           />
@@ -33,16 +34,16 @@ const PrivacyPolicy = () => {
           <div className="prose prose-base max-w-none mt-10">
             <h2 className="text-xl font-bold mb-4">1. Introduction</h2>
             <p className="mb-4 text-base">
-              At Heidigital, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              At Heidigital, we respect and are committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website https://www.heidigital.com.au or use our services.
             </p>
             <p className="mb-6 text-base">
-              Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the site.
+              By accessing or using our website, you agree to the terms of this Privacy Policy. If you do not agree with these terms, please discontinue use of our site and services.
             </p>
 
             <h2 className="text-xl font-bold mb-4">2. Information We Collect</h2>
-            <h3 className="text-lg font-semibold mb-3">Personal Data</h3>
+            <h3 className="text-lg font-semibold mb-3">Personal Data:</h3>
             <p className="mb-3 text-base">
-              When you use our services, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. This may include:
+              We may collect personally identifiable information ("Personal Data") that you voluntarily provide, which may include:
             </p>
             <ul className="mb-6 text-base">
               <li>Name</li>
@@ -52,51 +53,79 @@ const PrivacyPolicy = () => {
               <li>Mailing address</li>
             </ul>
 
-            <h3 className="text-lg font-semibold mb-3">Usage Data</h3>
+            <h3 className="text-lg font-semibold mb-3">Usage Data:</h3>
             <p className="mb-3 text-base">
-              We may also collect information about how you access and use our website and services. This may include:
+              When you interact with our website, we may automatically collect certain information ("Usage Data"), such as:
             </p>
             <ul className="mb-6 text-base">
-              <li>Your computer's IP address</li>
+              <li>IP address</li>
               <li>Browser type and version</li>
-              <li>Pages you visit on our site</li>
-              <li>Time and date of your visit</li>
-              <li>Time spent on those pages</li>
-              <li>Other statistics</li>
+              <li>Pages visited</li>
+              <li>Time and date of visit</li>
+              <li>Time spent on pages</li>
+              <li>Referring site</li>
+              <li>Other diagnostic information</li>
             </ul>
+
+            <h3 className="text-lg font-semibold mb-3">Cookies & Tracking Technologies:</h3>
+            <p className="mb-6 text-base">
+              We may use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
+            </p>
 
             <h2 className="text-xl font-bold mb-4">3. How We Use Your Information</h2>
-            <p className="mb-3 text-base">We may use the information we collect for various purposes, including to:</p>
+            <p className="mb-3 text-base">We use the information we collect for various purposes, including to:</p>
             <ul className="mb-6 text-base">
-              <li>Provide and maintain our services</li>
-              <li>Notify you about changes to our services</li>
-              <li>Provide customer support</li>
-              <li>Monitor the usage of our services</li>
-              <li>Detect, prevent, and address technical issues</li>
-              <li>Provide you with news, special offers, and general information about other goods, services, and events</li>
+              <li>Provide, operate, and maintain our services</li>
+              <li>Notify you about changes or updates</li>
+              <li>Respond to your requests and provide customer support</li>
+              <li>Monitor and analyze usage and trends to improve our website</li>
+              <li>Detect, prevent, and address technical or security issues</li>
+              <li>Send you communications, such as newsletters, updates, special offers, and event information (if you opt-in)</li>
+              <li>Comply with applicable laws and regulations</li>
             </ul>
 
-            <h2 className="text-xl font-bold mb-4">4. Data Security</h2>
+            <h2 className="text-xl font-bold mb-4">4. Disclosure of Your Information</h2>
+            <p className="mb-3 text-base">We do not sell or rent your personal information. We may share your information:</p>
+            <ul className="mb-6 text-base">
+              <li>With service providers who assist us in operating our website and services</li>
+              <li>If required by law or to respond to legal requests</li>
+              <li>To protect the rights, property, or safety of Heidigital, our users, or others</li>
+            </ul>
+
+            <h2 className="text-xl font-bold mb-4">5. Data Security</h2>
             <p className="mb-6 text-base">
-              The security of your data is important to us. We strive to use commercially acceptable means to protect your personal information. However, no method of transmission over the Internet or method of electronic storage is 100% secure.
+              We implement appropriate technical and organizational measures to safeguard your personal data. However, no method of transmission over the Internet or storage is completely secure; we cannot guarantee its absolute security.
             </p>
 
-            <h2 className="text-xl font-bold mb-4">5. Your Rights</h2>
+            <h2 className="text-xl font-bold mb-4">6. Data Retention</h2>
+            <p className="mb-6 text-base">
+              We will retain your personal information only as long as necessary to fulfill the purposes outlined in this policy and to comply with legal obligations.
+            </p>
+
+            <h2 className="text-xl font-bold mb-4">7. Your Rights</h2>
             <p className="mb-3 text-base">
-              Depending on your location, you may have the following rights regarding your data:
+              Depending on your location, you may have certain rights regarding your personal information, such as:
             </p>
-            <ul className="mb-6 text-base">
-              <li>The right to access the personal information we have about you</li>
-              <li>The right to rectify inaccurate personal information</li>
-              <li>The right to request the deletion of your personal information</li>
-              <li>The right to object to processing of your personal information</li>
-              <li>The right to data portability</li>
-              <li>The right to withdraw consent</li>
+            <ul className="mb-4 text-base">
+              <li>Accessing the information we hold about you</li>
+              <li>Requesting correction of inaccurate data</li>
+              <li>Requesting deletion of your data</li>
+              <li>Objecting to our processing</li>
+              <li>Receiving your data in a portable format</li>
+              <li>Withdrawing your consent at any time (where processing is based on consent)</li>
             </ul>
-
-            <h2 className="text-xl font-bold mb-4">6. Contact Us</h2>
             <p className="mb-6 text-base">
-              If you have any questions about this Privacy Policy, please contact us at info@heidigital.com.au.
+              To exercise these rights, please contact us using the details below. We may require verification of your identity.
+            </p>
+
+            <h2 className="text-xl font-bold mb-4">8. Changes to This Privacy Policy</h2>
+            <p className="mb-6 text-base">
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page with an updated "Last updated" date. Your continued use of our site following any changes means you accept the updated policy.
+            </p>
+
+            <h2 className="text-xl font-bold mb-4">9. Contact Us</h2>
+            <p className="mb-6 text-base">
+              If you have any questions about this Privacy Policy, please contact us at contact@heidigital.info
             </p>
           </div>
         </div>
