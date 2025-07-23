@@ -6,7 +6,7 @@ const STATIC_CACHE_URLS = [
   '/site.webmanifest',
   '/robots.txt',
   '/sitemap.xml',
-  '/lovable-uploads/c6e227cf-c9fe-44f0-b175-063e25cfe03a.png'
+  '/lovable-uploads/906ff1df-0458-479e-a8cb-6dc2a57fa410.png'
 ];
 
 // Install event - cache static resources
