@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,6 +15,7 @@ import { useGoogleAnalytics } from "@/hooks/useGoogleAnalytics";
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email"),
+  phone: z.string().optional(),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
@@ -46,6 +48,7 @@ const ContactForm = () => {
         body: {
           name: data.name,
           email: data.email,
+          phone: data.phone || '',
           subject: data.subject,
           message: data.message,
         },
@@ -140,28 +143,45 @@ const ContactForm = () => {
           </div>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
-            Subject *
-          </Label>
-          <Input
-            id="subject"
-            {...register("subject")}
-            placeholder="How can we help you?"
-            autoComplete="off"
-            className={`transition-colors ${
-              errors.subject 
-                ? "border-red-500 focus:border-red-500 focus:ring-red-500" 
-                : "border-gray-300 focus:border-heidigital-blue focus:ring-heidigital-blue"
-            }`}
-            disabled={isSubmitting}
-          />
-          {errors.subject && (
-            <p className="text-sm text-red-500 flex items-center gap-1">
-              <AlertCircle className="h-3 w-3" />
-              {errors.subject.message}
-            </p>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+              Phone Number (Optional)
+            </Label>
+            <Input
+              id="phone"
+              type="tel"
+              {...register("phone")}
+              placeholder="Your phone number"
+              autoComplete="tel"
+              className="transition-colors border-gray-300 focus:border-heidigital-blue focus:ring-heidigital-blue"
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+              Subject *
+            </Label>
+            <Input
+              id="subject"
+              {...register("subject")}
+              placeholder="How can we help you?"
+              autoComplete="off"
+              className={`transition-colors ${
+                errors.subject 
+                  ? "border-red-500 focus:border-red-500 focus:ring-red-500" 
+                  : "border-gray-300 focus:border-heidigital-blue focus:ring-heidigital-blue"
+              }`}
+              disabled={isSubmitting}
+            />
+            {errors.subject && (
+              <p className="text-sm text-red-500 flex items-center gap-1">
+                <AlertCircle className="h-3 w-3" />
+                {errors.subject.message}
+              </p>
+            )}
+          </div>
         </div>
 
         <div className="space-y-2">

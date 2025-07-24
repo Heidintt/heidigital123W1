@@ -11,6 +11,7 @@ const corsHeaders = {
 interface ContactFormData {
   name: string;
   email: string;
+  phone?: string;
   subject: string;
   message: string;
 }
@@ -41,7 +42,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-    const { name, email, subject, message }: ContactFormData = await req.json();
+    const { name, email, phone, subject, message }: ContactFormData = await req.json();
 
     console.log("Processing contact form for:", name, email);
 
@@ -70,6 +71,7 @@ const handler = async (req: Request): Promise<Response> => {
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #374151; margin-top: 0;">Your Message:</h3>
             <p><strong>Subject:</strong> ${subject}</p>
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
             <p><strong>Message:</strong></p>
             <p style="font-style: italic;">${message}</p>
           </div>
@@ -97,6 +99,7 @@ const handler = async (req: Request): Promise<Response> => {
             <h3 style="color: #374151; margin-top: 0;">Contact Details:</h3>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
             <p><strong>Subject:</strong> ${subject}</p>
           </div>
           
@@ -120,6 +123,7 @@ const handler = async (req: Request): Promise<Response> => {
         {
           name,
           email,
+          phone: phone || null,
           subject,
           message,
           submitted_at: new Date().toISOString(),
