@@ -20,7 +20,7 @@ const Contact = () => {
     ]
   });
 
-  // Add Google tag to head
+  // Add Google tag and event snippet to head
   React.useEffect(() => {
     // Google tag script
     const scriptTag = document.createElement('script');
@@ -28,17 +28,18 @@ const Contact = () => {
     scriptTag.src = "https://www.googletagmanager.com/gtag/js?id=AW-17388175497";
     document.head.appendChild(scriptTag);
 
-    // Inline config script
+    // Inline config + event snippet script
     const inlineScript = document.createElement('script');
     inlineScript.text = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17388175497');
+      gtag('event', 'conversion', {'send_to': 'AW-17388175497/DQsmCKnJkPcaEImBquNA'});
     `;
     document.head.appendChild(inlineScript);
 
-    // ContactPage structured data
+    // Add ContactPage structured data
     const contactSchema = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
