@@ -268,6 +268,31 @@ const Contact = () => {
   });
 
   React.useEffect(() => {
+    // Add Google Ads gtag
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17388175497';
+    gtagScript.id = 'gtag-script';
+    
+    const gtagConfig = document.createElement('script');
+    gtagConfig.id = 'gtag-config';
+    gtagConfig.textContent = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17388175497');
+    `;
+    
+    // Remove existing gtag scripts if any
+    const existingScript = document.getElementById('gtag-script');
+    const existingConfig = document.getElementById('gtag-config');
+    if (existingScript) existingScript.remove();
+    if (existingConfig) existingConfig.remove();
+    
+    document.head.appendChild(gtagScript);
+    document.head.appendChild(gtagConfig);
+
+    // Add ContactPage structured data
     const contactSchema = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
@@ -299,10 +324,12 @@ const Contact = () => {
     document.head.appendChild(script);
 
     return () => {
+      const gtagScript = document.getElementById('gtag-script');
+      const gtagConfig = document.getElementById('gtag-config');
       const script = document.getElementById('contact-schema');
-      if (script) {
-        script.remove();
-      }
+      if (gtagScript) gtagScript.remove();
+      if (gtagConfig) gtagConfig.remove();
+      if (script) script.remove();
     };
   }, []);
 
