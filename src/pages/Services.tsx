@@ -10,9 +10,12 @@ import { useSEO } from "@/hooks/useSEO";
 import { 
   BarChart3, PenSquare, Search, Megaphone, Users, 
   Brain, CheckCircle2, ArrowRight, Target, Zap, 
-  Image, Film, Lightbulb, Settings, Globe
+  Image, Film, Lightbulb, Settings, Globe, Package, 
+  TrendingUp, Calendar, FileText, Star, Rocket
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -249,6 +252,138 @@ const Services = () => {
     }
   ];
 
+  const servicePackages = [
+    {
+      id: 1,
+      title: "Social Content + Blog Package",
+      description: "Building online presence through social media engagement and blog content to attract organic traffic.",
+      price: "From $180 AUD/week",
+      badge: "Starter Friendly",
+      icon: <Users className="h-8 w-8" />,
+      features: [
+        "Integrated Content Planning (weekly/monthly calendar)",
+        "Social Media Content (2 Channels): 3 themes/week, 6-8 adapted content pieces",
+        "Copywriting with engaging captions and hashtag research",
+        "Basic Image Design: 3 static images/carousels/week",
+        "Scheduling & Publishing across chosen platforms",
+        "Blog Content: 1 post/week (700-1000 words, SEO-optimized)",
+        "Basic Performance Report"
+      ],
+      addOns: [
+        "Add 1 Social Media Channel: +$60 AUD/week",
+        "Additional Basic Image Design: +$20-$50 AUD/image",
+        "Add 1 Blog Post/Landing Page: +$100 AUD/post"
+      ]
+    },
+    {
+      id: 2,
+      title: "In-Depth SEO Package",
+      description: "Boosting search engine rankings and attracting high-quality organic traffic.",
+      price: "From $200 AUD/week",
+      badge: "SEO Focused",
+      icon: <Search className="h-8 w-8" />,
+      features: [
+        "Technical SEO Audit & Analysis (fortnightly report)",
+        "Website crawl and analysis for broken links, crawl errors",
+        "Site speed audit and Core Web Vitals assessment",
+        "In-depth Keyword Research & Analysis",
+        "On-page Optimization (2-3 pages/week)",
+        "Weekly SEO Performance Report",
+        "XML Sitemap & Robots.txt review"
+      ],
+      addOns: [
+        "Add Local SEO: +$40 AUD/week",
+        "Basic Backlink Analysis & Strategy: +$50 AUD/week",
+        "Additional 2-3 On-page Optimizations: +$40 AUD/week"
+      ]
+    },
+    {
+      id: 3,
+      title: "Digital Advertising Package",
+      description: "Maximizing ROI with optimized paid advertising campaigns across major platforms.",
+      price: "From $180 AUD/week",
+      badge: "Performance Driven",
+      icon: <Target className="h-8 w-8" />,
+      features: [
+        "Strategy Consultation for campaign goals",
+        "Audience & Keyword/Targeting Research",
+        "Campaign Setup & Management (1 Platform, 1-2 Campaigns)",
+        "Ad Copy Development (client provides images/videos)",
+        "Continuous Monitoring & Optimization",
+        "Performance Report with detailed ROI analysis"
+      ],
+      addOns: [
+        "Add 1 Campaign: +$40 AUD/week",
+        "Add 1 Advertising Platform: +$75 AUD/week",
+        "Ad Image/Video Design: Custom pricing"
+      ]
+    }
+  ];
+
+  const comboPackages = [
+    {
+      id: 4,
+      title: "Comprehensive Starter Package",
+      subtitle: "Planning + Social Content + Web SEO",
+      description: "Powerful combination of strategy, social media content, and website SEO optimization for strong foundation.",
+      price: "From $290 AUD/week",
+      originalPrice: "$380 AUD/week",
+      savings: "Save 23.7% ($90/week)",
+      badge: "Most Popular",
+      icon: <Rocket className="h-8 w-8" />,
+      features: [
+        "Basic Marketing Strategy Planning",
+        "Social Content (2 Channels): 3 themes/week, 6-8 content pieces",
+        "Design: 3 static images/carousels or short videos (15s-30s)",
+        "Web SEO Audit & technical optimization",
+        "Keyword Research & On-page Optimization (2-3 pages/week)",
+        "SEO Articles: 1 blog post/week (800-1200 words)",
+        "Weekly performance reports"
+      ]
+    },
+    {
+      id: 5,
+      title: "Conversion Booster Package",
+      subtitle: "Google Ads + SEO",
+      description: "Optimize search engine visibility through both organic and paid efforts for maximum reach.",
+      price: "From $290 AUD/week",
+      originalPrice: "$380 AUD/week",
+      savings: "Save 23.7% ($90/week)",
+      badge: "ROI Focused",
+      icon: <TrendingUp className="h-8 w-8" />,
+      features: [
+        "Google Ads Management (2 Campaigns)",
+        "In-depth keyword and audience research",
+        "Ad copy writing and optimization",
+        "Daily monitoring and ROI optimization",
+        "Technical SEO Audit for website",
+        "On-page Optimization (2-3 pages/week)",
+        "Weekly performance reports for both paid and organic"
+      ]
+    },
+    {
+      id: 6,
+      title: "Full-Stack Marketing Package",
+      subtitle: "Most Comprehensive Solution",
+      description: "Complete digital marketing coverage for sustainable and outstanding business growth.",
+      price: "From $480 AUD/week",
+      originalPrice: "$560 AUD/week",
+      savings: "Save 14.3% ($80/week)",
+      badge: "Premium",
+      icon: <Package className="h-8 w-8" />,
+      features: [
+        "Comprehensive Marketing Strategy (Enhanced)",
+        "Full Social Media Management (3-5+ channels)",
+        "Advanced Content Development & SEO (2-3 posts/week)",
+        "Multi-Channel Digital Advertising Management",
+        "Brand Development & Design (Basic - Upgradeable)",
+        "Quarterly strategic reviews and roadmap updates",
+        "Professional images, videos, stories, reels creation",
+        "Advanced A/B testing and conversion tracking"
+      ]
+    }
+  ];
+
   return (
     <Layout>
       <main role="main">
@@ -300,6 +435,145 @@ const Services = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* New Service Packages Section */}
+        <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50" aria-label="Service Packages">
+          <div className="container mx-auto">
+            <SectionHeading
+              title="Service Packages & Pricing"
+              subtitle="Competitive pricing designed for businesses of all sizes - from startups to enterprises"
+              centered
+            />
+
+            {/* Individual Packages */}
+            <div className="mb-16">
+              <div className="flex items-center justify-center mb-8">
+                <img 
+                  src="/images/blog/6-crative-digital-marketing.jpg" 
+                  alt="Creative Digital Marketing Services" 
+                  className="rounded-lg shadow-lg max-w-md w-full h-48 object-cover"
+                />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">Individual Service Packages</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {servicePackages.map((pkg) => (
+                  <Card key={pkg.id} className="relative overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="bg-blue-50 p-3 rounded-lg text-blue-600">
+                          {pkg.icon}
+                        </div>
+                        <Badge variant="secondary" className="bg-green-100 text-green-700">
+                          {pkg.badge}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-lg mb-2">{pkg.title}</CardTitle>
+                      <CardDescription className="text-gray-600 mb-4">{pkg.description}</CardDescription>
+                      <div className="text-2xl font-bold text-blue-600 mb-4">{pkg.price}</div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3 text-gray-800">Includes:</h4>
+                        <ul className="space-y-2">
+                          {pkg.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start text-sm">
+                              <CheckCircle2 className="h-4 w-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                              <span className="text-gray-700">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3 text-gray-800">Add-on Options:</h4>
+                        <ul className="space-y-1">
+                          {pkg.addOns.map((addon, idx) => (
+                            <li key={idx} className="text-sm text-gray-600">
+                              • {addon}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700" asChild>
+                        <Link to="/contact">Get Quote</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Combo Packages */}
+            <div>
+              <div className="flex items-center justify-center mb-8">
+                <img 
+                  src="/images/blog/10-digital-startegy-marketing-agenciesd.jpg" 
+                  alt="Digital Strategy Marketing Agencies" 
+                  className="rounded-lg shadow-lg max-w-md w-full h-48 object-cover"
+                />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">Combo Packages - Maximum Value</h3>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                {comboPackages.map((pkg) => (
+                  <Card key={pkg.id} className="relative overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-blue-200">
+                    <div className="absolute top-4 right-4">
+                      <Badge variant="default" className="bg-blue-600 text-white">
+                        {pkg.badge}
+                      </Badge>
+                    </div>
+                    
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center mb-4">
+                        <div className="bg-blue-50 p-3 rounded-lg text-blue-600 mr-4">
+                          {pkg.icon}
+                        </div>
+                        <div>
+                          <CardTitle className="text-lg mb-1">{pkg.title}</CardTitle>
+                          <p className="text-sm text-gray-500">{pkg.subtitle}</p>
+                        </div>
+                      </div>
+                      
+                      <CardDescription className="text-gray-600 mb-4">{pkg.description}</CardDescription>
+                      
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-2xl font-bold text-blue-600">{pkg.price}</span>
+                          <span className="text-lg text-gray-400 line-through">{pkg.originalPrice}</span>
+                        </div>
+                        <Badge variant="outline" className="text-green-600 border-green-600">
+                          {pkg.savings}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    
+                    <CardContent>
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3 text-gray-800">Package Includes:</h4>
+                        <ul className="space-y-2">
+                          {pkg.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-start text-sm">
+                              <Star className="h-4 w-4 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                              <span className="text-gray-700">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white" asChild>
+                        <Link to="/contact">Get Started</Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
