@@ -12,7 +12,7 @@ export const updateMobileOptimizationTags = (absoluteImageUrl: string, siteName:
   
   // Microsoft specific tags (enhanced)
   updateMetaTag('msapplication-TileColor', '#6366f1');
-  updateMetaTag('msapplication-TileImage', absoluteImageUrl);
+  updateMetaTag('msapplication-TileImage', '/images/logo.png');
   updateMetaTag('msapplication-config', '/browserconfig.xml');
   updateMetaTag('msapplication-tooltip', 'Heidi Digital - AI-Powered Marketing Solutions');
   updateMetaTag('msapplication-starturl', '/');
