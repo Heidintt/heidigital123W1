@@ -20,8 +20,25 @@ const Contact = () => {
     ]
   });
 
-  // Add ContactPage structured data
+  // Add Google tag to head
   React.useEffect(() => {
+    // Google tag script
+    const scriptTag = document.createElement('script');
+    scriptTag.async = true;
+    scriptTag.src = "https://www.googletagmanager.com/gtag/js?id=AW-17388175497";
+    document.head.appendChild(scriptTag);
+
+    // Inline config script
+    const inlineScript = document.createElement('script');
+    inlineScript.text = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17388175497');
+    `;
+    document.head.appendChild(inlineScript);
+
+    // ContactPage structured data
     const contactSchema = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
@@ -40,22 +57,24 @@ const Contact = () => {
       }
     };
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'contact-schema';
-    script.textContent = JSON.stringify(contactSchema);
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.id = 'contact-schema';
+    schemaScript.textContent = JSON.stringify(contactSchema);
     
     const existing = document.getElementById('contact-schema');
     if (existing) {
       existing.remove();
     }
     
-    document.head.appendChild(script);
+    document.head.appendChild(schemaScript);
 
     return () => {
-      const script = document.getElementById('contact-schema');
-      if (script) {
-        script.remove();
+      if (scriptTag) document.head.removeChild(scriptTag);
+      if (inlineScript) document.head.removeChild(inlineScript);
+      const schemaScript = document.getElementById('contact-schema');
+      if (schemaScript) {
+        schemaScript.remove();
       }
     };
   }, []);
