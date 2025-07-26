@@ -50,6 +50,7 @@
 /services/content-creation    /    301
 /solutions/free-resources/seo-optimization-checklist    /    301
 /solutions/tools/roi-calculator    /    301
+/solutions    /    301
 
 # Catch all - must be last
 /*              /index.html     200
