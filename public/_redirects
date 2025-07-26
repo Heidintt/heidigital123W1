@@ -18,9 +18,11 @@
 /solutions/free-resources/on-page-seo-checklist /solutions/free-resources 301
 /solutions/free-resources/social-media-growth-tools /solutions/free-resources 301
 /solutions/tools/seo-assistant /solutions/ai-tools 301
-
+/solutions/free-resources/email-guide /solutions/free-resources 301
+/solutions/ai-tools/market-trend-analyzer /solutions/ai-tools 301
 # New services redirects - redirect old service pages to blog
 /services/ai-marketing /blog 301
+/services/seo /services 301
 
 # Portfolio canonical redirects - fix duplicate content issues
 /portfolio/i-choose-the-sun/    /portfolio/i-choose-the-sun    301
