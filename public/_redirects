@@ -31,6 +31,8 @@
 /services/seo /services 301
 /services/branding /services 301
 /services/social-media /services 301
+/services/branding /services 301
+/services/social-media /services 301
 
 # Portfolio canonical redirects - fix duplicate content issues
 /portfolio/i-choose-the-sun/    /portfolio/i-choose-the-sun    301
