@@ -240,7 +240,7 @@ const WanderlustTravel = () => {
                       <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                         <iframe
                           // Corrected YouTube embed URL (example, replace with actual video ID from YouTube)
-                          src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" // REPLACE 'YOUR_VIDEO_ID_HERE' with the actual YouTube video ID
+                          src="http://googleusercontent.com/youtube.com/4" // REPLACE 'YOUR_VIDEO_ID_HERE' with the actual YouTube video ID
                           title="Wanderlust Travel Social Media Video"
                           className="w-full h-full rounded-lg"
                           allowFullScreen
@@ -260,15 +260,13 @@ const WanderlustTravel = () => {
                       </h3>
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
-                        {/* CORRECTED: Using <ul> for list items and <br /> for desired line breaks */}
-                        <ul className="text-gray-700 mb-4 leading-relaxed list-disc pl-5">
-                          <li>Some journeys aren't just about places – they're about how each moment makes you feel.</li>
-                          <li>In Paris, mornings smell of buttered croissants and love lingers in every sunset.</li>
-                          <li>In Italy, footsteps echo on cobblestone streets where history whispers through every archway.</li>
-                          <li>In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.</li>
-                          <li>And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.</li>
-                        </ul>
+                        {/* CHANGED: Using <br /> for line breaks within a single <p> tag */}
                         <p className="text-gray-700 mb-4 leading-relaxed">
+                          Some journeys aren't just about places – they're about how each moment makes you feel. <br />
+                          In Paris, mornings smell of buttered croissants and love lingers in every sunset. <br />
+                          In Italy, footsteps echo on cobblestone streets where history whispers through every archway. <br />
+                          In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella. <br />
+                          And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness. <br />
                           This summer, let's not just travel. <br />
                           Let's collect feelings, write memories, and carry Europe home in our hearts.
                         </p>
@@ -324,7 +322,7 @@ const WanderlustTravel = () => {
                   </ul>
 
                   <h4 className="font-semibold mb-3">2. Target Audience</h4>
-                  <p className="mb-2">Young to middle-aged individuals (25-55 years old) in Australia with stable incomes, a love for adventurous travel, cultural immersion, and a search for unique, off-the-beaten-path journeys.</p>
+                  <p className="mb-4">Young to middle-aged individuals (25-55 years old) in Australia with stable incomes, a love for adventurous travel, cultural immersion, and a search for unique, off-the-beaten-path journeys.</p>
                   <p className="mb-4">Couples, groups of friends, or solo travelers from Australia who desire well-planned trips that still offer freedom and unexpected discoveries. Those seeking a blend of adventure and comfort.</p>
 
                   <h4 className="font-semibold mb-3">3. Key Pages & Features</h4>
