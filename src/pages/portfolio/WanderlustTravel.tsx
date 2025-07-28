@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3, Loader2 } from 'lucide-react';
+import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3, Eye, Download } from 'lucide-react';
 
 const WanderlustTravel = () => {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
@@ -144,80 +144,79 @@ const WanderlustTravel = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
-              {/* Left Side - Optimized Website Showcase */}
               {/* Left Side - Website Showcase with Thumbnail */}
-<div>
-  <h2 className="text-3xl font-bold mb-8">Website Design</h2>
-  
-  {/* Thumbnail Preview */}
-  <Card className="overflow-hidden mb-6">
-    <CardContent className="p-0 relative">
-      {/* Small thumbnail image */}
-      <img 
-        src="/images/wanderlust-website.png"
-        alt="Wanderlust Travel Website Preview"
-        className="w-full h-48 object-cover"
-        loading="lazy"
-      />
-      
-      {/* Overlay with view button */}
-      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-        <Button 
-          size="lg" 
-          className="bg-white text-gray-900 hover:bg-gray-100"
-          onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
-        >
-          <Eye className="h-5 w-5 mr-2" />
-          View Full Demo
-        </Button>
-      </div>
-    </CardContent>
-  </Card>
+              <div>
+                <h2 className="text-3xl font-bold mb-8">Website Design</h2>
+                
+                {/* Thumbnail Preview */}
+                <Card className="overflow-hidden mb-6">
+                  <CardContent className="p-0 relative">
+                    {/* Small thumbnail image */}
+                    <img 
+                      src="/images/wanderlust-website.png"
+                      alt="Wanderlust Travel Website Preview"
+                      className="w-full h-48 object-cover"
+                      loading="lazy"
+                    />
+                    
+                    {/* Overlay with view button */}
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <Button 
+                        size="lg" 
+                        className="bg-white text-gray-900 hover:bg-gray-100"
+                        onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+                      >
+                        <Eye className="h-5 w-5 mr-2" />
+                        View Full Demo
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
 
-  {/* Action Buttons */}
-  <div className="flex flex-col sm:flex-row gap-4 mb-6">
-    <Button 
-      className="flex-1 bg-blue-600 hover:bg-blue-700"
-      onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
-    >
-      <Eye className="h-4 w-4 mr-2" />
-      View Full Website Demo
-    </Button>
-    
-    <Button 
-      variant="outline" 
-      className="flex-1"
-      onClick={() => window.open('https://drive.google.com/uc?export=download&id=1errrJuqzjDvueuns4RjPy4iNx3xtpkDb', '_blank')}
-    >
-      <Download className="h-4 w-4 mr-2" />
-      Download High-Res
-    </Button>
-  </div>
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                  <Button 
+                    className="flex-1 bg-blue-600 hover:bg-blue-700"
+                    onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+                  >
+                    <Eye className="h-4 w-4 mr-2" />
+                    View Full Website Demo
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="flex-1"
+                    onClick={() => window.open('https://drive.google.com/uc?export=download&id=1errrJuqzjDvueuns4RjPy4iNx3xtpkDb', '_blank')}
+                  >
+                    <Download className="h-4 w-4 mr-2" />
+                    Download High-Res
+                  </Button>
+                </div>
 
-  {/* Demo Info */}
-  <Card className="mb-6">
-    <CardContent className="p-6">
-      <h3 className="font-semibold mb-3 flex items-center gap-2">
-        <ExternalLink className="h-4 w-4" />
-        Demo Information
-      </h3>
-      <div className="space-y-2 text-sm text-gray-600">
-        <p><strong>File Size:</strong> 17MB (High Resolution)</p>
-        <p><strong>Format:</strong> PNG Image</p>
-        <p><strong>Dimensions:</strong> 1920x1080px</p>
-        <p><strong>Loading Time:</strong> ~3-5 seconds</p>
-      </div>
-    </CardContent>
-  </Card>
-  
-  <p className="text-gray-600 leading-relaxed">
-    Clean, modern homepage design featuring intuitive navigation, compelling hero sections, 
-    and strategically placed CTAs to convert visitors into customers. The design emphasizes 
-    visual storytelling through high-quality imagery and user-friendly interface.
-  </p>
-</div>
+                {/* Demo Info */}
+                <Card className="mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold mb-3 flex items-center gap-2">
+                      <ExternalLink className="h-4 w-4" />
+                      Demo Information
+                    </h3>
+                    <div className="space-y-2 text-sm text-gray-600">
+                      <p><strong>File Size:</strong> 17MB (High Resolution)</p>
+                      <p><strong>Format:</strong> PNG Image</p>
+                      <p><strong>Dimensions:</strong> 1920x1080px</p>
+                      <p><strong>Loading Time:</strong> ~3-5 seconds</p>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  Clean, modern homepage design featuring intuitive navigation, compelling hero sections, 
+                  and strategically placed CTAs to convert visitors into customers. The design emphasizes 
+                  visual storytelling through high-quality imagery and user-friendly interface.
+                </p>
+              </div>
 
-              {/* Right Side - Optimized Social Media & Details */}
+              {/* Right Side - Social Media & Details */}
               <div className="space-y-8">
                 
                 {/* Social Media Video with Loading State */}
@@ -231,7 +230,7 @@ const WanderlustTravel = () => {
                       {!videoLoaded && (
                         <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
                           <div className="flex items-center gap-2 text-gray-500">
-                            <Loader2 className="h-6 w-6 animate-spin" />
+                            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-gray-600"></div>
                             <span>Loading video...</span>
                           </div>
                         </div>
