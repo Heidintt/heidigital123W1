@@ -196,7 +196,7 @@ const Portfolio = () => {
           <Hero
             title="Our Portfolio"
             subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-            backgroundImage="/images/blog/3-home-digital-marketing-services.avif"
+            backgroundImage="/images/blog/12-googd-insight-goog-marketing-campaign.jpg"
           />
 
           <section className="py-8 px-4" style={{backgroundColor: '#ffffff'}} aria-label="Portfolio Case Studies">
