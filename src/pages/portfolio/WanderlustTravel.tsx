@@ -128,14 +128,6 @@ const WanderlustTravel = () => {
               </div>
             </div>
 
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Comprehensive digital marketing strategy for Wanderlust Travel, targeting Australian travelers seeking unique European experiences.
-                The project includes complete website design, social media content strategy, and detailed marketing implementation plan
-                to establish Wanderlust Travel as the leading inspiration for adventure travelers.
-              </p>
-            </div>
           </div>
         </section>
 
