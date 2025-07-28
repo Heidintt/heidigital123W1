@@ -164,7 +164,7 @@ const WanderlustTravel = () => {
                       <Button
                         size="lg"
                         className="bg-white text-gray-900 hover:bg-gray-100"
-                        onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+                        onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
                       >
                         <Eye className="h-5 w-5 mr-2" />
                         View Full Demo
@@ -177,7 +177,7 @@ const WanderlustTravel = () => {
                 <div className="flex flex-col sm:flex-row gap-4 mb-6">
                   <Button
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
-                    onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View Full Website Demo
@@ -186,7 +186,7 @@ const WanderlustTravel = () => {
                   <Button
                     variant="outline"
                     className="flex-1"
-                    onClick={() => window.open('https://drive.google.com/uc?export=download&id=1errrJuqzjDvueuns4RjPy4iNx3xtpkDb', '_blank')}
+                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download High-Res
@@ -369,6 +369,7 @@ const WanderlustTravel = () => {
                       <ul className="ml-4 space-y-1">
                         <li>• A section for in-depth articles on destinations, travel tips, experiences, and inspiring stories. Pay special attention to articles useful for Australian travelers (e.g., visa requirements for Australian citizens, currency exchange tips when traveling overseas from Australia).</li>
                         <li>• SEO-friendly content to attract organic traffic.</li>
+                      <li>• SEO-friendly content to attract organic traffic.</li>
                       </ul>
                     </div>
 
