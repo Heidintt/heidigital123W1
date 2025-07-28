@@ -48,11 +48,24 @@ const Hero: React.FC<HeroProps> = ({
           fetchPriority="high"
           draggable={false}
           decoding="async"
+          onLoad={() => {
+            console.log('✅ Hero banner loaded successfully:', backgroundImage);
+          }}
           onError={(e) => {
-            // Fallback to default image if the specified image fails to load
             const target = e.target as HTMLImageElement;
-            if (target.src !== DEFAULT_BG) {
-              target.src = DEFAULT_BG;
+            console.error('❌ Hero banner failed to load:', backgroundImage);
+            
+            if (target.src.includes(backgroundImage)) {
+              console.log('🔄 Attempting fallback to default image...');
+              target.src = `${DEFAULT_BG}?${CACHE_VERSION}`;
+            } else {
+              console.error('💥 Default image also failed to load');
+              // Show gradient fallback
+              target.style.display = 'none';
+              const parentDiv = target.parentElement;
+              if (parentDiv) {
+                parentDiv.style.background = 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)';
+              }
             }
           }}
         />
