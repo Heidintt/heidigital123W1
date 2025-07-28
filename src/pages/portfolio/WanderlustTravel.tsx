@@ -258,41 +258,26 @@ const WanderlustTravel = () => {
                         Video Caption
                       </h3>
                       <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
-                      <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
-                        Step into a summer where every European city becomes a note in your personal symphony.
-                        
-                        Paris – Wake up to the aroma of fresh croissants and watch the Eiffel Tower glow under moonlight.
-                        
-                        Italy – Glide through Venice's timeless canals and taste the world's most authentic gelato.
-                        
-                        Spain – Savor the passion of flamenco nights and indulge in rich, flavorful tapas by the sea.
-                        
-                        Croatia – Discover ancient walled cities and sail into hidden coves with waters so clear they feel unreal.
-                        
-                        With Wanderlust Travel, every detail is curated for comfort, culture, and unforgettable moments.
-                        
-                        This isn't just a trip – it's a handcrafted European journey waiting for you.
-                      </p>
-                      <div className="text-sm text-blue-600">
-                        #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
-                      </div>
-                    </div>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
-                        <p className="text-gray-700 mb-4 leading-relaxed">
-                         Step into a summer where every European city becomes a note in your personal symphony.
-                          Paris – Wake up to the aroma of fresh croissants and watch the Eiffel Tower glow under moonlight.
-                          Italy – Glide through Venice’s timeless canals and taste the world’s most authentic gelato.
-                          Spain – Savor the passion of flamenco nights and indulge in rich, flavorful tapas by the sea.
-                          Croatia – Discover ancient walled cities and sail into hidden coves with waters so clear they feel unreal.
-                          With Wanderlust Travel, every detail is curated for comfort, culture, and unforgettable moments.
-                          This isn’t just a trip – it’s a handcrafted European journey waiting for you.” 
-                        </p>
-                        <div className="text-sm text-blue-600">
-                          #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
-                        </div>
-                      </div>
+  <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
+  <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
+    Some journeys aren't just about places – they're about how each moment makes you feel.
+
+    In Paris, mornings smell of buttered croissants and love lingers in every sunset.
+
+    In Italy, footsteps echo on cobblestone streets where history whispers through every archway.
+
+    In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.
+
+    And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.
+
+    This summer, let's not just travel.
+
+    Let's collect feelings, write memories, and carry Europe home in our hearts.
+  </p>
+  <div className="text-sm text-blue-600">
+    #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+  </div>
+</div>
                     </CardContent>
                   </Card>
                 </div>
