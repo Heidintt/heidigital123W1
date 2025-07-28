@@ -1,8 +1,9 @@
-import * as React from "react";
+import React from "react";
 import { ArrowRight, Star, Users, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 
-const DEFAULT_BG = "/images/3-home-digital-marketing-services.avif";
-const CACHE_VERSION = "v1"; // Static cache busting
+const DEFAULT_BG =
+  "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80";
 
 interface HeroProps {
   title?: string;
@@ -37,78 +38,58 @@ const Hero: React.FC<HeroProps> = ({
     { icon: Star, value: "5+ Years", label: "Experience" },
   ];
 
-  // Debug: Log khi component mount
-  React.useEffect(() => {
-    console.log('🔍 Hero component mounted');
-    console.log('📸 Background image path:', backgroundImage);
-    console.log(' DEFAULT_BG path:', DEFAULT_BG);
-    console.log(' Title:', title);
-    console.log('🔍 Props received:', { backgroundImage, title, subtitle });
-  }, [backgroundImage, title, subtitle]);
-
   return (
     <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Background image with lighter overlay */}
+      {/* Background image with dark overlay */}
       <div className="absolute inset-0 -z-10">
         <img
-          src={`${backgroundImage}?${CACHE_VERSION}`}
-          alt="Hero background"
+          src={backgroundImage}
+          alt=""
           className="w-full h-full object-cover"
           fetchPriority="high"
           draggable={false}
           decoding="async"
-          onLoad={(e) => {
-            const target = e.target as HTMLImageElement;
-            console.log('✅ Hero banner loaded successfully:', backgroundImage);
-            console.log('🖼️ Image element:', target);
-            console.log('📏 Image dimensions:', target.naturalWidth, 'x', target.naturalHeight);
-            console.log('🎨 Image src:', target.src);
-          }}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            console.error('❌ Hero banner failed to load:', backgroundImage);
-            console.error('❌ Image src that failed:', target.src);
-            
-            if (target.src.includes(backgroundImage)) {
-              console.log('🔄 Attempting fallback to default image...');
-              target.src = `${DEFAULT_BG}?${CACHE_VERSION}`;
-            } else {
-              console.error(' Default image also failed to load');
-              // Show gradient fallback
-              target.style.display = 'none';
-              const parentDiv = target.parentElement;
-              if (parentDiv) {
-                parentDiv.style.background = 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)';
-              }
-            }
-          }}
         />
-        {/* Lighter overlay để hình ảnh hiển thị rõ hơn */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
-          <div className="mb-8 animate-fade-in">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
             <span className="inline-flex items-center px-6 py-3 rounded-full bg-heidigital-blue/20 backdrop-blur-sm border border-heidigital-blue/30 text-white text-sm font-medium">
               {badge}
             </span>
-          </div>
+          </motion.div>
 
           {/* Main heading */}
-          <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
+          >
             <HeadingTag className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               {title}
             </HeadingTag>
             <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
               {subtitle}
             </p>
-          </div>
+          </motion.div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          >
             <a
               href={ctaLink}
               className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-heidigital-blue hover:bg-heidigital-blue/90 text-white font-semibold text-lg shadow-2xl hover:shadow-glow transition-all duration-300 hover:scale-105 group"
@@ -122,13 +103,18 @@ const Hero: React.FC<HeroProps> = ({
             >
               {secondaryCtaText}
             </a>
-          </div>
+          </motion.div>
 
           {/* Stats */}
           {showStats && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto"
+            >
               {stats.map((stat, index) => (
-                <div key={`stat-${index}`} className="text-center">
+                <div key={index} className="text-center">
                   <div className="flex items-center justify-center mb-2">
                     <stat.icon className="h-6 w-6 text-heidigital-blue mr-2" />
                     <span className="text-3xl md:text-4xl font-bold text-white">
@@ -138,7 +124,7 @@ const Hero: React.FC<HeroProps> = ({
                   <p className="text-gray-300 font-medium">{stat.label}</p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

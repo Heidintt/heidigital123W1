@@ -26,11 +26,11 @@ const AppRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/solutions" element={<Solutions />} />
         
-        {/* Portfolio page chính TRƯỚC sub-routes để tránh conflict */}
-        <Route path="/portfolio" element={<Portfolio />} />
-        
-        {/* Portfolio sub-routes SAU portfolio chính */}
+        {/* Portfolio sub-routes TRƯỚC portfolio chính */}
         <Route path="/portfolio/*" element={<PortfolioRoutes />} />
+        
+        {/* Portfolio page chính SAU sub-routes */}
+        <Route path="/portfolio" element={<Portfolio />} />
         
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />

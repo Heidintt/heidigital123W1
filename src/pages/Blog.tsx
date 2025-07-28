@@ -166,7 +166,6 @@ const Blog = () => {
         <Hero
           title="Marketing Insights & Resources"
           subtitle="Expert perspectives, actionable tips, and the latest trends in digital marketing and AI"
-          backgroundImage="/images/blog/2-home-digital-marketing-services.avif"
         />
 
         <section className="py-16 px-4" aria-label="Blog Articles">

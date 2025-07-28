@@ -8,25 +8,6 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 
 const Portfolio = () => {
-  // Debug: Log khi component mount và kiểm tra React context
-  React.useEffect(() => {
-    console.log('🔍 Portfolio component mounted');
-    console.log('📸 Portfolio Hero backgroundImage:', "/images/3-home-digital-marketing-services.avif");
-    console.log('⚛️ React context check:', React.version);
-    
-    // Kiểm tra xem có file ảnh thực sự không
-    fetch("/images/3-home-digital-marketing-services.avif")
-      .then(response => {
-        if (response.ok) {
-          console.log('✅ Image file exists and accessible');
-        } else {
-          console.error('❌ Image file not found:', response.status);
-        }
-      })
-      .catch(err => {
-        console.error('❌ Error checking image file:', err);
-      });
-  }, []);
   // Enhanced SEO for portfolio page with corrected canonical URL
   useSEO({
     title: "Marketing Portfolio & Case Studies | Heidigital",
@@ -215,7 +196,6 @@ const Portfolio = () => {
           <Hero
             title="Our Portfolio"
             subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-            backgroundImage="/images/3-home-digital-marketing-services.avif"
           />
 
           <section className="py-8 px-4" style={{backgroundColor: '#ffffff'}} aria-label="Portfolio Case Studies">

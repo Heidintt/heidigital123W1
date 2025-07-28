@@ -58,15 +58,20 @@ const ServicesSection = () => (
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
         {services.map((s, i) => (
-          <div
+          <motion.div
             key={s.title}
-            className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center transition-all group cursor-pointer hover:border-blue-200 animate-fade-in hover:scale-105"
-            style={{ animationDelay: `${i * 0.1}s` }}
+            className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center transition-all group cursor-pointer hover:border-blue-200"
+            variants={cardVariants}
+            initial="initial"
+            whileInView="animate"
+            whileHover="hover"
+            viewport={{ once: true }}
+            custom={i}
           >
             <div className="mb-3 group-hover:scale-110 transition-transform">{s.icon}</div>
             <h4 className="font-semibold text-lg mb-1 text-gray-900 group-hover:text-blue-600 transition-colors">{s.title}</h4>
             <p className="text-gray-500 text-sm">{s.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="flex justify-center">

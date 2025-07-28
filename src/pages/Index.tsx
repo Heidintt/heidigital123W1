@@ -13,15 +13,18 @@ import { createLocalBusinessSchema, createServiceSchema } from "@/hooks/seo/loca
 
 const Index = () => {
   // Enhanced SEO optimization for homepage with updated meta title
-  React.useEffect(() => {
-    // Update document title and basic meta tags directly
-    document.title = "Cutting-edge marketing solutions | Heidigital";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Transform your business with Australia's digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!");
-    }
+  useSEO({
+    title: "Cutting-edge marketing solutions | Heidigital",
+    description: "Transform your business with Australia's digital marketing agency. Expert SEO, social media marketing, content creation & branding services. Get your FREE consultation today and boost ROI by 300%!",
+    keywords: "digital marketing agency australia, marketing solutions, SEO services australia, social media marketing, content creation, branding agency, digital advertising, marketing automation, ROI optimization, australian marketing agency",
+    url: "https://heidigital.info/",
+    canonicalUrl: "https://heidigital.info/",
+    type: "website",
+    image: "https://heidigital.info/og-homepage.jpg"
+  });
 
+  // Optimized structured data for better SEO performance
+  React.useEffect(() => {
     // Create standardized LocalBusiness schema
     const localBusinessSchema = createLocalBusinessSchema();
     // Create Service schema
