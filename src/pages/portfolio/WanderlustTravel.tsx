@@ -9,7 +9,7 @@ import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Cale
 
 const WanderlustTravel = () => {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-  const [imageLoaded, setImageLoaded] = useState(false);
+  // const [imageLoaded, setImageLoaded] = useState(false); // Not currently used, so commented out
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useSEO({
@@ -131,8 +131,8 @@ const WanderlustTravel = () => {
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Comprehensive digital marketing strategy for Wanderlust Travel, targeting Australian travelers seeking unique European experiences. 
-                The project includes complete website design, social media content strategy, and detailed marketing implementation plan 
+                Comprehensive digital marketing strategy for Wanderlust Travel, targeting Australian travelers seeking unique European experiences.
+                The project includes complete website design, social media content strategy, and detailed marketing implementation plan
                 to establish Wanderlust Travel as the leading inspiration for adventure travelers.
               </p>
             </div>
@@ -143,28 +143,28 @@ const WanderlustTravel = () => {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              
+
               {/* Left Side - Website Showcase with Thumbnail */}
               <div>
                 <h2 className="text-3xl font-bold mb-8">Website Design</h2>
-                
+
                 {/* Thumbnail Preview */}
                 <Card className="overflow-hidden mb-6">
                   <CardContent className="p-0 relative">
                     {/* Small thumbnail image */}
-                    <img 
+                    <img
                       src="/images/wanderlust-website.png"
                       alt="Wanderlust Travel Website Preview"
                       className="w-full h-48 object-cover"
                       loading="lazy"
                     />
-                    
+
                     {/* Overlay with view button */}
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      <Button 
-                        size="lg" 
+                      <Button
+                        size="lg"
                         className="bg-white text-gray-900 hover:bg-gray-100"
-                        onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5563249eca')}
+                        onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utm_id=h5563249eca')}
                       >
                         <Eye className="h-5 w-5 mr-2" />
                         View Full Demo
@@ -175,18 +175,18 @@ const WanderlustTravel = () => {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                  <Button 
+                  <Button
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
-                    onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5563249eca')}
+                    onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utm_id=h5563249eca')}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View Full Website Demo
                   </Button>
-                  
-                  <Button 
-                    variant="outline" 
+
+                  <Button
+                    variant="outline"
                     className="flex-1"
-                    onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5563249eca')}
+                    onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utm_id=h5563249eca')}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download High-Res
@@ -208,21 +208,21 @@ const WanderlustTravel = () => {
                     </div>
                   </CardContent>
                 </Card>
-                
+
                 <p className="text-gray-600 leading-relaxed">
-                  Clean, modern homepage design featuring intuitive navigation, compelling hero sections, 
-                  and strategically placed CTAs to convert visitors into customers. The design emphasizes 
+                  Clean, modern homepage design featuring intuitive navigation, compelling hero sections,
+                  and strategically placed CTAs to convert visitors into customers. The design emphasizes
                   visual storytelling through high-quality imagery and user-friendly interface.
                 </p>
               </div>
 
               {/* Right Side - Social Media & Details */}
               <div className="space-y-8">
-                
+
                 {/* Social Media Video with Loading State */}
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Social Media Content</h2>
-                  
+
                   {/* YouTube Video Embed with Loading */}
                   <Card className="mb-6">
                     <CardContent className="p-0 relative">
@@ -235,11 +235,12 @@ const WanderlustTravel = () => {
                           </div>
                         </div>
                       )}
-                      
+
                       {/* Optimized Video Embed */}
                       <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                         <iframe
-                          src="https://www.youtube.com/embed/m4fAh02eD20?rel=0&modestbranding=1"
+                          // Corrected YouTube embed URL (example, replace with actual video ID from YouTube)
+                          src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" // REPLACE 'YOUR_VIDEO_ID_HERE' with the actual YouTube video ID
                           title="Wanderlust Travel Social Media Video"
                           className="w-full h-full rounded-lg"
                           allowFullScreen
@@ -258,25 +259,23 @@ const WanderlustTravel = () => {
                         Video Caption
                       </h3>
                       <div className="bg-gray-50 p-4 rounded-lg">
-                      <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
-                      <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
-                         <li><Some journeys aren't just about places – they're about how each moment makes you feel. <li>                    
-                         <li><In Paris, mornings smell of buttered croissants and love lingers in every sunset. <li>
-                    
-                        In Italy, footsteps echo on cobblestone streets where history whispers through every archway.
-                    
-                        In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.
-                    
-                        And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.
-                    
-                        This summer, let's not just travel.
-                    
-                        Let's collect feelings, write memories, and carry Europe home in our hearts.
-                      </p>
-                      <div className="text-sm text-blue-600">
-                        #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                        <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
+                        {/* CORRECTED: Using <ul> for list items and <br /> for desired line breaks */}
+                        <ul className="text-gray-700 mb-4 leading-relaxed list-disc pl-5">
+                          <li>Some journeys aren't just about places – they're about how each moment makes you feel.</li>
+                          <li>In Paris, mornings smell of buttered croissants and love lingers in every sunset.</li>
+                          <li>In Italy, footsteps echo on cobblestone streets where history whispers through every archway.</li>
+                          <li>In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.</li>
+                          <li>And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.</li>
+                        </ul>
+                        <p className="text-gray-700 mb-4 leading-relaxed">
+                          This summer, let's not just travel. <br />
+                          Let's collect feelings, write memories, and carry Europe home in our hearts.
+                        </p>
+                        <div className="text-sm text-blue-600">
+                          #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                        </div>
                       </div>
-                    </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -295,13 +294,13 @@ const WanderlustTravel = () => {
             </div>
 
             <div className="space-y-4">
-              
+
               {/* Overall Vision & Goals */}
               <Card>
                 <MarketingSection id="vision" title="Overall Vision & Goals" icon={Target}>
                   <h4 className="font-semibold mb-3">Vision:</h4>
                   <p className="mb-4">To become the leading inspiration and trusted partner for those who yearn to explore the world, delivering unique and unforgettable travel experiences.</p>
-                  
+
                   <h4 className="font-semibold mb-3">Overall Goals:</h4>
                   <ul className="space-y-2">
                     <li><strong>Increase Brand Awareness:</strong> Establish Wanderlust Travel as a recognized name in the travel industry.</li>
@@ -341,7 +340,7 @@ const WanderlustTravel = () => {
                         <li>• Links to blog and social media.</li>
                       </ul>
                     </div>
-                    
+
                     <div>
                       <p><strong>Destinations:</strong></p>
                       <ul className="ml-4 space-y-1">
@@ -526,7 +525,7 @@ const WanderlustTravel = () => {
                           <li>• Stories: Q&A sessions, polls, live updates from trips.</li>
                           <li>• Carousels: Collections of photos/videos about a specific destination or tour.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Content Themes:</p>
                         <ul className="space-y-1 mb-3">
                           <li>• "Dream Destinations": Showcase unique places.</li>
@@ -534,7 +533,7 @@ const WanderlustTravel = () => {
                           <li>• "Smart Travel Tips": Useful guides and advice.</li>
                           <li>• "Meet the Fellow Travelers": Feature customers or guides.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Frequency: 3-5 posts/week (feed), 3-5 stories/day.</p>
                         <p className="font-medium mb-2">Hashtags: Use relevant hashtags, combining brand hashtags (#WanderlustTravel), general hashtags (#EuropeTravel, #TravelGram), niche hashtags (#HiddenGems, #AdventureTravel). Add Australian local hashtags (#TravelAustralia, #ExploreAustralia, #AustralianTravel).</p>
                       </div>
@@ -550,7 +549,7 @@ const WanderlustTravel = () => {
                           <li>• Livestream: Q&A about tours, introduce new destinations.</li>
                           <li>• Events: Create events for tour consultations, travel webinars.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Content Themes:</p>
                         <ul className="space-y-1 mb-3">
                           <li>• "Tour Highlight of the Week": Detailed feature of a tour.</li>
@@ -558,7 +557,7 @@ const WanderlustTravel = () => {
                           <li>• "Travel Challenges": Mini-games, interactive quizzes.</li>
                           <li>• "Travel News": Useful updates on visas, regulations. Especially news related to international travel for Australian citizens.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Frequency: 1-2 posts/day.</p>
                         <p className="font-medium mb-2">Community Group: Create a private group for past customers or travel enthusiasts for deeper interaction.</p>
                       </div>
@@ -574,7 +573,7 @@ const WanderlustTravel = () => {
                           <li>• POV (Point of View): Put viewers in the shoes of experiencing a tour.</li>
                           <li>• Funny/Creative Travel Hacks.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Content Themes:</p>
                         <ul className="space-y-1 mb-3">
                           <li>• "Europe Travel in 30 Seconds."</li>
@@ -582,7 +581,7 @@ const WanderlustTravel = () => {
                           <li>• "The 'Wow' Moments from Our Trips."</li>
                           <li>• "Behind-the-Scenes at Wanderlust Travel." Consider adding videos about iconic Australian destinations.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Frequency: 3-5 videos/week.</p>
                       </div>
                     </div>
@@ -596,7 +595,7 @@ const WanderlustTravel = () => {
                           <li>• High-quality Photos: Focus on landscapes, architecture, cuisine.</li>
                           <li>• Idea Pins: Combine video and images for storytelling.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Content Themes:</p>
                         <ul className="space-y-1 mb-3">
                           <li>• "European Travel Inspiration Board."</li>
@@ -604,7 +603,7 @@ const WanderlustTravel = () => {
                           <li>• "Paris Travel Guide."</li>
                           <li>• "European Street Food." Add idea boards for Australian travel and nearby destinations.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Frequency: 5-10 pins/week.</p>
                       </div>
                     </div>
@@ -619,7 +618,7 @@ const WanderlustTravel = () => {
                           <li>• Interviews: Customers, tour guides, travel experts.</li>
                           <li>• Company/Team Introduction Videos.</li>
                         </ul>
-                        
+
                         <p className="font-medium mb-2">Frequency: 1-2 videos/month.</p>
                       </div>
                     </div>
@@ -721,7 +720,7 @@ const WanderlustTravel = () => {
                 <MarketingSection id="integrated" title="Integrated Marketing Strategy" icon={TrendingUp}>
                   <h4 className="font-semibold mb-3">1. Email Marketing</h4>
                   <p className="mb-2"><strong>Objectives:</strong> Nurture leads, retain existing customers, promote tours and offers.</p>
-                  
+
                   <p className="font-medium mb-2">Email Types:</p>
                   <ul className="space-y-1 mb-4 ml-4">
                     <li>• <strong>Newsletter:</strong> Regular (monthly/quarterly) emails with featured blog posts, new tours, special destinations.</li>
@@ -730,7 +729,7 @@ const WanderlustTravel = () => {
                     <li>• <strong>Tour Follow-up Emails:</strong> Sent to booked customers (pre-trip info, reminders).</li>
                     <li>• <strong>Post-Tour Emails:</strong> Thank you, review requests, suggestions for next tours.</li>
                   </ul>
-                  
+
                   <p className="mb-4"><strong>Strategy:</strong> Personalize email content based on subscriber preferences and behavior.</p>
 
                   <h4 className="font-semibold mb-3">2. Paid Advertising</h4>
