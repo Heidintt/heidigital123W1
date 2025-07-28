@@ -149,7 +149,7 @@ const WanderlustTravel = () => {
                 <Card className="overflow-hidden">
                   <CardContent className="p-0">
                     <img 
-                      src="/lovable-uploads/wanderlust-homepage.jpg" 
+                      src="/images/homepage-tour (1)-1.png" 
                       alt="Wanderlust Travel Homepage Design"
                       className="w-full h-auto object-cover"
                       style={{ aspectRatio: '16/20' }}
