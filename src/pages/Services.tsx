@@ -394,6 +394,7 @@ const Services = () => {
           ctaLink="/contact"
           secondaryCtaText="View Our Work"
           secondaryCtaLink="/portfolio"
+          backgroundImage="/images/2-home-digital-marketing-services.avif"
         />
 
         <section className="py-16 px-4" aria-label="Our Services">

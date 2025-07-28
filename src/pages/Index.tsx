@@ -72,6 +72,7 @@ const Index = () => {
             secondaryCtaText="Explore Solutions"
             secondaryCtaLink="/solutions/free-resources"
             headingLevel="h2"
+            backgroundImage="/images/1-home-digital-marketing-services.avif"
           />
         </section>
 

@@ -146,6 +146,7 @@ const About = () => {
         <Hero
           title="About Heidigital"
           subtitle="Your trusted partner in digital brand development journey"
+          backgroundImage="/images/1-home-digital-marketing-services.avif"
         />
 
         <section aria-label="Company Introduction">

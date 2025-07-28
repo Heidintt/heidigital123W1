@@ -2,8 +2,7 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const DEFAULT_BG =
-  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80";
+const DEFAULT_BG = "/images/1-home-digital-marketing-services.avif";
 
 const Hero = ({
   title = "Freelance Marketing Support, Built for Results",
@@ -14,70 +13,69 @@ const Hero = ({
   secondaryCtaLink = "#",
   backgroundImage = DEFAULT_BG,
   headingLevel = "h1",
+  badge = "Digital marketing services",
 }) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
   return (
-    <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* Background image with soft overlay */}
+    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      {/* Background image */}
       <img
         src={backgroundImage}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover -z-10 opacity-80"
+        className="absolute inset-0 w-full h-full object-cover"
         fetchPriority="high"
         draggable={false}
         decoding="async"
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-blue-100/60 to-purple-100/60 -z-10" />
+      
+      {/* Dark gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
 
-      {/* Decorative pastel blobs */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0.5 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2 }}
-        className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-300 to-purple-200 rounded-full blur-3xl opacity-40 z-0"
-      />
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0.5 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.2 }}
-        className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full blur-3xl opacity-40 z-0"
-      />
-
-      {/* Glassmorphism Card */}
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="container mx-auto relative z-10"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
-        <div className="max-w-4xl mx-auto bg-white/60 backdrop-blur-2xl rounded-3xl p-8 md:p-12 border border-white/40 shadow-2xl">
-          <HeadingTag
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight"
-            style={{
-              background: "linear-gradient(90deg, #3b82f6, #a78bfa, #f472b6)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              color: "transparent",
-            }}
-          >
+        <div className="max-w-4xl mx-auto text-left">
+          {/* Badge */}
+          {badge && (
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-block mb-6"
+            >
+              <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium border border-white/30">
+                {badge}
+              </span>
+            </motion.div>
+          )}
+
+          {/* Title */}
+          <HeadingTag className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
             {title}
           </HeadingTag>
-          <p className="text-lg md:text-xl text-gray-700 mb-10 font-medium">
+
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-white/90 mb-10 font-medium max-w-3xl">
             {subtitle}
           </p>
+
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={ctaLink}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-200 group"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-heidigital-blue text-white font-semibold shadow-lg hover:bg-heidigital-blue/90 hover:scale-105 transition-all duration-200 group"
             >
               {ctaText}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href={secondaryCtaLink}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-blue-400 text-blue-700 font-semibold bg-white/40 hover:bg-blue-50 transition"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white hover:text-heidigital-blue transition-all duration-200"
             >
               {secondaryCtaText}
             </a>
