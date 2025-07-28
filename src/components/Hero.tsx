@@ -2,8 +2,7 @@ import React from "react";
 import { ArrowRight, Star, Users, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 
-const DEFAULT_BG =
-  "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80";
+const DEFAULT_BG = "/images/blog/1-home-digital-marketing-services.avif";
 
 interface HeroProps {
   title?: string;
