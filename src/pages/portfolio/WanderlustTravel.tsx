@@ -260,9 +260,13 @@ const WanderlustTravel = () => {
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
                         <p className="text-gray-700 mb-4 leading-relaxed">
-                          Every corner of Europe has a song – Paris sings of love, Italy hums with history, 
-                          Spain dances with passion, and Croatia whispers of hidden treasures. 
-                          This summer, let Wanderlust Travel write your melody.
+                         Step into a summer where every European city becomes a note in your personal symphony.
+                          Paris – Wake up to the aroma of fresh croissants and watch the Eiffel Tower glow under moonlight.
+                          Italy – Glide through Venice’s timeless canals and taste the world’s most authentic gelato.
+                          Spain – Savor the passion of flamenco nights and indulge in rich, flavorful tapas by the sea.
+                          Croatia – Discover ancient walled cities and sail into hidden coves with waters so clear they feel unreal.
+                          With Wanderlust Travel, every detail is curated for comfort, culture, and unforgettable moments.
+                          This isn’t just a trip – it’s a handcrafted European journey waiting for you.” 
                         </p>
                         <div className="text-sm text-blue-600">
                           #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
@@ -271,23 +275,6 @@ const WanderlustTravel = () => {
                     </CardContent>
                   </Card>
                 </div>
-
-                {/* Key Objectives */}
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold mb-4 flex items-center gap-2">
-                      <Target className="h-4 w-4" />
-                      Project Objectives
-                    </h3>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>• Establish brand awareness in Australian market</li>
-                      <li>• Generate high-quality website traffic</li>
-                      <li>• Build community of travel enthusiasts</li>
-                      <li>• Convert visitors to customers</li>
-                      <li>• Differentiate from competitors</li>
-                    </ul>
-                  </CardContent>
-                </Card>
 
               </div>
             </div>
