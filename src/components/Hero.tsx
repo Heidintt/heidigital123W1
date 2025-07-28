@@ -42,12 +42,19 @@ const Hero: React.FC<HeroProps> = ({
       {/* Background image with dark overlay */}
       <div className="absolute inset-0 -z-10">
         <img
-          src={backgroundImage}
+          src={`${backgroundImage}?v=${Date.now()}`}
           alt=""
           className="w-full h-full object-cover"
           fetchPriority="high"
           draggable={false}
           decoding="async"
+          onError={(e) => {
+            // Fallback to default image if the specified image fails to load
+            const target = e.target as HTMLImageElement;
+            if (target.src !== DEFAULT_BG) {
+              target.src = DEFAULT_BG;
+            }
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/70" />
       </div>
