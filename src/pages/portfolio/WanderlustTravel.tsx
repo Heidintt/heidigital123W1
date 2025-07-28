@@ -164,7 +164,7 @@ const WanderlustTravel = () => {
                       <Button 
                         size="lg" 
                         className="bg-white text-gray-900 hover:bg-gray-100"
-                        onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+                        onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5563249eca')}
                       >
                         <Eye className="h-5 w-5 mr-2" />
                         View Full Demo
@@ -177,7 +177,7 @@ const WanderlustTravel = () => {
                 <div className="flex flex-col sm:flex-row gap-4 mb-6">
                   <Button 
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
-                    onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+                    onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5563249eca')}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View Full Website Demo
@@ -186,7 +186,7 @@ const WanderlustTravel = () => {
                   <Button 
                     variant="outline" 
                     className="flex-1"
-                    onClick={() => window.open('https://drive.google.com/uc?export=download&id=1errrJuqzjDvueuns4RjPy4iNx3xtpkDb', '_blank')}
+                    onClick={() => window.open('https://www.canva.com/design/DAGucam7cpg/NAb4RXMbvxMc0daOLKYJPQ/view?utm_content=DAGucam7cpg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5563249eca')}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download High-Res
@@ -258,26 +258,25 @@ const WanderlustTravel = () => {
                         Video Caption
                       </h3>
                       <div className="bg-gray-50 p-4 rounded-lg">
-  <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
-  <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
-    Some journeys aren't just about places – they're about how each moment makes you feel.
-
-    In Paris, mornings smell of buttered croissants and love lingers in every sunset.
-
-    In Italy, footsteps echo on cobblestone streets where history whispers through every archway.
-
-    In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.
-
-    And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.
-
-    This summer, let's not just travel.
-
-    Let's collect feelings, write memories, and carry Europe home in our hearts.
-  </p>
-  <div className="text-sm text-blue-600">
-    #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
-  </div>
-</div>
+                      <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
+                      <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
+                         <li><Some journeys aren't just about places – they're about how each moment makes you feel. <li>                    
+                         <li><In Paris, mornings smell of buttered croissants and love lingers in every sunset. <li>
+                    
+                        In Italy, footsteps echo on cobblestone streets where history whispers through every archway.
+                    
+                        In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.
+                    
+                        And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.
+                    
+                        This summer, let's not just travel.
+                    
+                        Let's collect feelings, write memories, and carry Europe home in our hearts.
+                      </p>
+                      <div className="text-sm text-blue-600">
+                        #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                      </div>
+                    </div>
                     </CardContent>
                   </Card>
                 </div>
