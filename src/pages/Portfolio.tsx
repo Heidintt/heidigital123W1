@@ -11,7 +11,7 @@ const Portfolio = () => {
   // Debug: Log khi component mount
   React.useEffect(() => {
     console.log('🔍 Portfolio component mounted');
-    console.log('📸 Portfolio Hero backgroundImage:', "/images/blog/3-home-digital-marketing-services.avif");
+    console.log('📸 Portfolio Hero backgroundImage:', "/images/3-home-digital-marketing-services.avif");
   }, []);
   // Enhanced SEO for portfolio page with corrected canonical URL
   useSEO({
@@ -201,7 +201,7 @@ const Portfolio = () => {
           <Hero
             title="Our Portfolio"
             subtitle="Explore our success stories and see how we've helped businesses achieve remarkable growth"
-            backgroundImage="/images/blog/3-home-digital-marketing-services.avif"
+            backgroundImage="/images/3-home-digital-marketing-services.avif"
           />
 
           <section className="py-8 px-4" style={{backgroundColor: '#ffffff'}} aria-label="Portfolio Case Studies">
