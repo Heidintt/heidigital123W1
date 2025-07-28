@@ -145,65 +145,77 @@ const WanderlustTravel = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
               {/* Left Side - Optimized Website Showcase */}
-              <div>
-                <h2 className="text-3xl font-bold mb-8">Website Design</h2>
-                <Card className="overflow-hidden">
-                  <CardContent className="p-0 relative">
-                    {/* Loading Placeholder */}
-                    {!imageLoaded && (
-                      <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
-                        <div className="flex items-center gap-2 text-gray-500">
-                          <Loader2 className="h-6 w-6 animate-spin" />
-                          <span>Loading website preview...</span>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Optimized Image with Lazy Loading */}
-                    <img 
-                      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop&auto=format&q=80"
-                      alt="Wanderlust Travel Homepage Design"
-                      className={`w-full h-auto object-cover transition-opacity duration-300 ${
-                        imageLoaded ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      style={{ aspectRatio: '16/9' }}
-                      loading="lazy"
-                      onLoad={() => setImageLoaded(true)}
-                      onError={() => {
-                        // Fallback to local image if CDN fails
-                        const img = document.querySelector('img[alt="Wanderlust Travel Homepage Design"]') as HTMLImageElement;
-                        if (img) {
-                          img.src = "/images/homepage-tour (1)-1.png";
-                        }
-                      }}
-                    />
-                  </CardContent>
-                </Card>
-                
-                {/* Alternative: WebP version for better performance */}
-                <div className="mt-4 text-center">
-                  <p className="text-sm text-gray-500 mb-2">�� Tip: This image is optimized for fast loading</p>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    onClick={() => {
-                      const img = document.querySelector('img[alt="Wanderlust Travel Homepage Design"]') as HTMLImageElement;
-                      if (img) {
-                        img.src = "/images/homepage-tour (1)-1.png";
-                        setImageLoaded(false);
-                      }
-                    }}
-                  >
-                    View Full Resolution
-                  </Button>
-                </div>
-                
-                <p className="text-gray-600 mt-4 leading-relaxed">
-                  Clean, modern homepage design featuring intuitive navigation, compelling hero sections, 
-                  and strategically placed CTAs to convert visitors into customers. The design emphasizes 
-                  visual storytelling through high-quality imagery and user-friendly interface.
-                </p>
-              </div>
+              {/* Left Side - Website Showcase with Thumbnail */}
+<div>
+  <h2 className="text-3xl font-bold mb-8">Website Design</h2>
+  
+  {/* Thumbnail Preview */}
+  <Card className="overflow-hidden mb-6">
+    <CardContent className="p-0 relative">
+      {/* Small thumbnail image */}
+      <img 
+        src="/images/wanderlust-website.png"
+        alt="Wanderlust Travel Website Preview"
+        className="w-full h-48 object-cover"
+        loading="lazy"
+      />
+      
+      {/* Overlay with view button */}
+      <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+        <Button 
+          size="lg" 
+          className="bg-white text-gray-900 hover:bg-gray-100"
+          onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+        >
+          <Eye className="h-5 w-5 mr-2" />
+          View Full Demo
+        </Button>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Action Buttons */}
+  <div className="flex flex-col sm:flex-row gap-4 mb-6">
+    <Button 
+      className="flex-1 bg-blue-600 hover:bg-blue-700"
+      onClick={() => window.open('https://drive.google.com/file/d/1errrJuqzjDvueuns4RjPy4iNx3xtpkDb/view?usp=sharing', '_blank')}
+    >
+      <Eye className="h-4 w-4 mr-2" />
+      View Full Website Demo
+    </Button>
+    
+    <Button 
+      variant="outline" 
+      className="flex-1"
+      onClick={() => window.open('https://drive.google.com/uc?export=download&id=1errrJuqzjDvueuns4RjPy4iNx3xtpkDb', '_blank')}
+    >
+      <Download className="h-4 w-4 mr-2" />
+      Download High-Res
+    </Button>
+  </div>
+
+  {/* Demo Info */}
+  <Card className="mb-6">
+    <CardContent className="p-6">
+      <h3 className="font-semibold mb-3 flex items-center gap-2">
+        <ExternalLink className="h-4 w-4" />
+        Demo Information
+      </h3>
+      <div className="space-y-2 text-sm text-gray-600">
+        <p><strong>File Size:</strong> 17MB (High Resolution)</p>
+        <p><strong>Format:</strong> PNG Image</p>
+        <p><strong>Dimensions:</strong> 1920x1080px</p>
+        <p><strong>Loading Time:</strong> ~3-5 seconds</p>
+      </div>
+    </CardContent>
+  </Card>
+  
+  <p className="text-gray-600 leading-relaxed">
+    Clean, modern homepage design featuring intuitive navigation, compelling hero sections, 
+    and strategically placed CTAs to convert visitors into customers. The design emphasizes 
+    visual storytelling through high-quality imagery and user-friendly interface.
+  </p>
+</div>
 
               {/* Right Side - Optimized Social Media & Details */}
               <div className="space-y-8">
