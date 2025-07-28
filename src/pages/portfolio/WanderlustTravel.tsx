@@ -258,26 +258,21 @@ const WanderlustTravel = () => {
                         Video Caption
                       </h3>
                       <div className="bg-gray-50 p-4 rounded-lg">
-  <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
-  <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
-    Some journeys aren't just about places – they're about how each moment makes you feel.
-
-    In Paris, mornings smell of buttered croissants and love lingers in every sunset.
-
-    In Italy, footsteps echo on cobblestone streets where history whispers through every archway.
-
-    In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella.
-
-    And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness.
-
-    This summer, let's not just travel.
-
-    Let's collect feelings, write memories, and carry Europe home in our hearts.
-  </p>
-  <div className="text-sm text-blue-600">
-    #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
-  </div>
-</div>
+                        <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
+                        {/* CHANGED: Using <br /> for line breaks within a single <p> tag */}
+                        <p className="text-gray-700 mb-4 leading-relaxed">
+                          Some journeys aren't just about places – they're about how each moment makes you feel. <br />
+                          In Paris, mornings smell of buttered croissants and love lingers in every sunset. <br />
+                          In Italy, footsteps echo on cobblestone streets where history whispers through every archway. <br />
+                          In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella. <br />
+                          And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness. <br />
+                          This summer, let's not just travel. <br />
+                          Let's collect feelings, write memories, and carry Europe home in our hearts.
+                        </p>
+                        <div className="text-sm text-blue-600">
+                          #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
