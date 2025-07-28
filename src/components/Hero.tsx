@@ -17,7 +17,7 @@ interface HeroProps {
   showStats?: boolean;
 }
 
-const Hero: React.FC<HeroProps> = React.memo(({
+const Hero: React.FC<HeroProps> = ({
   title = "Transform Your Digital Future",
   subtitle = "Cutting-edge digital marketing strategies designed to accelerate Australian businesses into tomorrow's competitive landscape.",
   ctaText = "Start Your Journey",
@@ -116,6 +116,6 @@ const Hero: React.FC<HeroProps> = React.memo(({
       </div>
     </div>
   );
-});
+};
 
 export default Hero;
