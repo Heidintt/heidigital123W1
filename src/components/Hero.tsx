@@ -37,13 +37,20 @@ const Hero: React.FC<HeroProps> = ({
     { icon: Star, value: "5+ Years", label: "Experience" },
   ];
 
+  // Debug: Log khi component mount
+  React.useEffect(() => {
+    console.log('🔍 Hero component mounted');
+    console.log('📸 Background image path:', backgroundImage);
+    console.log('�� Title:', title);
+  }, [backgroundImage, title]);
+
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden" style={{backgroundColor: '#1e40af'}}>
       {/* Background image with dark overlay */}
       <div className="absolute inset-0 -z-10">
         <img
           src={`${backgroundImage}?${CACHE_VERSION}`}
-          alt=""
+          alt="Hero background"
           className="w-full h-full object-cover"
           fetchPriority="high"
           draggable={false}
@@ -59,7 +66,7 @@ const Hero: React.FC<HeroProps> = ({
               console.log('🔄 Attempting fallback to default image...');
               target.src = `${DEFAULT_BG}?${CACHE_VERSION}`;
             } else {
-              console.error('💥 Default image also failed to load');
+              console.error('�� Default image also failed to load');
               // Show gradient fallback
               target.style.display = 'none';
               const parentDiv = target.parentElement;
