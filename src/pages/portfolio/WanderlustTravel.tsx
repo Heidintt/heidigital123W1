@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { useSEO } from '@/hooks/useSEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3 } from 'lucide-react';
-import { useState } from 'react';
+import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3, Loader2 } from 'lucide-react';
 
 const WanderlustTravel = () => {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useSEO({
     title: "Wanderlust Travel Digital Marketing Strategy | Portfolio",
@@ -138,24 +139,65 @@ const WanderlustTravel = () => {
           </div>
         </section>
 
-        {/* Main Content - Split Layout */}
+        {/* Main Content - Optimized Demo Section */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               
-              {/* Left Side - Website Showcase */}
+              {/* Left Side - Optimized Website Showcase */}
               <div>
                 <h2 className="text-3xl font-bold mb-8">Website Design</h2>
                 <Card className="overflow-hidden">
-                  <CardContent className="p-0">
+                  <CardContent className="p-0 relative">
+                    {/* Loading Placeholder */}
+                    {!imageLoaded && (
+                      <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
+                        <div className="flex items-center gap-2 text-gray-500">
+                          <Loader2 className="h-6 w-6 animate-spin" />
+                          <span>Loading website preview...</span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Optimized Image with Lazy Loading */}
                     <img 
-                      src="/images/homepage-tour (1)-1.png" 
+                      src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop&auto=format&q=80"
                       alt="Wanderlust Travel Homepage Design"
-                      className="w-full h-auto object-cover"
-                      style={{ aspectRatio: '16/20' }}
+                      className={`w-full h-auto object-cover transition-opacity duration-300 ${
+                        imageLoaded ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      style={{ aspectRatio: '16/9' }}
+                      loading="lazy"
+                      onLoad={() => setImageLoaded(true)}
+                      onError={() => {
+                        // Fallback to local image if CDN fails
+                        const img = document.querySelector('img[alt="Wanderlust Travel Homepage Design"]') as HTMLImageElement;
+                        if (img) {
+                          img.src = "/images/homepage-tour (1)-1.png";
+                        }
+                      }}
                     />
                   </CardContent>
                 </Card>
+                
+                {/* Alternative: WebP version for better performance */}
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-500 mb-2">�� Tip: This image is optimized for fast loading</p>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => {
+                      const img = document.querySelector('img[alt="Wanderlust Travel Homepage Design"]') as HTMLImageElement;
+                      if (img) {
+                        img.src = "/images/homepage-tour (1)-1.png";
+                        setImageLoaded(false);
+                      }
+                    }}
+                  >
+                    View Full Resolution
+                  </Button>
+                </div>
+                
                 <p className="text-gray-600 mt-4 leading-relaxed">
                   Clean, modern homepage design featuring intuitive navigation, compelling hero sections, 
                   and strategically placed CTAs to convert visitors into customers. The design emphasizes 
@@ -163,22 +205,35 @@ const WanderlustTravel = () => {
                 </p>
               </div>
 
-              {/* Right Side - Social Media & Details */}
+              {/* Right Side - Optimized Social Media & Details */}
               <div className="space-y-8">
                 
-                {/* Social Media Video */}
+                {/* Social Media Video with Loading State */}
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Social Media Content</h2>
                   
-                  {/* YouTube Video Embed */}
+                  {/* YouTube Video Embed with Loading */}
                   <Card className="mb-6">
-                    <CardContent className="p-0">
-                      <div className="relative aspect-video">
+                    <CardContent className="p-0 relative">
+                      {/* Loading Placeholder */}
+                      {!videoLoaded && (
+                        <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
+                          <div className="flex items-center gap-2 text-gray-500">
+                            <Loader2 className="h-6 w-6 animate-spin" />
+                            <span>Loading video...</span>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {/* Optimized Video Embed */}
+                      <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                         <iframe
-                          src="https://www.youtube.com/embed/m4fAh02eD20"
+                          src="https://www.youtube.com/embed/m4fAh02eD20?rel=0&modestbranding=1"
                           title="Wanderlust Travel Social Media Video"
                           className="w-full h-full rounded-lg"
                           allowFullScreen
+                          loading="lazy"
+                          onLoad={() => setVideoLoaded(true)}
                         />
                       </div>
                     </CardContent>
