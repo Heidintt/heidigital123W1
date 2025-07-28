@@ -258,6 +258,27 @@ const WanderlustTravel = () => {
                         Video Caption
                       </h3>
                       <div className="bg-gray-50 p-4 rounded-lg">
+                      <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
+                      <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">
+                        Step into a summer where every European city becomes a note in your personal symphony.
+                        
+                        Paris – Wake up to the aroma of fresh croissants and watch the Eiffel Tower glow under moonlight.
+                        
+                        Italy – Glide through Venice's timeless canals and taste the world's most authentic gelato.
+                        
+                        Spain – Savor the passion of flamenco nights and indulge in rich, flavorful tapas by the sea.
+                        
+                        Croatia – Discover ancient walled cities and sail into hidden coves with waters so clear they feel unreal.
+                        
+                        With Wanderlust Travel, every detail is curated for comfort, culture, and unforgettable moments.
+                        
+                        This isn't just a trip – it's a handcrafted European journey waiting for you.
+                      </p>
+                      <div className="text-sm text-blue-600">
+                        #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                      </div>
+                    </div>
+                      <div className="bg-gray-50 p-4 rounded-lg">
                         <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
                         <p className="text-gray-700 mb-4 leading-relaxed">
                          Step into a summer where every European city becomes a note in your personal symphony.
