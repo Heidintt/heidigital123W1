@@ -41,8 +41,10 @@ const Hero: React.FC<HeroProps> = ({
   React.useEffect(() => {
     console.log('🔍 Hero component mounted');
     console.log('📸 Background image path:', backgroundImage);
+    console.log(' DEFAULT_BG path:', DEFAULT_BG);
     console.log(' Title:', title);
-  }, [backgroundImage, title]);
+    console.log('🔍 Props received:', { backgroundImage, title, subtitle });
+  }, [backgroundImage, title, subtitle]);
 
   return (
     <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -55,13 +57,17 @@ const Hero: React.FC<HeroProps> = ({
           fetchPriority="high"
           draggable={false}
           decoding="async"
-          onLoad={() => {
+          onLoad={(e) => {
+            const target = e.target as HTMLImageElement;
             console.log('✅ Hero banner loaded successfully:', backgroundImage);
-            console.log('🖼️ Image element:', document.querySelector('img[alt="Hero background"]'));
+            console.log('🖼️ Image element:', target);
+            console.log('📏 Image dimensions:', target.naturalWidth, 'x', target.naturalHeight);
+            console.log('🎨 Image src:', target.src);
           }}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             console.error('❌ Hero banner failed to load:', backgroundImage);
+            console.error('❌ Image src that failed:', target.src);
             
             if (target.src.includes(backgroundImage)) {
               console.log('🔄 Attempting fallback to default image...');
