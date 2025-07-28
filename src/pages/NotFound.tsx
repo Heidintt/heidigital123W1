@@ -1,4 +1,3 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Layout from "@/components/Layout";
@@ -9,7 +8,14 @@ import { Home } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 
 const NotFound = () => {
-  const location = useLocation();
+  // Wrap useLocation trong try-catch để tránh lỗi context
+  let location;
+  try {
+    location = useLocation();
+  } catch (error) {
+    console.error('Router context not available:', error);
+    location = { pathname: window.location.pathname };
+  }
 
   // Set SEO for 404 page
   useSEO({
