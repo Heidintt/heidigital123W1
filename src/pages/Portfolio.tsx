@@ -165,6 +165,14 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Marketing Strategy", "Nightlife", "Brand Development"],
       link: "/portfolio/koto-club"
+    },
+    {
+      id: "wanderlust-travel",
+      title: "Wanderlust Travel Digital Marketing Strategy",
+      description: "Complete digital marketing ecosystem for European travel experiences, including website design, social media strategy, and comprehensive marketing plan targeting Australian travelers.",
+      image: "/lovable-uploads/c70b8597-1e6d-45af-90eb-9f855efb46fa.png",
+      categories: ["Digital Marketing", "Travel", "Brand Strategy", "Social Media"],
+      link: "/portfolio/wanderlust-travel"
     }
   ];
 
