@@ -201,11 +201,6 @@ const WanderlustTravel = () => {
                   </CardContent>
                 </Card>
 
-                <p className="text-gray-600 leading-relaxed">
-                  Clean, modern homepage design featuring intuitive navigation, compelling hero sections,
-                  and strategically placed CTAs to convert visitors into customers. The design emphasizes
-                  visual storytelling through high-quality imagery and user-friendly interface.
-                </p>
               </div>
 
               {/* Right Side - Social Media & Details */}
