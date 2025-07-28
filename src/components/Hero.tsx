@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, Star, Users, TrendingUp } from "lucide-react";
 
-const DEFAULT_BG = "/images/blog/1-home-digital-marketing-services.avif";
+const DEFAULT_BG = "/images/3-home-digital-marketing-services.avif";
 const CACHE_VERSION = "v1"; // Static cache busting
 
 interface HeroProps {
