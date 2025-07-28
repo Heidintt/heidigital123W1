@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Star, Users, TrendingUp } from "lucide-react";
 
 const DEFAULT_BG = "/images/3-home-digital-marketing-services.avif";
@@ -30,6 +30,9 @@ const Hero: React.FC<HeroProps> = ({
   showStats = true,
 }) => {
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [currentImage, setCurrentImage] = useState(backgroundImage);
 
   const stats = [
     { icon: Users, value: "250+", label: "Happy Clients" },
@@ -37,52 +40,68 @@ const Hero: React.FC<HeroProps> = ({
     { icon: Star, value: "5+ Years", label: "Experience" },
   ];
 
-  // Debug: Log khi component mount
-  React.useEffect(() => {
+  // Enhanced error handling and preloading
+  useEffect(() => {
     console.log('🔍 Hero component mounted');
     console.log('📸 Background image path:', backgroundImage);
-    console.log(' DEFAULT_BG path:', DEFAULT_BG);
-    console.log(' Title:', title);
+    console.log('🏠 DEFAULT_BG path:', DEFAULT_BG);
+    console.log('📝 Title:', title);
     console.log('🔍 Props received:', { backgroundImage, title, subtitle });
-  }, [backgroundImage, title, subtitle]);
+
+    // Preload image
+    const img = new Image();
+    img.onload = () => {
+      console.log('✅ Image preloaded successfully:', currentImage);
+      setImageLoaded(true);
+    };
+    img.onerror = () => {
+      console.warn('⚠️ Image preload failed:', currentImage);
+      if (currentImage !== DEFAULT_BG) {
+        console.log('🔄 Trying default image...');
+        setCurrentImage(DEFAULT_BG);
+      } else {
+        setImageError(true);
+      }
+    };
+    img.src = `${currentImage}?${CACHE_VERSION}`;
+  }, [backgroundImage, title, subtitle, currentImage]);
 
   return (
     <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background image with lighter overlay */}
       <div className="absolute inset-0 -z-10">
-        <img
-          src={`${backgroundImage}?${CACHE_VERSION}`}
-          alt="Hero background"
-          className="w-full h-full object-cover"
-          fetchPriority="high"
-          draggable={false}
-          decoding="async"
-          onLoad={(e) => {
-            const target = e.target as HTMLImageElement;
-            console.log('✅ Hero banner loaded successfully:', backgroundImage);
-            console.log('🖼️ Image element:', target);
-            console.log('📏 Image dimensions:', target.naturalWidth, 'x', target.naturalHeight);
-            console.log('🎨 Image src:', target.src);
-          }}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            console.error('❌ Hero banner failed to load:', backgroundImage);
-            console.error('❌ Image src that failed:', target.src);
-            
-            if (target.src.includes(backgroundImage)) {
-              console.log('🔄 Attempting fallback to default image...');
-              target.src = `${DEFAULT_BG}?${CACHE_VERSION}`;
-            } else {
-              console.error(' Default image also failed to load');
-              // Show gradient fallback
-              target.style.display = 'none';
-              const parentDiv = target.parentElement;
-              if (parentDiv) {
-                parentDiv.style.background = 'linear-gradient(135deg, #1e40af 0%, #7c3aed 100%)';
+        {!imageError ? (
+          <img
+            src={`${currentImage}?${CACHE_VERSION}`}
+            alt="Hero background"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
+            draggable={false}
+            decoding="async"
+            onLoad={(e) => {
+              const target = e.target as HTMLImageElement;
+              console.log('✅ Hero banner loaded successfully:', currentImage);
+              console.log('🖼️ Image element:', target);
+              console.log('📏 Image dimensions:', target.naturalWidth, 'x', target.naturalHeight);
+              setImageLoaded(true);
+            }}
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              console.error('❌ Hero banner failed to load:', currentImage);
+              console.error('❌ Image src that failed:', target.src);
+              
+              if (currentImage !== DEFAULT_BG) {
+                console.log('🔄 Attempting fallback to default image...');
+                setCurrentImage(DEFAULT_BG);
+              } else {
+                console.error('💥 Default image also failed to load');
+                setImageError(true);
               }
-            }
-          }}
-        />
+            }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-blue-600 to-purple-700" />
+        )}
         {/* Lighter overlay để hình ảnh hiển thị rõ hơn */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-black/20 to-black/40" />
       </div>

@@ -8,10 +8,24 @@ import CallToAction from "@/components/CallToAction";
 import { useSEO } from "@/hooks/useSEO";
 
 const Portfolio = () => {
-  // Debug: Log khi component mount
+  // Debug: Log khi component mount và kiểm tra React context
   React.useEffect(() => {
     console.log('🔍 Portfolio component mounted');
     console.log('📸 Portfolio Hero backgroundImage:', "/images/3-home-digital-marketing-services.avif");
+    console.log('⚛️ React context check:', React.version);
+    
+    // Kiểm tra xem có file ảnh thực sự không
+    fetch("/images/3-home-digital-marketing-services.avif")
+      .then(response => {
+        if (response.ok) {
+          console.log('✅ Image file exists and accessible');
+        } else {
+          console.error('❌ Image file not found:', response.status);
+        }
+      })
+      .catch(err => {
+        console.error('❌ Error checking image file:', err);
+      });
   }, []);
   // Enhanced SEO for portfolio page with corrected canonical URL
   useSEO({
