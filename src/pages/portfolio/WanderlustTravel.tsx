@@ -5,11 +5,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3, Eye, Download } from 'lucide-react';
+import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3, Eye, Download, Star, Award, Zap, Heart, Clock, Plane } from 'lucide-react';
 
 const WanderlustTravel = () => {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-  const [imageLoaded, setImageLoaded] = useState(false); // Retained as in original code
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useSEO({
@@ -64,12 +64,14 @@ const WanderlustTravel = () => {
   const MarketingSection = ({ id, title, children, icon: Icon }: { id: string, title: string, children: React.ReactNode, icon: any }) => (
     <Collapsible open={openSections[id]} onOpenChange={() => toggleSection(id)}>
       <CollapsibleTrigger asChild>
-        <Button variant="ghost" className="w-full justify-between p-6 h-auto text-left">
+        <Button variant="ghost" className="w-full justify-between p-6 h-auto text-left hover:bg-gray-50 transition-all duration-200">
           <div className="flex items-center gap-3">
-            <Icon className="h-5 w-5 text-primary" />
-            <span className="text-lg font-semibold">{title}</span>
+            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+              <Icon className="h-5 w-5 text-white" />
+            </div>
+            <span className="text-lg font-semibold text-gray-800">{title}</span>
           </div>
-          <ChevronDown className={`h-4 w-4 transition-transform ${openSections[id] ? 'rotate-180' : ''}`} />
+          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSections[id] ? 'rotate-180' : ''}`} />
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent className="px-6 pb-6">
@@ -82,77 +84,120 @@ const WanderlustTravel = () => {
 
   return (
     <Layout>
-      <main className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative h-96 flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-          <div className="absolute inset-0 bg-black/30"></div>
-          <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-            <h1 className="text-5xl font-bold mb-4">Wanderlust Travel</h1>
-            <p className="text-xl mb-6">Digital Marketing Strategy & Website Design</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        {/* Hero Section - Modern Design */}
+        <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+          <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
+            <div className="mb-6">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 mb-4">
+                <Award className="h-4 w-4 mr-2" />
+                Featured Project
+              </Badge>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              Wanderlust Travel
+            </h1>
+            <p className="text-2xl md:text-3xl mb-8 text-blue-100 font-light">
+              Digital Marketing Strategy & Website Design
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <Globe className="h-4 w-4 mr-2" />
                 Website Design
               </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <Users className="h-4 w-4 mr-2" />
                 Social Media Strategy
               </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <TrendingUp className="h-4 w-4 mr-2" />
                 Marketing Plan
               </Badge>
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <Plane className="h-4 w-4 mr-2" />
                 Travel Industry
               </Badge>
             </div>
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
+              <Eye className="h-5 w-5 mr-2" />
+              View Full Strategy
+            </Button>
           </div>
         </section>
 
-        {/* Project Overview */}
-        <section className="py-16 bg-gray-50">
+        {/* Project Overview - Modern Cards */}
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-600 mb-2">CLIENT</h3>
-                <p className="text-lg">Wanderlust Travel</p>
-              </div>
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-600 mb-2">INDUSTRY</h3>
-                <p className="text-lg">Travel & Tourism</p>
-              </div>
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-600 mb-2">SCOPE</h3>
-                <p className="text-lg">Full Digital Strategy</p>
-              </div>
-              <div className="text-center">
-                <h3 className="font-semibold text-gray-600 mb-2">TIMELINE</h3>
-                <p className="text-lg">6 Months</p>
-              </div>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Project Overview</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                A comprehensive digital transformation for Wanderlust Travel, delivering cutting-edge marketing solutions and modern website design.
+              </p>
             </div>
-
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">CLIENT</h3>
+                  <p className="text-xl font-bold text-gray-900">Wanderlust Travel</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Plane className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">INDUSTRY</h3>
+                  <p className="text-xl font-bold text-gray-900">Travel & Tourism</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">SCOPE</h3>
+                  <p className="text-xl font-bold text-gray-900">Full Digital Strategy</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">TIMELINE</h3>
+                  <p className="text-xl font-bold text-gray-900">6 Months</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
         {/* Main Content - Optimized Demo Section */}
-        <section className="py-16">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-              {/* Left Side - Website Showcase with Thumbnail */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              {/* Left Side - Website Showcase */}
               <div>
-                <h2 className="text-3xl font-bold mb-8">Website Design</h2>
-
-                {/* Thumbnail Preview */}
-                <Card className="overflow-hidden mb-6">
-                  <CardContent className="p-0 relative">
-                    {/* Small thumbnail image */}
+                <h2 className="text-4xl font-bold mb-8 text-gray-900">Website Design</h2>
+                
+                <Card className="overflow-hidden mb-8 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0 relative group">
                     <img
                       src="/images/wanderlust-website.png"
                       alt="Wanderlust Travel Website Preview"
-                      className="w-full h-full object-cover" // Changed h-48 to h-full, keeping object-cover
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
-
-                    {/* Overlay with view button */}
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <Button
                         size="lg"
                         className="bg-white text-gray-900 hover:bg-gray-100"
@@ -165,19 +210,17 @@ const WanderlustTravel = () => {
                   </CardContent>
                 </Card>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button
-                    className="flex-1 bg-blue-600 hover:bg-blue-700"
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                     onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View Full Website Demo
                   </Button>
-
                   <Button
                     variant="outline"
-                    className="flex-1"
+                    className="flex-1 border-2 border-gray-300 hover:border-gray-400"
                     onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
                   >
                     <Download className="h-4 w-4 mr-2" />
@@ -185,45 +228,50 @@ const WanderlustTravel = () => {
                   </Button>
                 </div>
 
-                {/* Demo Info */}
-                <Card className="mb-6">
+                <Card className="mb-8">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-3 flex items-center gap-2">
+                    <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
                       <ExternalLink className="h-4 w-4" />
                       Demo Information
                     </h3>
-                    <div className="space-y-2 text-sm text-gray-600">
-                      <p><strong>File Size:</strong> 17MB (High Resolution)</p>
-                      <p><strong>Format:</strong> PNG Image</p>
-                      <p><strong>Dimensions:</strong> 1920x1080px</p>
-                      <p><strong>Loading Time:</strong> ~3-5 seconds</p>
+                    <div className="space-y-3 text-sm text-gray-600">
+                      <div className="flex justify-between">
+                        <span className="font-medium">File Size:</span>
+                        <span>17MB (High Resolution)</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="font-medium">Format:</span>
+                        <span>PNG Image</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="font-medium">Dimensions:</span>
+                        <span>1920x1080px</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="font-medium">Loading Time:</span>
+                        <span>~3-5 seconds</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
-
               </div>
 
               {/* Right Side - Social Media & Details */}
               <div className="space-y-8">
-
-                {/* Social Media Video with Loading State */}
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">Social Media Content</h2>
+                  <h2 className="text-4xl font-bold mb-8 text-gray-900">Social Media Content</h2>
 
-                  {/* YouTube Video Embed with Loading */}
-                  <Card className="mb-6">
+                  <Card className="mb-8 hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0 relative">
-                      {/* Loading Placeholder */}
                       {!videoLoaded && (
-                        <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
-                          <div className="flex items-center gap-2 text-gray-500">
-                            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-gray-600"></div>
-                            <span>Loading video...</span>
+                        <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                          <div className="flex items-center gap-3 text-gray-500">
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                            <span className="text-lg">Loading video...</span>
                           </div>
                         </div>
                       )}
 
-                      {/* Optimized Video Embed */}
                       <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                         <iframe
                           src="https://www.youtube.com/embed/m4fAh02eD20?rel=0&modestbranding=1"
@@ -237,15 +285,14 @@ const WanderlustTravel = () => {
                     </CardContent>
                   </Card>
 
-                  {/* Video Caption */}
-                  <Card>
+                  <Card className="hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-6">
-                      <h3 className="font-semibold mb-4 flex items-center gap-2">
+                      <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
                         <Play className="h-4 w-4" />
                         Video Caption
                       </h3>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="font-medium mb-3">Sing Your Summer Across Europe</p>
+                      <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-100">
+                        <p className="font-bold mb-3 text-gray-900">Sing Your Summer Across Europe</p>
                         <p className="text-gray-700 mb-4 leading-relaxed">
                           Some journeys aren't just about places – they're about how each moment makes you feel. <br />
                           In Paris, mornings smell of buttered croissants and love lingers in every sunset. <br />
@@ -255,37 +302,119 @@ const WanderlustTravel = () => {
                           This summer, let's not just travel. <br />
                           Let's collect feelings, write memories, and carry Europe home in our hearts.
                         </p>
-                        <div className="text-sm text-blue-600">
+                        <div className="text-sm text-blue-600 font-medium">
                           #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-
               </div>
             </div>
           </div>
         </section>
 
-        {/* Full Marketing Plan */}
-        <section className="py-16 bg-gray-50">
+        {/* NEW: Social Media Campaign Images - Above Detailed Marketing Strategy */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Social Media Campaign</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Engaging content that drives conversions and builds brand awareness across all platforms.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Image 1 - Last Chance Campaign */}
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="relative">
+                    <img
+                      src="/images/blog/social-media-image-1.png"
+                      alt="Last Chance Europe Campaign"
+                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-red-500 text-white border-0">
+                        <Clock className="h-4 w-4 mr-2" />
+                        Limited Time
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">⏳ Last Chance: Up to 45% Off Europe Escapes!</h3>
+                    <p className="text-gray-600 mb-4">
+                      Turn your European dream into reality with up to 45% OFF exclusive deals.
+                      Paris, Rome, Barcelona… where will you begin your summer escape?
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white">
+                        👉 Book now before this offer flies away!
+                      </Button>
+                      <div className="text-sm text-gray-500">
+                        #WonderlustTravel #EuropeanDeals #LastChanceToTravel
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Image 2 - Europe Awaits Campaign */}
+              <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-0">
+                  <div className="relative">
+                    <img
+                      src="/images/blog/social-media-image-2.png"
+                      alt="Europe Awaits Campaign"
+                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-blue-500 text-white border-0">
+                        <Plane className="h-4 w-4 mr-2" />
+                        From $1200
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">Europe Awaits – From $1200 🌍</h3>
+                    <p className="text-gray-600 mb-4">
+                      From $1200, your next chapter could start in Europe.
+                      Walk through ancient streets, taste unforgettable cuisine, and collect timeless memories.
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white">
+                        ✈️ Why wait for someday when summer is calling now?
+                      </Button>
+                      <div className="text-sm text-gray-500">
+                        #WanderlustTravel #ExploreEurope #TravelDreams
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Full Marketing Plan - Now below the images */}
+        <section className="py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Detailed Marketing Strategy</h2>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">Detailed Marketing Strategy</h2>
               <p className="text-xl text-gray-600">Comprehensive plan for digital marketing success</p>
             </div>
 
-            <div className="space-y-4">
-
+            <div className="space-y-6">
               {/* Overall Vision & Goals */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="vision" title="Overall Vision & Goals" icon={Target}>
-                  <h4 className="font-semibold mb-3">Vision:</h4>
-                  <p className="mb-4">To become the leading inspiration and trusted partner for those who yearn to explore the world, delivering unique and unforgettable travel experiences.</p>
+                  <h4 className="font-semibold mb-3 text-gray-900">Vision:</h4>
+                  <p className="mb-4 text-gray-700">To become the leading inspiration and trusted partner for those who yearn to explore the world, delivering unique and unforgettable travel experiences.</p>
 
-                  <h4 className="font-semibold mb-3">Overall Goals:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-semibold mb-3 text-gray-900">Overall Goals:</h4>
+                  <ul className="space-y-2 text-gray-700">
                     <li><strong>Increase Brand Awareness:</strong> Establish Wanderlust Travel as a recognized name in the travel industry.</li>
                     <li><strong>Attract Potential Customers:</strong> Generate high-quality traffic to the website and social media channels.</li>
                     <li><strong>Conversion:</strong> Convert visitors into customers booking tours/services.</li>
@@ -296,22 +425,22 @@ const WanderlustTravel = () => {
               </Card>
 
               {/* Website Plan */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="website" title="Website Plan" icon={Globe}>
-                  <h4 className="font-semibold mb-3">1. Website Objectives</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">1. Website Objectives</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• Showcase Wanderlust Travel's unique tours and experiences.</li>
                     <li>• Provide detailed, useful information about destinations.</li>
                     <li>• Encourage users to explore, contact, and book services.</li>
                     <li>• Build brand credibility and trust.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">2. Target Audience</h4>
-                  <p className="mb-4">Young to middle-aged individuals (25-55 years old) in Australia with stable incomes, a love for adventurous travel, cultural immersion, and a search for unique, off-the-beaten-path journeys.</p>
-                  <p className="mb-4">Couples, groups of friends, or solo travelers from Australia who desire well-planned trips that still offer freedom and unexpected discoveries. Those seeking a blend of adventure and comfort.</p>
+                  <h4 className="font-semibold mb-3 text-gray-900">2. Target Audience</h4>
+                  <p className="mb-4 text-gray-700">Young to middle-aged individuals (25-55 years old) in Australia with stable incomes, a love for adventurous travel, cultural immersion, and a search for unique, off-the-beaten-path journeys.</p>
+                  <p className="mb-4 text-gray-700">Couples, groups of friends, or solo travelers from Australia who desire well-planned trips that still offer freedom and unexpected discoveries. Those seeking a blend of adventure and comfort.</p>
 
-                  <h4 className="font-semibold mb-3">3. Key Pages & Features</h4>
-                  <div className="space-y-3">
+                  <h4 className="font-semibold mb-3 text-gray-900">3. Key Pages & Features</h4>
+                  <div className="space-y-3 text-gray-700">
                     <div>
                       <p><strong>Homepage:</strong></p>
                       <ul className="ml-4 space-y-1">
@@ -356,7 +485,6 @@ const WanderlustTravel = () => {
                       <ul className="ml-4 space-y-1">
                         <li>• A section for in-depth articles on destinations, travel tips, experiences, and inspiring stories. Pay special attention to articles useful for Australian travelers (e.g., visa requirements for Australian citizens, currency exchange tips when traveling overseas from Australia).</li>
                         <li>• SEO-friendly content to attract organic traffic.</li>
-                      <li>• SEO-friendly content to attract organic traffic.</li>
                       </ul>
                     </div>
 
@@ -383,8 +511,8 @@ const WanderlustTravel = () => {
                     </div>
                   </div>
 
-                  <h4 className="font-semibold mb-3 mt-4">4. Website Content Strategy</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 mt-4 text-gray-900">4. Website Content Strategy</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>High-Quality Images & Videos:</strong> Use professional, authentic visuals focusing on emotion and experience. Short, captivating videos are a priority.</li>
                     <li><strong>Engaging Descriptions:</strong> Write tour and destination content that not only provides information but also sparks imagination and a sense of adventure.</li>
                     <li><strong>Travel Storytelling:</strong> Share narratives about trips, local cultures, and memorable moments.</li>
@@ -392,8 +520,8 @@ const WanderlustTravel = () => {
                     <li><strong>Detailed Guides:</strong> Provide practical information such as visa requirements, currency, culture, and safety to add value for readers.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">5. Website Design Principles</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">5. Website Design Principles</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>Intuitive & Modern Interface:</strong> Clean, easy to navigate, image-centric.</li>
                     <li><strong>Responsive Design:</strong> Optimized for display on all devices (desktop, tablet, mobile).</li>
                     <li><strong>Fast Loading Speed:</strong> Crucial for user experience and SEO.</li>
@@ -401,8 +529,8 @@ const WanderlustTravel = () => {
                     <li><strong>Easy Integration:</strong> Social media sharing buttons, map integration, sign-up forms.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">6. SEO Strategy (Search Engine Optimization)</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">6. SEO Strategy (Search Engine Optimization)</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>Keyword Research:</strong> Identify keywords related to "adventure travel," "unique tours," "European destinations," "wanderlust travel," and integrate them into content. Specifically target keywords with "Australia" or "from Australia" elements (e.g., "Europe tours from Australia," "Vietnam travel from Sydney").</li>
                     <li><strong>On-page Optimization:</strong> Titles, meta descriptions, H1-H6 tags, friendly URLs, image optimization.</li>
                     <li><strong>Quality Content:</strong> Regularly publish blog posts, providing real value to readers.</li>
@@ -410,8 +538,8 @@ const WanderlustTravel = () => {
                     <li><strong>Link Building:</strong> Acquire quality backlinks from relevant travel websites.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">7. Calls to Action (CTA)</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">7. Calls to Action (CTA)</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• "Explore Our European Tours"</li>
                     <li>• "Plan Your Dream Trip"</li>
                     <li>• "Contact Us for a Free Consultation"</li>
@@ -419,8 +547,8 @@ const WanderlustTravel = () => {
                     <li>• "Read More Travel Stories"</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">8. Creative Website Ideas (NEW)</h4>
-                  <div className="space-y-3">
+                  <h4 className="font-semibold mb-3 text-gray-900">8. Creative Website Ideas (NEW)</h4>
+                  <div className="space-y-3 text-gray-700">
                     <div>
                       <p><strong>Interactive "Wanderlust Map":</strong></p>
                       <ul className="ml-4 space-y-1">
@@ -474,10 +602,10 @@ const WanderlustTravel = () => {
               </Card>
 
               {/* Social Media Plan */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="social" title="Social Media Plan" icon={Users}>
-                  <h4 className="font-semibold mb-3">1. Social Media Objectives</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">1. Social Media Objectives</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• Increase brand awareness and engagement.</li>
                     <li>• Drive traffic to the website.</li>
                     <li>• Build a community of travel enthusiasts.</li>
@@ -485,11 +613,11 @@ const WanderlustTravel = () => {
                     <li>• Listen to feedback and build trust.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">2. Target Audience</h4>
-                  <p className="mb-4">Similar to the website audience, but potentially broader to include younger demographics who prefer short, visual, and quick interactive content.</p>
+                  <h4 className="font-semibold mb-3 text-gray-900">2. Target Audience</h4>
+                  <p className="mb-4 text-gray-700">Similar to the website audience, but potentially broader to include younger demographics who prefer short, visual, and quick interactive content.</p>
 
-                  <h4 className="font-semibold mb-3">3. Platform Selection</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">3. Platform Selection</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>Instagram:</strong> Primary platform for high-quality images and short videos. Ideal for inspiring travel.</li>
                     <li><strong>Facebook:</strong> For community building, sharing longer posts, organizing events, running ads.</li>
                     <li><strong>TikTok:</strong> For creating short, creative, trending videos, reaching a younger audience.</li>
@@ -497,8 +625,8 @@ const WanderlustTravel = () => {
                     <li><strong>YouTube:</strong> Ideal channel for longer videos, tour vlogs, detailed travel guides.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">4. Social Media Content Strategy (Per Platform)</h4>
-                  <div className="space-y-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">4. Social Media Content Strategy (Per Platform)</h4>
+                  <div className="space-y-4 text-gray-700">
                     <div>
                       <p><strong>Instagram:</strong></p>
                       <div className="ml-4">
@@ -608,23 +736,23 @@ const WanderlustTravel = () => {
                     </div>
                   </div>
 
-                  <h4 className="font-semibold mb-3">5. Interaction & Community Principles</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">5. Interaction & Community Principles</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>Prompt Responses:</strong> Respond to comments, messages, and reviews in a timely and professional manner.</li>
                     <li><strong>Encourage UGC:</strong> Organize photo/video contests, use Wanderlust Travel's dedicated hashtag, and reshare customer content.</li>
                     <li><strong>Foster Conversation:</strong> Ask questions, run polls, encourage users to share their experiences.</li>
                     <li><strong>Engage with Other Accounts:</strong> Comment on, like, and share content from partners and travel bloggers.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">6. Influencer Marketing</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">6. Influencer Marketing</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>Identify Influencers:</strong> Find travel bloggers, vloggers, and photographers with relevant followings and a style that aligns with Wanderlust Travel. Prioritize influencers based in Australia or with a significant Australian audience.</li>
                     <li><strong>Collaboration Formats:</strong> Invite them to experience tours (complimentary or discounted) in exchange for high-quality content (reviews, vlogs, posts).</li>
                     <li><strong>Objectives:</strong> Increase credibility, reach new audiences, generate authentic content.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">7. General Social Media Content Style Guidelines</h4>
-                  <ul className="space-y-1 mb-4">
+                                    <h4 className="font-semibold mb-3 text-gray-900">7. General Social Media Content Style Guidelines</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li><strong>Tone of Voice:</strong> Inspiring, adventurous, friendly, trustworthy, professional yet approachable. Always evoke curiosity and a desire to explore.</li>
                     <li><strong>Core Message:</strong> "Wanderlust Travel - Turning your desire to explore into unique and unforgettable journeys."</li>
                     <li><strong>Images & Videos:</strong> Always prioritize high quality, vibrant colors, and authenticity. Avoid overly staged stock photos.</li>
@@ -632,8 +760,8 @@ const WanderlustTravel = () => {
                     <li><strong>Consistency:</strong> Ensure consistent visual style, tone, and messaging across all channels.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">8. Creative Social Media Ideas (NEW)</h4>
-                  <div className="space-y-3">
+                  <h4 className="font-semibold mb-3 text-gray-900">8. Creative Social Media Ideas (NEW)</h4>
+                  <div className="space-y-3 text-gray-700">
                     <div>
                       <p><strong>"A Day in the Life of a Tour Guide" Series:</strong></p>
                       <ul className="ml-4 space-y-1">
@@ -700,13 +828,13 @@ const WanderlustTravel = () => {
               </Card>
 
               {/* Integrated Marketing Strategy */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="integrated" title="Integrated Marketing Strategy" icon={TrendingUp}>
-                  <h4 className="font-semibold mb-3">1. Email Marketing</h4>
-                  <p className="mb-2"><strong>Objectives:</strong> Nurture leads, retain existing customers, promote tours and offers.</p>
+                  <h4 className="font-semibold mb-3 text-gray-900">1. Email Marketing</h4>
+                  <p className="mb-2 text-gray-700"><strong>Objectives:</strong> Nurture leads, retain existing customers, promote tours and offers.</p>
 
-                  <p className="font-medium mb-2">Email Types:</p>
-                  <ul className="space-y-1 mb-4 ml-4">
+                  <p className="font-medium mb-2 text-gray-900">Email Types:</p>
+                  <ul className="space-y-1 mb-4 ml-4 text-gray-700">
                     <li>• <strong>Newsletter:</strong> Regular (monthly/quarterly) emails with featured blog posts, new tours, special destinations.</li>
                     <li>• <strong>Welcome Email:</strong> Sent to new subscribers, introducing Wanderlust Travel.</li>
                     <li>• <strong>Promotional Emails:</strong> Announce special offers and discounts.</li>
@@ -714,10 +842,10 @@ const WanderlustTravel = () => {
                     <li>• <strong>Post-Tour Emails:</strong> Thank you, review requests, suggestions for next tours.</li>
                   </ul>
 
-                  <p className="mb-4"><strong>Strategy:</strong> Personalize email content based on subscriber preferences and behavior.</p>
+                  <p className="mb-4 text-gray-700"><strong>Strategy:</strong> Personalize email content based on subscriber preferences and behavior.</p>
 
-                  <h4 className="font-semibold mb-3">2. Paid Advertising</h4>
-                  <div className="space-y-3">
+                  <h4 className="font-semibold mb-3 text-gray-900">2. Paid Advertising</h4>
+                  <div className="space-y-3 text-gray-700">
                     <div>
                       <p><strong>Google Ads (Search & Display):</strong></p>
                       <ul className="ml-4 space-y-1">
@@ -737,8 +865,8 @@ const WanderlustTravel = () => {
                     </div>
                   </div>
 
-                  <h4 className="font-semibold mb-3 mt-4">3. PR & Partnerships</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 mt-4 text-gray-900">3. PR & Partnerships</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• <strong>Public Relations:</strong> Issue press releases about new tours, company achievements. Focus on Australian travel and lifestyle media outlets.</li>
                     <li>• <strong>Cross-promotion:</strong> Partner with relevant businesses (hotels, airlines, travel gear stores) for joint promotions. Prioritize partners based in or serving the Australian market.</li>
                     <li>• <strong>Event Participation:</strong> Attend travel expos and fairs in Australia to meet potential customers directly.</li>
@@ -747,10 +875,10 @@ const WanderlustTravel = () => {
               </Card>
 
               {/* Measurement & Optimization */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="measurement" title="Measurement & Optimization" icon={BarChart3}>
-                  <h4 className="font-semibold mb-3">1. Key Performance Indicators (KPIs)</h4>
-                  <div className="space-y-3">
+                  <h4 className="font-semibold mb-3 text-gray-900">1. Key Performance Indicators (KPIs)</h4>
+                  <div className="space-y-3 text-gray-700">
                     <div>
                       <p><strong>Website:</strong></p>
                       <ul className="ml-4 space-y-1">
@@ -775,15 +903,15 @@ const WanderlustTravel = () => {
                     </div>
                   </div>
 
-                  <h4 className="font-semibold mb-3">2. Analytics Tools</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">2. Analytics Tools</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• <strong>Website:</strong> Google Analytics, Google Search Console.</li>
                     <li>• <strong>Social Media:</strong> Facebook Insights, Instagram Insights, TikTok Analytics, Pinterest Analytics, YouTube Analytics.</li>
                     <li>• <strong>Email Marketing:</strong> Email marketing platform tools (Mailchimp, ConvertKit).</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">3. Optimization Process</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">3. Optimization Process</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• <strong>Regular Review:</strong> Weekly/monthly review of KPIs.</li>
                     <li>• <strong>Data Analysis:</strong> Identify trends, strengths, weaknesses.</li>
                     <li>• <strong>A/B Testing:</strong> Test different headlines, visuals, CTAs to see what performs better.</li>
@@ -793,18 +921,18 @@ const WanderlustTravel = () => {
               </Card>
 
               {/* Implementation Roadmap */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="roadmap" title="Implementation Roadmap" icon={Calendar}>
-                  <h4 className="font-semibold mb-3">Phase 1 (Months 1-2): Foundation Building</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">Phase 1 (Months 1-2): Foundation Building</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• Website finalization (design, tour content, basic blog).</li>
                     <li>• Social media channel setup (profile optimization, cover photos, info).</li>
                     <li>• Initial keyword research and content planning.</li>
                     <li>• Analytics tool setup.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">Phase 2 (Months 3-6): Launch & Initial Growth</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">Phase 2 (Months 3-6): Launch & Initial Growth</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• Website launch and announcement on social media.</li>
                     <li>• Ramp up regular content creation across all channels.</li>
                     <li>• Run initial paid advertising campaigns (brand awareness, traffic generation).</li>
@@ -812,8 +940,8 @@ const WanderlustTravel = () => {
                     <li>• Identify and contact potential influencers.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">Phase 3 (Month 7 onwards): Expansion & Optimization</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">Phase 3 (Month 7 onwards): Expansion & Optimization</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• Expand blog content, add new tours.</li>
                     <li>• Optimize SEO based on performance.</li>
                     <li>• Scale advertising budget based on ROI.</li>
@@ -824,57 +952,62 @@ const WanderlustTravel = () => {
               </Card>
 
               {/* General Guidelines */}
-              <Card>
+              <Card className="hover:shadow-lg transition-all duration-300 border-0 bg-white">
                 <MarketingSection id="guidelines" title="General Guidelines" icon={Target}>
-                  <h4 className="font-semibold mb-3">1. Tone of Voice & Brand Messaging</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">1. Tone of Voice & Brand Messaging</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• <strong>Tone of Voice:</strong> Inspiring, adventurous, friendly, trustworthy, professional yet approachable. Always evoke curiosity and a desire to explore.</li>
                     <li>• <strong>Core Message:</strong> "Wanderlust Travel - Turning your desire to explore into unique and unforgettable journeys."</li>
                     <li>• <strong>Key Keywords:</strong> Explore, adventure, unique, experience, culture, nature, freedom, memories, personalized.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">2. Visual Identity</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">2. Visual Identity</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• <strong>Logo:</strong> Consistent use across all platforms.</li>
                     <li>• <strong>Color Palette:</strong> Adhere to the chosen color palette (e.g., greens/blues of nature, yellows/oranges of sunset) for brand recognition.</li>
                     <li>• <strong>Fonts:</strong> Use approved fonts for headlines and body content.</li>
                     <li>• <strong>Visual Style:</strong> Prioritize authentic, emotional photos/videos that showcase the diversity of destinations and experiences. Avoid overly generic stock photos.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">3. Customer Service on Digital Channels</h4>
-                  <ul className="space-y-1 mb-4">
+                  <h4 className="font-semibold mb-3 text-gray-900">3. Customer Service on Digital Channels</h4>
+                  <ul className="space-y-1 mb-4 text-gray-700">
                     <li>• <strong>Prompt Responses:</strong> Set a maximum response time for messages/comments (e.g., within 2-4 business hours).</li>
                     <li>• <strong>Professional & Friendly:</strong> Always maintain a positive attitude, answer questions clearly, and be willing to assist.</li>
                     <li>• <strong>Appropriate Redirection:</strong> For complex requests or those requiring personal information, redirect customers to direct contact channels (phone, email, website consultation form).</li>
                     <li>• <strong>Listen to Feedback:</strong> Collect and analyze customer feedback to improve services.</li>
                   </ul>
 
-                  <h4 className="font-semibold mb-3">4. Crisis Management</h4>
-                  <ul className="space-y-1">
+                  <h4 className="font-semibold mb-3 text-gray-900">4. Crisis Management</h4>
+                  <ul className="space-y-1 text-gray-700">
                     <li>• <strong>Preparedness Plan:</strong> Have a process in place for handling negative comments or minor crises on social media.</li>
                     <li>• <strong>Transparency & Honesty:</strong> Always respond transparently, honestly, and responsibly.</li>
                     <li>• <strong>Learn:</strong> Extract lessons from every situation to improve processes.</li>
                   </ul>
                 </MarketingSection>
               </Card>
-
             </div>
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-          <div className="max-w-4xl mx-auto text-center px-4">
-            <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Travel Business?</h2>
-            <p className="text-xl mb-8">Let's create a comprehensive digital marketing strategy that drives results for your travel company.</p>
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-              <a href="/contact" className="flex items-center">
-                Start Your Project <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+        {/* Call to Action - Modern Design */}
+        <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Travel Business?</h2>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">Let's create a comprehensive digital marketing strategy that drives results for your travel company.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold">
+                <a href="/contact" className="flex items-center">
+                  Start Your Project <ExternalLink className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold">
+                <Download className="mr-2 h-5 w-5" />
+                Download Strategy PDF
+              </Button>
+            </div>
           </div>
         </section>
-
       </main>
     </Layout>
   );
