@@ -181,6 +181,189 @@ const WanderlustTravel = () => {
           </div>
         </section>
 
+        import React, { useEffect, useState } from 'react';
+import Layout from '@/components/Layout';
+import { useSEO } from '@/hooks/useSEO';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { ChevronDown, ExternalLink, Play, Users, Target, TrendingUp, Globe, Calendar, BarChart3, Eye, Download, Star, Award, Zap, Heart, Clock, Plane } from 'lucide-react';
+
+const WanderlustTravel = () => {
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useSEO({
+    title: "Wanderlust Travel Digital Marketing Strategy | Portfolio",
+    description: "Comprehensive digital marketing strategy and website design for Wanderlust Travel - showcasing complete marketing plan, social media content, and website development.",
+    keywords: "digital marketing, travel marketing, website design, social media strategy, Wanderlust Travel",
+    url: "/portfolio/wanderlust-travel",
+    canonicalUrl: "/portfolio/wanderlust-travel",
+    image: "/images/portfolio/wanderlust-hero.jpg",
+    schemaType: "CreativeWork",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Portfolio", url: "/portfolio" },
+      { name: "Wanderlust Travel", url: "/portfolio/wanderlust-travel" }
+    ]
+  });
+
+  useEffect(() => {
+    const portfolioSchema = {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Wanderlust Travel Digital Marketing Strategy",
+      "description": "Complete digital marketing strategy including website design, social media content, and comprehensive marketing plan for travel industry",
+      "creator": {
+        "@type": "Organization",
+        "name": "Heidi Digital"
+      },
+      "url": window.location.href,
+      "genre": "Digital Marketing Strategy",
+      "about": "Travel marketing, website design, social media strategy",
+      "datePublished": "2024-01-15",
+      "dateModified": "2024-01-15"
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(portfolioSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  const MarketingSection = ({ id, title, children, icon: Icon }: { id: string, title: string, children: React.ReactNode, icon: any }) => (
+    <Collapsible open={openSections[id]} onOpenChange={() => toggleSection(id)}>
+      <CollapsibleTrigger asChild>
+        <Button variant="ghost" className="w-full justify-between p-6 h-auto text-left hover:bg-gray-50 transition-all duration-200">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+              <Icon className="h-5 w-5 text-white" />
+            </div>
+            <span className="text-lg font-semibold text-gray-800">{title}</span>
+          </div>
+          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSections[id] ? 'rotate-180' : ''}`} />
+        </Button>
+      </CollapsibleTrigger>
+      <CollapsibleContent className="px-6 pb-6">
+        <div className="prose prose-sm max-w-none">
+          {children}
+        </div>
+      </CollapsibleContent>
+    </Collapsible>
+  );
+
+  return (
+    <Layout>
+      <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        {/* Hero Section - Modern Design */}
+        <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+          <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
+            <div className="mb-6">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 mb-4">
+                <Award className="h-4 w-4 mr-2" />
+                Featured Project
+              </Badge>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+              Wanderlust Travel
+            </h1>
+            <p className="text-2xl md:text-3xl mb-8 text-blue-100 font-light">
+              Digital Marketing Strategy & Website Design
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <Globe className="h-4 w-4 mr-2" />
+                Website Design
+              </Badge>
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <Users className="h-4 w-4 mr-2" />
+                Social Media Strategy
+              </Badge>
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <TrendingUp className="h-4 w-4 mr-2" />
+                Marketing Plan
+              </Badge>
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
+                <Plane className="h-4 w-4 mr-2" />
+                Travel Industry
+              </Badge>
+            </div>
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
+              <Eye className="h-5 w-5 mr-2" />
+              View Full Strategy
+            </Button>
+          </div>
+        </section>
+
+        {/* Project Overview - Modern Cards */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Project Overview</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                A comprehensive digital transformation for Wanderlust Travel, delivering cutting-edge marketing solutions and modern website design.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">CLIENT</h3>
+                  <p className="text-xl font-bold text-gray-900">Wanderlust Travel</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Plane className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">INDUSTRY</h3>
+                  <p className="text-xl font-bold text-gray-900">Travel & Tourism</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">SCOPE</h3>
+                  <p className="text-xl font-bold text-gray-900">Full Digital Strategy</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+                <CardContent className="p-0">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">TIMELINE</h3>
+                  <p className="text-xl font-bold text-gray-900">6 Months</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Main Content - Optimized Demo Section */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
@@ -227,8 +410,11 @@ const WanderlustTravel = () => {
                     Download High-Res
                   </Button>
                 </div>
+              </div>
 
-                <Card className="mb-8">
+              {/* Right Side - Demo Information */}
+              <div>
+                <Card className="mb-8 hover:shadow-lg transition-all duration-300 border-0 bg-white">
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
                       <ExternalLink className="h-4 w-4" />
@@ -255,67 +441,75 @@ const WanderlustTravel = () => {
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
 
-              {/* Right Side - Social Media & Details */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-4xl font-bold mb-8 text-gray-900">Social Media Content</h2>
+        {/* Social Media Content Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              {/* Left Side - Social Media Video */}
+              <div>
+                <h2 className="text-4xl font-bold mb-8 text-gray-900">Social Media Content</h2>
 
-                  <Card className="mb-8 hover:shadow-xl transition-all duration-300">
-                    <CardContent className="p-0 relative">
-                      {!videoLoaded && (
-                        <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                          <div className="flex items-center gap-3 text-gray-500">
-                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                            <span className="text-lg">Loading video...</span>
-                          </div>
-                        </div>
-                      )}
-
-                      <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
-                        <iframe
-                          src="https://www.youtube.com/embed/m4fAh02eD20?rel=0&modestbranding=1"
-                          title="Wanderlust Travel Social Media Video"
-                          className="w-full h-full rounded-lg"
-                          allowFullScreen
-                          loading="lazy"
-                          onLoad={() => setVideoLoaded(true)}
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="hover:shadow-xl transition-all duration-300">
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
-                        <Play className="h-4 w-4" />
-                        Video Caption
-                      </h3>
-                      <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-100">
-                        <p className="font-bold mb-3 text-gray-900">Sing Your Summer Across Europe</p>
-                        <p className="text-gray-700 mb-4 leading-relaxed">
-                          Some journeys aren't just about places – they're about how each moment makes you feel. <br />
-                          In Paris, mornings smell of buttered croissants and love lingers in every sunset. <br />
-                          In Italy, footsteps echo on cobblestone streets where history whispers through every archway. <br />
-                          In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella. <br />
-                          And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness. <br />
-                          This summer, let's not just travel. <br />
-                          Let's collect feelings, write memories, and carry Europe home in our hearts.
-                        </p>
-                        <div className="text-sm text-blue-600 font-medium">
-                          #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                <Card className="mb-8 hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0 relative">
+                    {!videoLoaded && (
+                      <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                        <div className="flex items-center gap-3 text-gray-500">
+                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                          <span className="text-lg">Loading video...</span>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    )}
+
+                    <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
+                      <iframe
+                        src="https://www.youtube.com/embed/m4fAh02eD20?rel=0&modestbranding=1"
+                        title="Wanderlust Travel Social Media Video"
+                        className="w-full h-full rounded-lg"
+                        allowFullScreen
+                        loading="lazy"
+                        onLoad={() => setVideoLoaded(true)}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Right Side - Video Caption */}
+              <div>
+                <Card className="hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
+                      <Play className="h-4 w-4" />
+                      Video Caption
+                    </h3>
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-100">
+                      <p className="font-bold mb-3 text-gray-900">Sing Your Summer Across Europe</p>
+                      <p className="text-gray-700 mb-4 leading-relaxed">
+                        Some journeys aren't just about places – they're about how each moment makes you feel. <br />
+                        In Paris, mornings smell of buttered croissants and love lingers in every sunset. <br />
+                        In Italy, footsteps echo on cobblestone streets where history whispers through every archway. <br />
+                        In Spain, nights are alive with music, laughter, and a passion you can taste in every bite of paella. <br />
+                        And in Croatia, the sea glitters like scattered jewels, inviting you to sail into stillness. <br />
+                        This summer, let's not just travel. <br />
+                        Let's collect feelings, write memories, and carry Europe home in our hearts.
+                      </p>
+                      <div className="text-sm text-blue-600 font-medium">
+                        #WanderlustTravel #EuropeanSummer #TravelMelody #ParisToCroatia #SummerAdventure #ExploreEurope
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
         </section>
 
-        {/* NEW: Social Media Campaign Images - Above Detailed Marketing Strategy */}
-        <section className="py-20 bg-white">
+        {/* Social Media Campaign Images - Updated Layout */}
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Social Media Campaign</h2>
@@ -330,9 +524,9 @@ const WanderlustTravel = () => {
                 <CardContent className="p-0">
                   <div className="relative">
                     <img
-                      src="/images/blog/social-media-image-1.png"
+                      src="/images/wanderlust-campaign-1.jpg"
                       alt="Last Chance Europe Campaign"
-                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
@@ -348,13 +542,11 @@ const WanderlustTravel = () => {
                       Turn your European dream into reality with up to 45% OFF exclusive deals.
                       Paris, Rome, Barcelona… where will you begin your summer escape?
                     </p>
-                    <div className="flex items-center justify-between">
-                      <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white">
-                        👉 Book now before this offer flies away!
-                      </Button>
-                      <div className="text-sm text-gray-500">
-                        #WonderlustTravel #EuropeanDeals #LastChanceToTravel
-                      </div>
+                    <p className="text-gray-600 mb-4">
+                      👉 Book now before this offer flies away!
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      <strong>Hashtags:</strong> #WonderlustTravel #EuropeanDeals #LastChanceToTravel
                     </div>
                   </div>
                 </CardContent>
@@ -365,9 +557,9 @@ const WanderlustTravel = () => {
                 <CardContent className="p-0">
                   <div className="relative">
                     <img
-                      src="/images/blog/social-media-image-2.png"
+                      src="/images/wanderlust-campaign-2.jpg"
                       alt="Europe Awaits Campaign"
-                      className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
@@ -383,13 +575,12 @@ const WanderlustTravel = () => {
                       From $1200, your next chapter could start in Europe.
                       Walk through ancient streets, taste unforgettable cuisine, and collect timeless memories.
                     </p>
-                    <div className="flex items-center justify-between">
-                      <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white">
-                        ✈️ Why wait for someday when summer is calling now?
-                      </Button>
-                      <div className="text-sm text-gray-500">
-                        #WanderlustTravel #ExploreEurope #TravelDreams
-                      </div>
+                    <p className="text-gray-600 mb-4">
+                      ✈️ Why wait for someday when summer is calling now?
+                    </p>
+                    <div className="text-sm text-gray-500">
+                      <strong>Hashtags:</strong><br />
+                      #WanderlustTravel #ExploreEurope #TravelDreams
                     </div>
                   </div>
                 </CardContent>
