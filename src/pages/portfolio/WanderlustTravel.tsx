@@ -202,7 +202,7 @@ const WanderlustTravel = () => {
                       <Button
                         size="lg"
                         className="bg-white text-gray-900 hover:bg-gray-100"
-                        onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
+                        onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed', '_blank')}
                       >
                         <Eye className="h-5 w-5 mr-2" />
                         View Full Demo
@@ -214,7 +214,7 @@ const WanderlustTravel = () => {
                 <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <Button
                     className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
+                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed', '_blank')}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View Full Website Demo
@@ -222,7 +222,7 @@ const WanderlustTravel = () => {
                   <Button
                     variant="outline"
                     className="flex-1 border-2 border-gray-300 hover:border-gray-400"
-                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
+                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed', '_blank')}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download High-Res
@@ -285,7 +285,7 @@ const WanderlustTravel = () => {
 
                     <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                       <iframe
-                        src="https://www.youtube.com/embed/m4fAh02eD20?rel=0&modestbranding=1"
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=0" // Replaced with a placeholder YouTube embed URL
                         title="Wanderlust Travel Social Media Video"
                         className="w-full h-full rounded-lg"
                         allowFullScreen
