@@ -285,7 +285,7 @@ const WanderlustTravel = () => {
 
                     <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                       <iframe
-                        src="https://youtube.com/shorts/m4fAh02eD20?si=_7BtD_tQwDBsqCvn" // Replaced with a placeholder YouTube embed URL
+                        src="https://https://www.youtube.com/embed/m4fAh02eD20" // Replaced with a placeholder YouTube embed URL
                         title="Wanderlust Travel Social Media Video"
                         className="w-full h-full rounded-lg"
                         allowFullScreen
