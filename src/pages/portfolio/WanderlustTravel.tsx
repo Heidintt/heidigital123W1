@@ -341,7 +341,7 @@ const WanderlustTravel = () => {
                 <CardContent className="p-0">
                   <div className="relative">
                     <img
-                      src="/images/wanderlust-campaign-1.jpg"
+                      src="/images/blog/social-media-image-1.png"
                       alt="Last Chance Europe Campaign"
                       className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
@@ -374,7 +374,7 @@ const WanderlustTravel = () => {
                 <CardContent className="p-0">
                   <div className="relative">
                     <img
-                      src="/images/wanderlust-campaign-2.jpg"
+                      src="/images/blog/social-media-image-1.png"
                       alt="Europe Awaits Campaign"
                       className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
