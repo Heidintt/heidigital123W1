@@ -285,15 +285,13 @@ const WanderlustTravel = () => {
 
                     <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
                       <iframe
-                      width="364"
-                      height="647"
-                      src="http://googleusercontent.com/youtube.com/7"
-                      title="video-travel"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allowfullscreen
-                    ></iframe>
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=0" // Replaced with a placeholder YouTube embed URL
+                        title="Wanderlust Travel Social Media Video"
+                        className="w-full h-full rounded-lg"
+                        allowFullScreen
+                        loading="lazy"
+                        onLoad={() => setVideoLoaded(true)}
+                      />
                     </div>
                   </CardContent>
                 </Card>
