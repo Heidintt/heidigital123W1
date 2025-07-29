@@ -184,7 +184,8 @@ const WanderlustTravel = () => {
         {/* Main Content - Optimized Demo Section */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Grid 2 cột, căn giữa dọc */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Side - Website Showcase */}
               <div>
                 <h2 className="text-4xl font-bold mb-8 text-gray-900">Website Design</h2>
@@ -201,7 +202,7 @@ const WanderlustTravel = () => {
                       <Button
                         size="lg"
                         className="bg-white text-gray-900 hover:bg-gray-100"
-                        onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
+                        onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
                       >
                         <Eye className="h-5 w-5 mr-2" />
                         View Full Demo
@@ -213,7 +214,7 @@ const WanderlustTravel = () => {
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button
                     className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
-                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
+                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
                   >
                     <Eye className="h-4 w-4 mr-2" />
                     View Full Website Demo
@@ -221,7 +222,7 @@ const WanderlustTravel = () => {
                   <Button
                     variant="outline"
                     className="flex-1 border-2 border-gray-300 hover:border-gray-400"
-                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2517&starting-point-node-id=1%3A4019', '_blank')}
+                    onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
                   >
                     <Download className="h-4 w-4 mr-2" />
                     Download High-Res
@@ -229,11 +230,11 @@ const WanderlustTravel = () => {
                 </div>
               </div>
 
-              {/* Right Side - Demo Information */}
-              <div>
-                <Card className="mb-8 hover:shadow-lg transition-all duration-300 border-0 bg-white">
+              {/* Right Side - Demo Information CĂN GIỮA DỌC */}
+              <div className="flex flex-col items-center justify-center h-full">
+                <Card className="mb-0 hover:shadow-lg transition-all duration-300 border-0 bg-white w-full max-w-md">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
+                    <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900 text-2xl">
                       <ExternalLink className="h-4 w-4" />
                       Demo Information
                     </h3>
@@ -265,7 +266,8 @@ const WanderlustTravel = () => {
         {/* Social Media Content Section */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Grid 2 cột, căn giữa dọc */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Side - Social Media Video */}
               <div>
                 <h2 className="text-4xl font-bold mb-8 text-gray-900">Social Media Content</h2>
@@ -295,14 +297,10 @@ const WanderlustTravel = () => {
                 </Card>
               </div>
 
-              {/* Right Side - Video Caption */}
-              <div>
-                <Card className="hover:shadow-xl transition-all duration-300">
+              {/* Right Side - Video Caption: Bỏ heading, căn giữa dọc */}
+              <div className="flex flex-col items-center justify-center h-full">
+                <Card className="hover:shadow-xl transition-all duration-300 w-full max-w-md">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
-                      <Play className="h-4 w-4" />
-                      Video Caption
-                    </h3>
                     <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-100">
                       <p className="font-bold mb-3 text-gray-900">Sing Your Summer Across Europe</p>
                       <p className="text-gray-700 mb-4 leading-relaxed">
@@ -339,11 +337,11 @@ const WanderlustTravel = () => {
               {/* Image 1 - Last Chance Campaign */}
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                 <CardContent className="p-0">
-                  <div className="relative">
+                  <div className="relative bg-white flex items-center justify-center h-96">
                     <img
                       src="/images/blog/social-media-image-1.png"
                       alt="Last Chance Europe Campaign"
-                      className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-white transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
@@ -372,11 +370,11 @@ const WanderlustTravel = () => {
               {/* Image 2 - Europe Awaits Campaign */}
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                 <CardContent className="p-0">
-                  <div className="relative">
+                  <div className="relative bg-white flex items-center justify-center h-96">
                     <img
-                      src="/images/blog/social-media-image-1.png"
+                      src="/images/blog/social-media-image-2.png"
                       alt="Europe Awaits Campaign"
-                      className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-white transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute top-4 left-4">
