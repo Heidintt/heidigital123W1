@@ -64,7 +64,7 @@ const WanderlustTravel = () => {
   const MarketingSection = ({ id, title, children, icon: Icon }: { id: string, title: string, children: React.ReactNode, icon: any }) => (
     <Collapsible open={openSections[id]} onOpenChange={() => toggleSection(id)}>
       <CollapsibleTrigger asChild>
-        <Button variant="ghost" className="w-full justify-between p-6 h-auto text-left hover:bg-gray-50 transition-all duration-200">
+        <Button variant="ghost" className="w-full justify-between p-4 h-auto text-left hover:bg-gray-50 transition-all duration-200">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
               <Icon className="h-5 w-5 text-white" />
@@ -74,7 +74,7 @@ const WanderlustTravel = () => {
           <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSections[id] ? 'rotate-180' : ''}`} />
         </Button>
       </CollapsibleTrigger>
-      <CollapsibleContent className="px-6 pb-6">
+      <CollapsibleContent className="px-4 pb-4">
         <div className="prose prose-sm max-w-none">
           {children}
         </div>
@@ -86,23 +86,23 @@ const WanderlustTravel = () => {
     <Layout>
       <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
         {/* Hero Section - Modern Design */}
-        <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden">
+        <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden" style={{ minHeight: '60vh' }}>
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
           <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
-            <div className="mb-6">
-              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 mb-4">
+            <div className="mb-4">
+              <Badge variant="secondary" className="bg-white/20 text-white border-white/30 mb-2">
                 <Award className="h-4 w-4 mr-2" />
                 Featured Project
               </Badge>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
               Wanderlust Travel
             </h1>
-            <p className="text-2xl md:text-3xl mb-8 text-blue-100 font-light">
+            <p className="text-2xl md:text-3xl mb-5 text-blue-100 font-light">
               Digital Marketing Strategy & Website Design
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-3 mb-5">
               <Badge variant="secondary" className="bg-white/20 text-white border-white/30 px-4 py-2">
                 <Globe className="h-4 w-4 mr-2" />
                 Website Design
@@ -128,52 +128,52 @@ const WanderlustTravel = () => {
         </section>
 
         {/* Project Overview - Modern Cards */}
-        <section className="py-20 bg-white">
+        <section className="py-7 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Project Overview</h2>
+            <div className="text-center mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-2">Project Overview</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 A comprehensive digital transformation for Wanderlust Travel, delivering cutting-edge marketing solutions and modern website design.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Users className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">CLIENT</h3>
+                  <h3 className="font-semibold text-gray-600 mb-1 text-sm uppercase tracking-wide">CLIENT</h3>
                   <p className="text-xl font-bold text-gray-900">Wanderlust Travel</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Plane className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">INDUSTRY</h3>
+                  <h3 className="font-semibold text-gray-600 mb-1 text-sm uppercase tracking-wide">INDUSTRY</h3>
                   <p className="text-xl font-bold text-gray-900">Travel & Tourism</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+              <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Target className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">SCOPE</h3>
+                  <h3 className="font-semibold text-gray-600 mb-1 text-sm uppercase tracking-wide">SCOPE</h3>
                   <p className="text-xl font-bold text-gray-900">Full Digital Strategy</p>
                 </CardContent>
               </Card>
               
-              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+              <Card className="text-center p-6 hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Calendar className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="font-semibold text-gray-600 mb-2 text-sm uppercase tracking-wide">TIMELINE</h3>
+                  <h3 className="font-semibold text-gray-600 mb-1 text-sm uppercase tracking-wide">TIMELINE</h3>
                   <p className="text-xl font-bold text-gray-900">6 Months</p>
                 </CardContent>
               </Card>
@@ -182,15 +182,15 @@ const WanderlustTravel = () => {
         </section>
 
         {/* Main Content - Optimized Demo Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-7 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             {/* Grid 2 cột, căn giữa dọc */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Left Side - Website Showcase */}
               <div>
-                <h2 className="text-4xl font-bold mb-8 text-gray-900">Website Design</h2>
+                <h2 className="text-4xl font-bold mb-5 text-gray-900">Website Design</h2>
                 
-                <Card className="overflow-hidden mb-8 hover:shadow-xl transition-all duration-300">
+                <Card className="overflow-hidden mb-6 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-0 relative group">
                     <img
                       src="/images/wanderlust-website.png"
@@ -211,7 +211,7 @@ const WanderlustTravel = () => {
                   </CardContent>
                 </Card>
 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3 mb-6">
                   <Button
                     className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
                     onClick={() => window.open('https://www.figma.com/proto/VGsbf8TWHZUKgB6Q3KeGyg/Wanderlust?node-id=1-4019&t=ATpme5Brxu5Aym2Z-1&scaling=scale-down-width&content-scaling=fixed')}
@@ -232,8 +232,8 @@ const WanderlustTravel = () => {
 
               {/* Right Side - Demo Information CĂN GIỮA DỌC */}
               <div className="flex flex-col items-center justify-center h-full">
-                <Card className="mb-0 hover:shadow-lg transition-all duration-300 border-0 bg-white w-full max-w-md">
-                  <CardContent className="p-6">
+                <Card className="mb-0 hover:shadow-lg transition-all duration-300 border-0 bg-white w-full max-w-lg">
+                  <CardContent className="p-5">
                     <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900 text-2xl">
                       <ExternalLink className="h-4 w-4" />
                       Demo Information
@@ -264,15 +264,15 @@ const WanderlustTravel = () => {
         </section>
 
         {/* Social Media Content Section */}
-        <section className="py-20 bg-white">
+        <section className="py-7 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             {/* Grid 2 cột, căn giữa dọc */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Left Side - Social Media Video */}
               <div>
-                <h2 className="text-4xl font-bold mb-8 text-gray-900">Social Media Content</h2>
+                <h2 className="text-4xl font-bold mb-5 text-gray-900">Social Media Content</h2>
 
-                <Card className="mb-8 hover:shadow-xl transition-all duration-300">
+                <Card className="mb-6 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-0 relative">
                     {!videoLoaded && (
                       <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
@@ -297,11 +297,11 @@ const WanderlustTravel = () => {
                 </Card>
               </div>
 
-              {/* Right Side - Video Caption: Bỏ heading, căn giữa dọc */}
+              {/* Right Side - Video Caption: Bỏ heading, caption rộng hơn */}
               <div className="flex flex-col items-center justify-center h-full">
-                <Card className="hover:shadow-xl transition-all duration-300 w-full max-w-md">
-                  <CardContent className="p-6">
-                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-100">
+                <Card className="hover:shadow-xl transition-all duration-300 w-full max-w-xl">
+                  <CardContent className="p-8">
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-7 rounded-lg border border-blue-100">
                       <p className="font-bold mb-3 text-gray-900">Sing Your Summer Across Europe</p>
                       <p className="text-gray-700 mb-4 leading-relaxed">
                         Some journeys aren't just about places – they're about how each moment makes you feel. <br />
@@ -324,16 +324,16 @@ const WanderlustTravel = () => {
         </section>
 
         {/* Social Media Campaign Images - Updated Layout */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-7 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Social Media Campaign</h2>
+            <div className="text-center mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-2">Social Media Campaign</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Engaging content that drives conversions and builds brand awareness across all platforms.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Image 1 - Last Chance Campaign */}
               <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                 <CardContent className="p-0">
@@ -351,7 +351,7 @@ const WanderlustTravel = () => {
                       </Badge>
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-5">
                     <h3 className="text-xl font-bold mb-3 text-gray-900">⏳ Last Chance: Up to 45% Off Europe Escapes!</h3>
                     <p className="text-gray-600 mb-4">
                       Turn your European dream into reality with up to 45% OFF exclusive deals.
@@ -384,7 +384,7 @@ const WanderlustTravel = () => {
                       </Badge>
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-5">
                     <h3 className="text-xl font-bold mb-3 text-gray-900">Europe Awaits – From $1200 🌍</h3>
                     <p className="text-gray-600 mb-4">
                       From $1200, your next chapter could start in Europe.
