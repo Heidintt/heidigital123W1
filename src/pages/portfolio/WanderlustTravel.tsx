@@ -85,9 +85,18 @@ const WanderlustTravel = () => {
   return (
     <Layout>
       <main className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-        {/* Hero Section - Modern Design */}
-        <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden" style={{ minHeight: '60vh' }}>
-          <div className="absolute inset-0 bg-black/20"></div>
+        {/* Hero Section - ĐỔI SANG IMAGE BACKGROUND */}
+        <section
+          className="relative h-screen flex items-center justify-center text-white overflow-hidden"
+          style={{
+            minHeight: '60vh',
+            backgroundImage: "url('/images/blog/website-image-travel.avif')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
           <div className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
           <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
             <div className="mb-4">
