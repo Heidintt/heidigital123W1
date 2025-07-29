@@ -284,7 +284,16 @@ const WanderlustTravel = () => {
                     )}
 
                     <div className={`relative aspect-video ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
-                      <iframe width="364" height="647" src="https://www.youtube.com/embed/m4fAh02eD20" title="video-travel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                      <iframe
+                      width="364"
+                      height="647"
+                      src="http://googleusercontent.com/youtube.com/7"
+                      title="video-travel"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    ></iframe>
                     </div>
                   </CardContent>
                 </Card>
