@@ -119,6 +119,14 @@ const Portfolio = () => {
   
   const portfolioItems = [
     {
+      id: "wanderlust-travel",
+      title: "Wanderlust Travel Digital Marketing Strategy",
+      description: "Comprehensive digital marketing strategy and website design for European travel experiences targeting Australian customers. Includes complete social media content strategy and detailed marketing implementation plan.",
+      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      categories: ["Digital Marketing", "Travel Marketing", "Website Design", "Social Media Strategy"],
+      link: "/portfolio/wanderlust-travel"
+    },
+    {
       id: "fmcg-dao-strategy",
       title: "Web3 DAO Models in FMCG Marketing Strategy",
       description: "Academic research exploring how Web3-based community-owned DAO models can transform brand loyalty, consumer engagement, and marketing strategies in the FMCG industry by 2035.",
@@ -165,14 +173,6 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Marketing Strategy", "Nightlife", "Brand Development"],
       link: "/portfolio/koto-club"
-    },
-    {
-      id: "wanderlust-travel",
-      title: "Wanderlust Travel Digital Marketing Strategy",
-      description: "Comprehensive digital marketing strategy and website design for European travel experiences targeting Australian customers. Includes complete social media content strategy and detailed marketing implementation plan.",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      categories: ["Digital Marketing", "Travel Marketing", "Website Design", "Social Media Strategy"],
-      link: "/portfolio/wanderlust-travel"
     }
   ];
 
