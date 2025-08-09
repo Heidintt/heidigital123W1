@@ -7,6 +7,7 @@ import NhaCaCafe from "@/pages/portfolio/NhaCaCafe";
 import KotoClub from "@/pages/portfolio/KotoClub";
 import LuaHongBuffet from "@/pages/portfolio/LuaHongBuffet";
 import WanderlustTravel from "@/pages/portfolio/WanderlustTravel";
+import IRISHealthcare from "@/pages/portfolio/IRISHealthcare";
 
 export const PortfolioRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const PortfolioRoutes = () => {
       <Route path="koto-club" element={<KotoClub />} />
       <Route path="lua-hong-buffet" element={<LuaHongBuffet />} />
       <Route path="wanderlust-travel" element={<WanderlustTravel />} />
+      <Route path="iris-healthcare" element={<IRISHealthcare />} />
     </Routes>
   );
 };

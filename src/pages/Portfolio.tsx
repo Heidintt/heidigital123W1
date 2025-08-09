@@ -173,18 +173,28 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       categories: ["Marketing Strategy", "Nightlife", "Brand Development"],
       link: "/portfolio/koto-club"
+    },
+    {
+      id: "iris-healthcare",
+      title: "Vanguard Health - IRIS Program Healthcare Campaign",
+      description: "Comprehensive healthcare marketing campaign for Vanguard Health's IRIS program, featuring infographics, video content, LinkedIn campaigns and email marketing for remote Australian communities.",
+      image: "/images/blog/ai-tools/info.png",
+      categories: ["Healthcare Marketing", "Campaign Strategy", "Digital Marketing", "Video Marketing"],
+      link: "/portfolio/iris-healthcare"
     }
   ];
 
   const categories = [
     "All",
     "Marketing Strategy",
-    "Campaign Strategy",
+    "Campaign Strategy", 
     "Brand Development",
     "Digital Marketing",
+    "Healthcare Marketing",
     "Social Media",
     "Event Marketing",
     "Content Strategy",
+    "Video Marketing",
     "Academic Research",
     "Consumer Engagement",
     "Integrated Communications",
