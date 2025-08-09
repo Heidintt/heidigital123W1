@@ -107,46 +107,6 @@ const IRISHealthcare: React.FC = () => {
 
           {/* Project Overview */}
           <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <Card>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="h-5 w-5 text-blue-600" />
-                    <CardTitle className="text-lg">Project Timeline</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">6-month integrated campaign</p>
-                  <p className="text-sm text-gray-500">Jan 2024 - Jun 2024</p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center space-x-2">
-                    <Users className="h-5 w-5 text-blue-600" />
-                    <CardTitle className="text-lg">Target Audience</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">Remote Australian communities</p>
-                  <p className="text-sm text-gray-500">Healthcare professionals & decision-makers</p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center space-x-2">
-                    <Target className="h-5 w-5 text-blue-600" />
-                    <CardTitle className="text-lg">Campaign Objectives</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">Awareness & Trust Building</p>
-                  <p className="text-sm text-gray-500">Reduce healthcare wait times</p>
-                </CardContent>
-              </Card>
-            </div>
 
             <Card className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
               <CardHeader>
@@ -310,50 +270,31 @@ const IRISHealthcare: React.FC = () => {
             <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 3: IRIS 800th Milestone - LinkedIn Carousel</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card>
+              <Card className="col-span-2">
                 <CardHeader>
-                  <CardTitle className="text-xl text-blue-600">Interactive Carousel</CardTitle>
-                  <CardDescription>Swipe through the 5-slide LinkedIn campaign</CardDescription>
+                  <CardTitle className="text-xl text-blue-600">LinkedIn Carousel - All 5 Slides</CardTitle>
+                  <CardDescription>Complete campaign showcase with navigation indicators</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="relative bg-gray-100 rounded-lg overflow-hidden">
-                    <img 
-                      src={carouselImages[currentCarouselIndex]}
-                      alt={`LinkedIn carousel slide ${currentCarouselIndex + 1} of 5`}
-                      className="w-full h-auto"
-                    />
-                    
-                    {/* Navigation Buttons */}
-                    <button 
-                      onClick={prevSlide}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                    >
-                      <ArrowLeft className="h-4 w-4" />
-                    </button>
-                    <button 
-                      onClick={nextSlide}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                    >
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-
-                    {/* Slide Indicators */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                      {carouselImages.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentCarouselIndex(index)}
-                          className={`w-2 h-2 rounded-full transition-all ${
-                            index === currentCarouselIndex 
-                              ? 'bg-blue-600' 
-                              : 'bg-white/60 hover:bg-white/80'
-                          }`}
+                  <div className="grid grid-cols-5 gap-2">
+                    {carouselImages.map((image, index) => (
+                      <div key={index} className="relative group">
+                        <img 
+                          src={image}
+                          alt={`LinkedIn carousel slide ${index + 1} of 5`}
+                          className="w-full h-auto rounded border shadow-sm transition-all group-hover:shadow-md"
                         />
-                      ))}
-                    </div>
+                        <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                          {index + 1}
+                        </div>
+                        {index < carouselImages.length - 1 && (
+                          <ArrowRight className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 h-4 w-4 text-blue-600 bg-white rounded-full p-1 shadow-sm" />
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <p className="text-sm text-gray-500 mt-2 text-center">
-                    Slide {currentCarouselIndex + 1} of {carouselImages.length}
+                  <p className="text-sm text-gray-500 mt-4 text-center">
+                    5-slide LinkedIn carousel showcasing IRIS program milestone achievements
                   </p>
                 </CardContent>
               </Card>
@@ -443,31 +384,6 @@ const IRISHealthcare: React.FC = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-blue-50">
-                  <CardHeader>
-                    <CardTitle className="text-xl">Performance Metrics (Case Study)</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-4 text-center">
-                      <div>
-                        <div className="text-2xl font-bold text-blue-600">85%</div>
-                        <div className="text-sm text-gray-600">Open Rate</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-blue-600">42%</div>
-                        <div className="text-sm text-gray-600">Click Rate</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-blue-600">1,200+</div>
-                        <div className="text-sm text-gray-600">Subscribers</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-blue-600">95%</div>
-                        <div className="text-sm text-gray-600">Retention</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </section>
