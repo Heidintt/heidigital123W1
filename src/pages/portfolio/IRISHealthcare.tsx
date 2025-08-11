@@ -333,92 +333,92 @@ const IRISHealthcare: React.FC = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 4: IRIS 800th Milestone - LinkedIn Carousel</h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-xl text-blue-600">LinkedIn Carousel - All 5 Slides</CardTitle>
-                  <CardDescription>Complete campaign showcase with navigation indicators</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {/* Mobile: Show slides vertically */}
-                    <div className="block md:hidden space-y-3">
+            {/* LinkedIn Carousel - Full Width */}
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle className="text-xl text-blue-600">LinkedIn Carousel - All 5 Slides</CardTitle>
+                <CardDescription>Complete campaign showcase with navigation indicators</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {/* Mobile: Show slides vertically */}
+                  <div className="block md:hidden space-y-3">
+                    {carouselImages.map((image, index) => (
+                      <div key={index} className="relative">
+                        <img 
+                          src={image}
+                          alt={`LinkedIn carousel slide ${index + 1} of 5`}
+                          className="w-full h-auto rounded-lg border shadow-sm"
+                        />
+                        <div className="absolute bottom-3 right-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full">
+                          {index + 1} / 5
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Desktop: Show all 5 slides horizontally */}
+                  <div className="hidden md:block">
+                    <div className="grid grid-cols-5 gap-4">
                       {carouselImages.map((image, index) => (
-                        <div key={index} className="relative">
+                        <div key={index} className="relative group">
                           <img 
                             src={image}
                             alt={`LinkedIn carousel slide ${index + 1} of 5`}
-                            className="w-full h-auto rounded-lg border shadow-sm"
+                            className="w-full h-auto rounded-lg border shadow-sm transition-all group-hover:shadow-md group-hover:scale-105"
                           />
                           <div className="absolute bottom-3 right-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full">
-                            {index + 1} / 5
+                            {index + 1}
                           </div>
+                          {index < carouselImages.length - 1 && (
+                            <ArrowRight className="absolute -right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 text-blue-600 bg-white rounded-full p-1 shadow-md border" />
+                          )}
                         </div>
                       ))}
                     </div>
-                    
-                    {/* Desktop: Show slides in grid */}
-                    <div className="hidden md:block">
-                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                        {carouselImages.map((image, index) => (
-                          <div key={index} className="relative group">
-                            <img 
-                              src={image}
-                              alt={`LinkedIn carousel slide ${index + 1} of 5`}
-                              className="w-full h-auto rounded-lg border shadow-sm transition-all group-hover:shadow-md group-hover:scale-105"
-                            />
-                            <div className="absolute bottom-3 right-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full">
-                              {index + 1}
-                            </div>
-                            {index < carouselImages.length - 1 && (
-                              <ArrowRight className="absolute -right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 text-blue-600 bg-white rounded-full p-1 shadow-md border" />
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <p className="text-sm text-gray-500 mt-4 text-center">
-                      5-slide LinkedIn carousel showcasing IRIS program milestone achievements
-                    </p>
+                  </div>
+                  
+                  <p className="text-sm text-gray-500 mt-4 text-center">
+                    5-slide LinkedIn carousel showcasing IRIS program milestone achievements
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Strategy and Caption - Below Carousel */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">B2B/B2G Strategy</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">🎯 Strategic Focus</h4>
+                    <ul className="list-disc list-inside text-gray-700 space-y-1">
+                      <li><strong>Goal:</strong> Awareness + Trust (B2B/B2G audiences)</li>
+                      <li><strong>Insight:</strong> Healthcare decision-makers value data, results, and waitlist reduction</li>
+                      <li><strong>Concept:</strong> Journey + Data + Achievement showcase</li>
+                      <li><strong>Hook:</strong> "800 cataract surgeries. Faster access to care."</li>
+                      <li><strong>Value:</strong> Concrete metrics, proven outcomes, partnership opportunities</li>
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
 
-              <div className="space-y-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl">B2B/B2G Strategy</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">🎯 Strategic Focus</h4>
-                      <ul className="list-disc list-inside text-gray-700 space-y-1">
-                        <li><strong>Goal:</strong> Awareness + Trust (B2B/B2G audiences)</li>
-                        <li><strong>Insight:</strong> Healthcare decision-makers value data, results, and waitlist reduction</li>
-                        <li><strong>Concept:</strong> Journey + Data + Achievement showcase</li>
-                        <li><strong>Hook:</strong> "800 cataract surgeries. Faster access to care."</li>
-                        <li><strong>Value:</strong> Concrete metrics, proven outcomes, partnership opportunities</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gray-50">
-                  <CardHeader>
-                    <CardTitle className="text-xl">LinkedIn Caption</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="bg-white p-4 rounded-lg border text-gray-700">
-                      <p className="mb-2 font-medium">"800 cataract surgeries. Thousands of kilometres. One mission: faster access to sight-saving care for remote and Indigenous communities.</p>
-                      <p className="mb-2">Integrated specialist teams. Proven outcomes. Cultural safety at the core.</p>
-                      <p className="mb-2">Let's reduce waitlists together.</p>
-                      <p className="mb-2">→ Contact us: [link with UTM]</p>
-                      <p className="text-blue-600">#IRIS #RemoteHealth #WaitlistReduction #IntegratedCare #VanguardHealth</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <Card className="bg-gray-50">
+                <CardHeader>
+                  <CardTitle className="text-xl">LinkedIn Caption</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-white p-4 rounded-lg border text-gray-700">
+                    <p className="mb-2 font-medium">"800 cataract surgeries. Thousands of kilometres. One mission: faster access to sight-saving care for remote and Indigenous communities.</p>
+                    <p className="mb-2">Integrated specialist teams. Proven outcomes. Cultural safety at the core.</p>
+                    <p className="mb-2">Let's reduce waitlists together.</p>
+                    <p className="mb-2">→ Contact us: [link with UTM]</p>
+                    <p className="text-blue-600">#IRIS #RemoteHealth #WaitlistReduction #IntegratedCare #VanguardHealth</p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </section>
 
