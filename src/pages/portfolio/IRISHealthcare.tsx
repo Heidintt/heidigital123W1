@@ -82,7 +82,7 @@ const IRISHealthcare: React.FC = () => {
       <Layout>
         <main className="container mx-auto px-4 py-8">
 
-          {/* HERO BANNER ADDED HERE */}
+          {/* HERO BANNER NO TEXT */}
           <section className="w-full mb-12">
             <div className="relative w-full h-64 md:h-96 rounded-xl overflow-hidden flex items-center justify-center bg-blue-100">
               <img
@@ -91,17 +91,6 @@ const IRISHealthcare: React.FC = () => {
                 className="object-cover w-full h-full"
                 style={{ objectPosition: 'center' }}
               />
-              {/* Optional overlay */}
-              <div className="absolute inset-0 bg-blue-900/30 pointer-events-none"></div>
-              {/* Optional: Overlay text */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
-                <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
-                  Vanguard Health - IRIS Program
-                </h1>
-                <p className="mt-4 text-lg md:text-2xl text-blue-100 max-w-2xl mx-auto drop-shadow">
-                  Impactful Healthcare Marketing for Remote Australia
-                </p>
-              </div>
             </div>
           </section>
           {/* END HERO BANNER */}
