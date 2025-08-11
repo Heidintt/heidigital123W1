@@ -140,7 +140,7 @@ const IRISHealthcare: React.FC = () => {
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 1: Remote Nursing Recruitment - Day in the Life</h2>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               <Card className="h-full">
                 <CardHeader>
                   <CardTitle className="text-xl text-blue-600">Recruitment Video Campaign</CardTitle>
@@ -163,41 +163,40 @@ const IRISHealthcare: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <div className="space-y-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-xl">Campaign Brief</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">🎯 Strategic Approach</h4>
-                      <ul className="list-disc list-inside text-gray-700 space-y-1">
-                        <li><strong>Goal:</strong> Recruitment + Awareness (B2C – attracting qualified nurses for remote roles)</li>
-                        <li><strong>Insight:</strong> Nurses crave meaningful impact and unique life experiences, but many hesitate due to fears of isolation and challenging conditions</li>
-                        <li><strong>Concept:</strong> Storytelling through a personal, day-in-the-life journey — from sunrise to sunset</li>
-                        <li><strong>Hook:</strong> "Ever wondered what it's like to be a nurse in Australia's most remote communities?"</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gray-50">
-                  <CardHeader>
-                    <CardTitle className="text-xl">Social Media Caption</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="bg-white p-4 rounded-lg border text-gray-700">
-                      <p className="mb-2">Ever wondered what it's really like to be a nurse in Australia's most remote communities?</p>
-                      <p className="mb-2">From first light to the last glow of sunset, our Remote Area Nurses bring care, comfort, and connection to those who need it most.</p>
-                      <p className="mb-2">Every mile travelled. Every call answered. More than a job — it's a calling.</p>
-                      <p className="mb-2">If you're ready to make a real impact — and see a side of Australia most never will — join the team that goes further for care.</p>
-                      <p className="mb-2">👉 Apply now: [vanguardhealth.com.au/jobs]</p>
-                      <p className="text-blue-600">#RemoteNursing #LifeAtVanguard #NursingJobsAU #VanguardHealth #HealthcareHeroes</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">Campaign Brief</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">🎯 Strategic Approach</h4>
+                    <ul className="list-disc list-inside text-gray-700 space-y-1">
+                      <li><strong>Goal:</strong> Recruitment + Awareness (B2C – attracting qualified nurses for remote roles)</li>
+                      <li><strong>Insight:</strong> Nurses crave meaningful impact and unique life experiences, but many hesitate due to fears of isolation and challenging conditions</li>
+                      <li><strong>Concept:</strong> Storytelling through a personal, day-in-the-life journey — from sunrise to sunset</li>
+                      <li><strong>Hook:</strong> "Ever wondered what it's like to be a nurse in Australia's most remote communities?"</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
+
+            {/* Social Media Caption - Full Width */}
+            <Card className="bg-gray-50">
+              <CardHeader>
+                <CardTitle className="text-xl">Social Media Caption</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-white p-4 rounded-lg border text-gray-700">
+                  <p className="mb-2">Ever wondered what it's really like to be a nurse in Australia's most remote communities?</p>
+                  <p className="mb-2">From first light to the last glow of sunset, our Remote Area Nurses bring care, comfort, and connection to those who need it most.</p>
+                  <p className="mb-2">Every mile travelled. Every call answered. More than a job — it's a calling.</p>
+                  <p className="mb-2">If you're ready to make a real impact — and see a side of Australia most never will — join the team that goes further for care.</p>
+                  <p className="mb-2">👉 Apply now: [vanguardhealth.com.au/jobs]</p>
+                  <p className="text-blue-600">#RemoteNursing #LifeAtVanguard #NursingJobsAU #VanguardHealth #HealthcareHeroes</p>
+                </div>
+              </CardContent>
+            </Card>
           </section>
 
           {/* Campaign 2: Cataract Awareness Infographic */}
@@ -234,13 +233,13 @@ const IRISHealthcare: React.FC = () => {
               </Card>
             </div>
 
-            <Card className="bg-gray-50">
-              <CardHeader>
-                <CardTitle className="text-xl">Campaign Strategy & Social Media Caption</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">🎯 Goals & Insights</h4>
+            {/* Strategy and Caption in Two Columns */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-xl">🎯 Goals & Insights</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <ul className="list-disc list-inside text-gray-700 space-y-1">
                     <li><strong>Goal:</strong> Awareness + Trust (IRIS program)</li>
                     <li><strong>Insight:</strong> Many don't recognise early cataract signs</li>
@@ -248,10 +247,14 @@ const IRISHealthcare: React.FC = () => {
                     <li><strong>Hook:</strong> "See these signs? Get checked."</li>
                     <li><strong>Value:</strong> 5 clear signs + actionable next steps</li>
                   </ul>
-                </div>
-                <Separator />
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">📱 Social Media Caption</h4>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-50">
+                <CardHeader>
+                  <CardTitle className="text-xl">📱 Social Media Caption</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <div className="bg-white p-4 rounded-lg border text-gray-700">
                     <p className="mb-2">See these 5 signs? Get your eyes checked. 👀</p>
                     <p className="mb-2">Early action changes lives. Learn how IRIS delivers sight-saving pathways across remote Australia.</p>
@@ -259,9 +262,9 @@ const IRISHealthcare: React.FC = () => {
                     <p className="mb-2">(Images shared with permission; cultural protocols observed.)</p>
                     <p className="text-blue-600">#CataractAwareness #IRIS #EyeHealth #RemoteHealth #VanguardHealth</p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </section>
 
           {/* Campaign 3: Nurse Quote Video */}
