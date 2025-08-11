@@ -13,7 +13,7 @@ const IRISHealthcare: React.FC = () => {
   // SEO Configuration
   useSEO({
     title: "Vanguard Health - IRIS Program Case Study | Healthcare Marketing Portfolio",
-    description: "Case study showcasing marketing campaigns for Vanguard Health's IRIS program - innovative healthcare solutions for remote Australian communities. Includes infographics, video content, LinkedIn campaigns and email marketing.",
+    description: "Case study showcasing marketing campaigns for Vanguard Health's IRIS program - innovative healthcare solutions for remote Australian communities. Includes infographics, video content, and campaign strategies.",
     keywords: "healthcare marketing, IRIS program, Vanguard Health, remote healthcare, cataract awareness, medical marketing, healthcare communications, Australian healthcare",
     url: "https://heidigital.info/portfolio/iris-healthcare",
     canonicalUrl: "https://heidigital.info/portfolio/iris-healthcare",
@@ -101,13 +101,12 @@ const IRISHealthcare: React.FC = () => {
           <Alert className="mb-12 border-amber-200 bg-amber-50">
             <Info className="h-4 w-4" />
             <AlertDescription className="text-amber-800">
-              <strong>Case Study Notice:</strong> All data, metrics, and information presented in this portfolio are for educational and reference purposes only. This is a conceptual case study and does not represent actual campaign performance or real client results.
+              <strong>Case Study Notice:</strong> All data, metrics, and information presented in this portfolio are for educational and reference purposes only. This is a conceptual case study and does not represent actual patient data.
             </AlertDescription>
           </Alert>
 
           {/* Project Overview */}
           <section className="mb-16">
-
             <Card className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
               <CardHeader>
                 <CardTitle className="text-2xl">About IRIS Program</CardTitle>
@@ -181,22 +180,24 @@ const IRISHealthcare: React.FC = () => {
               </Card>
             </div>
 
-            {/* Social Media Caption - Full Width */}
-            <Card className="bg-gray-50">
-              <CardHeader>
-                <CardTitle className="text-xl">Social Media Caption</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-white p-4 rounded-lg border text-gray-700">
-                  <p className="mb-2">Ever wondered what it's really like to be a nurse in Australia's most remote communities?</p>
-                  <p className="mb-2">From first light to the last glow of sunset, our Remote Area Nurses bring care, comfort, and connection to those who need it most.</p>
-                  <p className="mb-2">Every mile travelled. Every call answered. More than a job — it's a calling.</p>
-                  <p className="mb-2">If you're ready to make a real impact — and see a side of Australia most never will — join the team that goes further for care.</p>
-                  <p className="mb-2">👉 Apply now: [vanguardhealth.com.au/jobs]</p>
-                  <p className="text-blue-600">#RemoteNursing #LifeAtVanguard #NursingJobsAU #VanguardHealth #HealthcareHeroes</p>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Social Media Caption - Full Width, below, 1 column full width */}
+            <div className="w-full">
+              <Card className="bg-gray-50">
+                <CardHeader>
+                  <CardTitle className="text-xl">Social Media Caption</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-white p-4 rounded-lg border text-gray-700">
+                    <p className="mb-2">Ever wondered what it's really like to be a nurse in Australia's most remote communities?</p>
+                    <p className="mb-2">From first light to the last glow of sunset, our Remote Area Nurses bring care, comfort, and connection to those who need it most.</p>
+                    <p className="mb-2">Every mile travelled. Every call answered. More than a job — it's a calling.</p>
+                    <p className="mb-2">If you're ready to make a real impact — and see a side of Australia most never will — join the team that goes further for care.</p>
+                    <p className="mb-2">👉 Apply now: [vanguardhealth.com.au/jobs]</p>
+                    <p className="text-blue-600">#RemoteNursing #LifeAtVanguard #NursingJobsAU #VanguardHealth #HealthcareHeroes</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </section>
 
           {/* Campaign 2: Cataract Awareness Infographic */}
@@ -233,8 +234,9 @@ const IRISHealthcare: React.FC = () => {
               </Card>
             </div>
 
-            {/* Strategy and Caption in Two Columns */}
+            {/* Strategy and Caption: 2 box ngang hàng */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Goals & Insights bên trái */}
               <Card>
                 <CardHeader>
                   <CardTitle className="text-xl">🎯 Goals & Insights</CardTitle>
@@ -250,6 +252,7 @@ const IRISHealthcare: React.FC = () => {
                 </CardContent>
               </Card>
 
+              {/* Social Media Caption bên phải */}
               <Card className="bg-gray-50">
                 <CardHeader>
                   <CardTitle className="text-xl">📱 Social Media Caption</CardTitle>
@@ -472,7 +475,6 @@ const IRISHealthcare: React.FC = () => {
                     </div>
                   </CardContent>
                 </Card>
-
               </div>
             </div>
           </section>
