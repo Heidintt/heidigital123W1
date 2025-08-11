@@ -136,9 +136,73 @@ const IRISHealthcare: React.FC = () => {
             </Card>
           </section>
 
-          {/* Campaign 1: Cataract Awareness Infographic */}
+          {/* Campaign 1: Remote Nursing Recruitment Video */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 1: Cataract Awareness Infographic</h2>
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 1: Remote Nursing Recruitment - Day in the Life</h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <Card className="h-full">
+                <CardHeader>
+                  <CardTitle className="text-xl text-blue-600">Recruitment Video Campaign</CardTitle>
+                  <CardDescription>Attracting qualified nurses for remote roles</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                    <iframe 
+                      width="100%" 
+                      height="100%" 
+                      src="https://www.youtube.com/embed/o6Z-nE1p_mQ" 
+                      title="Video nurses in remote area - Day in the Life" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin" 
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="space-y-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl">Campaign Brief</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2">🎯 Strategic Approach</h4>
+                      <ul className="list-disc list-inside text-gray-700 space-y-1">
+                        <li><strong>Goal:</strong> Recruitment + Awareness (B2C – attracting qualified nurses for remote roles)</li>
+                        <li><strong>Insight:</strong> Nurses crave meaningful impact and unique life experiences, but many hesitate due to fears of isolation and challenging conditions</li>
+                        <li><strong>Concept:</strong> Storytelling through a personal, day-in-the-life journey — from sunrise to sunset</li>
+                        <li><strong>Hook:</strong> "Ever wondered what it's like to be a nurse in Australia's most remote communities?"</li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-gray-50">
+                  <CardHeader>
+                    <CardTitle className="text-xl">Social Media Caption</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="bg-white p-4 rounded-lg border text-gray-700">
+                      <p className="mb-2">Ever wondered what it's really like to be a nurse in Australia's most remote communities?</p>
+                      <p className="mb-2">From first light to the last glow of sunset, our Remote Area Nurses bring care, comfort, and connection to those who need it most.</p>
+                      <p className="mb-2">Every mile travelled. Every call answered. More than a job — it's a calling.</p>
+                      <p className="mb-2">If you're ready to make a real impact — and see a side of Australia most never will — join the team that goes further for care.</p>
+                      <p className="mb-2">👉 Apply now: [vanguardhealth.com.au/jobs]</p>
+                      <p className="text-blue-600">#RemoteNursing #LifeAtVanguard #NursingJobsAU #VanguardHealth #HealthcareHeroes</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Campaign 2: Cataract Awareness Infographic */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 2: Cataract Awareness Infographic</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
               <Card>
@@ -200,9 +264,9 @@ const IRISHealthcare: React.FC = () => {
             </Card>
           </section>
 
-          {/* Campaign 2: Nurse Quote Video */}
+          {/* Campaign 3: Nurse Quote Video */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 2: Voices from the Field - Nurse Quote Video</h2>
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 3: Voices from the Field - Nurse Quote Video</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
@@ -265,12 +329,12 @@ const IRISHealthcare: React.FC = () => {
             </div>
           </section>
 
-          {/* Campaign 3: LinkedIn Carousel */}
+          {/* Campaign 4: LinkedIn Carousel */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 3: IRIS 800th Milestone - LinkedIn Carousel</h2>
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 4: IRIS 800th Milestone - LinkedIn Carousel</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card className="col-span-2">
+              <Card>
                 <CardHeader>
                   <CardTitle className="text-xl text-blue-600">LinkedIn Carousel - All 5 Slides</CardTitle>
                   <CardDescription>Complete campaign showcase with navigation indicators</CardDescription>
@@ -336,9 +400,9 @@ const IRISHealthcare: React.FC = () => {
             </div>
           </section>
 
-          {/* Campaign 4: Email Newsletter */}
+          {/* Campaign 5: Email Newsletter */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 4: Monthly Email Newsletter</h2>
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">Campaign 5: Monthly Email Newsletter</h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <Card>
@@ -402,7 +466,7 @@ const IRISHealthcare: React.FC = () => {
                       Start Your Campaign <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  <Button asChild size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white/10 hover:text-white">
                     <Link to="/portfolio">
                       View More Work
                     </Link>
