@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
@@ -23,7 +22,7 @@ const Services = () => {
   useSEO({
     title: "Digital Marketing Services | SEO, Social Media",
     description: "Expert digital marketing services in Australia: SEO, social media management, content creation, PPC advertising & brand development. Get measurable results with free consultation!",
-    keywords: "digital marketing services australia, SEO services, social media management, marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization",
+    keywords: "digital marketing services australia, SEO services, social media management, marketing strategy, content creation, PPC advertising, branding services, marketing automation, conversion optimization, digital agency australia",
     url: "https://heidigital.info/services",
     type: "website",
     canonicalUrl: "https://heidigital.info/services",
@@ -172,7 +171,7 @@ const Services = () => {
           "name": "What digital marketing services does Heidi Digital offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We offer comprehensive AI-powered digital marketing services including SEO optimization, social media management, content creation, brand development, digital advertising, and marketing automation specifically designed for Australian businesses."
+            "text": "We offer comprehensive AI-powered digital marketing services including SEO optimization, social media management, content creation, brand development, digital advertising, and marketing automation."
           }
         },
         {
@@ -180,7 +179,7 @@ const Services = () => {
           "name": "How much do your digital marketing services cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our pricing is flexible and competitive, tailored to your specific project needs, timeline, and budget. We offer project-based pricing with no hidden fees and transparent cost breakdown. Contact us for a custom quote."
+            "text": "Our pricing is flexible and competitive, tailored to your specific project needs, timeline, and budget. We offer project-based pricing with no hidden fees and transparent cost breakdowns."
           }
         },
         {
@@ -188,7 +187,7 @@ const Services = () => {
           "name": "Do you work with small businesses or only large enterprises?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We work with businesses of all sizes across Australia, from startups and small businesses to large enterprises. Our scalable solutions are designed to grow with your business and deliver results regardless of company size."
+            "text": "We work with businesses of all sizes across Australia, from startups and small businesses to large enterprises. Our scalable solutions are designed to grow with your business and needs."
           }
         }
       ]
@@ -449,7 +448,8 @@ const Services = () => {
               centered
             />
 
-            {/* Individual Packages */}
+            {/* Individual Packages (Tạm thời ẩn đi) */}
+            {/* 
             <div className="mb-16">
               <div className="flex items-center justify-center mb-8">
                 <img 
@@ -509,6 +509,7 @@ const Services = () => {
                 ))}
               </div>
             </div>
+            */}
 
             {/* Combo Packages */}
             <div>
@@ -544,6 +545,8 @@ const Services = () => {
                       
                       <CardDescription className="text-gray-600 mb-4">{pkg.description}</CardDescription>
                       
+                      {/* Ẩn phần price và savings */}
+                      {/* 
                       <div className="mb-4">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-2xl font-bold text-blue-600">{pkg.price}</span>
@@ -553,6 +556,7 @@ const Services = () => {
                           {pkg.savings}
                         </Badge>
                       </div>
+                      */}
                     </CardHeader>
                     
                     <CardContent>
@@ -625,7 +629,7 @@ const Services = () => {
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">Custom Project Pricing</h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
-                    We believe every business is unique, and so are their digital marketing needs. That's why we offer flexible, competitive pricing that adapts to your project scope, timeline, and specific requirements.
+                    We believe every business is unique, and so are their digital marketing needs. That's why we offer flexible, competitive pricing that adapts to your project scope, timeline, and specific requirements. Contact us for a tailored quote!
                   </p>
                 </div>
                 
