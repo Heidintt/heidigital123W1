@@ -340,26 +340,48 @@ const IRISHealthcare: React.FC = () => {
                   <CardDescription>Complete campaign showcase with navigation indicators</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-5 gap-2">
-                    {carouselImages.map((image, index) => (
-                      <div key={index} className="relative group">
-                        <img 
-                          src={image}
-                          alt={`LinkedIn carousel slide ${index + 1} of 5`}
-                          className="w-full h-auto rounded border shadow-sm transition-all group-hover:shadow-md"
-                        />
-                        <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                          {index + 1}
+                  <div className="space-y-4">
+                    {/* Mobile: Show slides vertically */}
+                    <div className="block md:hidden space-y-3">
+                      {carouselImages.map((image, index) => (
+                        <div key={index} className="relative">
+                          <img 
+                            src={image}
+                            alt={`LinkedIn carousel slide ${index + 1} of 5`}
+                            className="w-full h-auto rounded-lg border shadow-sm"
+                          />
+                          <div className="absolute bottom-3 right-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full">
+                            {index + 1} / 5
+                          </div>
                         </div>
-                        {index < carouselImages.length - 1 && (
-                          <ArrowRight className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 h-4 w-4 text-blue-600 bg-white rounded-full p-1 shadow-sm" />
-                        )}
+                      ))}
+                    </div>
+                    
+                    {/* Desktop: Show slides in grid */}
+                    <div className="hidden md:block">
+                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        {carouselImages.map((image, index) => (
+                          <div key={index} className="relative group">
+                            <img 
+                              src={image}
+                              alt={`LinkedIn carousel slide ${index + 1} of 5`}
+                              className="w-full h-auto rounded-lg border shadow-sm transition-all group-hover:shadow-md group-hover:scale-105"
+                            />
+                            <div className="absolute bottom-3 right-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full">
+                              {index + 1}
+                            </div>
+                            {index < carouselImages.length - 1 && (
+                              <ArrowRight className="absolute -right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 text-blue-600 bg-white rounded-full p-1 shadow-md border" />
+                            )}
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+                    
+                    <p className="text-sm text-gray-500 mt-4 text-center">
+                      5-slide LinkedIn carousel showcasing IRIS program milestone achievements
+                    </p>
                   </div>
-                  <p className="text-sm text-gray-500 mt-4 text-center">
-                    5-slide LinkedIn carousel showcasing IRIS program milestone achievements
-                  </p>
                 </CardContent>
               </Card>
 
