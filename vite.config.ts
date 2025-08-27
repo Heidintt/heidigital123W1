@@ -47,23 +47,22 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['@radix-ui/react-tabs', '@radix-ui/react-dialog', '@radix-ui/react-accordion', '@radix-ui/react-select', '@radix-ui/react-popover'],
+          ui: ['@radix-ui/react-tabs', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
           charts: ['recharts'],
           forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
-          motion: ['framer-motion'],
-          utils: ['class-variance-authority', 'clsx', 'tailwind-merge', 'date-fns'],
-          icons: ['lucide-react'],
         },
-        // Optimize chunk loading
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
       },
     },
     // Optimize assets
     cssCodeSplit: true,
     sourcemap: false,
-    minify: 'esbuild',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
   },
   // Tối ưu cho Netlify Visual Editor
   optimizeDeps: {

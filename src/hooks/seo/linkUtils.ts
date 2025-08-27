@@ -29,19 +29,13 @@ export const updateCanonicalUrl = (canonicalUrl?: string, url?: string) => {
 export const updatePerformanceLinks = () => {
   const performanceLinks = [
     { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
-    { rel: 'dns-prefetch', href: '//fonts.gstatic.com' },
     { rel: 'dns-prefetch', href: '//images.unsplash.com' },
     { rel: 'dns-prefetch', href: '//www.google-analytics.com' },
     { rel: 'dns-prefetch', href: '//googletagmanager.com' },
-    { rel: 'dns-prefetch', href: '//www.googletagmanager.com' },
     { rel: 'dns-prefetch', href: '//connect.facebook.net' },
     { rel: 'dns-prefetch', href: '//platform.twitter.com' },
-    { rel: 'dns-prefetch', href: '//cdn.gpteng.co' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-    { rel: 'preconnect', href: 'https://images.unsplash.com' },
-    { rel: 'preconnect', href: 'https://heidigital.info', crossorigin: 'anonymous' },
-    { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
-    { rel: 'preconnect', href: 'https://www.google-analytics.com' }
+    { rel: 'preconnect', href: 'https://images.unsplash.com' }
   ];
   
   performanceLinks.forEach(({ rel, href, crossorigin }) => {
