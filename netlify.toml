@@ -4,12 +4,49 @@
 # Build settings
 [build]
   publish = "dist"
+  command = "npm run build"
 
 # Local dev server settings for Vite (port 8080)
 [dev]
   command = "vite"
   targetPort = 8080
   port = 8888
+
+# Performance and caching headers for static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    X-Content-Type-Options = "nosniff"
+
+# Cache images for 30 days  
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+    X-Content-Type-Options = "nosniff"
+
+# Cache fonts for 1 year
+[[headers]]
+  for = "*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.woff"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Performance headers for CSS and JS
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # Headers for static files
 [[headers]]
@@ -35,6 +72,11 @@
   for = "/*"
   [headers.values]
     X-Robots-Tag = "index, follow"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 # 410 Gone responses for permanently deleted pages
 [[redirects]]
