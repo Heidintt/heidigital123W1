@@ -56,13 +56,7 @@ export default defineConfig(({ mode }) => ({
     // Optimize assets
     cssCodeSplit: true,
     sourcemap: false,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: 'esbuild',
   },
   // Tối ưu cho Netlify Visual Editor
   optimizeDeps: {
