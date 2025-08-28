@@ -18,18 +18,15 @@ const Hero = ({
   const HeadingTag = headingLevel as keyof JSX.IntrinsicElements;
 
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden" style={{ aspectRatio: '16/10' }}>
-      {/* Background image with optimized loading */}
+    <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      {/* Background image */}
       <img
         src={backgroundImage}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
         fetchPriority="high"
         draggable={false}
-        decoding="sync"
-        width="1200"
-        height="800"
-        style={{ aspectRatio: '3/2' }}
+        decoding="async"
       />
       
       {/* Dark gradient overlay for text readability */}
