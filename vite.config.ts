@@ -41,13 +41,38 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     assetsDir: 'assets',
     copyPublicDir: true,
-    // Tăng memory limit cho build
+    // Optimized bundle splitting to reduce critical request chain
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom'],
-          ui: ['@radix-ui/react-tabs', '@radix-ui/react-dialog', '@radix-ui/react-accordion'],
+        manualChunks: (id) => {
+          // Core React libraries
+          if (id.includes('react') || id.includes('react-dom')) {
+            return 'react-vendor';
+          }
+          // Router
+          if (id.includes('react-router')) {
+            return 'router';
+          }
+          // UI components
+          if (id.includes('@radix-ui')) {
+            return 'ui-components';
+          }
+          // Animation libraries  
+          if (id.includes('framer-motion')) {
+            return 'animations';
+          }
+          // Chart libraries
+          if (id.includes('recharts')) {
+            return 'charts';
+          }
+          // Utility libraries
+          if (id.includes('lucide-react') || id.includes('clsx') || id.includes('date-fns')) {
+            return 'utilities';
+          }
+          // Large third-party libraries
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
       },
     },
